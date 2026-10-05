@@ -21,6 +21,10 @@ flowchart TD
 `intake.py` e `compiler.py` são fronteiras de I/O. `cli.py` compõe as etapas.
 O comando `compile` aceita a IR serializada sem reexecutar intake ou planejamento.
 
+`planning.py` transforma CapabilityGraph em TaskGraph/v1. O comando `tasks` permite
+selecionar capacidades para uma sprint, com gates e critérios preservados. O plano
+é estrutural e determinístico, sem executor ou decomposição semântica via LLM.
+
 O build não lê assets, executa código gerado, chama subprocessos, usa rede ou
 instala o resultado. Ele valida a IR antes de criar a saída e recusa qualquer
 diretório existente. Uma falha de disco durante a emissão pode deixar uma saída

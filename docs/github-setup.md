@@ -1,4 +1,6 @@
-# Configuração do repositório no GitHub
+# Repositório e configuração GitHub
+
+Repositório: [leozitogs/ai-harness-compiler](https://github.com/leozitogs/ai-harness-compiler).
 
 **Repository name**
 
@@ -27,22 +29,33 @@ ai-engineering, harness-engineering, compiler, llm, agentic-ai,
 context-engineering, evals, mcp, python, pydantic
 ```
 
-## Criar e publicar
-
-Crie no GitHub um repositório vazio chamado `ai-harness-compiler`.
-Escolha a visibilidade desejada. Não marque geração automática de README,
-.gitignore ou licença: os dois primeiros já existem; a licença ainda precisa ser escolhida.
-
-O Git local já foi inicializado na branch `main`. Após revisar os arquivos:
+## Clonar e configurar
 
 ```sh
-git add .
-git commit -m "chore: bootstrap AI Harness Compiler"
-git remote add origin https://github.com/SEU_USUARIO/ai-harness-compiler.git
-git push -u origin main
+git clone git@github.com:leozitogs/ai-harness-compiler.git
+cd ai-harness-compiler
+uv sync --locked
+git config core.hooksPath .githooks
 ```
 
-Substitua `SEU_USUARIO`. Nenhum remote, commit ou push faz parte da criação deste scaffold.
-Depois da primeira execução da CI, configure proteção de `main` conforme seu fluxo.
-Se o GitHub disponibilizar private vulnerability reporting para esse repo, habilite-o.
-Escolha a licença de distribuição antes de anunciar o projeto como open source.
+Licença: Apache-2.0. A publicação inicial é bootstrap; mudanças seguintes passam por PR.
+
+## Configuração operacional pretendida
+
+Branch padrão `main`; squash habilitado; merge commits e rebase merge desabilitados;
+exclusão automática de branches integradas. Proteção: CI e conventions obrigatórios,
+resolução de conversas, sem force push ou deleção de main. Com mantenedor único,
+zero aprovações obrigatórias; elevar para uma quando houver revisor independente.
+
+As configurações reais podem ser consultadas no GitHub. Este documento não é
+enforcement automático: editar o texto não altera proteções remotas.
+
+```sh
+git switch main
+git pull --ff-only
+git switch -c feat/ahc-001-canonical-intake
+```
+
+Siga [workflow](engineering/workflow.md), [backlog](product/backlog.md) e
+[Definition of Done](delivery/scrum.md). Nenhuma tag de release ou publicação no
+PyPI é disparada automaticamente pelo bootstrap.

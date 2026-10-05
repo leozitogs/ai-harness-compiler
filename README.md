@@ -43,6 +43,7 @@ Para revisar a representação intermediária antes da compilação:
 uv run factory plan examples/project-definition
 uv run factory compile output/learning-studio/.ai/harness.json --output output/reviewed
 uv run factory schema harness-spec
+uv run factory tasks project-definition --select ahc-001 ahc-002 ahc-003 ahc-004
 ```
 
 `plan` e `schema` imprimem JSON em stdout. A entrada atual é um `project.yaml`
@@ -58,6 +59,7 @@ estruturado. Consulte o [exemplo](examples/project-definition/project.yaml) e o
 - Geração reproduzível de `AGENTS.md`, contexto, políticas, ADRs, plano de trabalho,
   plano de evals, documentação, manifesto de hashes e CI de integridade.
 - CLI, testes, análise estática, lockfile e CI para Linux e Windows.
+- Decomposição determinística em TaskGraph, com critérios e gates de dependências.
 
 **Limites:** não há inferência de domínio, parsing de documentos livres, pesquisa,
 chamadas a LLM, runtime de agentes, integrações MCP, executor de workflows,
@@ -81,6 +83,7 @@ output/learning-studio/
 │   ├── context/registry.json
 │   ├── policies/permissions.json
 │   ├── workflows/development.json
+│   ├── workflows/task-graph.json
 │   ├── evals/plan.json
 │   ├── hooks/verify_artifacts.py
 │   └── observability/README.md
@@ -101,11 +104,14 @@ src/ai_harness_compiler/
 ├── models/          # Contratos e invariantes da IR
 ├── intake.py        # Manifesto YAML → ProjectInput
 ├── pipeline.py      # Transformações puras → HarnessSpec
+├── planning.py      # CapabilityGraph → TaskGraph verificável
 ├── compiler.py      # Renderização e exportação
 └── cli.py           # Interface factory
 schemas/            # JSON Schemas gerados dos modelos
 tests/              # Contratos, pipeline, compilação, integridade e CLI
 examples/           # Projeto fictício executável
+project-definition/ # Backlog canônico do próprio compilador
+planning/           # Sprint proposta e tarefas geradas
 docs/               # Visão, arquitetura, contratos, ADRs e roadmap
 knowledge/          # Critérios para futura base de conhecimento
 scripts/            # Regeneração de schemas e políticas do próprio repo
@@ -121,6 +127,7 @@ uv run mypy src
 uv run pytest
 uv run python scripts/export_schemas.py --check
 uv run python scripts/generate_repo_agents.py --check
+uv run python scripts/generate_sprint_plan.py --check
 uv build
 ```
 
@@ -138,8 +145,17 @@ independente de provedores de modelos e frameworks de agentes.
 | [ADRs](docs/adr/0001-compiler-first.md) | Decisões iniciais |
 | [Setup do GitHub](docs/github-setup.md) | Nome, description, topics e publicação |
 | [Segurança](SECURITY.md) | Fronteiras atuais e reporte de falhas |
+| [Concepção](docs/product/conception.md) | Usuários, hipóteses e Product Goal |
+| [Backlog](docs/product/backlog.md) | 14 histórias priorizadas e critérios canônicos |
+| [Kickoff](docs/delivery/kickoff.md) | Agenda e decisões para iniciar |
+| [Scrum e DoD](docs/delivery/scrum.md) | Acordo de trabalho e conclusão |
+| [Sprint 1](docs/delivery/sprint-1.md) | Objetivo, escopo proposto e 16 tarefas |
+| [Task planning](docs/engineering/task-planning.md) | Decomposição implementada e limites |
+| [Commits e branches](docs/engineering/workflow.md) | Convenções verificadas por hook e CI |
+| [Engenharia](docs/engineering/standards.md) | Organização, qualidade e escalabilidade |
 
 ## Licença
 
-A licença de distribuição ainda não foi escolhida pelo proprietário.
-Este scaffold não adiciona uma licença de código aberto automaticamente.
+[Apache-2.0](LICENSE), com atribuições em [NOTICE](NOTICE).
+Leia a [política de licenciamento](docs/engineering/licensing.md) para o tratamento
+de dependências, conteúdo de terceiros e artefatos gerados.

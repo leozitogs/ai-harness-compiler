@@ -20,6 +20,11 @@ Build a compiler that turns project intent into typed, verifiable AI engineering
 - Document material architectural changes in docs/adr/.
 - Use English identifiers and Portuguese explanatory documentation.
 - Keep credentials and paid or network-dependent model calls out of the default test suite.
+- Follow docs/engineering/workflow.md for Conventional Commits and short-lived branches.
+- Read the canonical backlog in project-definition/project.yaml and the proposed sprint in planning/sprint-1.json.
+- Use explicit task plans with dependencies and verification, never claims of private chain-of-thought or unexecuted completion.
+- Follow docs/delivery/scrum.md for Definition of Done; proposed sprint scope is not a delivery commitment.
+- Preserve Apache-2.0 notices and review dependency and generated-template licensing.
 
 ## Checks
 
@@ -30,5 +35,6 @@ uv run mypy src
 uv run pytest
 uv run python scripts/export_schemas.py --check
 uv run python scripts/generate_repo_agents.py --check
+uv run python scripts/generate_sprint_plan.py --check
 uv build
 ```

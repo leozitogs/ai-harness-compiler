@@ -22,6 +22,7 @@ uv run mypy src
 uv run pytest
 uv run python scripts/export_schemas.py --check
 uv run python scripts/generate_repo_agents.py --check
+uv run python scripts/generate_sprint_plan.py --check
 uv build
 ```
 
@@ -37,3 +38,17 @@ Novos efeitos colaterais devem ter fronteiras e permissões explícitas.
 
 Use `uv add` / `uv add --dev` e versione `uv.lock` junto com `pyproject.toml`.
 Integrações futuras ficam em adapters; bibliotecas de agentes não invadem os contratos.
+
+## Fluxo de trabalho
+
+Leia [commits e branches](docs/engineering/workflow.md) e a
+[Definition of Done](docs/delivery/scrum.md). Ative o hook local:
+
+```sh
+git config core.hooksPath .githooks
+```
+
+Use branches como `feat/ahc-001-canonical-intake`, Conventional Commits e PRs com
+evidências. Contribuições intencionais seguem Apache-2.0, conforme [LICENSE](LICENSE).
+Critérios de produto vivem em `project-definition/project.yaml`; após alterar
+escopo ou critérios da Sprint 1, regenere `planning/sprint-1.tasks.json`.

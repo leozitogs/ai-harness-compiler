@@ -9,6 +9,7 @@ Os JSON Schemas em `schemas/` são gerados e versionados.
 | `ProjectDNA/v1` | Input preservado, perfil de domínio, evidências, incógnitas |
 | `CapabilityGraph/v1` | Capacidades, dependências, I/O, risco, efeitos, critérios e evidências |
 | `HarnessSpec/v1` | DNA + grafo + decisões + contexto + permissões + planos de eval |
+| `TaskGraph/v1` | Seleção de capacidades, estágios técnicos, precedência e critérios |
 
 ## Manifesto de entrada
 
