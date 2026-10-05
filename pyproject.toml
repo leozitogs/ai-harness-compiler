@@ -12,6 +12,14 @@ license = "Apache-2.0"
 license-files = ["LICENSE", "NOTICE"]
 dependencies = ["pydantic>=2.10,<3", "PyYAML>=6.0.2,<7"]
 
+[project.optional-dependencies]
+team = [
+  "langgraph>=1.0,<2",
+  "langgraph-checkpoint-sqlite>=3,<4",
+  "scikit-learn>=1.7,<2",
+  "httpx>=0.28,<1",
+]
+
 [project.urls]
 Repository = "https://github.com/leozitogs/ai-harness-compiler"
 Issues = "https://github.com/leozitogs/ai-harness-compiler/issues"
@@ -40,3 +48,7 @@ select = ["E", "F", "I", "UP", "B"]
 python_version = "3.12"
 strict = true
 plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = ["sklearn.*"]
+ignore_missing_imports = true

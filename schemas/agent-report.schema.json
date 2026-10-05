@@ -1,0 +1,146 @@
+{
+  "$defs": {
+    "Finding": {
+      "additionalProperties": false,
+      "properties": {
+        "capability_id": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Capability Id"
+        },
+        "message": {
+          "minLength": 1,
+          "title": "Message",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "info",
+            "warning",
+            "blocker"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "source": {
+          "minLength": 1,
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "severity",
+        "message",
+        "source"
+      ],
+      "title": "Finding",
+      "type": "object"
+    },
+    "ToolResult": {
+      "additionalProperties": false,
+      "properties": {
+        "data": {
+          "additionalProperties": true,
+          "title": "Data",
+          "type": "object"
+        },
+        "findings": {
+          "items": {
+            "$ref": "#/$defs/Finding"
+          },
+          "title": "Findings",
+          "type": "array"
+        },
+        "summary": {
+          "minLength": 1,
+          "title": "Summary",
+          "type": "string"
+        },
+        "tool": {
+          "enum": [
+            "retrieve_context",
+            "requirements_audit",
+            "architecture_review",
+            "implementation_plan",
+            "quality_review",
+            "security_review",
+            "delivery_plan"
+          ],
+          "title": "Tool",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool",
+        "summary"
+      ],
+      "title": "ToolResult",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "agent_id": {
+      "enum": [
+        "analyst",
+        "architect",
+        "engineer",
+        "quality",
+        "security",
+        "delivery"
+      ],
+      "title": "Agent Id",
+      "type": "string"
+    },
+    "engine": {
+      "enum": [
+        "local",
+        "ollama"
+      ],
+      "title": "Engine",
+      "type": "string"
+    },
+    "model_summary_is_advisory": {
+      "default": false,
+      "title": "Model Summary Is Advisory",
+      "type": "boolean"
+    },
+    "observations": {
+      "items": {
+        "$ref": "#/$defs/ToolResult"
+      },
+      "title": "Observations",
+      "type": "array"
+    },
+    "status": {
+      "enum": [
+        "completed",
+        "failed"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "summary": {
+      "minLength": 1,
+      "title": "Summary",
+      "type": "string"
+    }
+  },
+  "required": [
+    "agent_id",
+    "status",
+    "engine",
+    "summary",
+    "observations"
+  ],
+  "title": "AgentReport",
+  "type": "object"
+}
