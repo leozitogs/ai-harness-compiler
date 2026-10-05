@@ -1,0 +1,162 @@
+schema_version: ProjectInput/v1
+id: ai-harness-compiler
+name: AI Harness Compiler
+conception: >-
+  Compilar a intenção de novos projetos em harnesses de engenharia de IA específicos,
+  tipados, rastreáveis, verificáveis e evolutivos. O produto inclui arquitetura,
+  contexto, políticas, skills, prompts, ferramentas e planos de avaliação; agentes
+  entram somente quando sua complexidade é justificada por evidências.
+domain: developer-tools
+branding:
+  audience: [AI engineers, tech leads, equipes de produto]
+  tone: [técnico, claro, verificável]
+  principles: [evidência antes de autonomia, contratos antes de geração, core independente]
+  visual_constraints: [priorizar CLI e documentação acessível na primeira fase]
+constraints:
+  technical: [Python 3.12+, core puro sem SDKs de agentes, IR versionada, Linux e Windows]
+  security: [inputs não confiáveis, aprovação para efeitos externos, isolamento entre projetos]
+  business: [Apache-2.0, baseline offline, custo de serviços explicitamente autorizado]
+  max_build_cost_usd: 0
+backlog:
+  - id: ahc-001
+    title: Intake canônico e limites de entrada
+    description: Como AI engineer, quero carregar definições confiáveis e diagnosticar entradas inválidas antes de planejar o harness.
+    acceptance_criteria:
+      - Chaves YAML duplicadas, manifesto acima do limite configurado e versões desconhecidas falham com diagnóstico estável.
+      - UTF-8 e referências locais válidas são aceitas sem executar conteúdo ou acessar a rede.
+      - Os casos válidos e inválidos são verificados em Linux e Windows.
+    inputs: [project.yaml]
+    outputs: [ProjectInput validado, diagnósticos]
+    data_owner: proprietário do projeto
+    risk: medium
+    implementation: deterministic
+  - id: ahc-002
+    title: Perfil multidimensional de domínio
+    description: Como arquiteto, quero distinguir domínio declarado, hipóteses e incógnitas para evitar decisões baseadas em certeza inventada.
+    acceptance_criteria:
+      - O contrato representa domínio, arquétipo, dados, risco e origem da classificação.
+      - Declaração, hipótese e DOMAIN_UNCERTAIN possuem invariantes testadas e não fabricam confiança numérica.
+      - A mudança de contrato tem política de compatibilidade e exemplo de migração documentados.
+    depends_on: [ahc-001]
+    risk: medium
+    implementation: deterministic
+  - id: ahc-003
+    title: Evidence Pack com proveniência
+    description: Como revisor, quero rastrear decisões a fontes e conhecer suas limitações de confiança e atualidade.
+    acceptance_criteria:
+      - Fontes possuem ID, origem, digest opcional, estado de verificação e instante de coleta quando aplicável.
+      - Referências ausentes, duplicadas ou incompatíveis com a decisão são rejeitadas.
+      - Declaração de usuário e pesquisa externa são distinguíveis sem disparar pesquisa automática.
+    depends_on: [ahc-001]
+    risk: medium
+    implementation: deterministic
+  - id: ahc-004
+    title: Confiabilidade e benchmark offline do compilador
+    description: Como mantenedor, quero demonstrar reprodutibilidade e medir o compilador com fixtures de diferentes domínios.
+    acceptance_criteria:
+      - Educação, comércio e ferramentas de desenvolvimento possuem fixtures com critérios rastreáveis.
+      - Falhas de escrita produzem diagnóstico e não alteram um projeto existente.
+      - Um benchmark offline registra duração, tamanho e versão sem declarar SLO sem medição.
+    depends_on: [ahc-001]
+    risk: medium
+    implementation: deterministic
+  - id: ahc-005
+    title: PromptSpec e SkillSpec compiláveis
+    description: Como AI engineer, quero procedimentos e prompts tipados, com ativação, contexto e verificadores explícitos.
+    acceptance_criteria:
+      - Contratos incluem entradas, saídas, versão, restrições, ferramentas e avaliação.
+      - Duas fixtures de domínios distintos geram procedimentos distintos ligados a requisitos.
+      - Referências inválidas falham antes da emissão e skills suportam carregamento progressivo.
+    depends_on: [ahc-002, ahc-003]
+    risk: medium
+    implementation: deterministic
+  - id: ahc-006
+    title: Context Engine com orçamento e proveniência
+    description: Como runtime, quero selecionar contexto relevante dentro de um orçamento e informar exclusões e conflitos.
+    acceptance_criteria:
+      - Seleção respeita orçamento e registra fontes selecionadas, omitidas e conflitantes.
+      - Dados de projetos diferentes não compartilham contexto implicitamente.
+      - Fixtures medem relevância e comportamento com fontes desatualizadas.
+    depends_on: [ahc-003, ahc-005]
+    risk: high
+    implementation: undecided
+  - id: ahc-007
+    title: Tools e Policy Engine independente
+    description: Como operador, quero validar permissões, budgets e aprovações antes de efeitos colaterais.
+    acceptance_criteria:
+      - ToolSpec define escopo, I/O, efeitos, idempotência e limites de execução.
+      - Escritas externas sem aprovação falham antes da chamada e geram evento auditável.
+      - Negação por política é testada sem depender de decisão de modelo.
+    depends_on: [ahc-005]
+    risk: high
+    implementation: deterministic
+  - id: ahc-008
+    title: Eval runner e Simulation Lab
+    description: Como revisor, quero executar tarefas isoladas e avaliar resultado, trajetória e regressões.
+    acceptance_criteria:
+      - Evals distinguem not-run, pass, fail e error com evidências persistidas.
+      - Sandbox e timeout limitam execução; falhas não são interpretadas como aprovação.
+      - Gates verificam saída e uso de ferramentas com datasets de teste reservados.
+    depends_on: [ahc-004, ahc-005]
+    risk: high
+    implementation: deterministic
+  - id: ahc-009
+    title: Adapter de LLM e pesquisa controlada
+    description: Como projetista, quero usar provedores substituíveis para hipóteses e pesquisa com limites e proveniência.
+    acceptance_criteria:
+      - Adapter possui fake offline e contrato testado de timeout, retry e orçamento.
+      - Saídas do modelo são validadas por schema e política antes de qualquer ação.
+      - Pesquisa preserva citações e separa fontes verificadas de declarações não verificadas.
+    depends_on: [ahc-003, ahc-007]
+    risk: high
+    implementation: llm
+  - id: ahc-010
+    title: Execução durável e observabilidade
+    description: Como operador, quero retomar jobs e aprovações após falhas sem duplicar efeitos.
+    acceptance_criteria:
+      - Workflow retoma após interrupção com idempotência e limites de tentativas.
+      - Spans e métricas correlacionam projeto, build, versão e etapa sem segredos.
+      - Cancelamento e expiração de aprovação são exercitados em testes de integração.
+    depends_on: [ahc-008, ahc-009]
+    risk: high
+    implementation: deterministic
+  - id: ahc-011
+    title: Busca e comparação de arquiteturas
+    description: Como arquiteto, quero comparar candidatos sob qualidade, custo, latência e complexidade.
+    acceptance_criteria:
+      - Candidatos executam o mesmo benchmark e incluem baseline sem agentes.
+      - Busca possui orçamento e condição de parada aplicados pelo control plane.
+      - Ranking registra evidências e trade-offs e não usa o conjunto de teste para otimização.
+    depends_on: [ahc-006, ahc-010]
+    risk: high
+    implementation: undecided
+  - id: ahc-012
+    title: Instalação revisável e rollback
+    description: Como mantenedor de um projeto, quero adotar um harness após revisar diff e restaurar a versão anterior.
+    acceptance_criteria:
+      - Dry-run informa arquivos novos, alterados e conflitos sem escrever no alvo.
+      - Instalação exige gates de avaliação e aprovação e detecta alterações concorrentes.
+      - Falha parcial tem recuperação testada e rollback preserva conteúdo do usuário.
+    depends_on: [ahc-004, ahc-008]
+    risk: high
+    implementation: deterministic
+  - id: ahc-013
+    title: Evolução e Experience Store
+    description: Como equipe, quero propor melhorias a partir de falhas sem permitir autoalteração irrestrita.
+    acceptance_criteria:
+      - Proposta liga falha, evidência, versão anterior e mudança candidata.
+      - Regressão e aprovação bloqueiam promoção insegura.
+      - Experiências e skills reutilizadas têm versão, proveniência e isolamento entre projetos.
+    depends_on: [ahc-010, ahc-011, ahc-012]
+    risk: high
+    implementation: undecided
+  - id: ahc-014
+    title: API e operação multi-projeto
+    description: Como organização, quero processar múltiplos projetos com limites, isolamento e acompanhamento de jobs.
+    acceptance_criteria:
+      - API autentica chamadas, aplica autorização por projeto e idempotência por solicitação.
+      - Jobs possuem quotas, backpressure, paginação e consulta de estado.
+      - Teste de carga mede throughput e latência e teste de isolamento impede acesso cruzado.
+    depends_on: [ahc-010, ahc-012]
+    risk: high
+    implementation: deterministic

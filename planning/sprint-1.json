@@ -1,0 +1,10 @@
+{
+  "id": "sprint-1",
+  "status": "proposed",
+  "goal": "Tornar a entrada, o perfil de domínio e as evidências verificáveis, medindo a confiabilidade da baseline offline.",
+  "duration_working_days": 10,
+  "start_date": null,
+  "capacity_confirmed": false,
+  "selected_capabilities": ["ahc-001", "ahc-002", "ahc-003", "ahc-004"],
+  "declared_completed_capabilities": []
+}

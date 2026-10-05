@@ -2,11 +2,13 @@
 
 import hashlib
 import json
+from importlib.resources import files as package_files
 from pathlib import Path
 from typing import Any
 
 from ai_harness_compiler import __version__
 from ai_harness_compiler.models import HarnessSpec
+from ai_harness_compiler.planning import decompose
 
 
 def json_text(value: Any) -> str:
@@ -50,6 +52,12 @@ def render(spec: HarnessSpec) -> dict[str, str]:
     )
     files = {
         "AGENTS.md": agents,
+        ".ai/licenses/LICENSE": package_files("ai_harness_compiler")
+        .joinpath("resources/LICENSE")
+        .read_text(encoding="utf-8"),
+        ".ai/licenses/NOTICE": package_files("ai_harness_compiler")
+        .joinpath("resources/NOTICE")
+        .read_text(encoding="utf-8"),
         ".gitattributes": "* text=auto eol=lf\n",
         ".ai/project-dna.json": json_text(spec.project_dna.model_dump()),
         ".ai/capability-graph.json": json_text(spec.capability_graph.model_dump()),
@@ -64,6 +72,7 @@ def render(spec: HarnessSpec) -> dict[str, str]:
         ),
         ".ai/policies/permissions.json": json_text(spec.permissions.model_dump()),
         ".ai/evals/plan.json": json_text([case.model_dump() for case in spec.evals]),
+        ".ai/workflows/task-graph.json": json_text(decompose(spec.capability_graph).model_dump()),
         ".ai/workflows/development.json": json_text(
             {
                 "kind": "review-plan",
@@ -85,6 +94,7 @@ def render(spec: HarnessSpec) -> dict[str, str]:
             "No application code, runtime, simulation, research or installation is included.\n"
             "Acceptance checks remain manual plans until project-specific runners exist.\n"
             "Regenerate into a new folder and review the diff before adopting changes.\n"
+            "Compiler/template notices are in `.ai/licenses/`; they do not license your inputs.\n"
         ),
         ".ai/hooks/verify_artifacts.py": VERIFY_SCRIPT,
         ".github/workflows/harness.yml": GENERATED_CI,

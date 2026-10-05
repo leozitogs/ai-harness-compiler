@@ -12,13 +12,16 @@ from ai_harness_compiler.compiler import compile_harness, json_text
 from ai_harness_compiler.intake import load_project
 from ai_harness_compiler.models import CapabilityGraph, HarnessSpec, ProjectDNA, ProjectInput
 from ai_harness_compiler.models.base import Contract
+from ai_harness_compiler.models.task import TaskGraph
 from ai_harness_compiler.pipeline import plan
+from ai_harness_compiler.planning import decompose
 
 MODELS: dict[str, type[Contract]] = {
     "project-input": ProjectInput,
     "project-dna": ProjectDNA,
     "capability-graph": CapabilityGraph,
     "harness-spec": HarnessSpec,
+    "task-graph": TaskGraph,
 }
 
 
@@ -28,11 +31,16 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument("--version", action="version", version=__version__)
     commands = parser.add_subparsers(dest="command", required=True)
-    for name in ("validate", "plan", "build"):
+    for name in ("validate", "plan", "build", "tasks"):
         command = commands.add_parser(name)
         command.add_argument("input", type=Path, help="project.yaml or its parent directory")
         if name == "build":
             command.add_argument("--output", type=Path, required=True, help="New output directory")
+        if name == "tasks":
+            command.add_argument("--select", nargs="+", help="Capability IDs to decompose")
+            command.add_argument(
+                "--completed", nargs="+", help="User-declared completed prerequisites"
+            )
     compile_command = commands.add_parser(
         "compile", help="Compile a reviewed HarnessSpec JSON file"
     )
@@ -51,6 +59,9 @@ def main(argv: list[str] | None = None) -> int:
             spec = plan(load_project(args.input))
         if args.command == "validate":
             print(f"Valid: {spec.project_dna.project.id}; {len(spec.evals)} planned evals.")
+        elif args.command == "tasks":
+            graph = decompose(spec.capability_graph, args.select, args.completed)
+            print(json_text(graph.model_dump()), end="")
         elif args.command == "plan":
             print(json_text(spec.model_dump()), end="")
         else:
