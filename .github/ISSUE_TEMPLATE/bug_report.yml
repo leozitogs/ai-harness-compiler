@@ -1,0 +1,16 @@
+name: Bug report
+description: Reportar uma falha reproduzível no compilador.
+body:
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reprodução mínima
+      description: Inclua comando, versão do Python e input fictício sem segredos.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Resultado esperado e resultado observado
+    validations:
+      required: true

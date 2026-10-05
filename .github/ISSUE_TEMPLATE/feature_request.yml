@@ -1,0 +1,15 @@
+name: Feature request
+description: Propor uma capacidade ou evolução do compilador.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema e caso de uso
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Critérios de aceitação e evidências
+    validations:
+      required: true
