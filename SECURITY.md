@@ -15,6 +15,7 @@ Use exemplos fictícios; não versione credenciais, dados pessoais ou documentos
 ## Reportar uma falha
 
 Não publique segredos ou uma exploração ativa em uma issue pública.
-Quando o repositório remoto estiver disponível, use a aba Security para relato
-privado se habilitada, ou o canal privado que o mantenedor disponibilizar.
-Ainda não há canal de segurança remoto configurado neste scaffold.
+Use o [canal privado de vulnerabilidades](https://github.com/leozitogs/ai-harness-compiler/security/advisories/new)
+habilitado no GitHub. Inclua versão afetada, reprodução mínima sem dados privados,
+impacto e mitigação conhecida. O mantenedor inicial é @leozitogs; ainda não há
+prazo de resposta garantido ou programa de recompensas.
