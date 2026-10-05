@@ -1,0 +1,8 @@
+#!/bin/sh
+if test -x .venv/Scripts/python.exe; then
+  exec .venv/Scripts/python.exe scripts/check_conventions.py --message-file "$1"
+fi
+if test -x .venv/bin/python; then
+  exec .venv/bin/python scripts/check_conventions.py --message-file "$1"
+fi
+exec uv run --locked python scripts/check_conventions.py --message-file "$1"

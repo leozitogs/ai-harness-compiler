@@ -8,7 +8,13 @@ version = "0.1.0"
 description = "Compile project intent into typed, verifiable, project-specific AI engineering harnesses."
 readme = "README.md"
 requires-python = ">=3.12"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
 dependencies = ["pydantic>=2.10,<3", "PyYAML>=6.0.2,<7"]
+
+[project.urls]
+Repository = "https://github.com/leozitogs/ai-harness-compiler"
+Issues = "https://github.com/leozitogs/ai-harness-compiler/issues"
 
 [project.scripts]
 factory = "ai_harness_compiler.cli:main"
@@ -34,4 +40,3 @@ select = ["E", "F", "I", "UP", "B"]
 python_version = "3.12"
 strict = true
 plugins = ["pydantic.mypy"]
-
