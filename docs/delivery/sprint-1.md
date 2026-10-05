@@ -6,6 +6,20 @@ responsáveis ainda precisam ser confirmados. Não há sprint iniciada automatic
 **Sprint Goal:** tornar a entrada, o perfil de domínio e as evidências verificáveis,
 medindo a confiabilidade da baseline offline.
 
+## Preparação por agentes
+
+O PO solicitou e recebeu uma equipe executável antes desta sprint. Os seis
+especialistas preparam análises, planos, matriz de aceitação e riscos; seu relatório
+fica em checkpoint para revisão explícita do PO. A aprovação dessa preparação
+não inicia a sprint nem conclui as histórias candidatas.
+
+```sh
+uv sync --locked --extra team
+uv run --extra team factory team run project-definition --output output/pre-sprint-team
+```
+
+Consulte [operação da equipe](../engineering/project-agents.md) antes do Planning.
+
 ## Sprint Backlog candidato
 
 | História | Resultado demonstrável | Estimativa inicial para discussão |
