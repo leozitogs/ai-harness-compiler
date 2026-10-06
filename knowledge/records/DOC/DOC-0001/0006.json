@@ -1,0 +1,43 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "bootstrap:existing-project-evidence",
+  "challenge": null,
+  "consequences": [],
+  "context": "Concepção explicita a direção generalista solicitada pelo PO: domínio e regras estudados por projeto, packs opcionais.",
+  "created_at": "2026-10-05T23:58:25.490472+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Concepção atualizada por direção explícita do PO.",
+      "outcome": "observed",
+      "sha256": "4ef327e2239d19a44b3a69795e1e1e5be9d3a0557995af5307cafdda6d648802",
+      "source": "docs/product/conception.md"
+    }
+  ],
+  "id": "DOC-0001",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [],
+  "resolution": null,
+  "review_note": "Direção generalista confirmada em mensagem explícita; sem afirmar implementação ou aprovação de sprint.",
+  "reviewed_by": "po-request:leozitogs",
+  "revision": 6,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Referência do objetivo, usuários, hipóteses e fronteiras do produto.",
+  "supersedes": null,
+  "tags": [
+    "product",
+    "conception",
+    "scope"
+  ],
+  "title": "Concepção do AI Harness Compiler",
+  "updated_at": "2026-10-06T21:38:52.839706+00:00"
+}

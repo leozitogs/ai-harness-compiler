@@ -2,6 +2,10 @@
 
 ## Fronteiras do sistema
 
+Direção do produto: [entendimento generalista](product/generalist-pipeline.md)
+antes da síntese específica. O pipeline abaixo descreve a baseline determinística
+atual; estudo semântico/modelos e seleção de packs serão introduzidos por AHC-019/020.
+
 ```mermaid
 flowchart TD
     CLI[CLI factory] --> Intake[Intake: manifesto estruturado]

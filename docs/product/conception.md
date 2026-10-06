@@ -9,6 +9,11 @@ preservando controle e explicabilidade das decisões.
 
 ## Product Goal
 
+O compilador é generalista. Domínio e regras de negócio são estudados a partir
+da proposta e branding de cada projeto, sem enum ou ramificações fixas de nichos.
+Templates/frameworks são recursos opcionais extensíveis, sujeitos às regras do
+projeto. Ver [pipeline generalista](generalist-pipeline.md).
+
 Permitir que uma equipe transforme a definição de um projeto em um harness de
 engenharia de IA específico, rastreável e verificável, e consiga evoluí-lo com base
 em evidências sem perder controle sobre custos, permissões e compatibilidade.

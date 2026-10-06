@@ -1,0 +1,37 @@
+{
+  "sprint_id": "sprint-2",
+  "execution_started": false,
+  "start_date": null,
+  "gates": [
+    {
+      "id": "scope-approval",
+      "status": "passed",
+      "owner": "leozitogs",
+      "evidence": "PO message: aprovado, pode estruturar a sprint."
+    },
+    {
+      "id": "pr-9-integration",
+      "status": "pending",
+      "owner": "repository-maintainer",
+      "evidence": "PR #9 open with CI green at structuring"
+    },
+    {
+      "id": "sprint-1-review-retro",
+      "status": "pending",
+      "owner": "leozitogs-and-collaborator",
+      "evidence": "No recorded completion"
+    },
+    {
+      "id": "capacity-and-start",
+      "status": "pending",
+      "owner": "leozitogs-and-collaborator",
+      "evidence": "Scope approved; capacity/start not quantified"
+    },
+    {
+      "id": "real-model-config",
+      "status": "pending",
+      "owner": "code-collaborator",
+      "evidence": "No model selected; ollama executable not found on PATH; service availability not tested"
+    }
+  ]
+}

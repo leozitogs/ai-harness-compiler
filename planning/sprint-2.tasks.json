@@ -1,12 +1,14 @@
 {
-  "declared_completed_capabilities": [],
+  "declared_completed_capabilities": [
+    "ahc-001",
+    "ahc-002",
+    "ahc-003"
+  ],
   "execution_status": "not-run",
   "schema_version": "TaskGraph/v1",
   "selected_capabilities": [
-    "ahc-001",
-    "ahc-002",
-    "ahc-003",
-    "ahc-004"
+    "ahc-019",
+    "ahc-020"
   ],
   "source_graph": {
     "capabilities": [
@@ -530,21 +532,21 @@
   "tasks": [
     {
       "acceptance_criteria": [
-        "Chaves YAML duplicadas, manifesto acima do limite configurado e versões desconhecidas falham com diagnóstico estável.",
-        "UTF-8 e referências locais válidas são aceitas sem executar conteúdo ou acessar a rede.",
-        "Os casos válidos e inválidos são verificados em Linux e Windows."
+        "ProjectUnderstandingSpec preserva input original, fontes, declarações, hipóteses de domínio, público, objetivos, entidades, regras de negócio, conflitos e perguntas pendentes com referências válidas.",
+        "Um adapter de modelo substituível produz propostas estruturadas; fake é restrito a testes, respostas reais são validadas e uma execução controlada com modelo real é demonstrada sem promover hipóteses ou scores inventados a fatos.",
+        "Avaliação reservada cobre domínio não cadastrado, mesmo domínio com regras diferentes, branding em conflito com backlog e proposta ambígua; nenhum enum ou switch de nichos é necessário para processar input novo."
       ],
-      "capability_id": "ahc-001",
+      "capability_id": "ahc-019",
       "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
       "deliverables": [
         "Contract/architecture proposal",
         "Acceptance test plan"
       ],
       "depends_on": [],
-      "id": "task-1-design",
-      "objective": "Define contracts, boundaries and test cases for: Intake canônico e limites de entrada",
+      "id": "task-19-design",
+      "objective": "Define contracts, boundaries and test cases for: Entendimento generalista da proposta e regras de negócio",
       "required_context": [
-        "project.yaml#/backlog/0",
+        "project.yaml#/backlog/18",
         "project.yaml#/constraints",
         "project.yaml#/branding"
       ],
@@ -553,23 +555,23 @@
     },
     {
       "acceptance_criteria": [
-        "Chaves YAML duplicadas, manifesto acima do limite configurado e versões desconhecidas falham com diagnóstico estável.",
-        "UTF-8 e referências locais válidas são aceitas sem executar conteúdo ou acessar a rede.",
-        "Os casos válidos e inválidos são verificados em Linux e Windows."
+        "ProjectUnderstandingSpec preserva input original, fontes, declarações, hipóteses de domínio, público, objetivos, entidades, regras de negócio, conflitos e perguntas pendentes com referências válidas.",
+        "Um adapter de modelo substituível produz propostas estruturadas; fake é restrito a testes, respostas reais são validadas e uma execução controlada com modelo real é demonstrada sem promover hipóteses ou scores inventados a fatos.",
+        "Avaliação reservada cobre domínio não cadastrado, mesmo domínio com regras diferentes, branding em conflito com backlog e proposta ambígua; nenhum enum ou switch de nichos é necessário para processar input novo."
       ],
-      "capability_id": "ahc-001",
+      "capability_id": "ahc-019",
       "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
       "deliverables": [
         "Implementation changes",
         "Automated tests"
       ],
       "depends_on": [
-        "task-1-design"
+        "task-19-design"
       ],
-      "id": "task-1-implement",
-      "objective": "Implement the agreed scope for: Intake canônico e limites de entrada",
+      "id": "task-19-implement",
+      "objective": "Implement the agreed scope for: Entendimento generalista da proposta e regras de negócio",
       "required_context": [
-        "project.yaml#/backlog/0",
+        "project.yaml#/backlog/18",
         "project.yaml#/constraints",
         "project.yaml#/branding"
       ],
@@ -578,23 +580,23 @@
     },
     {
       "acceptance_criteria": [
-        "Chaves YAML duplicadas, manifesto acima do limite configurado e versões desconhecidas falham com diagnóstico estável.",
-        "UTF-8 e referências locais válidas são aceitas sem executar conteúdo ou acessar a rede.",
-        "Os casos válidos e inválidos são verificados em Linux e Windows."
+        "ProjectUnderstandingSpec preserva input original, fontes, declarações, hipóteses de domínio, público, objetivos, entidades, regras de negócio, conflitos e perguntas pendentes com referências válidas.",
+        "Um adapter de modelo substituível produz propostas estruturadas; fake é restrito a testes, respostas reais são validadas e uma execução controlada com modelo real é demonstrada sem promover hipóteses ou scores inventados a fatos.",
+        "Avaliação reservada cobre domínio não cadastrado, mesmo domínio com regras diferentes, branding em conflito com backlog e proposta ambígua; nenhum enum ou switch de nichos é necessário para processar input novo."
       ],
-      "capability_id": "ahc-001",
+      "capability_id": "ahc-019",
       "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
       "deliverables": [
         "Test results linked to each acceptance criterion",
         "Regression results"
       ],
       "depends_on": [
-        "task-1-implement"
+        "task-19-implement"
       ],
-      "id": "task-1-verify",
-      "objective": "Collect acceptance and regression evidence for: Intake canônico e limites de entrada",
+      "id": "task-19-verify",
+      "objective": "Collect acceptance and regression evidence for: Entendimento generalista da proposta e regras de negócio",
       "required_context": [
-        "project.yaml#/backlog/0",
+        "project.yaml#/backlog/18",
         "project.yaml#/constraints",
         "project.yaml#/branding"
       ],
@@ -603,23 +605,23 @@
     },
     {
       "acceptance_criteria": [
-        "Chaves YAML duplicadas, manifesto acima do limite configurado e versões desconhecidas falham com diagnóstico estável.",
-        "UTF-8 e referências locais válidas são aceitas sem executar conteúdo ou acessar a rede.",
-        "Os casos válidos e inválidos são verificados em Linux e Windows."
+        "ProjectUnderstandingSpec preserva input original, fontes, declarações, hipóteses de domínio, público, objetivos, entidades, regras de negócio, conflitos e perguntas pendentes com referências válidas.",
+        "Um adapter de modelo substituível produz propostas estruturadas; fake é restrito a testes, respostas reais são validadas e uma execução controlada com modelo real é demonstrada sem promover hipóteses ou scores inventados a fatos.",
+        "Avaliação reservada cobre domínio não cadastrado, mesmo domínio com regras diferentes, branding em conflito com backlog e proposta ambígua; nenhum enum ou switch de nichos é necessário para processar input novo."
       ],
-      "capability_id": "ahc-001",
+      "capability_id": "ahc-019",
       "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
       "deliverables": [
         "Reviewed pull request",
         "Updated documentation and completion evidence"
       ],
       "depends_on": [
-        "task-1-verify"
+        "task-19-verify"
       ],
-      "id": "task-1-review",
-      "objective": "Review evidence, documentation and integration for: Intake canônico e limites de entrada",
+      "id": "task-19-review",
+      "objective": "Review evidence, documentation and integration for: Entendimento generalista da proposta e regras de negócio",
       "required_context": [
-        "project.yaml#/backlog/0",
+        "project.yaml#/backlog/18",
         "project.yaml#/constraints",
         "project.yaml#/branding"
       ],
@@ -628,23 +630,23 @@
     },
     {
       "acceptance_criteria": [
-        "O contrato representa domínio, arquétipo, dados, risco e origem da classificação.",
-        "Declaração, hipótese e DOMAIN_UNCERTAIN possuem invariantes testadas e não fabricam confiança numérica.",
-        "A mudança de contrato tem política de compatibilidade e exemplo de migração documentados."
+        "HarnessBlueprintSpec mapeia regras e capacidades a necessidades de contexto, skills, ferramentas, workflows, documentação e evals, e alimenta a compilação da baseline atual após revisão; módulos ainda não implementados permanecem gaps explícitos.",
+        "PatternPackSpec versionado define aplicabilidade, evidências, parâmetros, exclusões, conflitos e compatibilidade; o projeto funciona sem pack e novos packs são registrados sem editar o core, com regras específicas do projeto prevalecendo.",
+        "O mesmo domínio com regras diferentes gera planos diferentes; domínio novo sem pack tem baseline válida ou perguntas pendentes, e seleção incompatível, revisão inválida ou regras sem origem são rejeitadas antes de exportar a proposta."
       ],
-      "capability_id": "ahc-002",
+      "capability_id": "ahc-020",
       "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
       "deliverables": [
         "Contract/architecture proposal",
         "Acceptance test plan"
       ],
       "depends_on": [
-        "task-1-review"
+        "task-19-review"
       ],
-      "id": "task-2-design",
-      "objective": "Define contracts, boundaries and test cases for: Perfil multidimensional de domínio",
+      "id": "task-20-design",
+      "objective": "Define contracts, boundaries and test cases for: Plano de harness generalista e packs opcionais",
       "required_context": [
-        "project.yaml#/backlog/1",
+        "project.yaml#/backlog/19",
         "project.yaml#/constraints",
         "project.yaml#/branding"
       ],
@@ -653,23 +655,23 @@
     },
     {
       "acceptance_criteria": [
-        "O contrato representa domínio, arquétipo, dados, risco e origem da classificação.",
-        "Declaração, hipótese e DOMAIN_UNCERTAIN possuem invariantes testadas e não fabricam confiança numérica.",
-        "A mudança de contrato tem política de compatibilidade e exemplo de migração documentados."
+        "HarnessBlueprintSpec mapeia regras e capacidades a necessidades de contexto, skills, ferramentas, workflows, documentação e evals, e alimenta a compilação da baseline atual após revisão; módulos ainda não implementados permanecem gaps explícitos.",
+        "PatternPackSpec versionado define aplicabilidade, evidências, parâmetros, exclusões, conflitos e compatibilidade; o projeto funciona sem pack e novos packs são registrados sem editar o core, com regras específicas do projeto prevalecendo.",
+        "O mesmo domínio com regras diferentes gera planos diferentes; domínio novo sem pack tem baseline válida ou perguntas pendentes, e seleção incompatível, revisão inválida ou regras sem origem são rejeitadas antes de exportar a proposta."
       ],
-      "capability_id": "ahc-002",
+      "capability_id": "ahc-020",
       "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
       "deliverables": [
         "Implementation changes",
         "Automated tests"
       ],
       "depends_on": [
-        "task-2-design"
+        "task-20-design"
       ],
-      "id": "task-2-implement",
-      "objective": "Implement the agreed scope for: Perfil multidimensional de domínio",
+      "id": "task-20-implement",
+      "objective": "Implement the agreed scope for: Plano de harness generalista e packs opcionais",
       "required_context": [
-        "project.yaml#/backlog/1",
+        "project.yaml#/backlog/19",
         "project.yaml#/constraints",
         "project.yaml#/branding"
       ],
@@ -678,23 +680,23 @@
     },
     {
       "acceptance_criteria": [
-        "O contrato representa domínio, arquétipo, dados, risco e origem da classificação.",
-        "Declaração, hipótese e DOMAIN_UNCERTAIN possuem invariantes testadas e não fabricam confiança numérica.",
-        "A mudança de contrato tem política de compatibilidade e exemplo de migração documentados."
+        "HarnessBlueprintSpec mapeia regras e capacidades a necessidades de contexto, skills, ferramentas, workflows, documentação e evals, e alimenta a compilação da baseline atual após revisão; módulos ainda não implementados permanecem gaps explícitos.",
+        "PatternPackSpec versionado define aplicabilidade, evidências, parâmetros, exclusões, conflitos e compatibilidade; o projeto funciona sem pack e novos packs são registrados sem editar o core, com regras específicas do projeto prevalecendo.",
+        "O mesmo domínio com regras diferentes gera planos diferentes; domínio novo sem pack tem baseline válida ou perguntas pendentes, e seleção incompatível, revisão inválida ou regras sem origem são rejeitadas antes de exportar a proposta."
       ],
-      "capability_id": "ahc-002",
+      "capability_id": "ahc-020",
       "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
       "deliverables": [
         "Test results linked to each acceptance criterion",
         "Regression results"
       ],
       "depends_on": [
-        "task-2-implement"
+        "task-20-implement"
       ],
-      "id": "task-2-verify",
-      "objective": "Collect acceptance and regression evidence for: Perfil multidimensional de domínio",
+      "id": "task-20-verify",
+      "objective": "Collect acceptance and regression evidence for: Plano de harness generalista e packs opcionais",
       "required_context": [
-        "project.yaml#/backlog/1",
+        "project.yaml#/backlog/19",
         "project.yaml#/constraints",
         "project.yaml#/branding"
       ],
@@ -703,223 +705,23 @@
     },
     {
       "acceptance_criteria": [
-        "O contrato representa domínio, arquétipo, dados, risco e origem da classificação.",
-        "Declaração, hipótese e DOMAIN_UNCERTAIN possuem invariantes testadas e não fabricam confiança numérica.",
-        "A mudança de contrato tem política de compatibilidade e exemplo de migração documentados."
+        "HarnessBlueprintSpec mapeia regras e capacidades a necessidades de contexto, skills, ferramentas, workflows, documentação e evals, e alimenta a compilação da baseline atual após revisão; módulos ainda não implementados permanecem gaps explícitos.",
+        "PatternPackSpec versionado define aplicabilidade, evidências, parâmetros, exclusões, conflitos e compatibilidade; o projeto funciona sem pack e novos packs são registrados sem editar o core, com regras específicas do projeto prevalecendo.",
+        "O mesmo domínio com regras diferentes gera planos diferentes; domínio novo sem pack tem baseline válida ou perguntas pendentes, e seleção incompatível, revisão inválida ou regras sem origem são rejeitadas antes de exportar a proposta."
       ],
-      "capability_id": "ahc-002",
+      "capability_id": "ahc-020",
       "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
       "deliverables": [
         "Reviewed pull request",
         "Updated documentation and completion evidence"
       ],
       "depends_on": [
-        "task-2-verify"
+        "task-20-verify"
       ],
-      "id": "task-2-review",
-      "objective": "Review evidence, documentation and integration for: Perfil multidimensional de domínio",
+      "id": "task-20-review",
+      "objective": "Review evidence, documentation and integration for: Plano de harness generalista e packs opcionais",
       "required_context": [
-        "project.yaml#/backlog/1",
-        "project.yaml#/constraints",
-        "project.yaml#/branding"
-      ],
-      "stage": "review",
-      "status": "planned"
-    },
-    {
-      "acceptance_criteria": [
-        "Fontes possuem ID, origem, digest opcional, estado de verificação e instante de coleta quando aplicável.",
-        "Referências ausentes, duplicadas ou incompatíveis com a decisão são rejeitadas.",
-        "Declaração de usuário e pesquisa externa são distinguíveis sem disparar pesquisa automática."
-      ],
-      "capability_id": "ahc-003",
-      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
-      "deliverables": [
-        "Contract/architecture proposal",
-        "Acceptance test plan"
-      ],
-      "depends_on": [
-        "task-1-review"
-      ],
-      "id": "task-3-design",
-      "objective": "Define contracts, boundaries and test cases for: Evidence Pack com proveniência",
-      "required_context": [
-        "project.yaml#/backlog/2",
-        "project.yaml#/constraints",
-        "project.yaml#/branding"
-      ],
-      "stage": "design",
-      "status": "planned"
-    },
-    {
-      "acceptance_criteria": [
-        "Fontes possuem ID, origem, digest opcional, estado de verificação e instante de coleta quando aplicável.",
-        "Referências ausentes, duplicadas ou incompatíveis com a decisão são rejeitadas.",
-        "Declaração de usuário e pesquisa externa são distinguíveis sem disparar pesquisa automática."
-      ],
-      "capability_id": "ahc-003",
-      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
-      "deliverables": [
-        "Implementation changes",
-        "Automated tests"
-      ],
-      "depends_on": [
-        "task-3-design"
-      ],
-      "id": "task-3-implement",
-      "objective": "Implement the agreed scope for: Evidence Pack com proveniência",
-      "required_context": [
-        "project.yaml#/backlog/2",
-        "project.yaml#/constraints",
-        "project.yaml#/branding"
-      ],
-      "stage": "implement",
-      "status": "planned"
-    },
-    {
-      "acceptance_criteria": [
-        "Fontes possuem ID, origem, digest opcional, estado de verificação e instante de coleta quando aplicável.",
-        "Referências ausentes, duplicadas ou incompatíveis com a decisão são rejeitadas.",
-        "Declaração de usuário e pesquisa externa são distinguíveis sem disparar pesquisa automática."
-      ],
-      "capability_id": "ahc-003",
-      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
-      "deliverables": [
-        "Test results linked to each acceptance criterion",
-        "Regression results"
-      ],
-      "depends_on": [
-        "task-3-implement"
-      ],
-      "id": "task-3-verify",
-      "objective": "Collect acceptance and regression evidence for: Evidence Pack com proveniência",
-      "required_context": [
-        "project.yaml#/backlog/2",
-        "project.yaml#/constraints",
-        "project.yaml#/branding"
-      ],
-      "stage": "verify",
-      "status": "planned"
-    },
-    {
-      "acceptance_criteria": [
-        "Fontes possuem ID, origem, digest opcional, estado de verificação e instante de coleta quando aplicável.",
-        "Referências ausentes, duplicadas ou incompatíveis com a decisão são rejeitadas.",
-        "Declaração de usuário e pesquisa externa são distinguíveis sem disparar pesquisa automática."
-      ],
-      "capability_id": "ahc-003",
-      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
-      "deliverables": [
-        "Reviewed pull request",
-        "Updated documentation and completion evidence"
-      ],
-      "depends_on": [
-        "task-3-verify"
-      ],
-      "id": "task-3-review",
-      "objective": "Review evidence, documentation and integration for: Evidence Pack com proveniência",
-      "required_context": [
-        "project.yaml#/backlog/2",
-        "project.yaml#/constraints",
-        "project.yaml#/branding"
-      ],
-      "stage": "review",
-      "status": "planned"
-    },
-    {
-      "acceptance_criteria": [
-        "Educação, comércio e ferramentas de desenvolvimento possuem fixtures com critérios rastreáveis.",
-        "Falhas de escrita produzem diagnóstico e não alteram um projeto existente.",
-        "Um benchmark offline registra duração, tamanho e versão sem declarar SLO sem medição."
-      ],
-      "capability_id": "ahc-004",
-      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
-      "deliverables": [
-        "Contract/architecture proposal",
-        "Acceptance test plan"
-      ],
-      "depends_on": [
-        "task-1-review"
-      ],
-      "id": "task-4-design",
-      "objective": "Define contracts, boundaries and test cases for: Confiabilidade e benchmark offline do compilador",
-      "required_context": [
-        "project.yaml#/backlog/3",
-        "project.yaml#/constraints",
-        "project.yaml#/branding"
-      ],
-      "stage": "design",
-      "status": "planned"
-    },
-    {
-      "acceptance_criteria": [
-        "Educação, comércio e ferramentas de desenvolvimento possuem fixtures com critérios rastreáveis.",
-        "Falhas de escrita produzem diagnóstico e não alteram um projeto existente.",
-        "Um benchmark offline registra duração, tamanho e versão sem declarar SLO sem medição."
-      ],
-      "capability_id": "ahc-004",
-      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
-      "deliverables": [
-        "Implementation changes",
-        "Automated tests"
-      ],
-      "depends_on": [
-        "task-4-design"
-      ],
-      "id": "task-4-implement",
-      "objective": "Implement the agreed scope for: Confiabilidade e benchmark offline do compilador",
-      "required_context": [
-        "project.yaml#/backlog/3",
-        "project.yaml#/constraints",
-        "project.yaml#/branding"
-      ],
-      "stage": "implement",
-      "status": "planned"
-    },
-    {
-      "acceptance_criteria": [
-        "Educação, comércio e ferramentas de desenvolvimento possuem fixtures com critérios rastreáveis.",
-        "Falhas de escrita produzem diagnóstico e não alteram um projeto existente.",
-        "Um benchmark offline registra duração, tamanho e versão sem declarar SLO sem medição."
-      ],
-      "capability_id": "ahc-004",
-      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
-      "deliverables": [
-        "Test results linked to each acceptance criterion",
-        "Regression results"
-      ],
-      "depends_on": [
-        "task-4-implement"
-      ],
-      "id": "task-4-verify",
-      "objective": "Collect acceptance and regression evidence for: Confiabilidade e benchmark offline do compilador",
-      "required_context": [
-        "project.yaml#/backlog/3",
-        "project.yaml#/constraints",
-        "project.yaml#/branding"
-      ],
-      "stage": "verify",
-      "status": "planned"
-    },
-    {
-      "acceptance_criteria": [
-        "Educação, comércio e ferramentas de desenvolvimento possuem fixtures com critérios rastreáveis.",
-        "Falhas de escrita produzem diagnóstico e não alteram um projeto existente.",
-        "Um benchmark offline registra duração, tamanho e versão sem declarar SLO sem medição."
-      ],
-      "capability_id": "ahc-004",
-      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
-      "deliverables": [
-        "Reviewed pull request",
-        "Updated documentation and completion evidence"
-      ],
-      "depends_on": [
-        "task-4-verify"
-      ],
-      "id": "task-4-review",
-      "objective": "Review evidence, documentation and integration for: Confiabilidade e benchmark offline do compilador",
-      "required_context": [
-        "project.yaml#/backlog/3",
+        "project.yaml#/backlog/19",
         "project.yaml#/constraints",
         "project.yaml#/branding"
       ],

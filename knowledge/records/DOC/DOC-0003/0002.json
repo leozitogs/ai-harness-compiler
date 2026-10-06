@@ -1,0 +1,56 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:planning",
+  "challenge": null,
+  "consequences": [],
+  "context": "Versão anterior rejeitada explicitamente pelo PO; proposta revisada não aprovada e execução não iniciada.",
+  "created_at": "2026-10-06T21:30:06.913476+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Proposta revisada observada.",
+      "outcome": "observed",
+      "sha256": "daa098ccc7b8d0fddd1af1f6e0513a3b0b44f2094f5fb1c8916f7f8094e677ae",
+      "source": "docs/delivery/sprint-2.md"
+    },
+    {
+      "command": null,
+      "note": "Tarefas revisadas; nenhuma execução declarada.",
+      "outcome": "observed",
+      "sha256": "434719292efcbbcabbef94d6dd599a9a36fe8e8937f7e6ad9fe09851f123b70b",
+      "source": "planning/sprint-2.work-items.json"
+    }
+  ],
+  "id": "DOC-0003",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Previsão de duas histórias, sem prazo prometido ou velocity calculada.",
+    "Não implementa runtime de memória/agentes dos projetos alvo."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0002",
+    "DE-0004"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Sprint 2 replanejada: AHC-019/020, entendimento generalista e blueprint com packs opcionais.",
+  "supersedes": null,
+  "tags": [
+    "scrum",
+    "sprint-2",
+    "planning"
+  ],
+  "title": "Planejamento da Sprint 2",
+  "updated_at": "2026-10-06T21:38:52.785088+00:00"
+}
