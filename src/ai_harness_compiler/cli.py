@@ -1,6 +1,7 @@
 """The public CLI: validate, plan, compile, build and export JSON Schemas."""
 
 import argparse
+import json
 import sys
 from pathlib import Path
 
@@ -12,6 +13,7 @@ from ai_harness_compiler.compiler import compile_harness, json_text
 from ai_harness_compiler.intake import DEFAULT_MAX_MANIFEST_BYTES, load_project
 from ai_harness_compiler.models import CapabilityGraph, HarnessSpec, ProjectDNA, ProjectInput
 from ai_harness_compiler.models.base import Contract
+from ai_harness_compiler.models.evidence import EvidencePack, SourceRecord
 from ai_harness_compiler.models.memory import MemoryRecord, RecordDraft
 from ai_harness_compiler.models.task import TaskGraph
 from ai_harness_compiler.models.team import AgentReport, Persona, TeamConfig
@@ -29,6 +31,8 @@ MODELS: dict[str, type[Contract]] = {
     "agent-persona": Persona,
     "memory-record": MemoryRecord,
     "memory-draft": RecordDraft,
+    "evidence-pack": EvidencePack,
+    "source-record": SourceRecord,
 }
 
 
@@ -65,6 +69,11 @@ def main(argv: list[str] | None = None) -> int:
     )
     compile_command.add_argument("input", type=Path)
     compile_command.add_argument("--output", type=Path, required=True)
+    migration_command = commands.add_parser(
+        "migrate", help="Explicitly migrate baseline IR v1 to v2"
+    )
+    migration_command.add_argument("input", type=Path)
+    migration_command.add_argument("--output", type=Path, required=True, help="New JSON file")
     schema_command = commands.add_parser("schema", help="Print a JSON Schema to stdout")
     schema_command.add_argument("model", choices=MODELS)
     args = parser.parse_args(argv)
@@ -80,8 +89,26 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "schema":
             print(json_text(MODELS[args.model].model_json_schema()), end="")
             return 0
+        if args.command == "migrate":
+            from ai_harness_compiler.migration import migrate_harness_v1
+
+            payload = json.loads(args.input.read_text(encoding="utf-8-sig"))
+            if not isinstance(payload, dict):
+                raise ValueError("Legacy IR must be a mapping")
+            migrated = migrate_harness_v1(payload)
+            content = json_text(migrated.model_dump())
+            with args.output.open("x", encoding="utf-8", newline="\n") as stream:
+                stream.write(content)
+            print(f"Migrated HarnessSpec/v1 to HarnessSpec/v2: {args.output}")
+            return 0
         if args.command == "compile":
-            spec = HarnessSpec.model_validate_json(args.input.read_text(encoding="utf-8-sig"))
+            content = args.input.read_text(encoding="utf-8-sig")
+            if (
+                isinstance(legacy := json.loads(content), dict)
+                and legacy.get("schema_version") == "HarnessSpec/v1"
+            ):
+                raise ValueError("HarnessSpec/v1 requires explicit migration with factory migrate")
+            spec = HarnessSpec.model_validate_json(content)
         else:
             spec = plan(load_project(args.input, max_manifest_bytes=args.max_manifest_bytes))
         if args.command == "validate":

@@ -1,0 +1,51 @@
+{
+  "alternatives": [
+    "Inferir metadados opcionais na IR v1.",
+    "Coletar fontes automaticamente durante o planejamento."
+  ],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:ahc-003",
+  "challenge": null,
+  "consequences": [
+    "IR v1 requer migração explícita.",
+    "Status verified fornecido não autentica reviewer nem prova conteúdo externo."
+  ],
+  "context": "Critérios da AHC-003 e limitações da IR v1. Incremento ainda em revisão por PR.",
+  "created_at": "2026-10-06T07:14:03.376474+00:00",
+  "decision": "Versionar ProjectDNA/HarnessSpec para v2; manter pesquisa fornecida como metadados offline e migrar declarações conhecidas explicitamente.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Decisão e alternativas documentadas.",
+      "outcome": "observed",
+      "sha256": "682c6f360da4a7bdde3b8e3e66e1d5cda8a774f3f19caa3b1ab15c747e6aae75",
+      "source": "docs/adr/0006-evidence-provenance.md"
+    }
+  ],
+  "id": "ADR-0006",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0001"
+  ],
+  "resolution": null,
+  "review_note": "ADR revisada contra contratos e implementação; não declara aprovação do PO ou verdade externa.",
+  "reviewed_by": "codex:implementation-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "EvidencePack separa fontes de afirmações; scopes e digest canônico validam a rastreabilidade estrutural.",
+  "supersedes": null,
+  "tags": [
+    "provenance",
+    "contracts",
+    "migration"
+  ],
+  "title": "Proveniência explícita e IR v2",
+  "updated_at": "2026-10-06T07:14:03.409147+00:00"
+}

@@ -11,9 +11,9 @@ Owner no refinamento. Estimativas são hipóteses de discussão, não compromiss
 
 | ID | Épico / história | Prioridade | Dependências | Situação |
 |---|---|---|---|---|
-| AHC-001 | E1 / Intake canônico e limites | P0 | — | In review — implementação e checks locais |
+| AHC-001 | E1 / Intake canônico e limites | P0 | — | Done — PR #6 integrado com CI verde |
 | AHC-002 | E1 / Perfil multidimensional de domínio | P0 | 001 | Planejada Sprint 1 |
-| AHC-003 | E1 / Evidence Pack com proveniência | P0 | 001 | Planejada Sprint 1 |
+| AHC-003 | E1 / Evidence Pack com proveniência | P0 | 001 | In review — implementação e checks locais |
 | AHC-004 | E1 / Confiabilidade e benchmark offline | P0 | 001 | Planejada Sprint 1 |
 | AHC-005 | E2 / PromptSpec e SkillSpec | P1 | 002, 003 | A refinar |
 | AHC-007 | E3 / Tools e Policy Engine | P1 | 005 | A refinar |

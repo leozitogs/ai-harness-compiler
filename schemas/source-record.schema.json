@@ -1,0 +1,93 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "collected_at": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Collected At"
+    },
+    "id": {
+      "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "location": {
+      "minLength": 1,
+      "title": "Location",
+      "type": "string"
+    },
+    "origin": {
+      "enum": [
+        "user-declaration",
+        "external-research",
+        "compiler-derived"
+      ],
+      "title": "Origin",
+      "type": "string"
+    },
+    "sha256": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Sha256"
+    },
+    "verification_status": {
+      "default": "unverified",
+      "enum": [
+        "unverified",
+        "verified",
+        "rejected"
+      ],
+      "title": "Verification Status",
+      "type": "string"
+    },
+    "verified_at": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Verified At"
+    },
+    "verified_by": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Verified By"
+    }
+  },
+  "required": [
+    "id",
+    "location",
+    "origin"
+  ],
+  "title": "SourceRecord",
+  "type": "object"
+}

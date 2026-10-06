@@ -2,17 +2,29 @@
 
 from ai_harness_compiler.models import CapabilityGraph, HarnessSpec, ProjectDNA, ProjectInput
 from ai_harness_compiler.models.capability import Capability
+from ai_harness_compiler.models.evidence import Evidence, SourceRecord, canonical_project_digest
 from ai_harness_compiler.models.harness import ArchitectureDecision, EvalCase
-from ai_harness_compiler.models.project import DomainProfile, Evidence
+from ai_harness_compiler.models.project import DomainProfile
 
 
 def understand(project: ProjectInput) -> ProjectDNA:
+    project = ProjectInput.model_validate(project.model_dump())
+    sources = [
+        SourceRecord(
+            id="project-manifest",
+            location="project.yaml",
+            origin="user-declaration",
+            sha256=canonical_project_digest(project.model_dump()),
+        )
+    ]
     evidence = [
         Evidence(
             id="project-intent",
+            source_id="project-manifest",
             source="project.yaml#/conception",
             claim=project.conception,
             kind="declared",
+            scope="project",
         )
     ]
     unknowns = [
@@ -24,9 +36,11 @@ def understand(project: ProjectInput) -> ProjectDNA:
         evidence.append(
             Evidence(
                 id="domain-declaration",
+                source_id="project-manifest",
                 source="project.yaml#/domain",
                 claim=project.domain,
                 kind="declared",
+                scope="domain",
             )
         )
         domain = DomainProfile(
@@ -38,24 +52,43 @@ def understand(project: ProjectInput) -> ProjectDNA:
         evidence.append(
             Evidence(
                 id=f"backlog-{index + 1}",
+                source_id="project-manifest",
                 source=f"project.yaml#/backlog/{index}",
                 claim=item.description,
                 kind="declared",
+                scope="capability",
+                capability_id=item.id,
             )
         )
         if item.implementation == "undecided":
             unknowns.append(f"{item.id}: implementation strategy requires evaluation.")
         if item.risk == "unknown":
             unknowns.append(f"{item.id}: risk classification requires review.")
-    return ProjectDNA(project=project, domain=domain, evidence=evidence, unknowns=unknowns)
+    if project.evidence_pack:
+        sources.extend(project.evidence_pack.sources)
+        evidence.extend(project.evidence_pack.evidence)
+    return ProjectDNA(
+        project=project, domain=domain, sources=sources, evidence=evidence, unknowns=unknowns
+    )
 
 
 def build_graph(dna: ProjectDNA) -> CapabilityGraph:
+    dna = ProjectDNA.model_validate(dna.model_dump())
+    sources = {source.id: source for source in dna.sources}
     return CapabilityGraph(
         project_id=dna.project.id,
         capabilities=[
-            Capability(**item.model_dump(), evidence_ids=[f"backlog-{index + 1}"])
-            for index, item in enumerate(dna.project.backlog)
+            Capability(
+                **item.model_dump(),
+                evidence_ids=[
+                    entry.id
+                    for entry in dna.evidence
+                    if entry.scope == "capability"
+                    and entry.capability_id == item.id
+                    and sources[entry.source_id].verification_status != "rejected"
+                ],
+            )
+            for item in dna.project.backlog
         ],
     )
 

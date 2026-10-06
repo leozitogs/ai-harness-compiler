@@ -1,0 +1,57 @@
+{
+  "alternatives": [],
+  "applicability": [
+    "Leitura de artefatos textuais UTF-8 com Path.read_text, especialmente no Windows."
+  ],
+  "attempts": [],
+  "author": "codex:observed-test-run",
+  "challenge": null,
+  "consequences": [],
+  "context": "Aprendizado do roundtrip do Evidence Pack com conteúdo em português.",
+  "created_at": "2026-10-06T07:14:03.513453+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Resultado e limites observados.",
+      "outcome": "observed",
+      "sha256": "d3e1e1ee31d3b828f77fd6ddce94d55d0b51bdae40c1266d791d13d141ffbfae",
+      "source": "docs/delivery/ahc-003-validation.md"
+    },
+    {
+      "command": "pytest -q -p no:cacheprovider --basetemp .factory/evidence-full-3",
+      "note": "Regressão da comparação UTF-8.",
+      "outcome": "passed",
+      "sha256": "86754f410673d5f8dc80228d62d703306a626956b5c1fd7270e2aa2b54c3a656",
+      "source": "tests/test_evidence.py"
+    }
+  ],
+  "id": "LES-0004",
+  "kind": "LES",
+  "lesson": "Artefatos definidos como UTF-8 devem ser lidos com encoding explícito nos adapters e testes.",
+  "limitations": [
+    "Não é auditoria de todos os leitores do projeto.",
+    "Conteúdos com outro encoding exigem contrato próprio."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "INC-0004"
+  ],
+  "resolution": "Leitor do Evidence Pack passou a usar UTF-8; comparação integral e regressões aprovadas.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Fixar encoding na leitura, além da escrita, evita regressão dependente da plataforma.",
+  "supersedes": null,
+  "tags": [
+    "utf8",
+    "portability",
+    "json"
+  ],
+  "title": "Declarar UTF-8 nos leitores de artefatos JSON",
+  "updated_at": "2026-10-06T07:14:03.513453+00:00"
+}

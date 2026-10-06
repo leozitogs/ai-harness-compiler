@@ -30,9 +30,9 @@
   "integration_policy": "One story branch/PR at a time; integrate complete increments with CI evidence.",
   "start_authorization": "PO request: começa a implementar a sprint 1",
   "capability_status": {
-    "ahc-001": "in_review",
+    "ahc-001": "done",
     "ahc-002": "planned",
-    "ahc-003": "planned",
+    "ahc-003": "in_review",
     "ahc-004": "planned"
   }
 }

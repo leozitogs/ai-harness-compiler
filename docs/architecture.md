@@ -80,7 +80,9 @@ CostPolicy, DevelopmentHarness, RuntimeHarness e EvolutionPolicy.
 O Context Engine futuro escolherá fontes sob orçamento com relevância, trust,
 freshness, resolução de conflitos, compressão e proveniência. Memória será separada
 em contexto ativo, trabalho, sessão, projeto, conhecimento e arquivo.
-Um Evidence Pack registrará decisões, razões, alternativas, origem e confiança.
+EvidencePack/v1 já separa fontes e afirmações com origem, digest, revisão declarada
+e escopos na IR v2; pesquisa fornecida permanece offline. Veja ADR-0006.
+Pesquisa automática, freshness e avaliação da substância das evidências seguem planejadas.
 Fonte declarada pelo usuário não equivale a evidência externa verificada.
 
 ## Busca e evolução

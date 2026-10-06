@@ -2,7 +2,7 @@
 
 Planejamento atualizado em **2026-10-06**. Timebox proposto: **dez dias úteis**.
 Execução iniciada em **2026-10-06**, por solicitação explícita do PO.
-AHC-001 está em revisão; AHC-002 a AHC-004 seguem planejadas. A capacidade total
+AHC-001 está integrada; AHC-003 está em revisão e AHC-002/AHC-004 seguem planejadas. A capacidade total
 continua não quantificada; D1 a D10 indicam ordem relativa, sem data final prometida.
 
 **Sprint Goal:** tornar a entrada, o perfil de domínio e as evidências verificáveis,
@@ -129,5 +129,12 @@ Conclusão de histórias continua sujeita à DoD; o início não comprova entreg
 
 Loader limitado e diagnósticos implementados; detalhes e compatibilidade em
 [intake](../engineering/intake.md). Suíte local: 111 testes aprovados em Windows,
-Python 3.13, com lint, formatação e tipagem aprovados. CI e integração por PR são
-gates separados. Não marcar a história Done antes da revisão/integração.
+Python 3.13, com lint, formatação e tipagem aprovados. O PR #6 passou a matriz
+Linux/Windows 3.12/3.13 e foi integrado antes de iniciar a AHC-003.
+
+## Segundo incremento — AHC-003
+
+Cadastro de fontes, afirmações com escopo, digest canônico e migração explícita
+para IR v2 implementados. Ver [Evidence Pack](../engineering/evidence-pack.md)
+e ADR-0006. Suíte local: 145 testes aprovados; critérios e limites em
+[validação AHC-003](ahc-003-validation.md). Revisão/CI/integração são gates separados.
