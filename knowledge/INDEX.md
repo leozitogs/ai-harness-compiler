@@ -14,6 +14,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DE-0003 — Intake limitado e YAML explícito](records/DE/DE-0003/0002.json) · active · revision 2
 - [DOC-0001 — Concepção do AI Harness Compiler](records/DOC/DOC-0001/0004.json) · active · revision 4
 - [DOC-0002 — Planejamento detalhado da Sprint 1](records/DOC/DOC-0002/0004.json) · draft · revision 4
+- [DOC-0003 — Planejamento da Sprint 2](records/DOC/DOC-0003/0001.json) · draft · revision 1
 - [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1
 - [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1
 - [INC-0003 — Payload grande no ID de teste excede variável de ambiente](records/INC/INC-0003/0002.json) · verified · revision 2

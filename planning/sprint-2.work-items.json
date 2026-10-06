@@ -1,0 +1,232 @@
+{
+  "format": "sprint-work-items/v1",
+  "sprint_id": "sprint-2",
+  "status": "planned",
+  "execution_started": false,
+  "work_items": [
+    {
+      "id": "s2-1",
+      "capability_id": "ahc-005",
+      "task_graph_id": "task-5-design",
+      "stage": "design",
+      "title": "PromptSpec/SkillSpec: design",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "analyst",
+        "architect",
+        "security"
+      ],
+      "depends_on": [],
+      "actions": [
+        "Definir contratos/versionamento, registries e vínculo a requisitos/evidências.",
+        "Decidir I/O, ferramentas declaradas e limites de geração."
+      ],
+      "deliverables": [
+        "Contratos e plano de verificação"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-005:1",
+        "ahc-005:2",
+        "ahc-005:3"
+      ]
+    },
+    {
+      "id": "s2-2",
+      "capability_id": "ahc-005",
+      "task_graph_id": "task-5-implement",
+      "stage": "implement",
+      "title": "PromptSpec/SkillSpec: implement",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "engineer",
+        "architect"
+      ],
+      "depends_on": [
+        "s2-1"
+      ],
+      "actions": [
+        "Implementar validação, prompt compiler e skill compiler.",
+        "Gerar metadata, SKILL.md e referências sob demanda nos dois domínios."
+      ],
+      "deliverables": [
+        "Implementação, schemas e documentação"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-005:1",
+        "ahc-005:2",
+        "ahc-005:3"
+      ]
+    },
+    {
+      "id": "s2-3",
+      "capability_id": "ahc-005",
+      "task_graph_id": "task-5-verify",
+      "stage": "verify",
+      "title": "PromptSpec/SkillSpec: verify",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "quality",
+        "security"
+      ],
+      "depends_on": [
+        "s2-2"
+      ],
+      "actions": [
+        "Testar criação/desserialização/compilação, referências inválidas e snapshots.",
+        "Comparar procedimentos de educação/comércio e reprodução dos bytes."
+      ],
+      "deliverables": [
+        "Evidências de critérios/regressões"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-005:1",
+        "ahc-005:2",
+        "ahc-005:3"
+      ]
+    },
+    {
+      "id": "s2-4",
+      "capability_id": "ahc-005",
+      "task_graph_id": "task-5-review",
+      "stage": "review",
+      "title": "PromptSpec/SkillSpec: review",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "delivery",
+        "quality"
+      ],
+      "depends_on": [
+        "s2-3"
+      ],
+      "actions": [
+        "Revisar segurança, compatibilidade/migração e docs; integrar PR com CI verde.",
+        "Demonstrar critérios da AHC-005 sem declarar runtime ou eval de modelo."
+      ],
+      "deliverables": [
+        "PR revisado/integrado e demo"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-005:1",
+        "ahc-005:2",
+        "ahc-005:3"
+      ]
+    },
+    {
+      "id": "s2-5",
+      "capability_id": "ahc-015",
+      "task_graph_id": "task-15-design",
+      "stage": "design",
+      "title": "DocumentationLearningSpec: design",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "analyst",
+        "architect",
+        "security"
+      ],
+      "depends_on": [
+        "s2-4"
+      ],
+      "actions": [
+        "Modelar taxonomia, ownership/revisão/retenção e limites por projeto.",
+        "Mapear regras a DNA/constraints/evidências e incógnitas."
+      ],
+      "deliverables": [
+        "Contratos e plano de verificação"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-015:1",
+        "ahc-015:2",
+        "ahc-015:3"
+      ]
+    },
+    {
+      "id": "s2-6",
+      "capability_id": "ahc-015",
+      "task_graph_id": "task-15-implement",
+      "stage": "implement",
+      "title": "DocumentationLearningSpec: implement",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "engineer",
+        "architect"
+      ],
+      "depends_on": [
+        "s2-5"
+      ],
+      "actions": [
+        "Implementar contrato e exportação da spec para o harness.",
+        "Gerar configurações de educação/comércio sem copiar memória privada."
+      ],
+      "deliverables": [
+        "Implementação, schemas e documentação"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-015:1",
+        "ahc-015:2",
+        "ahc-015:3"
+      ]
+    },
+    {
+      "id": "s2-7",
+      "capability_id": "ahc-015",
+      "task_graph_id": "task-15-verify",
+      "stage": "verify",
+      "title": "DocumentationLearningSpec: verify",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "quality",
+        "security"
+      ],
+      "depends_on": [
+        "s2-6"
+      ],
+      "actions": [
+        "Verificar referências, conflitos, JSON contraditório e isolamento cruzado.",
+        "Testar políticas de promoção por evidência e diferenças de domínio."
+      ],
+      "deliverables": [
+        "Evidências de critérios/regressões"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-015:1",
+        "ahc-015:2",
+        "ahc-015:3"
+      ]
+    },
+    {
+      "id": "s2-8",
+      "capability_id": "ahc-015",
+      "task_graph_id": "task-15-review",
+      "stage": "review",
+      "title": "DocumentationLearningSpec: review",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "delivery",
+        "quality"
+      ],
+      "depends_on": [
+        "s2-7"
+      ],
+      "actions": [
+        "Revisar regras, limites e compatibilidade; integrar PR com CI verde.",
+        "Demonstrar spec funcional como contrato, sem alegar runtime da AHC-016."
+      ],
+      "deliverables": [
+        "PR revisado/integrado e demo"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-015:1",
+        "ahc-015:2",
+        "ahc-015:3"
+      ]
+    }
+  ]
+}

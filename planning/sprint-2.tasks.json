@@ -1,0 +1,667 @@
+{
+  "declared_completed_capabilities": [
+    "ahc-001",
+    "ahc-002",
+    "ahc-003"
+  ],
+  "execution_status": "not-run",
+  "schema_version": "TaskGraph/v1",
+  "selected_capabilities": [
+    "ahc-005",
+    "ahc-015"
+  ],
+  "source_graph": {
+    "capabilities": [
+      {
+        "acceptance_criteria": [
+          "Chaves YAML duplicadas, manifesto acima do limite configurado e versões desconhecidas falham com diagnóstico estável.",
+          "UTF-8 e referências locais válidas são aceitas sem executar conteúdo ou acessar a rede.",
+          "Os casos válidos e inválidos são verificados em Linux e Windows."
+        ],
+        "data_owner": "proprietário do projeto",
+        "depends_on": [],
+        "description": "Como AI engineer, quero carregar definições confiáveis e diagnosticar entradas inválidas antes de planejar o harness.",
+        "evidence_ids": [
+          "backlog-1"
+        ],
+        "id": "ahc-001",
+        "implementation": "deterministic",
+        "inputs": [
+          "project.yaml"
+        ],
+        "outputs": [
+          "ProjectInput validado",
+          "diagnósticos"
+        ],
+        "risk": "medium",
+        "side_effects": [],
+        "title": "Intake canônico e limites de entrada"
+      },
+      {
+        "acceptance_criteria": [
+          "O contrato representa domínio, arquétipo, dados, risco e origem da classificação.",
+          "Declaração, hipótese e DOMAIN_UNCERTAIN possuem invariantes testadas e não fabricam confiança numérica.",
+          "A mudança de contrato tem política de compatibilidade e exemplo de migração documentados."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-001"
+        ],
+        "description": "Como arquiteto, quero distinguir domínio declarado, hipóteses e incógnitas para evitar decisões baseadas em certeza inventada.",
+        "evidence_ids": [
+          "backlog-2"
+        ],
+        "id": "ahc-002",
+        "implementation": "deterministic",
+        "inputs": [],
+        "outputs": [],
+        "risk": "medium",
+        "side_effects": [],
+        "title": "Perfil multidimensional de domínio"
+      },
+      {
+        "acceptance_criteria": [
+          "Fontes possuem ID, origem, digest opcional, estado de verificação e instante de coleta quando aplicável.",
+          "Referências ausentes, duplicadas ou incompatíveis com a decisão são rejeitadas.",
+          "Declaração de usuário e pesquisa externa são distinguíveis sem disparar pesquisa automática."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-001"
+        ],
+        "description": "Como revisor, quero rastrear decisões a fontes e conhecer suas limitações de confiança e atualidade.",
+        "evidence_ids": [
+          "backlog-3"
+        ],
+        "id": "ahc-003",
+        "implementation": "deterministic",
+        "inputs": [],
+        "outputs": [],
+        "risk": "medium",
+        "side_effects": [],
+        "title": "Evidence Pack com proveniência"
+      },
+      {
+        "acceptance_criteria": [
+          "Educação, comércio e ferramentas de desenvolvimento possuem fixtures com critérios rastreáveis.",
+          "Falhas de escrita produzem diagnóstico e não alteram um projeto existente.",
+          "Um benchmark offline registra duração, tamanho e versão sem declarar SLO sem medição."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-001"
+        ],
+        "description": "Como mantenedor, quero demonstrar reprodutibilidade e medir o compilador com fixtures de diferentes domínios.",
+        "evidence_ids": [
+          "backlog-4"
+        ],
+        "id": "ahc-004",
+        "implementation": "deterministic",
+        "inputs": [],
+        "outputs": [],
+        "risk": "medium",
+        "side_effects": [],
+        "title": "Confiabilidade e benchmark offline do compilador"
+      },
+      {
+        "acceptance_criteria": [
+          "Contratos incluem entradas, saídas, versão, restrições, ferramentas e avaliação.",
+          "Duas fixtures de domínios distintos geram procedimentos distintos ligados a requisitos.",
+          "Referências inválidas falham antes da emissão e skills suportam carregamento progressivo."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-002",
+          "ahc-003"
+        ],
+        "description": "Como AI engineer, quero procedimentos e prompts tipados, com ativação, contexto e verificadores explícitos.",
+        "evidence_ids": [
+          "backlog-5"
+        ],
+        "id": "ahc-005",
+        "implementation": "deterministic",
+        "inputs": [],
+        "outputs": [],
+        "risk": "medium",
+        "side_effects": [],
+        "title": "PromptSpec e SkillSpec compiláveis"
+      },
+      {
+        "acceptance_criteria": [
+          "Seleção respeita orçamento e registra fontes selecionadas, omitidas e conflitantes.",
+          "Dados de projetos diferentes não compartilham contexto implicitamente.",
+          "Fixtures medem relevância e comportamento com fontes desatualizadas."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-003",
+          "ahc-005"
+        ],
+        "description": "Como runtime, quero selecionar contexto relevante dentro de um orçamento e informar exclusões e conflitos.",
+        "evidence_ids": [
+          "backlog-6"
+        ],
+        "id": "ahc-006",
+        "implementation": "undecided",
+        "inputs": [],
+        "outputs": [],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Context Engine com orçamento e proveniência"
+      },
+      {
+        "acceptance_criteria": [
+          "ToolSpec define escopo, I/O, efeitos, idempotência e limites de execução.",
+          "Escritas externas sem aprovação falham antes da chamada e geram evento auditável.",
+          "Negação por política é testada sem depender de decisão de modelo."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-005"
+        ],
+        "description": "Como operador, quero validar permissões, budgets e aprovações antes de efeitos colaterais.",
+        "evidence_ids": [
+          "backlog-7"
+        ],
+        "id": "ahc-007",
+        "implementation": "deterministic",
+        "inputs": [],
+        "outputs": [],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Tools e Policy Engine independente"
+      },
+      {
+        "acceptance_criteria": [
+          "Evals distinguem not-run, pass, fail e error com evidências persistidas.",
+          "Sandbox e timeout limitam execução; falhas não são interpretadas como aprovação.",
+          "Gates verificam saída e uso de ferramentas com datasets de teste reservados."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-004",
+          "ahc-005"
+        ],
+        "description": "Como revisor, quero executar tarefas isoladas e avaliar resultado, trajetória e regressões.",
+        "evidence_ids": [
+          "backlog-8"
+        ],
+        "id": "ahc-008",
+        "implementation": "deterministic",
+        "inputs": [],
+        "outputs": [],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Eval runner e Simulation Lab"
+      },
+      {
+        "acceptance_criteria": [
+          "Adapter possui fake offline e contrato testado de timeout, retry e orçamento.",
+          "Saídas do modelo são validadas por schema e política antes de qualquer ação.",
+          "Pesquisa preserva citações e separa fontes verificadas de declarações não verificadas."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-003",
+          "ahc-007"
+        ],
+        "description": "Como projetista, quero usar provedores substituíveis para hipóteses e pesquisa com limites e proveniência.",
+        "evidence_ids": [
+          "backlog-9"
+        ],
+        "id": "ahc-009",
+        "implementation": "llm",
+        "inputs": [],
+        "outputs": [],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Adapter de LLM e pesquisa controlada"
+      },
+      {
+        "acceptance_criteria": [
+          "Workflow retoma após interrupção com idempotência e limites de tentativas.",
+          "Spans e métricas correlacionam projeto, build, versão e etapa sem segredos.",
+          "Cancelamento e expiração de aprovação são exercitados em testes de integração."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-008",
+          "ahc-009"
+        ],
+        "description": "Como operador, quero retomar jobs e aprovações após falhas sem duplicar efeitos.",
+        "evidence_ids": [
+          "backlog-10"
+        ],
+        "id": "ahc-010",
+        "implementation": "deterministic",
+        "inputs": [],
+        "outputs": [],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Execução durável e observabilidade"
+      },
+      {
+        "acceptance_criteria": [
+          "Candidatos executam o mesmo benchmark e incluem baseline sem agentes.",
+          "Busca possui orçamento e condição de parada aplicados pelo control plane.",
+          "Ranking registra evidências e trade-offs e não usa o conjunto de teste para otimização."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-006",
+          "ahc-010"
+        ],
+        "description": "Como arquiteto, quero comparar candidatos sob qualidade, custo, latência e complexidade.",
+        "evidence_ids": [
+          "backlog-11"
+        ],
+        "id": "ahc-011",
+        "implementation": "undecided",
+        "inputs": [],
+        "outputs": [],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Busca e comparação de arquiteturas"
+      },
+      {
+        "acceptance_criteria": [
+          "Dry-run informa arquivos novos, alterados e conflitos sem escrever no alvo.",
+          "Instalação exige gates de avaliação e aprovação e detecta alterações concorrentes.",
+          "Falha parcial tem recuperação testada e rollback preserva conteúdo do usuário."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-004",
+          "ahc-008"
+        ],
+        "description": "Como mantenedor de um projeto, quero adotar um harness após revisar diff e restaurar a versão anterior.",
+        "evidence_ids": [
+          "backlog-12"
+        ],
+        "id": "ahc-012",
+        "implementation": "deterministic",
+        "inputs": [],
+        "outputs": [],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Instalação revisável e rollback"
+      },
+      {
+        "acceptance_criteria": [
+          "Proposta liga falha, evidência, versão anterior e mudança candidata.",
+          "Regressão e aprovação bloqueiam promoção insegura.",
+          "Experiências e skills reutilizadas têm versão, proveniência e isolamento entre projetos."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-010",
+          "ahc-011",
+          "ahc-012",
+          "ahc-018"
+        ],
+        "description": "Como equipe, quero propor melhorias a partir de falhas sem permitir autoalteração irrestrita.",
+        "evidence_ids": [
+          "backlog-13"
+        ],
+        "id": "ahc-013",
+        "implementation": "undecided",
+        "inputs": [],
+        "outputs": [],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Evolução e Experience Store"
+      },
+      {
+        "acceptance_criteria": [
+          "API autentica chamadas, aplica autorização por projeto e idempotência por solicitação.",
+          "Jobs possuem quotas, backpressure, paginação e consulta de estado.",
+          "Teste de carga mede throughput e latência e teste de isolamento impede acesso cruzado."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-010",
+          "ahc-012"
+        ],
+        "description": "Como organização, quero processar múltiplos projetos com limites, isolamento e acompanhamento de jobs.",
+        "evidence_ids": [
+          "backlog-14"
+        ],
+        "id": "ahc-014",
+        "implementation": "deterministic",
+        "inputs": [],
+        "outputs": [],
+        "risk": "high",
+        "side_effects": [],
+        "title": "API e operação multi-projeto"
+      },
+      {
+        "acceptance_criteria": [
+          "A IR versionada define taxonomia DE/DOC/ADR/INC/LES/RUN/EXP, ownership, revisão, retenção, proveniência e escopo do projeto.",
+          "Contexto e política de aprendizado derivam de ProjectDNA e Evidence Pack, com incógnitas explícitas e rastreabilidade de cada regra.",
+          "Fixtures de educação e comércio demonstram configurações diferentes, sem copiar memória privada entre projetos."
+        ],
+        "data_owner": "proprietário do projeto alvo",
+        "depends_on": [
+          "ahc-003",
+          "ahc-005"
+        ],
+        "description": "Como PO de um projeto alvo, quero especificar sua documentação e memória de aprendizado conforme domínio, requisitos e restrições.",
+        "evidence_ids": [
+          "backlog-15"
+        ],
+        "id": "ahc-015",
+        "implementation": "deterministic",
+        "inputs": [
+          "ProjectDNA",
+          "Evidence Pack",
+          "requisitos de documentação e aprendizado"
+        ],
+        "outputs": [
+          "DocumentationLearningSpec validada"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "DocumentationLearningSpec por projeto"
+      },
+      {
+        "acceptance_criteria": [
+          "O build gera contratos, registros iniciais rastreáveis, templates de domínio, índice, CLI/adapters, políticas e instruções para colaboradores e agentes.",
+          "A biblioteca gerada preserva revisões, isolamento, validade das evidências e conflitos de atualização; exemplos fictícios não são promovidos a soluções verificadas.",
+          "Dois projetos recebem bundles distintos e reprodutíveis, com testes da memória e atribuições de componentes incorporados."
+        ],
+        "data_owner": "proprietário do projeto alvo",
+        "depends_on": [
+          "ahc-004",
+          "ahc-015"
+        ],
+        "description": "Como equipe de um projeto alvo, quero receber um sistema funcional de registros, busca e aprendizado integrado ao harness gerado.",
+        "evidence_ids": [
+          "backlog-16"
+        ],
+        "id": "ahc-016",
+        "implementation": "deterministic",
+        "inputs": [
+          "DocumentationLearningSpec",
+          "HarnessSpec"
+        ],
+        "outputs": [
+          "sistema de documentação e memória compilado para o projeto"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Compilador de documentação e memória específicas"
+      },
+      {
+        "acceptance_criteria": [
+          "AgentSpec representa persona, competências, objetivo, fronteiras, I/O, skills, tools/MCP, memória, modelo, orçamento, parada, delegação e responsável humano.",
+          "O runtime compilado executa ferramentas específicas em tarefas do domínio e consulta a memória vigente; prompts genéricos com nomes novos não satisfazem a especialização.",
+          "Fixtures comparam especialistas a uma baseline nas mesmas tarefas e medem resultado, trajetória, uso de ferramentas, custo e latência com datasets reservados.",
+          "O projeto pode receber zero agentes quando código ou workflows atendem aos critérios; adaptações LangGraph/LLM/ML ficam atrás de contratos próprios."
+        ],
+        "data_owner": "proprietário do projeto alvo",
+        "depends_on": [
+          "ahc-005",
+          "ahc-007",
+          "ahc-009",
+          "ahc-015"
+        ],
+        "description": "Como PO de um projeto alvo, quero especialistas aprofundados que conheçam o domínio, usem ferramentas adequadas e respondam a critérios mensuráveis.",
+        "evidence_ids": [
+          "backlog-17"
+        ],
+        "id": "ahc-017",
+        "implementation": "undecided",
+        "inputs": [
+          "ProjectDNA",
+          "CapabilityGraph",
+          "Evidence Pack",
+          "DocumentationLearningSpec"
+        ],
+        "outputs": [
+          "AgentSpec e runtime de especialistas específicos do projeto"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Agent Factory com especialização de domínio"
+      },
+      {
+        "acceptance_criteria": [
+          "Falha relevante pode produzir INC draft com reprodução e origem; diagnóstico, tentativas e solução permanecem separados de hipóteses não verificadas.",
+          "Regressão, evidência, aplicabilidade, limitações e revisão são exigidas para promover LES e recuperar a solução em tarefas futuras.",
+          "Colaboradores via chat e agentes locais/providers compartilham o protocolo, com orçamento de contexto, detecção de evidência alterada e trilha de revisão.",
+          "Transferência de experiências entre projetos exige autorização, anonimização, compatibilidade e revisão; treinamento de modelos ocorre apenas em EXP separado e avaliado."
+        ],
+        "data_owner": "proprietário do projeto alvo",
+        "depends_on": [
+          "ahc-008",
+          "ahc-010",
+          "ahc-016",
+          "ahc-017"
+        ],
+        "description": "Como equipe de um projeto alvo, quero registrar desafios e reutilizar soluções verificadas entre sessões de chat e execuções de agentes.",
+        "evidence_ids": [
+          "backlog-18"
+        ],
+        "id": "ahc-018",
+        "implementation": "undecided",
+        "inputs": [
+          "traces",
+          "falhas",
+          "desafios",
+          "correções propostas",
+          "evidências de regressão"
+        ],
+        "outputs": [
+          "incidentes",
+          "lições verificadas",
+          "procedimentos e propostas de evolução"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Pipeline de aprendizagem por experiências do projeto"
+      }
+    ],
+    "project_id": "ai-harness-compiler",
+    "schema_version": "CapabilityGraph/v1"
+  },
+  "tasks": [
+    {
+      "acceptance_criteria": [
+        "Contratos incluem entradas, saídas, versão, restrições, ferramentas e avaliação.",
+        "Duas fixtures de domínios distintos geram procedimentos distintos ligados a requisitos.",
+        "Referências inválidas falham antes da emissão e skills suportam carregamento progressivo."
+      ],
+      "capability_id": "ahc-005",
+      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
+      "deliverables": [
+        "Contract/architecture proposal",
+        "Acceptance test plan"
+      ],
+      "depends_on": [],
+      "id": "task-5-design",
+      "objective": "Define contracts, boundaries and test cases for: PromptSpec e SkillSpec compiláveis",
+      "required_context": [
+        "project.yaml#/backlog/4",
+        "project.yaml#/constraints",
+        "project.yaml#/branding"
+      ],
+      "stage": "design",
+      "status": "planned"
+    },
+    {
+      "acceptance_criteria": [
+        "Contratos incluem entradas, saídas, versão, restrições, ferramentas e avaliação.",
+        "Duas fixtures de domínios distintos geram procedimentos distintos ligados a requisitos.",
+        "Referências inválidas falham antes da emissão e skills suportam carregamento progressivo."
+      ],
+      "capability_id": "ahc-005",
+      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
+      "deliverables": [
+        "Implementation changes",
+        "Automated tests"
+      ],
+      "depends_on": [
+        "task-5-design"
+      ],
+      "id": "task-5-implement",
+      "objective": "Implement the agreed scope for: PromptSpec e SkillSpec compiláveis",
+      "required_context": [
+        "project.yaml#/backlog/4",
+        "project.yaml#/constraints",
+        "project.yaml#/branding"
+      ],
+      "stage": "implement",
+      "status": "planned"
+    },
+    {
+      "acceptance_criteria": [
+        "Contratos incluem entradas, saídas, versão, restrições, ferramentas e avaliação.",
+        "Duas fixtures de domínios distintos geram procedimentos distintos ligados a requisitos.",
+        "Referências inválidas falham antes da emissão e skills suportam carregamento progressivo."
+      ],
+      "capability_id": "ahc-005",
+      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
+      "deliverables": [
+        "Test results linked to each acceptance criterion",
+        "Regression results"
+      ],
+      "depends_on": [
+        "task-5-implement"
+      ],
+      "id": "task-5-verify",
+      "objective": "Collect acceptance and regression evidence for: PromptSpec e SkillSpec compiláveis",
+      "required_context": [
+        "project.yaml#/backlog/4",
+        "project.yaml#/constraints",
+        "project.yaml#/branding"
+      ],
+      "stage": "verify",
+      "status": "planned"
+    },
+    {
+      "acceptance_criteria": [
+        "Contratos incluem entradas, saídas, versão, restrições, ferramentas e avaliação.",
+        "Duas fixtures de domínios distintos geram procedimentos distintos ligados a requisitos.",
+        "Referências inválidas falham antes da emissão e skills suportam carregamento progressivo."
+      ],
+      "capability_id": "ahc-005",
+      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
+      "deliverables": [
+        "Reviewed pull request",
+        "Updated documentation and completion evidence"
+      ],
+      "depends_on": [
+        "task-5-verify"
+      ],
+      "id": "task-5-review",
+      "objective": "Review evidence, documentation and integration for: PromptSpec e SkillSpec compiláveis",
+      "required_context": [
+        "project.yaml#/backlog/4",
+        "project.yaml#/constraints",
+        "project.yaml#/branding"
+      ],
+      "stage": "review",
+      "status": "planned"
+    },
+    {
+      "acceptance_criteria": [
+        "A IR versionada define taxonomia DE/DOC/ADR/INC/LES/RUN/EXP, ownership, revisão, retenção, proveniência e escopo do projeto.",
+        "Contexto e política de aprendizado derivam de ProjectDNA e Evidence Pack, com incógnitas explícitas e rastreabilidade de cada regra.",
+        "Fixtures de educação e comércio demonstram configurações diferentes, sem copiar memória privada entre projetos."
+      ],
+      "capability_id": "ahc-015",
+      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
+      "deliverables": [
+        "Contract/architecture proposal",
+        "Acceptance test plan"
+      ],
+      "depends_on": [
+        "task-5-review"
+      ],
+      "id": "task-15-design",
+      "objective": "Define contracts, boundaries and test cases for: DocumentationLearningSpec por projeto",
+      "required_context": [
+        "project.yaml#/backlog/14",
+        "project.yaml#/constraints",
+        "project.yaml#/branding"
+      ],
+      "stage": "design",
+      "status": "planned"
+    },
+    {
+      "acceptance_criteria": [
+        "A IR versionada define taxonomia DE/DOC/ADR/INC/LES/RUN/EXP, ownership, revisão, retenção, proveniência e escopo do projeto.",
+        "Contexto e política de aprendizado derivam de ProjectDNA e Evidence Pack, com incógnitas explícitas e rastreabilidade de cada regra.",
+        "Fixtures de educação e comércio demonstram configurações diferentes, sem copiar memória privada entre projetos."
+      ],
+      "capability_id": "ahc-015",
+      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
+      "deliverables": [
+        "Implementation changes",
+        "Automated tests"
+      ],
+      "depends_on": [
+        "task-15-design"
+      ],
+      "id": "task-15-implement",
+      "objective": "Implement the agreed scope for: DocumentationLearningSpec por projeto",
+      "required_context": [
+        "project.yaml#/backlog/14",
+        "project.yaml#/constraints",
+        "project.yaml#/branding"
+      ],
+      "stage": "implement",
+      "status": "planned"
+    },
+    {
+      "acceptance_criteria": [
+        "A IR versionada define taxonomia DE/DOC/ADR/INC/LES/RUN/EXP, ownership, revisão, retenção, proveniência e escopo do projeto.",
+        "Contexto e política de aprendizado derivam de ProjectDNA e Evidence Pack, com incógnitas explícitas e rastreabilidade de cada regra.",
+        "Fixtures de educação e comércio demonstram configurações diferentes, sem copiar memória privada entre projetos."
+      ],
+      "capability_id": "ahc-015",
+      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
+      "deliverables": [
+        "Test results linked to each acceptance criterion",
+        "Regression results"
+      ],
+      "depends_on": [
+        "task-15-implement"
+      ],
+      "id": "task-15-verify",
+      "objective": "Collect acceptance and regression evidence for: DocumentationLearningSpec por projeto",
+      "required_context": [
+        "project.yaml#/backlog/14",
+        "project.yaml#/constraints",
+        "project.yaml#/branding"
+      ],
+      "stage": "verify",
+      "status": "planned"
+    },
+    {
+      "acceptance_criteria": [
+        "A IR versionada define taxonomia DE/DOC/ADR/INC/LES/RUN/EXP, ownership, revisão, retenção, proveniência e escopo do projeto.",
+        "Contexto e política de aprendizado derivam de ProjectDNA e Evidence Pack, com incógnitas explícitas e rastreabilidade de cada regra.",
+        "Fixtures de educação e comércio demonstram configurações diferentes, sem copiar memória privada entre projetos."
+      ],
+      "capability_id": "ahc-015",
+      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
+      "deliverables": [
+        "Reviewed pull request",
+        "Updated documentation and completion evidence"
+      ],
+      "depends_on": [
+        "task-15-verify"
+      ],
+      "id": "task-15-review",
+      "objective": "Review evidence, documentation and integration for: DocumentationLearningSpec por projeto",
+      "required_context": [
+        "project.yaml#/backlog/14",
+        "project.yaml#/constraints",
+        "project.yaml#/branding"
+      ],
+      "stage": "review",
+      "status": "planned"
+    }
+  ]
+}

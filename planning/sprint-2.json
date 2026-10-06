@@ -1,0 +1,21 @@
+{
+  "id": "sprint-2",
+  "status": "planned",
+  "planning_date": "2026-10-06",
+  "goal": "Compilar prompts, skills e uma especificação de documentação/aprendizado rastreáveis e distintos para projetos de educação e comércio.",
+  "duration_working_days": 10,
+  "start_date": null,
+  "capacity_confirmed": false,
+  "execution_started": false,
+  "selected_capabilities": ["ahc-005", "ahc-015"],
+  "declared_completed_capabilities": ["ahc-001", "ahc-002", "ahc-003"],
+  "completion_evidence": {"ahc-001": "PR #6", "ahc-002": "PR #8", "ahc-003": "PR #7"},
+  "entry_gates": ["Integrar PR #9 com correções de proveniência/benchmark e CI verde", "Realizar Sprint Review e Retrospective da Sprint 1", "Confirmar capacidade, início e escopo com PO"],
+  "implementation_owner": "code-collaborator-supported-by-codex",
+  "product_owner": "leozitogs",
+  "estimation_status": "uncalibrated-no-velocity",
+  "forecast_policy": "Two target stories; not a deadline commitment. Renegotiate scope without reducing validation.",
+  "work_items_file": "planning/sprint-2.work-items.json",
+  "integration_policy": "Short-lived story branches; AHC-005 reviewed and integrated before AHC-015 design gate.",
+  "capability_status": {"ahc-005": "planned", "ahc-015": "planned"}
+}

@@ -1,0 +1,55 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:planning",
+  "challenge": null,
+  "consequences": [],
+  "context": "Planejamento solicitado pelo PO em 2026-10-06, sem início ou capacidade confirmados. Exige integração do PR #9 corrigido e Review/Retro da Sprint 1.",
+  "created_at": "2026-10-06T21:30:06.913476+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Artefato de planejamento observado; não comprova implementação ou aprovação do PO.",
+      "outcome": "observed",
+      "sha256": "127aba65936992a95c32f9826450261b5b8819cf673f27899377cbf34231032f",
+      "source": "docs/delivery/sprint-2.md"
+    },
+    {
+      "command": null,
+      "note": "Artefato de planejamento observado; não comprova implementação ou aprovação do PO.",
+      "outcome": "observed",
+      "sha256": "c9665dc5c61d1c450b0e9ee8cf5bc88745d59f59b5bdca9bdf14eed0963afe3b",
+      "source": "planning/sprint-2.work-items.json"
+    }
+  ],
+  "id": "DOC-0003",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Previsão de duas histórias, sem prazo prometido ou velocity calculada.",
+    "Não implementa runtime de memória/agentes dos projetos alvo."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0002"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Prompts/skills e especificação de documentação/aprendizado por domínio; AHC-005 e AHC-015.",
+  "supersedes": null,
+  "tags": [
+    "scrum",
+    "sprint-2",
+    "planning"
+  ],
+  "title": "Planejamento da Sprint 2",
+  "updated_at": "2026-10-06T21:30:06.913476+00:00"
+}

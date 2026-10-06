@@ -28,6 +28,7 @@ jobs:
       - run: uv run python scripts/export_schemas.py --check
       - run: uv run python scripts/generate_repo_agents.py --check
       - run: uv run python scripts/generate_sprint_plan.py --check
+      - run: uv run python scripts/generate_sprint_plan.py --sprint sprint-2 --check
       - run: uv run factory memory check
       - run: uv run factory memory index --check
       - run: uv run factory build examples/project-definition --output output/smoke
