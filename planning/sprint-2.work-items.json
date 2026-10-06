@@ -1,0 +1,277 @@
+{
+  "format": "sprint-work-items/v1",
+  "sprint_id": "sprint-2",
+  "status": "approved",
+  "execution_started": false,
+  "work_items": [
+    {
+      "id": "s2-1",
+      "capability_id": "ahc-019",
+      "task_graph_id": "task-19-design",
+      "stage": "design",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "analyst",
+        "architect",
+        "security"
+      ],
+      "depends_on": [],
+      "actions": [
+        "Modelar entendimento, regras, fontes, conflitos e revisão.",
+        "Definir adapter/provider e conjunto reservado sem catálogo de nichos fixo."
+      ],
+      "deliverables": [
+        "Contratos e plano de verificação"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-019:1",
+        "ahc-019:2",
+        "ahc-019:3"
+      ],
+      "subtask_ids": [
+        "019-01",
+        "019-02",
+        "019-03"
+      ],
+      "evidence_policy": "Deliverables and source criteria verified; generated plan alone is not completion evidence.",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/11"
+    },
+    {
+      "id": "s2-2",
+      "capability_id": "ahc-019",
+      "task_graph_id": "task-19-implement",
+      "stage": "implement",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "engineer",
+        "architect"
+      ],
+      "depends_on": [
+        "s2-1"
+      ],
+      "actions": [
+        "Implementar estudo com adapter real e fake de teste; validar structured outputs.",
+        "Propagar propostas revisáveis preservando input e incertezas."
+      ],
+      "deliverables": [
+        "Implementação e documentação"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-019:1",
+        "ahc-019:2",
+        "ahc-019:3"
+      ],
+      "subtask_ids": [
+        "019-04",
+        "019-05",
+        "019-06"
+      ],
+      "evidence_policy": "Deliverables and source criteria verified; generated plan alone is not completion evidence.",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/11"
+    },
+    {
+      "id": "s2-3",
+      "capability_id": "ahc-019",
+      "task_graph_id": "task-19-verify",
+      "stage": "verify",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "quality",
+        "security"
+      ],
+      "depends_on": [
+        "s2-2"
+      ],
+      "actions": [
+        "Verificar referências, snapshots, perguntas e casos ambíguos/contraditórios.",
+        "Demonstrar execução com modelo real e avaliar domínio novo e mesmas categorias com regras distintas."
+      ],
+      "deliverables": [
+        "Evidências estruturais e semânticas"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-019:1",
+        "ahc-019:2",
+        "ahc-019:3"
+      ],
+      "subtask_ids": [
+        "019-07",
+        "019-08",
+        "019-09"
+      ],
+      "evidence_policy": "Deliverables and source criteria verified; generated plan alone is not completion evidence.",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/11"
+    },
+    {
+      "id": "s2-4",
+      "capability_id": "ahc-019",
+      "task_graph_id": "task-19-review",
+      "stage": "review",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "delivery",
+        "quality"
+      ],
+      "depends_on": [
+        "s2-3"
+      ],
+      "actions": [
+        "Revisar qualidade, limites, compatibilidade e CI; integrar AHC-019.",
+        "Demonstrar entendimento sem classificador fixo ou certeza inventada."
+      ],
+      "deliverables": [
+        "PR revisado/integrado e demo"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-019:1",
+        "ahc-019:2",
+        "ahc-019:3"
+      ],
+      "subtask_ids": [
+        "019-10",
+        "019-11"
+      ],
+      "evidence_policy": "Deliverables and source criteria verified; generated plan alone is not completion evidence.",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/11"
+    },
+    {
+      "id": "s2-5",
+      "capability_id": "ahc-020",
+      "task_graph_id": "task-20-design",
+      "stage": "design",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "analyst",
+        "architect",
+        "security"
+      ],
+      "depends_on": [
+        "s2-4"
+      ],
+      "actions": [
+        "Definir HarnessBlueprintSpec e PatternPackSpec, aplicabilidade e conflitos.",
+        "Mapear capacidades/regras às necessidades do harness e gaps."
+      ],
+      "deliverables": [
+        "Contratos e plano de verificação"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-020:1",
+        "ahc-020:2",
+        "ahc-020:3"
+      ],
+      "subtask_ids": [
+        "020-01",
+        "020-02"
+      ],
+      "evidence_policy": "Deliverables and source criteria verified; generated plan alone is not completion evidence.",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/12"
+    },
+    {
+      "id": "s2-6",
+      "capability_id": "ahc-020",
+      "task_graph_id": "task-20-implement",
+      "stage": "implement",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "engineer",
+        "architect"
+      ],
+      "depends_on": [
+        "s2-5"
+      ],
+      "actions": [
+        "Implementar planejamento, registro e seleção opcional de packs.",
+        "Integrar baseline após revisão, com origem de decisões e regras prevalecentes."
+      ],
+      "deliverables": [
+        "Implementação e documentação"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-020:1",
+        "ahc-020:2",
+        "ahc-020:3"
+      ],
+      "subtask_ids": [
+        "020-03",
+        "020-04",
+        "020-05"
+      ],
+      "evidence_policy": "Deliverables and source criteria verified; generated plan alone is not completion evidence.",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/12"
+    },
+    {
+      "id": "s2-7",
+      "capability_id": "ahc-020",
+      "task_graph_id": "task-20-verify",
+      "stage": "verify",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "quality",
+        "security"
+      ],
+      "depends_on": [
+        "s2-6"
+      ],
+      "actions": [
+        "Testar caminho sem pack, pack incompatível e novo pack sem editar core.",
+        "Comparar regras diferentes no mesmo domínio; verificar isolamento, revisão e snapshots."
+      ],
+      "deliverables": [
+        "Evidências estruturais e semânticas"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-020:1",
+        "ahc-020:2",
+        "ahc-020:3"
+      ],
+      "subtask_ids": [
+        "020-06",
+        "020-07",
+        "020-08"
+      ],
+      "evidence_policy": "Deliverables and source criteria verified; generated plan alone is not completion evidence.",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/12"
+    },
+    {
+      "id": "s2-8",
+      "capability_id": "ahc-020",
+      "task_graph_id": "task-20-review",
+      "stage": "review",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "delivery",
+        "quality"
+      ],
+      "depends_on": [
+        "s2-7"
+      ],
+      "actions": [
+        "Revisar blueprint e baseline, evidências e CI; integrar AHC-020.",
+        "Apresentar limites e próximos compiladores na Review."
+      ],
+      "deliverables": [
+        "PR revisado/integrado e demo"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-020:1",
+        "ahc-020:2",
+        "ahc-020:3"
+      ],
+      "subtask_ids": [
+        "020-09",
+        "020-10"
+      ],
+      "evidence_policy": "Deliverables and source criteria verified; generated plan alone is not completion evidence.",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/12"
+    }
+  ]
+}

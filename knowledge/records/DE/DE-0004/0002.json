@@ -1,0 +1,52 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:po-replanning",
+  "challenge": null,
+  "consequences": [
+    "Fixtures não definem cobertura de nichos do produto.",
+    "Fake não comprova estudo semântico; exigir demonstração com modelo real e revisão.",
+    "Planos ainda não aprovados não iniciam execução."
+  ],
+  "context": "PO rejeitou em 2026-10-06 a proposta de Sprint 2 centrada em educação/comércio. Direção de produto confirmada; plano refeito ainda aguarda aprovação.",
+  "created_at": "2026-10-06T21:38:52.729684+00:00",
+  "decision": "Priorizar AHC-019 (entendimento de proposta/branding/regras) e AHC-020 (blueprint/packs), antes de síntese de prompts/skills e documentação. Core não possui lista fixa de nichos.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Direção explicitamente solicitada pelo PO.",
+      "outcome": "observed",
+      "sha256": "24d36fc2249c493b11b6c0d94cc160d64d242a2a68347529dbc1db26a74ec0da",
+      "source": "docs/product/generalist-pipeline.md"
+    },
+    {
+      "command": null,
+      "note": "Nova proposta, sem aprovação/início.",
+      "outcome": "observed",
+      "sha256": "daa098ccc7b8d0fddd1af1f6e0513a3b0b44f2094f5fb1c8916f7f8094e677ae",
+      "source": "docs/delivery/sprint-2.md"
+    }
+  ],
+  "id": "DE-0004",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0002"
+  ],
+  "resolution": null,
+  "review_note": "Direção generalista expressa pelo PO; não confere aprovação à nova seleção da sprint.",
+  "reviewed_by": "po-request:leozitogs",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Nicho e regras derivam do estudo de cada projeto; packs são opcionais e extensíveis.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Compilador generalista antes da especialização",
+  "updated_at": "2026-10-06T21:38:52.752195+00:00"
+}
