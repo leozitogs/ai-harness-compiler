@@ -2,6 +2,9 @@
 
 ## 0.1.0 — Unreleased
 
+- AHC-002: DomainProfile/v1 multidimensional, declarações/hipóteses/incerteza e confidence null.
+- ProjectDNA/v3 e HarnessSpec/v3; migração explícita de baselines v1/v2 sem scores inventados.
+
 - AHC-003: EvidencePack/v1, fontes, verificação declarada, digest canônico e referências com escopo.
 - ProjectDNA/v2 e HarnessSpec/v2 com migração explícita de IR v1 e exportação do Evidence Pack.
 

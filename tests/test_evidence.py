@@ -199,8 +199,8 @@ def test_explicit_migration_preserves_legacy_claims_and_protects_files(tmp_path,
     original = copy.deepcopy(payload)
     migrated = migrate_harness_v1(payload)
     assert payload == original
-    assert migrated.schema_version == "HarnessSpec/v2"
-    assert migrated.project_dna.schema_version == "ProjectDNA/v2"
+    assert migrated.schema_version == "HarnessSpec/v3"
+    assert migrated.project_dna.schema_version == "ProjectDNA/v3"
     for entry, old in zip(
         migrated.project_dna.evidence, payload["project_dna"]["evidence"], strict=True
     ):

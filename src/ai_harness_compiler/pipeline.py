@@ -2,9 +2,9 @@
 
 from ai_harness_compiler.models import CapabilityGraph, HarnessSpec, ProjectDNA, ProjectInput
 from ai_harness_compiler.models.capability import Capability
+from ai_harness_compiler.models.domain import DomainProfile
 from ai_harness_compiler.models.evidence import Evidence, SourceRecord, canonical_project_digest
 from ai_harness_compiler.models.harness import ArchitectureDecision, EvalCase
-from ai_harness_compiler.models.project import DomainProfile
 
 
 def understand(project: ProjectInput) -> ProjectDNA:
@@ -31,7 +31,7 @@ def understand(project: ProjectInput) -> ProjectDNA:
         "Architecture has not been researched or benchmarked.",
         "Product acceptance criteria have not been executed.",
     ]
-    domain = DomainProfile(status="DOMAIN_UNCERTAIN")
+    domain = DomainProfile(status="DOMAIN_UNCERTAIN", origin="unknown")
     if project.domain:
         evidence.append(
             Evidence(
@@ -44,10 +44,32 @@ def understand(project: ProjectInput) -> ProjectDNA:
             )
         )
         domain = DomainProfile(
-            primary=project.domain, status="declared", evidence_ids=["domain-declaration"]
+            primary=project.domain,
+            status="declared",
+            origin="user-declaration",
+            evidence_ids=["domain-declaration"],
         )
     else:
         unknowns.append("DOMAIN_UNCERTAIN: no domain was declared; inference is not implemented.")
+    if project.domain_profile:
+        domain = project.domain_profile.model_copy(deep=True)
+        evidence.append(
+            Evidence(
+                id="domain-profile",
+                source_id="project-manifest",
+                source="project.yaml#/domain_profile",
+                claim=domain.model_dump_json(),
+                kind="declared",
+                scope="domain",
+            )
+        )
+        unknowns = [item for item in unknowns if not item.startswith("DOMAIN_UNCERTAIN:")]
+        if domain.status == "DOMAIN_UNCERTAIN":
+            unknowns.append("DOMAIN_UNCERTAIN: supplied profile does not select a primary domain.")
+        if domain.status == "hypothesis" or domain.hypotheses:
+            unknowns.append(
+                "Domain hypotheses were supplied and have not been independently evaluated."
+            )
     for index, item in enumerate(project.backlog):
         evidence.append(
             Evidence(

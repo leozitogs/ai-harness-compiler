@@ -2,7 +2,7 @@
 
 Planejamento atualizado em **2026-10-06**. Timebox proposto: **dez dias úteis**.
 Execução iniciada em **2026-10-06**, por solicitação explícita do PO.
-AHC-001 está integrada; AHC-003 está em revisão e AHC-002/AHC-004 seguem planejadas. A capacidade total
+AHC-001/AHC-003 estão integradas; AHC-002 está em revisão e AHC-004 segue planejada. A capacidade total
 continua não quantificada; D1 a D10 indicam ordem relativa, sem data final prometida.
 
 **Sprint Goal:** tornar a entrada, o perfil de domínio e as evidências verificáveis,
@@ -137,4 +137,11 @@ Linux/Windows 3.12/3.13 e foi integrado antes de iniciar a AHC-003.
 Cadastro de fontes, afirmações com escopo, digest canônico e migração explícita
 para IR v2 implementados. Ver [Evidence Pack](../engineering/evidence-pack.md)
 e ADR-0006. Suíte local: 145 testes aprovados; critérios e limites em
-[validação AHC-003](ahc-003-validation.md). Revisão/CI/integração são gates separados.
+[validação AHC-003](ahc-003-validation.md). PR #7 passou CI e foi integrado.
+
+## Terceiro incremento — AHC-002
+
+Perfil multidimensional, hipóteses fornecidas, incerteza e origem tipados, sem
+scores inventados. A IR v3 inclui migração explícita de v1/v2. Suíte local: 173
+testes aprovados; ver [contrato](../engineering/domain-profile.md) e
+[validação AHC-002](ahc-002-validation.md). A história aguarda revisão/CI/integração.

@@ -38,7 +38,7 @@ class ArchitectureDecision(Contract):
 
 
 class HarnessSpec(Contract):
-    schema_version: Literal["HarnessSpec/v2"] = "HarnessSpec/v2"
+    schema_version: Literal["HarnessSpec/v3"] = "HarnessSpec/v3"
     profile: Literal["development-baseline"] = "development-baseline"
     project_dna: ProjectDNA
     capability_graph: CapabilityGraph

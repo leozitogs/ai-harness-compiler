@@ -5,6 +5,7 @@ from typing import Literal, Self
 from pydantic import Field, model_validator
 
 from ai_harness_compiler.models.base import Contract, Identifier, Text
+from ai_harness_compiler.models.domain import DomainProfile
 from ai_harness_compiler.models.evidence import (
     Evidence,
     EvidencePack,
@@ -57,6 +58,7 @@ class ProjectInput(Contract):
     constraints: Constraints = Field(default_factory=Constraints)
     assets: list[Asset] = Field(default_factory=list)
     evidence_pack: EvidencePack | None = None
+    domain_profile: DomainProfile | None = None
 
     @model_validator(mode="after")
     def unique_backlog_ids(self) -> Self:
@@ -67,18 +69,17 @@ class ProjectInput(Contract):
             for item in self.evidence_pack.evidence:
                 if item.capability_id and item.capability_id not in ids:
                     raise ValueError("Evidence capability must exist in the backlog")
+        if self.domain and self.domain_profile:
+            if (
+                self.domain_profile.status != "declared"
+                or self.domain_profile.primary != self.domain
+            ):
+                raise ValueError("Legacy domain and supplied profile must agree as declarations")
         return self
 
 
-class DomainProfile(Contract):
-    primary: Text | None = None
-    status: Literal["declared", "DOMAIN_UNCERTAIN"]
-    confidence: float | None = Field(default=None, ge=0, le=1, allow_inf_nan=False)
-    evidence_ids: list[Identifier] = Field(default_factory=list)
-
-
 class ProjectDNA(EvidenceRegistry):
-    schema_version: Literal["ProjectDNA/v2"] = "ProjectDNA/v2"
+    schema_version: Literal["ProjectDNA/v3"] = "ProjectDNA/v3"
     project: ProjectInput
     domain: DomainProfile
     evidence: list[Evidence] = Field(min_length=1)
@@ -119,6 +120,28 @@ class ProjectDNA(EvidenceRegistry):
                 "domain",
                 None,
             )
+        if self.project.domain_profile:
+            declared["domain-profile"] = (
+                "project.yaml#/domain_profile",
+                self.project.domain_profile.model_dump_json(),
+                "domain",
+                None,
+            )
+            if self.domain != self.project.domain_profile:
+                raise ValueError("Canonical profile must preserve the supplied domain profile")
+        elif self.project.domain:
+            expected_profile = DomainProfile(
+                primary=self.project.domain,
+                status="declared",
+                origin="user-declaration",
+                evidence_ids=["domain-declaration"],
+            )
+            if self.domain.model_dump(exclude={"evidence_ids"}) != expected_profile.model_dump(
+                exclude={"evidence_ids"}
+            ):
+                raise ValueError("Legacy declaration cannot imply additional classifications")
+        elif self.domain != DomainProfile(status="DOMAIN_UNCERTAIN", origin="unknown"):
+            raise ValueError("No supplied classification must remain DOMAIN_UNCERTAIN")
         for identifier, expected in declared.items():
             entry = evidence.get(identifier)
             if entry is None or (
@@ -134,15 +157,19 @@ class ProjectDNA(EvidenceRegistry):
         for item in self.evidence:
             if item.capability_id and item.capability_id not in ids:
                 raise ValueError("Evidence capability must exist in the project")
-        references = self.domain.evidence_ids
+        references = list(self.domain.evidence_ids)
+        for hypothesis in self.domain.hypotheses:
+            references.extend(hypothesis.evidence_ids)
         if self.domain.status == "declared" and not references:
             raise ValueError("Declared domain requires evidence")
-        if len(references) != len(set(references)):
-            raise ValueError("Duplicate domain evidence references")
         for reference in references:
             if reference not in evidence or evidence[reference].scope != "domain":
                 raise ValueError("Domain evidence reference is missing or incompatible")
-            if self.domain.status == "declared" and evidence[reference].kind != "declared":
+            if (
+                reference in self.domain.evidence_ids
+                and self.domain.status == "declared"
+                and evidence[reference].kind != "declared"
+            ):
                 raise ValueError("Declared domain requires declared evidence")
             source = source_records[evidence[reference].source_id]
             if source.verification_status == "rejected":

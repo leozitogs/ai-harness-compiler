@@ -1,0 +1,55 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:planning",
+  "challenge": null,
+  "consequences": [],
+  "context": "Sprint iniciada por pedido do PO. AHC-001/003 integradas via PRs #6/#7; AHC-002 em revisão; AHC-004 planejada. Capacidade total não quantificada; não declara aceite de produto.",
+  "created_at": "2026-10-06T06:34:47.287117+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Acompanhamento atualizado.",
+      "outcome": "observed",
+      "sha256": "83358585fb6ad562a50db5a49d11b2b7d177c846f958f67b5b934250ec7bcc0b",
+      "source": "docs/delivery/sprint-1.md"
+    },
+    {
+      "command": null,
+      "note": "Estados e evidências por etapa.",
+      "outcome": "observed",
+      "sha256": "d3688ccae411ebae0385a5eed7473792aa787b255d06cabda5e26c9c27c55649",
+      "source": "planning/sprint-1.work-items.json"
+    }
+  ],
+  "id": "DOC-0002",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Sem velocity histórica ou capacidade confirmada.",
+    "Nenhum critério novo de implementação foi declarado concluído."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0002"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 4,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Quatro histórias, dez dias úteis propostos, tarefas, dependências, responsáveis e roteiro de Review.",
+  "supersedes": null,
+  "tags": [
+    "scrum",
+    "sprint-1",
+    "planning"
+  ],
+  "title": "Planejamento detalhado da Sprint 1",
+  "updated_at": "2026-10-06T14:48:12.668930+00:00"
+}

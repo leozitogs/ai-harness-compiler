@@ -3,7 +3,25 @@
 from typing import Any
 
 from ai_harness_compiler.models import HarnessSpec, ProjectInput
+from ai_harness_compiler.models.domain import DomainProfile
+from ai_harness_compiler.models.evidence import canonical_project_digest
 from ai_harness_compiler.pipeline import plan
+
+
+def migrate_domain(payload: Any) -> DomainProfile:
+    if not isinstance(payload, dict) or set(payload) - {
+        "primary",
+        "status",
+        "confidence",
+        "evidence_ids",
+    }:
+        raise ValueError("Legacy domain profile has unsupported fields")
+    if payload.get("confidence") is not None:
+        raise ValueError("Legacy numeric confidence has no evaluation provenance; migrate manually")
+    origins = {"declared": "user-declaration", "DOMAIN_UNCERTAIN": "unknown"}
+    if not isinstance(payload.get("status"), str) or payload["status"] not in origins:
+        raise ValueError("Unsupported legacy classification status")
+    return DomainProfile.model_validate({**payload, "origin": origins[payload["status"]]})
 
 
 def migrate_harness_v1(payload: dict[str, Any]) -> HarnessSpec:
@@ -34,10 +52,11 @@ def migrate_harness_v1(payload: dict[str, Any]) -> HarnessSpec:
             raise ValueError("Legacy evidence differs from its declared project source")
         migrated.append(entry.model_dump())
     result = dict(payload)
-    result["schema_version"] = "HarnessSpec/v2"
+    result["schema_version"] = "HarnessSpec/v3"
     result["project_dna"] = {
         **dna,
-        "schema_version": "ProjectDNA/v2",
+        "schema_version": "ProjectDNA/v3",
+        "domain": migrate_domain(dna.get("domain")).model_dump(),
         "project": project.model_dump(),
         "sources": [item.model_dump() for item in expected.sources],
         "evidence": migrated,
@@ -63,3 +82,53 @@ def migrate_harness_v1(payload: dict[str, Any]) -> HarnessSpec:
         for item in decisions
     ]
     return HarnessSpec.model_validate(result)
+
+
+def migrate_harness_v2(payload: dict[str, Any]) -> HarnessSpec:
+    dna = payload.get("project_dna")
+    if (
+        payload.get("schema_version") != "HarnessSpec/v2"
+        or not isinstance(dna, dict)
+        or dna.get("schema_version") != "ProjectDNA/v2"
+    ):
+        raise ValueError("Migration requires HarnessSpec/v2 and ProjectDNA/v2")
+    project = ProjectInput.model_validate(dna.get("project"))
+    if project.domain_profile is not None:
+        raise ValueError("Legacy IR cannot contain a multidimensional profile")
+    sources = dna.get("sources")
+    if not isinstance(sources, list) or not all(isinstance(item, dict) for item in sources):
+        raise ValueError("Legacy sources must be mappings")
+    old_digest = canonical_project_digest(project.model_dump(exclude={"domain_profile"}))
+    new_digest = canonical_project_digest(project.model_dump())
+    updated_sources = []
+    for source in sources:
+        updated = dict(source)
+        if source.get("id") == "project-manifest":
+            if source.get("sha256") != old_digest:
+                raise ValueError("Legacy canonical digest does not match project input")
+            if source.get("verification_status", "unverified") != "unverified":
+                raise ValueError(
+                    "Reviewed canonical source requires manual migration and re-review"
+                )
+            updated["sha256"] = new_digest
+        updated_sources.append(updated)
+    result = {
+        **payload,
+        "schema_version": "HarnessSpec/v3",
+        "project_dna": {
+            **dna,
+            "schema_version": "ProjectDNA/v3",
+            "project": project.model_dump(),
+            "domain": migrate_domain(dna.get("domain")).model_dump(),
+            "sources": updated_sources,
+        },
+    }
+    return HarnessSpec.model_validate(result)
+
+
+def migrate_harness(payload: dict[str, Any]) -> HarnessSpec:
+    if payload.get("schema_version") == "HarnessSpec/v1":
+        return migrate_harness_v1(payload)
+    if payload.get("schema_version") == "HarnessSpec/v2":
+        return migrate_harness_v2(payload)
+    raise ValueError("Migration requires HarnessSpec/v1 or HarnessSpec/v2")
