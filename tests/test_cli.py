@@ -11,7 +11,7 @@ EXAMPLE = Path(__file__).resolve().parents[1] / "examples/project-definition"
 def test_plan_can_be_compiled_independently(tmp_path, capsys):
     assert main(["plan", str(EXAMPLE)]) == 0
     payload = capsys.readouterr().out
-    assert json.loads(payload)["schema_version"] == "HarnessSpec/v2"
+    assert json.loads(payload)["schema_version"] == "HarnessSpec/v3"
     ir = tmp_path / "harness.json"
     ir.write_text(payload, encoding="utf-8")
     output = tmp_path / "generated"

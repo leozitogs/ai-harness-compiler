@@ -146,7 +146,7 @@
       "task_graph_id": "task-2-design",
       "stage": "design",
       "title": "Perfil de domínio: design",
-      "status": "planned",
+      "status": "in_review",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "analyst",
@@ -167,6 +167,12 @@
         "ahc-002:1",
         "ahc-002:2",
         "ahc-002:3"
+      ],
+      "progress_note": "DomainProfile/v1, multidimensional states and migration to IR v3 implemented; 173 local tests passed. PR/CI/integration pending.",
+      "evidence_sources": [
+        "docs/delivery/ahc-002-validation.md",
+        "tests/test_domain.py",
+        "docs/adr/0007-domain-profile.md"
       ]
     },
     {
@@ -175,7 +181,7 @@
       "task_graph_id": "task-2-implement",
       "stage": "implement",
       "title": "Perfil de domínio: implement",
-      "status": "planned",
+      "status": "in_review",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "engineer",
@@ -196,6 +202,12 @@
         "ahc-002:1",
         "ahc-002:2",
         "ahc-002:3"
+      ],
+      "progress_note": "DomainProfile/v1, multidimensional states and migration to IR v3 implemented; 173 local tests passed. PR/CI/integration pending.",
+      "evidence_sources": [
+        "docs/delivery/ahc-002-validation.md",
+        "tests/test_domain.py",
+        "docs/adr/0007-domain-profile.md"
       ]
     },
     {
@@ -204,7 +216,7 @@
       "task_graph_id": "task-2-verify",
       "stage": "verify",
       "title": "Perfil de domínio: verify",
-      "status": "planned",
+      "status": "in_review",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "quality",
@@ -225,6 +237,12 @@
         "ahc-002:1",
         "ahc-002:2",
         "ahc-002:3"
+      ],
+      "progress_note": "DomainProfile/v1, multidimensional states and migration to IR v3 implemented; 173 local tests passed. PR/CI/integration pending.",
+      "evidence_sources": [
+        "docs/delivery/ahc-002-validation.md",
+        "tests/test_domain.py",
+        "docs/adr/0007-domain-profile.md"
       ]
     },
     {
@@ -233,7 +251,7 @@
       "task_graph_id": "task-2-review",
       "stage": "review",
       "title": "Perfil de domínio: review",
-      "status": "planned",
+      "status": "in_review",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "delivery",
@@ -253,6 +271,12 @@
         "ahc-002:1",
         "ahc-002:2",
         "ahc-002:3"
+      ],
+      "progress_note": "DomainProfile/v1, multidimensional states and migration to IR v3 implemented; 173 local tests passed. PR/CI/integration pending.",
+      "evidence_sources": [
+        "docs/delivery/ahc-002-validation.md",
+        "tests/test_domain.py",
+        "docs/adr/0007-domain-profile.md"
       ]
     },
     {
@@ -261,7 +285,7 @@
       "task_graph_id": "task-3-design",
       "stage": "design",
       "title": "Evidence Pack: design",
-      "status": "in_review",
+      "status": "done",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "analyst",
@@ -283,12 +307,13 @@
         "ahc-003:2",
         "ahc-003:3"
       ],
-      "progress_note": "Sources, scoped evidence, IR v2 and migration implemented; 145 local tests passed. PR/CI/integration pending.",
+      "progress_note": "PR #7 passed Linux/Windows 3.12/3.13 CI and was integrated before AHC-002.",
       "evidence_sources": [
         "docs/delivery/ahc-003-validation.md",
         "tests/test_evidence.py",
         "docs/adr/0006-evidence-provenance.md"
-      ]
+      ],
+      "pull_request": "https://github.com/leozitogs/ai-harness-compiler/pull/7"
     },
     {
       "id": "s1-10",
@@ -296,7 +321,7 @@
       "task_graph_id": "task-3-implement",
       "stage": "implement",
       "title": "Evidence Pack: implement",
-      "status": "in_review",
+      "status": "done",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "engineer",
@@ -317,12 +342,13 @@
         "ahc-003:2",
         "ahc-003:3"
       ],
-      "progress_note": "Sources, scoped evidence, IR v2 and migration implemented; 145 local tests passed. PR/CI/integration pending.",
+      "progress_note": "PR #7 passed Linux/Windows 3.12/3.13 CI and was integrated before AHC-002.",
       "evidence_sources": [
         "docs/delivery/ahc-003-validation.md",
         "tests/test_evidence.py",
         "docs/adr/0006-evidence-provenance.md"
-      ]
+      ],
+      "pull_request": "https://github.com/leozitogs/ai-harness-compiler/pull/7"
     },
     {
       "id": "s1-11",
@@ -330,7 +356,7 @@
       "task_graph_id": "task-3-verify",
       "stage": "verify",
       "title": "Evidence Pack: verify",
-      "status": "in_review",
+      "status": "done",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "quality",
@@ -351,12 +377,13 @@
         "ahc-003:2",
         "ahc-003:3"
       ],
-      "progress_note": "Sources, scoped evidence, IR v2 and migration implemented; 145 local tests passed. PR/CI/integration pending.",
+      "progress_note": "PR #7 passed Linux/Windows 3.12/3.13 CI and was integrated before AHC-002.",
       "evidence_sources": [
         "docs/delivery/ahc-003-validation.md",
         "tests/test_evidence.py",
         "docs/adr/0006-evidence-provenance.md"
-      ]
+      ],
+      "pull_request": "https://github.com/leozitogs/ai-harness-compiler/pull/7"
     },
     {
       "id": "s1-12",
@@ -364,7 +391,7 @@
       "task_graph_id": "task-3-review",
       "stage": "review",
       "title": "Evidence Pack: review",
-      "status": "in_review",
+      "status": "done",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "delivery",
@@ -385,12 +412,13 @@
         "ahc-003:2",
         "ahc-003:3"
       ],
-      "progress_note": "Sources, scoped evidence, IR v2 and migration implemented; 145 local tests passed. PR/CI/integration pending.",
+      "progress_note": "PR #7 passed Linux/Windows 3.12/3.13 CI and was integrated before AHC-002.",
       "evidence_sources": [
         "docs/delivery/ahc-003-validation.md",
         "tests/test_evidence.py",
         "docs/adr/0006-evidence-provenance.md"
-      ]
+      ],
+      "pull_request": "https://github.com/leozitogs/ai-harness-compiler/pull/7"
     },
     {
       "id": "s1-13",

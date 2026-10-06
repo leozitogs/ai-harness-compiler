@@ -55,6 +55,7 @@ estruturado. Consulte o [exemplo](examples/project-definition/project.yaml) e o
 - Contratos Pydantic e JSON Schema: `ProjectInput`, `ProjectDNA`, `CapabilityGraph`, `HarnessSpec`.
 - Preservação de branding, restrições, backlog, referências a assets e domínio declarado.
 - Registro de evidências e incógnitas, incluindo `DOMAIN_UNCERTAIN`.
+- Perfil multidimensional fornecido, com hipóteses, origem, dados e riscos; [contrato](docs/engineering/domain-profile.md).
 - Evidence Pack com fontes, digest canônico, revisão declarada e escopos; [contrato e migração](docs/engineering/evidence-pack.md).
 - Validação de IDs, dependências, ciclos, referências e cobertura de critérios de aceitação.
 - Geração reproduzível de `AGENTS.md`, contexto, políticas, ADRs, plano de trabalho,

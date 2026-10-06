@@ -1,0 +1,59 @@
+{
+  "alternatives": [
+    "Classificar por palavras-chave sem dataset.",
+    "Aceitar confidence numérica sem medição."
+  ],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:ahc-002",
+  "challenge": null,
+  "consequences": [
+    "Consumidores da IR precisam migrar.",
+    "Fonte canônica revisada ou confidence sem proveniência exige migração manual."
+  ],
+  "context": "Critérios da AHC-002; incremento ainda em revisão por PR.",
+  "created_at": "2026-10-06T14:48:12.687890+00:00",
+  "decision": "IR v3 com migração explícita de v1/v2; confidence null até existir avaliação/calibração. Preservar dimensões e origem fornecidas, sem inferência por palavras-chave.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Decisão e alternativas.",
+      "outcome": "observed",
+      "sha256": "538b4c6d975a8de388db5457ac4fb744dd32e95abb366978623797a1b1eef5fa",
+      "source": "docs/adr/0007-domain-profile.md"
+    },
+    {
+      "command": null,
+      "note": "Compatibilidade e limites.",
+      "outcome": "observed",
+      "sha256": "fe7077d139253428aff7f341e9c10847ee3ddb7eb24fccbaad07ba8300b15862",
+      "source": "docs/engineering/domain-profile.md"
+    }
+  ],
+  "id": "ADR-0007",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0001",
+    "ADR-0006"
+  ],
+  "resolution": null,
+  "review_note": "Contrato e migração revisados com testes executados; não declara avaliação de classificador nem aprovação do PO.",
+  "reviewed_by": "codex:implementation-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "DomainProfile/v1 separa declaração, hipótese e incerteza; campos ausentes permanecem desconhecidos.",
+  "supersedes": null,
+  "tags": [
+    "domain",
+    "uncertainty",
+    "migration"
+  ],
+  "title": "Perfil multidimensional fornecido e sem scores inventados",
+  "updated_at": "2026-10-06T14:48:12.707807+00:00"
+}

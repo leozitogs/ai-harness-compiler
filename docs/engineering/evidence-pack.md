@@ -59,7 +59,10 @@ pertencem a adapters/evals futuros.
 Escopo valida compatibilidade estrutural. Não afirma que uma frase textual prova
 uma decisão, nem avalia qualidade científica ou causalidade de uma justificativa.
 
-## IR v2 e migração
+## Introdução na IR v2 e evolução
+
+A AHC-002 evoluiu a IR para v3. O comando migrate agora leva baselines v1/v2
+à v3; ver [perfil de domínio](domain-profile.md) para a política atual.
 
 `ProjectDNA/v2` exige cadastro de fontes e proveniência das afirmações;
 `HarnessSpec/v2` valida os novos escopos. `ProjectInput/v1`, CapabilityGraph/v1 e

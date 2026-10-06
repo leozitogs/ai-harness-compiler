@@ -1,0 +1,32 @@
+schema_version: ProjectInput/v1
+id: domain-demo
+name: Domain Profile Demo
+conception: Exemplo fictício de perfil proposto, preservado para revisão humana.
+domain_profile:
+  schema_version: DomainProfile/v1
+  primary: education
+  secondary: [content]
+  archetype: content-platform
+  data:
+    data_types: [course-material, lesson-draft]
+    sensitivity: internal
+    contains_pii: false
+  risk:
+    level: medium
+    categories: [hallucination]
+  status: hypothesis
+  origin: supplied-hypothesis
+  rationale: Hipótese fornecida pelo autor do exemplo; não foi avaliada por um classificador.
+  evidence_ids: [domain-profile]
+  hypotheses:
+    - domain: content
+      rationale: A organização de materiais também admite esse enquadramento.
+      evidence_ids: [domain-profile]
+backlog:
+  - id: lesson-draft
+    title: Preparar rascunho
+    description: Organizar um rascunho para revisão humana.
+    acceptance_criteria:
+      - O revisor vê o rascunho e as fontes fornecidas.
+    implementation: deterministic
+    risk: medium

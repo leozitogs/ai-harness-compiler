@@ -1,0 +1,57 @@
+{
+  "alternatives": [],
+  "applicability": [
+    "Leitura de artefatos textuais UTF-8 com Path.read_text, especialmente no Windows."
+  ],
+  "attempts": [],
+  "author": "codex:observed-test-run",
+  "challenge": null,
+  "consequences": [],
+  "context": "Aprendizado do roundtrip do Evidence Pack com conteúdo em português.",
+  "created_at": "2026-10-06T07:14:03.513453+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Resultado e limites observados.",
+      "outcome": "observed",
+      "sha256": "d3e1e1ee31d3b828f77fd6ddce94d55d0b51bdae40c1266d791d13d141ffbfae",
+      "source": "docs/delivery/ahc-003-validation.md"
+    },
+    {
+      "command": "pytest -q -p no:cacheprovider --basetemp .factory/domain-full-2",
+      "note": "Assertions de versão atualizadas; teste UTF-8 preservado e reexecutado na suíte de 173 testes.",
+      "outcome": "passed",
+      "sha256": "015a1af7cdcd739a2b17f64b7808e8bb7e86d8e07fc38756a24080da728216b8",
+      "source": "tests/test_evidence.py"
+    }
+  ],
+  "id": "LES-0004",
+  "kind": "LES",
+  "lesson": "Artefatos definidos como UTF-8 devem ser lidos com encoding explícito nos adapters e testes.",
+  "limitations": [
+    "Não é auditoria de todos os leitores do projeto.",
+    "Conteúdos com outro encoding exigem contrato próprio."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "INC-0004"
+  ],
+  "resolution": "Leitor do Evidence Pack passou a usar UTF-8; comparação integral e regressões aprovadas.",
+  "review_note": "Revalidação após atualização das assertions para IR v3; regressão UTF-8 permaneceu aprovada.",
+  "reviewed_by": "codex:executed-regression",
+  "revision": 4,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "verified",
+  "summary": "Fixar encoding na leitura, além da escrita, evita regressão dependente da plataforma.",
+  "supersedes": null,
+  "tags": [
+    "utf8",
+    "portability",
+    "json"
+  ],
+  "title": "Declarar UTF-8 nos leitores de artefatos JSON",
+  "updated_at": "2026-10-06T14:48:12.813315+00:00"
+}

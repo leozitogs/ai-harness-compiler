@@ -81,7 +81,8 @@ O Context Engine futuro escolherá fontes sob orçamento com relevância, trust,
 freshness, resolução de conflitos, compressão e proveniência. Memória será separada
 em contexto ativo, trabalho, sessão, projeto, conhecimento e arquivo.
 EvidencePack/v1 já separa fontes e afirmações com origem, digest, revisão declarada
-e escopos na IR v2; pesquisa fornecida permanece offline. Veja ADR-0006.
+e escopos; pesquisa fornecida permanece offline. Veja ADR-0006. A IR v3 inclui
+DomainProfile/v1 multidimensional e hipóteses fornecidas, sem classificação automática (ADR-0007).
 Pesquisa automática, freshness e avaliação da substância das evidências seguem planejadas.
 Fonte declarada pelo usuário não equivale a evidência externa verificada.
 

@@ -417,22 +417,99 @@
       "title": "ContextPolicy",
       "type": "object"
     },
-    "DomainProfile": {
+    "DataProfile": {
       "additionalProperties": false,
       "properties": {
-        "confidence": {
+        "contains_pii": {
           "anyOf": [
             {
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
+              "type": "boolean"
             },
             {
               "type": "null"
             }
           ],
           "default": null,
-          "title": "Confidence"
+          "title": "Contains Pii"
+        },
+        "data_types": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Data Types",
+          "type": "array"
+        },
+        "sensitivity": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "public",
+            "internal",
+            "confidential",
+            "restricted"
+          ],
+          "title": "Sensitivity",
+          "type": "string"
+        }
+      },
+      "title": "DataProfile",
+      "type": "object"
+    },
+    "DomainHypothesis": {
+      "additionalProperties": false,
+      "properties": {
+        "domain": {
+          "minLength": 1,
+          "title": "Domain",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "rationale": {
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        }
+      },
+      "required": [
+        "domain",
+        "rationale",
+        "evidence_ids"
+      ],
+      "title": "DomainHypothesis",
+      "type": "object"
+    },
+    "DomainProfile": {
+      "additionalProperties": false,
+      "properties": {
+        "archetype": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Archetype"
+        },
+        "confidence": {
+          "default": null,
+          "title": "Confidence",
+          "type": "null"
+        },
+        "data": {
+          "$ref": "#/$defs/DataProfile"
         },
         "evidence_ids": {
           "items": {
@@ -441,6 +518,22 @@
           },
           "title": "Evidence Ids",
           "type": "array"
+        },
+        "hypotheses": {
+          "items": {
+            "$ref": "#/$defs/DomainHypothesis"
+          },
+          "title": "Hypotheses",
+          "type": "array"
+        },
+        "origin": {
+          "enum": [
+            "user-declaration",
+            "supplied-hypothesis",
+            "unknown"
+          ],
+          "title": "Origin",
+          "type": "string"
         },
         "primary": {
           "anyOf": [
@@ -455,9 +548,40 @@
           "default": null,
           "title": "Primary"
         },
+        "rationale": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rationale"
+        },
+        "risk": {
+          "$ref": "#/$defs/RiskProfile"
+        },
+        "schema_version": {
+          "const": "DomainProfile/v1",
+          "default": "DomainProfile/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "secondary": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Secondary",
+          "type": "array"
+        },
         "status": {
           "enum": [
             "declared",
+            "hypothesis",
             "DOMAIN_UNCERTAIN"
           ],
           "title": "Status",
@@ -465,7 +589,8 @@
         }
       },
       "required": [
-        "status"
+        "status",
+        "origin"
       ],
       "title": "DomainProfile",
       "type": "object"
@@ -651,8 +776,8 @@
           "$ref": "#/$defs/ProjectInput"
         },
         "schema_version": {
-          "const": "ProjectDNA/v2",
-          "default": "ProjectDNA/v2",
+          "const": "ProjectDNA/v3",
+          "default": "ProjectDNA/v3",
           "title": "Schema Version",
           "type": "string"
         },
@@ -724,6 +849,17 @@
           "default": null,
           "title": "Domain"
         },
+        "domain_profile": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DomainProfile"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
         "evidence_pack": {
           "anyOf": [
             {
@@ -759,6 +895,40 @@
         "backlog"
       ],
       "title": "ProjectInput",
+      "type": "object"
+    },
+    "RiskProfile": {
+      "additionalProperties": false,
+      "properties": {
+        "categories": {
+          "items": {
+            "enum": [
+              "privacy",
+              "security",
+              "regulatory",
+              "hallucination",
+              "excessive-agency",
+              "availability",
+              "cost"
+            ],
+            "type": "string"
+          },
+          "title": "Categories",
+          "type": "array"
+        },
+        "level": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Level",
+          "type": "string"
+        }
+      },
+      "title": "RiskProfile",
       "type": "object"
     },
     "SourceRecord": {
@@ -898,8 +1068,8 @@
       "type": "string"
     },
     "schema_version": {
-      "const": "HarnessSpec/v2",
-      "default": "HarnessSpec/v2",
+      "const": "HarnessSpec/v3",
+      "default": "HarnessSpec/v3",
       "title": "Schema Version",
       "type": "string"
     }

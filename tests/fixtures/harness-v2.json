@@ -1,0 +1,272 @@
+{
+  "capability_graph": {
+    "capabilities": [
+      {
+        "acceptance_criteria": [
+          "Cada material tem título, autor e referência de origem.",
+          "Materiais só são visíveis ao educador responsável."
+        ],
+        "data_owner": "educador",
+        "depends_on": [],
+        "description": "Permitir que o educador catalogue materiais e suas fontes.",
+        "evidence_ids": [
+          "backlog-1"
+        ],
+        "id": "material-library",
+        "implementation": "deterministic",
+        "inputs": [
+          "material",
+          "metadados de origem"
+        ],
+        "outputs": [
+          "material catalogado"
+        ],
+        "risk": "medium",
+        "side_effects": [
+          "gravação na biblioteca"
+        ],
+        "title": "Biblioteca de materiais"
+      },
+      {
+        "acceptance_criteria": [
+          "As afirmações do rascunho referenciam os materiais utilizados.",
+          "A publicação exige revisão e aprovação do educador."
+        ],
+        "data_owner": "educador",
+        "depends_on": [
+          "material-library"
+        ],
+        "description": "Preparar um rascunho de aula usando os materiais selecionados.",
+        "evidence_ids": [
+          "backlog-2"
+        ],
+        "id": "lesson-draft",
+        "implementation": "rag",
+        "inputs": [
+          "materiais selecionados",
+          "objetivos de aprendizagem"
+        ],
+        "outputs": [
+          "rascunho com referências"
+        ],
+        "risk": "medium",
+        "side_effects": [],
+        "title": "Rascunho de aula baseado em fontes"
+      }
+    ],
+    "project_id": "learning-studio",
+    "schema_version": "CapabilityGraph/v1"
+  },
+  "context": {
+    "external_content": "untrusted-data",
+    "strategy": "on-demand",
+    "token_budget": 8000
+  },
+  "decisions": [
+    {
+      "capability_ids": [],
+      "decision": "Begin with a reviewable development harness and no agent runtime.",
+      "evidence_ids": [
+        "project-intent"
+      ],
+      "id": "adr-001",
+      "rationale": "Project intent and backlog are available; architecture search and runtime evaluation are not implemented. Preserve requested AI strategies as declarations until evidence supports an executable architecture."
+    }
+  ],
+  "evals": [
+    {
+      "capability_id": "material-library",
+      "criterion": "Cada material tem título, autor e referência de origem.",
+      "id": "eval-1-1",
+      "method": "manual-review",
+      "status": "not-run"
+    },
+    {
+      "capability_id": "material-library",
+      "criterion": "Materiais só são visíveis ao educador responsável.",
+      "id": "eval-1-2",
+      "method": "manual-review",
+      "status": "not-run"
+    },
+    {
+      "capability_id": "lesson-draft",
+      "criterion": "As afirmações do rascunho referenciam os materiais utilizados.",
+      "id": "eval-2-1",
+      "method": "manual-review",
+      "status": "not-run"
+    },
+    {
+      "capability_id": "lesson-draft",
+      "criterion": "A publicação exige revisão e aprovação do educador.",
+      "id": "eval-2-2",
+      "method": "manual-review",
+      "status": "not-run"
+    }
+  ],
+  "permissions": {
+    "execute_generated_code": false,
+    "external_writes": "require-approval",
+    "network_during_compilation": false
+  },
+  "profile": "development-baseline",
+  "project_dna": {
+    "domain": {
+      "confidence": null,
+      "evidence_ids": [
+        "domain-declaration"
+      ],
+      "primary": "education",
+      "status": "declared"
+    },
+    "evidence": [
+      {
+        "capability_id": null,
+        "claim": "Uma plataforma para educadores organizarem materiais e prepararem aulas baseadas em fontes, com revisão humana antes da publicação.",
+        "id": "project-intent",
+        "kind": "declared",
+        "scope": "project",
+        "source": "project.yaml#/conception",
+        "source_id": "project-manifest"
+      },
+      {
+        "capability_id": null,
+        "claim": "education",
+        "id": "domain-declaration",
+        "kind": "declared",
+        "scope": "domain",
+        "source": "project.yaml#/domain",
+        "source_id": "project-manifest"
+      },
+      {
+        "capability_id": "material-library",
+        "claim": "Permitir que o educador catalogue materiais e suas fontes.",
+        "id": "backlog-1",
+        "kind": "declared",
+        "scope": "capability",
+        "source": "project.yaml#/backlog/0",
+        "source_id": "project-manifest"
+      },
+      {
+        "capability_id": "lesson-draft",
+        "claim": "Preparar um rascunho de aula usando os materiais selecionados.",
+        "id": "backlog-2",
+        "kind": "declared",
+        "scope": "capability",
+        "source": "project.yaml#/backlog/1",
+        "source_id": "project-manifest"
+      }
+    ],
+    "project": {
+      "assets": [
+        {
+          "description": "Referência visual e verbal; conteúdo não ingerido no MVP.",
+          "path": "assets/brand-notes.md"
+        }
+      ],
+      "backlog": [
+        {
+          "acceptance_criteria": [
+            "Cada material tem título, autor e referência de origem.",
+            "Materiais só são visíveis ao educador responsável."
+          ],
+          "data_owner": "educador",
+          "depends_on": [],
+          "description": "Permitir que o educador catalogue materiais e suas fontes.",
+          "id": "material-library",
+          "implementation": "deterministic",
+          "inputs": [
+            "material",
+            "metadados de origem"
+          ],
+          "outputs": [
+            "material catalogado"
+          ],
+          "risk": "medium",
+          "side_effects": [
+            "gravação na biblioteca"
+          ],
+          "title": "Biblioteca de materiais"
+        },
+        {
+          "acceptance_criteria": [
+            "As afirmações do rascunho referenciam os materiais utilizados.",
+            "A publicação exige revisão e aprovação do educador."
+          ],
+          "data_owner": "educador",
+          "depends_on": [
+            "material-library"
+          ],
+          "description": "Preparar um rascunho de aula usando os materiais selecionados.",
+          "id": "lesson-draft",
+          "implementation": "rag",
+          "inputs": [
+            "materiais selecionados",
+            "objetivos de aprendizagem"
+          ],
+          "outputs": [
+            "rascunho com referências"
+          ],
+          "risk": "medium",
+          "side_effects": [],
+          "title": "Rascunho de aula baseado em fontes"
+        }
+      ],
+      "branding": {
+        "audience": [
+          "educadores",
+          "coordenadores pedagógicos"
+        ],
+        "principles": [
+          "fontes verificáveis",
+          "controle do educador"
+        ],
+        "tone": [
+          "claro",
+          "acolhedor",
+          "preciso"
+        ],
+        "visual_constraints": [
+          "interface acessível"
+        ]
+      },
+      "conception": "Uma plataforma para educadores organizarem materiais e prepararem aulas baseadas em fontes, com revisão humana antes da publicação.",
+      "constraints": {
+        "business": [
+          "revisão humana antes de publicação"
+        ],
+        "max_build_cost_usd": 0.0,
+        "security": [
+          "não expor dados pessoais em traces"
+        ],
+        "technical": [
+          "Python 3.12 ou superior",
+          "contratos versionados"
+        ]
+      },
+      "domain": "education",
+      "evidence_pack": null,
+      "id": "learning-studio",
+      "name": "Learning Studio",
+      "schema_version": "ProjectInput/v1"
+    },
+    "schema_version": "ProjectDNA/v2",
+    "sources": [
+      {
+        "collected_at": null,
+        "id": "project-manifest",
+        "location": "project.yaml",
+        "origin": "user-declaration",
+        "sha256": "b396a513882a7cf7cec34235b579a1015402a9e9aa7a2e7a574500b777f1f166",
+        "verification_status": "unverified",
+        "verified_at": null,
+        "verified_by": null
+      }
+    ],
+    "unknowns": [
+      "Architecture has not been researched or benchmarked.",
+      "Product acceptance criteria have not been executed."
+    ]
+  },
+  "runtime_status": "not-implemented",
+  "schema_version": "HarnessSpec/v2"
+}
