@@ -1,0 +1,333 @@
+{
+  "$defs": {
+    "MemoryEvidence": {
+      "additionalProperties": false,
+      "properties": {
+        "command": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Command"
+        },
+        "note": {
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        },
+        "outcome": {
+          "default": "not-run",
+          "enum": [
+            "not-run",
+            "observed",
+            "passed",
+            "failed"
+          ],
+          "title": "Outcome",
+          "type": "string"
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha256"
+        },
+        "source": {
+          "minLength": 1,
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source",
+        "note"
+      ],
+      "title": "MemoryEvidence",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "alternatives": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "title": "Alternatives",
+      "type": "array"
+    },
+    "applicability": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "title": "Applicability",
+      "type": "array"
+    },
+    "attempts": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "title": "Attempts",
+      "type": "array"
+    },
+    "author": {
+      "minLength": 1,
+      "title": "Author",
+      "type": "string"
+    },
+    "challenge": {
+      "anyOf": [
+        {
+          "maxLength": 8000,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Challenge"
+    },
+    "consequences": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "title": "Consequences",
+      "type": "array"
+    },
+    "context": {
+      "maxLength": 8000,
+      "minLength": 1,
+      "title": "Context",
+      "type": "string"
+    },
+    "created_at": {
+      "minLength": 1,
+      "title": "Created At",
+      "type": "string"
+    },
+    "decision": {
+      "anyOf": [
+        {
+          "maxLength": 8000,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Decision"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/MemoryEvidence"
+      },
+      "maxItems": 20,
+      "title": "Evidence",
+      "type": "array"
+    },
+    "id": {
+      "pattern": "^(DE|DOC|ADR|INC|LES|RUN|EXP)-[0-9]{4}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "DE",
+        "DOC",
+        "ADR",
+        "INC",
+        "LES",
+        "RUN",
+        "EXP"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "lesson": {
+      "anyOf": [
+        {
+          "maxLength": 8000,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Lesson"
+    },
+    "limitations": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "title": "Limitations",
+      "type": "array"
+    },
+    "procedure": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "title": "Procedure",
+      "type": "array"
+    },
+    "project_id": {
+      "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+      "title": "Project Id",
+      "type": "string"
+    },
+    "related": {
+      "items": {
+        "pattern": "^(DE|DOC|ADR|INC|LES|RUN|EXP)-[0-9]{4}$",
+        "type": "string"
+      },
+      "title": "Related",
+      "type": "array"
+    },
+    "resolution": {
+      "anyOf": [
+        {
+          "maxLength": 8000,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Resolution"
+    },
+    "review_note": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Review Note"
+    },
+    "reviewed_by": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Reviewed By"
+    },
+    "revision": {
+      "minimum": 1,
+      "title": "Revision",
+      "type": "integer"
+    },
+    "root_cause": {
+      "anyOf": [
+        {
+          "maxLength": 8000,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Root Cause"
+    },
+    "schema_version": {
+      "const": "EngineeringMemory/v1",
+      "default": "EngineeringMemory/v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "status": {
+      "default": "draft",
+      "enum": [
+        "draft",
+        "active",
+        "verified",
+        "superseded"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "summary": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Summary",
+      "type": "string"
+    },
+    "supersedes": {
+      "anyOf": [
+        {
+          "pattern": "^(DE|DOC|ADR|INC|LES|RUN|EXP)-[0-9]{4}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Supersedes"
+    },
+    "tags": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 20,
+      "title": "Tags",
+      "type": "array"
+    },
+    "title": {
+      "maxLength": 200,
+      "minLength": 1,
+      "title": "Title",
+      "type": "string"
+    },
+    "updated_at": {
+      "minLength": 1,
+      "title": "Updated At",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "kind",
+    "project_id",
+    "title",
+    "summary",
+    "context",
+    "author",
+    "revision",
+    "created_at",
+    "updated_at"
+  ],
+  "title": "MemoryRecord",
+  "type": "object"
+}

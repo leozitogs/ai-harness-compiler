@@ -17,6 +17,8 @@ build/
 .env.*
 !.env.example
 output/
+knowledge/records/.writer.lock
+knowledge/records/**/*.tmp
 .factory/
 *.log
 
