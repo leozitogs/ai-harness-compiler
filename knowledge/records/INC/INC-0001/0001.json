@@ -1,0 +1,46 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Anotação direta _SubParsersAction[ArgumentParser] reproduziu a falha."
+  ],
+  "author": "bootstrap:existing-project-evidence",
+  "challenge": "A CLI deixou de importar ao adicionar um tipo genérico do argparse.",
+  "consequences": [],
+  "context": "Uma anotação aceita pelo type checker era avaliada em runtime.",
+  "created_at": "2026-10-05T23:58:25.526648+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Regression reproduces TypeError and tests postponed annotations.",
+      "outcome": "passed",
+      "sha256": "bdd1410412a9e28d896a484ae2b69a4abcca504697e6a306e9730d5ba81333a7",
+      "source": "tests/test_memory.py#test_argparse_runtime_failure_has_a_verified_reproduction_and_fix"
+    }
+  ],
+  "id": "INC-0001",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [],
+  "resolution": "Adicionar from __future__ import annotations no módulo da anotação.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": "O objeto do argparse não suporta subscrição em runtime no Python testado.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "TypeError: type '_SubParsersAction' is not subscriptable na importação.",
+  "supersedes": null,
+  "tags": [
+    "python",
+    "argparse",
+    "annotations",
+    "regression"
+  ],
+  "title": "Importação da CLI falhou por anotação argparse",
+  "updated_at": "2026-10-05T23:58:25.526648+00:00"
+}

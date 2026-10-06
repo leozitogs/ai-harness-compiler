@@ -1,0 +1,44 @@
+{
+  "alternatives": [
+    "Markdown sem contratos",
+    "Banco como única fonte de verdade"
+  ],
+  "applicability": [],
+  "attempts": [],
+  "author": "bootstrap:existing-project-evidence",
+  "challenge": null,
+  "consequences": [
+    "Revisões em Git",
+    "Cache reconstruível",
+    "Sem treino de pesos do LLM"
+  ],
+  "context": "Solicitação do PO; a promoção desta nova decisão depende de revisão do registro.",
+  "created_at": "2026-10-05T23:58:25.513017+00:00",
+  "decision": "Separar propostas, decisões e experiências verificadas com evidências e limites.",
+  "evidence": [],
+  "id": "DE-0001",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0001"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "JSON por revisão como fonte de verdade; SQLite FTS5 como índice reconstruível.",
+  "supersedes": null,
+  "tags": [
+    "memory",
+    "documentation",
+    "learning"
+  ],
+  "title": "Memória de engenharia versionada",
+  "updated_at": "2026-10-05T23:58:25.513017+00:00"
+}

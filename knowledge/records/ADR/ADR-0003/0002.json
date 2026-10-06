@@ -1,0 +1,43 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "bootstrap:existing-project-evidence",
+  "challenge": null,
+  "consequences": [],
+  "context": "Decisão pré-existente; conteúdo completo no documento de origem.",
+  "created_at": "2026-10-05T23:58:25.470095+00:00",
+  "decision": "Usar Apache-2.0, branches curtas, Conventional Commits e TaskGraph validado.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Original documented architectural decision.",
+      "outcome": "observed",
+      "sha256": "19eaf1ec17f16c90e9867a7ce5d061f7788e5b902508f61902f06bb6da67ac5c",
+      "source": "docs/adr/0003-governance-and-task-plans.md"
+    }
+  ],
+  "id": "ADR-0003",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [],
+  "resolution": null,
+  "review_note": "Imported the existing documented decision; no new PO approval claimed.",
+  "reviewed_by": "migration:documented-decision",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Usar Apache-2.0, branches curtas, Conventional Commits e TaskGraph validado.",
+  "supersedes": null,
+  "tags": [
+    "architecture",
+    "contracts",
+    "engineering"
+  ],
+  "title": "Governança e planos observáveis",
+  "updated_at": "2026-10-05T23:58:25.479331+00:00"
+}

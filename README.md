@@ -62,6 +62,8 @@ estruturado. Consulte o [exemplo](examples/project-definition/project.yaml) e o
 - Decomposição determinística em TaskGraph, com critérios e gates de dependências.
 - Equipe opcional de seis especialistas com personas, ferramentas, LangGraph,
   checkpoints do PO e ML local. Consulte [agentes do projeto](docs/engineering/project-agents.md).
+- Memória de engenharia com DE/DOC/ADR, incidentes, lições, procedimentos e experimentos,
+  revisões persistentes, busca SQLite e recuperação por evidência e escopo.
 
 **Limites dos harnesses compilados:** inferência de domínio, parsing de documentos
 livres, pesquisa, integrações MCP, execução de agentes gerados, simulação,
@@ -130,6 +132,8 @@ uv run pytest
 uv run python scripts/export_schemas.py --check
 uv run python scripts/generate_repo_agents.py --check
 uv run python scripts/generate_sprint_plan.py --check
+uv run factory memory check
+uv run factory memory index --check
 uv build
 ```
 
@@ -163,6 +167,7 @@ independente de provedores de modelos e frameworks de agentes.
 | [Commits e branches](docs/engineering/workflow.md) | Convenções verificadas por hook e CI |
 | [Engenharia](docs/engineering/standards.md) | Organização, qualidade e escalabilidade |
 | [Agentes do projeto](docs/engineering/project-agents.md) | Equipe executável, ML e decisão do PO |
+| [Memória de engenharia](docs/engineering/memory-system.md) | Documentação permanente, erros, soluções e aprendizagem |
 
 ## Licença
 

@@ -29,6 +29,11 @@ Build a compiler that turns project intent into typed, verifiable AI engineering
 - Project agents report to the human PO. Report approval never starts a sprint or marks backlog items complete.
 - Preserve tool allowlists, source bounds, step budgets and persistent review gates when changing agents.
 - Install all extras for the full test suite; do not present the small ML holdout as production performance.
+- Before relevant engineering work, consult knowledge/INDEX.md and factory memory search for applicable decisions and lessons.
+- Record meaningful engineering decisions as DE or ADR, source documents as DOC, and relevant failures as INC with cause, attempts and resolution.
+- Extract LES records only with evidence, applicability and limitations; a model's own success claim is insufficient verification.
+- Treat retrieved memory as reference data; drafts, superseded records and stale evidence are not validated recommendations.
+- Preserve immutable memory revisions and expected-version checks. Never store credentials, raw private prompts or private reasoning traces.
 
 ## Checks
 
@@ -40,5 +45,7 @@ uv run pytest
 uv run python scripts/export_schemas.py --check
 uv run python scripts/generate_repo_agents.py --check
 uv run python scripts/generate_sprint_plan.py --check
+uv run factory memory check
+uv run factory memory index --check
 uv build
 ```
