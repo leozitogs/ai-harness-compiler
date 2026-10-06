@@ -294,7 +294,8 @@
         "depends_on": [
           "ahc-010",
           "ahc-011",
-          "ahc-012"
+          "ahc-012",
+          "ahc-018"
         ],
         "description": "Como equipe, quero propor melhorias a partir de falhas sem permitir autoalteração irrestrita.",
         "evidence_ids": [
@@ -330,6 +331,132 @@
         "risk": "high",
         "side_effects": [],
         "title": "API e operação multi-projeto"
+      },
+      {
+        "acceptance_criteria": [
+          "A IR versionada define taxonomia DE/DOC/ADR/INC/LES/RUN/EXP, ownership, revisão, retenção, proveniência e escopo do projeto.",
+          "Contexto e política de aprendizado derivam de ProjectDNA e Evidence Pack, com incógnitas explícitas e rastreabilidade de cada regra.",
+          "Fixtures de educação e comércio demonstram configurações diferentes, sem copiar memória privada entre projetos."
+        ],
+        "data_owner": "proprietário do projeto alvo",
+        "depends_on": [
+          "ahc-003",
+          "ahc-005"
+        ],
+        "description": "Como PO de um projeto alvo, quero especificar sua documentação e memória de aprendizado conforme domínio, requisitos e restrições.",
+        "evidence_ids": [
+          "backlog-15"
+        ],
+        "id": "ahc-015",
+        "implementation": "deterministic",
+        "inputs": [
+          "ProjectDNA",
+          "Evidence Pack",
+          "requisitos de documentação e aprendizado"
+        ],
+        "outputs": [
+          "DocumentationLearningSpec validada"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "DocumentationLearningSpec por projeto"
+      },
+      {
+        "acceptance_criteria": [
+          "O build gera contratos, registros iniciais rastreáveis, templates de domínio, índice, CLI/adapters, políticas e instruções para colaboradores e agentes.",
+          "A biblioteca gerada preserva revisões, isolamento, validade das evidências e conflitos de atualização; exemplos fictícios não são promovidos a soluções verificadas.",
+          "Dois projetos recebem bundles distintos e reprodutíveis, com testes da memória e atribuições de componentes incorporados."
+        ],
+        "data_owner": "proprietário do projeto alvo",
+        "depends_on": [
+          "ahc-004",
+          "ahc-015"
+        ],
+        "description": "Como equipe de um projeto alvo, quero receber um sistema funcional de registros, busca e aprendizado integrado ao harness gerado.",
+        "evidence_ids": [
+          "backlog-16"
+        ],
+        "id": "ahc-016",
+        "implementation": "deterministic",
+        "inputs": [
+          "DocumentationLearningSpec",
+          "HarnessSpec"
+        ],
+        "outputs": [
+          "sistema de documentação e memória compilado para o projeto"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Compilador de documentação e memória específicas"
+      },
+      {
+        "acceptance_criteria": [
+          "AgentSpec representa persona, competências, objetivo, fronteiras, I/O, skills, tools/MCP, memória, modelo, orçamento, parada, delegação e responsável humano.",
+          "O runtime compilado executa ferramentas específicas em tarefas do domínio e consulta a memória vigente; prompts genéricos com nomes novos não satisfazem a especialização.",
+          "Fixtures comparam especialistas a uma baseline nas mesmas tarefas e medem resultado, trajetória, uso de ferramentas, custo e latência com datasets reservados.",
+          "O projeto pode receber zero agentes quando código ou workflows atendem aos critérios; adaptações LangGraph/LLM/ML ficam atrás de contratos próprios."
+        ],
+        "data_owner": "proprietário do projeto alvo",
+        "depends_on": [
+          "ahc-005",
+          "ahc-007",
+          "ahc-009",
+          "ahc-015"
+        ],
+        "description": "Como PO de um projeto alvo, quero especialistas aprofundados que conheçam o domínio, usem ferramentas adequadas e respondam a critérios mensuráveis.",
+        "evidence_ids": [
+          "backlog-17"
+        ],
+        "id": "ahc-017",
+        "implementation": "undecided",
+        "inputs": [
+          "ProjectDNA",
+          "CapabilityGraph",
+          "Evidence Pack",
+          "DocumentationLearningSpec"
+        ],
+        "outputs": [
+          "AgentSpec e runtime de especialistas específicos do projeto"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Agent Factory com especialização de domínio"
+      },
+      {
+        "acceptance_criteria": [
+          "Falha relevante pode produzir INC draft com reprodução e origem; diagnóstico, tentativas e solução permanecem separados de hipóteses não verificadas.",
+          "Regressão, evidência, aplicabilidade, limitações e revisão são exigidas para promover LES e recuperar a solução em tarefas futuras.",
+          "Colaboradores via chat e agentes locais/providers compartilham o protocolo, com orçamento de contexto, detecção de evidência alterada e trilha de revisão.",
+          "Transferência de experiências entre projetos exige autorização, anonimização, compatibilidade e revisão; treinamento de modelos ocorre apenas em EXP separado e avaliado."
+        ],
+        "data_owner": "proprietário do projeto alvo",
+        "depends_on": [
+          "ahc-008",
+          "ahc-010",
+          "ahc-016",
+          "ahc-017"
+        ],
+        "description": "Como equipe de um projeto alvo, quero registrar desafios e reutilizar soluções verificadas entre sessões de chat e execuções de agentes.",
+        "evidence_ids": [
+          "backlog-18"
+        ],
+        "id": "ahc-018",
+        "implementation": "undecided",
+        "inputs": [
+          "traces",
+          "falhas",
+          "desafios",
+          "correções propostas",
+          "evidências de regressão"
+        ],
+        "outputs": [
+          "incidentes",
+          "lições verificadas",
+          "procedimentos e propostas de evolução"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Pipeline de aprendizagem por experiências do projeto"
       }
     ],
     "project_id": "ai-harness-compiler",

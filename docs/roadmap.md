@@ -19,6 +19,8 @@ de baixa confiança e limites de custo aplicados por software.
 
 Contratos para contexto, memória, prompts, skills, tools, MCP, agents e workflows;
 validadores cruzados; progressive disclosure; policies independentes do modelo.
+Inclui AHC-015 a AHC-017: DocumentationLearningSpec, compilador de documentação/memória
+por projeto e AgentSpec com competências, ferramentas e critérios de domínio.
 Critério: harnesses de dois domínios diferem por requisitos, com caso válido de zero agentes;
 tool schemas, permissões, budgets, condições de parada e evals definidos antes de runtime.
 
@@ -28,6 +30,8 @@ API FastAPI, persistência, workflows Temporal, runtime via adapters, Policy Eng
 aprovação humana, isolamento, observabilidade OpenTelemetry e execução de evals.
 Critério: tarefas retomam após falhas; efeitos externos respeitam permissões;
 evals verificam resultado e trajetória; nenhum PASS apenas por autodeclaração do modelo.
+Demonstrar memória e especialistas compilados em dois domínios; AHC-018 conecta
+incidente, correção, regressão, lição revisada e recuperação numa tarefa futura.
 
 ## M4 — Research e Architecture Search
 
@@ -42,6 +46,14 @@ Instalação com diff, detecção de drift, rollback, aprovação e migrações;
 Experience Store, biblioteca de skills versionada, otimização de prompts e meta-tools.
 Critério: mudanças rastreáveis a falhas/evidências, regressões bloqueiam promoção,
 restauração da versão anterior e proteção contra contaminação entre projetos.
+Transferência de experiências exige autorização, anonimização e revisão; otimização
+ou treinamento é um EXP separado, com avaliação e budgets.
+
+## Geração de equipes e aprendizado por projeto
+
+O [pipeline específico](product/project-generation-pipeline.md) define os contratos,
+compiladores e gates. A equipe e a memória internas já implementadas servem de
+referência; transformá-las em produto gerado é trabalho de AHC-015 a AHC-018.
 
 ## Próximas tarefas concretas
 

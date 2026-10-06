@@ -6,6 +6,8 @@ from pathlib import Path
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
+from ai_harness_compiler.memory.store import MemoryStore
+
 SOURCES = (
     "README.md",
     "project-definition/project.yaml",
@@ -35,8 +37,9 @@ SOURCES = (
 
 
 class RepositoryContext:
-    def __init__(self, root: Path) -> None:
+    def __init__(self, root: Path, project_id: str = "ai-harness-compiler") -> None:
         self.root = root.resolve()
+        self.project_id = project_id
         self.documents: dict[str, str] = {}
         self.chunks: list[dict[str, str]] = []
         for source in SOURCES:
@@ -68,7 +71,11 @@ class RepositoryContext:
         ]
 
     def digests(self) -> dict[str, str]:
+        memory = MemoryStore(self.root, self.project_id)
         return {
-            source: hashlib.sha256(body.encode("utf-8")).hexdigest()
-            for source, body in self.documents.items()
+            **{
+                source: hashlib.sha256(body.encode("utf-8")).hexdigest()
+                for source, body in self.documents.items()
+            },
+            **memory.digests(),
         }

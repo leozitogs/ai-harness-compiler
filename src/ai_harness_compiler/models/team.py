@@ -10,6 +10,7 @@ from ai_harness_compiler.models.project import ProjectInput
 Role = Literal["analyst", "architect", "engineer", "quality", "security", "delivery"]
 ToolName = Literal[
     "retrieve_context",
+    "retrieve_memory",
     "requirements_audit",
     "architecture_review",
     "implementation_plan",

@@ -27,6 +27,12 @@ class LocalPolicy:
                 tool="retrieve_context",
                 query=f"{request} {persona.objective}"[:1000],
             )
+        if "retrieve_memory" not in used:
+            return AgentDecision(
+                action="tool",
+                tool="retrieve_memory",
+                query=f"{request} {persona.objective}"[:1000],
+            )
         if persona.required_tool not in used:
             return AgentDecision(action="tool", tool=persona.required_tool)
         warnings = sum(len(item.findings) for item in observations)
@@ -102,7 +108,11 @@ class BoundedAgent:
                 decision = self.policy.decide(self.persona, request, observations)
                 if decision.action == "finish":
                     used = {item.tool for item in observations}
-                    if not {"retrieve_context", self.persona.required_tool}.issubset(used):
+                    if not {
+                        "retrieve_context",
+                        "retrieve_memory",
+                        self.persona.required_tool,
+                    }.issubset(used):
                         raise ValueError("Agent cannot finish before its required evidence tools")
                     return AgentReport.model_validate(
                         {

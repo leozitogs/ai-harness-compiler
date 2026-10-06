@@ -1,0 +1,46 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Reprodução com duas decisões e revise confirmou aceitação do ciclo."
+  ],
+  "author": "codex:authorized-pr-review",
+  "challenge": "DE-A substitui DE-B e DE-B substitui DE-A eram aceitos.",
+  "consequences": [],
+  "context": "Problema reproduzido durante a revisão do PR da memória.",
+  "created_at": "2026-10-06T06:02:17.533941+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Regressão aprovada na suite local de 82 testes após reproduzir o ciclo antes da correção.",
+      "outcome": "passed",
+      "sha256": "4e2589ddbad629b8c2d73abd0e9db91368b710f0f6959577c3b7336d973784a0",
+      "source": "tests/test_memory.py#test_cyclic_supersession_is_rejected_before_writing_a_revision"
+    }
+  ],
+  "id": "INC-0002",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [],
+  "resolution": "Validar grafo de supersedes antes de append e no carregamento, preservando related.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": "A validação checava existência das referências, mas não a aciclicidade de supersedes.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Duas decisões podiam se substituir mutuamente, tornando o catálogo inconsistente.",
+  "supersedes": null,
+  "tags": [
+    "memory",
+    "supersedes",
+    "cycles",
+    "review"
+  ],
+  "title": "Ciclo na substituição de registros de memória",
+  "updated_at": "2026-10-06T06:02:17.533941+00:00"
+}

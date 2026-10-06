@@ -1,0 +1,18 @@
+id: ADR-0100
+kind: ADR
+project_id: ai-harness-compiler
+title: Substituir pelo título do registro
+summary: Substituir pelo resumo factual
+context: Descrever contexto, impacto e versão afetada
+author: Identificar autor
+tags:
+- preencher
+evidence:
+- source: docs/ARQUIVO-A-PREENCHER.md
+  note: Descrever a evidência; incluir sha256 antes de promover
+  outcome: not-run
+decision: Descrever a escolha proposta
+alternatives:
+- Descrever alternativa
+consequences:
+- Descrever consequência

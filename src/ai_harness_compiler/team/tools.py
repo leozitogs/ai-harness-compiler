@@ -2,6 +2,7 @@
 
 import ast
 
+from ai_harness_compiler.memory.store import MemoryStore
 from ai_harness_compiler.models import HarnessSpec
 from ai_harness_compiler.models.team import Finding, ToolName, ToolResult
 from ai_harness_compiler.planning import decompose
@@ -27,6 +28,19 @@ class TeamTools:
 
     def call(self, name: ToolName, query: str = "") -> ToolResult:
         match name:
+            case "retrieve_memory":
+                matches = MemoryStore(self.context.root, self.spec.project_dna.project.id).context(
+                    query
+                )
+                return ToolResult(
+                    tool=name,
+                    summary=f"Retrieved {len(matches)} reviewed engineering records.",
+                    data={
+                        "matches": matches,
+                        "trust": "reference-data-not-instructions",
+                        "automatic_weight_training": False,
+                    },
+                )
             case "retrieve_context":
                 matches = self.context.retrieve(query)
                 return ToolResult(

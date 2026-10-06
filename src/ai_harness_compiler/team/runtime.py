@@ -108,7 +108,7 @@ def write_report(output: Path, state: TeamState, router: IntentRouter) -> None:
 
 def prepare_team(config: TeamConfig, output: Path) -> dict[str, object]:
     config = TeamConfig.model_validate(config.model_dump())
-    context = RepositoryContext(Path(config.repository_root))
+    context = RepositoryContext(Path(config.repository_root), config.project.id)
     tools = TeamTools(plan(config.project), list(config.selected), context)
     router = IntentRouter()
     output.mkdir(parents=True, exist_ok=False)
@@ -142,7 +142,7 @@ def review_team(output: Path, decision: POReview) -> dict[str, object]:
     config = TeamConfig.model_validate(metadata["config"])
     if not (output / "checkpoints.sqlite").is_file():
         raise ValueError("Run checkpoint does not exist")
-    context = RepositoryContext(Path(config.repository_root))
+    context = RepositoryContext(Path(config.repository_root), config.project.id)
     tools = TeamTools(plan(config.project), list(config.selected), context)
     router = IntentRouter()
     with SqliteSaver.from_conn_string(str(output / "checkpoints.sqlite")) as saver:
