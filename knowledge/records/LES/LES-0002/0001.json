@@ -1,0 +1,51 @@
+{
+  "alternatives": [],
+  "applicability": [
+    "Catálogo de decisões com supersedes e revisões persistentes"
+  ],
+  "attempts": [],
+  "author": "codex:authorized-pr-review",
+  "challenge": null,
+  "consequences": [],
+  "context": "Lição derivada de INC-0002 e confirmada por testes da escrita e leitura de registros.",
+  "created_at": "2026-10-06T06:02:17.577926+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Regressão aprovada na suite local de 82 testes após reproduzir o ciclo antes da correção.",
+      "outcome": "passed",
+      "sha256": "4e2589ddbad629b8c2d73abd0e9db91368b710f0f6959577c3b7336d973784a0",
+      "source": "tests/test_memory.py#test_cyclic_supersession_is_rejected_before_writing_a_revision"
+    }
+  ],
+  "id": "LES-0002",
+  "kind": "LES",
+  "lesson": "Validar propriedades globais do grafo quando um relacionamento define substituição ou precedência.",
+  "limitations": [
+    "Associações related podem ser cíclicas; não aplicar a mesma restrição indiscriminadamente.",
+    "Não demonstra autenticidade ou autorização de quem editou os arquivos."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "INC-0002"
+  ],
+  "resolution": "Validar DAG de supersedes antes de persistir e ao carregar dados editados externamente.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Substituição de decisões exige validar ciclos além de verificar IDs.",
+  "supersedes": null,
+  "tags": [
+    "memory",
+    "supersedes",
+    "cycles",
+    "regression"
+  ],
+  "title": "Referências válidas não garantem precedência consistente",
+  "updated_at": "2026-10-06T06:02:17.577926+00:00"
+}

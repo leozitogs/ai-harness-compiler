@@ -10,6 +10,8 @@ Entrada: branding, backlog, concepção, assets, restrições e requisitos técn
 Saída: arquitetura do produto e de IA, AGENTS.md, sistema de contexto, prompts,
 skills, tools, MCP, agents, workflows, guardrails, evals, hooks, observabilidade,
 políticas de desenvolvimento, CI, documentação e critérios de evolução.
+Isso inclui um sistema executável de documentação e aprendizado para o projeto
+alvo, e especialistas de domínio com competências, ferramentas e evals próprias.
 
 O compilador não deverá pressupor que toda capacidade precisa de IA. Código
 determinístico, workflows fixos, LLMs, retrieval e agentes são alternativas a
@@ -24,10 +26,14 @@ comparar com evidências. Zero agentes é uma saída válida.
 5. Compilação de requisitos, critérios de avaliação e CapabilityGraph.
 6. Busca de arquiteturas candidatas sob limites de custo e complexidade.
 7. HarnessSpec como IR versionada; validação anterior à emissão.
-8. Compilação de artefatos de desenvolvimento e runtime.
+8. Compilação de artefatos de desenvolvimento/runtime, memória de engenharia e especialistas de domínio.
 9. Simulação, avaliações de saída e trajetória, regressão e reparo limitado.
 10. Aprovação e instalação com diff, rastreabilidade e rollback.
 11. Observação, classificação de falhas, proposta de evolução e nova avaliação.
+
+O ciclo de aprendizado gera INC e, após regressão e revisão, LES com evidência,
+aplicabilidade e limites. O [pipeline por projeto](product/project-generation-pipeline.md)
+detalha essa modalidade e a geração de agentes aprofundados.
 
 ## Princípios
 

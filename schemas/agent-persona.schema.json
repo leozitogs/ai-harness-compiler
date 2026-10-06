@@ -37,6 +37,7 @@
     "required_tool": {
       "enum": [
         "retrieve_context",
+        "retrieve_memory",
         "requirements_audit",
         "architecture_review",
         "implementation_plan",
@@ -56,6 +57,7 @@
       "items": {
         "enum": [
           "retrieve_context",
+          "retrieve_memory",
           "requirements_audit",
           "architecture_review",
           "implementation_plan",

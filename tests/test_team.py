@@ -41,7 +41,7 @@ def test_team_executes_six_specialists_and_waits_for_po(config, tmp_path):
     report = json.loads((output / "team-report.json").read_text(encoding="utf-8"))
     assert {item["agent_id"] for item in report["reports"]} == set(PERSONAS)
     assert all(item["status"] == "completed" for item in report["reports"])
-    assert all(len(item["observations"]) == 2 for item in report["reports"])
+    assert all(len(item["observations"]) == 3 for item in report["reports"])
     assert (output / "checkpoints.sqlite").is_file()
     assert report["approval"] is None
     assert report["sprint_started"] is False
@@ -166,6 +166,7 @@ def test_llm_agent_runs_real_tool_loop_with_transport_fixture(config):
     sequence = iter(
         [
             {"action": "tool", "tool": "retrieve_context", "query": "criteria"},
+            {"action": "tool", "tool": "retrieve_memory", "query": "criteria"},
             {"action": "tool", "tool": "requirements_audit"},
             {"action": "finish", "summary": "Refine explicit story inputs and outputs."},
         ]
@@ -183,7 +184,7 @@ def test_llm_agent_runs_real_tool_loop_with_transport_fixture(config):
         )
     assert report.status == "completed"
     assert report.model_summary_is_advisory is True
-    assert len(report.observations) == 2
+    assert len(report.observations) == 3
 
 
 def test_local_cli_roster_and_config_validation(capsys):
