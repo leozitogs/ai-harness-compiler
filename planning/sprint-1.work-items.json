@@ -1,0 +1,463 @@
+{
+  "format": "sprint-work-items/v1",
+  "sprint_id": "sprint-1",
+  "status": "planned",
+  "execution_started": false,
+  "note": "Planning annotations; additional dependencies coordinate shared contracts. This file does not execute work or mark acceptance.",
+  "work_items": [
+    {
+      "id": "s1-01",
+      "capability_id": "ahc-001",
+      "task_graph_id": "task-1-design",
+      "stage": "design",
+      "title": "Intake: design",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "analyst",
+        "architect",
+        "security"
+      ],
+      "depends_on": [],
+      "actions": [
+        "Definir limite configurável (proposta: 1 MiB), política de referências locais, aliases e profundidade YAML.",
+        "Especificar diagnósticos estáveis e entradas/saídas sem executar conteúdo."
+      ],
+      "deliverables": [
+        "Contrato e plano de validação"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-001:1",
+        "ahc-001:2",
+        "ahc-001:3"
+      ]
+    },
+    {
+      "id": "s1-02",
+      "capability_id": "ahc-001",
+      "task_graph_id": "task-1-implement",
+      "stage": "implement",
+      "title": "Intake: implement",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "engineer",
+        "architect"
+      ],
+      "depends_on": [
+        "s1-01"
+      ],
+      "actions": [
+        "Rejeitar chaves duplicadas, excesso de tamanho e versões desconhecidas antes de planejar.",
+        "Preservar UTF-8 e referências locais válidas; documentar configuração."
+      ],
+      "deliverables": [
+        "Código, schemas e documentação"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-001:1",
+        "ahc-001:2",
+        "ahc-001:3"
+      ]
+    },
+    {
+      "id": "s1-03",
+      "capability_id": "ahc-001",
+      "task_graph_id": "task-1-verify",
+      "stage": "verify",
+      "title": "Intake: verify",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "quality",
+        "security"
+      ],
+      "depends_on": [
+        "s1-02"
+      ],
+      "actions": [
+        "Cobrir entradas válidas e inválidas, limites e ausência de acesso à rede.",
+        "Executar checks em Linux e Windows pela CI."
+      ],
+      "deliverables": [
+        "Resultados de checks e critérios de aceitação"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-001:1",
+        "ahc-001:2",
+        "ahc-001:3"
+      ]
+    },
+    {
+      "id": "s1-04",
+      "capability_id": "ahc-001",
+      "task_graph_id": "task-1-review",
+      "stage": "review",
+      "title": "Intake: review",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "delivery",
+        "quality"
+      ],
+      "depends_on": [
+        "s1-03"
+      ],
+      "actions": [
+        "Revisar segurança, documentação e compatibilidade; integrar PR com CI verde.",
+        "Demonstrar erros estáveis e exemplo válido ao PO."
+      ],
+      "deliverables": [
+        "PR integrado e evidências para aceite"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-001:1",
+        "ahc-001:2",
+        "ahc-001:3"
+      ]
+    },
+    {
+      "id": "s1-05",
+      "capability_id": "ahc-002",
+      "task_graph_id": "task-2-design",
+      "stage": "design",
+      "title": "Perfil de domínio: design",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "analyst",
+        "architect",
+        "security"
+      ],
+      "depends_on": [
+        "s1-04"
+      ],
+      "actions": [
+        "Definir domínio, arquétipo, dados, risco e origem com Atlas e Clara.",
+        "Coordenar identificadores de evidência com AHC-003 e escolher política de versionamento."
+      ],
+      "deliverables": [
+        "Contrato e plano de validação"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-002:1",
+        "ahc-002:2",
+        "ahc-002:3"
+      ]
+    },
+    {
+      "id": "s1-06",
+      "capability_id": "ahc-002",
+      "task_graph_id": "task-2-implement",
+      "stage": "implement",
+      "title": "Perfil de domínio: implement",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "engineer",
+        "architect"
+      ],
+      "depends_on": [
+        "s1-05",
+        "s1-09"
+      ],
+      "actions": [
+        "Implementar contrato e normalização de declaração, hipótese e DOMAIN_UNCERTAIN.",
+        "Adicionar exemplo de migração e atualizar schemas sem inventar confiança."
+      ],
+      "deliverables": [
+        "Código, schemas e documentação"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-002:1",
+        "ahc-002:2",
+        "ahc-002:3"
+      ]
+    },
+    {
+      "id": "s1-07",
+      "capability_id": "ahc-002",
+      "task_graph_id": "task-2-verify",
+      "stage": "verify",
+      "title": "Perfil de domínio: verify",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "quality",
+        "security"
+      ],
+      "depends_on": [
+        "s1-06",
+        "s1-10"
+      ],
+      "actions": [
+        "Verificar invariantes, evidências e compatibilidade dos exemplos existentes.",
+        "Testar estados incertos e combinações inválidas."
+      ],
+      "deliverables": [
+        "Resultados de checks e critérios de aceitação"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-002:1",
+        "ahc-002:2",
+        "ahc-002:3"
+      ]
+    },
+    {
+      "id": "s1-08",
+      "capability_id": "ahc-002",
+      "task_graph_id": "task-2-review",
+      "stage": "review",
+      "title": "Perfil de domínio: review",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "delivery",
+        "quality"
+      ],
+      "depends_on": [
+        "s1-07"
+      ],
+      "actions": [
+        "Revisar contratos e migração; integrar PR com CI verde.",
+        "Demonstrar perfis declarado e incerto ao PO."
+      ],
+      "deliverables": [
+        "PR integrado e evidências para aceite"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-002:1",
+        "ahc-002:2",
+        "ahc-002:3"
+      ]
+    },
+    {
+      "id": "s1-09",
+      "capability_id": "ahc-003",
+      "task_graph_id": "task-3-design",
+      "stage": "design",
+      "title": "Evidence Pack: design",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "analyst",
+        "architect",
+        "security"
+      ],
+      "depends_on": [
+        "s1-04"
+      ],
+      "actions": [
+        "Definir IDs, origem, digest opcional, verificação e coleta quando aplicável.",
+        "Separar declaração de usuário e pesquisa externa; acordar timestamps e reprodutibilidade."
+      ],
+      "deliverables": [
+        "Contrato e plano de validação"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-003:1",
+        "ahc-003:2",
+        "ahc-003:3"
+      ]
+    },
+    {
+      "id": "s1-10",
+      "capability_id": "ahc-003",
+      "task_graph_id": "task-3-implement",
+      "stage": "implement",
+      "title": "Evidence Pack: implement",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "engineer",
+        "architect"
+      ],
+      "depends_on": [
+        "s1-09"
+      ],
+      "actions": [
+        "Implementar fontes e validação de referências ausentes, duplicadas e incompatíveis.",
+        "Propagar proveniência até o HarnessSpec sem pesquisar automaticamente."
+      ],
+      "deliverables": [
+        "Código, schemas e documentação"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-003:1",
+        "ahc-003:2",
+        "ahc-003:3"
+      ]
+    },
+    {
+      "id": "s1-11",
+      "capability_id": "ahc-003",
+      "task_graph_id": "task-3-verify",
+      "stage": "verify",
+      "title": "Evidence Pack: verify",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "quality",
+        "security"
+      ],
+      "depends_on": [
+        "s1-10"
+      ],
+      "actions": [
+        "Verificar integridade das referências e distinguir declaração de pesquisa.",
+        "Testar digest, datas aplicáveis e ligações entre perfil e evidências."
+      ],
+      "deliverables": [
+        "Resultados de checks e critérios de aceitação"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-003:1",
+        "ahc-003:2",
+        "ahc-003:3"
+      ]
+    },
+    {
+      "id": "s1-12",
+      "capability_id": "ahc-003",
+      "task_graph_id": "task-3-review",
+      "stage": "review",
+      "title": "Evidence Pack: review",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "delivery",
+        "quality"
+      ],
+      "depends_on": [
+        "s1-11"
+      ],
+      "actions": [
+        "Revisar proveniência e restrições; integrar PR com CI verde.",
+        "Demonstrar decisão rastreável e referência rejeitada ao PO."
+      ],
+      "deliverables": [
+        "PR integrado e evidências para aceite"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-003:1",
+        "ahc-003:2",
+        "ahc-003:3"
+      ]
+    },
+    {
+      "id": "s1-13",
+      "capability_id": "ahc-004",
+      "task_graph_id": "task-4-design",
+      "stage": "design",
+      "title": "Confiabilidade: design",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "analyst",
+        "architect",
+        "security"
+      ],
+      "depends_on": [
+        "s1-04"
+      ],
+      "actions": [
+        "Definir fixtures de educação, comércio e dev-tools e mapear critérios.",
+        "Escolher estratégia de falha segura e método de benchmark com ambiente registrado."
+      ],
+      "deliverables": [
+        "Contrato e plano de validação"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-004:1",
+        "ahc-004:2",
+        "ahc-004:3"
+      ]
+    },
+    {
+      "id": "s1-14",
+      "capability_id": "ahc-004",
+      "task_graph_id": "task-4-implement",
+      "stage": "implement",
+      "title": "Confiabilidade: implement",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "engineer",
+        "architect"
+      ],
+      "depends_on": [
+        "s1-13"
+      ],
+      "actions": [
+        "Criar fixtures e tratar falhas de escrita protegendo projetos existentes.",
+        "Implementar benchmark offline com duração, tamanho e versão."
+      ],
+      "deliverables": [
+        "Código, schemas e documentação"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-004:1",
+        "ahc-004:2",
+        "ahc-004:3"
+      ]
+    },
+    {
+      "id": "s1-15",
+      "capability_id": "ahc-004",
+      "task_graph_id": "task-4-verify",
+      "stage": "verify",
+      "title": "Confiabilidade: verify",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "quality",
+        "security"
+      ],
+      "depends_on": [
+        "s1-14",
+        "s1-08",
+        "s1-12"
+      ],
+      "actions": [
+        "Executar builds dos três domínios e comparar hashes para a mesma IR.",
+        "Injetar falhas de escrita e medir resultados com contratos integrados."
+      ],
+      "deliverables": [
+        "Resultados de checks e critérios de aceitação"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-004:1",
+        "ahc-004:2",
+        "ahc-004:3"
+      ]
+    },
+    {
+      "id": "s1-16",
+      "capability_id": "ahc-004",
+      "task_graph_id": "task-4-review",
+      "stage": "review",
+      "title": "Confiabilidade: review",
+      "status": "planned",
+      "responsible": "code-collaborator-supported-by-codex",
+      "supporting_agents": [
+        "delivery",
+        "quality"
+      ],
+      "depends_on": [
+        "s1-15"
+      ],
+      "actions": [
+        "Revisar limites das medições, documentação e CI; integrar PR.",
+        "Apresentar demo, resultados e aprendizados verificados para Review."
+      ],
+      "deliverables": [
+        "PR integrado e evidências para aceite"
+      ],
+      "acceptance_criteria_refs": [
+        "ahc-004:1",
+        "ahc-004:2",
+        "ahc-004:3"
+      ]
+    }
+  ]
+}

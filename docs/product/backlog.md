@@ -11,10 +11,10 @@ Owner no refinamento. Estimativas são hipóteses de discussão, não compromiss
 
 | ID | Épico / história | Prioridade | Dependências | Situação |
 |---|---|---|---|---|
-| AHC-001 | E1 / Intake canônico e limites | P0 | — | Candidata Sprint 1 |
-| AHC-002 | E1 / Perfil multidimensional de domínio | P0 | 001 | Candidata Sprint 1 |
-| AHC-003 | E1 / Evidence Pack com proveniência | P0 | 001 | Candidata Sprint 1 |
-| AHC-004 | E1 / Confiabilidade e benchmark offline | P0 | 001 | Candidata Sprint 1 |
+| AHC-001 | E1 / Intake canônico e limites | P0 | — | Planejada Sprint 1; início a confirmar |
+| AHC-002 | E1 / Perfil multidimensional de domínio | P0 | 001 | Planejada Sprint 1; início a confirmar |
+| AHC-003 | E1 / Evidence Pack com proveniência | P0 | 001 | Planejada Sprint 1; início a confirmar |
+| AHC-004 | E1 / Confiabilidade e benchmark offline | P0 | 001 | Planejada Sprint 1; início a confirmar |
 | AHC-005 | E2 / PromptSpec e SkillSpec | P1 | 002, 003 | A refinar |
 | AHC-007 | E3 / Tools e Policy Engine | P1 | 005 | A refinar |
 | AHC-008 | E3 / Eval runner e Simulation Lab | P1 | 004, 005 | A refinar |
@@ -47,5 +47,7 @@ antes da seleção; os quatro estágios técnicos do TaskGraph não substituem e
 Prioridade não libera dependências: um P0 bloqueado exige resolver seu pré-requisito.
 
 Usar estados Proposed → Ready → In progress → In review → Done; Blocked deve
-explicar impedimento e ação necessária. Por enquanto, o estado de sprint é proposto.
+explicar impedimento e ação necessária. A Sprint 1 está planejada, sem execução
+iniciada; capacidade e data de início ainda precisam ser confirmadas pelo PO.
+O [plano detalhado](../delivery/sprint-1.md) registra tarefas e sequência de entrega.
 Sem velocity histórica, não usar soma de pontos como previsão de entrega.
