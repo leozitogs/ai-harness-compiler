@@ -153,6 +153,22 @@ class ProjectDNA(EvidenceRegistry):
         for entry in self.evidence:
             if entry.source_id == "project-manifest" and entry.id not in declared:
                 raise ValueError("Canonical manifest only supports known declarations")
+        supplied = self.project.evidence_pack
+        expected_sources = {"project-manifest"}
+        expected_evidence = set(declared)
+        if supplied:
+            expected_sources.update(item.id for item in supplied.sources)
+            expected_evidence.update(item.id for item in supplied.evidence)
+            for supplied_source in supplied.sources:
+                if source_records.get(supplied_source.id) != supplied_source:
+                    raise ValueError("Supplied source must be preserved exactly from project input")
+            for supplied_claim in supplied.evidence:
+                if evidence.get(supplied_claim.id) != supplied_claim:
+                    raise ValueError(
+                        "Supplied evidence must be preserved exactly from project input"
+                    )
+        if set(source_records) != expected_sources or set(evidence) != expected_evidence:
+            raise ValueError("Evidence registry must cover supplied and canonical records exactly")
         ids = {item.id for item in self.project.backlog}
         for item in self.evidence:
             if item.capability_id and item.capability_id not in ids:

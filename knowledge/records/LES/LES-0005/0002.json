@@ -1,0 +1,54 @@
+{
+  "alternatives": [],
+  "applicability": [
+    "IR com registros duplicados da origem e relatórios com resultados agregados."
+  ],
+  "attempts": [],
+  "author": "codex:review-fix",
+  "challenge": null,
+  "consequences": [],
+  "context": "Achados confirmados de proveniência e benchmark no PR #9.",
+  "created_at": "2026-10-06T21:22:14.031612+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Reproduções pré-correção documentadas e regressões pós-correção executadas.",
+      "outcome": "observed",
+      "sha256": "4bc89ee87048fdf836f0594a2c41fa3c9c25352947ec98d8e8c538390602a9a5",
+      "source": "docs/delivery/review-fixes-20261006.md"
+    },
+    {
+      "command": "pytest -q -p no:cacheprovider --basetemp .factory/review-fixes-full-1",
+      "note": "Reproduções pré-correção documentadas e regressões pós-correção executadas.",
+      "outcome": "passed",
+      "sha256": "283b504a64b041770808d082ae0213cce29e8b8b08af741e3d6a7b55847d16d7",
+      "source": "tests/test_review_regressions.py"
+    }
+  ],
+  "id": "LES-0005",
+  "kind": "LES",
+  "lesson": "Comparar cópias com sua origem por ID e validar relações entre campos nos modelos desserializados, antes da emissão.",
+  "limitations": [
+    "Consistência estrutural não autentica fontes ou provas de verdade.",
+    "Integridade de bytes continua distinta de validação semântica e SLO."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "INC-0005",
+    "INC-0006"
+  ],
+  "resolution": "Preservação exata dos registros fornecidos e validação interna de amostras/medianas/repetições.",
+  "review_note": "17 regressões novas e revalidação da baseline sustentam a lição.",
+  "reviewed_by": "codex:executed-regression",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "verified",
+  "summary": "Checks no produtor e hashes de artefatos não substituem invariantes dos contratos públicos.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Validar snapshots e relatórios também na desserialização",
+  "updated_at": "2026-10-06T21:22:14.051579+00:00"
+}

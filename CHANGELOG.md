@@ -2,6 +2,9 @@
 
 ## 0.1.0 — Unreleased
 
+- Revisão: DNA preserva fontes/afirmações fornecidas por ID e rejeita reativação contraditória.
+- Relatórios de benchmark validam hashes, mediana, tamanhos, repetições e unicidade de casos.
+
 - AHC-004: fixtures em três domínios, códigos de falha de emissão e manifesto emitido por último.
 - Benchmark offline com amostras, ambiente, tamanhos, hashes e baseline local, sem SLO fictício.
 

@@ -1,5 +1,6 @@
 """Offline compiler measurements are separate from target product evaluations."""
 
+from statistics import median
 from typing import Literal, Self
 
 from pydantic import Field, model_validator
@@ -41,10 +42,20 @@ class BenchmarkCase(Contract):
     fixture_id: Identifier
     domain: Text
     input_sha256: Digest
-    samples: list[BenchmarkSample] = Field(min_length=1)
+    samples: list[BenchmarkSample] = Field(min_length=2)
     median_ms: float = Field(ge=0, allow_inf_nan=False)
     reproducible: Literal[True] = True
     integrity_status: Literal["passed"] = "passed"
+
+    @model_validator(mode="after")
+    def validate_measurements(self) -> Self:
+        if len({item.bundle_sha256 for item in self.samples}) != 1:
+            raise ValueError("Reproducible samples must have identical bundle hashes")
+        if len({(item.artifact_bytes, item.file_count) for item in self.samples}) != 1:
+            raise ValueError("Identical bundles must have identical sizes and file counts")
+        if self.median_ms != median(item.duration_ms for item in self.samples):
+            raise ValueError("Reported median must equal the median of measured samples")
+        return self
 
 
 class BenchmarkReport(Contract):
@@ -65,3 +76,11 @@ class BenchmarkReport(Contract):
     cases: list[BenchmarkCase] = Field(min_length=1)
     product_evaluation_status: Literal["not-run"] = "not-run"
     slo_status: Literal["not-defined"] = "not-defined"
+
+    @model_validator(mode="after")
+    def validate_cases(self) -> Self:
+        if len({item.fixture_id for item in self.cases}) != len(self.cases):
+            raise ValueError("Benchmark case IDs must be unique")
+        if any(len(item.samples) != self.runs_per_fixture for item in self.cases):
+            raise ValueError("Sample count must match runs_per_fixture for every case")
+        return self

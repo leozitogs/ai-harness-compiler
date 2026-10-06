@@ -1,0 +1,50 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Executar reprodução fornecida sem mudanças.",
+    "Adicionar invariantes e casos negativos independentes.",
+    "Rodar suíte de 207 testes e seis builds corrigidos."
+  ],
+  "author": "codex:review-fix",
+  "challenge": "Alteração de afirmação e reativação de fonte rejeitada compilavam e passavam integridade.",
+  "consequences": [],
+  "context": "Revisão independente do PO reproduzida antes da correção no PR #9.",
+  "created_at": "2026-10-06T21:22:13.948682+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Reproduções pré-correção documentadas e regressões pós-correção executadas.",
+      "outcome": "observed",
+      "sha256": "4bc89ee87048fdf836f0594a2c41fa3c9c25352947ec98d8e8c538390602a9a5",
+      "source": "docs/delivery/review-fixes-20261006.md"
+    },
+    {
+      "command": "pytest -q -p no:cacheprovider --basetemp .factory/review-fixes-full-1",
+      "note": "Reproduções pré-correção documentadas e regressões pós-correção executadas.",
+      "outcome": "passed",
+      "sha256": "283b504a64b041770808d082ae0213cce29e8b8b08af741e3d6a7b55847d16d7",
+      "source": "tests/test_review_regressions.py"
+    }
+  ],
+  "id": "INC-0005",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [],
+  "resolution": "Comparar cobertura e conteúdo por ID com o input; impedir alteração/remoção/adição desvinculada.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": "DNA validava declarações canônicas e referências, sem comparar o Evidence Pack fornecido.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Alteração de afirmação e reativação de fonte rejeitada compilavam e passavam integridade.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Snapshot externo divergia da evidência fornecida",
+  "updated_at": "2026-10-06T21:22:13.948682+00:00"
+}

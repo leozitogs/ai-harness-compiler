@@ -39,7 +39,7 @@
           "items": {
             "$ref": "#/$defs/BenchmarkSample"
           },
-          "minItems": 1,
+          "minItems": 2,
           "title": "Samples",
           "type": "array"
         }
