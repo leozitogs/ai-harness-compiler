@@ -14,7 +14,7 @@ Owner no refinamento. Estimativas são hipóteses de discussão, não compromiss
 | AHC-001 | E1 / Intake canônico e limites | P0 | — | Done — PR #6 integrado com CI verde |
 | AHC-002 | E1 / Perfil multidimensional de domínio | P0 | 001 | Done — PR #8 integrado com CI verde |
 | AHC-003 | E1 / Evidence Pack com proveniência | P0 | 001 | Done — PR #7 integrado com CI verde |
-| AHC-004 | E1 / Confiabilidade e benchmark offline | P0 | 001 | In review — implementação e baseline medida |
+| AHC-004 | E1 / Confiabilidade e benchmark offline | P0 | 001 | Done — PR #9 corrigido integrado |
 | AHC-005 | E2 / PromptSpec e SkillSpec | P1 | 002, 003, 019, 020 | A refinar após entendimento/blueprint |
 | AHC-007 | E3 / Tools e Policy Engine | P1 | 005 | A refinar |
 | AHC-008 | E3 / Eval runner e Simulation Lab | P1 | 004, 005 | A refinar |
@@ -29,7 +29,7 @@ Owner no refinamento. Estimativas são hipóteses de discussão, não compromiss
 | AHC-016 | E2 / Compilador de documentação e memória | P1 | 004, 015 | A refinar |
 | AHC-017 | E3 / Agent Factory com especialização | P1 | 005, 007, 009, 015 | A refinar |
 | AHC-018 | E5 / Aprendizagem por experiências do projeto | P2 | 008, 010, 016, 017 | A refinar |
-| AHC-019 | E1 / Entendimento generalista e regras de negócio | P0 | 002, 003 | Sprint 2 aprovada; gates de entrada pendentes |
+| AHC-019 | E1 / Entendimento generalista e regras de negócio | P0 | 002, 003 | In progress — contratos em revisão |
 | AHC-020 | E2 / Blueprint e packs opcionais | P0 | 019 | Sprint 2 aprovada; depende da entrega 019 |
 
 O [pipeline por projeto](project-generation-pipeline.md)

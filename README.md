@@ -58,6 +58,7 @@ estruturado. Consulte o [exemplo](examples/project-definition/project.yaml) e o
 - Preservação de branding, restrições, backlog, referências a assets e domínio declarado.
 - Registro de evidências e incógnitas, incluindo `DOMAIN_UNCERTAIN`.
 - Perfil multidimensional fornecido, com hipóteses, origem, dados e riscos; [contrato](docs/engineering/domain-profile.md).
+- Preparação e validação de propostas de entendimento com snapshot/citações/revisão; [primeiro incremento](docs/engineering/project-understanding.md). Adapter e estudo por modelo ainda pendentes.
 - Evidence Pack com fontes, digest canônico, revisão declarada e escopos; [contrato e migração](docs/engineering/evidence-pack.md).
 - Validação de IDs, dependências, ciclos, referências e cobertura de critérios de aceitação.
 - Geração reproduzível de `AGENTS.md`, contexto, políticas, ADRs, plano de trabalho,

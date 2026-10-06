@@ -1,8 +1,9 @@
 # Sprint 2 — Estrutura operacional aprovada
 
-PO aprovou o escopo AHC-019/020 em 2026-10-06. Estruturação não inicia implementação,
-fecha a Sprint 1 ou confirma capacidade/data. O gate de aprovação do plano está
-atendido; os demais gates permanecem explícitos em planning/sprint-2.readiness.json.
+PO aprovou o escopo e autorizou o início separadamente em 2026-10-06. PR #9 foi
+integrado; implementação da AHC-019 iniciou pelos contratos. Review/Retro da Sprint 1
+e capacidade seguem pendentes; modelo real é gate de verificação da história.
+Estado explícito em planning/sprint-2.readiness.json, sem alegar eventos realizados.
 
 ## Organização e ownership
 
@@ -90,5 +91,5 @@ D10: Review e Retro. Dias são relativos, sem reuniões agendadas ou data final.
 Daily atualiza tarefa, evidência, impedimento e próximo passo. Retrospective registra
 uma melhoria verificável; Review confirma valor e reordena o backlog com o PO.
 
-Próximo item técnico é 019-01. Antes da execução da sprint, resolver gates de entrada
-sem inferir retrospectiva realizada, modelo instalado ou capacidade confirmada.
+019-01 está implementado e em revisão. Próximo item técnico: 019-02 (interface de
+modelo). AHC-019 continua in progress; os contratos não comprovam estudo semântico.

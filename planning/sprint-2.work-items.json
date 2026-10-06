@@ -1,15 +1,15 @@
 {
   "format": "sprint-work-items/v1",
   "sprint_id": "sprint-2",
-  "status": "approved",
-  "execution_started": false,
+  "status": "in_progress",
+  "execution_started": true,
   "work_items": [
     {
       "id": "s2-1",
       "capability_id": "ahc-019",
       "task_graph_id": "task-19-design",
       "stage": "design",
-      "status": "planned",
+      "status": "in_progress",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "analyst",
@@ -35,7 +35,18 @@
         "019-03"
       ],
       "evidence_policy": "Deliverables and source criteria verified; generated plan alone is not completion evidence.",
-      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/11"
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/11",
+      "subtask_status": {
+        "019-01": "in_review",
+        "019-02": "planned",
+        "019-03": "planned"
+      },
+      "progress_note": "019-01 contracts/schemas/CLI implemented; rest of design and AHC-019 still pending.",
+      "evidence_sources": [
+        "docs/engineering/project-understanding.md",
+        "tests/test_understanding.py",
+        "docs/adr/0009-understanding-contracts.md"
+      ]
     },
     {
       "id": "s2-2",

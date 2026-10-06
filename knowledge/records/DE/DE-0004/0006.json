@@ -1,0 +1,52 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:po-replanning",
+  "challenge": null,
+  "consequences": [
+    "Fixtures não definem cobertura de nichos do produto.",
+    "Fake não comprova estudo semântico; exigir demonstração com modelo real e revisão.",
+    "Planos ainda não aprovados não iniciam execução."
+  ],
+  "context": "Direção generalista aprovada e Sprint 2 iniciada por pedido explícito. Primeiro incremento é contrato, sem alegar estudo por modelo.",
+  "created_at": "2026-10-06T21:38:52.729684+00:00",
+  "decision": "Priorizar AHC-019 (entendimento de proposta/branding/regras) e AHC-020 (blueprint/packs), antes de síntese de prompts/skills e documentação. Core não possui lista fixa de nichos.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Direção de produto confirmada.",
+      "outcome": "observed",
+      "sha256": "24d36fc2249c493b11b6c0d94cc160d64d242a2a68347529dbc1db26a74ec0da",
+      "source": "docs/product/generalist-pipeline.md"
+    },
+    {
+      "command": null,
+      "note": "Início autorizado e tarefas restantes.",
+      "outcome": "observed",
+      "sha256": "b8d2023dc9611bbe7d89b95054ee1a3ee4db0114edc0b6d344e6ff2d05fc6a6a",
+      "source": "docs/delivery/sprint-2.md"
+    }
+  ],
+  "id": "DE-0004",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0002"
+  ],
+  "resolution": null,
+  "review_note": "Pedido explícito de início, sem conferir conclusão da AHC-019 ou realização de cerimônias.",
+  "reviewed_by": "po-request:leozitogs",
+  "revision": 6,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Nicho e regras derivam do estudo de cada projeto; packs são opcionais e extensíveis.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Compilador generalista antes da especialização",
+  "updated_at": "2026-10-06T23:47:07.491913+00:00"
+}

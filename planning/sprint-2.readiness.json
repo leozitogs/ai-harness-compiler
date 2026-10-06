@@ -1,7 +1,7 @@
 {
   "sprint_id": "sprint-2",
-  "execution_started": false,
-  "start_date": null,
+  "execution_started": true,
+  "start_date": "2026-10-06",
   "gates": [
     {
       "id": "scope-approval",
@@ -11,27 +11,31 @@
     },
     {
       "id": "pr-9-integration",
-      "status": "pending",
+      "status": "passed",
       "owner": "repository-maintainer",
-      "evidence": "PR #9 open with CI green at structuring"
+      "evidence": "PR #9 merged after updated CI on head 5f6d4a4"
     },
     {
       "id": "sprint-1-review-retro",
       "status": "pending",
       "owner": "leozitogs-and-collaborator",
-      "evidence": "No recorded completion"
+      "evidence": "No recorded completion",
+      "enforcement": "follow-up",
+      "override": "Explicit PO request to start Sprint 2; event completion not inferred"
     },
     {
       "id": "capacity-and-start",
-      "status": "pending",
+      "status": "partial",
       "owner": "leozitogs-and-collaborator",
-      "evidence": "Scope approved; capacity/start not quantified"
+      "evidence": "Start authorized on 2026-10-06; capacity remains unquantified"
     },
     {
       "id": "real-model-config",
       "status": "pending",
       "owner": "code-collaborator",
-      "evidence": "No model selected; ollama executable not found on PATH; service availability not tested"
+      "evidence": "Model not configured; contract/CLI work started, real-model demonstration remains not-run",
+      "enforcement": "required-for-ahc-019-verification"
     }
-  ]
+  ],
+  "start_authorization": "Explicit PO request; does not assert ceremonies performed or model demo complete."
 }

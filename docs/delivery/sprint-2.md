@@ -1,7 +1,7 @@
 # Sprint 2 replanejada — Entender o projeto antes de especializar
 
 Replanejamento de 2026-10-06 após rejeição explícita do plano anterior pelo PO.
-Escopo aprovado pelo PO em 2026-10-06; execução não iniciada. Dez dias úteis são um timebox
+Escopo aprovado e execução iniciada pelo PO em 2026-10-06. Dez dias úteis são um timebox
 proposto, sem capacidade ou data inicial confirmadas, sem promessa de prazo.
 
 **Sprint Goal:** estudar proposta, branding e regras de negócio de um projeto
@@ -92,8 +92,10 @@ Retro 30 min são propostas locais, sem eventos agendados.
 
 ## Entrada, DoD e limites
 
-Antes de iniciar: integrar PR #9 corrigido; Review/Retro da Sprint 1; aprovação
-explícita do novo plano/capacidade; modelo configurado e uso autorizado. Serviços
+PR #9 corrigido foi integrado. O PO autorizou o início, sem declarar Review/Retro
+da Sprint 1 realizadas ou capacidade quantificada. Essas pendências seguem como
+follow-up; modelo real configurado é gate de verificação da AHC-019, sem bloquear
+trabalho de contratos/CLI. Serviços
 pagos/pesquisa externa exigem autorização específica; a proposta não presume gastos.
 Aplicar DoD do projeto, CI e revisão/integração. Versionar alterações incompatíveis
 de IR com migração; manter snapshots originais e metadados de revisão íntegros.
@@ -105,7 +107,7 @@ de estudo não declara essas histórias concluídas.
 
 ## Artefatos e controle
 
-planning/sprint-2.json registra status approved, gates e seleção AHC-019/020;
+planning/sprint-2.json registra status in_progress, gates e seleção AHC-019/020;
 sprint-2.work-items.json detalha oito etapas. TaskGraph registra oito ondas de
 precedência, sem executar tarefas ou prometer agenda. Branches propostas:
 feat/ahc-019-project-understanding e feat/ahc-020-harness-blueprint-packs.
@@ -116,6 +118,13 @@ python scripts/generate_sprint_plan.py --sprint sprint-2 --check
 ```
 
 PR #10 é atualizado em lugar de criar um plano concorrente. A revisão anterior
-permanece no Git e na memória. O escopo refeito está aprovado, sem inferir início.
+permanece no Git e na memória. O início foi autorizado separadamente pelo PO.
 A [estrutura operacional](sprint-2-execution.md) detalha 21 subtarefas, evidências,
 matriz de demonstração e responsabilidades; readiness e issues constam no manifesto.
+
+## Primeiro incremento da AHC-019
+
+Contratos de snapshot/proposta/revisão e CLI prepare-understanding/validate-understanding
+implementados. Ver [contratos](../engineering/project-understanding.md) e ADR-0009.
+O item 019-01 está em revisão; adapter, rubrica e estudo real ainda estão pendentes.
+Não declarar AHC-019 Done antes de seus demais critérios e demonstração real.

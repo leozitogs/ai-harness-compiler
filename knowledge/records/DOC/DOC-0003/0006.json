@@ -1,0 +1,63 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:planning",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO autorizou início da Sprint 2 em 2026-10-06. Contratos/CLI de entendimento implementados em revisão; adapter/modelo real e cerimônias anteriores seguem pendentes.",
+  "created_at": "2026-10-06T21:30:06.913476+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Estado de execução parcial e limites explícitos.",
+      "outcome": "observed",
+      "sha256": "b8d2023dc9611bbe7d89b95054ee1a3ee4db0114edc0b6d344e6ff2d05fc6a6a",
+      "source": "docs/delivery/sprint-2.md"
+    },
+    {
+      "command": null,
+      "note": "Estado de execução parcial e limites explícitos.",
+      "outcome": "observed",
+      "sha256": "7aa1ba3277503bfa996afe02336267dce8a94fde9d3ed59c38091d99317fb413",
+      "source": "docs/delivery/sprint-2-execution.md"
+    },
+    {
+      "command": null,
+      "note": "Estado de execução parcial e limites explícitos.",
+      "outcome": "observed",
+      "sha256": "b780ac476eba6ced610cf6a4744ad6556c5feb59885207d3a40351e71060d642",
+      "source": "planning/sprint-2.work-items.json"
+    }
+  ],
+  "id": "DOC-0003",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Previsão de duas histórias, sem prazo prometido ou velocity calculada.",
+    "Não implementa runtime de memória/agentes dos projetos alvo."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0002",
+    "DE-0004"
+  ],
+  "resolution": null,
+  "review_note": "Pedido explícito de início, sem conferir conclusão da AHC-019 ou realização de cerimônias.",
+  "reviewed_by": "po-request:leozitogs",
+  "revision": 6,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Sprint 2 aprovada e estruturada: AHC-019/020, 21 subtarefas, ownership, evidências e gates explícitos.",
+  "supersedes": null,
+  "tags": [
+    "scrum",
+    "sprint-2",
+    "planning"
+  ],
+  "title": "Planejamento da Sprint 2",
+  "updated_at": "2026-10-06T23:47:07.419209+00:00"
+}

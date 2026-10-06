@@ -10,13 +10,14 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [ADR-0006 — Proveniência explícita e IR v2](records/ADR/ADR-0006/0002.json) · active · revision 2
 - [ADR-0007 — Perfil multidimensional fornecido e sem scores inventados](records/ADR/ADR-0007/0002.json) · active · revision 2
 - [ADR-0008 — Falha explícita e medições offline do compilador](records/ADR/ADR-0008/0002.json) · active · revision 2
+- [ADR-0009 — Entendimento ancorado no snapshot e revisão separada](records/ADR/ADR-0009/0002.json) · active · revision 2
 - [DE-0001 — Memória de engenharia versionada](records/DE/DE-0001/0001.json) · draft · revision 1
 - [DE-0002 — Gerar memória e especialistas para cada projeto](records/DE/DE-0002/0002.json) · active · revision 2
 - [DE-0003 — Intake limitado e YAML explícito](records/DE/DE-0003/0002.json) · active · revision 2
-- [DE-0004 — Compilador generalista antes da especialização](records/DE/DE-0004/0004.json) · active · revision 4
+- [DE-0004 — Compilador generalista antes da especialização](records/DE/DE-0004/0006.json) · active · revision 6
 - [DOC-0001 — Concepção do AI Harness Compiler](records/DOC/DOC-0001/0006.json) · active · revision 6
-- [DOC-0002 — Planejamento detalhado da Sprint 1](records/DOC/DOC-0002/0005.json) · draft · revision 5
-- [DOC-0003 — Planejamento da Sprint 2](records/DOC/DOC-0003/0004.json) · active · revision 4
+- [DOC-0002 — Planejamento detalhado da Sprint 1](records/DOC/DOC-0002/0006.json) · draft · revision 6
+- [DOC-0003 — Planejamento da Sprint 2](records/DOC/DOC-0003/0006.json) · active · revision 6
 - [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2
 - [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1
 - [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1
