@@ -1,75 +1,125 @@
 # Sprint 1 — Confiança na entrada e nas evidências
 
-**Estado: proposta.** Timebox sugerido: dez dias úteis. Início, capacidade e
-responsáveis ainda precisam ser confirmados. Não há sprint iniciada automaticamente.
+Planejamento atualizado em **2026-10-06**. Timebox proposto: **dez dias úteis**.
+Estado: planejada, execução ainda não iniciada. Data inicial e capacidade permanecem
+em aberto; D1 a D10 indicam ordem relativa de trabalho, não eventos agendados.
 
 **Sprint Goal:** tornar a entrada, o perfil de domínio e as evidências verificáveis,
 medindo a confiabilidade da baseline offline.
 
-## Preparação por agentes
+## Incremento esperado
 
-O PO solicitou e recebeu uma equipe executável antes desta sprint. Os seis
-especialistas preparam análises, planos, matriz de aceitação e riscos; seu relatório
-fica em checkpoint para revisão explícita do PO. A aprovação dessa preparação
-não inicia a sprint nem conclui as histórias candidatas.
+Uma definição de projeto válida entra no compilador, gera uma representação
+canônica com domínio/incógnitas e proveniência, e produz um bundle reprodutível.
+Entradas inválidas e falhas de escrita têm diagnósticos estáveis. A Review demonstra
+o caminho em educação, comércio e ferramentas de desenvolvimento, com medições reais.
 
-```sh
-uv sync --locked --extra team
-uv run --extra team factory team run project-definition --output output/pre-sprint-team
-```
+O baseline atual tem 82 testes aprovados, contratos centrais, compilador, equipe
+de preparação e memória de engenharia. As quatro histórias abaixo ampliam essa
+base; sua existência não implica que os novos critérios já foram atendidos.
 
-Consulte [operação da equipe](../engineering/project-agents.md) antes do Planning.
+## Sprint Backlog e trabalho concreto
 
-## Sprint Backlog candidato
-
-| História | Resultado demonstrável | Estimativa inicial para discussão |
+| História | O que implementar | Critério de entrega |
 |---|---|---|
-| AHC-001 | Intake com limites, rejeição de duplicatas e diagnósticos | 3 pontos |
-| AHC-002 | Perfil de domínio com incerteza e origem explícitas | 3 pontos |
-| AHC-003 | Evidence Pack validado e rastreável | 3 pontos |
-| AHC-004 | Três domínios de fixtures e benchmark offline | 3 pontos |
+| AHC-001 — Intake | Loader seguro com limite de tamanho, rejeição de chaves duplicadas, validação de versão/UTF-8 e diagnóstico estável | Casos válidos aceitos; duplicatas, input excessivo e versões desconhecidas rejeitados em Linux/Windows |
+| AHC-002 — Domínio | Perfil multidimensional tipado: domínio, arquétipo, dados, risco, origem e hipóteses/incógnitas | Invariantes de declaração/hipótese/incerteza, confiança não inventada e compatibilidade/migração demonstrada |
+| AHC-003 — Evidências | Source registry/Evidence Pack: IDs, origem, digest quando aplicável, coleta, estado e vínculo à decisão | Referências ausentes/duplicadas/incompatíveis rejeitadas; declarações e pesquisa não verificada diferenciadas |
+| AHC-004 — Confiabilidade | Três fixtures de domínio, injeção de falhas de escrita e benchmark offline reproduzível | Falhas preservam conteúdo existente; benchmark registra duração, tamanho, versão e método de medição |
 
-Os 12 pontos não representam capacidade conhecida. Se o conjunto não couber,
-reduzir escopo no Planning mantendo o objetivo; começar por AHC-001 e pelo menor
-incremento de evidências. Critérios completos estão no manifesto do produto.
+Critérios canônicos: `project-definition/project.yaml`. Escopo alvo: quatro histórias.
+Sem capacidade e velocity conhecidas, a seleção é uma previsão para Planning, não
+uma promessa de prazo. AHC-001 e a proveniência são os primeiros gates técnicos;
+não reduzir validação ou compatibilidade para fazer caber mais trabalho.
 
-## Plano técnico verificável
+## Decisões técnicas do Planning
 
-[`planning/sprint-1.json`](../../planning/sprint-1.json) seleciona as histórias.
-[`planning/sprint-1.tasks.json`](../../planning/sprint-1.tasks.json) é gerado pelo
-planner: quatro estágios por história, total de 16 tarefas.
+- Definir limite inicial do manifesto e forma de configurá-lo; proposta: 1 MiB.
+- Definir política para referências locais, aliases e profundidade do YAML sem ingestão de assets.
+- Acordar uma representação comum de origem/IDs entre domínio e Evidence Pack antes de desenvolver contratos separados.
+- Escolher versionamento e adaptação dos contratos afetados; preservar exemplos existentes e demonstrar migração.
+- Separar timestamps operacionais de dados que entram na IR reproduzível.
+- Definir a estratégia para falha de escrita sem sobrescrever ou remover arquivos de outros projetos.
 
-```mermaid
-flowchart LR
-    A[AHC-001: design → implement → verify → review] --> B[AHC-002: quatro estágios]
-    A --> C[AHC-003: quatro estágios]
-    A --> D[AHC-004: quatro estágios]
-```
+Essas decisões são propostas de implementação a concluir na etapa de design;
+registrar escolhas locais em DE e mudanças arquiteturais em ADR.
 
-O grafo produz oito ondas potenciais: quatro para AHC-001 e quatro para as três
-histórias dependentes. Isso representa precedência, não execução simultânea garantida.
-Critérios e deliverables de cada tarefa estão preservados no JSON para revisão.
+## Ordem de execução proposta
+
+| Dias relativos | Trabalho | Checkpoint de revisão |
+|---|---|---|
+| D1 | Refinar critérios, interfaces de contratos, limites e plano de testes | Critérios e decisões técnicas compreendidos; branches definidas |
+| D2–D3 | Entregar AHC-001 e seus testes negativos | Intake robusto integrado com CI verde |
+| D4–D5 | Entregar AHC-003; alinhar o design de AHC-002 | Evidência chega ao pipeline com origem e referências validadas |
+| D6–D7 | Entregar AHC-002 e demonstrar compatibilidade/migração | Perfil de domínio explícito sem certeza fabricada |
+| D8–D9 | Entregar AHC-004, integrar fixtures e medir baseline | Três domínios, falhas de escrita e relatório de benchmark |
+| D10 | Demo, Review e Retrospective | Aceite do incremento e uma melhoria do processo registrada |
+
+Essa sequência é uma previsão por dependências. Se a capacidade real não comportar
+o conjunto, renegociar escopo com o PO; não deixar a verificação para o último dia.
+Preparação de fixtures e design de domínio podem ocorrer antes, mas o benchmark
+final e a demonstração usam os contratos integrados.
+
+## Responsabilidades
+
+| Participante | Responsabilidade na sprint |
+|---|---|
+| Leonardo — PO | Prioridade, exemplos/limites de domínio, decisões de escopo e aceite de valor |
+| Colaborador de código/Codex | Implementação, regressões, atualização de schemas/docs e PRs |
+| Clara | Apoio ao refinamento e identificação de lacunas nos requisitos |
+| Atlas | Apoio a contratos, fronteiras e compatibilidade |
+| Ícaro | Apoio à decomposição e ordem das mudanças |
+| Vera | Apoio à matriz de aceitação e evidências de qualidade |
+| Sentinela | Apoio à análise de input, dados, permissões e efeitos |
+| Nexo | Apoio à consolidação de progresso, dependências e impedimentos |
+
+Os agentes atuais produzem análises e planos; a implementação de código é uma
+atividade do colaborador de código. Seus relatórios não substituem execução de
+testes, revisão técnica ou accountability humana. Um segundo revisor independente
+continua uma decisão de formação da equipe.
+
+## Tarefas e controle de progresso
+
+`planning/sprint-1.json` define o escopo. `planning/sprint-1.tasks.json` mantém
+16 estágios técnicos com oito ondas de precedência. O novo
+`planning/sprint-1.work-items.json` detalha ações, entregáveis e papéis por estágio,
+incluindo coordenação adicional entre evidências, domínio e benchmark.
 
 ```sh
 uv run factory tasks project-definition --select ahc-001 ahc-002 ahc-003 ahc-004
 uv run python scripts/generate_sprint_plan.py --check
+uv run --extra team factory team run project-definition --request "Apoiar Planning da Sprint 1" --output output/sprint-1-planning
 ```
 
-## Sequência de entrega sugerida
+Fluxo: Planned → In progress → In review → Done; Blocked registra causa e ação
+para desbloqueio. Começar com uma história de implementação ativa por executor.
+Branches propostas: `feat/ahc-001-canonical-intake`, `feat/ahc-003-evidence-pack`,
+`feat/ahc-002-domain-profile`, `test/ahc-004-compiler-reliability`.
 
-Primeiro demonstrar AHC-001 com testes negativos. Em seguida, desenvolver domínio
-e evidências em contratos revisáveis e ampliar fixtures conforme os contratos
-estabilizam. Integrar continuamente; não reservar verificação para o último dia.
+## Definition of Done e roteiro da Review
 
-Na Review, demonstrar entrada válida, falhas diagnosticadas, incógnitas preservadas,
-referências verificadas e medição reproduzível. Apresentar resultados reais da CI.
+Aplicar a [DoD do projeto](scrum.md): critérios com evidências, CI obrigatória,
+revisão e integração, contratos/docs atuais, segurança e compatibilidade avaliadas.
+Quantidade de testes, isoladamente, não aprova o incremento.
 
-## Riscos, dependências e exclusões
+Na Review, demonstrar:
 
-Principal bloqueio técnico: os contratos de input podem afetar todas as histórias.
-Mitigar com proposta pequena e fixtures antes de ampliar campos. Disponibilidade
-da equipe é a principal incógnita de planejamento.
+1. Manifesto válido aceito e duplicata/input excessivo/versão inválida diagnosticados.
+2. Perfil declarado e caso incerto, sem confiança fabricada.
+3. Fonte rastreável e rejeição de referência quebrada.
+4. Builds das três fixtures, integridade e comparação de bytes para a mesma IR.
+5. Falha de escrita simulada, proteção de conteúdo existente e benchmark com método/resultado.
+6. Uma experiência relevante registrada como INC e, após evidência/revisão, LES.
 
-Fora desta sprint: integração com LLM, Temporal, banco de dados, API, deploy,
-síntese de agentes, otimização de prompts e execução autônoma. Os critérios da
-Definition of Done se aplicam a todas as histórias selecionadas.
+## Riscos, limites e próximos passos do PO
+
+Riscos principais: mudanças acopladas de contratos, migração maior que o previsto,
+capacidade desconhecida e falsa sensação de cobertura por testes estruturais.
+Mitigar com design comum, exemplos pequenos, regressões e demo por critério.
+
+A sprint desenvolve o core offline. API, Temporal, execução distribuída, providers
+pagos e geração de memória/especialistas para projetos alvo seguem nos marcos futuros.
+
+Para iniciar, o PO precisa confirmar o Sprint Goal, a capacidade disponível e a
+data inicial; definir o padrão de aceite e validar os três exemplos fictícios de
+domínio. Este planejamento não muda automaticamente o estado para execução.
