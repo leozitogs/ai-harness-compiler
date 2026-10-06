@@ -34,10 +34,11 @@ class ArchitectureDecision(Contract):
     decision: Text
     rationale: Text
     evidence_ids: list[Identifier] = Field(min_length=1)
+    capability_ids: list[Identifier] = Field(default_factory=list)
 
 
 class HarnessSpec(Contract):
-    schema_version: Literal["HarnessSpec/v1"] = "HarnessSpec/v1"
+    schema_version: Literal["HarnessSpec/v2"] = "HarnessSpec/v2"
     profile: Literal["development-baseline"] = "development-baseline"
     project_dna: ProjectDNA
     capability_graph: CapabilityGraph
@@ -68,6 +69,32 @@ class HarnessSpec(Contract):
             references.extend(decision.evidence_ids)
         if set(references) - set(evidence):
             raise ValueError("Unresolved evidence references")
+        entries = {item.id: item for item in self.project_dna.evidence}
+        sources = {item.id: item for item in self.project_dna.sources}
+        for reference in references:
+            if sources[entries[reference].source_id].verification_status == "rejected":
+                raise ValueError("Rejected source cannot support an active reference")
+        for node in nodes.values():
+            if len(node.evidence_ids) != len(set(node.evidence_ids)):
+                raise ValueError("Duplicate capability evidence references")
+            for reference in node.evidence_ids:
+                entry = entries[reference]
+                if entry.scope != "capability" or entry.capability_id != node.id:
+                    raise ValueError("Evidence is incompatible with capability scope")
+        for decision in self.decisions:
+            if len(decision.evidence_ids) != len(set(decision.evidence_ids)):
+                raise ValueError("Duplicate decision evidence references")
+            if len(decision.capability_ids) != len(set(decision.capability_ids)):
+                raise ValueError("Duplicate decision capability references")
+            if set(decision.capability_ids) - set(nodes):
+                raise ValueError("Unknown decision capability")
+            for reference in decision.evidence_ids:
+                entry = entries[reference]
+                if (
+                    entry.scope == "capability"
+                    and entry.capability_id not in decision.capability_ids
+                ):
+                    raise ValueError("Evidence is incompatible with decision scope")
         for registry in (self.evals, self.decisions):
             ids = [item.id for item in registry]
             if len(ids) != len(set(ids)):

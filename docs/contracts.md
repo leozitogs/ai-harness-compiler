@@ -6,9 +6,10 @@ Os JSON Schemas em `schemas/` são gerados e versionados.
 | Contrato | Responsabilidade |
 |---|---|
 | `ProjectInput/v1` | Identidade, concepção, domínio opcional, branding, backlog, constraints, assets |
-| `ProjectDNA/v1` | Input preservado, perfil de domínio, evidências, incógnitas |
+| `ProjectDNA/v2` | Input preservado, perfil, fontes e evidências com escopo, incógnitas |
 | `CapabilityGraph/v1` | Capacidades, dependências, I/O, risco, efeitos, critérios e evidências |
-| `HarnessSpec/v1` | DNA + grafo + decisões + contexto + permissões + planos de eval |
+| `HarnessSpec/v2` | DNA + grafo + decisões com escopo + contexto + permissões + planos de eval |
+| `EvidencePack/v1` | Fontes, origem, integridade, verificação declarada e afirmações |
 | `TaskGraph/v1` | Seleção de capacidades, estágios técnicos, precedência e critérios |
 
 ## Manifesto de entrada
@@ -51,6 +52,9 @@ Fontes `project.yaml#/...` são localizadores lógicos no manifesto canônico, m
 quando o arquivo físico tem outro nome. O domínio informado recebe `declared` e
 confiança nula: a certeza da classificação não foi medida. Sem domínio, o status
 é `DOMAIN_UNCERTAIN`; o compilador não simula classificação por LLM.
+
+O [Evidence Pack](engineering/evidence-pack.md) detalha fonte canônica, pesquisa
+fornecida, escopos e migração explícita de IR v1 para v2.
 
 `implementation` registra a estratégia declarada (`undecided`, `deterministic`,
 `llm`, `rag` ou `agent`). Selecionar `rag` ou `agent` não cria esses runtimes.

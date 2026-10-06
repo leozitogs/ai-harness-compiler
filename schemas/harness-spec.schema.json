@@ -3,6 +3,14 @@
     "ArchitectureDecision": {
       "additionalProperties": false,
       "properties": {
+        "capability_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "title": "Capability Ids",
+          "type": "array"
+        },
         "decision": {
           "minLength": 1,
           "title": "Decision",
@@ -504,6 +512,19 @@
     "Evidence": {
       "additionalProperties": false,
       "properties": {
+        "capability_id": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Capability Id"
+        },
         "claim": {
           "minLength": 1,
           "title": "Claim",
@@ -523,19 +544,68 @@
           "title": "Kind",
           "type": "string"
         },
+        "scope": {
+          "enum": [
+            "project",
+            "domain",
+            "capability"
+          ],
+          "title": "Scope",
+          "type": "string"
+        },
         "source": {
           "minLength": 1,
           "title": "Source",
+          "type": "string"
+        },
+        "source_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Source Id",
           "type": "string"
         }
       },
       "required": [
         "id",
+        "source_id",
         "source",
         "claim",
-        "kind"
+        "kind",
+        "scope"
       ],
       "title": "Evidence",
+      "type": "object"
+    },
+    "EvidencePack": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "minItems": 1,
+          "title": "Evidence",
+          "type": "array"
+        },
+        "schema_version": {
+          "const": "EvidencePack/v1",
+          "default": "EvidencePack/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/SourceRecord"
+          },
+          "minItems": 1,
+          "title": "Sources",
+          "type": "array"
+        }
+      },
+      "required": [
+        "sources",
+        "evidence"
+      ],
+      "title": "EvidencePack",
       "type": "object"
     },
     "PermissionPolicy": {
@@ -581,10 +651,18 @@
           "$ref": "#/$defs/ProjectInput"
         },
         "schema_version": {
-          "const": "ProjectDNA/v1",
-          "default": "ProjectDNA/v1",
+          "const": "ProjectDNA/v2",
+          "default": "ProjectDNA/v2",
           "title": "Schema Version",
           "type": "string"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/SourceRecord"
+          },
+          "minItems": 1,
+          "title": "Sources",
+          "type": "array"
         },
         "unknowns": {
           "items": {
@@ -596,9 +674,10 @@
         }
       },
       "required": [
+        "sources",
+        "evidence",
         "project",
-        "domain",
-        "evidence"
+        "domain"
       ],
       "title": "ProjectDNA",
       "type": "object"
@@ -645,6 +724,17 @@
           "default": null,
           "title": "Domain"
         },
+        "evidence_pack": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/EvidencePack"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
         "id": {
           "pattern": "^[a-z][a-z0-9_-]{0,63}$",
           "title": "Id",
@@ -669,6 +759,99 @@
         "backlog"
       ],
       "title": "ProjectInput",
+      "type": "object"
+    },
+    "SourceRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "collected_at": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Collected At"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "location": {
+          "minLength": 1,
+          "title": "Location",
+          "type": "string"
+        },
+        "origin": {
+          "enum": [
+            "user-declaration",
+            "external-research",
+            "compiler-derived"
+          ],
+          "title": "Origin",
+          "type": "string"
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha256"
+        },
+        "verification_status": {
+          "default": "unverified",
+          "enum": [
+            "unverified",
+            "verified",
+            "rejected"
+          ],
+          "title": "Verification Status",
+          "type": "string"
+        },
+        "verified_at": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Verified At"
+        },
+        "verified_by": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Verified By"
+        }
+      },
+      "required": [
+        "id",
+        "location",
+        "origin"
+      ],
+      "title": "SourceRecord",
       "type": "object"
     }
   },
@@ -715,8 +898,8 @@
       "type": "string"
     },
     "schema_version": {
-      "const": "HarnessSpec/v1",
-      "default": "HarnessSpec/v1",
+      "const": "HarnessSpec/v2",
+      "default": "HarnessSpec/v2",
       "title": "Schema Version",
       "type": "string"
     }

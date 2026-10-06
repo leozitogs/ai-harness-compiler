@@ -11,7 +11,7 @@
       "task_graph_id": "task-1-design",
       "stage": "design",
       "title": "Intake: design",
-      "status": "in_review",
+      "status": "done",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "analyst",
@@ -31,11 +31,12 @@
         "ahc-001:2",
         "ahc-001:3"
       ],
-      "progress_note": "Implementation and local checks passed; story completion awaits PR review, CI and integration.",
+      "progress_note": "PR #6 passed required Linux/Windows 3.12/3.13 CI and was integrated before AHC-003.",
       "evidence_sources": [
         "docs/engineering/intake.md",
         "tests/test_intake.py"
-      ]
+      ],
+      "pull_request": "https://github.com/leozitogs/ai-harness-compiler/pull/6"
     },
     {
       "id": "s1-02",
@@ -43,7 +44,7 @@
       "task_graph_id": "task-1-implement",
       "stage": "implement",
       "title": "Intake: implement",
-      "status": "in_review",
+      "status": "done",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "engineer",
@@ -64,11 +65,12 @@
         "ahc-001:2",
         "ahc-001:3"
       ],
-      "progress_note": "Implementation and local checks passed; story completion awaits PR review, CI and integration.",
+      "progress_note": "PR #6 passed required Linux/Windows 3.12/3.13 CI and was integrated before AHC-003.",
       "evidence_sources": [
         "docs/engineering/intake.md",
         "tests/test_intake.py"
-      ]
+      ],
+      "pull_request": "https://github.com/leozitogs/ai-harness-compiler/pull/6"
     },
     {
       "id": "s1-03",
@@ -76,7 +78,7 @@
       "task_graph_id": "task-1-verify",
       "stage": "verify",
       "title": "Intake: verify",
-      "status": "in_review",
+      "status": "done",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "quality",
@@ -97,11 +99,12 @@
         "ahc-001:2",
         "ahc-001:3"
       ],
-      "progress_note": "Implementation and local checks passed; story completion awaits PR review, CI and integration.",
+      "progress_note": "PR #6 passed required Linux/Windows 3.12/3.13 CI and was integrated before AHC-003.",
       "evidence_sources": [
         "docs/engineering/intake.md",
         "tests/test_intake.py"
-      ]
+      ],
+      "pull_request": "https://github.com/leozitogs/ai-harness-compiler/pull/6"
     },
     {
       "id": "s1-04",
@@ -109,7 +112,7 @@
       "task_graph_id": "task-1-review",
       "stage": "review",
       "title": "Intake: review",
-      "status": "in_review",
+      "status": "done",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "delivery",
@@ -130,11 +133,12 @@
         "ahc-001:2",
         "ahc-001:3"
       ],
-      "progress_note": "Implementation and local checks passed; story completion awaits PR review, CI and integration.",
+      "progress_note": "PR #6 passed required Linux/Windows 3.12/3.13 CI and was integrated before AHC-003.",
       "evidence_sources": [
         "docs/engineering/intake.md",
         "tests/test_intake.py"
-      ]
+      ],
+      "pull_request": "https://github.com/leozitogs/ai-harness-compiler/pull/6"
     },
     {
       "id": "s1-05",
@@ -257,7 +261,7 @@
       "task_graph_id": "task-3-design",
       "stage": "design",
       "title": "Evidence Pack: design",
-      "status": "planned",
+      "status": "in_review",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "analyst",
@@ -278,6 +282,12 @@
         "ahc-003:1",
         "ahc-003:2",
         "ahc-003:3"
+      ],
+      "progress_note": "Sources, scoped evidence, IR v2 and migration implemented; 145 local tests passed. PR/CI/integration pending.",
+      "evidence_sources": [
+        "docs/delivery/ahc-003-validation.md",
+        "tests/test_evidence.py",
+        "docs/adr/0006-evidence-provenance.md"
       ]
     },
     {
@@ -286,7 +296,7 @@
       "task_graph_id": "task-3-implement",
       "stage": "implement",
       "title": "Evidence Pack: implement",
-      "status": "planned",
+      "status": "in_review",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "engineer",
@@ -306,6 +316,12 @@
         "ahc-003:1",
         "ahc-003:2",
         "ahc-003:3"
+      ],
+      "progress_note": "Sources, scoped evidence, IR v2 and migration implemented; 145 local tests passed. PR/CI/integration pending.",
+      "evidence_sources": [
+        "docs/delivery/ahc-003-validation.md",
+        "tests/test_evidence.py",
+        "docs/adr/0006-evidence-provenance.md"
       ]
     },
     {
@@ -314,7 +330,7 @@
       "task_graph_id": "task-3-verify",
       "stage": "verify",
       "title": "Evidence Pack: verify",
-      "status": "planned",
+      "status": "in_review",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "quality",
@@ -334,6 +350,12 @@
         "ahc-003:1",
         "ahc-003:2",
         "ahc-003:3"
+      ],
+      "progress_note": "Sources, scoped evidence, IR v2 and migration implemented; 145 local tests passed. PR/CI/integration pending.",
+      "evidence_sources": [
+        "docs/delivery/ahc-003-validation.md",
+        "tests/test_evidence.py",
+        "docs/adr/0006-evidence-provenance.md"
       ]
     },
     {
@@ -342,7 +364,7 @@
       "task_graph_id": "task-3-review",
       "stage": "review",
       "title": "Evidence Pack: review",
-      "status": "planned",
+      "status": "in_review",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "delivery",
@@ -362,6 +384,12 @@
         "ahc-003:1",
         "ahc-003:2",
         "ahc-003:3"
+      ],
+      "progress_note": "Sources, scoped evidence, IR v2 and migration implemented; 145 local tests passed. PR/CI/integration pending.",
+      "evidence_sources": [
+        "docs/delivery/ahc-003-validation.md",
+        "tests/test_evidence.py",
+        "docs/adr/0006-evidence-provenance.md"
       ]
     },
     {

@@ -1,0 +1,29 @@
+schema_version: ProjectInput/v1
+id: evidence-demo
+name: Evidence Demo
+conception: Exemplo fictício de declaração e pesquisa fornecida, sem acessar rede.
+domain: education
+backlog:
+  - id: material-library
+    title: Organizar materiais
+    description: Manter referências de materiais para revisão humana.
+    acceptance_criteria:
+      - Origem e estado da fonte estão visíveis para o revisor.
+    implementation: deterministic
+    risk: low
+evidence_pack:
+  schema_version: EvidencePack/v1
+  sources:
+    - id: submitted-paper
+      location: https://example.invalid/paper
+      origin: external-research
+      verification_status: unverified
+      collected_at: "2026-10-06T00:00:00Z"
+  evidence:
+    - id: submitted-claim
+      source_id: submitted-paper
+      source: https://example.invalid/paper#section-1
+      claim: Afirmação fictícia fornecida para demonstrar rastreabilidade, não verificada.
+      kind: research
+      scope: capability
+      capability_id: material-library
