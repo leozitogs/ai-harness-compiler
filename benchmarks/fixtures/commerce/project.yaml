@@ -1,0 +1,31 @@
+schema_version: ProjectInput/v1
+id: commerce-benchmark
+name: Commerce Fixture
+conception: Controlar disponibilidade e registrar pedidos sem automatizar pagamentos.
+domain: commerce
+constraints:
+  security: [Dados de clientes exigem escopo de acesso]
+backlog:
+  - id: inventory
+    title: Disponibilidade
+    description: Consultar estoque disponível por produto.
+    acceptance_criteria:
+      - Produtos têm identificadores únicos e saldo não negativo.
+      - Produto inexistente gera diagnóstico observável.
+    inputs: [produtos]
+    outputs: [disponibilidade]
+    data_owner: lojista
+    risk: low
+    implementation: deterministic
+  - id: order
+    title: Pedido
+    description: Registrar itens e valores para confirmação do cliente.
+    depends_on: [inventory]
+    acceptance_criteria:
+      - Pedido vincula cada item a um produto disponível.
+      - Valores monetários e moeda são registrados explicitamente.
+    inputs: [disponibilidade, itens]
+    outputs: [pedido]
+    data_owner: lojista
+    risk: medium
+    implementation: deterministic

@@ -1,0 +1,58 @@
+{
+  "alternatives": [
+    "Rollback recursivo automático.",
+    "Rename sobre destino sem reserva exclusiva."
+  ],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:ahc-004",
+  "challenge": null,
+  "consequences": [
+    "Falha pode deixar nova saída parcial; usar novo diretório.",
+    "Medições locais não são SLO nem prova de desempenho de agentes/LLMs."
+  ],
+  "context": "Critérios da AHC-004; incremento ainda sujeito à integração por PR.",
+  "created_at": "2026-10-06T15:10:17.626825+00:00",
+  "decision": "Preservar saída parcial com diagnóstico e recusar reuso; não executar rollback recursivo ou prometer publicação transacional. Medir três fixtures offline com repetições e dados brutos.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Decisão e alternativas.",
+      "outcome": "observed",
+      "sha256": "58f467c0a7b4f1c606cf4fdb4eed8affbe8c9fcd64dc17d2945edfeeba8702fc",
+      "source": "docs/adr/0008-compiler-failure-and-measurement.md"
+    },
+    {
+      "command": null,
+      "note": "Comportamento, baseline e limites.",
+      "outcome": "observed",
+      "sha256": "885290e37bb9b9c88dc0c5b7b8a4431039efa07396fd752d83d09870e409235b",
+      "source": "docs/engineering/compiler-reliability.md"
+    }
+  ],
+  "id": "ADR-0008",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0002"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Destino novo exclusivo, manifesto por último e diagnósticos de I/O; benchmark mede integridade e reprodução sem SLO.",
+  "supersedes": null,
+  "tags": [
+    "compiler",
+    "reliability",
+    "benchmark"
+  ],
+  "title": "Falha explícita e medições offline do compilador",
+  "updated_at": "2026-10-06T15:10:17.626825+00:00"
+}

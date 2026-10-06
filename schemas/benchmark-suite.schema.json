@@ -1,0 +1,69 @@
+{
+  "$defs": {
+    "BenchmarkFixture": {
+      "additionalProperties": false,
+      "properties": {
+        "acceptance_criteria_count": {
+          "exclusiveMinimum": 0,
+          "title": "Acceptance Criteria Count",
+          "type": "integer"
+        },
+        "capability_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Capability Ids",
+          "type": "array"
+        },
+        "domain": {
+          "minLength": 1,
+          "title": "Domain",
+          "type": "string"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "manifest": {
+          "minLength": 1,
+          "title": "Manifest",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "manifest",
+        "domain",
+        "capability_ids",
+        "acceptance_criteria_count"
+      ],
+      "title": "BenchmarkFixture",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "fixtures": {
+      "items": {
+        "$ref": "#/$defs/BenchmarkFixture"
+      },
+      "minItems": 1,
+      "title": "Fixtures",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "BenchmarkSuite/v1",
+      "default": "BenchmarkSuite/v1",
+      "title": "Schema Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "fixtures"
+  ],
+  "title": "BenchmarkSuite",
+  "type": "object"
+}

@@ -30,6 +30,8 @@ instala o resultado. Ele valida a IR antes de criar a saída e recusa qualquer
 diretório existente. Uma falha de disco durante a emissão pode deixar uma saída
 parcial; use uma nova pasta na próxima tentativa. Publicação transacional e
 instalação incremental pertencem a fases posteriores.
+AHC-004 adiciona códigos de falha, manifesto emitido por último e benchmark offline
+com integridade em processo. Ver [confiabilidade](engineering/compiler-reliability.md) e ADR-0008.
 
 ## Quatro planos alvo
 

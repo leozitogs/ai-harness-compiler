@@ -1,0 +1,8 @@
+{
+  "schema_version": "BenchmarkSuite/v1",
+  "fixtures": [
+    {"id": "education", "manifest": "fixtures/education/project.yaml", "domain": "education", "capability_ids": ["source-library", "lesson-draft"], "acceptance_criteria_count": 4},
+    {"id": "commerce", "manifest": "fixtures/commerce/project.yaml", "domain": "commerce", "capability_ids": ["inventory", "order"], "acceptance_criteria_count": 4},
+    {"id": "dev-tools", "manifest": "fixtures/dev-tools/project.yaml", "domain": "developer-tools", "capability_ids": ["contract-scan", "review-report"], "acceptance_criteria_count": 4}
+  ]
+}

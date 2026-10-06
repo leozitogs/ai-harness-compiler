@@ -61,6 +61,7 @@ estruturado. Consulte o [exemplo](examples/project-definition/project.yaml) e o
 - Geração reproduzível de `AGENTS.md`, contexto, políticas, ADRs, plano de trabalho,
   plano de evals, documentação, manifesto de hashes e CI de integridade.
 - CLI, testes, análise estática, lockfile e CI para Linux e Windows.
+- Fixtures de três domínios, diagnósticos de escrita e [benchmark offline medido](docs/engineering/compiler-reliability.md).
 - Decomposição determinística em TaskGraph, com critérios e gates de dependências.
 - Equipe opcional de seis especialistas com personas, ferramentas, LangGraph,
   checkpoints do PO e ML local. Consulte [agentes do projeto](docs/engineering/project-agents.md).

@@ -2,6 +2,9 @@
 
 ## 0.1.0 — Unreleased
 
+- AHC-004: fixtures em três domínios, códigos de falha de emissão e manifesto emitido por último.
+- Benchmark offline com amostras, ambiente, tamanhos, hashes e baseline local, sem SLO fictício.
+
 - AHC-002: DomainProfile/v1 multidimensional, declarações/hipóteses/incerteza e confidence null.
 - ProjectDNA/v3 e HarnessSpec/v3; migração explícita de baselines v1/v2 sem scores inventados.
 
