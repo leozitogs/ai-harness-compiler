@@ -60,7 +60,9 @@ Segurança, governança e observabilidade atravessam os quatro planos.
 | Isolamento / infraestrutura | Docker e Terraform | Após existir serviço para operar |
 
 Essas escolhas futuras refletem a direção do produto, não dependências instaladas.
-LangChain e LangGraph poderão ter adapters, sem se tornar o modelo de domínio do core.
+O extra `team` usa LangGraph como adapter de coordenação da equipe do projeto,
+com SQLite para checkpoints e scikit-learn para ML local. A IR do compilador
+permanece independente. Veja ADR-0004 e a documentação dos agentes do projeto.
 
 ## Evolução da IR
 

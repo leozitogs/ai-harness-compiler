@@ -1,0 +1,83 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "enum": [
+        "analyst",
+        "architect",
+        "engineer",
+        "quality",
+        "security",
+        "delivery"
+      ],
+      "title": "Id",
+      "type": "string"
+    },
+    "name": {
+      "minLength": 1,
+      "title": "Name",
+      "type": "string"
+    },
+    "objective": {
+      "minLength": 1,
+      "title": "Objective",
+      "type": "string"
+    },
+    "position": {
+      "minLength": 1,
+      "title": "Position",
+      "type": "string"
+    },
+    "reports_to": {
+      "const": "human-product-owner",
+      "default": "human-product-owner",
+      "title": "Reports To",
+      "type": "string"
+    },
+    "required_tool": {
+      "enum": [
+        "retrieve_context",
+        "requirements_audit",
+        "architecture_review",
+        "implementation_plan",
+        "quality_review",
+        "security_review",
+        "delivery_plan"
+      ],
+      "title": "Required Tool",
+      "type": "string"
+    },
+    "style": {
+      "minLength": 1,
+      "title": "Style",
+      "type": "string"
+    },
+    "tools": {
+      "items": {
+        "enum": [
+          "retrieve_context",
+          "requirements_audit",
+          "architecture_review",
+          "implementation_plan",
+          "quality_review",
+          "security_review",
+          "delivery_plan"
+        ],
+        "type": "string"
+      },
+      "title": "Tools",
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "position",
+    "style",
+    "objective",
+    "tools",
+    "required_tool"
+  ],
+  "title": "Persona",
+  "type": "object"
+}

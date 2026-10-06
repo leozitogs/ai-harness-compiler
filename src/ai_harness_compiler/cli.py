@@ -13,6 +13,7 @@ from ai_harness_compiler.intake import load_project
 from ai_harness_compiler.models import CapabilityGraph, HarnessSpec, ProjectDNA, ProjectInput
 from ai_harness_compiler.models.base import Contract
 from ai_harness_compiler.models.task import TaskGraph
+from ai_harness_compiler.models.team import AgentReport, Persona, TeamConfig
 from ai_harness_compiler.pipeline import plan
 from ai_harness_compiler.planning import decompose
 
@@ -22,6 +23,9 @@ MODELS: dict[str, type[Contract]] = {
     "capability-graph": CapabilityGraph,
     "harness-spec": HarnessSpec,
     "task-graph": TaskGraph,
+    "team-config": TeamConfig,
+    "agent-report": AgentReport,
+    "agent-persona": Persona,
 }
 
 
@@ -31,6 +35,9 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument("--version", action="version", version=__version__)
     commands = parser.add_subparsers(dest="command", required=True)
+    from ai_harness_compiler.team.cli import add_commands
+
+    add_commands(commands)
     for name in ("validate", "plan", "build", "tasks"):
         command = commands.add_parser(name)
         command.add_argument("input", type=Path, help="project.yaml or its parent directory")
@@ -50,6 +57,10 @@ def main(argv: list[str] | None = None) -> int:
     schema_command.add_argument("model", choices=MODELS)
     args = parser.parse_args(argv)
     try:
+        if args.command == "team":
+            from ai_harness_compiler.team.cli import execute
+
+            return execute(args)
         if args.command == "schema":
             print(json_text(MODELS[args.model].model_json_schema()), end="")
             return 0
@@ -71,4 +82,12 @@ def main(argv: list[str] | None = None) -> int:
         return 0
     except (OSError, ValueError, ValidationError, yaml.YAMLError) as exc:
         print(f"factory: {exc}", file=sys.stderr)
+        return 1
+    except ModuleNotFoundError as exc:
+        if args.command != "team":
+            raise
+        print(
+            f"factory: install the team extra with uv sync --extra team ({exc.name})",
+            file=sys.stderr,
+        )
         return 1

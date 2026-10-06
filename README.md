@@ -60,10 +60,12 @@ estruturado. Consulte o [exemplo](examples/project-definition/project.yaml) e o
   plano de evals, documentação, manifesto de hashes e CI de integridade.
 - CLI, testes, análise estática, lockfile e CI para Linux e Windows.
 - Decomposição determinística em TaskGraph, com critérios e gates de dependências.
+- Equipe opcional de seis especialistas com personas, ferramentas, LangGraph,
+  checkpoints do PO e ML local. Consulte [agentes do projeto](docs/engineering/project-agents.md).
 
-**Limites:** não há inferência de domínio, parsing de documentos livres, pesquisa,
-chamadas a LLM, runtime de agentes, integrações MCP, executor de workflows,
-simulação, instalação ou autoevolução. Assets são referências, sem leitura de conteúdo.
+**Limites dos harnesses compilados:** inferência de domínio, parsing de documentos
+livres, pesquisa, integrações MCP, execução de agentes gerados, simulação,
+instalação e autoevolução continuam no roadmap. Assets são referências, sem leitura de conteúdo.
 As avaliações do produto gerado são planos `not-run`, e não testes aprovados.
 As políticas emitidas são contratos de desenvolvimento; um Policy Engine de runtime
 será necessário para aplicá-las durante a execução de agentes.
@@ -131,6 +133,13 @@ uv run python scripts/generate_sprint_plan.py --check
 uv build
 ```
 
+Para desenvolver e testar a equipe opcional, instale todos os extras:
+
+```sh
+uv sync --locked --all-extras
+uv run --extra team factory team run project-definition --output output/pre-sprint-team
+```
+
 Leia [CONTRIBUTING.md](CONTRIBUTING.md). O core pertence ao projeto e permanece
 independente de provedores de modelos e frameworks de agentes.
 
@@ -153,6 +162,7 @@ independente de provedores de modelos e frameworks de agentes.
 | [Task planning](docs/engineering/task-planning.md) | Decomposição implementada e limites |
 | [Commits e branches](docs/engineering/workflow.md) | Convenções verificadas por hook e CI |
 | [Engenharia](docs/engineering/standards.md) | Organização, qualidade e escalabilidade |
+| [Agentes do projeto](docs/engineering/project-agents.md) | Equipe executável, ML e decisão do PO |
 
 ## Licença
 

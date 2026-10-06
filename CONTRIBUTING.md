@@ -6,7 +6,7 @@ um requisito a um contrato e a uma forma de verificação.
 ## Ambiente
 
 ```sh
-uv sync --locked
+uv sync --locked --all-extras
 uv run factory validate examples/project-definition
 ```
 

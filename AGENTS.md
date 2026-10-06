@@ -25,6 +25,10 @@ Build a compiler that turns project intent into typed, verifiable AI engineering
 - Use explicit task plans with dependencies and verification, never claims of private chain-of-thought or unexecuted completion.
 - Follow docs/delivery/scrum.md for Definition of Done; proposed sprint scope is not a delivery commitment.
 - Preserve Apache-2.0 notices and review dependency and generated-template licensing.
+- Keep project-team frameworks in the optional team adapter; domain contracts stay framework independent.
+- Project agents report to the human PO. Report approval never starts a sprint or marks backlog items complete.
+- Preserve tool allowlists, source bounds, step budgets and persistent review gates when changing agents.
+- Install all extras for the full test suite; do not present the small ML holdout as production performance.
 
 ## Checks
 
