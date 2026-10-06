@@ -28,7 +28,7 @@ Issues = "https://github.com/leozitogs/ai-harness-compiler/issues"
 factory = "ai_harness_compiler.cli:main"
 
 [dependency-groups]
-dev = ["pytest>=8.3,<10", "ruff>=0.11,<1", "mypy>=1.15,<2", "types-PyYAML>=6.0.12", "jsonschema>=4.23,<5"]
+dev = ["pytest>=8.3,<10", "ruff>=0.11,<1", "mypy>=1.15,<3", "types-PyYAML>=6.0.12", "jsonschema>=4.23,<5"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/ai_harness_compiler"]
