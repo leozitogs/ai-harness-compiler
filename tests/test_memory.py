@@ -214,3 +214,29 @@ def test_evidence_freshness_changes_checkpoint_context_digest(store, draft):
     (store.root / "evidence.txt").write_text("changed", encoding="utf-8")
     after = RepositoryContext(store.root).digests()
     assert before != after
+
+
+def test_cyclic_supersession_is_rejected_before_writing_a_revision(store, draft):
+    store.add(draft)
+    replacement = RecordDraft.model_validate(
+        {**draft.model_dump(), "id": "LES-0002", "supersedes": draft.id}
+    )
+    store.add(replacement)
+    draft.supersedes = replacement.id
+    with pytest.raises(ValueError, match="supersession"):
+        store.revise(draft, expected=1)
+    assert store.latest()[draft.id].revision == 1
+    assert not (store.records / "LES/LES-0001/0002.json").exists()
+
+
+def test_cyclic_supersession_in_manually_edited_records_is_rejected(store, draft):
+    store.add(draft)
+    store.add(
+        RecordDraft.model_validate({**draft.model_dump(), "id": "LES-0002", "supersedes": draft.id})
+    )
+    path = store.records / "LES/LES-0001/0001.json"
+    payload = json.loads(path.read_text())
+    payload["supersedes"] = "LES-0002"
+    path.write_text(json.dumps(payload))
+    with pytest.raises(ValueError, match="supersession"):
+        store.latest()

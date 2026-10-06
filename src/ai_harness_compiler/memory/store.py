@@ -7,6 +7,7 @@ import sqlite3
 from collections.abc import Iterator
 from contextlib import contextmanager
 from datetime import UTC, datetime
+from graphlib import CycleError, TopologicalSorter
 from pathlib import Path
 from uuid import uuid4
 
@@ -58,11 +59,23 @@ class MemoryStore:
         for identifier, sequence in revisions.items():
             if sequence != list(range(1, max(sequence) + 1)):
                 raise ValueError(f"Non-contiguous revisions for {identifier}")
-        for record in result.values():
-            links = record.related + ([record.supersedes] if record.supersedes else [])
-            if set(links) - result.keys():
-                raise ValueError(f"Unresolved/cross-project relationships for {record.id}")
+        self.validate_relationships(result)
         return result
+
+    @staticmethod
+    def validate_relationships(records: dict[str, MemoryRecord]) -> None:
+        for record in records.values():
+            links = record.related + ([record.supersedes] if record.supersedes else [])
+            if set(links) - records.keys():
+                raise ValueError(f"Unresolved/cross-project relationships for {record.id}")
+        graph = {
+            record.id: [record.supersedes] if record.supersedes else []
+            for record in records.values()
+        }
+        try:
+            tuple(TopologicalSorter(graph).static_order())
+        except CycleError as exc:
+            raise ValueError("Memory supersession must be acyclic") from exc
 
     @contextmanager
     def writer(self) -> Iterator[None]:
@@ -114,6 +127,7 @@ class MemoryStore:
                 raise ValueError("Relationships must resolve within this project")
             now = datetime.now(UTC).isoformat()
             record = MemoryRecord(**draft.model_dump(), revision=1, created_at=now, updated_at=now)
+            self.validate_relationships({**current, record.id: record})
             return self.append(record)
 
     def revise(self, draft: RecordDraft, expected: int) -> MemoryRecord:
@@ -127,14 +141,14 @@ class MemoryStore:
             links = draft.related + ([draft.supersedes] if draft.supersedes else [])
             if set(links) - current.keys():
                 raise ValueError("Relationships must resolve")
-            return self.append(
-                MemoryRecord(
-                    **draft.model_dump(),
-                    revision=expected + 1,
-                    created_at=previous.created_at,
-                    updated_at=datetime.now(UTC).isoformat(),
-                )
+            record = MemoryRecord(
+                **draft.model_dump(),
+                revision=expected + 1,
+                created_at=previous.created_at,
+                updated_at=datetime.now(UTC).isoformat(),
             )
+            self.validate_relationships({**current, record.id: record})
+            return self.append(record)
 
     def review(
         self, identifier: str, expected: int, status: Status, reviewer: str, note: str
