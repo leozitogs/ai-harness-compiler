@@ -24,7 +24,14 @@ Owner no refinamento. Estimativas são hipóteses de discussão, não compromiss
 | AHC-012 | E4 / Instalação e rollback | P2 | 004, 008 | A refinar |
 | AHC-011 | E5 / Busca de arquiteturas | P2 | 006, 010 | A refinar |
 | AHC-014 | E4 / API e operação multi-projeto | P2 | 010, 012 | A refinar |
-| AHC-013 | E5 / Evolução e Experience Store | P3 | 010, 011, 012 | A refinar |
+| AHC-013 | E5 / Evolução e Experience Store | P3 | 010, 011, 012, 018 | A refinar |
+| AHC-015 | E2 / DocumentationLearningSpec por projeto | P1 | 003, 005 | A refinar |
+| AHC-016 | E2 / Compilador de documentação e memória | P1 | 004, 015 | A refinar |
+| AHC-017 | E3 / Agent Factory com especialização | P1 | 005, 007, 009, 015 | A refinar |
+| AHC-018 | E5 / Aprendizagem por experiências do projeto | P2 | 008, 010, 016, 017 | A refinar |
+
+O [pipeline por projeto](project-generation-pipeline.md)
+define o caminho dos novos itens e as diferenças entre capacidade interna e produto gerado.
 
 ## Incremento já existente
 

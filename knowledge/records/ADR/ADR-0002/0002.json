@@ -1,0 +1,43 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "bootstrap:existing-project-evidence",
+  "challenge": null,
+  "consequences": [],
+  "context": "Decisão pré-existente; conteúdo completo no documento de origem.",
+  "created_at": "2026-10-05T23:58:25.447516+00:00",
+  "decision": "Exportar somente em pastas novas e separar integridade de avaliação do produto.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Original documented architectural decision.",
+      "outcome": "observed",
+      "sha256": "01785d43dc2f3629c3fdba49cd113a0029d27b63850ae7faf8f0c05096bd8955",
+      "source": "docs/adr/0002-reviewable-generation.md"
+    }
+  ],
+  "id": "ADR-0002",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [],
+  "resolution": null,
+  "review_note": "Imported the existing documented decision; no new PO approval claimed.",
+  "reviewed_by": "migration:documented-decision",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Exportar somente em pastas novas e separar integridade de avaliação do produto.",
+  "supersedes": null,
+  "tags": [
+    "architecture",
+    "contracts",
+    "engineering"
+  ],
+  "title": "Geração revisável e instalação separada",
+  "updated_at": "2026-10-05T23:58:25.459198+00:00"
+}

@@ -19,6 +19,11 @@ projeto; a ferramenta do engenheiro produz o plano de implementação. Alterar
 código, executar testes arbitrários, publicar ou mudar prioridades não está
 exposto nas permissões desta equipe inicial.
 
+Todos também consultam `retrieve_memory`: decisões revisadas e lições verificadas
+com fontes atuais, aplicabilidade e limites. O ciclo local usa contexto, memória,
+ferramenta do papel e finalização (quatro passos). Consulte o
+[sistema de memória](memory-system.md) para captura e curadoria de experiências.
+
 ## Instalar e executar
 
 ```sh

@@ -12,6 +12,7 @@ from ai_harness_compiler.compiler import compile_harness, json_text
 from ai_harness_compiler.intake import load_project
 from ai_harness_compiler.models import CapabilityGraph, HarnessSpec, ProjectDNA, ProjectInput
 from ai_harness_compiler.models.base import Contract
+from ai_harness_compiler.models.memory import MemoryRecord, RecordDraft
 from ai_harness_compiler.models.task import TaskGraph
 from ai_harness_compiler.models.team import AgentReport, Persona, TeamConfig
 from ai_harness_compiler.pipeline import plan
@@ -26,6 +27,8 @@ MODELS: dict[str, type[Contract]] = {
     "team-config": TeamConfig,
     "agent-report": AgentReport,
     "agent-persona": Persona,
+    "memory-record": MemoryRecord,
+    "memory-draft": RecordDraft,
 }
 
 
@@ -38,6 +41,9 @@ def main(argv: list[str] | None = None) -> int:
     from ai_harness_compiler.team.cli import add_commands
 
     add_commands(commands)
+    from ai_harness_compiler.memory.cli import add_commands as add_memory_commands
+
+    add_memory_commands(commands)
     for name in ("validate", "plan", "build", "tasks"):
         command = commands.add_parser(name)
         command.add_argument("input", type=Path, help="project.yaml or its parent directory")
@@ -57,6 +63,10 @@ def main(argv: list[str] | None = None) -> int:
     schema_command.add_argument("model", choices=MODELS)
     args = parser.parse_args(argv)
     try:
+        if args.command == "memory":
+            from ai_harness_compiler.memory.cli import execute as execute_memory
+
+            return execute_memory(args)
         if args.command == "team":
             from ai_harness_compiler.team.cli import execute
 
