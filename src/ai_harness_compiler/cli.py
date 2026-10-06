@@ -9,7 +9,7 @@ from pydantic import ValidationError
 
 from ai_harness_compiler import __version__
 from ai_harness_compiler.compiler import compile_harness, json_text
-from ai_harness_compiler.intake import load_project
+from ai_harness_compiler.intake import DEFAULT_MAX_MANIFEST_BYTES, load_project
 from ai_harness_compiler.models import CapabilityGraph, HarnessSpec, ProjectDNA, ProjectInput
 from ai_harness_compiler.models.base import Contract
 from ai_harness_compiler.models.memory import MemoryRecord, RecordDraft
@@ -47,6 +47,12 @@ def main(argv: list[str] | None = None) -> int:
     for name in ("validate", "plan", "build", "tasks"):
         command = commands.add_parser(name)
         command.add_argument("input", type=Path, help="project.yaml or its parent directory")
+        command.add_argument(
+            "--max-manifest-bytes",
+            type=int,
+            default=DEFAULT_MAX_MANIFEST_BYTES,
+            help="Maximum manifest size in bytes (default: 1048576)",
+        )
         if name == "build":
             command.add_argument("--output", type=Path, required=True, help="New output directory")
         if name == "tasks":
@@ -77,7 +83,7 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "compile":
             spec = HarnessSpec.model_validate_json(args.input.read_text(encoding="utf-8-sig"))
         else:
-            spec = plan(load_project(args.input))
+            spec = plan(load_project(args.input, max_manifest_bytes=args.max_manifest_bytes))
         if args.command == "validate":
             print(f"Valid: {spec.project_dna.project.id}; {len(spec.evals)} planned evals.")
         elif args.command == "tasks":

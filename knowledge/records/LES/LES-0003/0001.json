@@ -1,0 +1,57 @@
+{
+  "alternatives": [],
+  "applicability": [
+    "pytest com grandes strings/bytes parametrizados, principalmente no Windows."
+  ],
+  "attempts": [],
+  "author": "codex:observed-test-run",
+  "challenge": null,
+  "consequences": [],
+  "context": "Aprendizado da AHC-001; não altera payloads nem enfraquece os testes.",
+  "created_at": "2026-10-06T06:48:40.438063+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Reprodução e limites de aplicabilidade.",
+      "outcome": "observed",
+      "sha256": "e782e9a9aec81dbf8bf1bea6c1f0ef24f18cf776ae0243b853f633aad4ef1854",
+      "source": "docs/delivery/ahc-001-validation.md"
+    },
+    {
+      "command": "pytest -q -p no:cacheprovider --basetemp .factory/intake-full-1",
+      "note": "Suite executada com IDs curtos.",
+      "outcome": "passed",
+      "sha256": "f497a51b08f369ec7f3c62ea1d094088dd7032a7603c5975d1b6a1dca69d2488",
+      "source": "tests/test_intake.py"
+    }
+  ],
+  "id": "LES-0003",
+  "kind": "LES",
+  "lesson": "Definir IDs explícitos curtos para fixtures grandes, sem interpolar todo o payload no nome do teste.",
+  "limitations": [
+    "Limite constatado em variável de ambiente, não em caminhos de arquivo.",
+    "Não é evidência de performance ou segurança do loader."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "INC-0003"
+  ],
+  "resolution": "Parametrização manteve entradas originais e recebeu IDs curtos; regressões aprovadas.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Separar identidade do teste de dados de entrada evita falha de infraestrutura no Windows.",
+  "supersedes": null,
+  "tags": [
+    "pytest",
+    "windows",
+    "testing"
+  ],
+  "title": "Usar IDs curtos para parametrizações com payloads grandes",
+  "updated_at": "2026-10-06T06:48:40.438063+00:00"
+}

@@ -1,19 +1,38 @@
 {
   "id": "sprint-1",
-  "status": "planned",
+  "status": "in_progress",
   "goal": "Tornar a entrada, o perfil de domínio e as evidências verificáveis, medindo a confiabilidade da baseline offline.",
   "duration_working_days": 10,
-  "start_date": null,
+  "start_date": "2026-10-06",
   "capacity_confirmed": false,
-  "selected_capabilities": ["ahc-001", "ahc-002", "ahc-003", "ahc-004"],
+  "selected_capabilities": [
+    "ahc-001",
+    "ahc-002",
+    "ahc-003",
+    "ahc-004"
+  ],
   "declared_completed_capabilities": [],
   "planning_date": "2026-10-06",
-  "execution_started": false,
+  "execution_started": true,
   "forecast_policy": "Four target stories; confirm capacity before commitment. Protect the Sprint Goal by reducing scope through PO agreement.",
   "implementation_owner": "code-collaborator-supported-by-codex",
   "product_owner": "leozitogs",
-  "supporting_agents": ["analyst", "architect", "engineer", "quality", "security", "delivery"],
+  "supporting_agents": [
+    "analyst",
+    "architect",
+    "engineer",
+    "quality",
+    "security",
+    "delivery"
+  ],
   "work_items_file": "planning/sprint-1.work-items.json",
   "estimation_status": "uncalibrated-no-velocity",
-  "integration_policy": "One story branch/PR at a time; integrate complete increments with CI evidence."
+  "integration_policy": "One story branch/PR at a time; integrate complete increments with CI evidence.",
+  "start_authorization": "PO request: começa a implementar a sprint 1",
+  "capability_status": {
+    "ahc-001": "in_review",
+    "ahc-002": "planned",
+    "ahc-003": "planned",
+    "ahc-004": "planned"
+  }
 }

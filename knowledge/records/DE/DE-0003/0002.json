@@ -1,0 +1,58 @@
+{
+  "alternatives": [
+    "Manter yaml.safe_load sem limites nem validação de duplicatas.",
+    "Permitir aliases e merges com orçamento de expansão separado."
+  ],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:ahc-001",
+  "challenge": null,
+  "consequences": [
+    "Manifestos antigos com aliases/merges/duplicatas precisam ser explícitos.",
+    "Diagnósticos públicos omitem valores de input."
+  ],
+  "context": "Implementação da AHC-001. Assets permanecem metadados sem leitura. Limites são política de intake e não campos da IR.",
+  "created_at": "2026-10-06T06:48:40.280480+00:00",
+  "decision": "Default de 1 MiB configurável, até 64 níveis e 50000 nós. SafeLoader com composição limitada e chaves textuais únicas. UTF-8/BOM aceito; schema desconhecido rejeitado.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Política e compatibilidade documentadas.",
+      "outcome": "observed",
+      "sha256": "20eece051df6ce344391c0ff4fc8fbf56a83ea9ec1d3c4be62918f78d390966f",
+      "source": "docs/engineering/intake.md"
+    },
+    {
+      "command": null,
+      "note": "Implementação observada.",
+      "outcome": "observed",
+      "sha256": "3ea21c067229e79f3ac99bfde9704a6634730862d776913722ef608bfb498c91",
+      "source": "src/ai_harness_compiler/intake.py"
+    }
+  ],
+  "id": "DE-0003",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0001"
+  ],
+  "resolution": null,
+  "review_note": "Decisão técnica revisada contra código e limites documentados; não representa aceite do PO.",
+  "reviewed_by": "codex:implementation-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Limitar bytes antes da decodificação; rejeitar duplicatas, aliases/merges e estruturas excessivas, com códigos estáveis.",
+  "supersedes": null,
+  "tags": [
+    "intake",
+    "security",
+    "limits"
+  ],
+  "title": "Intake limitado e YAML explícito",
+  "updated_at": "2026-10-06T06:48:40.320040+00:00"
+}
