@@ -1,7 +1,7 @@
 {
   "format": "sprint-work-items/v1",
   "sprint_id": "sprint-2",
-  "status": "proposed",
+  "status": "approved",
   "execution_started": false,
   "work_items": [
     {
@@ -28,7 +28,14 @@
         "ahc-019:1",
         "ahc-019:2",
         "ahc-019:3"
-      ]
+      ],
+      "subtask_ids": [
+        "019-01",
+        "019-02",
+        "019-03"
+      ],
+      "evidence_policy": "Deliverables and source criteria verified; generated plan alone is not completion evidence.",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/11"
     },
     {
       "id": "s2-2",
@@ -55,7 +62,14 @@
         "ahc-019:1",
         "ahc-019:2",
         "ahc-019:3"
-      ]
+      ],
+      "subtask_ids": [
+        "019-04",
+        "019-05",
+        "019-06"
+      ],
+      "evidence_policy": "Deliverables and source criteria verified; generated plan alone is not completion evidence.",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/11"
     },
     {
       "id": "s2-3",
@@ -82,7 +96,14 @@
         "ahc-019:1",
         "ahc-019:2",
         "ahc-019:3"
-      ]
+      ],
+      "subtask_ids": [
+        "019-07",
+        "019-08",
+        "019-09"
+      ],
+      "evidence_policy": "Deliverables and source criteria verified; generated plan alone is not completion evidence.",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/11"
     },
     {
       "id": "s2-4",
@@ -109,7 +130,13 @@
         "ahc-019:1",
         "ahc-019:2",
         "ahc-019:3"
-      ]
+      ],
+      "subtask_ids": [
+        "019-10",
+        "019-11"
+      ],
+      "evidence_policy": "Deliverables and source criteria verified; generated plan alone is not completion evidence.",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/11"
     },
     {
       "id": "s2-5",
@@ -137,7 +164,13 @@
         "ahc-020:1",
         "ahc-020:2",
         "ahc-020:3"
-      ]
+      ],
+      "subtask_ids": [
+        "020-01",
+        "020-02"
+      ],
+      "evidence_policy": "Deliverables and source criteria verified; generated plan alone is not completion evidence.",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/12"
     },
     {
       "id": "s2-6",
@@ -164,7 +197,14 @@
         "ahc-020:1",
         "ahc-020:2",
         "ahc-020:3"
-      ]
+      ],
+      "subtask_ids": [
+        "020-03",
+        "020-04",
+        "020-05"
+      ],
+      "evidence_policy": "Deliverables and source criteria verified; generated plan alone is not completion evidence.",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/12"
     },
     {
       "id": "s2-7",
@@ -191,7 +231,14 @@
         "ahc-020:1",
         "ahc-020:2",
         "ahc-020:3"
-      ]
+      ],
+      "subtask_ids": [
+        "020-06",
+        "020-07",
+        "020-08"
+      ],
+      "evidence_policy": "Deliverables and source criteria verified; generated plan alone is not completion evidence.",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/12"
     },
     {
       "id": "s2-8",
@@ -218,7 +265,13 @@
         "ahc-020:1",
         "ahc-020:2",
         "ahc-020:3"
-      ]
+      ],
+      "subtask_ids": [
+        "020-09",
+        "020-10"
+      ],
+      "evidence_policy": "Deliverables and source criteria verified; generated plan alone is not completion evidence.",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/12"
     }
   ]
 }

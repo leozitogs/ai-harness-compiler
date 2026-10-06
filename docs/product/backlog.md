@@ -29,8 +29,8 @@ Owner no refinamento. Estimativas são hipóteses de discussão, não compromiss
 | AHC-016 | E2 / Compilador de documentação e memória | P1 | 004, 015 | A refinar |
 | AHC-017 | E3 / Agent Factory com especialização | P1 | 005, 007, 009, 015 | A refinar |
 | AHC-018 | E5 / Aprendizagem por experiências do projeto | P2 | 008, 010, 016, 017 | A refinar |
-| AHC-019 | E1 / Entendimento generalista e regras de negócio | P0 | 002, 003 | Proposta Sprint 2; aprovação pendente |
-| AHC-020 | E2 / Blueprint e packs opcionais | P0 | 019 | Proposta Sprint 2; aprovação pendente |
+| AHC-019 | E1 / Entendimento generalista e regras de negócio | P0 | 002, 003 | Sprint 2 aprovada; gates de entrada pendentes |
+| AHC-020 | E2 / Blueprint e packs opcionais | P0 | 019 | Sprint 2 aprovada; depende da entrega 019 |
 
 O [pipeline por projeto](project-generation-pipeline.md)
 define o caminho dos novos itens e as diferenças entre capacidade interna e produto gerado.
@@ -55,6 +55,6 @@ O [plano detalhado](../delivery/sprint-1.md) registra tarefas e sequência de en
 Sem velocity histórica, não usar soma de pontos como previsão de entrega.
 
 A [Sprint 2 replanejada](../delivery/sprint-2.md) propõe AHC-019 e AHC-020.
-O plano anterior foi rejeitado pelo PO; a nova proposta não está aprovada e não
-inicia execução. Entrada: PR #9 corrigido integrado, Review/Retrospective da
+O plano anterior foi rejeitado pelo PO; o novo escopo foi aprovado em 2026-10-06,
+sem início da execução. Entrada: PR #9 corrigido integrado, Review/Retrospective da
 Sprint 1, aprovação do novo escopo/capacidade e modelo configurado.

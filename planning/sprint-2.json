@@ -1,6 +1,6 @@
 {
   "id": "sprint-2",
-  "status": "proposed",
+  "status": "approved",
   "planning_date": "2026-10-06",
   "goal": "Estudar proposta, branding e regras de negócio sem nicho pré-programado, produzir entendimento rastreável e derivar um plano de harness adaptável com packs opcionais.",
   "duration_working_days": 10,
@@ -39,5 +39,24 @@
   },
   "plan_revision": 2,
   "prior_plan_status": "rejected-by-po",
-  "po_approval_status": "pending"
+  "po_approval_status": "approved",
+  "approval_date": "2026-10-06",
+  "approved_by": "leozitogs",
+  "approval_evidence": "PO message: aprovado, pode estruturar a sprint.",
+  "readiness_file": "planning/sprint-2.readiness.json",
+  "execution_guide": "docs/delivery/sprint-2-execution.md",
+  "tracking": {
+    "milestone_number": 1,
+    "milestone_url": "https://github.com/leozitogs/ai-harness-compiler/milestone/1",
+    "issues": {
+      "ahc-019": {
+        "number": 11,
+        "url": "https://github.com/leozitogs/ai-harness-compiler/issues/11"
+      },
+      "ahc-020": {
+        "number": 12,
+        "url": "https://github.com/leozitogs/ai-harness-compiler/issues/12"
+      }
+    }
+  }
 }

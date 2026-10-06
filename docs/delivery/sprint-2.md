@@ -1,7 +1,7 @@
 # Sprint 2 replanejada — Entender o projeto antes de especializar
 
 Replanejamento de 2026-10-06 após rejeição explícita do plano anterior pelo PO.
-Proposta ainda não aprovada; execução não iniciada. Dez dias úteis são um timebox
+Escopo aprovado pelo PO em 2026-10-06; execução não iniciada. Dez dias úteis são um timebox
 proposto, sem capacidade ou data inicial confirmadas, sem promessa de prazo.
 
 **Sprint Goal:** estudar proposta, branding e regras de negócio de um projeto
@@ -105,7 +105,7 @@ de estudo não declara essas histórias concluídas.
 
 ## Artefatos e controle
 
-planning/sprint-2.json registra status proposed, gates e seleção AHC-019/020;
+planning/sprint-2.json registra status approved, gates e seleção AHC-019/020;
 sprint-2.work-items.json detalha oito etapas. TaskGraph registra oito ondas de
 precedência, sem executar tarefas ou prometer agenda. Branches propostas:
 feat/ahc-019-project-understanding e feat/ahc-020-harness-blueprint-packs.
@@ -116,4 +116,6 @@ python scripts/generate_sprint_plan.py --sprint sprint-2 --check
 ```
 
 PR #10 é atualizado em lugar de criar um plano concorrente. A revisão anterior
-permanece no Git e na memória; o novo planejamento não é tratado como aprovado.
+permanece no Git e na memória. O escopo refeito está aprovado, sem inferir início.
+A [estrutura operacional](sprint-2-execution.md) detalha 21 subtarefas, evidências,
+matriz de demonstração e responsabilidades; readiness e issues constam no manifesto.

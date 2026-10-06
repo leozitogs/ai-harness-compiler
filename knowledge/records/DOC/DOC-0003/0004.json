@@ -1,0 +1,63 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:planning",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO aprovou em 2026-10-06 o escopo generalista AHC-019/020 e solicitou estruturação. Issues #11/#12 e milestone criados; implementação não iniciada, demais gates pendentes.",
+  "created_at": "2026-10-06T21:30:06.913476+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Documento aprovado no escopo e estruturado; não comprova implementação.",
+      "outcome": "observed",
+      "sha256": "7f20cd490cc5aa041e94cae2447534a8d05a1d7508fdc30ee5a94c4008d429c5",
+      "source": "docs/delivery/sprint-2.md"
+    },
+    {
+      "command": null,
+      "note": "Documento aprovado no escopo e estruturado; não comprova implementação.",
+      "outcome": "observed",
+      "sha256": "9c6c08fc25327797ff8295b90b2d727f99a3fc8ce77d9066a956ed42a810b18c",
+      "source": "docs/delivery/sprint-2-execution.md"
+    },
+    {
+      "command": null,
+      "note": "Documento aprovado no escopo e estruturado; não comprova implementação.",
+      "outcome": "observed",
+      "sha256": "3bdb2861e5f95dac98aadc89eaefa12a4e78f99ea4c5cf0032d903349cb4a0b1",
+      "source": "planning/sprint-2.work-items.json"
+    }
+  ],
+  "id": "DOC-0003",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Previsão de duas histórias, sem prazo prometido ou velocity calculada.",
+    "Não implementa runtime de memória/agentes dos projetos alvo."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0002",
+    "DE-0004"
+  ],
+  "resolution": null,
+  "review_note": "Mensagem explícita: aprovado, pode estruturar a sprint. Aprovação de escopo, sem afirmar capacidade/modelo/Review ou início da implementação.",
+  "reviewed_by": "po-request:leozitogs",
+  "revision": 4,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Sprint 2 aprovada e estruturada: AHC-019/020, 21 subtarefas, ownership, evidências e gates explícitos.",
+  "supersedes": null,
+  "tags": [
+    "scrum",
+    "sprint-2",
+    "planning"
+  ],
+  "title": "Planejamento da Sprint 2",
+  "updated_at": "2026-10-06T22:55:39.406374+00:00"
+}
