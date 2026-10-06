@@ -15,7 +15,7 @@ Owner no refinamento. Estimativas são hipóteses de discussão, não compromiss
 | AHC-002 | E1 / Perfil multidimensional de domínio | P0 | 001 | In review — implementação e checks locais |
 | AHC-003 | E1 / Evidence Pack com proveniência | P0 | 001 | Done — PR #7 integrado com CI verde |
 | AHC-004 | E1 / Confiabilidade e benchmark offline | P0 | 001 | Planejada Sprint 1 |
-| AHC-005 | E2 / PromptSpec e SkillSpec | P1 | 002, 003 | Planejada Sprint 2; início condicionado |
+| AHC-005 | E2 / PromptSpec e SkillSpec | P1 | 002, 003, 019, 020 | A refinar após entendimento/blueprint |
 | AHC-007 | E3 / Tools e Policy Engine | P1 | 005 | A refinar |
 | AHC-008 | E3 / Eval runner e Simulation Lab | P1 | 004, 005 | A refinar |
 | AHC-006 | E2 / Context Engine | P1 | 003, 005 | A refinar |
@@ -25,10 +25,12 @@ Owner no refinamento. Estimativas são hipóteses de discussão, não compromiss
 | AHC-011 | E5 / Busca de arquiteturas | P2 | 006, 010 | A refinar |
 | AHC-014 | E4 / API e operação multi-projeto | P2 | 010, 012 | A refinar |
 | AHC-013 | E5 / Evolução e Experience Store | P3 | 010, 011, 012, 018 | A refinar |
-| AHC-015 | E2 / DocumentationLearningSpec por projeto | P1 | 003, 005 | Planejada Sprint 2; início condicionado |
+| AHC-015 | E2 / DocumentationLearningSpec por projeto | P1 | 003, 005 | A refinar após entendimento/blueprint |
 | AHC-016 | E2 / Compilador de documentação e memória | P1 | 004, 015 | A refinar |
 | AHC-017 | E3 / Agent Factory com especialização | P1 | 005, 007, 009, 015 | A refinar |
 | AHC-018 | E5 / Aprendizagem por experiências do projeto | P2 | 008, 010, 016, 017 | A refinar |
+| AHC-019 | E1 / Entendimento generalista e regras de negócio | P0 | 002, 003 | Proposta Sprint 2; aprovação pendente |
+| AHC-020 | E2 / Blueprint e packs opcionais | P0 | 019 | Proposta Sprint 2; aprovação pendente |
 
 O [pipeline por projeto](project-generation-pipeline.md)
 define o caminho dos novos itens e as diferenças entre capacidade interna e produto gerado.
@@ -52,6 +54,7 @@ do PO; a capacidade total ainda não foi quantificada, sem compromisso de prazo.
 O [plano detalhado](../delivery/sprint-1.md) registra tarefas e sequência de entrega.
 Sem velocity histórica, não usar soma de pontos como previsão de entrega.
 
-A [Sprint 2](../delivery/sprint-2.md) propõe AHC-005 e AHC-015, sem execução
-iniciada. Sua entrada exige PR #9 corrigido integrado, Review/Retrospective da
-Sprint 1 e confirmação de capacidade/escopo pelo PO.
+A [Sprint 2 replanejada](../delivery/sprint-2.md) propõe AHC-019 e AHC-020.
+O plano anterior foi rejeitado pelo PO; a nova proposta não está aprovada e não
+inicia execução. Entrada: PR #9 corrigido integrado, Review/Retrospective da
+Sprint 1, aprovação do novo escopo/capacidade e modelo configurado.

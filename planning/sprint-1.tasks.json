@@ -104,13 +104,15 @@
       {
         "acceptance_criteria": [
           "Contratos incluem entradas, saídas, versão, restrições, ferramentas e avaliação.",
-          "Duas fixtures de domínios distintos geram procedimentos distintos ligados a requisitos.",
+          "Projetos contrastantes e projetos do mesmo domínio com regras diferentes geram procedimentos ligados aos requisitos, sem ramificações fixas de nicho no core.",
           "Referências inválidas falham antes da emissão e skills suportam carregamento progressivo."
         ],
         "data_owner": null,
         "depends_on": [
           "ahc-002",
-          "ahc-003"
+          "ahc-003",
+          "ahc-019",
+          "ahc-020"
         ],
         "description": "Como AI engineer, quero procedimentos e prompts tipados, com ativação, contexto e verificadores explícitos.",
         "evidence_ids": [
@@ -336,7 +338,7 @@
         "acceptance_criteria": [
           "A IR versionada define taxonomia DE/DOC/ADR/INC/LES/RUN/EXP, ownership, revisão, retenção, proveniência e escopo do projeto.",
           "Contexto e política de aprendizado derivam de ProjectDNA e Evidence Pack, com incógnitas explícitas e rastreabilidade de cada regra.",
-          "Fixtures de educação e comércio demonstram configurações diferentes, sem copiar memória privada entre projetos."
+          "Projetos com regras distintas, incluindo domínio não pré-cadastrado, demonstram configurações diferentes sem copiar memória privada entre projetos."
         ],
         "data_owner": "proprietário do projeto alvo",
         "depends_on": [
@@ -457,6 +459,69 @@
         "risk": "high",
         "side_effects": [],
         "title": "Pipeline de aprendizagem por experiências do projeto"
+      },
+      {
+        "acceptance_criteria": [
+          "ProjectUnderstandingSpec preserva input original, fontes, declarações, hipóteses de domínio, público, objetivos, entidades, regras de negócio, conflitos e perguntas pendentes com referências válidas.",
+          "Um adapter de modelo substituível produz propostas estruturadas; fake é restrito a testes, respostas reais são validadas e uma execução controlada com modelo real é demonstrada sem promover hipóteses ou scores inventados a fatos.",
+          "Avaliação reservada cobre domínio não cadastrado, mesmo domínio com regras diferentes, branding em conflito com backlog e proposta ambígua; nenhum enum ou switch de nichos é necessário para processar input novo."
+        ],
+        "data_owner": "proprietário do projeto alvo",
+        "depends_on": [
+          "ahc-002",
+          "ahc-003"
+        ],
+        "description": "Como PO, quero que o compilador estude proposta, branding, backlog e restrições para propor entendimento do projeto sem exigir um nicho pré-programado.",
+        "evidence_ids": [
+          "backlog-19"
+        ],
+        "id": "ahc-019",
+        "implementation": "llm",
+        "inputs": [
+          "proposta",
+          "branding",
+          "backlog",
+          "restrições",
+          "fontes locais autorizadas"
+        ],
+        "outputs": [
+          "ProjectUnderstandingSpec proposta",
+          "regras de negócio rastreáveis",
+          "perguntas pendentes"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Entendimento generalista da proposta e regras de negócio"
+      },
+      {
+        "acceptance_criteria": [
+          "HarnessBlueprintSpec mapeia regras e capacidades a necessidades de contexto, skills, ferramentas, workflows, documentação e evals, e alimenta a compilação da baseline atual após revisão; módulos ainda não implementados permanecem gaps explícitos.",
+          "PatternPackSpec versionado define aplicabilidade, evidências, parâmetros, exclusões, conflitos e compatibilidade; o projeto funciona sem pack e novos packs são registrados sem editar o core, com regras específicas do projeto prevalecendo.",
+          "O mesmo domínio com regras diferentes gera planos diferentes; domínio novo sem pack tem baseline válida ou perguntas pendentes, e seleção incompatível, revisão inválida ou regras sem origem são rejeitadas antes de exportar a proposta."
+        ],
+        "data_owner": "proprietário do projeto alvo",
+        "depends_on": [
+          "ahc-019"
+        ],
+        "description": "Como AI engineer, quero derivar o plano do harness do entendimento e selecionar frameworks/templates extensíveis quando aplicáveis, sem depender de uma lista fixa de nichos.",
+        "evidence_ids": [
+          "backlog-20"
+        ],
+        "id": "ahc-020",
+        "implementation": "undecided",
+        "inputs": [
+          "ProjectUnderstandingSpec",
+          "CapabilityGraph",
+          "Evidence Pack",
+          "catálogo opcional de packs"
+        ],
+        "outputs": [
+          "HarnessBlueprintSpec revisável",
+          "decisões de seleção de packs e gaps"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Plano de harness generalista e packs opcionais"
       }
     ],
     "project_id": "ai-harness-compiler",

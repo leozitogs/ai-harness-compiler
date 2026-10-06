@@ -1,21 +1,43 @@
 {
   "id": "sprint-2",
-  "status": "planned",
+  "status": "proposed",
   "planning_date": "2026-10-06",
-  "goal": "Compilar prompts, skills e uma especificação de documentação/aprendizado rastreáveis e distintos para projetos de educação e comércio.",
+  "goal": "Estudar proposta, branding e regras de negócio sem nicho pré-programado, produzir entendimento rastreável e derivar um plano de harness adaptável com packs opcionais.",
   "duration_working_days": 10,
   "start_date": null,
   "capacity_confirmed": false,
   "execution_started": false,
-  "selected_capabilities": ["ahc-005", "ahc-015"],
-  "declared_completed_capabilities": ["ahc-001", "ahc-002", "ahc-003"],
-  "completion_evidence": {"ahc-001": "PR #6", "ahc-002": "PR #8", "ahc-003": "PR #7"},
-  "entry_gates": ["Integrar PR #9 com correções de proveniência/benchmark e CI verde", "Realizar Sprint Review e Retrospective da Sprint 1", "Confirmar capacidade, início e escopo com PO"],
+  "selected_capabilities": [
+    "ahc-019",
+    "ahc-020"
+  ],
+  "declared_completed_capabilities": [
+    "ahc-001",
+    "ahc-002",
+    "ahc-003"
+  ],
+  "completion_evidence": {
+    "ahc-001": "PR #6",
+    "ahc-002": "PR #8",
+    "ahc-003": "PR #7"
+  },
+  "entry_gates": [
+    "Integrar PR #9 corrigido com CI verde",
+    "Review e Retrospective da Sprint 1",
+    "Aprovar plano refeito, capacidade e início com PO",
+    "Configurar modelo real para demonstração; fake restrito a testes"
+  ],
   "implementation_owner": "code-collaborator-supported-by-codex",
   "product_owner": "leozitogs",
   "estimation_status": "uncalibrated-no-velocity",
-  "forecast_policy": "Two target stories; not a deadline commitment. Renegotiate scope without reducing validation.",
+  "forecast_policy": "Two high-risk target stories; proposed timebox requires refinement and confirmed capacity. No deadline commitment.",
   "work_items_file": "planning/sprint-2.work-items.json",
-  "integration_policy": "Short-lived story branches; AHC-005 reviewed and integrated before AHC-015 design gate.",
-  "capability_status": {"ahc-005": "planned", "ahc-015": "planned"}
+  "integration_policy": "AHC-019 reviewed and integrated before AHC-020 design gate.",
+  "capability_status": {
+    "ahc-019": "proposed",
+    "ahc-020": "proposed"
+  },
+  "plan_revision": 2,
+  "prior_plan_status": "rejected-by-po",
+  "po_approval_status": "pending"
 }

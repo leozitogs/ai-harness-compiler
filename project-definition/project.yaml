@@ -9,6 +9,8 @@ conception: >-
   projeto alvo, compilar também documentação permanente, memória de engenharia,
   captura de incidentes e lições verificadas, além de especialistas de domínio
   com ferramentas, competências, contexto e avaliações próprios.
+  O compilador é generalista: estuda proposta, branding e regras de negócio por
+  projeto, com packs opcionais extensíveis e sem nichos fixos no core.
 domain: developer-tools
 branding:
   audience: [AI engineers, tech leads, equipes de produto]
@@ -68,9 +70,9 @@ backlog:
     description: Como AI engineer, quero procedimentos e prompts tipados, com ativação, contexto e verificadores explícitos.
     acceptance_criteria:
       - Contratos incluem entradas, saídas, versão, restrições, ferramentas e avaliação.
-      - Duas fixtures de domínios distintos geram procedimentos distintos ligados a requisitos.
+      - Projetos contrastantes e projetos do mesmo domínio com regras diferentes geram procedimentos ligados aos requisitos, sem ramificações fixas de nicho no core.
       - Referências inválidas falham antes da emissão e skills suportam carregamento progressivo.
-    depends_on: [ahc-002, ahc-003]
+    depends_on: [ahc-002, ahc-003, ahc-019, ahc-020]
     risk: medium
     implementation: deterministic
   - id: ahc-006
@@ -169,7 +171,7 @@ backlog:
     acceptance_criteria:
       - A IR versionada define taxonomia DE/DOC/ADR/INC/LES/RUN/EXP, ownership, revisão, retenção, proveniência e escopo do projeto.
       - Contexto e política de aprendizado derivam de ProjectDNA e Evidence Pack, com incógnitas explícitas e rastreabilidade de cada regra.
-      - Fixtures de educação e comércio demonstram configurações diferentes, sem copiar memória privada entre projetos.
+      - Projetos com regras distintas, incluindo domínio não pré-cadastrado, demonstram configurações diferentes sem copiar memória privada entre projetos.
     depends_on: [ahc-003, ahc-005]
     inputs: [ProjectDNA, Evidence Pack, requisitos de documentação e aprendizado]
     outputs: [DocumentationLearningSpec validada]
@@ -214,6 +216,32 @@ backlog:
     depends_on: [ahc-008, ahc-010, ahc-016, ahc-017]
     inputs: [traces, falhas, desafios, correções propostas, evidências de regressão]
     outputs: [incidentes, lições verificadas, procedimentos e propostas de evolução]
+    data_owner: proprietário do projeto alvo
+    risk: high
+    implementation: undecided
+  - id: ahc-019
+    title: Entendimento generalista da proposta e regras de negócio
+    description: Como PO, quero que o compilador estude proposta, branding, backlog e restrições para propor entendimento do projeto sem exigir um nicho pré-programado.
+    acceptance_criteria:
+      - ProjectUnderstandingSpec preserva input original, fontes, declarações, hipóteses de domínio, público, objetivos, entidades, regras de negócio, conflitos e perguntas pendentes com referências válidas.
+      - Um adapter de modelo substituível produz propostas estruturadas; fake é restrito a testes, respostas reais são validadas e uma execução controlada com modelo real é demonstrada sem promover hipóteses ou scores inventados a fatos.
+      - Avaliação reservada cobre domínio não cadastrado, mesmo domínio com regras diferentes, branding em conflito com backlog e proposta ambígua; nenhum enum ou switch de nichos é necessário para processar input novo.
+    depends_on: [ahc-002, ahc-003]
+    inputs: [proposta, branding, backlog, restrições, fontes locais autorizadas]
+    outputs: [ProjectUnderstandingSpec proposta, regras de negócio rastreáveis, perguntas pendentes]
+    data_owner: proprietário do projeto alvo
+    risk: high
+    implementation: llm
+  - id: ahc-020
+    title: Plano de harness generalista e packs opcionais
+    description: Como AI engineer, quero derivar o plano do harness do entendimento e selecionar frameworks/templates extensíveis quando aplicáveis, sem depender de uma lista fixa de nichos.
+    acceptance_criteria:
+      - HarnessBlueprintSpec mapeia regras e capacidades a necessidades de contexto, skills, ferramentas, workflows, documentação e evals, e alimenta a compilação da baseline atual após revisão; módulos ainda não implementados permanecem gaps explícitos.
+      - PatternPackSpec versionado define aplicabilidade, evidências, parâmetros, exclusões, conflitos e compatibilidade; o projeto funciona sem pack e novos packs são registrados sem editar o core, com regras específicas do projeto prevalecendo.
+      - O mesmo domínio com regras diferentes gera planos diferentes; domínio novo sem pack tem baseline válida ou perguntas pendentes, e seleção incompatível, revisão inválida ou regras sem origem são rejeitadas antes de exportar a proposta.
+    depends_on: [ahc-019]
+    inputs: [ProjectUnderstandingSpec, CapabilityGraph, Evidence Pack, catálogo opcional de packs]
+    outputs: [HarnessBlueprintSpec revisável, decisões de seleção de packs e gaps]
     data_owner: proprietário do projeto alvo
     risk: high
     implementation: undecided

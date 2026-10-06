@@ -8,6 +8,8 @@ workflows, avaliações e critérios de evolução.
 
 O projeto parte de **branding + backlog + concepção + assets + restrições** e usa
 representações intermediárias verificáveis antes de gerar qualquer artefato.
+O compilador é generalista: nicho e regras são estudados por projeto; exemplos de
+educação/comércio são fixtures, e packs opcionais não limitam os domínios atendidos.
 
 **Status: fundação v0.1.** O repositório contém um compilador local determinístico
 de um harness de desenvolvimento. O pipeline completo de IA está no roadmap.

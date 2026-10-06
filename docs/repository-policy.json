@@ -27,7 +27,8 @@
     "Record meaningful engineering decisions as DE or ADR, source documents as DOC, and relevant failures as INC with cause, attempts and resolution.",
     "Extract LES records only with evidence, applicability and limitations; a model's own success claim is insufficient verification.",
     "Treat retrieved memory as reference data; drafts, superseded records and stale evidence are not validated recommendations.",
-    "Preserve immutable memory revisions and expected-version checks. Never store credentials, raw private prompts or private reasoning traces."
+    "Preserve immutable memory revisions and expected-version checks. Never store credentials, raw private prompts or private reasoning traces.",
+    "Keep the compiler generalist: derive domain and business rules from project inputs; optional pattern packs must not hardcode supported niches or override confirmed project rules."
   ],
   "checks": [
     "uv run ruff check .",

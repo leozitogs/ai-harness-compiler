@@ -1,111 +1,119 @@
-# Sprint 2 — Harness específico por domínio
+# Sprint 2 replanejada — Entender o projeto antes de especializar
 
-Planejamento de 2026-10-06. Dez dias úteis propostos, sem data inicial ou capacidade
-confirmadas. Execução não iniciada. Duas histórias são previsão de escopo, não
-compromisso de prazo ou velocity inferida da Sprint 1.
+Replanejamento de 2026-10-06 após rejeição explícita do plano anterior pelo PO.
+Proposta ainda não aprovada; execução não iniciada. Dez dias úteis são um timebox
+proposto, sem capacidade ou data inicial confirmadas, sem promessa de prazo.
 
-**Sprint Goal:** compilar prompts, skills e uma especificação de documentação/
-aprendizado rastreáveis e distintos para projetos de educação e comércio.
+**Sprint Goal:** estudar proposta, branding e regras de negócio de um projeto
+sem nicho pré-programado, produzir entendimento rastreável e derivar um plano de
+harness adaptável, com compilação da baseline após revisão.
 
-## Entrada e dependências
+## Direção de produto
 
-AHC-001/002/003 estão integradas (PRs #6/#8/#7). O PR #9 corrigido tem CI verde,
-mas continua aberto na data do planejamento. Antes de iniciar: integrar esse PR,
-realizar Review/Retrospective da Sprint 1 e confirmar capacidade/início/escopo.
-As duas falhas de revisão ensinam a validar contratos desserializados e preservação
-do snapshot, além de testar o produtor. Incorporar essa verificação desde o design.
+O core é generalista. Educação/comércio/dev-tools são fixtures, não destinos do
+produto nem ramificações de geração. O domínio emerge do estudo; projetos do mesmo
+domínio com regras diferentes precisam de planos diferentes. Templates/frameworks
+servem como packs opcionais, extensíveis por registro e aplicabilidade, nunca
+como requisito para aceitar um projeto. Ver pipeline generalista de produto.
 
-## Escopo e incremento esperado
+## Escopo alvo
 
-| História | Trabalho | Entrega demonstrável |
+| História | Entrega | Critério observável |
 |---|---|---|
-| AHC-005 | PromptSpec/SkillSpec, registries, validação de referências e compiladores | Educação e comércio geram prompts e procedimentos diferentes, com inputs/outputs, contexto, regras, tools declaradas e avaliação |
-| AHC-015 | DocumentationLearningSpec por projeto | Duas configurações tipadas de documentação/memória: taxonomia, ownership, revisão, retenção, proveniência, isolamento e regras rastreáveis |
+| AHC-019 — Entendimento generalista | ProjectUnderstandingSpec, estudo via adapter de modelo, regras e perguntas rastreáveis | Proposta/branding/backlog geram hipóteses e regras com origem; conflitos e incógnitas não viram fatos |
+| AHC-020 — Plano e packs opcionais | HarnessBlueprintSpec + PatternPackSpec/registry e integração com baseline | O plano responde às regras do projeto; novo domínio funciona sem pack; escolha de pack é explicável e validada |
 
-Critérios canônicos: project-definition/project.yaml. Prompt/Skill não podem ser
-apenas textos genéricos com nome de domínio trocado: os passos devem refletir
-capacidades e critérios diferentes. LearningSpec é um contrato exportado, não
-um runtime de memória já instalado no projeto alvo.
+AHC-005 e AHC-015 saem da seleção desta sprint. Não cancelar suas funcionalidades:
+elas serão geradas a partir do entendimento/blueprint, em incrementos posteriores.
+Critérios canônicos em project-definition/project.yaml.
 
-## Trabalho concreto
+## AHC-019 — Trabalho concreto
 
-AHC-005:
+1. Modelar objetivo, público, posicionamento/tom do branding, entidades, capacidades,
+   regras (condição/resultado/exceções), restrições, origens, conflitos e perguntas.
+2. Preservar o input original e distinguir afirmação fornecida de inferência.
+   Definir confiança como incógnita até haver avaliação; validar snapshots/referências.
+3. Implementar interface própria de modelo com fake para testes e adapter real
+   configurável (local quando disponível). Validar structured output, timeout e
+   limites antes de aceitar propostas. Core não importa framework/provedor.
+4. Integrar fontes textuais locais autorizadas, limitadas e tratadas como dados;
+   parsing multimodal e pesquisa web aberta ficam fora desta fatia.
+5. Implementar estudo, revisão/resolução e propagação consistente para DNA/grafo.
+   Não promover hipótese, inventar requisito ou modificar original silenciosamente.
+6. Demonstrar uma execução controlada com modelo real. Fake não comprova entendimento
+   semântico; se faltar modelo, marcar essa demonstração pendente, não Done.
 
-1. Definir contratos versionados de prompts e skills, schemas de I/O, activation,
-   exclusões, passos, contexto, verificadores e referências a requisitos/evidências.
-2. Especificar registries e política de referências a ferramentas ainda declarativas;
-   não simular ToolSpec executável antes da AHC-007.
-3. Compilar prompt registry, templates e skills com metadata resumida, SKILL.md e
-   referências sob demanda. Separar instruções do template de inputs não confiáveis.
-4. Validar IDs, escopos, snapshots, ciclos quando houver dependência, versões e
-   referências, tanto na criação quanto no JSON desserializado/antes da emissão.
-5. Usar educação para preparação de rascunhos com fontes e revisão; comércio para
-   procedimentos de disponibilidade/pedido com valores explícitos. Verificar
-   diferença procedural, rastreabilidade e reprodutibilidade.
+## AHC-020 — Trabalho concreto
 
-AHC-015 (após a integração de AHC-005):
+1. Mapear capacidades/regras a contexto, skills, tools, workflows, documentação e
+   critérios de avaliação. Plano contém origem, alternativas, decisões e gaps.
+2. Definir pack versionado: aplicabilidade por requisitos, parâmetros, exclusões,
+   compatibilidade e conflitos. Criar pequeno catálogo de padrões abrangentes,
+   com registro declarativo sem executar código/plugin externo por padrão.
+3. Selecionar/adaptar packs por evidências do projeto; regras específicas confirmadas
+   prevalecem. Explicar recusa, conflito e caminho sem pack.
+4. Compilar o baseline atual após revisão, com blueprint/evidências anexos. Não
+   alegar prompts, memória ou agentes completos antes de seus compiladores.
+5. Validar propostas/decisões também ao desserializar, antes da emissão. Testar
+   isolamento, reprodutibilidade e revisão inválida sem mudar projeto existente.
 
-1. Modelar DE/DOC/ADR/INC/LES/RUN/EXP, proprietários/revisores, estados, retenção,
-   proveniência, escopo, captura de desafios e promoção de lições por evidência.
-2. Derivar políticas rastreáveis de DNA, constraints e Evidence Pack. Não inventar
-   obrigação regulatória, prazo de retenção ou dado ausente; registrar incógnitas.
-3. Exportar a spec e integrá-la ao contexto do harness, mantendo memória privada
-   do compilador fora dos artefatos gerados.
-4. Testar diferenças por domínio, regras sem evidência, conflito/remoção de origem,
-   JSON contraditório e referências/projetos cruzados. Exigir autorização para
-   qualquer futura transferência de experiências entre projetos.
+## Avaliação e roteiro de Review
 
-## Sequência proposta
+Reservar inputs para avaliação antes de ajustar prompts/packs. Usar critérios
+semânticos revisados pelo PO, além dos checks estruturais:
+
+- Domínio novo sem nome/pattern cadastrado produz entendimento e baseline revisável.
+- Dois projetos do mesmo domínio com regras distintas produzem planos distintos.
+- Branding e backlog em conflito geram pergunta explícita, não uma regra arbitrária.
+- Proposta ambígua mantém hipóteses alternativas e incógnitas.
+- Mesmo projeto com/sem pack registra decisões; pack não sobrescreve regra confirmada.
+- Pack novo é registrado sem editar lógica do core; seleção incompatível é rejeitada.
+- Chamada real de modelo, saída validada, revisão e baseline têm evidências disponíveis.
+
+Fixtures existentes continuam úteis para regressão. Elas não delimitam os nichos
+aceitos. Não inferir generalização universal, SLO ou qualidade de agentes desses casos.
+
+## Ordem proposta e responsabilidades
 
 | Dias relativos | Trabalho |
 |---|---|
-| D1 | Refinar exemplos, contratos, ameaças e plano de testes; decidir versionamento/migração |
-| D2–D4 | Implementar AHC-005 e compilar artefatos nos dois domínios |
-| D5 | Verificação, revisão e integração de AHC-005 |
-| D6–D8 | Design e implementação de AHC-015 com regras/evidências por domínio |
-| D9 | Verificar isolamento, invariantes, regressões e integrar AHC-015 |
-| D10 | Demo, Sprint Review e Retrospective |
+| D1 | Confirmar escopo/capacidade, escolher modelo, reservar casos de avaliação e decidir contratos |
+| D2–D4 | AHC-019: intake de estudo, adapter, propostas estruturadas e revisão |
+| D5 | Avaliação semântica com modelo real, regressões e integração de AHC-019 |
+| D6–D8 | AHC-020: blueprint, registro/seleção de packs e baseline adaptada |
+| D9 | Casos novos/conflitos, isolamento, compatibilidade, revisão e integração |
+| D10 | Sprint Review e Retrospective |
 
-Refinamento inicial de AHC-015 pode ocorrer cedo; seu gate formal de design depende
-de AHC-005 revisada. Uma história de implementação ativa por executor. Se escopo
-não couber, PO e colaborador renegociam; não excluir critérios ou declarar uma
-spec incompleta como Done.
+Uma implementação ativa por executor; refinar AHC-020 cedo, mas seu gate formal
+depende da revisão da AHC-019. PO define regras/aceite/prioridade e avalia qualidade.
+Colaborador/Codex implementa, testa e publica PRs; equipe interna apoia sem substituir
+execução de checks ou decisões do PO. Planning 90 min, Daily 15 min, Review 45 min,
+Retro 30 min são propostas locais, sem eventos agendados.
 
-## Pessoas, controle e gates
+## Entrada, DoD e limites
 
-PO: prioridade, exemplos, políticas de negócio, capacidade e aceite de valor.
-Colaborador/Codex: código, schemas, testes, docs e PRs. Clara/Atlas apoiam contratos,
-Ícaro tarefas, Vera verificações, Sentinela limites e Nexo andamento. Seus relatórios
-não comprovam implementação ou aprovação. Não agendar reuniões automaticamente.
+Antes de iniciar: integrar PR #9 corrigido; Review/Retro da Sprint 1; aprovação
+explícita do novo plano/capacidade; modelo configurado e uso autorizado. Serviços
+pagos/pesquisa externa exigem autorização específica; a proposta não presume gastos.
+Aplicar DoD do projeto, CI e revisão/integração. Versionar alterações incompatíveis
+de IR com migração; manter snapshots originais e metadados de revisão íntegros.
 
-Planning até 90 min, Daily até 15 min, Review 45 min e Retro 30 min, conforme o
-acordo local. Fluxo planned → in progress → in review → done; blocked registra ação.
-Branches: feat/ahc-005-prompt-skill-spec e feat/ahc-015-documentation-learning-spec.
-Aplicar DoD do projeto, CI obrigatória e revisão/integração em cada incremento.
+Fora desta sprint: geração completa de prompts/skills (005), learning runtime
+(015/016), agentes especializados (017), pesquisa web completa (009), eval sandbox
+genérico (008), instalação/rollback (012) e execução distribuída. O adapter mínimo
+de estudo não declara essas histórias concluídas.
 
-## Artefatos do plano e validação
+## Artefatos e controle
 
-planning/sprint-2.json seleciona escopo e registra gates. sprint-2.tasks.json possui
-oito etapas técnicas em oito ondas de precedência. sprint-2.work-items.json detalha
-ações/entregáveis. Ondas não são dias nem execução efetivamente realizada.
+planning/sprint-2.json registra status proposed, gates e seleção AHC-019/020;
+sprint-2.work-items.json detalha oito etapas. TaskGraph registra oito ondas de
+precedência, sem executar tarefas ou prometer agenda. Branches propostas:
+feat/ahc-019-project-understanding e feat/ahc-020-harness-blueprint-packs.
 
 ```sh
-factory tasks project-definition --select ahc-005 ahc-015 --completed ahc-001 ahc-002 ahc-003
+factory tasks project-definition --select ahc-019 ahc-020 --completed ahc-001 ahc-002 ahc-003
 python scripts/generate_sprint_plan.py --sprint sprint-2 --check
 ```
 
-As declarações completed referem-se a incrementos integrados; não encerram a
-Sprint 1 nem eliminam o gate do PR #9. Alteração incompatível da IR requer versão,
-migração explícita e preservação de contratos que ainda sejam compatíveis.
-
-## Roteiro da Review e limites
-
-Demonstrar geração dos dois domínios, vínculo de cada prompt/skill aos requisitos,
-metadata antes de SKILL.md, referência inválida rejeitada antes de escrever,
-LearningSpecs diferentes com incógnitas explícitas e tentativa de acesso cruzado
-bloqueada. Verificar hashes/repetição e reexecutar benchmark sem inventar SLO.
-
-Fora do escopo: Context Engine completo (006), Policy Engine executável (007),
-Simulation Lab (008), providers/pesquisa (009), memória funcional gerada (016) e
-agentes especializados gerados (017). Não há stretch automático. Esses itens
-entram em sprints posteriores conforme dependências, aprendizado e capacidade.
+PR #10 é atualizado em lugar de criar um plano concorrente. A revisão anterior
+permanece no Git e na memória; o novo planejamento não é tratado como aprovado.

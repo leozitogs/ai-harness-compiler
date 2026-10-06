@@ -1,15 +1,14 @@
 {
   "format": "sprint-work-items/v1",
   "sprint_id": "sprint-2",
-  "status": "planned",
+  "status": "proposed",
   "execution_started": false,
   "work_items": [
     {
       "id": "s2-1",
-      "capability_id": "ahc-005",
-      "task_graph_id": "task-5-design",
+      "capability_id": "ahc-019",
+      "task_graph_id": "task-19-design",
       "stage": "design",
-      "title": "PromptSpec/SkillSpec: design",
       "status": "planned",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
@@ -19,24 +18,23 @@
       ],
       "depends_on": [],
       "actions": [
-        "Definir contratos/versionamento, registries e vínculo a requisitos/evidências.",
-        "Decidir I/O, ferramentas declaradas e limites de geração."
+        "Modelar entendimento, regras, fontes, conflitos e revisão.",
+        "Definir adapter/provider e conjunto reservado sem catálogo de nichos fixo."
       ],
       "deliverables": [
         "Contratos e plano de verificação"
       ],
       "acceptance_criteria_refs": [
-        "ahc-005:1",
-        "ahc-005:2",
-        "ahc-005:3"
+        "ahc-019:1",
+        "ahc-019:2",
+        "ahc-019:3"
       ]
     },
     {
       "id": "s2-2",
-      "capability_id": "ahc-005",
-      "task_graph_id": "task-5-implement",
+      "capability_id": "ahc-019",
+      "task_graph_id": "task-19-implement",
       "stage": "implement",
-      "title": "PromptSpec/SkillSpec: implement",
       "status": "planned",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
@@ -47,24 +45,23 @@
         "s2-1"
       ],
       "actions": [
-        "Implementar validação, prompt compiler e skill compiler.",
-        "Gerar metadata, SKILL.md e referências sob demanda nos dois domínios."
+        "Implementar estudo com adapter real e fake de teste; validar structured outputs.",
+        "Propagar propostas revisáveis preservando input e incertezas."
       ],
       "deliverables": [
-        "Implementação, schemas e documentação"
+        "Implementação e documentação"
       ],
       "acceptance_criteria_refs": [
-        "ahc-005:1",
-        "ahc-005:2",
-        "ahc-005:3"
+        "ahc-019:1",
+        "ahc-019:2",
+        "ahc-019:3"
       ]
     },
     {
       "id": "s2-3",
-      "capability_id": "ahc-005",
-      "task_graph_id": "task-5-verify",
+      "capability_id": "ahc-019",
+      "task_graph_id": "task-19-verify",
       "stage": "verify",
-      "title": "PromptSpec/SkillSpec: verify",
       "status": "planned",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
@@ -75,24 +72,23 @@
         "s2-2"
       ],
       "actions": [
-        "Testar criação/desserialização/compilação, referências inválidas e snapshots.",
-        "Comparar procedimentos de educação/comércio e reprodução dos bytes."
+        "Verificar referências, snapshots, perguntas e casos ambíguos/contraditórios.",
+        "Demonstrar execução com modelo real e avaliar domínio novo e mesmas categorias com regras distintas."
       ],
       "deliverables": [
-        "Evidências de critérios/regressões"
+        "Evidências estruturais e semânticas"
       ],
       "acceptance_criteria_refs": [
-        "ahc-005:1",
-        "ahc-005:2",
-        "ahc-005:3"
+        "ahc-019:1",
+        "ahc-019:2",
+        "ahc-019:3"
       ]
     },
     {
       "id": "s2-4",
-      "capability_id": "ahc-005",
-      "task_graph_id": "task-5-review",
+      "capability_id": "ahc-019",
+      "task_graph_id": "task-19-review",
       "stage": "review",
-      "title": "PromptSpec/SkillSpec: review",
       "status": "planned",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
@@ -103,24 +99,23 @@
         "s2-3"
       ],
       "actions": [
-        "Revisar segurança, compatibilidade/migração e docs; integrar PR com CI verde.",
-        "Demonstrar critérios da AHC-005 sem declarar runtime ou eval de modelo."
+        "Revisar qualidade, limites, compatibilidade e CI; integrar AHC-019.",
+        "Demonstrar entendimento sem classificador fixo ou certeza inventada."
       ],
       "deliverables": [
         "PR revisado/integrado e demo"
       ],
       "acceptance_criteria_refs": [
-        "ahc-005:1",
-        "ahc-005:2",
-        "ahc-005:3"
+        "ahc-019:1",
+        "ahc-019:2",
+        "ahc-019:3"
       ]
     },
     {
       "id": "s2-5",
-      "capability_id": "ahc-015",
-      "task_graph_id": "task-15-design",
+      "capability_id": "ahc-020",
+      "task_graph_id": "task-20-design",
       "stage": "design",
-      "title": "DocumentationLearningSpec: design",
       "status": "planned",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
@@ -132,24 +127,23 @@
         "s2-4"
       ],
       "actions": [
-        "Modelar taxonomia, ownership/revisão/retenção e limites por projeto.",
-        "Mapear regras a DNA/constraints/evidências e incógnitas."
+        "Definir HarnessBlueprintSpec e PatternPackSpec, aplicabilidade e conflitos.",
+        "Mapear capacidades/regras às necessidades do harness e gaps."
       ],
       "deliverables": [
         "Contratos e plano de verificação"
       ],
       "acceptance_criteria_refs": [
-        "ahc-015:1",
-        "ahc-015:2",
-        "ahc-015:3"
+        "ahc-020:1",
+        "ahc-020:2",
+        "ahc-020:3"
       ]
     },
     {
       "id": "s2-6",
-      "capability_id": "ahc-015",
-      "task_graph_id": "task-15-implement",
+      "capability_id": "ahc-020",
+      "task_graph_id": "task-20-implement",
       "stage": "implement",
-      "title": "DocumentationLearningSpec: implement",
       "status": "planned",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
@@ -160,24 +154,23 @@
         "s2-5"
       ],
       "actions": [
-        "Implementar contrato e exportação da spec para o harness.",
-        "Gerar configurações de educação/comércio sem copiar memória privada."
+        "Implementar planejamento, registro e seleção opcional de packs.",
+        "Integrar baseline após revisão, com origem de decisões e regras prevalecentes."
       ],
       "deliverables": [
-        "Implementação, schemas e documentação"
+        "Implementação e documentação"
       ],
       "acceptance_criteria_refs": [
-        "ahc-015:1",
-        "ahc-015:2",
-        "ahc-015:3"
+        "ahc-020:1",
+        "ahc-020:2",
+        "ahc-020:3"
       ]
     },
     {
       "id": "s2-7",
-      "capability_id": "ahc-015",
-      "task_graph_id": "task-15-verify",
+      "capability_id": "ahc-020",
+      "task_graph_id": "task-20-verify",
       "stage": "verify",
-      "title": "DocumentationLearningSpec: verify",
       "status": "planned",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
@@ -188,24 +181,23 @@
         "s2-6"
       ],
       "actions": [
-        "Verificar referências, conflitos, JSON contraditório e isolamento cruzado.",
-        "Testar políticas de promoção por evidência e diferenças de domínio."
+        "Testar caminho sem pack, pack incompatível e novo pack sem editar core.",
+        "Comparar regras diferentes no mesmo domínio; verificar isolamento, revisão e snapshots."
       ],
       "deliverables": [
-        "Evidências de critérios/regressões"
+        "Evidências estruturais e semânticas"
       ],
       "acceptance_criteria_refs": [
-        "ahc-015:1",
-        "ahc-015:2",
-        "ahc-015:3"
+        "ahc-020:1",
+        "ahc-020:2",
+        "ahc-020:3"
       ]
     },
     {
       "id": "s2-8",
-      "capability_id": "ahc-015",
-      "task_graph_id": "task-15-review",
+      "capability_id": "ahc-020",
+      "task_graph_id": "task-20-review",
       "stage": "review",
-      "title": "DocumentationLearningSpec: review",
       "status": "planned",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
@@ -216,16 +208,16 @@
         "s2-7"
       ],
       "actions": [
-        "Revisar regras, limites e compatibilidade; integrar PR com CI verde.",
-        "Demonstrar spec funcional como contrato, sem alegar runtime da AHC-016."
+        "Revisar blueprint e baseline, evidências e CI; integrar AHC-020.",
+        "Apresentar limites e próximos compiladores na Review."
       ],
       "deliverables": [
         "PR revisado/integrado e demo"
       ],
       "acceptance_criteria_refs": [
-        "ahc-015:1",
-        "ahc-015:2",
-        "ahc-015:3"
+        "ahc-020:1",
+        "ahc-020:2",
+        "ahc-020:3"
       ]
     }
   ]
