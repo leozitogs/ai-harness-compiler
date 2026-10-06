@@ -1,8 +1,8 @@
 {
   "format": "sprint-work-items/v1",
   "sprint_id": "sprint-1",
-  "status": "planned",
-  "execution_started": false,
+  "status": "in_progress",
+  "execution_started": true,
   "note": "Planning annotations; additional dependencies coordinate shared contracts. This file does not execute work or mark acceptance.",
   "work_items": [
     {
@@ -11,7 +11,7 @@
       "task_graph_id": "task-1-design",
       "stage": "design",
       "title": "Intake: design",
-      "status": "planned",
+      "status": "in_review",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "analyst",
@@ -30,6 +30,11 @@
         "ahc-001:1",
         "ahc-001:2",
         "ahc-001:3"
+      ],
+      "progress_note": "Implementation and local checks passed; story completion awaits PR review, CI and integration.",
+      "evidence_sources": [
+        "docs/engineering/intake.md",
+        "tests/test_intake.py"
       ]
     },
     {
@@ -38,7 +43,7 @@
       "task_graph_id": "task-1-implement",
       "stage": "implement",
       "title": "Intake: implement",
-      "status": "planned",
+      "status": "in_review",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "engineer",
@@ -58,6 +63,11 @@
         "ahc-001:1",
         "ahc-001:2",
         "ahc-001:3"
+      ],
+      "progress_note": "Implementation and local checks passed; story completion awaits PR review, CI and integration.",
+      "evidence_sources": [
+        "docs/engineering/intake.md",
+        "tests/test_intake.py"
       ]
     },
     {
@@ -66,7 +76,7 @@
       "task_graph_id": "task-1-verify",
       "stage": "verify",
       "title": "Intake: verify",
-      "status": "planned",
+      "status": "in_review",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "quality",
@@ -86,6 +96,11 @@
         "ahc-001:1",
         "ahc-001:2",
         "ahc-001:3"
+      ],
+      "progress_note": "Implementation and local checks passed; story completion awaits PR review, CI and integration.",
+      "evidence_sources": [
+        "docs/engineering/intake.md",
+        "tests/test_intake.py"
       ]
     },
     {
@@ -94,7 +109,7 @@
       "task_graph_id": "task-1-review",
       "stage": "review",
       "title": "Intake: review",
-      "status": "planned",
+      "status": "in_review",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "delivery",
@@ -114,6 +129,11 @@
         "ahc-001:1",
         "ahc-001:2",
         "ahc-001:3"
+      ],
+      "progress_note": "Implementation and local checks passed; story completion awaits PR review, CI and integration.",
+      "evidence_sources": [
+        "docs/engineering/intake.md",
+        "tests/test_intake.py"
       ]
     },
     {

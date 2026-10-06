@@ -1,0 +1,56 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Executar parametrização sem IDs: erro em setup/teardown.",
+    "Reproduzir somente o caso de excesso de nós sem IDs explícitos.",
+    "Definir IDs curtos, preservando entradas; rodar regressões."
+  ],
+  "author": "codex:observed-test-run",
+  "challenge": "Identificador automático incorporava o payload completo da parametrização.",
+  "consequences": [],
+  "context": "Introdução de testes negativos da AHC-001.",
+  "created_at": "2026-10-06T06:48:40.357884+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Reprodução e resultados observados.",
+      "outcome": "observed",
+      "sha256": "e782e9a9aec81dbf8bf1bea6c1f0ef24f18cf776ae0243b853f633aad4ef1854",
+      "source": "docs/delivery/ahc-001-validation.md"
+    },
+    {
+      "command": "pytest -q -p no:cacheprovider --basetemp .factory/intake-full-1",
+      "note": "Regressões executadas após correção.",
+      "outcome": "passed",
+      "sha256": "f497a51b08f369ec7f3c62ea1d094088dd7032a7603c5975d1b6a1dca69d2488",
+      "source": "tests/test_intake.py"
+    }
+  ],
+  "id": "INC-0003",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0003"
+  ],
+  "resolution": "IDs explícitos case-0 a case-17; suíte completa passou (111 testes).",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": "pytest registra o teste atual em variável de ambiente; Windows rejeitou valor acima de 32767 caracteres. Reprodução isolada confirmou ValueError.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Teste de 50001 nós falhava em setup/teardown no Windows antes do loader.",
+  "supersedes": null,
+  "tags": [
+    "pytest",
+    "windows",
+    "regression"
+  ],
+  "title": "Payload grande no ID de teste excede variável de ambiente",
+  "updated_at": "2026-10-06T06:48:40.357884+00:00"
+}

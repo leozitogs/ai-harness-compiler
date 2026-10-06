@@ -1,8 +1,9 @@
 # Sprint 1 — Confiança na entrada e nas evidências
 
 Planejamento atualizado em **2026-10-06**. Timebox proposto: **dez dias úteis**.
-Estado: planejada, execução ainda não iniciada. Data inicial e capacidade permanecem
-em aberto; D1 a D10 indicam ordem relativa de trabalho, não eventos agendados.
+Execução iniciada em **2026-10-06**, por solicitação explícita do PO.
+AHC-001 está em revisão; AHC-002 a AHC-004 seguem planejadas. A capacidade total
+continua não quantificada; D1 a D10 indicam ordem relativa, sem data final prometida.
 
 **Sprint Goal:** tornar a entrada, o perfil de domínio e as evidências verificáveis,
 medindo a confiabilidade da baseline offline.
@@ -120,6 +121,13 @@ Mitigar com design comum, exemplos pequenos, regressões e demo por critério.
 A sprint desenvolve o core offline. API, Temporal, execução distribuída, providers
 pagos e geração de memória/especialistas para projetos alvo seguem nos marcos futuros.
 
-Para iniciar, o PO precisa confirmar o Sprint Goal, a capacidade disponível e a
-data inicial; definir o padrão de aceite e validar os três exemplos fictícios de
-domínio. Este planejamento não muda automaticamente o estado para execução.
+O PO autorizou o início. Ainda é necessário quantificar a capacidade disponível,
+definir o padrão de aceite e validar os três exemplos fictícios de domínio.
+Conclusão de histórias continua sujeita à DoD; o início não comprova entregas.
+
+## Primeiro incremento — AHC-001
+
+Loader limitado e diagnósticos implementados; detalhes e compatibilidade em
+[intake](../engineering/intake.md). Suíte local: 111 testes aprovados em Windows,
+Python 3.13, com lint, formatação e tipagem aprovados. CI e integração por PR são
+gates separados. Não marcar a história Done antes da revisão/integração.

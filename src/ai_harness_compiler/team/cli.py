@@ -6,7 +6,7 @@ import argparse
 from pathlib import Path
 
 from ai_harness_compiler.compiler import json_text
-from ai_harness_compiler.intake import load_project
+from ai_harness_compiler.intake import DEFAULT_MAX_MANIFEST_BYTES, load_project
 from ai_harness_compiler.models.team import POReview, TeamConfig
 
 
@@ -19,6 +19,7 @@ def add_commands(commands: argparse._SubParsersAction[argparse.ArgumentParser]) 
     subcommands.add_parser("evaluate-ml")
     run = subcommands.add_parser("run")
     run.add_argument("input", type=Path)
+    run.add_argument("--max-manifest-bytes", type=int, default=DEFAULT_MAX_MANIFEST_BYTES)
     run.add_argument("--output", type=Path, required=True)
     run.add_argument("--request", default="Preparar a Sprint 1 para revisão do PO.")
     run.add_argument("--select", nargs="+", default=["ahc-001", "ahc-002", "ahc-003", "ahc-004"])
@@ -56,7 +57,9 @@ def execute(args: argparse.Namespace) -> int:
     else:
         config = TeamConfig.model_validate(
             {
-                "project": load_project(args.input).model_dump(),
+                "project": load_project(
+                    args.input, max_manifest_bytes=args.max_manifest_bytes
+                ).model_dump(),
                 "selected": args.select,
                 "request": args.request,
                 "mode": args.mode,

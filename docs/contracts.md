@@ -17,6 +17,8 @@ Os JSON Schemas em `schemas/` são gerados e versionados.
 Campos obrigatórios: `id`, `name`, `conception`, `backlog`. Cada item do backlog
 precisa de ID, título, descrição e pelo menos um critério de aceitação.
 Campos desconhecidos são rejeitados para revelar erros de digitação.
+O [intake limitado](engineering/intake.md) rejeita duplicatas, aliases/merges e
+estruturas excessivas antes da validação; seu limite padrão é 1 MiB configurável.
 Strings vazias e IDs fora de `[a-z][a-z0-9_-]{0,63}` são inválidos.
 
 Branding tem audiência, tom, princípios e restrições visuais. Constraints preserva

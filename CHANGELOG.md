@@ -2,6 +2,9 @@
 
 ## 0.1.0 — Unreleased
 
+- AHC-001: intake limitado, rejeição de duplicatas/aliases/merges e diagnósticos estáveis.
+- Limite configurável por CLI/API, UTF-8/BOM e verificação de entrada sem leitura de assets.
+
 - AHC-015 a AHC-018 planejam documentação/aprendizado e especialistas gerados por projeto.
 - Revisão bloqueia ciclos de substituição de registros antes da persistência e da consulta.
 
