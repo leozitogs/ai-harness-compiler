@@ -2,6 +2,9 @@
 
 ## 0.1.0 — Unreleased
 
+- AHC-015 a AHC-018 planejam documentação/aprendizado e especialistas gerados por projeto.
+- Revisão bloqueia ciclos de substituição de registros antes da persistência e da consulta.
+
 - Memória de engenharia tipada, revisões JSON, índice SQLite FTS5 e comandos de registro/revisão.
 - Consulta obrigatória de decisões e lições pelos especialistas, com evidência e escopo.
 - Bootstrap de documentação existente e registro de incidente/solução com regressão.

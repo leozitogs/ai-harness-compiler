@@ -12,6 +12,8 @@ preservando controle e explicabilidade das decisões.
 Permitir que uma equipe transforme a definição de um projeto em um harness de
 engenharia de IA específico, rastreável e verificável, e consiga evoluí-lo com base
 em evidências sem perder controle sobre custos, permissões e compatibilidade.
+Cada projeto alvo deverá receber sua memória de engenharia e especialistas de
+domínio, com ferramentas e avaliação, conforme o [pipeline de geração](project-generation-pipeline.md).
 
 ## Usuários e jornadas
 
@@ -32,6 +34,9 @@ Agora: contratos, CLI, planos verificáveis e compilação offline. Próximo inc
 intake robusto, domínio explícito, Evidence Pack e benchmark. Depois: síntese tipada,
 context engine, policy engine, eval runner, adapters, orquestração durável e pesquisa.
 Busca de arquitetura e autoevolução dependem de avaliações confiáveis.
+AHC-015 a AHC-018 especificam a geração da documentação permanente, captura de
+desafios/soluções e agentes especializados. Sua entrega será avaliada em domínios
+distintos; a implementação interna do compilador é uma referência inicial.
 
 Não faz parte da Sprint 1: UI, SaaS multi-tenant, infraestrutura Kubernetes,
 agentes autônomos, chamadas pagas, execução distribuída ou aprendizado automático.

@@ -1,0 +1,43 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "bootstrap:existing-project-evidence",
+  "challenge": null,
+  "consequences": [],
+  "context": "Fonte documental do produto, sem duplicar todo o conteúdo no prompt.",
+  "created_at": "2026-10-05T23:58:25.490472+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Existing project conception document.",
+      "outcome": "observed",
+      "sha256": "b50616d968a0fc6ba654b513188c165abd0d80e4853112374981d6f629ded8ed",
+      "source": "docs/product/conception.md"
+    }
+  ],
+  "id": "DOC-0001",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [],
+  "resolution": null,
+  "review_note": "Concepção atualizada conforme pedido explícito do PO em 2026-10-06: gerar memória e especialistas para projetos alvo; capacidades seguem planejadas.",
+  "reviewed_by": "po-request:leozitogs",
+  "revision": 4,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Referência do objetivo, usuários, hipóteses e fronteiras do produto.",
+  "supersedes": null,
+  "tags": [
+    "product",
+    "conception",
+    "scope"
+  ],
+  "title": "Concepção do AI Harness Compiler",
+  "updated_at": "2026-10-06T06:02:17.350839+00:00"
+}

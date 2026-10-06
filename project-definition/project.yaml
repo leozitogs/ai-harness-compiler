@@ -5,7 +5,10 @@ conception: >-
   Compilar a intenção de novos projetos em harnesses de engenharia de IA específicos,
   tipados, rastreáveis, verificáveis e evolutivos. O produto inclui arquitetura,
   contexto, políticas, skills, prompts, ferramentas e planos de avaliação; agentes
-  entram somente quando sua complexidade é justificada por evidências.
+  entram somente quando sua complexidade é justificada por evidências. Para cada
+  projeto alvo, compilar também documentação permanente, memória de engenharia,
+  captura de incidentes e lições verificadas, além de especialistas de domínio
+  com ferramentas, competências, contexto e avaliações próprios.
 domain: developer-tools
 branding:
   audience: [AI engineers, tech leads, equipes de produto]
@@ -147,7 +150,7 @@ backlog:
       - Proposta liga falha, evidência, versão anterior e mudança candidata.
       - Regressão e aprovação bloqueiam promoção insegura.
       - Experiências e skills reutilizadas têm versão, proveniência e isolamento entre projetos.
-    depends_on: [ahc-010, ahc-011, ahc-012]
+    depends_on: [ahc-010, ahc-011, ahc-012, ahc-018]
     risk: high
     implementation: undecided
   - id: ahc-014
@@ -160,3 +163,57 @@ backlog:
     depends_on: [ahc-010, ahc-012]
     risk: high
     implementation: deterministic
+  - id: ahc-015
+    title: DocumentationLearningSpec por projeto
+    description: Como PO de um projeto alvo, quero especificar sua documentação e memória de aprendizado conforme domínio, requisitos e restrições.
+    acceptance_criteria:
+      - A IR versionada define taxonomia DE/DOC/ADR/INC/LES/RUN/EXP, ownership, revisão, retenção, proveniência e escopo do projeto.
+      - Contexto e política de aprendizado derivam de ProjectDNA e Evidence Pack, com incógnitas explícitas e rastreabilidade de cada regra.
+      - Fixtures de educação e comércio demonstram configurações diferentes, sem copiar memória privada entre projetos.
+    depends_on: [ahc-003, ahc-005]
+    inputs: [ProjectDNA, Evidence Pack, requisitos de documentação e aprendizado]
+    outputs: [DocumentationLearningSpec validada]
+    data_owner: proprietário do projeto alvo
+    risk: high
+    implementation: deterministic
+  - id: ahc-016
+    title: Compilador de documentação e memória específicas
+    description: Como equipe de um projeto alvo, quero receber um sistema funcional de registros, busca e aprendizado integrado ao harness gerado.
+    acceptance_criteria:
+      - O build gera contratos, registros iniciais rastreáveis, templates de domínio, índice, CLI/adapters, políticas e instruções para colaboradores e agentes.
+      - A biblioteca gerada preserva revisões, isolamento, validade das evidências e conflitos de atualização; exemplos fictícios não são promovidos a soluções verificadas.
+      - Dois projetos recebem bundles distintos e reprodutíveis, com testes da memória e atribuições de componentes incorporados.
+    depends_on: [ahc-004, ahc-015]
+    inputs: [DocumentationLearningSpec, HarnessSpec]
+    outputs: [sistema de documentação e memória compilado para o projeto]
+    data_owner: proprietário do projeto alvo
+    risk: high
+    implementation: deterministic
+  - id: ahc-017
+    title: Agent Factory com especialização de domínio
+    description: Como PO de um projeto alvo, quero especialistas aprofundados que conheçam o domínio, usem ferramentas adequadas e respondam a critérios mensuráveis.
+    acceptance_criteria:
+      - AgentSpec representa persona, competências, objetivo, fronteiras, I/O, skills, tools/MCP, memória, modelo, orçamento, parada, delegação e responsável humano.
+      - O runtime compilado executa ferramentas específicas em tarefas do domínio e consulta a memória vigente; prompts genéricos com nomes novos não satisfazem a especialização.
+      - Fixtures comparam especialistas a uma baseline nas mesmas tarefas e medem resultado, trajetória, uso de ferramentas, custo e latência com datasets reservados.
+      - O projeto pode receber zero agentes quando código ou workflows atendem aos critérios; adaptações LangGraph/LLM/ML ficam atrás de contratos próprios.
+    depends_on: [ahc-005, ahc-007, ahc-009, ahc-015]
+    inputs: [ProjectDNA, CapabilityGraph, Evidence Pack, DocumentationLearningSpec]
+    outputs: [AgentSpec e runtime de especialistas específicos do projeto]
+    data_owner: proprietário do projeto alvo
+    risk: high
+    implementation: undecided
+  - id: ahc-018
+    title: Pipeline de aprendizagem por experiências do projeto
+    description: Como equipe de um projeto alvo, quero registrar desafios e reutilizar soluções verificadas entre sessões de chat e execuções de agentes.
+    acceptance_criteria:
+      - Falha relevante pode produzir INC draft com reprodução e origem; diagnóstico, tentativas e solução permanecem separados de hipóteses não verificadas.
+      - Regressão, evidência, aplicabilidade, limitações e revisão são exigidas para promover LES e recuperar a solução em tarefas futuras.
+      - Colaboradores via chat e agentes locais/providers compartilham o protocolo, com orçamento de contexto, detecção de evidência alterada e trilha de revisão.
+      - Transferência de experiências entre projetos exige autorização, anonimização, compatibilidade e revisão; treinamento de modelos ocorre apenas em EXP separado e avaliado.
+    depends_on: [ahc-008, ahc-010, ahc-016, ahc-017]
+    inputs: [traces, falhas, desafios, correções propostas, evidências de regressão]
+    outputs: [incidentes, lições verificadas, procedimentos e propostas de evolução]
+    data_owner: proprietário do projeto alvo
+    risk: high
+    implementation: undecided

@@ -159,7 +159,7 @@ independente de provedores de modelos e frameworks de agentes.
 | [Setup do GitHub](docs/github-setup.md) | Nome, description, topics e publicação |
 | [Segurança](SECURITY.md) | Fronteiras atuais e reporte de falhas |
 | [Concepção](docs/product/conception.md) | Usuários, hipóteses e Product Goal |
-| [Backlog](docs/product/backlog.md) | 14 histórias priorizadas e critérios canônicos |
+| [Backlog](docs/product/backlog.md) | 18 histórias priorizadas e critérios canônicos |
 | [Kickoff](docs/delivery/kickoff.md) | Agenda e decisões para iniciar |
 | [Scrum e DoD](docs/delivery/scrum.md) | Acordo de trabalho e conclusão |
 | [Sprint 1](docs/delivery/sprint-1.md) | Objetivo, escopo proposto e 16 tarefas |
@@ -168,6 +168,7 @@ independente de provedores de modelos e frameworks de agentes.
 | [Engenharia](docs/engineering/standards.md) | Organização, qualidade e escalabilidade |
 | [Agentes do projeto](docs/engineering/project-agents.md) | Equipe executável, ML e decisão do PO |
 | [Memória de engenharia](docs/engineering/memory-system.md) | Documentação permanente, erros, soluções e aprendizagem |
+| [Geração por projeto](docs/product/project-generation-pipeline.md) | Memória e agentes especializados como produto do pipeline |
 
 ## Licença
 

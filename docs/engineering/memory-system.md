@@ -54,6 +54,10 @@ Git registra mudanças e revisão por PR; os arquivos não têm assinatura cript
 
 ## Ciclo de confiança
 
+Relações `supersedes` devem formar um grafo acíclico. A validação ocorre antes de
+gravar uma nova revisão e ao carregar registros, incluindo alterações manuais.
+Relações de associação `related` continuam independentes dessa precedência.
+
 ```mermaid
 flowchart LR
     P[Problema ou decisão] --> D[Registro draft]
