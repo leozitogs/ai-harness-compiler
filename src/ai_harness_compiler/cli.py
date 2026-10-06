@@ -13,6 +13,7 @@ from ai_harness_compiler.compiler import compile_harness, json_text
 from ai_harness_compiler.intake import DEFAULT_MAX_MANIFEST_BYTES, load_project
 from ai_harness_compiler.models import CapabilityGraph, HarnessSpec, ProjectDNA, ProjectInput
 from ai_harness_compiler.models.base import Contract
+from ai_harness_compiler.models.benchmark import BenchmarkReport, BenchmarkSuite
 from ai_harness_compiler.models.domain import DomainProfile
 from ai_harness_compiler.models.evidence import EvidencePack, SourceRecord
 from ai_harness_compiler.models.memory import MemoryRecord, RecordDraft
@@ -35,6 +36,8 @@ MODELS: dict[str, type[Contract]] = {
     "evidence-pack": EvidencePack,
     "source-record": SourceRecord,
     "domain-profile": DomainProfile,
+    "benchmark-suite": BenchmarkSuite,
+    "benchmark-report": BenchmarkReport,
 }
 
 
@@ -76,6 +79,15 @@ def main(argv: list[str] | None = None) -> int:
     )
     migration_command.add_argument("input", type=Path)
     migration_command.add_argument("--output", type=Path, required=True, help="New JSON file")
+    benchmark_command = commands.add_parser("benchmark", help="Measure offline compiler fixtures")
+    benchmark_command.add_argument("suite", type=Path)
+    benchmark_command.add_argument(
+        "--workspace", type=Path, required=True, help="New build session directory"
+    )
+    benchmark_command.add_argument(
+        "--output", type=Path, required=True, help="New report JSON file"
+    )
+    benchmark_command.add_argument("--runs", type=int, default=3)
     schema_command = commands.add_parser("schema", help="Print a JSON Schema to stdout")
     schema_command.add_argument("model", choices=MODELS)
     args = parser.parse_args(argv)
@@ -90,6 +102,18 @@ def main(argv: list[str] | None = None) -> int:
             return execute(args)
         if args.command == "schema":
             print(json_text(MODELS[args.model].model_json_schema()), end="")
+            return 0
+        if args.command == "benchmark":
+            from ai_harness_compiler.benchmark import run_benchmark
+
+            if args.output.exists():
+                raise FileExistsError("BENCHMARK_EXISTS: Report already exists; choose a new file.")
+            report = run_benchmark(args.suite, args.workspace, runs=args.runs)
+            with args.output.open("x", encoding="utf-8", newline="\n") as stream:
+                stream.write(json_text(report.model_dump()))
+            print(
+                f"Compiler benchmark report: {args.output}; SLO not-defined; product evals not-run."
+            )
             return 0
         if args.command == "migrate":
             from ai_harness_compiler.migration import migrate_harness

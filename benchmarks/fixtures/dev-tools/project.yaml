@@ -1,0 +1,32 @@
+schema_version: ProjectInput/v1
+id: dev-tools-benchmark
+name: Developer Tools Fixture
+conception: Revisar contratos e emitir relatórios sem executar código de entrada.
+domain: developer-tools
+constraints:
+  technical: [Execução local offline]
+  security: [Não executar código fornecido, não sobrescrever projetos]
+backlog:
+  - id: contract-scan
+    title: Revisão de contratos
+    description: Identificar requisitos e referências inválidas.
+    acceptance_criteria:
+      - Referências desconhecidas são diagnosticadas.
+      - Conteúdo de entrada não é executado.
+    inputs: [contratos]
+    outputs: [diagnósticos]
+    data_owner: equipe de engenharia
+    risk: medium
+    implementation: deterministic
+  - id: review-report
+    title: Relatório de revisão
+    description: Exportar decisões e pendências para revisão humana.
+    depends_on: [contract-scan]
+    acceptance_criteria:
+      - Cada decisão cita evidências existentes.
+      - Exportação recusa sobrescrever um diretório existente.
+    inputs: [diagnósticos]
+    outputs: [relatório]
+    data_owner: equipe de engenharia
+    risk: medium
+    implementation: deterministic

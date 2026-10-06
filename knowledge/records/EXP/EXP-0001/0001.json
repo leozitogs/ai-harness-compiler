@@ -1,0 +1,57 @@
+{
+  "alternatives": [],
+  "applicability": [
+    "Baseline do compilador 0.1.0 e fixtures pequenas sob o código/dados identificados no relatório."
+  ],
+  "attempts": [],
+  "author": "codex:measured-benchmark",
+  "challenge": null,
+  "consequences": [],
+  "context": "Cinco repetições sequenciais por fixture, sem warmup descartado. Clock perf_counter_ns, pipeline local e filesystem real.",
+  "created_at": "2026-10-06T15:10:17.668891+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": "factory benchmark benchmarks/suite.json --workspace output/ahc-004-baseline --output benchmarks/results/baseline-windows-python313.json --runs 5",
+      "note": "Medições reais e ambiente; 15 builds íntegros e reproduzíveis.",
+      "outcome": "passed",
+      "sha256": "2de96a09b20cda7ad925f1a0b5a264b29d6346f8ed32fe92cefc1068f0050816",
+      "source": "benchmarks/results/baseline-windows-python313.json"
+    },
+    {
+      "command": "pytest -q -p no:cacheprovider --basetemp .factory/reliability-full-3",
+      "note": "190 testes locais aprovados, incluindo falhas injetadas.",
+      "outcome": "passed",
+      "sha256": "7dc63c7e2589b5c1b8027fff162d9809db0e528ea2de279efb999178d6529009",
+      "source": "docs/delivery/ahc-004-validation.md"
+    }
+  ],
+  "id": "EXP-0001",
+  "kind": "EXP",
+  "lesson": null,
+  "limitations": [
+    "Amostra pequena sem isolamento de máquina, sem medição de caudas e sem SLO aprovado.",
+    "Não avalia capacidades do produto gerado, modelos, agentes ou produção."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0008"
+  ],
+  "resolution": "Medianas locais: education 92.982 ms, commerce 84.922 ms, dev-tools 83.495 ms. Relatório contém todas as amostras, tamanhos, versões e hashes.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "15 builds medidos em Windows/Python 3.13.7; integridade e bytes iguais por fixture, sem SLO.",
+  "supersedes": null,
+  "tags": [
+    "benchmark",
+    "offline",
+    "baseline"
+  ],
+  "title": "Baseline offline em três domínios",
+  "updated_at": "2026-10-06T15:10:17.668891+00:00"
+}

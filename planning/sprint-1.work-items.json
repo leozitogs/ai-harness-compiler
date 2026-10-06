@@ -146,7 +146,7 @@
       "task_graph_id": "task-2-design",
       "stage": "design",
       "title": "Perfil de domínio: design",
-      "status": "in_review",
+      "status": "done",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "analyst",
@@ -168,12 +168,13 @@
         "ahc-002:2",
         "ahc-002:3"
       ],
-      "progress_note": "DomainProfile/v1, multidimensional states and migration to IR v3 implemented; 173 local tests passed. PR/CI/integration pending.",
+      "progress_note": "PR #8 passed Linux/Windows 3.12/3.13 CI and was integrated before AHC-004.",
       "evidence_sources": [
         "docs/delivery/ahc-002-validation.md",
         "tests/test_domain.py",
         "docs/adr/0007-domain-profile.md"
-      ]
+      ],
+      "pull_request": "https://github.com/leozitogs/ai-harness-compiler/pull/8"
     },
     {
       "id": "s1-06",
@@ -181,7 +182,7 @@
       "task_graph_id": "task-2-implement",
       "stage": "implement",
       "title": "Perfil de domínio: implement",
-      "status": "in_review",
+      "status": "done",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "engineer",
@@ -203,12 +204,13 @@
         "ahc-002:2",
         "ahc-002:3"
       ],
-      "progress_note": "DomainProfile/v1, multidimensional states and migration to IR v3 implemented; 173 local tests passed. PR/CI/integration pending.",
+      "progress_note": "PR #8 passed Linux/Windows 3.12/3.13 CI and was integrated before AHC-004.",
       "evidence_sources": [
         "docs/delivery/ahc-002-validation.md",
         "tests/test_domain.py",
         "docs/adr/0007-domain-profile.md"
-      ]
+      ],
+      "pull_request": "https://github.com/leozitogs/ai-harness-compiler/pull/8"
     },
     {
       "id": "s1-07",
@@ -216,7 +218,7 @@
       "task_graph_id": "task-2-verify",
       "stage": "verify",
       "title": "Perfil de domínio: verify",
-      "status": "in_review",
+      "status": "done",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "quality",
@@ -238,12 +240,13 @@
         "ahc-002:2",
         "ahc-002:3"
       ],
-      "progress_note": "DomainProfile/v1, multidimensional states and migration to IR v3 implemented; 173 local tests passed. PR/CI/integration pending.",
+      "progress_note": "PR #8 passed Linux/Windows 3.12/3.13 CI and was integrated before AHC-004.",
       "evidence_sources": [
         "docs/delivery/ahc-002-validation.md",
         "tests/test_domain.py",
         "docs/adr/0007-domain-profile.md"
-      ]
+      ],
+      "pull_request": "https://github.com/leozitogs/ai-harness-compiler/pull/8"
     },
     {
       "id": "s1-08",
@@ -251,7 +254,7 @@
       "task_graph_id": "task-2-review",
       "stage": "review",
       "title": "Perfil de domínio: review",
-      "status": "in_review",
+      "status": "done",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "delivery",
@@ -272,12 +275,13 @@
         "ahc-002:2",
         "ahc-002:3"
       ],
-      "progress_note": "DomainProfile/v1, multidimensional states and migration to IR v3 implemented; 173 local tests passed. PR/CI/integration pending.",
+      "progress_note": "PR #8 passed Linux/Windows 3.12/3.13 CI and was integrated before AHC-004.",
       "evidence_sources": [
         "docs/delivery/ahc-002-validation.md",
         "tests/test_domain.py",
         "docs/adr/0007-domain-profile.md"
-      ]
+      ],
+      "pull_request": "https://github.com/leozitogs/ai-harness-compiler/pull/8"
     },
     {
       "id": "s1-09",
@@ -426,7 +430,7 @@
       "task_graph_id": "task-4-design",
       "stage": "design",
       "title": "Confiabilidade: design",
-      "status": "planned",
+      "status": "in_review",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "analyst",
@@ -447,6 +451,13 @@
         "ahc-004:1",
         "ahc-004:2",
         "ahc-004:3"
+      ],
+      "progress_note": "Three-domain fixtures, failure diagnostics and measured offline baseline implemented; 190 local tests passed. PR/CI/integration pending.",
+      "evidence_sources": [
+        "docs/delivery/ahc-004-validation.md",
+        "tests/test_reliability.py",
+        "tests/test_benchmark.py",
+        "benchmarks/results/baseline-windows-python313.json"
       ]
     },
     {
@@ -455,7 +466,7 @@
       "task_graph_id": "task-4-implement",
       "stage": "implement",
       "title": "Confiabilidade: implement",
-      "status": "planned",
+      "status": "in_review",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "engineer",
@@ -475,6 +486,13 @@
         "ahc-004:1",
         "ahc-004:2",
         "ahc-004:3"
+      ],
+      "progress_note": "Three-domain fixtures, failure diagnostics and measured offline baseline implemented; 190 local tests passed. PR/CI/integration pending.",
+      "evidence_sources": [
+        "docs/delivery/ahc-004-validation.md",
+        "tests/test_reliability.py",
+        "tests/test_benchmark.py",
+        "benchmarks/results/baseline-windows-python313.json"
       ]
     },
     {
@@ -483,7 +501,7 @@
       "task_graph_id": "task-4-verify",
       "stage": "verify",
       "title": "Confiabilidade: verify",
-      "status": "planned",
+      "status": "in_review",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "quality",
@@ -505,6 +523,13 @@
         "ahc-004:1",
         "ahc-004:2",
         "ahc-004:3"
+      ],
+      "progress_note": "Three-domain fixtures, failure diagnostics and measured offline baseline implemented; 190 local tests passed. PR/CI/integration pending.",
+      "evidence_sources": [
+        "docs/delivery/ahc-004-validation.md",
+        "tests/test_reliability.py",
+        "tests/test_benchmark.py",
+        "benchmarks/results/baseline-windows-python313.json"
       ]
     },
     {
@@ -513,7 +538,7 @@
       "task_graph_id": "task-4-review",
       "stage": "review",
       "title": "Confiabilidade: review",
-      "status": "planned",
+      "status": "in_review",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "delivery",
@@ -533,6 +558,13 @@
         "ahc-004:1",
         "ahc-004:2",
         "ahc-004:3"
+      ],
+      "progress_note": "Three-domain fixtures, failure diagnostics and measured offline baseline implemented; 190 local tests passed. PR/CI/integration pending.",
+      "evidence_sources": [
+        "docs/delivery/ahc-004-validation.md",
+        "tests/test_reliability.py",
+        "tests/test_benchmark.py",
+        "benchmarks/results/baseline-windows-python313.json"
       ]
     }
   ]

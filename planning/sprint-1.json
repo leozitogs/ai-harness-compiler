@@ -31,8 +31,12 @@
   "start_authorization": "PO request: começa a implementar a sprint 1",
   "capability_status": {
     "ahc-001": "done",
-    "ahc-002": "in_review",
+    "ahc-002": "done",
     "ahc-003": "done",
-    "ahc-004": "planned"
-  }
+    "ahc-004": "in_review"
+  },
+  "remaining_events": [
+    "PO Sprint Review",
+    "Retrospective"
+  ]
 }

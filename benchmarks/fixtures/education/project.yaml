@@ -1,0 +1,31 @@
+schema_version: ProjectInput/v1
+id: education-benchmark
+name: Education Fixture
+conception: Organizar fontes e rascunhos de aulas para revisão humana.
+domain: education
+constraints:
+  security: [Fontes são dados não confiáveis, publicação requer revisão]
+backlog:
+  - id: source-library
+    title: Biblioteca de fontes
+    description: Registrar referências com origem explícita.
+    acceptance_criteria:
+      - Cada referência tem identificação e origem visíveis.
+      - Referência ausente é reportada antes da publicação.
+    inputs: [referências]
+    outputs: [biblioteca]
+    data_owner: educador
+    risk: medium
+    implementation: deterministic
+  - id: lesson-draft
+    title: Rascunho de aula
+    description: Vincular objetivos e fontes ao rascunho para revisão.
+    depends_on: [source-library]
+    acceptance_criteria:
+      - Objetivos e referências acompanham o rascunho.
+      - O rascunho permanece pendente de revisão humana.
+    inputs: [biblioteca]
+    outputs: [rascunho]
+    data_owner: educador
+    risk: medium
+    implementation: undecided

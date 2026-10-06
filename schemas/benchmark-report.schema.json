@@ -1,0 +1,203 @@
+{
+  "$defs": {
+    "BenchmarkCase": {
+      "additionalProperties": false,
+      "properties": {
+        "domain": {
+          "minLength": 1,
+          "title": "Domain",
+          "type": "string"
+        },
+        "fixture_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Fixture Id",
+          "type": "string"
+        },
+        "input_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Sha256",
+          "type": "string"
+        },
+        "integrity_status": {
+          "const": "passed",
+          "default": "passed",
+          "title": "Integrity Status",
+          "type": "string"
+        },
+        "median_ms": {
+          "minimum": 0,
+          "title": "Median Ms",
+          "type": "number"
+        },
+        "reproducible": {
+          "const": true,
+          "default": true,
+          "title": "Reproducible",
+          "type": "boolean"
+        },
+        "samples": {
+          "items": {
+            "$ref": "#/$defs/BenchmarkSample"
+          },
+          "minItems": 2,
+          "title": "Samples",
+          "type": "array"
+        }
+      },
+      "required": [
+        "fixture_id",
+        "domain",
+        "input_sha256",
+        "samples",
+        "median_ms"
+      ],
+      "title": "BenchmarkCase",
+      "type": "object"
+    },
+    "BenchmarkSample": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_bytes": {
+          "exclusiveMinimum": 0,
+          "title": "Artifact Bytes",
+          "type": "integer"
+        },
+        "bundle_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Bundle Sha256",
+          "type": "string"
+        },
+        "duration_ms": {
+          "minimum": 0,
+          "title": "Duration Ms",
+          "type": "number"
+        },
+        "file_count": {
+          "exclusiveMinimum": 0,
+          "title": "File Count",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "duration_ms",
+        "artifact_bytes",
+        "file_count",
+        "bundle_sha256"
+      ],
+      "title": "BenchmarkSample",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "cases": {
+      "items": {
+        "$ref": "#/$defs/BenchmarkCase"
+      },
+      "minItems": 1,
+      "title": "Cases",
+      "type": "array"
+    },
+    "clock": {
+      "const": "perf_counter_ns",
+      "default": "perf_counter_ns",
+      "title": "Clock",
+      "type": "string"
+    },
+    "compiler_source_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Compiler Source Sha256",
+      "type": "string"
+    },
+    "compiler_version": {
+      "minLength": 1,
+      "title": "Compiler Version",
+      "type": "string"
+    },
+    "execution": {
+      "const": "sequential-same-process",
+      "default": "sequential-same-process",
+      "title": "Execution",
+      "type": "string"
+    },
+    "platform_release": {
+      "minLength": 1,
+      "title": "Platform Release",
+      "type": "string"
+    },
+    "platform_system": {
+      "minLength": 1,
+      "title": "Platform System",
+      "type": "string"
+    },
+    "product_evaluation_status": {
+      "const": "not-run",
+      "default": "not-run",
+      "title": "Product Evaluation Status",
+      "type": "string"
+    },
+    "pydantic_version": {
+      "minLength": 1,
+      "title": "Pydantic Version",
+      "type": "string"
+    },
+    "python_implementation": {
+      "minLength": 1,
+      "title": "Python Implementation",
+      "type": "string"
+    },
+    "python_version": {
+      "minLength": 1,
+      "title": "Python Version",
+      "type": "string"
+    },
+    "runs_per_fixture": {
+      "minimum": 2,
+      "title": "Runs Per Fixture",
+      "type": "integer"
+    },
+    "schema_version": {
+      "const": "CompilerBenchmark/v1",
+      "default": "CompilerBenchmark/v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "slo_status": {
+      "const": "not-defined",
+      "default": "not-defined",
+      "title": "Slo Status",
+      "type": "string"
+    },
+    "suite_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Suite Sha256",
+      "type": "string"
+    },
+    "timing_scope": {
+      "const": "intake-plan-compile-integrity",
+      "default": "intake-plan-compile-integrity",
+      "title": "Timing Scope",
+      "type": "string"
+    },
+    "warmup_runs": {
+      "const": 0,
+      "default": 0,
+      "title": "Warmup Runs",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "compiler_version",
+    "compiler_source_sha256",
+    "python_version",
+    "python_implementation",
+    "platform_system",
+    "platform_release",
+    "pydantic_version",
+    "suite_sha256",
+    "runs_per_fixture",
+    "cases"
+  ],
+  "title": "BenchmarkReport",
+  "type": "object"
+}
