@@ -1,0 +1,63 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:planning",
+  "challenge": null,
+  "consequences": [],
+  "context": "Modelos locais instalados no D por autorização do PO. Dois ensaios reais passaram no contrato, mas apresentaram falhas semânticas; não concluem AHC-019 nem evals reservados.",
+  "created_at": "2026-10-06T21:30:06.913476+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Estado de execução parcial e limites explícitos.",
+      "outcome": "observed",
+      "sha256": "d9ce9613e39369bf46f18fbd8e41395efcb0e26e70ee0d8e45b5d2d5cff38db4",
+      "source": "docs/delivery/sprint-2.md"
+    },
+    {
+      "command": null,
+      "note": "Estado de execução parcial e limites explícitos.",
+      "outcome": "observed",
+      "sha256": "1dfbfb3b9a643c374c32d35fabb8546118311b196efdbfb19b8829fbe58d5008",
+      "source": "docs/delivery/sprint-2-execution.md"
+    },
+    {
+      "command": null,
+      "note": "Estado de execução parcial e limites explícitos.",
+      "outcome": "observed",
+      "sha256": "d8a336d83b7f4545fb0d91be778669ea7e5206be808ba3e540a017031e5c1e3e",
+      "source": "planning/sprint-2.work-items.json"
+    }
+  ],
+  "id": "DOC-0003",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Previsão de duas histórias, sem prazo prometido ou velocity calculada.",
+    "Não implementa runtime de memória/agentes dos projetos alvo."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0002",
+    "DE-0004"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 9,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Sprint 2 aprovada e estruturada: AHC-019/020, 21 subtarefas, ownership, evidências e gates explícitos.",
+  "supersedes": null,
+  "tags": [
+    "scrum",
+    "sprint-2",
+    "planning"
+  ],
+  "title": "Planejamento da Sprint 2",
+  "updated_at": "2026-10-07T19:20:12.217510+00:00"
+}

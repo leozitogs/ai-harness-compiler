@@ -1,0 +1,77 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "RTX 4050 6GB, RAM 15,71 GiB. Um ensaio por modelo com mesmo manifesto/prompt; não há benchmark estatístico.",
+  "created_at": "2026-10-07T19:20:12.590013+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Ensaio real de desenvolvimento com contratos válidos e findings semânticos; não é eval reservado.",
+      "outcome": "observed",
+      "sha256": "b5edd4757b2fb5464ea3165e7c257321882efbc5ea1e8ff312653a0b5b8a0859",
+      "source": "docs/engineering/local-model-selection.md"
+    },
+    {
+      "command": null,
+      "note": "Ensaio real de desenvolvimento com contratos válidos e findings semânticos; não é eval reservado.",
+      "outcome": "observed",
+      "sha256": "b25d74468a8b21d9919d685945ec618804eb1f403bc7d602a9389ad839ce3828",
+      "source": "docs/evidence/model-study-20261007/qwen3-run.json"
+    },
+    {
+      "command": null,
+      "note": "Ensaio real de desenvolvimento com contratos válidos e findings semânticos; não é eval reservado.",
+      "outcome": "observed",
+      "sha256": "314df70087c44c2c77b9333ea95a93a4a65ba870c67479424e89d6d085e745db",
+      "source": "docs/evidence/model-study-20261007/qwen3-understanding.json"
+    },
+    {
+      "command": null,
+      "note": "Ensaio real de desenvolvimento com contratos válidos e findings semânticos; não é eval reservado.",
+      "outcome": "observed",
+      "sha256": "6f6c3794d29f1c78c8d7b64ddc65a590cdc303eec8043c749c8b3641f78009d6",
+      "source": "docs/evidence/model-study-20261007/qwen35-run.json"
+    },
+    {
+      "command": null,
+      "note": "Ensaio real de desenvolvimento com contratos válidos e findings semânticos; não é eval reservado.",
+      "outcome": "observed",
+      "sha256": "a6156d04b16d1a9e309d57bcbe97ea71f4ed5eb06634da91ddd3f3f87123e506",
+      "source": "docs/evidence/model-study-20261007/qwen35-understanding.json"
+    }
+  ],
+  "id": "DOC-0004",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Uma fixture pública, sem holdout",
+    "Tempos incluem carregamento/cache e variam com RAM livre",
+    "Nenhum modelo aceito semanticamente pelo PO"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0010"
+  ],
+  "resolution": null,
+  "review_note": "Fontes locais conferidas e resultados negativos preservados.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Comparação documental, instalação no D, perfis 8k e duas chamadas reais com hashes, parâmetros, saídas e limitações.",
+  "supersedes": null,
+  "tags": [
+    "ollama",
+    "model-selection",
+    "semantic-quality"
+  ],
+  "title": "Estudo e evidências dos modelos locais",
+  "updated_at": "2026-10-07T19:20:12.644313+00:00"
+}

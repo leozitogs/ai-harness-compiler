@@ -29,10 +29,17 @@
     },
     {
       "enforcement": "required-for-ahc-019-verification",
-      "evidence": "Ollama 0.40.0 installed and local API reachable on 2026-10-07; no models installed; generation/demo not-run",
+      "evidence": "Ollama 0.40.0 and local Qwen3/Qwen3.5 4B installed on D; two real contract-valid calls recorded on 2026-10-07. Semantic acceptance remains pending.",
       "id": "real-model-config",
       "owner": "code-collaborator",
-      "status": "partial"
+      "status": "passed"
+    },
+    {
+      "id": "real-model-semantic-acceptance",
+      "status": "pending",
+      "owner": "leozitogs-and-collaborator",
+      "evidence": "Both development smoke outputs have semantic findings; reserved evaluation and PO acceptance not performed",
+      "enforcement": "required-for-ahc-019-verification"
     }
   ],
   "sprint_id": "sprint-2",
