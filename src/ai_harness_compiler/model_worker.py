@@ -110,7 +110,8 @@ def execute(request: WorkerRequest) -> WorkerResult:
                 return WorkerResult(status="error", error_code="model-changed")
             reply = OllamaUnderstandingModel(settings).generate(request.request)
             if reply.observation.returned_model not in {
-                request.settings.model, request.settings.model + ":latest",
+                request.settings.model,
+                request.settings.model + ":latest",
             }:
                 return WorkerResult(status="error", error_code="model-changed")
             spec = ProjectUnderstandingSpec(request=request.request, proposal=reply.proposal)

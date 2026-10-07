@@ -13,7 +13,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [ADR-0009 — Entendimento ancorado no snapshot e revisão separada](records/ADR/ADR-0009/0002.json) · active · revision 2
 - [ADR-0010 — Estudo local por interface substituível e resposta limitada](records/ADR/ADR-0010/0004.json) · active · revision 4
 - [ADR-0011 — Julgamento semântico separado de integridade](records/ADR/ADR-0011/0006.json) · active · revision 6
-- [ADR-0012 — Geração supervisionada separada de julgamento semântico](records/ADR/ADR-0012/0002.json) · active · revision 2
+- [ADR-0012 — Geração supervisionada separada de julgamento semântico](records/ADR/ADR-0012/0004.json) · active · revision 4
 - [DE-0001 — Memória de engenharia versionada](records/DE/DE-0001/0001.json) · draft · revision 1
 - [DE-0002 — Gerar memória e especialistas para cada projeto](records/DE/DE-0002/0002.json) · active · revision 2
 - [DE-0003 — Intake limitado e YAML explícito](records/DE/DE-0003/0002.json) · active · revision 2
