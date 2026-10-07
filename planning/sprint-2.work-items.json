@@ -28,7 +28,7 @@
       ],
       "id": "s2-1",
       "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/11",
-      "progress_note": "019-01 integrated in PR #13; model interface implemented in review; rubric remains pending.",
+      "progress_note": "019-01 integrated in PR #13 and 019-02 in PR #14; rubric/holdout pending under AHC-021. Design stage remains unfinished.",
       "responsible": "code-collaborator-supported-by-codex",
       "stage": "design",
       "status": "in_progress",
@@ -39,7 +39,7 @@
       ],
       "subtask_status": {
         "019-01": "done",
-        "019-02": "in_review",
+        "019-02": "done",
         "019-03": "planned"
       },
       "supporting_agents": [
@@ -74,7 +74,7 @@
       ],
       "id": "s2-2",
       "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/11",
-      "progress_note": "Bounded manifest snapshot and real local adapter implemented; full intake/review propagation pending. Incremental implementation does not close design/rubric gates.",
+      "progress_note": "Local adapter/CLI integrated in PR #14; study outputs have semantic findings. Full intake/review propagation and qualification pending; focus is Sprint 2.5.",
       "responsible": "code-collaborator-supported-by-codex",
       "stage": "implement",
       "status": "in_progress",
@@ -85,7 +85,7 @@
       ],
       "subtask_status": {
         "019-04": "in_progress",
-        "019-05": "in_review",
+        "019-05": "done",
         "019-06": "planned"
       },
       "supporting_agents": [
@@ -296,5 +296,6 @@
       ],
       "task_graph_id": "task-20-review"
     }
-  ]
+  ],
+  "active_delivery_focus": "sprint-2-5"
 }

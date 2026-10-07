@@ -20,7 +20,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DE-0006 — Qualidade e qualificação antes do blueprint](records/DE/DE-0006/0002.json) · active · revision 2
 - [DOC-0001 — Concepção do AI Harness Compiler](records/DOC/DOC-0001/0006.json) · active · revision 6
 - [DOC-0002 — Planejamento detalhado da Sprint 1](records/DOC/DOC-0002/0006.json) · draft · revision 6
-- [DOC-0003 — Planejamento da Sprint 2](records/DOC/DOC-0003/0010.json) · active · revision 10
+- [DOC-0003 — Planejamento da Sprint 2](records/DOC/DOC-0003/0012.json) · active · revision 12
 - [DOC-0004 — Estudo e evidências dos modelos locais](records/DOC/DOC-0004/0004.json) · active · revision 4
 - [DOC-0005 — Sprint 2.5 e piloto de alimentação CA](records/DOC/DOC-0005/0002.json) · active · revision 2
 - [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2
