@@ -126,5 +126,7 @@ matriz de demonstração e responsabilidades; readiness e issues constam no mani
 
 Contratos de snapshot/proposta/revisão e CLI prepare-understanding/validate-understanding
 implementados. Ver [contratos](../engineering/project-understanding.md) e ADR-0009.
-O item 019-01 está em revisão; adapter, rubrica e estudo real ainda estão pendentes.
+O item 019-01 foi integrado no PR #13. Interface/adapter/CLI study implementados no
+segundo incremento, em revisão; ver [operação](../engineering/ollama-understanding.md).
+Rubrica, modelo instalado e estudo semântico real ainda estão pendentes.
 Não declarar AHC-019 Done antes de seus demais critérios e demonstração real.

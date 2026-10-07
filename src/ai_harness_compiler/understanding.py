@@ -1,12 +1,31 @@
-"""Prepare grounded model input; does not infer a domain or invoke a provider."""
+"""Provider-independent preparation and validation of proposed understanding."""
+
+from typing import Protocol
 
 from ai_harness_compiler.models.evidence import canonical_project_digest
 from ai_harness_compiler.models.project import ProjectInput
 from ai_harness_compiler.models.understanding import (
     InputReference,
+    ProjectUnderstandingSpec,
+    UnderstandingProposal,
     UnderstandingRequest,
     reference_value,
 )
+
+
+class UnderstandingModel(Protocol):
+    def propose(self, request: UnderstandingRequest) -> UnderstandingProposal:
+        """Return a proposal; providers cannot supply review or replace the input."""
+        ...
+
+
+def study_project(project: ProjectInput, model: UnderstandingModel) -> ProjectUnderstandingSpec:
+    request = prepare_understanding(project)
+    # Providers receive an independent copy. Their mutations never alter the authoritative snapshot.
+    proposal = model.propose(UnderstandingRequest.model_validate(request.model_dump()))
+    return ProjectUnderstandingSpec.model_validate(
+        {"request": request.model_dump(), "proposal": proposal.model_dump(), "review": None}
+    )
 
 
 def prepare_understanding(project: ProjectInput) -> UnderstandingRequest:

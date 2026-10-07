@@ -1,0 +1,52 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:po-replanning",
+  "challenge": null,
+  "consequences": [
+    "Fixtures não definem cobertura de nichos do produto.",
+    "Fake não comprova estudo semântico; exigir demonstração com modelo real e revisão.",
+    "Planos ainda não aprovados não iniciam execução."
+  ],
+  "context": "PO autorizou Sprint 2 e instalação do Ollama no D. Contratos PR #13 integrados; interface/adapter em revisão. Rubrica, geração real e propagação continuam pendentes.",
+  "created_at": "2026-10-06T21:38:52.729684+00:00",
+  "decision": "Priorizar AHC-019 (entendimento de proposta/branding/regras) e AHC-020 (blueprint/packs), antes de síntese de prompts/skills e documentação. Core não possui lista fixa de nichos.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Direção de produto confirmada.",
+      "outcome": "observed",
+      "sha256": "24d36fc2249c493b11b6c0d94cc160d64d242a2a68347529dbc1db26a74ec0da",
+      "source": "docs/product/generalist-pipeline.md"
+    },
+    {
+      "command": null,
+      "note": "Início autorizado e tarefas restantes.",
+      "outcome": "observed",
+      "sha256": "8c7ba32237ee107d3d7c4fe48cd30412f27627c87f5992f1886da3cb59d71548",
+      "source": "docs/delivery/sprint-2.md"
+    }
+  ],
+  "id": "DE-0004",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0002"
+  ],
+  "resolution": null,
+  "review_note": "Atualização de evidências locais e limites, sem declarar execução de modelo ou conclusão da história.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 8,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Nicho e regras derivam do estudo de cada projeto; packs são opcionais e extensíveis.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Compilador generalista antes da especialização",
+  "updated_at": "2026-10-07T18:33:30.199227+00:00"
+}

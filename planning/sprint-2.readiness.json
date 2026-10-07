@@ -1,41 +1,41 @@
 {
-  "sprint_id": "sprint-2",
   "execution_started": true,
-  "start_date": "2026-10-06",
   "gates": [
     {
+      "evidence": "PO message: aprovado, pode estruturar a sprint.",
       "id": "scope-approval",
-      "status": "passed",
       "owner": "leozitogs",
-      "evidence": "PO message: aprovado, pode estruturar a sprint."
+      "status": "passed"
     },
     {
+      "evidence": "PR #9 merged after updated CI on head 5f6d4a4",
       "id": "pr-9-integration",
-      "status": "passed",
       "owner": "repository-maintainer",
-      "evidence": "PR #9 merged after updated CI on head 5f6d4a4"
+      "status": "passed"
     },
     {
-      "id": "sprint-1-review-retro",
-      "status": "pending",
-      "owner": "leozitogs-and-collaborator",
-      "evidence": "No recorded completion",
       "enforcement": "follow-up",
-      "override": "Explicit PO request to start Sprint 2; event completion not inferred"
-    },
-    {
-      "id": "capacity-and-start",
-      "status": "partial",
+      "evidence": "No recorded completion",
+      "id": "sprint-1-review-retro",
+      "override": "Explicit PO request to start Sprint 2; event completion not inferred",
       "owner": "leozitogs-and-collaborator",
-      "evidence": "Start authorized on 2026-10-06; capacity remains unquantified"
+      "status": "pending"
     },
     {
+      "evidence": "Start authorized on 2026-10-06; capacity remains unquantified",
+      "id": "capacity-and-start",
+      "owner": "leozitogs-and-collaborator",
+      "status": "partial"
+    },
+    {
+      "enforcement": "required-for-ahc-019-verification",
+      "evidence": "Ollama 0.40.0 installed and local API reachable on 2026-10-07; no models installed; generation/demo not-run",
       "id": "real-model-config",
-      "status": "pending",
       "owner": "code-collaborator",
-      "evidence": "Model not configured; contract/CLI work started, real-model demonstration remains not-run",
-      "enforcement": "required-for-ahc-019-verification"
+      "status": "partial"
     }
   ],
-  "start_authorization": "Explicit PO request; does not assert ceremonies performed or model demo complete."
+  "sprint_id": "sprint-2",
+  "start_authorization": "Explicit PO request; does not assert ceremonies performed or model demo complete.",
+  "start_date": "2026-10-06"
 }

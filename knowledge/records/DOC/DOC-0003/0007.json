@@ -1,0 +1,63 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:planning",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO autorizou Sprint 2 e instalação do Ollama no D. Contratos PR #13 integrados; interface/adapter em revisão. Rubrica, geração real e propagação continuam pendentes.",
+  "created_at": "2026-10-06T21:30:06.913476+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Estado de execução parcial e limites explícitos.",
+      "outcome": "observed",
+      "sha256": "8c7ba32237ee107d3d7c4fe48cd30412f27627c87f5992f1886da3cb59d71548",
+      "source": "docs/delivery/sprint-2.md"
+    },
+    {
+      "command": null,
+      "note": "Estado de execução parcial e limites explícitos.",
+      "outcome": "observed",
+      "sha256": "fe7de731efd1dbc145134f92fecf82d169465bd8d5c14c984c54cbc6348ff949",
+      "source": "docs/delivery/sprint-2-execution.md"
+    },
+    {
+      "command": null,
+      "note": "Estado de execução parcial e limites explícitos.",
+      "outcome": "observed",
+      "sha256": "d8a336d83b7f4545fb0d91be778669ea7e5206be808ba3e540a017031e5c1e3e",
+      "source": "planning/sprint-2.work-items.json"
+    }
+  ],
+  "id": "DOC-0003",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Previsão de duas histórias, sem prazo prometido ou velocity calculada.",
+    "Não implementa runtime de memória/agentes dos projetos alvo."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0002",
+    "DE-0004"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 7,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Sprint 2 aprovada e estruturada: AHC-019/020, 21 subtarefas, ownership, evidências e gates explícitos.",
+  "supersedes": null,
+  "tags": [
+    "scrum",
+    "sprint-2",
+    "planning"
+  ],
+  "title": "Planejamento da Sprint 2",
+  "updated_at": "2026-10-07T18:33:30.292003+00:00"
+}

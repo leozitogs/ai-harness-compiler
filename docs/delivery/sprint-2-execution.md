@@ -91,5 +91,9 @@ D10: Review e Retro. Dias são relativos, sem reuniões agendadas ou data final.
 Daily atualiza tarefa, evidência, impedimento e próximo passo. Retrospective registra
 uma melhoria verificável; Review confirma valor e reordena o backlog com o PO.
 
-019-01 está implementado e em revisão. Próximo item técnico: 019-02 (interface de
-modelo). AHC-019 continua in progress; os contratos não comprovam estudo semântico.
+019-01 integrado no PR #13. Interface de modelo (019-02), adapter/CLI study (parte
+de 019-05) e negativos de transporte/snapshot implementados em novo incremento,
+em revisão. 019-03 continua pendente; prompt inicial não foi calibrado com holdout.
+Ollama 0.40.0 instalado no ambiente de desenvolvimento por pedido do PO, API local
+acessível e armazenamento no D, sem modelos baixados. Isso não completa 019-08.
+AHC-019 continua in progress; testes estruturais não comprovam estudo semântico.

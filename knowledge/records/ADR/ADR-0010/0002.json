@@ -1,0 +1,78 @@
+{
+  "alternatives": [
+    "Reusar loop interno de agentes",
+    "Acoplar domínio a SDK",
+    "Fake como produto"
+  ],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [
+    "HTTPX no extra understanding",
+    "Demonstração real e revisão semântica continuam pendentes"
+  ],
+  "context": "AHC-019 possui contratos integrados; novo incremento implementa interface, adapter e CLI. Testes de transporte não demonstram qualidade semântica.",
+  "created_at": "2026-10-07T18:33:30.401755+00:00",
+  "decision": "Separar UnderstandingModel do provider; uma chamada local explícita, com limites, sem ferramentas/retries e sem aplicar propostas.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "273 testes completos passaram; docs descrevem limites do incremento.",
+      "outcome": "observed",
+      "sha256": "89e183b1308d9951ea1470a3a5496844324d513c34d1ef239c9b60a9d09f86ee",
+      "source": "docs/adr/0010-local-understanding-adapter.md"
+    },
+    {
+      "command": null,
+      "note": "273 testes completos passaram; docs descrevem limites do incremento.",
+      "outcome": "observed",
+      "sha256": "92c365b9f11a93aef23faf5628fc967d101d402eb60d06db1a1217033ab4c5d2",
+      "source": "docs/engineering/ollama-understanding.md"
+    },
+    {
+      "command": null,
+      "note": "273 testes completos passaram; docs descrevem limites do incremento.",
+      "outcome": "passed",
+      "sha256": "45afe52f2be3b3e96e91c810baad50bd3928743bbbf6d8e9cb5210958d86ad70",
+      "source": "tests/test_ollama_understanding.py"
+    },
+    {
+      "command": null,
+      "note": "273 testes completos passaram; docs descrevem limites do incremento.",
+      "outcome": "observed",
+      "sha256": "a6947d8a2d8002449090e2984e23f5789ec69df39afc05297556b78540c85117",
+      "source": "docs/delivery/ahc-019-adapter-validation.md"
+    }
+  ],
+  "id": "ADR-0010",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "Referências/schema não provam verdade",
+    "Ollama instalado, nenhum modelo baixado",
+    "Prompt inicial não otimizado com holdout"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0009",
+    "DE-0004"
+  ],
+  "resolution": null,
+  "review_note": "Contratos/transporte verificados por testes e análise estática; nenhuma qualidade de modelo reivindicada.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Adapter opcional Ollama produz proposta estruturada; core preserva snapshot e valida referências, sem aprovação automática.",
+  "supersedes": null,
+  "tags": [
+    "understanding",
+    "ollama",
+    "provider-boundary"
+  ],
+  "title": "Estudo local por interface substituível e resposta limitada",
+  "updated_at": "2026-10-07T18:33:30.450972+00:00"
+}
