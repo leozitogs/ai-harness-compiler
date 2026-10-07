@@ -1,0 +1,61 @@
+{
+  "counts": {
+    "business_rules": 0,
+    "conflicts": 0,
+    "domain_candidates": 0,
+    "questions": 0,
+    "statements": 12
+  },
+  "date": "2026-10-07T19:43:22.535332+00:00",
+  "elapsed_seconds": 28.386,
+  "evaluation": "Sprint 2.5 AC pilot; not a reserved semantic evaluation",
+  "input": "examples/project-definition/project.yaml",
+  "input_sha256": "b3d0db0980c20a068cbddf89bf26afef915368d5e487a9e1748cf782a9ba9225",
+  "model_details": {
+    "context_length": 262144,
+    "embedding_length": 2560,
+    "families": [
+      "qwen3"
+    ],
+    "family": "qwen3",
+    "format": "gguf",
+    "parameter_size": "4.0B",
+    "parent_model": "qwen3:4b-instruct",
+    "quantization_level": "Q4_K_M",
+    "runner": "llamacpp"
+  },
+  "model_digest": "59d7f50962ef280aacad2867d041c13e22ad2d08827df5ec407ff75d348f8c90",
+  "model_parameters": "top_k                          20\ntop_p                          0.8\nnum_ctx                        8192\nnum_predict                    4096\nrepeat_penalty                 1\nstop                           \"<|im_start|>\"\nstop                           \"<|im_end|>\"\ntemperature                    0",
+  "model_size_bytes": 2497293463,
+  "ollama_ps": "NAME                        ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL              \nahc-qwen3:4b-instruct-8k    59d7f50962ef    3.9 GB    100% GPU     8192       llamacpp    4 minutes from now    \n",
+  "ollama_version": "ollama version is 0.40.0",
+  "output_sha256": "30eaae534229219eb777590221e23accc3cd01b81ce361b8564688d4faa2062c",
+  "pilot_label": "warm-1",
+  "power_after": {
+    "battery": {
+      "Charging": true,
+      "Discharging": false,
+      "PowerOnline": true
+    },
+    "gpu": "3795 MiB, 2126 MiB, 62.37 W, 2625 MHz, 66"
+  },
+  "power_before": {
+    "battery": {
+      "Charging": true,
+      "Discharging": false,
+      "PowerOnline": true
+    },
+    "gpu": "3795 MiB, 2126 MiB, 1.68 W, 210 MHz, 51"
+  },
+  "requested_model": "ahc-qwen3:4b-instruct-8k",
+  "review": "not performed",
+  "settings": {
+    "max_output_tokens": 4096,
+    "num_ctx_model_profile": 8192,
+    "temperature": 0,
+    "think": false,
+    "timeout_seconds": 180
+  },
+  "status": "contract-valid",
+  "system_prompt_sha256": "8d40d8a6f748da09f51d6511bb4da40bc1384ee1631a77dc85e5bbc29aebc401"
+}

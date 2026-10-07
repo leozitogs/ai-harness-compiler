@@ -14,6 +14,9 @@ educação/comércio são fixtures, e packs opcionais não limitam os domínios 
 **Status: fundação v0.1.** O repositório contém um compilador local determinístico
 de um harness de desenvolvimento. O pipeline completo de IA está no roadmap.
 
+Foco atual: [Sprint 2.5 — qualidade semântica e modelo local](docs/delivery/sprint-2-5.md),
+com evals, grounding e qualificação antes de avançar no blueprint.
+
 ```mermaid
 flowchart LR
     I[ProjectInput] --> D[ProjectDNA]
