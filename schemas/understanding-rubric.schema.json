@@ -1,0 +1,111 @@
+{
+  "$defs": {
+    "HumanDeclaration": {
+      "additionalProperties": false,
+      "properties": {
+        "authority": {
+          "const": "human-declared-not-authenticated",
+          "default": "human-declared-not-authenticated",
+          "title": "Authority",
+          "type": "string"
+        },
+        "note": {
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        },
+        "reviewer": {
+          "minLength": 1,
+          "title": "Reviewer",
+          "type": "string"
+        }
+      },
+      "required": [
+        "reviewer",
+        "note"
+      ],
+      "title": "HumanDeclaration",
+      "type": "object"
+    },
+    "RubricCriterion": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "id": {
+          "enum": [
+            "rule-coverage",
+            "citation-support",
+            "conflict-validity",
+            "asset-bounds",
+            "uncertainty",
+            "project-understanding"
+          ],
+          "title": "Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "description"
+      ],
+      "title": "RubricCriterion",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "acceptance": {
+      "const": "all-criteria-pass-no-critical-failure",
+      "default": "all-criteria-pass-no-critical-failure",
+      "title": "Acceptance",
+      "type": "string"
+    },
+    "approval": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/HumanDeclaration"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "criteria": {
+      "items": {
+        "$ref": "#/$defs/RubricCriterion"
+      },
+      "maxItems": 6,
+      "minItems": 6,
+      "title": "Criteria",
+      "type": "array"
+    },
+    "id": {
+      "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "UnderstandingRubric/v1",
+      "default": "UnderstandingRubric/v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "version": {
+      "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+      "title": "Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "criteria"
+  ],
+  "title": "UnderstandingRubric",
+  "type": "object"
+}

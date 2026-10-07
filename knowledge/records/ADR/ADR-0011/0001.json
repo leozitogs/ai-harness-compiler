@@ -1,0 +1,82 @@
+{
+  "alternatives": [
+    "Schema como qualidade",
+    "Candidate-as-judge",
+    "Matching textual como prova de significado"
+  ],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "INC-0007 demonstrou conteúdo inadequado com JSON válido. Primeiro runner avalia artefatos offline.",
+  "created_at": "2026-10-07T20:23:00.583925+00:00",
+  "decision": "Separar corpus/rubrica, findings automáticos e julgamento humano vinculado; nenhum modelo aprova sua própria saída ou é qualificado por este runner.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "320 contract/compiler tests passed; implementation or explicit fail reports, no model qualification.",
+      "outcome": "observed",
+      "sha256": "2d1aea8c89a78f7e4f3ca453f793ca46435662dd148b66d243210ca0114cfb84",
+      "source": "docs/adr/0011-semantic-artifact-evaluation.md"
+    },
+    {
+      "command": null,
+      "note": "320 contract/compiler tests passed; implementation or explicit fail reports, no model qualification.",
+      "outcome": "observed",
+      "sha256": "a21428fae5a7a1c2c5e16127602551bb86640d98fc49c0a33a124a9f8ff30be1",
+      "source": "docs/engineering/semantic-understanding-evals.md"
+    },
+    {
+      "command": null,
+      "note": "320 contract/compiler tests passed; implementation or explicit fail reports, no model qualification.",
+      "outcome": "observed",
+      "sha256": "398064f76da93ebbc6135d26d2ec8760ffe707338d8b4b25278613ba2b7f4803",
+      "source": "src/ai_harness_compiler/models/semantic_eval.py"
+    },
+    {
+      "command": null,
+      "note": "320 contract/compiler tests passed; implementation or explicit fail reports, no model qualification.",
+      "outcome": "observed",
+      "sha256": "2907817e37ec5e93feaaf678ae3a7a1b822db09c22d9cb9987ecc1e1de6df220",
+      "source": "src/ai_harness_compiler/semantic_eval.py"
+    },
+    {
+      "command": null,
+      "note": "320 contract/compiler tests passed; implementation or explicit fail reports, no model qualification.",
+      "outcome": "passed",
+      "sha256": "6557833c64e2a63fba448d0887f43934195613f5596aeb0c89fd226fbfccd8b6",
+      "source": "tests/test_semantic_eval.py"
+    }
+  ],
+  "id": "ADR-0011",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "Revisor e rubrica declarados, não autenticados",
+    "Corpus proposto aguardando review",
+    "Geração real/session budgets ainda pendentes"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0010",
+    "INC-0007"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Corpus congelado e revisão por item/regras; relatório contraditório ou pendente não vira sucesso.",
+  "supersedes": null,
+  "tags": [
+    "semantic-evals",
+    "grounding",
+    "review-contracts"
+  ],
+  "title": "Julgamento semântico separado de integridade",
+  "updated_at": "2026-10-07T20:23:00.583925+00:00"
+}

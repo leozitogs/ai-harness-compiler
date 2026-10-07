@@ -2,6 +2,9 @@
 
 ## 0.1.0 — Unreleased
 
+- AHC-021 parcial: corpus congelado 8+8, rubrica/revisão/relatório tipados e runner offline.
+- Relatórios distinguem julgamento pendente, falha e erro; cobertura/suporte são revisados por item e não inferidos de integridade.
+
 - AHC-019 parcial: contratos de snapshot/proposta/revisão, schemas e CLI de preparação/validação.
 - Sprint 2 iniciada por pedido do PO; demonstração com modelo real e aceite semântico pendentes.
 - AHC-019 parcial: interface substituível, adapter local Ollama e CLI study com limites e saída exclusiva.

@@ -1,0 +1,43 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "artifacts": {
+      "additionalProperties": {
+        "pattern": "^[0-9a-f]{64}$",
+        "type": "string"
+      },
+      "propertyNames": {
+        "enum": [
+          "rubric.json",
+          "development.json",
+          "holdout.json"
+        ]
+      },
+      "title": "Artifacts",
+      "type": "object"
+    },
+    "expectation_status": {
+      "const": "proposed-human-review-required",
+      "default": "proposed-human-review-required",
+      "title": "Expectation Status",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "FrozenUnderstandingCorpus/v1",
+      "default": "FrozenUnderstandingCorpus/v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "version": {
+      "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+      "title": "Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "version",
+    "artifacts"
+  ],
+  "title": "FrozenUnderstandingCorpus",
+  "type": "object"
+}

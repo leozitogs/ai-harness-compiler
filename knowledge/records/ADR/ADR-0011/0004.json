@@ -1,0 +1,90 @@
+{
+  "alternatives": [
+    "Schema como qualidade",
+    "Candidate-as-judge",
+    "Matching textual como prova de significado"
+  ],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "INC-0007 demonstrou conteúdo inadequado com JSON válido. Primeiro runner avalia artefatos offline.",
+  "created_at": "2026-10-07T20:23:00.583925+00:00",
+  "decision": "Separar corpus/rubrica, findings automáticos e julgamento humano vinculado; nenhum modelo aprova sua própria saída ou é qualificado por este runner.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "321 compiler/contract tests passed; artifact failures preserved, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "2d1aea8c89a78f7e4f3ca453f793ca46435662dd148b66d243210ca0114cfb84",
+      "source": "docs/adr/0011-semantic-artifact-evaluation.md"
+    },
+    {
+      "command": null,
+      "note": "321 compiler/contract tests passed; artifact failures preserved, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "d3e807ccafae8765d51dcdfa1277e52bcd9fff83f4fada38420c32b86cfc52d7",
+      "source": "docs/engineering/semantic-understanding-evals.md"
+    },
+    {
+      "command": null,
+      "note": "321 compiler/contract tests passed; artifact failures preserved, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "9f121172ee1b871d082d4d6b45a4638d4cedeea09ab54cb7a39c611ccfbc53ac",
+      "source": "src/ai_harness_compiler/models/semantic_eval.py"
+    },
+    {
+      "command": null,
+      "note": "321 compiler/contract tests passed; artifact failures preserved, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "277d2baca906c554f12e230d96e310edd3fbca14b82b009b822e05143e763450",
+      "source": "src/ai_harness_compiler/semantic_eval.py"
+    },
+    {
+      "command": null,
+      "note": "321 compiler/contract tests passed; artifact failures preserved, no semantic qualification.",
+      "outcome": "passed",
+      "sha256": "08c0aab142c354951fd3f3d8d76a69baf3166713cc2936741db346d0e08e58b7",
+      "source": "tests/test_semantic_eval.py"
+    },
+    {
+      "command": null,
+      "note": "First-increment evidence and limitations, no invented semantic success.",
+      "outcome": "observed",
+      "sha256": "978fd210d58525c3d4f2201d98a96bf9f967a8d9e903e1b3b0ff67856a360424",
+      "source": "docs/delivery/ahc-021-first-increment.md"
+    }
+  ],
+  "id": "ADR-0011",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "Revisor e rubrica declarados, não autenticados",
+    "Corpus proposto aguardando review",
+    "Geração real/session budgets ainda pendentes",
+    "Holdout sintético da mesma sessão, sem cegamento independente"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0010",
+    "INC-0007"
+  ],
+  "resolution": null,
+  "review_note": "Updated hashes after renamed-clone guard; final 321 tests/build/checks passed, no holdout optimization or semantic acceptance.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 4,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Corpus congelado e revisão por item/regras; relatório contraditório ou pendente não vira sucesso.",
+  "supersedes": null,
+  "tags": [
+    "semantic-evals",
+    "grounding",
+    "review-contracts"
+  ],
+  "title": "Julgamento semântico separado de integridade",
+  "updated_at": "2026-10-07T20:28:53.592456+00:00"
+}
