@@ -430,7 +430,7 @@
       "task_graph_id": "task-4-design",
       "stage": "design",
       "title": "Confiabilidade: design",
-      "status": "in_review",
+      "status": "done",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "analyst",
@@ -452,13 +452,14 @@
         "ahc-004:2",
         "ahc-004:3"
       ],
-      "progress_note": "Three-domain fixtures, failure diagnostics and measured offline baseline implemented; 190 local tests passed. PR/CI/integration pending.",
+      "progress_note": "PR #9 corrected, synchronized with approved planning and integrated after CI green.",
       "evidence_sources": [
         "docs/delivery/ahc-004-validation.md",
         "tests/test_reliability.py",
         "tests/test_benchmark.py",
         "benchmarks/results/baseline-windows-python313.json"
-      ]
+      ],
+      "pull_request": "https://github.com/leozitogs/ai-harness-compiler/pull/9"
     },
     {
       "id": "s1-14",
@@ -466,7 +467,7 @@
       "task_graph_id": "task-4-implement",
       "stage": "implement",
       "title": "Confiabilidade: implement",
-      "status": "in_review",
+      "status": "done",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "engineer",
@@ -487,13 +488,14 @@
         "ahc-004:2",
         "ahc-004:3"
       ],
-      "progress_note": "Three-domain fixtures, failure diagnostics and measured offline baseline implemented; 190 local tests passed. PR/CI/integration pending.",
+      "progress_note": "PR #9 corrected, synchronized with approved planning and integrated after CI green.",
       "evidence_sources": [
         "docs/delivery/ahc-004-validation.md",
         "tests/test_reliability.py",
         "tests/test_benchmark.py",
         "benchmarks/results/baseline-windows-python313.json"
-      ]
+      ],
+      "pull_request": "https://github.com/leozitogs/ai-harness-compiler/pull/9"
     },
     {
       "id": "s1-15",
@@ -501,7 +503,7 @@
       "task_graph_id": "task-4-verify",
       "stage": "verify",
       "title": "Confiabilidade: verify",
-      "status": "in_review",
+      "status": "done",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "quality",
@@ -524,13 +526,14 @@
         "ahc-004:2",
         "ahc-004:3"
       ],
-      "progress_note": "Three-domain fixtures, failure diagnostics and measured offline baseline implemented; 190 local tests passed. PR/CI/integration pending.",
+      "progress_note": "PR #9 corrected, synchronized with approved planning and integrated after CI green.",
       "evidence_sources": [
         "docs/delivery/ahc-004-validation.md",
         "tests/test_reliability.py",
         "tests/test_benchmark.py",
         "benchmarks/results/baseline-windows-python313.json"
-      ]
+      ],
+      "pull_request": "https://github.com/leozitogs/ai-harness-compiler/pull/9"
     },
     {
       "id": "s1-16",
@@ -538,7 +541,7 @@
       "task_graph_id": "task-4-review",
       "stage": "review",
       "title": "Confiabilidade: review",
-      "status": "in_review",
+      "status": "done",
       "responsible": "code-collaborator-supported-by-codex",
       "supporting_agents": [
         "delivery",
@@ -559,13 +562,14 @@
         "ahc-004:2",
         "ahc-004:3"
       ],
-      "progress_note": "Three-domain fixtures, failure diagnostics and measured offline baseline implemented; 190 local tests passed. PR/CI/integration pending.",
+      "progress_note": "PR #9 corrected, synchronized with approved planning and integrated after CI green.",
       "evidence_sources": [
         "docs/delivery/ahc-004-validation.md",
         "tests/test_reliability.py",
         "tests/test_benchmark.py",
         "benchmarks/results/baseline-windows-python313.json"
-      ]
+      ],
+      "pull_request": "https://github.com/leozitogs/ai-harness-compiler/pull/9"
     }
   ]
 }

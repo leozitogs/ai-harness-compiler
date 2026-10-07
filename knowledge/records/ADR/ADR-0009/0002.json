@@ -1,0 +1,55 @@
+{
+  "alternatives": [
+    "Texto livre sem contrato.",
+    "Aprovação dentro da resposta do modelo."
+  ],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:ahc-019-contracts",
+  "challenge": null,
+  "consequences": [
+    "Metadados não autenticam reviewer ou provam verdade/entailment.",
+    "Modelo real e workflow de adoção continuam pendentes."
+  ],
+  "context": "Primeiro incremento da AHC-019; não implementa adapter/estudo real/aplicação à DNA.",
+  "created_at": "2026-10-06T23:47:07.520533+00:00",
+  "decision": "Introduzir UnderstandingRequest/Proposal e ProjectUnderstanding v1 sem alterar IR v3; referências resolvem dados originais e review fica fora da saída permitida ao modelo.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Decisão e limites do contrato.",
+      "outcome": "observed",
+      "sha256": "14b6cce05a8ffbd93dca32b36f9699ee0cb89a33ad2e63355d583253a790ed94",
+      "source": "docs/adr/0009-understanding-contracts.md"
+    },
+    {
+      "command": null,
+      "note": "Interface, exemplos e limites.",
+      "outcome": "observed",
+      "sha256": "7dc73f5864c8135d3e8dd7e0e9e236ebea4ec54d56651535c7c124436d45de6c",
+      "source": "docs/engineering/project-understanding.md"
+    }
+  ],
+  "id": "ADR-0009",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0004",
+    "ADR-0006"
+  ],
+  "resolution": null,
+  "review_note": "Contrato e CLI testados; sem afirmar demo real ou aprovação do incremento pelo PO.",
+  "reviewed_by": "codex:implementation-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Contratos independentes de provider separam dados originais, citações, propostas, hipóteses e revisão por hashes.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Entendimento ancorado no snapshot e revisão separada",
+  "updated_at": "2026-10-06T23:47:07.547286+00:00"
+}

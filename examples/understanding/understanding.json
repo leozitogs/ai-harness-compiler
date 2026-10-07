@@ -1,0 +1,139 @@
+{
+  "proposal": {
+    "business_rules": [
+      {
+        "condition": "Quando uma solicitação precisar de divulgação",
+        "description": "Hipótese fictícia de revisão prévia.",
+        "exceptions": [],
+        "id": "review-rule",
+        "origin": "hypothesis",
+        "outcome": "Solicitar revisão do responsável",
+        "source_refs": [
+          "input-3"
+        ]
+      }
+    ],
+    "conflicts": [],
+    "domain_candidates": [
+      {
+        "confidence": null,
+        "domain": "internal-operations",
+        "id": "candidate",
+        "rationale": "Hipótese manual de exemplo, sem execução de modelo.",
+        "source_refs": [
+          "input-1"
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "blocking": true,
+        "id": "reviewer",
+        "question": "Quem pode aprovar a divulgação?",
+        "source_refs": [
+          "input-2"
+        ]
+      }
+    ],
+    "schema_version": "UnderstandingProposal/v1",
+    "statements": [
+      {
+        "id": "purpose",
+        "source_refs": [
+          "input-1"
+        ],
+        "status": "declared",
+        "subject": "purpose",
+        "text": "Organizar solicitações internas com revisão antes da divulgação."
+      }
+    ]
+  },
+  "request": {
+    "original_input": {
+      "assets": [],
+      "backlog": [
+        {
+          "acceptance_criteria": [
+            "Cada solicitação identifica um responsável."
+          ],
+          "data_owner": null,
+          "depends_on": [],
+          "description": "Registrar solicitação para decisão do responsável.",
+          "id": "request-review",
+          "implementation": "undecided",
+          "inputs": [],
+          "outputs": [],
+          "risk": "unknown",
+          "side_effects": [],
+          "title": "Revisar solicitação"
+        }
+      ],
+      "branding": {
+        "audience": [
+          "equipes internas"
+        ],
+        "principles": [],
+        "tone": [
+          "objetivo"
+        ],
+        "visual_constraints": []
+      },
+      "conception": "Organizar solicitações internas com revisão antes da divulgação.",
+      "constraints": {
+        "business": [],
+        "max_build_cost_usd": 0.0,
+        "security": [
+          "Não divulgar sem revisão."
+        ],
+        "technical": []
+      },
+      "domain": null,
+      "domain_profile": null,
+      "evidence_pack": null,
+      "id": "understanding-demo",
+      "name": "Proposta de operações internas",
+      "schema_version": "ProjectInput/v1"
+    },
+    "original_sha256": "fcfc0b97e920549c0925109eca9676a64c93d6bdfc3eb111df8bb9b979bf9f7a",
+    "references": [
+      {
+        "content_trust": "untrusted-data",
+        "id": "input-1",
+        "pointer": "/conception",
+        "project_id": "understanding-demo",
+        "value": "Organizar solicitações internas com revisão antes da divulgação."
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "input-2",
+        "pointer": "/branding",
+        "project_id": "understanding-demo",
+        "value": "{\"audience\":[\"equipes internas\"],\"principles\":[],\"tone\":[\"objetivo\"],\"visual_constraints\":[]}"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "input-3",
+        "pointer": "/constraints",
+        "project_id": "understanding-demo",
+        "value": "{\"business\":[],\"max_build_cost_usd\":0.0,\"security\":[\"Não divulgar sem revisão.\"],\"technical\":[]}"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "input-4",
+        "pointer": "/backlog/0/description",
+        "project_id": "understanding-demo",
+        "value": "Registrar solicitação para decisão do responsável."
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "input-5",
+        "pointer": "/backlog/0/acceptance_criteria/0",
+        "project_id": "understanding-demo",
+        "value": "Cada solicitação identifica um responsável."
+      }
+    ],
+    "schema_version": "UnderstandingRequest/v1"
+  },
+  "review": null,
+  "schema_version": "ProjectUnderstanding/v1"
+}

@@ -1,6 +1,6 @@
 {
   "id": "sprint-1",
-  "status": "in_progress",
+  "status": "review_pending",
   "goal": "Tornar a entrada, o perfil de domínio e as evidências verificáveis, medindo a confiabilidade da baseline offline.",
   "duration_working_days": 10,
   "start_date": "2026-10-06",
@@ -33,7 +33,7 @@
     "ahc-001": "done",
     "ahc-002": "done",
     "ahc-003": "done",
-    "ahc-004": "in_review"
+    "ahc-004": "done"
   },
   "remaining_events": [
     "PO Sprint Review",

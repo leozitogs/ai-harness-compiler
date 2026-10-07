@@ -19,6 +19,11 @@ from ai_harness_compiler.models.evidence import EvidencePack, SourceRecord
 from ai_harness_compiler.models.memory import MemoryRecord, RecordDraft
 from ai_harness_compiler.models.task import TaskGraph
 from ai_harness_compiler.models.team import AgentReport, Persona, TeamConfig
+from ai_harness_compiler.models.understanding import (
+    ProjectUnderstandingSpec,
+    UnderstandingProposal,
+    UnderstandingRequest,
+)
 from ai_harness_compiler.pipeline import plan
 from ai_harness_compiler.planning import decompose
 
@@ -38,6 +43,9 @@ MODELS: dict[str, type[Contract]] = {
     "domain-profile": DomainProfile,
     "benchmark-suite": BenchmarkSuite,
     "benchmark-report": BenchmarkReport,
+    "understanding-request": UnderstandingRequest,
+    "understanding-proposal": UnderstandingProposal,
+    "project-understanding": ProjectUnderstandingSpec,
 }
 
 
@@ -88,6 +96,20 @@ def main(argv: list[str] | None = None) -> int:
         "--output", type=Path, required=True, help="New report JSON file"
     )
     benchmark_command.add_argument("--runs", type=int, default=3)
+    prepare_command = commands.add_parser(
+        "prepare-understanding", help="Prepare grounded input without invoking a model"
+    )
+    prepare_command.add_argument("input", type=Path)
+    prepare_command.add_argument(
+        "--max-manifest-bytes", type=int, default=DEFAULT_MAX_MANIFEST_BYTES
+    )
+    understanding_command = commands.add_parser(
+        "validate-understanding", help="Validate understanding snapshot/proposal/review metadata"
+    )
+    understanding_command.add_argument("input", type=Path)
+    understanding_command.add_argument(
+        "--max-understanding-bytes", type=int, default=4 * 1024 * 1024
+    )
     schema_command = commands.add_parser("schema", help="Print a JSON Schema to stdout")
     schema_command.add_argument("model", choices=MODELS)
     args = parser.parse_args(argv)
@@ -102,6 +124,31 @@ def main(argv: list[str] | None = None) -> int:
             return execute(args)
         if args.command == "schema":
             print(json_text(MODELS[args.model].model_json_schema()), end="")
+            return 0
+        if args.command == "prepare-understanding":
+            from ai_harness_compiler.understanding import prepare_understanding
+
+            request = prepare_understanding(
+                load_project(args.input, max_manifest_bytes=args.max_manifest_bytes)
+            )
+            print(json_text(request.model_dump()), end="")
+            return 0
+        if args.command == "validate-understanding":
+            if args.max_understanding_bytes <= 0 or args.max_understanding_bytes >= sys.maxsize:
+                raise ValueError("UNDERSTANDING_LIMIT: Positive readable byte limit required")
+            with args.input.open("rb") as stream:
+                content = stream.read(args.max_understanding_bytes + 1)
+            if len(content) > args.max_understanding_bytes:
+                raise ValueError("UNDERSTANDING_TOO_LARGE: Structured input exceeds byte limit")
+            understanding_spec = ProjectUnderstandingSpec.model_validate_json(
+                content.decode("utf-8-sig")
+            )
+            state = understanding_spec.review.decision if understanding_spec.review else "proposed"
+            print(
+                f"Understanding valid: {understanding_spec.request.original_input.id}; "
+                f"review metadata: {state}."
+            )
+            print("Model execution and reviewer authentication are not established by this check.")
             return 0
         if args.command == "benchmark":
             from ai_harness_compiler.benchmark import run_benchmark

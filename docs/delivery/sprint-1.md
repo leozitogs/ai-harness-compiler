@@ -2,7 +2,7 @@
 
 Planejamento atualizado em **2026-10-06**. Timebox proposto: **dez dias úteis**.
 Execução iniciada em **2026-10-06**, por solicitação explícita do PO.
-AHC-001/AHC-002/AHC-003 estão integradas; AHC-004 está em revisão. A capacidade total
+AHC-001/AHC-002/AHC-003/AHC-004 estão integradas. Review/Retrospective pendentes. A capacidade total
 continua não quantificada; D1 a D10 indicam ordem relativa, sem data final prometida.
 
 **Sprint Goal:** tornar a entrada, o perfil de domínio e as evidências verificáveis,
@@ -152,8 +152,8 @@ Três fixtures, falhas de I/O injetadas e diagnósticos estáveis, integridade e
 processo e benchmark offline implementados. Suíte local: 190 testes aprovados.
 Baseline: cinco builds por domínio (15 no total), com integridade e reprodução
 de bytes; método/limites em [confiabilidade](../engineering/compiler-reliability.md)
-e [validação](ahc-004-validation.md). A história aguarda revisão/CI/integração.
+e [validação](ahc-004-validation.md). PR #9 corrigido foi integrado com CI verde.
 
-A sprint permanece em andamento: após a integração do quarto incremento,
-apresentar a Review ao PO e realizar Retrospective; nenhuma aprovação de valor
+A sprint aguarda eventos de fechamento: apresentar a Review ao PO e realizar
+Retrospective; nenhuma aprovação de valor
 ou encerramento da sprint é inferido dos checks técnicos.
