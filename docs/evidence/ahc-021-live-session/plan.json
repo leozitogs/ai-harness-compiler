@@ -1,0 +1,238 @@
+{
+  "cases": [
+    {
+      "category": "compatible-rules",
+      "expected_conflicts": "none",
+      "id": "dev-compatible-rules",
+      "project": {
+        "assets": [
+          {
+            "description": "Referência visual e verbal; conteúdo não ingerido no MVP.",
+            "path": "assets/brand-notes.md"
+          }
+        ],
+        "backlog": [
+          {
+            "acceptance_criteria": [
+              "Cada material tem título, autor e referência de origem.",
+              "Materiais só são visíveis ao educador responsável."
+            ],
+            "data_owner": "educador",
+            "depends_on": [],
+            "description": "Permitir que o educador catalogue materiais e suas fontes.",
+            "id": "material-library",
+            "implementation": "deterministic",
+            "inputs": [
+              "material",
+              "metadados de origem"
+            ],
+            "outputs": [
+              "material catalogado"
+            ],
+            "risk": "medium",
+            "side_effects": [
+              "gravação na biblioteca"
+            ],
+            "title": "Biblioteca de materiais"
+          },
+          {
+            "acceptance_criteria": [
+              "As afirmações do rascunho referenciam os materiais utilizados.",
+              "A publicação exige revisão e aprovação do educador."
+            ],
+            "data_owner": "educador",
+            "depends_on": [
+              "material-library"
+            ],
+            "description": "Preparar um rascunho de aula usando os materiais selecionados.",
+            "id": "lesson-draft",
+            "implementation": "rag",
+            "inputs": [
+              "materiais selecionados",
+              "objetivos de aprendizagem"
+            ],
+            "outputs": [
+              "rascunho com referências"
+            ],
+            "risk": "medium",
+            "side_effects": [],
+            "title": "Rascunho de aula baseado em fontes"
+          }
+        ],
+        "branding": {
+          "audience": [
+            "educadores",
+            "coordenadores pedagógicos"
+          ],
+          "principles": [
+            "fontes verificáveis",
+            "controle do educador"
+          ],
+          "tone": [
+            "claro",
+            "acolhedor",
+            "preciso"
+          ],
+          "visual_constraints": [
+            "interface acessível"
+          ]
+        },
+        "conception": "Uma plataforma para educadores organizarem materiais e prepararem aulas baseadas em fontes, com revisão humana antes da publicação.",
+        "constraints": {
+          "business": [
+            "revisão humana antes de publicação"
+          ],
+          "max_build_cost_usd": 0.0,
+          "security": [
+            "não expor dados pessoais em traces"
+          ],
+          "technical": [
+            "Python 3.12 ou superior",
+            "contratos versionados"
+          ]
+        },
+        "domain": "education",
+        "domain_profile": null,
+        "evidence_pack": null,
+        "id": "learning-studio",
+        "name": "Learning Studio",
+        "schema_version": "ProjectInput/v1"
+      },
+      "required_rules": [
+        {
+          "id": "required-1",
+          "quote": "Cada material tem título, autor e referência de origem.",
+          "source_pointer": "/backlog/0/acceptance_criteria/0"
+        },
+        {
+          "id": "required-2",
+          "quote": "Materiais só são visíveis ao educador responsável.",
+          "source_pointer": "/backlog/0/acceptance_criteria/1"
+        },
+        {
+          "id": "required-3",
+          "quote": "As afirmações do rascunho referenciam os materiais utilizados.",
+          "source_pointer": "/backlog/1/acceptance_criteria/0"
+        },
+        {
+          "id": "required-4",
+          "quote": "A publicação exige revisão e aprovação do educador.",
+          "source_pointer": "/backlog/1/acceptance_criteria/1"
+        }
+      ],
+      "requires_blocking_question": false,
+      "review_guidance": "Aprovação humana e aprovação do educador são compatíveis. Não exigir revisor externo; citar domínio na fonte /domain; não inventar conteúdo do asset nem conflito entre orçamento zero e ferramentas gratuitas."
+    },
+    {
+      "category": "new-domain",
+      "expected_conflicts": "none",
+      "id": "dev-new-domain",
+      "project": {
+        "assets": [],
+        "backlog": [
+          {
+            "acceptance_criteria": [
+              "Cada publicação da equipe deve conter responsável e origem."
+            ],
+            "data_owner": null,
+            "depends_on": [],
+            "description": "Organizar publicação da equipe e registrar decisões.",
+            "id": "register",
+            "implementation": "undecided",
+            "inputs": [],
+            "outputs": [],
+            "risk": "unknown",
+            "side_effects": [],
+            "title": "Registrar e liberar"
+          }
+        ],
+        "branding": {
+          "audience": [
+            "autores"
+          ],
+          "principles": [
+            "rastreabilidade",
+            "controle humano"
+          ],
+          "tone": [],
+          "visual_constraints": []
+        },
+        "conception": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita.",
+        "constraints": {
+          "business": [
+            "Registrar a identidade do responsável."
+          ],
+          "max_build_cost_usd": 0.0,
+          "security": [],
+          "technical": []
+        },
+        "domain": null,
+        "domain_profile": null,
+        "evidence_pack": null,
+        "id": "dev-new-domain",
+        "name": "Fixture dev new-domain",
+        "schema_version": "ProjectInput/v1"
+      },
+      "required_rules": [
+        {
+          "id": "required-1",
+          "quote": "Cada publicação da equipe deve conter responsável e origem.",
+          "source_pointer": "/backlog/0/acceptance_criteria/0"
+        }
+      ],
+      "requires_blocking_question": false,
+      "review_guidance": "Revisar significado e suporte de todas as conclusões, sem inventar papéis, scores ou conteúdo externo."
+    }
+  ],
+  "corpus_sha256": "234a9e7c0e4e55fd341f6dc00d9f3a24f937d28df58ad2ec9f1b3a54082edf24",
+  "declared_candidate_sha256": null,
+  "prompt_sha256": "8d40d8a6f748da09f51d6511bb4da40bc1384ee1631a77dc85e5bbc29aebc401",
+  "rubric": {
+    "acceptance": "all-criteria-pass-no-critical-failure",
+    "approval": null,
+    "criteria": [
+      {
+        "description": "Todas as regras obrigatórias têm BusinessRule correspondente, condição/resultado corretos e cobertura revisada.",
+        "id": "rule-coverage"
+      },
+      {
+        "description": "Cada conclusão é sustentada pelas fontes citadas, não apenas por IDs existentes; apontar inferências sem apoio.",
+        "id": "citation-support"
+      },
+      {
+        "description": "Contradições reais são explicitadas; compatibilidade e falta de detalhe não são tratadas como conflitos.",
+        "id": "conflict-validity"
+      },
+      {
+        "description": "Não afirmar conteúdo de assets não lidos ou tratar dados externos como instruções executáveis.",
+        "id": "asset-bounds"
+      },
+      {
+        "description": "Hipóteses, fatos fornecidos e incógnitas são distintos; perguntas bloqueantes são preservadas e scores não inventados.",
+        "id": "uncertainty"
+      },
+      {
+        "description": "Domínio, objetivo, público e capacidades refletem o projeto, sem switches de nichos ou ampliação indevida de autoridade.",
+        "id": "project-understanding"
+      }
+    ],
+    "id": "understanding-quality",
+    "schema_version": "UnderstandingRubric/v1",
+    "version": "v1"
+  },
+  "schema_version": "UnderstandingSessionPlan/v1",
+  "settings": {
+    "call_timeout_seconds": 180,
+    "context_tokens": 8192,
+    "execution": "sequential-isolated-process-no-retries",
+    "expected_model_sha256": "59d7f50962ef280aacad2867d041c13e22ad2d08827df5ec407ff75d348f8c90",
+    "max_attempts": 1,
+    "max_output_tokens": 4096,
+    "model": "ahc-qwen3:4b-instruct-8k",
+    "repeats": 1,
+    "session_seconds": 300,
+    "temperature": 0,
+    "thinking": false
+  },
+  "split": "development"
+}

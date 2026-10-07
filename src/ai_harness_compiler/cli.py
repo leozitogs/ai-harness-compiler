@@ -1,6 +1,7 @@
 """The public CLI: validate, plan, compile, build and export JSON Schemas."""
 
 import argparse
+import hashlib
 import json
 import sys
 from pathlib import Path
@@ -17,6 +18,12 @@ from ai_harness_compiler.models.benchmark import BenchmarkReport, BenchmarkSuite
 from ai_harness_compiler.models.domain import DomainProfile
 from ai_harness_compiler.models.evidence import EvidencePack, SourceRecord
 from ai_harness_compiler.models.memory import MemoryRecord, RecordDraft
+from ai_harness_compiler.models.model_session import (
+    ModelSessionReport,
+    SessionPlan,
+    SessionSettings,
+    WorkerResult,
+)
 from ai_harness_compiler.models.semantic_eval import (
     FrozenUnderstandingCorpus,
     SemanticReview,
@@ -58,6 +65,9 @@ MODELS: dict[str, type[Contract]] = {
     "understanding-eval-report": UnderstandingEvalReport,
     "semantic-review": SemanticReview,
     "frozen-understanding-corpus": FrozenUnderstandingCorpus,
+    "model-session-plan": SessionPlan,
+    "model-session-report": ModelSessionReport,
+    "model-worker-result": WorkerResult,
 }
 
 
@@ -143,6 +153,30 @@ def main(argv: list[str] | None = None) -> int:
     )
     eval_validation.add_argument("input", type=Path)
     eval_validation.add_argument("--corpus", type=Path, required=True)
+    session_command = commands.add_parser(
+        "run-understanding-evals", help="Generate local Ollama cases in bounded isolated jobs"
+    )
+    session_command.add_argument("--corpus", type=Path, required=True)
+    session_command.add_argument("--model", required=True)
+    session_command.add_argument("--output", type=Path, required=True, help="New session directory")
+    session_command.add_argument("--case", nargs="+")
+    session_command.add_argument(
+        "--split", choices=["development", "holdout"], default="development"
+    )
+    session_command.add_argument("--repeats", type=int, default=1)
+    session_command.add_argument("--max-attempts", type=int, default=30)
+    session_command.add_argument("--session-seconds", type=int, default=3600)
+    session_command.add_argument("--timeout-seconds", type=int, default=180)
+    session_command.add_argument("--context-tokens", type=int, default=8192)
+    session_command.add_argument("--max-output-tokens", type=int, default=4096)
+    session_command.add_argument("--expected-model-sha256")
+    session_command.add_argument("--allow-holdout", action="store_true")
+    session_command.add_argument("--candidate-sha256")
+    session_validation = commands.add_parser(
+        "validate-model-session", help="Validate session journal"
+    )
+    session_validation.add_argument("input", type=Path, help="Session directory")
+    session_validation.add_argument("--corpus", type=Path, required=True)
     schema_command = commands.add_parser("schema", help="Print a JSON Schema to stdout")
     schema_command.add_argument("model", choices=MODELS)
     args = parser.parse_args(argv)
@@ -158,6 +192,62 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "schema":
             print(json_text(MODELS[args.model].model_json_schema()), end="")
             return 0
+        if args.command in {"run-understanding-evals", "validate-model-session"}:
+            from ai_harness_compiler.model_sessions import (
+                IsolatedOllamaExecutor,
+                make_plan,
+                run_session,
+                validate_session,
+            )
+            from ai_harness_compiler.semantic_eval import FrozenCorpus
+
+            if args.command == "validate-model-session":
+                session_report = validate_session(
+                    FrozenCorpus(args.corpus), args.input / "session.json"
+                )
+                print(
+                    f"Session journal valid: {session_report.run_status}; "
+                    f"eval: {session_report.evaluation_status}"
+                )
+                return 0
+            if args.output.exists():
+                raise FileExistsError("SESSION_EXISTS: Choose a new session directory")
+            if args.split == "holdout" and not args.allow_holdout:
+                raise ValueError("SESSION_HOLDOUT: Explicit opt-in required")
+            from ai_harness_compiler.adapters.ollama import SYSTEM_PROMPT, OllamaSettings
+
+            OllamaSettings(model=args.model)
+            settings = SessionSettings(
+                model=args.model,
+                repeats=args.repeats,
+                max_attempts=args.max_attempts,
+                session_seconds=args.session_seconds,
+                call_timeout_seconds=args.timeout_seconds,
+                context_tokens=args.context_tokens,
+                max_output_tokens=args.max_output_tokens,
+                expected_model_sha256=args.expected_model_sha256,
+            )
+            session_plan = make_plan(
+                FrozenCorpus(args.corpus),
+                settings,
+                hashlib.sha256(SYSTEM_PROMPT.encode()).hexdigest(),
+                args.case,
+                args.split,
+                args.candidate_sha256,
+            )
+            session_report = run_session(session_plan, args.output, IsolatedOllamaExecutor())
+            print(
+                f"Generation: {session_report.run_status}; "
+                f"attempts: {session_report.attempts_used}; "
+                f"eval: {session_report.evaluation_status}."
+            )
+            print("Semantic judgment pending; model qualification: not-established.")
+            return (
+                0
+                if session_report.run_status == "completed"
+                and session_report.evaluation_status != "error"
+                else 1
+            )
         if args.command in {"eval-understanding", "validate-eval-report"}:
             from ai_harness_compiler.semantic_eval import (
                 FrozenCorpus,
@@ -284,9 +374,9 @@ def main(argv: list[str] | None = None) -> int:
         print(f"factory: {exc}", file=sys.stderr)
         return 1
     except ModuleNotFoundError as exc:
-        if args.command not in {"team", "study"}:
+        if args.command not in {"team", "study", "run-understanding-evals"}:
             raise
-        extra = "understanding" if args.command == "study" else "team"
+        extra = "team" if args.command == "team" else "understanding"
         print(
             f"factory: install the {extra} extra with uv sync --extra {extra} ({exc.name})",
             file=sys.stderr,

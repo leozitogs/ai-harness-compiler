@@ -2,6 +2,8 @@
 
 ## 0.1.0 — Unreleased
 
+- AHC-021: sessões locais supervisionadas, budgets, metadados de execução/modelo e journal consistente; geração não implica qualificação.
+
 - AHC-021 parcial: corpus congelado 8+8, rubrica/revisão/relatório tipados e runner offline.
 - Relatórios distinguem julgamento pendente, falha e erro; cobertura/suporte são revisados por item e não inferidos de integridade.
 

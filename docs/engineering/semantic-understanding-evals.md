@@ -90,3 +90,7 @@ Pendentes: revisão do PO sobre rubrica/corpus, runner de geração real e budge
 sessão, metadados correlacionados de modelo/execução, pipeline/prompt da AHC-022 e
 qualificação AHC-023. INC-0007 não foi resolvido. Não executar o holdout antes desse
 gate nem declarar AHC-021 Done por este primeiro incremento.
+
+Incremento posterior: [runner de sessões de geração](model-generation-sessions.md)
+implementa supervisão, budgets e metadados. O formato offline descrito aqui permanece
+compatível; revisão da rubrica, grounding e qualificação continuam pendentes.

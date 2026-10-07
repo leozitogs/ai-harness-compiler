@@ -1,0 +1,1046 @@
+{
+  "$defs": {
+    "Asset": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "path": {
+          "minLength": 1,
+          "title": "Path",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "description"
+      ],
+      "title": "Asset",
+      "type": "object"
+    },
+    "BacklogItem": {
+      "additionalProperties": false,
+      "properties": {
+        "acceptance_criteria": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Acceptance Criteria",
+          "type": "array"
+        },
+        "data_owner": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Data Owner"
+        },
+        "depends_on": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "title": "Depends On",
+          "type": "array"
+        },
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "implementation": {
+          "default": "undecided",
+          "enum": [
+            "undecided",
+            "deterministic",
+            "llm",
+            "rag",
+            "agent"
+          ],
+          "title": "Implementation",
+          "type": "string"
+        },
+        "inputs": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Inputs",
+          "type": "array"
+        },
+        "outputs": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Outputs",
+          "type": "array"
+        },
+        "risk": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Risk",
+          "type": "string"
+        },
+        "side_effects": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Side Effects",
+          "type": "array"
+        },
+        "title": {
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "description",
+        "acceptance_criteria"
+      ],
+      "title": "BacklogItem",
+      "type": "object"
+    },
+    "Branding": {
+      "additionalProperties": false,
+      "properties": {
+        "audience": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Audience",
+          "type": "array"
+        },
+        "principles": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Principles",
+          "type": "array"
+        },
+        "tone": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Tone",
+          "type": "array"
+        },
+        "visual_constraints": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Visual Constraints",
+          "type": "array"
+        }
+      },
+      "title": "Branding",
+      "type": "object"
+    },
+    "Constraints": {
+      "additionalProperties": false,
+      "properties": {
+        "business": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Business",
+          "type": "array"
+        },
+        "max_build_cost_usd": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Max Build Cost Usd",
+          "type": "number"
+        },
+        "security": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Security",
+          "type": "array"
+        },
+        "technical": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Technical",
+          "type": "array"
+        }
+      },
+      "title": "Constraints",
+      "type": "object"
+    },
+    "DataProfile": {
+      "additionalProperties": false,
+      "properties": {
+        "contains_pii": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Contains Pii"
+        },
+        "data_types": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Data Types",
+          "type": "array"
+        },
+        "sensitivity": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "public",
+            "internal",
+            "confidential",
+            "restricted"
+          ],
+          "title": "Sensitivity",
+          "type": "string"
+        }
+      },
+      "title": "DataProfile",
+      "type": "object"
+    },
+    "DomainHypothesis": {
+      "additionalProperties": false,
+      "properties": {
+        "domain": {
+          "minLength": 1,
+          "title": "Domain",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "rationale": {
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        }
+      },
+      "required": [
+        "domain",
+        "rationale",
+        "evidence_ids"
+      ],
+      "title": "DomainHypothesis",
+      "type": "object"
+    },
+    "DomainProfile": {
+      "additionalProperties": false,
+      "properties": {
+        "archetype": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Archetype"
+        },
+        "confidence": {
+          "default": null,
+          "title": "Confidence",
+          "type": "null"
+        },
+        "data": {
+          "$ref": "#/$defs/DataProfile"
+        },
+        "evidence_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "hypotheses": {
+          "items": {
+            "$ref": "#/$defs/DomainHypothesis"
+          },
+          "title": "Hypotheses",
+          "type": "array"
+        },
+        "origin": {
+          "enum": [
+            "user-declaration",
+            "supplied-hypothesis",
+            "unknown"
+          ],
+          "title": "Origin",
+          "type": "string"
+        },
+        "primary": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Primary"
+        },
+        "rationale": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rationale"
+        },
+        "risk": {
+          "$ref": "#/$defs/RiskProfile"
+        },
+        "schema_version": {
+          "const": "DomainProfile/v1",
+          "default": "DomainProfile/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "secondary": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Secondary",
+          "type": "array"
+        },
+        "status": {
+          "enum": [
+            "declared",
+            "hypothesis",
+            "DOMAIN_UNCERTAIN"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "origin"
+      ],
+      "title": "DomainProfile",
+      "type": "object"
+    },
+    "Evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "capability_id": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Capability Id"
+        },
+        "claim": {
+          "minLength": 1,
+          "title": "Claim",
+          "type": "string"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "declared",
+            "derived",
+            "research"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "scope": {
+          "enum": [
+            "project",
+            "domain",
+            "capability"
+          ],
+          "title": "Scope",
+          "type": "string"
+        },
+        "source": {
+          "minLength": 1,
+          "title": "Source",
+          "type": "string"
+        },
+        "source_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Source Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "source_id",
+        "source",
+        "claim",
+        "kind",
+        "scope"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "EvidencePack": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "minItems": 1,
+          "title": "Evidence",
+          "type": "array"
+        },
+        "schema_version": {
+          "const": "EvidencePack/v1",
+          "default": "EvidencePack/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/SourceRecord"
+          },
+          "minItems": 1,
+          "title": "Sources",
+          "type": "array"
+        }
+      },
+      "required": [
+        "sources",
+        "evidence"
+      ],
+      "title": "EvidencePack",
+      "type": "object"
+    },
+    "ExpectedRule": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "quote": {
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        },
+        "source_pointer": {
+          "minLength": 1,
+          "title": "Source Pointer",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "source_pointer",
+        "quote"
+      ],
+      "title": "ExpectedRule",
+      "type": "object"
+    },
+    "HumanDeclaration": {
+      "additionalProperties": false,
+      "properties": {
+        "authority": {
+          "const": "human-declared-not-authenticated",
+          "default": "human-declared-not-authenticated",
+          "title": "Authority",
+          "type": "string"
+        },
+        "note": {
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        },
+        "reviewer": {
+          "minLength": 1,
+          "title": "Reviewer",
+          "type": "string"
+        }
+      },
+      "required": [
+        "reviewer",
+        "note"
+      ],
+      "title": "HumanDeclaration",
+      "type": "object"
+    },
+    "ProjectInput": {
+      "additionalProperties": false,
+      "properties": {
+        "assets": {
+          "items": {
+            "$ref": "#/$defs/Asset"
+          },
+          "title": "Assets",
+          "type": "array"
+        },
+        "backlog": {
+          "items": {
+            "$ref": "#/$defs/BacklogItem"
+          },
+          "minItems": 1,
+          "title": "Backlog",
+          "type": "array"
+        },
+        "branding": {
+          "$ref": "#/$defs/Branding"
+        },
+        "conception": {
+          "minLength": 1,
+          "title": "Conception",
+          "type": "string"
+        },
+        "constraints": {
+          "$ref": "#/$defs/Constraints"
+        },
+        "domain": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Domain"
+        },
+        "domain_profile": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DomainProfile"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "evidence_pack": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/EvidencePack"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "ProjectInput/v1",
+          "default": "ProjectInput/v1",
+          "title": "Schema Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "conception",
+        "backlog"
+      ],
+      "title": "ProjectInput",
+      "type": "object"
+    },
+    "RiskProfile": {
+      "additionalProperties": false,
+      "properties": {
+        "categories": {
+          "items": {
+            "enum": [
+              "privacy",
+              "security",
+              "regulatory",
+              "hallucination",
+              "excessive-agency",
+              "availability",
+              "cost"
+            ],
+            "type": "string"
+          },
+          "title": "Categories",
+          "type": "array"
+        },
+        "level": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Level",
+          "type": "string"
+        }
+      },
+      "title": "RiskProfile",
+      "type": "object"
+    },
+    "RubricCriterion": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "id": {
+          "enum": [
+            "rule-coverage",
+            "citation-support",
+            "conflict-validity",
+            "asset-bounds",
+            "uncertainty",
+            "project-understanding"
+          ],
+          "title": "Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "description"
+      ],
+      "title": "RubricCriterion",
+      "type": "object"
+    },
+    "SessionSettings": {
+      "additionalProperties": false,
+      "properties": {
+        "call_timeout_seconds": {
+          "default": 180,
+          "maximum": 300,
+          "minimum": 1,
+          "title": "Call Timeout Seconds",
+          "type": "integer"
+        },
+        "context_tokens": {
+          "default": 8192,
+          "maximum": 32768,
+          "minimum": 512,
+          "title": "Context Tokens",
+          "type": "integer"
+        },
+        "execution": {
+          "const": "sequential-isolated-process-no-retries",
+          "default": "sequential-isolated-process-no-retries",
+          "title": "Execution",
+          "type": "string"
+        },
+        "expected_model_sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expected Model Sha256"
+        },
+        "max_attempts": {
+          "default": 30,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Max Attempts",
+          "type": "integer"
+        },
+        "max_output_tokens": {
+          "default": 4096,
+          "maximum": 16384,
+          "minimum": 1,
+          "title": "Max Output Tokens",
+          "type": "integer"
+        },
+        "model": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Model",
+          "type": "string"
+        },
+        "repeats": {
+          "default": 1,
+          "maximum": 3,
+          "minimum": 1,
+          "title": "Repeats",
+          "type": "integer"
+        },
+        "session_seconds": {
+          "default": 3600,
+          "maximum": 3600,
+          "minimum": 1,
+          "title": "Session Seconds",
+          "type": "integer"
+        },
+        "temperature": {
+          "const": 0,
+          "default": 0,
+          "title": "Temperature",
+          "type": "integer"
+        },
+        "thinking": {
+          "const": false,
+          "default": false,
+          "title": "Thinking",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "model"
+      ],
+      "title": "SessionSettings",
+      "type": "object"
+    },
+    "SourceRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "collected_at": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Collected At"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "location": {
+          "minLength": 1,
+          "title": "Location",
+          "type": "string"
+        },
+        "origin": {
+          "enum": [
+            "user-declaration",
+            "external-research",
+            "compiler-derived"
+          ],
+          "title": "Origin",
+          "type": "string"
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha256"
+        },
+        "verification_status": {
+          "default": "unverified",
+          "enum": [
+            "unverified",
+            "verified",
+            "rejected"
+          ],
+          "title": "Verification Status",
+          "type": "string"
+        },
+        "verified_at": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Verified At"
+        },
+        "verified_by": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Verified By"
+        }
+      },
+      "required": [
+        "id",
+        "location",
+        "origin"
+      ],
+      "title": "SourceRecord",
+      "type": "object"
+    },
+    "UnderstandingEvalCase": {
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Category",
+          "type": "string"
+        },
+        "expected_conflicts": {
+          "default": "none",
+          "enum": [
+            "none",
+            "present",
+            "unspecified"
+          ],
+          "title": "Expected Conflicts",
+          "type": "string"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "project": {
+          "$ref": "#/$defs/ProjectInput"
+        },
+        "required_rules": {
+          "items": {
+            "$ref": "#/$defs/ExpectedRule"
+          },
+          "maxItems": 64,
+          "minItems": 1,
+          "title": "Required Rules",
+          "type": "array"
+        },
+        "requires_blocking_question": {
+          "default": false,
+          "title": "Requires Blocking Question",
+          "type": "boolean"
+        },
+        "review_guidance": {
+          "minLength": 1,
+          "title": "Review Guidance",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "category",
+        "project",
+        "required_rules",
+        "review_guidance"
+      ],
+      "title": "UnderstandingEvalCase",
+      "type": "object"
+    },
+    "UnderstandingRubric": {
+      "additionalProperties": false,
+      "properties": {
+        "acceptance": {
+          "const": "all-criteria-pass-no-critical-failure",
+          "default": "all-criteria-pass-no-critical-failure",
+          "title": "Acceptance",
+          "type": "string"
+        },
+        "approval": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/HumanDeclaration"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "criteria": {
+          "items": {
+            "$ref": "#/$defs/RubricCriterion"
+          },
+          "maxItems": 6,
+          "minItems": 6,
+          "title": "Criteria",
+          "type": "array"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "UnderstandingRubric/v1",
+          "default": "UnderstandingRubric/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "version": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "criteria"
+      ],
+      "title": "UnderstandingRubric",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "cases": {
+      "items": {
+        "$ref": "#/$defs/UnderstandingEvalCase"
+      },
+      "maxItems": 64,
+      "minItems": 1,
+      "title": "Cases",
+      "type": "array"
+    },
+    "corpus_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Corpus Sha256",
+      "type": "string"
+    },
+    "declared_candidate_sha256": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Declared Candidate Sha256"
+    },
+    "prompt_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Prompt Sha256",
+      "type": "string"
+    },
+    "rubric": {
+      "$ref": "#/$defs/UnderstandingRubric"
+    },
+    "schema_version": {
+      "const": "UnderstandingSessionPlan/v1",
+      "default": "UnderstandingSessionPlan/v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "settings": {
+      "$ref": "#/$defs/SessionSettings"
+    },
+    "split": {
+      "default": "development",
+      "enum": [
+        "development",
+        "holdout"
+      ],
+      "title": "Split",
+      "type": "string"
+    }
+  },
+  "required": [
+    "settings",
+    "cases",
+    "rubric",
+    "corpus_sha256",
+    "prompt_sha256"
+  ],
+  "title": "SessionPlan",
+  "type": "object"
+}

@@ -1,0 +1,106 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:planning",
+  "challenge": null,
+  "consequences": [],
+  "context": "First increment PR #19 integrated; bounded live session runner implemented. Artifact eval stays compatible; rubric/PO acceptance and grounding/model qualification pending.",
+  "created_at": "2026-10-07T19:48:01.712606+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Plano/estado ou piloto observado; não demonstra qualificação semântica ou história concluída.",
+      "outcome": "observed",
+      "sha256": "41833b1961afbe3f1cf4c42eaf8b10889bf297dbc26d3b0e4d3691458bb13a5a",
+      "source": "docs/delivery/sprint-2-5.md"
+    },
+    {
+      "command": null,
+      "note": "Plano/estado ou piloto observado; não demonstra qualificação semântica ou história concluída.",
+      "outcome": "observed",
+      "sha256": "ac9f78af9bf105b665f5884eef775c980fdcaf76bc0896d0e1aab08e78f2ef79",
+      "source": "planning/sprint-2-5.json"
+    },
+    {
+      "command": null,
+      "note": "Plano/estado ou piloto observado; não demonstra qualificação semântica ou história concluída.",
+      "outcome": "observed",
+      "sha256": "cb69293c1ffd34ae9ffae94cc2f0dc897da0044f1ed49c519a70c71fd53e012a",
+      "source": "planning/sprint-2-5.work-items.json"
+    },
+    {
+      "command": null,
+      "note": "Plano/estado ou piloto observado; não demonstra qualificação semântica ou história concluída.",
+      "outcome": "observed",
+      "sha256": "465a261b5d1e9860d5414b0282440de98586b762f193cf1b0e586b29c741ccdf",
+      "source": "planning/sprint-2-5.tasks.json"
+    },
+    {
+      "command": null,
+      "note": "Plano/estado ou piloto observado; não demonstra qualificação semântica ou história concluída.",
+      "outcome": "observed",
+      "sha256": "cc815b6c42c9a43b317758bfc8f541b7649ae989c95a8cd6b7d75819ae0050d4",
+      "source": "project-definition/project.yaml"
+    },
+    {
+      "command": null,
+      "note": "Plano/estado ou piloto observado; não demonstra qualificação semântica ou história concluída.",
+      "outcome": "observed",
+      "sha256": "184753c6077b49429f820751d892016d1817fcd82d1dfadfdcf4e936aff77800",
+      "source": "docs/delivery/sprint-2-5-ac-pilot.md"
+    },
+    {
+      "command": null,
+      "note": "Plano/estado ou piloto observado; não demonstra qualificação semântica ou história concluída.",
+      "outcome": "observed",
+      "sha256": "df8754fecff13e53ecf3dea130a63d352e083366b0647dbbc728ffcb1e1f8f68",
+      "source": "docs/evidence/sprint-2-5-ac-pilot/cold-run.json"
+    },
+    {
+      "command": null,
+      "note": "Plano/estado ou piloto observado; não demonstra qualificação semântica ou história concluída.",
+      "outcome": "observed",
+      "sha256": "3e864c77f27d1fd572f90c83da4eac4b120570d3161e482ec2de53cfb99b664f",
+      "source": "docs/evidence/sprint-2-5-ac-pilot/warm-1-run.json"
+    },
+    {
+      "command": null,
+      "note": "Plano/estado ou piloto observado; não demonstra qualificação semântica ou história concluída.",
+      "outcome": "observed",
+      "sha256": "18e57aa05b363a148c3c386f9bf0c174b9b71a9d20190d22dfa068441f6180e7",
+      "source": "docs/evidence/sprint-2-5-ac-pilot/warm-2-run.json"
+    }
+  ],
+  "id": "DOC-0005",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Capacidade e término não confirmados",
+    "Rubrica/thresholds propostos para refinamento",
+    "Piloto não é holdout nem benchmark estatístico"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0005",
+    "INC-0007"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 5,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Três histórias, tarefas/gates e piloto com uma cold e duas warm: 43,939/28,386/28,080 s; omissões de regras persistem.",
+  "supersedes": null,
+  "tags": [
+    "sprint-2-5",
+    "semantic-evals",
+    "qualification"
+  ],
+  "title": "Sprint 2.5 e piloto de alimentação CA",
+  "updated_at": "2026-10-07T22:04:41.572317+00:00"
+}

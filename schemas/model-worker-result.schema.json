@@ -1,0 +1,1530 @@
+{
+  "$defs": {
+    "Asset": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "path": {
+          "minLength": 1,
+          "title": "Path",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "description"
+      ],
+      "title": "Asset",
+      "type": "object"
+    },
+    "BacklogItem": {
+      "additionalProperties": false,
+      "properties": {
+        "acceptance_criteria": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Acceptance Criteria",
+          "type": "array"
+        },
+        "data_owner": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Data Owner"
+        },
+        "depends_on": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "title": "Depends On",
+          "type": "array"
+        },
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "implementation": {
+          "default": "undecided",
+          "enum": [
+            "undecided",
+            "deterministic",
+            "llm",
+            "rag",
+            "agent"
+          ],
+          "title": "Implementation",
+          "type": "string"
+        },
+        "inputs": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Inputs",
+          "type": "array"
+        },
+        "outputs": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Outputs",
+          "type": "array"
+        },
+        "risk": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Risk",
+          "type": "string"
+        },
+        "side_effects": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Side Effects",
+          "type": "array"
+        },
+        "title": {
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "description",
+        "acceptance_criteria"
+      ],
+      "title": "BacklogItem",
+      "type": "object"
+    },
+    "Branding": {
+      "additionalProperties": false,
+      "properties": {
+        "audience": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Audience",
+          "type": "array"
+        },
+        "principles": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Principles",
+          "type": "array"
+        },
+        "tone": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Tone",
+          "type": "array"
+        },
+        "visual_constraints": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Visual Constraints",
+          "type": "array"
+        }
+      },
+      "title": "Branding",
+      "type": "object"
+    },
+    "BusinessRule": {
+      "additionalProperties": false,
+      "properties": {
+        "condition": {
+          "minLength": 1,
+          "title": "Condition",
+          "type": "string"
+        },
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "exceptions": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Exceptions",
+          "type": "array"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "origin": {
+          "enum": [
+            "extracted",
+            "hypothesis"
+          ],
+          "title": "Origin",
+          "type": "string"
+        },
+        "outcome": {
+          "minLength": 1,
+          "title": "Outcome",
+          "type": "string"
+        },
+        "source_refs": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Source Refs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "source_refs",
+        "description",
+        "condition",
+        "outcome",
+        "origin"
+      ],
+      "title": "BusinessRule",
+      "type": "object"
+    },
+    "Constraints": {
+      "additionalProperties": false,
+      "properties": {
+        "business": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Business",
+          "type": "array"
+        },
+        "max_build_cost_usd": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Max Build Cost Usd",
+          "type": "number"
+        },
+        "security": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Security",
+          "type": "array"
+        },
+        "technical": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Technical",
+          "type": "array"
+        }
+      },
+      "title": "Constraints",
+      "type": "object"
+    },
+    "DataProfile": {
+      "additionalProperties": false,
+      "properties": {
+        "contains_pii": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Contains Pii"
+        },
+        "data_types": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Data Types",
+          "type": "array"
+        },
+        "sensitivity": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "public",
+            "internal",
+            "confidential",
+            "restricted"
+          ],
+          "title": "Sensitivity",
+          "type": "string"
+        }
+      },
+      "title": "DataProfile",
+      "type": "object"
+    },
+    "DomainCandidate": {
+      "additionalProperties": false,
+      "properties": {
+        "confidence": {
+          "default": null,
+          "title": "Confidence",
+          "type": "null"
+        },
+        "domain": {
+          "minLength": 1,
+          "title": "Domain",
+          "type": "string"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "rationale": {
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "source_refs": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Source Refs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "source_refs",
+        "domain",
+        "rationale"
+      ],
+      "title": "DomainCandidate",
+      "type": "object"
+    },
+    "DomainHypothesis": {
+      "additionalProperties": false,
+      "properties": {
+        "domain": {
+          "minLength": 1,
+          "title": "Domain",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "rationale": {
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        }
+      },
+      "required": [
+        "domain",
+        "rationale",
+        "evidence_ids"
+      ],
+      "title": "DomainHypothesis",
+      "type": "object"
+    },
+    "DomainProfile": {
+      "additionalProperties": false,
+      "properties": {
+        "archetype": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Archetype"
+        },
+        "confidence": {
+          "default": null,
+          "title": "Confidence",
+          "type": "null"
+        },
+        "data": {
+          "$ref": "#/$defs/DataProfile"
+        },
+        "evidence_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "hypotheses": {
+          "items": {
+            "$ref": "#/$defs/DomainHypothesis"
+          },
+          "title": "Hypotheses",
+          "type": "array"
+        },
+        "origin": {
+          "enum": [
+            "user-declaration",
+            "supplied-hypothesis",
+            "unknown"
+          ],
+          "title": "Origin",
+          "type": "string"
+        },
+        "primary": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Primary"
+        },
+        "rationale": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rationale"
+        },
+        "risk": {
+          "$ref": "#/$defs/RiskProfile"
+        },
+        "schema_version": {
+          "const": "DomainProfile/v1",
+          "default": "DomainProfile/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "secondary": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Secondary",
+          "type": "array"
+        },
+        "status": {
+          "enum": [
+            "declared",
+            "hypothesis",
+            "DOMAIN_UNCERTAIN"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "origin"
+      ],
+      "title": "DomainProfile",
+      "type": "object"
+    },
+    "Evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "capability_id": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Capability Id"
+        },
+        "claim": {
+          "minLength": 1,
+          "title": "Claim",
+          "type": "string"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "declared",
+            "derived",
+            "research"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "scope": {
+          "enum": [
+            "project",
+            "domain",
+            "capability"
+          ],
+          "title": "Scope",
+          "type": "string"
+        },
+        "source": {
+          "minLength": 1,
+          "title": "Source",
+          "type": "string"
+        },
+        "source_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Source Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "source_id",
+        "source",
+        "claim",
+        "kind",
+        "scope"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "EvidencePack": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "minItems": 1,
+          "title": "Evidence",
+          "type": "array"
+        },
+        "schema_version": {
+          "const": "EvidencePack/v1",
+          "default": "EvidencePack/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/SourceRecord"
+          },
+          "minItems": 1,
+          "title": "Sources",
+          "type": "array"
+        }
+      },
+      "required": [
+        "sources",
+        "evidence"
+      ],
+      "title": "EvidencePack",
+      "type": "object"
+    },
+    "InputReference": {
+      "additionalProperties": false,
+      "properties": {
+        "content_trust": {
+          "const": "untrusted-data",
+          "default": "untrusted-data",
+          "title": "Content Trust",
+          "type": "string"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "pointer": {
+          "maxLength": 512,
+          "minLength": 1,
+          "title": "Pointer",
+          "type": "string"
+        },
+        "project_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Project Id",
+          "type": "string"
+        },
+        "value": {
+          "maxLength": 16384,
+          "minLength": 1,
+          "title": "Value",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "project_id",
+        "pointer",
+        "value"
+      ],
+      "title": "InputReference",
+      "type": "object"
+    },
+    "ModelIdentity": {
+      "additionalProperties": false,
+      "properties": {
+        "compiler_source_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Compiler Source Sha256",
+          "type": "string"
+        },
+        "compiler_version": {
+          "minLength": 1,
+          "title": "Compiler Version",
+          "type": "string"
+        },
+        "family": {
+          "minLength": 1,
+          "title": "Family",
+          "type": "string"
+        },
+        "model_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Model Sha256",
+          "type": "string"
+        },
+        "model_size_bytes": {
+          "exclusiveMinimum": 0,
+          "title": "Model Size Bytes",
+          "type": "integer"
+        },
+        "observed_at": {
+          "minLength": 1,
+          "title": "Observed At",
+          "type": "string"
+        },
+        "parameters_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Parameters Sha256",
+          "type": "string"
+        },
+        "platform_system": {
+          "minLength": 1,
+          "title": "Platform System",
+          "type": "string"
+        },
+        "prompt_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Prompt Sha256",
+          "type": "string"
+        },
+        "provenance": {
+          "const": "observed-local-ollama-api-not-authenticated",
+          "default": "observed-local-ollama-api-not-authenticated",
+          "title": "Provenance",
+          "type": "string"
+        },
+        "provider_version": {
+          "minLength": 1,
+          "title": "Provider Version",
+          "type": "string"
+        },
+        "python_version": {
+          "minLength": 1,
+          "title": "Python Version",
+          "type": "string"
+        },
+        "quantization": {
+          "minLength": 1,
+          "title": "Quantization",
+          "type": "string"
+        },
+        "requested_model": {
+          "minLength": 1,
+          "title": "Requested Model",
+          "type": "string"
+        }
+      },
+      "required": [
+        "requested_model",
+        "model_sha256",
+        "parameters_sha256",
+        "quantization",
+        "family",
+        "model_size_bytes",
+        "provider_version",
+        "compiler_version",
+        "compiler_source_sha256",
+        "python_version",
+        "platform_system",
+        "observed_at",
+        "prompt_sha256"
+      ],
+      "title": "ModelIdentity",
+      "type": "object"
+    },
+    "ProjectInput": {
+      "additionalProperties": false,
+      "properties": {
+        "assets": {
+          "items": {
+            "$ref": "#/$defs/Asset"
+          },
+          "title": "Assets",
+          "type": "array"
+        },
+        "backlog": {
+          "items": {
+            "$ref": "#/$defs/BacklogItem"
+          },
+          "minItems": 1,
+          "title": "Backlog",
+          "type": "array"
+        },
+        "branding": {
+          "$ref": "#/$defs/Branding"
+        },
+        "conception": {
+          "minLength": 1,
+          "title": "Conception",
+          "type": "string"
+        },
+        "constraints": {
+          "$ref": "#/$defs/Constraints"
+        },
+        "domain": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Domain"
+        },
+        "domain_profile": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DomainProfile"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "evidence_pack": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/EvidencePack"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "ProjectInput/v1",
+          "default": "ProjectInput/v1",
+          "title": "Schema Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "conception",
+        "backlog"
+      ],
+      "title": "ProjectInput",
+      "type": "object"
+    },
+    "ProjectUnderstandingSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "proposal": {
+          "$ref": "#/$defs/UnderstandingProposal"
+        },
+        "request": {
+          "$ref": "#/$defs/UnderstandingRequest"
+        },
+        "review": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/UnderstandingReview"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "schema_version": {
+          "const": "ProjectUnderstanding/v1",
+          "default": "ProjectUnderstanding/v1",
+          "title": "Schema Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "request",
+        "proposal"
+      ],
+      "title": "ProjectUnderstandingSpec",
+      "type": "object"
+    },
+    "ProviderObservation": {
+      "additionalProperties": false,
+      "properties": {
+        "generation_duration_ns": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Generation Duration Ns"
+        },
+        "load_duration_ns": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Load Duration Ns"
+        },
+        "output_tokens": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Output Tokens"
+        },
+        "prompt_duration_ns": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Prompt Duration Ns"
+        },
+        "prompt_tokens": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Prompt Tokens"
+        },
+        "response_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Response Sha256",
+          "type": "string"
+        },
+        "returned_model": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Returned Model"
+        },
+        "total_duration_ns": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Total Duration Ns"
+        }
+      },
+      "required": [
+        "response_sha256"
+      ],
+      "title": "ProviderObservation",
+      "type": "object"
+    },
+    "ReviewAnswer": {
+      "additionalProperties": false,
+      "properties": {
+        "item_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Item Id",
+          "type": "string"
+        },
+        "text": {
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "item_id",
+        "text"
+      ],
+      "title": "ReviewAnswer",
+      "type": "object"
+    },
+    "RiskProfile": {
+      "additionalProperties": false,
+      "properties": {
+        "categories": {
+          "items": {
+            "enum": [
+              "privacy",
+              "security",
+              "regulatory",
+              "hallucination",
+              "excessive-agency",
+              "availability",
+              "cost"
+            ],
+            "type": "string"
+          },
+          "title": "Categories",
+          "type": "array"
+        },
+        "level": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Level",
+          "type": "string"
+        }
+      },
+      "title": "RiskProfile",
+      "type": "object"
+    },
+    "SessionSettings": {
+      "additionalProperties": false,
+      "properties": {
+        "call_timeout_seconds": {
+          "default": 180,
+          "maximum": 300,
+          "minimum": 1,
+          "title": "Call Timeout Seconds",
+          "type": "integer"
+        },
+        "context_tokens": {
+          "default": 8192,
+          "maximum": 32768,
+          "minimum": 512,
+          "title": "Context Tokens",
+          "type": "integer"
+        },
+        "execution": {
+          "const": "sequential-isolated-process-no-retries",
+          "default": "sequential-isolated-process-no-retries",
+          "title": "Execution",
+          "type": "string"
+        },
+        "expected_model_sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expected Model Sha256"
+        },
+        "max_attempts": {
+          "default": 30,
+          "maximum": 30,
+          "minimum": 1,
+          "title": "Max Attempts",
+          "type": "integer"
+        },
+        "max_output_tokens": {
+          "default": 4096,
+          "maximum": 16384,
+          "minimum": 1,
+          "title": "Max Output Tokens",
+          "type": "integer"
+        },
+        "model": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Model",
+          "type": "string"
+        },
+        "repeats": {
+          "default": 1,
+          "maximum": 3,
+          "minimum": 1,
+          "title": "Repeats",
+          "type": "integer"
+        },
+        "session_seconds": {
+          "default": 3600,
+          "maximum": 3600,
+          "minimum": 1,
+          "title": "Session Seconds",
+          "type": "integer"
+        },
+        "temperature": {
+          "const": 0,
+          "default": 0,
+          "title": "Temperature",
+          "type": "integer"
+        },
+        "thinking": {
+          "const": false,
+          "default": false,
+          "title": "Thinking",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "model"
+      ],
+      "title": "SessionSettings",
+      "type": "object"
+    },
+    "SourceRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "collected_at": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Collected At"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "location": {
+          "minLength": 1,
+          "title": "Location",
+          "type": "string"
+        },
+        "origin": {
+          "enum": [
+            "user-declaration",
+            "external-research",
+            "compiler-derived"
+          ],
+          "title": "Origin",
+          "type": "string"
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha256"
+        },
+        "verification_status": {
+          "default": "unverified",
+          "enum": [
+            "unverified",
+            "verified",
+            "rejected"
+          ],
+          "title": "Verification Status",
+          "type": "string"
+        },
+        "verified_at": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Verified At"
+        },
+        "verified_by": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Verified By"
+        }
+      },
+      "required": [
+        "id",
+        "location",
+        "origin"
+      ],
+      "title": "SourceRecord",
+      "type": "object"
+    },
+    "UnderstandingConflict": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "source_refs": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 2,
+          "title": "Source Refs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "source_refs",
+        "description"
+      ],
+      "title": "UnderstandingConflict",
+      "type": "object"
+    },
+    "UnderstandingProposal": {
+      "additionalProperties": false,
+      "properties": {
+        "business_rules": {
+          "items": {
+            "$ref": "#/$defs/BusinessRule"
+          },
+          "maxItems": 128,
+          "title": "Business Rules",
+          "type": "array"
+        },
+        "conflicts": {
+          "items": {
+            "$ref": "#/$defs/UnderstandingConflict"
+          },
+          "maxItems": 64,
+          "title": "Conflicts",
+          "type": "array"
+        },
+        "domain_candidates": {
+          "items": {
+            "$ref": "#/$defs/DomainCandidate"
+          },
+          "maxItems": 16,
+          "title": "Domain Candidates",
+          "type": "array"
+        },
+        "questions": {
+          "items": {
+            "$ref": "#/$defs/UnderstandingQuestion"
+          },
+          "maxItems": 128,
+          "title": "Questions",
+          "type": "array"
+        },
+        "schema_version": {
+          "const": "UnderstandingProposal/v1",
+          "default": "UnderstandingProposal/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "statements": {
+          "items": {
+            "$ref": "#/$defs/UnderstandingStatement"
+          },
+          "maxItems": 128,
+          "title": "Statements",
+          "type": "array"
+        }
+      },
+      "title": "UnderstandingProposal",
+      "type": "object"
+    },
+    "UnderstandingQuestion": {
+      "additionalProperties": false,
+      "properties": {
+        "blocking": {
+          "default": true,
+          "title": "Blocking",
+          "type": "boolean"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "question": {
+          "minLength": 1,
+          "title": "Question",
+          "type": "string"
+        },
+        "source_refs": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Source Refs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "source_refs",
+        "question"
+      ],
+      "title": "UnderstandingQuestion",
+      "type": "object"
+    },
+    "UnderstandingRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "original_input": {
+          "$ref": "#/$defs/ProjectInput"
+        },
+        "original_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Original Sha256",
+          "type": "string"
+        },
+        "references": {
+          "items": {
+            "$ref": "#/$defs/InputReference"
+          },
+          "maxItems": 128,
+          "minItems": 1,
+          "title": "References",
+          "type": "array"
+        },
+        "schema_version": {
+          "const": "UnderstandingRequest/v1",
+          "default": "UnderstandingRequest/v1",
+          "title": "Schema Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "original_input",
+        "original_sha256",
+        "references"
+      ],
+      "title": "UnderstandingRequest",
+      "type": "object"
+    },
+    "UnderstandingReview": {
+      "additionalProperties": false,
+      "properties": {
+        "answers": {
+          "items": {
+            "$ref": "#/$defs/ReviewAnswer"
+          },
+          "title": "Answers",
+          "type": "array"
+        },
+        "decision": {
+          "enum": [
+            "approved",
+            "rejected"
+          ],
+          "title": "Decision",
+          "type": "string"
+        },
+        "input_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Sha256",
+          "type": "string"
+        },
+        "note": {
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        },
+        "proposal_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Proposal Sha256",
+          "type": "string"
+        },
+        "resolutions": {
+          "items": {
+            "$ref": "#/$defs/ReviewAnswer"
+          },
+          "title": "Resolutions",
+          "type": "array"
+        },
+        "reviewer": {
+          "minLength": 1,
+          "title": "Reviewer",
+          "type": "string"
+        }
+      },
+      "required": [
+        "decision",
+        "reviewer",
+        "note",
+        "input_sha256",
+        "proposal_sha256"
+      ],
+      "title": "UnderstandingReview",
+      "type": "object"
+    },
+    "UnderstandingStatement": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "source_refs": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Source Refs",
+          "type": "array"
+        },
+        "status": {
+          "enum": [
+            "declared",
+            "hypothesis"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "subject": {
+          "enum": [
+            "purpose",
+            "audience",
+            "positioning",
+            "tone",
+            "domain",
+            "entity",
+            "capability",
+            "constraint"
+          ],
+          "title": "Subject",
+          "type": "string"
+        },
+        "text": {
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "source_refs",
+        "subject",
+        "text",
+        "status"
+      ],
+      "title": "UnderstandingStatement",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "error_code": {
+      "anyOf": [
+        {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Error Code"
+    },
+    "identity": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ModelIdentity"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "observation": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ProviderObservation"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "settings": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SessionSettings"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "status": {
+      "enum": [
+        "completed",
+        "error"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "understanding": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ProjectUnderstandingSpec"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "status"
+  ],
+  "title": "WorkerResult",
+  "type": "object"
+}
