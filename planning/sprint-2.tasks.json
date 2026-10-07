@@ -524,6 +524,98 @@
         "risk": "high",
         "side_effects": [],
         "title": "Plano de harness generalista e packs opcionais"
+      },
+      {
+        "acceptance_criteria": [
+          "Dataset versionado separa desenvolvimento e holdout com inputs e expectativas congelados antes da otimização; inclui domínio novo, regras divergentes na mesma categoria, ambiguidade, contradição real, regras compatíveis, asset não lido e conteúdo adversarial.",
+          "Runner específico de entendimento registra not-run, pass, fail e error, modelo/digest, input/prompt/rubrica, tentativas e evidências; revisão semântica pendente ou campos ausentes nunca são interpretados como aprovação.",
+          "Verificadores e revisão humana avaliam cobertura de regras, suporte de cada citação, conflitos falsos e dados não lidos; o modelo candidato não aprova sua própria saída, e chamadas reais permanecem fora dos testes padrão."
+        ],
+        "data_owner": "proprietário do projeto e PO",
+        "depends_on": [
+          "ahc-002",
+          "ahc-003",
+          "ahc-004"
+        ],
+        "description": "Como PO, quero medir cobertura de regras, suporte das citações e qualidade de conflitos para impedir que JSON válido seja confundido com entendimento correto.",
+        "evidence_ids": [
+          "backlog-21"
+        ],
+        "id": "ahc-021",
+        "implementation": "deterministic",
+        "inputs": [
+          "ProjectUnderstandingSpec",
+          "corpus de desenvolvimento",
+          "holdout",
+          "rubrica"
+        ],
+        "outputs": [
+          "relatórios semânticos rastreáveis",
+          "falhas de cobertura e suporte"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Rubrica e evals semânticos do entendimento"
+      },
+      {
+        "acceptance_criteria": [
+          "Extração tipada e análise separam declarações, hipóteses, regras, perguntas e conflitos; não inferem que revisão humana exige revisor externo nem afirmam conteúdo de asset não ingerido.",
+          "Prompts e estratégia de decomposição são versionados e ajustados somente no conjunto de desenvolvimento; validação de suporte, cobertura e revisão impede promoção silenciosa de hipóteses.",
+          "Baseline e candidato são comparados com a rubrica congelada; regressões do INC-0007 são reproduzidas, tentativas limitadas são registradas e falhas permanecem explícitas sem reparo ilimitado ou aprovação automática."
+        ],
+        "data_owner": "proprietário do projeto alvo",
+        "depends_on": [
+          "ahc-021"
+        ],
+        "description": "Como AI engineer, quero que o estudo extraia regras completas e conclusões sustentadas pelas fontes, preservando incógnitas e bloqueando inventar conteúdo de assets.",
+        "evidence_ids": [
+          "backlog-22"
+        ],
+        "id": "ahc-022",
+        "implementation": "llm",
+        "inputs": [
+          "UnderstandingRequest",
+          "fontes autorizadas",
+          "rubrica e findings"
+        ],
+        "outputs": [
+          "propostas fundamentadas",
+          "prompts versionados",
+          "regressões semânticas"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Pipeline de entendimento com grounding e cobertura"
+      },
+      {
+        "acceptance_criteria": [
+          "Comparação registra modelo/digest, quantização, contexto, prompt, parâmetros, energia, ambiente, uso de GPU/RAM e tempos de carga e geração; cold e warm são separados e o plano prevê repetições e limites de execução.",
+          "Modelo é selecionado pela rubrica semântica antes de latência; holdout não é usado para tuning, e falha crítica, julgamento pendente, truncamento ou omissão de regras obrigatórias bloqueiam qualificação.",
+          "Perfil recomendado possui comandos reproduzíveis, orçamento e fallback explícitos; nenhum vencedor é obrigatório quando todos falham, e nova configuração não altera energia do sistema nem habilita cloud ou concorrência sem autorização."
+        ],
+        "data_owner": "proprietário do ambiente",
+        "depends_on": [
+          "ahc-022"
+        ],
+        "description": "Como operador, quero escolher modelo e perfil pelo equilíbrio entre qualidade, latência e memória no hardware disponível, com alimentação e ambiente registrados.",
+        "evidence_ids": [
+          "backlog-23"
+        ],
+        "id": "ahc-023",
+        "implementation": "deterministic",
+        "inputs": [
+          "candidatos locais",
+          "rubrica",
+          "holdout",
+          "telemetria e resultados"
+        ],
+        "outputs": [
+          "relatório de qualificação",
+          "perfil recomendado ou rejeição justificada"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Qualificação do modelo e perfil de execução local"
       }
     ],
     "project_id": "ai-harness-compiler",

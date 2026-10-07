@@ -1,12 +1,16 @@
 {
-  "declared_completed_capabilities": [],
-  "execution_status": "not-run",
-  "schema_version": "TaskGraph/v1",
-  "selected_capabilities": [
+  "declared_completed_capabilities": [
     "ahc-001",
     "ahc-002",
     "ahc-003",
     "ahc-004"
+  ],
+  "execution_status": "not-run",
+  "schema_version": "TaskGraph/v1",
+  "selected_capabilities": [
+    "ahc-021",
+    "ahc-022",
+    "ahc-023"
   ],
   "source_graph": {
     "capabilities": [
@@ -622,21 +626,21 @@
   "tasks": [
     {
       "acceptance_criteria": [
-        "Chaves YAML duplicadas, manifesto acima do limite configurado e versões desconhecidas falham com diagnóstico estável.",
-        "UTF-8 e referências locais válidas são aceitas sem executar conteúdo ou acessar a rede.",
-        "Os casos válidos e inválidos são verificados em Linux e Windows."
+        "Dataset versionado separa desenvolvimento e holdout com inputs e expectativas congelados antes da otimização; inclui domínio novo, regras divergentes na mesma categoria, ambiguidade, contradição real, regras compatíveis, asset não lido e conteúdo adversarial.",
+        "Runner específico de entendimento registra not-run, pass, fail e error, modelo/digest, input/prompt/rubrica, tentativas e evidências; revisão semântica pendente ou campos ausentes nunca são interpretados como aprovação.",
+        "Verificadores e revisão humana avaliam cobertura de regras, suporte de cada citação, conflitos falsos e dados não lidos; o modelo candidato não aprova sua própria saída, e chamadas reais permanecem fora dos testes padrão."
       ],
-      "capability_id": "ahc-001",
+      "capability_id": "ahc-021",
       "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
       "deliverables": [
         "Contract/architecture proposal",
         "Acceptance test plan"
       ],
       "depends_on": [],
-      "id": "task-1-design",
-      "objective": "Define contracts, boundaries and test cases for: Intake canônico e limites de entrada",
+      "id": "task-21-design",
+      "objective": "Define contracts, boundaries and test cases for: Rubrica e evals semânticos do entendimento",
       "required_context": [
-        "project.yaml#/backlog/0",
+        "project.yaml#/backlog/20",
         "project.yaml#/constraints",
         "project.yaml#/branding"
       ],
@@ -645,23 +649,23 @@
     },
     {
       "acceptance_criteria": [
-        "Chaves YAML duplicadas, manifesto acima do limite configurado e versões desconhecidas falham com diagnóstico estável.",
-        "UTF-8 e referências locais válidas são aceitas sem executar conteúdo ou acessar a rede.",
-        "Os casos válidos e inválidos são verificados em Linux e Windows."
+        "Dataset versionado separa desenvolvimento e holdout com inputs e expectativas congelados antes da otimização; inclui domínio novo, regras divergentes na mesma categoria, ambiguidade, contradição real, regras compatíveis, asset não lido e conteúdo adversarial.",
+        "Runner específico de entendimento registra not-run, pass, fail e error, modelo/digest, input/prompt/rubrica, tentativas e evidências; revisão semântica pendente ou campos ausentes nunca são interpretados como aprovação.",
+        "Verificadores e revisão humana avaliam cobertura de regras, suporte de cada citação, conflitos falsos e dados não lidos; o modelo candidato não aprova sua própria saída, e chamadas reais permanecem fora dos testes padrão."
       ],
-      "capability_id": "ahc-001",
+      "capability_id": "ahc-021",
       "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
       "deliverables": [
         "Implementation changes",
         "Automated tests"
       ],
       "depends_on": [
-        "task-1-design"
+        "task-21-design"
       ],
-      "id": "task-1-implement",
-      "objective": "Implement the agreed scope for: Intake canônico e limites de entrada",
+      "id": "task-21-implement",
+      "objective": "Implement the agreed scope for: Rubrica e evals semânticos do entendimento",
       "required_context": [
-        "project.yaml#/backlog/0",
+        "project.yaml#/backlog/20",
         "project.yaml#/constraints",
         "project.yaml#/branding"
       ],
@@ -670,23 +674,23 @@
     },
     {
       "acceptance_criteria": [
-        "Chaves YAML duplicadas, manifesto acima do limite configurado e versões desconhecidas falham com diagnóstico estável.",
-        "UTF-8 e referências locais válidas são aceitas sem executar conteúdo ou acessar a rede.",
-        "Os casos válidos e inválidos são verificados em Linux e Windows."
+        "Dataset versionado separa desenvolvimento e holdout com inputs e expectativas congelados antes da otimização; inclui domínio novo, regras divergentes na mesma categoria, ambiguidade, contradição real, regras compatíveis, asset não lido e conteúdo adversarial.",
+        "Runner específico de entendimento registra not-run, pass, fail e error, modelo/digest, input/prompt/rubrica, tentativas e evidências; revisão semântica pendente ou campos ausentes nunca são interpretados como aprovação.",
+        "Verificadores e revisão humana avaliam cobertura de regras, suporte de cada citação, conflitos falsos e dados não lidos; o modelo candidato não aprova sua própria saída, e chamadas reais permanecem fora dos testes padrão."
       ],
-      "capability_id": "ahc-001",
+      "capability_id": "ahc-021",
       "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
       "deliverables": [
         "Test results linked to each acceptance criterion",
         "Regression results"
       ],
       "depends_on": [
-        "task-1-implement"
+        "task-21-implement"
       ],
-      "id": "task-1-verify",
-      "objective": "Collect acceptance and regression evidence for: Intake canônico e limites de entrada",
+      "id": "task-21-verify",
+      "objective": "Collect acceptance and regression evidence for: Rubrica e evals semânticos do entendimento",
       "required_context": [
-        "project.yaml#/backlog/0",
+        "project.yaml#/backlog/20",
         "project.yaml#/constraints",
         "project.yaml#/branding"
       ],
@@ -695,23 +699,23 @@
     },
     {
       "acceptance_criteria": [
-        "Chaves YAML duplicadas, manifesto acima do limite configurado e versões desconhecidas falham com diagnóstico estável.",
-        "UTF-8 e referências locais válidas são aceitas sem executar conteúdo ou acessar a rede.",
-        "Os casos válidos e inválidos são verificados em Linux e Windows."
+        "Dataset versionado separa desenvolvimento e holdout com inputs e expectativas congelados antes da otimização; inclui domínio novo, regras divergentes na mesma categoria, ambiguidade, contradição real, regras compatíveis, asset não lido e conteúdo adversarial.",
+        "Runner específico de entendimento registra not-run, pass, fail e error, modelo/digest, input/prompt/rubrica, tentativas e evidências; revisão semântica pendente ou campos ausentes nunca são interpretados como aprovação.",
+        "Verificadores e revisão humana avaliam cobertura de regras, suporte de cada citação, conflitos falsos e dados não lidos; o modelo candidato não aprova sua própria saída, e chamadas reais permanecem fora dos testes padrão."
       ],
-      "capability_id": "ahc-001",
+      "capability_id": "ahc-021",
       "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
       "deliverables": [
         "Reviewed pull request",
         "Updated documentation and completion evidence"
       ],
       "depends_on": [
-        "task-1-verify"
+        "task-21-verify"
       ],
-      "id": "task-1-review",
-      "objective": "Review evidence, documentation and integration for: Intake canônico e limites de entrada",
+      "id": "task-21-review",
+      "objective": "Review evidence, documentation and integration for: Rubrica e evals semânticos do entendimento",
       "required_context": [
-        "project.yaml#/backlog/0",
+        "project.yaml#/backlog/20",
         "project.yaml#/constraints",
         "project.yaml#/branding"
       ],
@@ -720,23 +724,23 @@
     },
     {
       "acceptance_criteria": [
-        "O contrato representa domínio, arquétipo, dados, risco e origem da classificação.",
-        "Declaração, hipótese e DOMAIN_UNCERTAIN possuem invariantes testadas e não fabricam confiança numérica.",
-        "A mudança de contrato tem política de compatibilidade e exemplo de migração documentados."
+        "Extração tipada e análise separam declarações, hipóteses, regras, perguntas e conflitos; não inferem que revisão humana exige revisor externo nem afirmam conteúdo de asset não ingerido.",
+        "Prompts e estratégia de decomposição são versionados e ajustados somente no conjunto de desenvolvimento; validação de suporte, cobertura e revisão impede promoção silenciosa de hipóteses.",
+        "Baseline e candidato são comparados com a rubrica congelada; regressões do INC-0007 são reproduzidas, tentativas limitadas são registradas e falhas permanecem explícitas sem reparo ilimitado ou aprovação automática."
       ],
-      "capability_id": "ahc-002",
+      "capability_id": "ahc-022",
       "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
       "deliverables": [
         "Contract/architecture proposal",
         "Acceptance test plan"
       ],
       "depends_on": [
-        "task-1-review"
+        "task-21-review"
       ],
-      "id": "task-2-design",
-      "objective": "Define contracts, boundaries and test cases for: Perfil multidimensional de domínio",
+      "id": "task-22-design",
+      "objective": "Define contracts, boundaries and test cases for: Pipeline de entendimento com grounding e cobertura",
       "required_context": [
-        "project.yaml#/backlog/1",
+        "project.yaml#/backlog/21",
         "project.yaml#/constraints",
         "project.yaml#/branding"
       ],
@@ -745,23 +749,23 @@
     },
     {
       "acceptance_criteria": [
-        "O contrato representa domínio, arquétipo, dados, risco e origem da classificação.",
-        "Declaração, hipótese e DOMAIN_UNCERTAIN possuem invariantes testadas e não fabricam confiança numérica.",
-        "A mudança de contrato tem política de compatibilidade e exemplo de migração documentados."
+        "Extração tipada e análise separam declarações, hipóteses, regras, perguntas e conflitos; não inferem que revisão humana exige revisor externo nem afirmam conteúdo de asset não ingerido.",
+        "Prompts e estratégia de decomposição são versionados e ajustados somente no conjunto de desenvolvimento; validação de suporte, cobertura e revisão impede promoção silenciosa de hipóteses.",
+        "Baseline e candidato são comparados com a rubrica congelada; regressões do INC-0007 são reproduzidas, tentativas limitadas são registradas e falhas permanecem explícitas sem reparo ilimitado ou aprovação automática."
       ],
-      "capability_id": "ahc-002",
+      "capability_id": "ahc-022",
       "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
       "deliverables": [
         "Implementation changes",
         "Automated tests"
       ],
       "depends_on": [
-        "task-2-design"
+        "task-22-design"
       ],
-      "id": "task-2-implement",
-      "objective": "Implement the agreed scope for: Perfil multidimensional de domínio",
+      "id": "task-22-implement",
+      "objective": "Implement the agreed scope for: Pipeline de entendimento com grounding e cobertura",
       "required_context": [
-        "project.yaml#/backlog/1",
+        "project.yaml#/backlog/21",
         "project.yaml#/constraints",
         "project.yaml#/branding"
       ],
@@ -770,23 +774,23 @@
     },
     {
       "acceptance_criteria": [
-        "O contrato representa domínio, arquétipo, dados, risco e origem da classificação.",
-        "Declaração, hipótese e DOMAIN_UNCERTAIN possuem invariantes testadas e não fabricam confiança numérica.",
-        "A mudança de contrato tem política de compatibilidade e exemplo de migração documentados."
+        "Extração tipada e análise separam declarações, hipóteses, regras, perguntas e conflitos; não inferem que revisão humana exige revisor externo nem afirmam conteúdo de asset não ingerido.",
+        "Prompts e estratégia de decomposição são versionados e ajustados somente no conjunto de desenvolvimento; validação de suporte, cobertura e revisão impede promoção silenciosa de hipóteses.",
+        "Baseline e candidato são comparados com a rubrica congelada; regressões do INC-0007 são reproduzidas, tentativas limitadas são registradas e falhas permanecem explícitas sem reparo ilimitado ou aprovação automática."
       ],
-      "capability_id": "ahc-002",
+      "capability_id": "ahc-022",
       "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
       "deliverables": [
         "Test results linked to each acceptance criterion",
         "Regression results"
       ],
       "depends_on": [
-        "task-2-implement"
+        "task-22-implement"
       ],
-      "id": "task-2-verify",
-      "objective": "Collect acceptance and regression evidence for: Perfil multidimensional de domínio",
+      "id": "task-22-verify",
+      "objective": "Collect acceptance and regression evidence for: Pipeline de entendimento com grounding e cobertura",
       "required_context": [
-        "project.yaml#/backlog/1",
+        "project.yaml#/backlog/21",
         "project.yaml#/constraints",
         "project.yaml#/branding"
       ],
@@ -795,23 +799,23 @@
     },
     {
       "acceptance_criteria": [
-        "O contrato representa domínio, arquétipo, dados, risco e origem da classificação.",
-        "Declaração, hipótese e DOMAIN_UNCERTAIN possuem invariantes testadas e não fabricam confiança numérica.",
-        "A mudança de contrato tem política de compatibilidade e exemplo de migração documentados."
+        "Extração tipada e análise separam declarações, hipóteses, regras, perguntas e conflitos; não inferem que revisão humana exige revisor externo nem afirmam conteúdo de asset não ingerido.",
+        "Prompts e estratégia de decomposição são versionados e ajustados somente no conjunto de desenvolvimento; validação de suporte, cobertura e revisão impede promoção silenciosa de hipóteses.",
+        "Baseline e candidato são comparados com a rubrica congelada; regressões do INC-0007 são reproduzidas, tentativas limitadas são registradas e falhas permanecem explícitas sem reparo ilimitado ou aprovação automática."
       ],
-      "capability_id": "ahc-002",
+      "capability_id": "ahc-022",
       "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
       "deliverables": [
         "Reviewed pull request",
         "Updated documentation and completion evidence"
       ],
       "depends_on": [
-        "task-2-verify"
+        "task-22-verify"
       ],
-      "id": "task-2-review",
-      "objective": "Review evidence, documentation and integration for: Perfil multidimensional de domínio",
+      "id": "task-22-review",
+      "objective": "Review evidence, documentation and integration for: Pipeline de entendimento com grounding e cobertura",
       "required_context": [
-        "project.yaml#/backlog/1",
+        "project.yaml#/backlog/21",
         "project.yaml#/constraints",
         "project.yaml#/branding"
       ],
@@ -820,23 +824,23 @@
     },
     {
       "acceptance_criteria": [
-        "Fontes possuem ID, origem, digest opcional, estado de verificação e instante de coleta quando aplicável.",
-        "Referências ausentes, duplicadas ou incompatíveis com a decisão são rejeitadas.",
-        "Declaração de usuário e pesquisa externa são distinguíveis sem disparar pesquisa automática."
+        "Comparação registra modelo/digest, quantização, contexto, prompt, parâmetros, energia, ambiente, uso de GPU/RAM e tempos de carga e geração; cold e warm são separados e o plano prevê repetições e limites de execução.",
+        "Modelo é selecionado pela rubrica semântica antes de latência; holdout não é usado para tuning, e falha crítica, julgamento pendente, truncamento ou omissão de regras obrigatórias bloqueiam qualificação.",
+        "Perfil recomendado possui comandos reproduzíveis, orçamento e fallback explícitos; nenhum vencedor é obrigatório quando todos falham, e nova configuração não altera energia do sistema nem habilita cloud ou concorrência sem autorização."
       ],
-      "capability_id": "ahc-003",
+      "capability_id": "ahc-023",
       "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
       "deliverables": [
         "Contract/architecture proposal",
         "Acceptance test plan"
       ],
       "depends_on": [
-        "task-1-review"
+        "task-22-review"
       ],
-      "id": "task-3-design",
-      "objective": "Define contracts, boundaries and test cases for: Evidence Pack com proveniência",
+      "id": "task-23-design",
+      "objective": "Define contracts, boundaries and test cases for: Qualificação do modelo e perfil de execução local",
       "required_context": [
-        "project.yaml#/backlog/2",
+        "project.yaml#/backlog/22",
         "project.yaml#/constraints",
         "project.yaml#/branding"
       ],
@@ -845,23 +849,23 @@
     },
     {
       "acceptance_criteria": [
-        "Fontes possuem ID, origem, digest opcional, estado de verificação e instante de coleta quando aplicável.",
-        "Referências ausentes, duplicadas ou incompatíveis com a decisão são rejeitadas.",
-        "Declaração de usuário e pesquisa externa são distinguíveis sem disparar pesquisa automática."
+        "Comparação registra modelo/digest, quantização, contexto, prompt, parâmetros, energia, ambiente, uso de GPU/RAM e tempos de carga e geração; cold e warm são separados e o plano prevê repetições e limites de execução.",
+        "Modelo é selecionado pela rubrica semântica antes de latência; holdout não é usado para tuning, e falha crítica, julgamento pendente, truncamento ou omissão de regras obrigatórias bloqueiam qualificação.",
+        "Perfil recomendado possui comandos reproduzíveis, orçamento e fallback explícitos; nenhum vencedor é obrigatório quando todos falham, e nova configuração não altera energia do sistema nem habilita cloud ou concorrência sem autorização."
       ],
-      "capability_id": "ahc-003",
+      "capability_id": "ahc-023",
       "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
       "deliverables": [
         "Implementation changes",
         "Automated tests"
       ],
       "depends_on": [
-        "task-3-design"
+        "task-23-design"
       ],
-      "id": "task-3-implement",
-      "objective": "Implement the agreed scope for: Evidence Pack com proveniência",
+      "id": "task-23-implement",
+      "objective": "Implement the agreed scope for: Qualificação do modelo e perfil de execução local",
       "required_context": [
-        "project.yaml#/backlog/2",
+        "project.yaml#/backlog/22",
         "project.yaml#/constraints",
         "project.yaml#/branding"
       ],
@@ -870,23 +874,23 @@
     },
     {
       "acceptance_criteria": [
-        "Fontes possuem ID, origem, digest opcional, estado de verificação e instante de coleta quando aplicável.",
-        "Referências ausentes, duplicadas ou incompatíveis com a decisão são rejeitadas.",
-        "Declaração de usuário e pesquisa externa são distinguíveis sem disparar pesquisa automática."
+        "Comparação registra modelo/digest, quantização, contexto, prompt, parâmetros, energia, ambiente, uso de GPU/RAM e tempos de carga e geração; cold e warm são separados e o plano prevê repetições e limites de execução.",
+        "Modelo é selecionado pela rubrica semântica antes de latência; holdout não é usado para tuning, e falha crítica, julgamento pendente, truncamento ou omissão de regras obrigatórias bloqueiam qualificação.",
+        "Perfil recomendado possui comandos reproduzíveis, orçamento e fallback explícitos; nenhum vencedor é obrigatório quando todos falham, e nova configuração não altera energia do sistema nem habilita cloud ou concorrência sem autorização."
       ],
-      "capability_id": "ahc-003",
+      "capability_id": "ahc-023",
       "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
       "deliverables": [
         "Test results linked to each acceptance criterion",
         "Regression results"
       ],
       "depends_on": [
-        "task-3-implement"
+        "task-23-implement"
       ],
-      "id": "task-3-verify",
-      "objective": "Collect acceptance and regression evidence for: Evidence Pack com proveniência",
+      "id": "task-23-verify",
+      "objective": "Collect acceptance and regression evidence for: Qualificação do modelo e perfil de execução local",
       "required_context": [
-        "project.yaml#/backlog/2",
+        "project.yaml#/backlog/22",
         "project.yaml#/constraints",
         "project.yaml#/branding"
       ],
@@ -895,123 +899,23 @@
     },
     {
       "acceptance_criteria": [
-        "Fontes possuem ID, origem, digest opcional, estado de verificação e instante de coleta quando aplicável.",
-        "Referências ausentes, duplicadas ou incompatíveis com a decisão são rejeitadas.",
-        "Declaração de usuário e pesquisa externa são distinguíveis sem disparar pesquisa automática."
+        "Comparação registra modelo/digest, quantização, contexto, prompt, parâmetros, energia, ambiente, uso de GPU/RAM e tempos de carga e geração; cold e warm são separados e o plano prevê repetições e limites de execução.",
+        "Modelo é selecionado pela rubrica semântica antes de latência; holdout não é usado para tuning, e falha crítica, julgamento pendente, truncamento ou omissão de regras obrigatórias bloqueiam qualificação.",
+        "Perfil recomendado possui comandos reproduzíveis, orçamento e fallback explícitos; nenhum vencedor é obrigatório quando todos falham, e nova configuração não altera energia do sistema nem habilita cloud ou concorrência sem autorização."
       ],
-      "capability_id": "ahc-003",
+      "capability_id": "ahc-023",
       "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
       "deliverables": [
         "Reviewed pull request",
         "Updated documentation and completion evidence"
       ],
       "depends_on": [
-        "task-3-verify"
+        "task-23-verify"
       ],
-      "id": "task-3-review",
-      "objective": "Review evidence, documentation and integration for: Evidence Pack com proveniência",
+      "id": "task-23-review",
+      "objective": "Review evidence, documentation and integration for: Qualificação do modelo e perfil de execução local",
       "required_context": [
-        "project.yaml#/backlog/2",
-        "project.yaml#/constraints",
-        "project.yaml#/branding"
-      ],
-      "stage": "review",
-      "status": "planned"
-    },
-    {
-      "acceptance_criteria": [
-        "Educação, comércio e ferramentas de desenvolvimento possuem fixtures com critérios rastreáveis.",
-        "Falhas de escrita produzem diagnóstico e não alteram um projeto existente.",
-        "Um benchmark offline registra duração, tamanho e versão sem declarar SLO sem medição."
-      ],
-      "capability_id": "ahc-004",
-      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
-      "deliverables": [
-        "Contract/architecture proposal",
-        "Acceptance test plan"
-      ],
-      "depends_on": [
-        "task-1-review"
-      ],
-      "id": "task-4-design",
-      "objective": "Define contracts, boundaries and test cases for: Confiabilidade e benchmark offline do compilador",
-      "required_context": [
-        "project.yaml#/backlog/3",
-        "project.yaml#/constraints",
-        "project.yaml#/branding"
-      ],
-      "stage": "design",
-      "status": "planned"
-    },
-    {
-      "acceptance_criteria": [
-        "Educação, comércio e ferramentas de desenvolvimento possuem fixtures com critérios rastreáveis.",
-        "Falhas de escrita produzem diagnóstico e não alteram um projeto existente.",
-        "Um benchmark offline registra duração, tamanho e versão sem declarar SLO sem medição."
-      ],
-      "capability_id": "ahc-004",
-      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
-      "deliverables": [
-        "Implementation changes",
-        "Automated tests"
-      ],
-      "depends_on": [
-        "task-4-design"
-      ],
-      "id": "task-4-implement",
-      "objective": "Implement the agreed scope for: Confiabilidade e benchmark offline do compilador",
-      "required_context": [
-        "project.yaml#/backlog/3",
-        "project.yaml#/constraints",
-        "project.yaml#/branding"
-      ],
-      "stage": "implement",
-      "status": "planned"
-    },
-    {
-      "acceptance_criteria": [
-        "Educação, comércio e ferramentas de desenvolvimento possuem fixtures com critérios rastreáveis.",
-        "Falhas de escrita produzem diagnóstico e não alteram um projeto existente.",
-        "Um benchmark offline registra duração, tamanho e versão sem declarar SLO sem medição."
-      ],
-      "capability_id": "ahc-004",
-      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
-      "deliverables": [
-        "Test results linked to each acceptance criterion",
-        "Regression results"
-      ],
-      "depends_on": [
-        "task-4-implement"
-      ],
-      "id": "task-4-verify",
-      "objective": "Collect acceptance and regression evidence for: Confiabilidade e benchmark offline do compilador",
-      "required_context": [
-        "project.yaml#/backlog/3",
-        "project.yaml#/constraints",
-        "project.yaml#/branding"
-      ],
-      "stage": "verify",
-      "status": "planned"
-    },
-    {
-      "acceptance_criteria": [
-        "Educação, comércio e ferramentas de desenvolvimento possuem fixtures com critérios rastreáveis.",
-        "Falhas de escrita produzem diagnóstico e não alteram um projeto existente.",
-        "Um benchmark offline registra duração, tamanho e versão sem declarar SLO sem medição."
-      ],
-      "capability_id": "ahc-004",
-      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
-      "deliverables": [
-        "Reviewed pull request",
-        "Updated documentation and completion evidence"
-      ],
-      "depends_on": [
-        "task-4-verify"
-      ],
-      "id": "task-4-review",
-      "objective": "Review evidence, documentation and integration for: Confiabilidade e benchmark offline do compilador",
-      "required_context": [
-        "project.yaml#/backlog/3",
+        "project.yaml#/backlog/22",
         "project.yaml#/constraints",
         "project.yaml#/branding"
       ],

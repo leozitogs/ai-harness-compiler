@@ -29,8 +29,11 @@ Owner no refinamento. Estimativas são hipóteses de discussão, não compromiss
 | AHC-016 | E2 / Compilador de documentação e memória | P1 | 004, 015 | A refinar |
 | AHC-017 | E3 / Agent Factory com especialização | P1 | 005, 007, 009, 015 | A refinar |
 | AHC-018 | E5 / Aprendizagem por experiências do projeto | P2 | 008, 010, 016, 017 | A refinar |
-| AHC-019 | E1 / Entendimento generalista e regras de negócio | P0 | 002, 003 | In progress — contratos em revisão |
+| AHC-019 | E1 / Entendimento generalista e regras de negócio | P0 | 002, 003 | In progress — contratos/adapter integrados; qualificação semântica pendente |
 | AHC-020 | E2 / Blueprint e packs opcionais | P0 | 019 | Sprint 2 aprovada; depende da entrega 019 |
+| AHC-021 | E1 / Rubrica e evals semânticos do entendimento | P0 | 002, 003, 004 | Sprint 2.5 — design em andamento |
+| AHC-022 | E1 / Grounding e cobertura de regras | P0 | 021 | Sprint 2.5 — planned |
+| AHC-023 | E1 / Qualificação do modelo e perfil local | P0 | 022 | Sprint 2.5 — planned; piloto não conclui história |
 
 O [pipeline por projeto](project-generation-pipeline.md)
 define o caminho dos novos itens e as diferenças entre capacidade interna e produto gerado.
@@ -56,5 +59,7 @@ Sem velocity histórica, não usar soma de pontos como previsão de entrega.
 
 A [Sprint 2 replanejada](../delivery/sprint-2.md) propõe AHC-019 e AHC-020.
 O plano anterior foi rejeitado pelo PO; o novo escopo foi aprovado em 2026-10-06,
-sem início da execução. Entrada: PR #9 corrigido integrado, Review/Retrospective da
-Sprint 1, aprovação do novo escopo/capacidade e modelo configurado.
+com início autorizado separadamente. PR #9 e #14 integrados; Review/Retrospective
+anteriores e capacidade continuam sem confirmação. Por pedido do PO, a
+[Sprint 2.5](../delivery/sprint-2-5.md) concentra o foco em qualidade semântica e
+qualificação do modelo antes de avançar no blueprint. Não declara Sprint 2 concluída.

@@ -1,0 +1,76 @@
+{
+  "id": "sprint-2-5",
+  "display_name": "Sprint 2.5",
+  "status": "in_progress",
+  "planning_date": "2026-10-07",
+  "start_date": "2026-10-07",
+  "execution_started": true,
+  "capacity_confirmed": false,
+  "goal": "Qualificar entendimento semântico e modelo/perfil local por grounding, cobertura de regras, evidência e desempenho controlado.",
+  "duration_working_days": 5,
+  "timebox_status": "proposed-no-deadline-commitment",
+  "selected_capabilities": [
+    "ahc-021",
+    "ahc-022",
+    "ahc-023"
+  ],
+  "declared_completed_capabilities": [
+    "ahc-001",
+    "ahc-002",
+    "ahc-003",
+    "ahc-004"
+  ],
+  "completion_evidence": {
+    "ahc-001": "PR #6",
+    "ahc-002": "PR #8",
+    "ahc-003": "PR #7",
+    "ahc-004": "PR #9"
+  },
+  "implementation_owner": "code-collaborator-supported-by-codex",
+  "product_owner": "leozitogs",
+  "capability_status": {
+    "ahc-021": "in_progress",
+    "ahc-022": "planned",
+    "ahc-023": "planned"
+  },
+  "authorization": "PO request: Abre uma sprint 2.5 pra se concentrar nisso; focus opened, refinements/semantic acceptance still require review.",
+  "acceptance_threshold_status": "proposed-for-refinement",
+  "estimation_status": "uncalibrated-no-velocity",
+  "work_items_file": "planning/sprint-2-5.work-items.json",
+  "execution_guide": "docs/delivery/sprint-2-5.md",
+  "relationship": {
+    "parent_focus": "sprint-2",
+    "uncompleted_story": "ahc-019",
+    "deferred_story": "ahc-020",
+    "policy": "Sprint 2 remains unfinished; a single executor focuses on Sprint 2.5. No parallel sprint capacity inferred."
+  },
+  "entry_evidence": [
+    "INC-0007 draft",
+    "PR #14 integrated",
+    "PowerOnline=true and Ultimate Performance observed on 2026-10-07"
+  ],
+  "exit_gates": [
+    "Frozen rubric and holdout",
+    "No critical semantic failure and required-rule coverage reviewed",
+    "Model qualified or all rejected with evidence",
+    "Required CI, PR integration and PO review"
+  ],
+  "tracking": {
+    "milestone_number": 2,
+    "milestone_url": "https://github.com/leozitogs/ai-harness-compiler/milestone/2",
+    "issues": {
+      "ahc-021": {
+        "number": 15,
+        "url": "https://github.com/leozitogs/ai-harness-compiler/issues/15"
+      },
+      "ahc-022": {
+        "number": 16,
+        "url": "https://github.com/leozitogs/ai-harness-compiler/issues/16"
+      },
+      "ahc-023": {
+        "number": 17,
+        "url": "https://github.com/leozitogs/ai-harness-compiler/issues/17"
+      }
+    }
+  }
+}

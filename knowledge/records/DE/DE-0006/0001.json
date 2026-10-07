@@ -1,0 +1,84 @@
+{
+  "alternatives": [
+    "Avançar blueprint com propostas ainda inadequadas",
+    "Escolher modelo apenas por velocidade"
+  ],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:planning",
+  "challenge": null,
+  "consequences": [
+    "Baseline semântica e holdout antes de tuning",
+    "Uma execução ativa por executor"
+  ],
+  "context": "Pedido explícito do PO para abrir foco intermediário. Alimentação CA e máximo desempenho observados. AHC-019/020 seguem incompletas.",
+  "created_at": "2026-10-07T19:48:01.635440+00:00",
+  "decision": "Priorizar qualidade semântica antes de latência e pausar avanço do blueprint como foco de entrega, preservando Sprint 2 e AHC-019 incompletas. Nenhum vencedor obrigatório se todos falham.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Plano/estado ou piloto observado; não demonstra qualificação semântica ou história concluída.",
+      "outcome": "observed",
+      "sha256": "41833b1961afbe3f1cf4c42eaf8b10889bf297dbc26d3b0e4d3691458bb13a5a",
+      "source": "docs/delivery/sprint-2-5.md"
+    },
+    {
+      "command": null,
+      "note": "Plano/estado ou piloto observado; não demonstra qualificação semântica ou história concluída.",
+      "outcome": "observed",
+      "sha256": "0810e3d8d92c1191e102658b9afba9cf9151d6c26b41284ca93c55959dcc3402",
+      "source": "planning/sprint-2-5.json"
+    },
+    {
+      "command": null,
+      "note": "Plano/estado ou piloto observado; não demonstra qualificação semântica ou história concluída.",
+      "outcome": "observed",
+      "sha256": "9825fb5034f567a9a3c7cb76eb4be6c8431da6ea6f84456364fc6c46e6b8763f",
+      "source": "planning/sprint-2-5.work-items.json"
+    },
+    {
+      "command": null,
+      "note": "Plano/estado ou piloto observado; não demonstra qualificação semântica ou história concluída.",
+      "outcome": "observed",
+      "sha256": "465a261b5d1e9860d5414b0282440de98586b762f193cf1b0e586b29c741ccdf",
+      "source": "planning/sprint-2-5.tasks.json"
+    },
+    {
+      "command": null,
+      "note": "Plano/estado ou piloto observado; não demonstra qualificação semântica ou história concluída.",
+      "outcome": "observed",
+      "sha256": "cc815b6c42c9a43b317758bfc8f541b7649ae989c95a8cd6b7d75819ae0050d4",
+      "source": "project-definition/project.yaml"
+    }
+  ],
+  "id": "DE-0006",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "Capacidade e término não confirmados",
+    "Rubrica/thresholds propostos para refinamento",
+    "Piloto não é holdout nem benchmark estatístico"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0005",
+    "INC-0007"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Foco Sprint 2.5: AHC-021/022/023, rubrica, grounding e qualificação do modelo por evidência.",
+  "supersedes": null,
+  "tags": [
+    "sprint-2-5",
+    "semantic-evals",
+    "qualification"
+  ],
+  "title": "Qualidade e qualificação antes do blueprint",
+  "updated_at": "2026-10-07T19:48:01.635440+00:00"
+}

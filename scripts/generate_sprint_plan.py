@@ -12,10 +12,12 @@ from ai_harness_compiler.planning import decompose
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--check", action="store_true")
-parser.add_argument("--sprint", default="sprint-1", help="Planning ID, such as sprint-2")
+parser.add_argument(
+    "--sprint", default="sprint-1", help="Planning ID, such as sprint-2 or sprint-2-5"
+)
 args = parser.parse_args()
-if not re.fullmatch(r"sprint-[1-9][0-9]*", args.sprint):
-    parser.error("Sprint ID must match sprint-N with a positive integer")
+if not re.fullmatch(r"sprint-[1-9][0-9]*(?:-[1-9][0-9]*)?", args.sprint):
+    parser.error("Sprint ID must match sprint-N or sprint-N-M with positive integer parts")
 root = Path(__file__).resolve().parents[1]
 sprint = json.loads((root / f"planning/{args.sprint}.json").read_text(encoding="utf-8"))
 spec = plan(load_project(root / "project-definition"))

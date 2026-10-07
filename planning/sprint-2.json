@@ -59,5 +59,7 @@
       }
     }
   },
-  "start_authorization": "PO message: começa a sprint 2."
+  "start_authorization": "PO message: começa a sprint 2.",
+  "active_delivery_focus": "sprint-2-5",
+  "focus_change_authorization": "Explicit PO request on 2026-10-07; AHC-019/020 remain incomplete, blueprint waits for semantic qualification."
 }
