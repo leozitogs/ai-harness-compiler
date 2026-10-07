@@ -46,12 +46,15 @@
       "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/15",
       "subtask_status": {
         "021-03": "in_review",
-        "021-04": "in_progress"
+        "021-04": "in_review"
       },
-      "progress_note": "Typed contracts and offline artifact evaluator implemented; live generation/session budgets/metadata still pending. Increment supports design verification without closing design gate.",
+      "progress_note": "PR #19 integrated; bounded isolated local generation/session journal implemented in review. Rubric/PO review and full semantic verification still pending.",
       "evidence_sources": [
         "tests/test_semantic_eval.py",
-        "docs/evidence/ahc-021/qwen3-cold-eval.json"
+        "docs/evidence/ahc-021/qwen3-cold-eval.json",
+        "docs/engineering/model-generation-sessions.md",
+        "docs/evidence/ahc-021-live-session-final/session.json",
+        "tests/test_model_sessions.py"
       ]
     },
     {

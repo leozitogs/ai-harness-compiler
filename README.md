@@ -64,6 +64,7 @@ estruturado. Consulte o [exemplo](examples/project-definition/project.yaml) e o
 - Preparação e validação de propostas de entendimento com snapshot/citações/revisão; [contratos](docs/engineering/project-understanding.md).
 - Estudo explícito com adapter opcional Ollama, sem aprovação automática; [operação e limites](docs/engineering/ollama-understanding.md). Demonstração semântica com modelo real ainda pendente.
 - Corpus congelado e avaliação offline de propostas, com revisão semântica e estados explícitos; [protocolo](docs/engineering/semantic-understanding-evals.md). Não qualifica modelos automaticamente.
+- Geração local em sessões limitadas, com worker supervisionado e journal verificável; [operação](docs/engineering/model-generation-sessions.md). Julgamento semântico permanece separado.
 - Evidence Pack com fontes, digest canônico, revisão declarada e escopos; [contrato e migração](docs/engineering/evidence-pack.md).
 - Validação de IDs, dependências, ciclos, referências e cobertura de critérios de aceitação.
 - Geração reproduzível de `AGENTS.md`, contexto, políticas, ADRs, plano de trabalho,

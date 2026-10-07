@@ -1,0 +1,52 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Local suite passed with positive durations",
+    "CI Windows/Python 3.12 exposed zero-duration jobs",
+    "Fixture now sets job time 1.0 and total 0.0 explicitly; 356 local tests passed"
+  ],
+  "author": "codex:engineering",
+  "challenge": "Expected a rejection after zeroing total time, but job times were zero too.",
+  "consequences": [],
+  "context": "Run 37694075894, test_contradictory_session_reports_are_rejected[time].",
+  "created_at": "2026-10-07T22:11:17.269016+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Executed 356 local tests after deterministic fixture fix; remote confirmation pending.",
+      "outcome": "observed",
+      "sha256": "ec145463eb873fa62a5318dbc675694e6ab4928fbd99a3b24b8cabd81d9271f4",
+      "source": "docs/delivery/model-session-ci-clock.md"
+    },
+    {
+      "command": null,
+      "note": "Executed 356 local tests after deterministic fixture fix; remote confirmation pending.",
+      "outcome": "passed",
+      "sha256": "7cdc626d3f21f5f46d91289cb9faa86e7215cc92bb1d866b47702a37c84e576a",
+      "source": "tests/test_model_sessions.py"
+    }
+  ],
+  "id": "INC-0008",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0012"
+  ],
+  "resolution": "Applied deterministic contradictory data; CI rerun pending. Production validator and recorded metrics untouched.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": "Fixture assumed real clock yields positive duration for fast fake work.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "CI Windows/Python 3.12 measured zero-time fake jobs; negative fixture was not contradictory.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Fixture de duração dependia do relógio real",
+  "updated_at": "2026-10-07T22:11:17.269016+00:00"
+}

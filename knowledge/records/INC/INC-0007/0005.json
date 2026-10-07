@@ -1,0 +1,139 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Qwen3.5 4B: contrato válido, 172,128 s, findings",
+    "Qwen3 4B Instruct: contrato válido, 69,284 s, findings",
+    "Piloto CA: cold 43,939 s com hash anterior; warm 28,386/28,080 s com outra saída igual entre si. Regras continuam ausentes; warm inventa conflito entre orçamento zero e Python/contratos.",
+    "AHC-021 offline artifact evaluator: Qwen3.5 and Qwen3 cold/warm fail rule coverage; Qwen3.5 also fails formal conflict expectation. Other criteria not-run; incident not solved.",
+    "Bounded live runner generated one development proposal; eval fail by missing BusinessRule. Second case not-run by max_attempts=1; incident unresolved."
+  ],
+  "author": "codex:engineering",
+  "challenge": "Qwen3.5 inventou conflito entre regras compatíveis; Qwen3 inferiu revisão externa e conteúdo de asset não lido. Ambos omitiram contratos de regras.",
+  "consequences": [],
+  "context": "RTX 4050 6GB, RAM 15,71 GiB. Um ensaio por modelo com mesmo manifesto/prompt; não há benchmark estatístico.",
+  "created_at": "2026-10-07T19:20:12.694662+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Ensaio real de desenvolvimento com contratos válidos e findings semânticos; não é eval reservado.",
+      "outcome": "observed",
+      "sha256": "b5edd4757b2fb5464ea3165e7c257321882efbc5ea1e8ff312653a0b5b8a0859",
+      "source": "docs/engineering/local-model-selection.md"
+    },
+    {
+      "command": null,
+      "note": "Ensaio real de desenvolvimento com contratos válidos e findings semânticos; não é eval reservado.",
+      "outcome": "observed",
+      "sha256": "499be7b5e52ffd53e0f81eea62581b2602cc7f2da2c88eabe2db04f4ac7e4ef0",
+      "source": "docs/evidence/model-study-20261007/qwen3-run.json"
+    },
+    {
+      "command": null,
+      "note": "Ensaio real de desenvolvimento com contratos válidos e findings semânticos; não é eval reservado.",
+      "outcome": "observed",
+      "sha256": "fb7479c3216cb17c4523f97ac059af036031062bf125cfea9a37b7d4db3a76a9",
+      "source": "docs/evidence/model-study-20261007/qwen3-understanding.json"
+    },
+    {
+      "command": null,
+      "note": "Ensaio real de desenvolvimento com contratos válidos e findings semânticos; não é eval reservado.",
+      "outcome": "observed",
+      "sha256": "da1755a18f687e80629a2d47071a0dbdb21c047cffe314d0768b236bdb0a0149",
+      "source": "docs/evidence/model-study-20261007/qwen35-run.json"
+    },
+    {
+      "command": null,
+      "note": "Ensaio real de desenvolvimento com contratos válidos e findings semânticos; não é eval reservado.",
+      "outcome": "observed",
+      "sha256": "2800700779c206d684ffedff77cd9c3a421edff368ebc7dc39a0e6a190621f3f",
+      "source": "docs/evidence/model-study-20261007/qwen35-understanding.json"
+    },
+    {
+      "command": null,
+      "note": "Plano/estado ou piloto observado; não demonstra qualificação semântica ou história concluída.",
+      "outcome": "observed",
+      "sha256": "184753c6077b49429f820751d892016d1817fcd82d1dfadfdcf4e936aff77800",
+      "source": "docs/delivery/sprint-2-5-ac-pilot.md"
+    },
+    {
+      "command": null,
+      "note": "Plano/estado ou piloto observado; não demonstra qualificação semântica ou história concluída.",
+      "outcome": "observed",
+      "sha256": "df8754fecff13e53ecf3dea130a63d352e083366b0647dbbc728ffcb1e1f8f68",
+      "source": "docs/evidence/sprint-2-5-ac-pilot/cold-run.json"
+    },
+    {
+      "command": null,
+      "note": "Plano/estado ou piloto observado; não demonstra qualificação semântica ou história concluída.",
+      "outcome": "observed",
+      "sha256": "3e864c77f27d1fd572f90c83da4eac4b120570d3161e482ec2de53cfb99b664f",
+      "source": "docs/evidence/sprint-2-5-ac-pilot/warm-1-run.json"
+    },
+    {
+      "command": null,
+      "note": "Plano/estado ou piloto observado; não demonstra qualificação semântica ou história concluída.",
+      "outcome": "observed",
+      "sha256": "18e57aa05b363a148c3c386f9bf0c174b9b71a9d20190d22dfa068441f6180e7",
+      "source": "docs/evidence/sprint-2-5-ac-pilot/warm-2-run.json"
+    },
+    {
+      "command": null,
+      "note": "320 contract/compiler tests passed; implementation or explicit fail reports, no model qualification.",
+      "outcome": "observed",
+      "sha256": "bd836950626fa31ac3ffdd14f612f1dd4077cb83f0e70b125ab4f6507de40c1b",
+      "source": "docs/evidence/ahc-021/qwen35-baseline-eval.json"
+    },
+    {
+      "command": null,
+      "note": "320 contract/compiler tests passed; implementation or explicit fail reports, no model qualification.",
+      "outcome": "observed",
+      "sha256": "9b6a45f9181232200b95304dfb3eade4fc16e30798d618ad2be697ea6683e991",
+      "source": "docs/evidence/ahc-021/qwen3-cold-eval.json"
+    },
+    {
+      "command": null,
+      "note": "320 contract/compiler tests passed; implementation or explicit fail reports, no model qualification.",
+      "outcome": "observed",
+      "sha256": "1c49d3cce1d531d7cbbd3b588a65b3cffc0f52d594a506e2ec2a6461855ebf94",
+      "source": "docs/evidence/ahc-021/qwen3-warm-eval.json"
+    },
+    {
+      "command": null,
+      "note": "356 tests/checks/build passed; live session limited with eval fail and one skipped case, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "e066f08ab3386a259875b721b0ec410610c86d304bd334e72305d7ba4d16f0dc",
+      "source": "docs/evidence/ahc-021-live-session-final/session.json"
+    }
+  ],
+  "id": "INC-0007",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Uma fixture pública, sem holdout",
+    "Tempos incluem carregamento/cache e variam com RAM livre",
+    "Nenhum modelo aceito semanticamente pelo PO"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0010"
+  ],
+  "resolution": "Não resolvido. Sprint 2.5 aberta para rubrica, evals de suporte/cobertura, pipeline e qualificação. Desempenho maior não implica resolução semântica.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 5,
+  "root_cause": "Validação estrutural não prova suporte semântico. A causa específica do comportamento dos modelos não foi determinada.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Modelos 4B omitiram BusinessRule e produziram conclusões sem apoio apesar de contrato válido.",
+  "supersedes": null,
+  "tags": [
+    "ollama",
+    "model-selection",
+    "semantic-quality"
+  ],
+  "title": "Saídas estruturais válidas com conteúdo semântico inadequado",
+  "updated_at": "2026-10-07T22:04:42.063386+00:00"
+}

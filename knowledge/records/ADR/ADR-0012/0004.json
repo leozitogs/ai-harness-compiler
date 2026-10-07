@@ -1,0 +1,93 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "AHC-021 needed bounded live generation; one real attempt validated, other case skipped by budget, eval fail.",
+  "created_at": "2026-10-07T22:04:41.870762+00:00",
+  "decision": "Use sequential isolated jobs with strict execution records; stop on timeout/drift and never promote generation to semantic approval.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "356 tests/checks/build passed; live session limited with eval fail and one skipped case, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "844724219891f4eed1fe2b3b4c3d29d3ad9d0ffe45197b78b9fdc5aa15cb46e1",
+      "source": "docs/adr/0012-bounded-model-sessions.md"
+    },
+    {
+      "command": null,
+      "note": "356 tests/checks/build passed; live session limited with eval fail and one skipped case, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "d4badd8021f1cdc9302eb913609855721012d164b98f7ba84fcf8e13ab0e6c95",
+      "source": "docs/engineering/model-generation-sessions.md"
+    },
+    {
+      "command": null,
+      "note": "356 tests/checks/build passed; live session limited with eval fail and one skipped case, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "acee978de1b0539158cd94f0cdd18cb09a4ada324a3a3cb435994bb8dddfa189",
+      "source": "src/ai_harness_compiler/models/model_session.py"
+    },
+    {
+      "command": null,
+      "note": "356 tests/checks/build passed; live session limited with eval fail and one skipped case, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "455066e2b2f8c936079806c77e63f13500fcb34f98851a1198e6b507e58ac842",
+      "source": "src/ai_harness_compiler/model_sessions.py"
+    },
+    {
+      "command": null,
+      "note": "356 tests/checks/build passed; live session limited with eval fail and one skipped case, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "6257bf61648aedeab5f562bd338f83696d7876d17cc9f972bf181915c0e02bd8",
+      "source": "src/ai_harness_compiler/model_worker.py"
+    },
+    {
+      "command": null,
+      "note": "356 tests/checks/build passed; live session limited with eval fail and one skipped case, no semantic qualification.",
+      "outcome": "passed",
+      "sha256": "f2e68f3c1c7b26c1baa59d1a8bcb7b74f176d4eb741219acccd9c3b8724118da",
+      "source": "tests/test_model_sessions.py"
+    },
+    {
+      "command": null,
+      "note": "356 tests/checks/build passed; live session limited with eval fail and one skipped case, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "e066f08ab3386a259875b721b0ec410610c86d304bd334e72305d7ba4d16f0dc",
+      "source": "docs/evidence/ahc-021-live-session-final/session.json"
+    }
+  ],
+  "id": "ADR-0012",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "Provider identity observed, not authenticated",
+    "Cleanup/startup/I-O can exceed nominal budget",
+    "Server/GPU cancellation not proven",
+    "Rubric/grounding/model qualification pending"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0011",
+    "INC-0007"
+  ],
+  "resolution": null,
+  "review_note": "Formatter applied after final guard edit; only whitespace changed. Historical execution hashes remain intact.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 4,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Processo próprio por tentativa, budgets, identidade estável, journal e estados não executados.",
+  "supersedes": null,
+  "tags": [
+    "model-sessions",
+    "budgets",
+    "execution-evidence"
+  ],
+  "title": "Geração supervisionada separada de julgamento semântico",
+  "updated_at": "2026-10-07T22:06:56.767752+00:00"
+}
