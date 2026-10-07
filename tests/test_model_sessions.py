@@ -159,6 +159,7 @@ def test_contradictory_session_reports_are_rejected(tmp_path, kind):
     elif kind == "qualification":
         data["model_qualification"] = "qualified"
     elif kind == "time":
+        data["jobs"][0]["elapsed_seconds"] = 1.0
         data["elapsed_seconds"] = 0.0
     else:
         data["stop_reason"] = "worker-timeout"

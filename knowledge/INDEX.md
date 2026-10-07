@@ -13,7 +13,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [ADR-0009 — Entendimento ancorado no snapshot e revisão separada](records/ADR/ADR-0009/0002.json) · active · revision 2
 - [ADR-0010 — Estudo local por interface substituível e resposta limitada](records/ADR/ADR-0010/0004.json) · active · revision 4
 - [ADR-0011 — Julgamento semântico separado de integridade](records/ADR/ADR-0011/0006.json) · active · revision 6
-- [ADR-0012 — Geração supervisionada separada de julgamento semântico](records/ADR/ADR-0012/0004.json) · active · revision 4
+- [ADR-0012 — Geração supervisionada separada de julgamento semântico](records/ADR/ADR-0012/0006.json) · active · revision 6
 - [DE-0001 — Memória de engenharia versionada](records/DE/DE-0001/0001.json) · draft · revision 1
 - [DE-0002 — Gerar memória e especialistas para cada projeto](records/DE/DE-0002/0002.json) · active · revision 2
 - [DE-0003 — Intake limitado e YAML explícito](records/DE/DE-0003/0002.json) · active · revision 2
@@ -35,6 +35,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [INC-0005 — Snapshot externo divergia da evidência fornecida](records/INC/INC-0005/0002.json) · verified · revision 2
 - [INC-0006 — Relatório de benchmark aceitava medidas contraditórias](records/INC/INC-0006/0002.json) · verified · revision 2
 - [INC-0007 — Saídas estruturais válidas com conteúdo semântico inadequado](records/INC/INC-0007/0005.json) · draft · revision 5
+- [INC-0008 — Fixture de duração dependia do relógio real](records/INC/INC-0008/0001.json) · draft · revision 1
 - [LES-0001 — Tipos estáticos podem falhar em runtime](records/LES/LES-0001/0004.json) · verified · revision 4
 - [LES-0002 — Referências válidas não garantem precedência consistente](records/LES/LES-0002/0002.json) · verified · revision 2
 - [LES-0003 — Usar IDs curtos para parametrizações com payloads grandes](records/LES/LES-0003/0002.json) · verified · revision 2
