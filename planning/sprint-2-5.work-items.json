@@ -17,14 +17,23 @@
       ],
       "responsible": "code-collaborator-supported-by-codex",
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
-      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/15"
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/15",
+      "subtask_status": {
+        "021-01": "in_review",
+        "021-02": "in_review"
+      },
+      "progress_note": "Rubric proposed and 8+8 case corpus frozen; PO review pending. No prompt tuning or holdout execution.",
+      "evidence_sources": [
+        "evals/understanding/v1/freeze.json",
+        "docs/engineering/semantic-understanding-evals.md"
+      ]
     },
     {
       "id": "s25-21-implement",
       "capability_id": "ahc-021",
       "task_graph_id": "task-21-implement",
       "stage": "implement",
-      "status": "planned",
+      "status": "in_progress",
       "depends_on": [
         "s25-21-design"
       ],
@@ -34,7 +43,16 @@
       ],
       "responsible": "code-collaborator-supported-by-codex",
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
-      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/15"
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/15",
+      "subtask_status": {
+        "021-03": "in_review",
+        "021-04": "in_progress"
+      },
+      "progress_note": "Typed contracts and offline artifact evaluator implemented; live generation/session budgets/metadata still pending. Increment supports design verification without closing design gate.",
+      "evidence_sources": [
+        "tests/test_semantic_eval.py",
+        "docs/evidence/ahc-021/qwen3-cold-eval.json"
+      ]
     },
     {
       "id": "s25-21-verify",

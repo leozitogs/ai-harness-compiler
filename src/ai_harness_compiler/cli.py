@@ -17,6 +17,13 @@ from ai_harness_compiler.models.benchmark import BenchmarkReport, BenchmarkSuite
 from ai_harness_compiler.models.domain import DomainProfile
 from ai_harness_compiler.models.evidence import EvidencePack, SourceRecord
 from ai_harness_compiler.models.memory import MemoryRecord, RecordDraft
+from ai_harness_compiler.models.semantic_eval import (
+    FrozenUnderstandingCorpus,
+    SemanticReview,
+    UnderstandingEvalReport,
+    UnderstandingEvalSuite,
+    UnderstandingRubric,
+)
 from ai_harness_compiler.models.task import TaskGraph
 from ai_harness_compiler.models.team import AgentReport, Persona, TeamConfig
 from ai_harness_compiler.models.understanding import (
@@ -46,6 +53,11 @@ MODELS: dict[str, type[Contract]] = {
     "understanding-request": UnderstandingRequest,
     "understanding-proposal": UnderstandingProposal,
     "project-understanding": ProjectUnderstandingSpec,
+    "understanding-rubric": UnderstandingRubric,
+    "understanding-eval-suite": UnderstandingEvalSuite,
+    "understanding-eval-report": UnderstandingEvalReport,
+    "semantic-review": SemanticReview,
+    "frozen-understanding-corpus": FrozenUnderstandingCorpus,
 }
 
 
@@ -117,6 +129,20 @@ def main(argv: list[str] | None = None) -> int:
     study_command.add_argument("--timeout-seconds", type=int, default=60)
     study_command.add_argument("--max-output-tokens", type=int, default=4096)
     study_command.add_argument("--max-manifest-bytes", type=int, default=DEFAULT_MAX_MANIFEST_BYTES)
+    eval_command = commands.add_parser("eval-understanding", help="Evaluate saved artifact offline")
+    eval_command.add_argument("input", type=Path)
+    eval_command.add_argument("--corpus", type=Path, required=True)
+    eval_command.add_argument("--split", choices=["development", "holdout"], default="development")
+    eval_command.add_argument("--case", required=True)
+    eval_command.add_argument("--output", type=Path, required=True)
+    eval_command.add_argument("--review", type=Path)
+    eval_command.add_argument("--allow-holdout", action="store_true")
+    eval_command.add_argument("--candidate-sha256")
+    eval_validation = commands.add_parser(
+        "validate-eval-report", help="Bind report to frozen corpus"
+    )
+    eval_validation.add_argument("input", type=Path)
+    eval_validation.add_argument("--corpus", type=Path, required=True)
     schema_command = commands.add_parser("schema", help="Print a JSON Schema to stdout")
     schema_command.add_argument("model", choices=MODELS)
     args = parser.parse_args(argv)
@@ -132,6 +158,34 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "schema":
             print(json_text(MODELS[args.model].model_json_schema()), end="")
             return 0
+        if args.command in {"eval-understanding", "validate-eval-report"}:
+            from ai_harness_compiler.semantic_eval import (
+                FrozenCorpus,
+                assess_artifact,
+                bounded_bytes,
+                save_report,
+            )
+
+            if args.command == "validate-eval-report":
+                corpus = FrozenCorpus(args.corpus)
+                eval_report = UnderstandingEvalReport.model_validate_json(bounded_bytes(args.input))
+                corpus.validate_report(eval_report)
+                print(f"Eval report valid against frozen corpus: {eval_report.status}")
+                print("Integrity and declared review do not establish reviewer authentication.")
+                return 0
+            if args.output.exists():
+                raise FileExistsError("EVAL_EXISTS: Choose a new output file")
+            if args.split == "holdout" and not (args.allow_holdout and args.candidate_sha256):
+                raise ValueError(
+                    "EVAL_HOLDOUT: Explicit opt-in and frozen candidate digest required"
+                )
+            corpus = FrozenCorpus(args.corpus)
+            eval_report = assess_artifact(
+                corpus, args.split, args.case, args.input, args.review, args.candidate_sha256
+            )
+            save_report(eval_report, args.output)
+            print(f"Artifact eval: {eval_report.status}; model qualification: not-established.")
+            return 0 if eval_report.status == "pass" else 1
         if args.command == "study":
             from ai_harness_compiler.adapters.ollama import OllamaSettings, OllamaUnderstandingModel
             from ai_harness_compiler.understanding import study_project

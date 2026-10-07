@@ -1,0 +1,76 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Casos genéricos e regra/quote/source pointer; holdout não usado em tuning ou geração.",
+  "created_at": "2026-10-07T20:23:00.653198+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "320 contract/compiler tests passed; implementation or explicit fail reports, no model qualification.",
+      "outcome": "observed",
+      "sha256": "234a9e7c0e4e55fd341f6dc00d9f3a24f937d28df58ad2ec9f1b3a54082edf24",
+      "source": "evals/understanding/v1/freeze.json"
+    },
+    {
+      "command": null,
+      "note": "320 contract/compiler tests passed; implementation or explicit fail reports, no model qualification.",
+      "outcome": "observed",
+      "sha256": "c09460182e32d77c9c59eee1751494d8135b3491c28b9fd55a708e6b1365ab85",
+      "source": "evals/understanding/v1/rubric.json"
+    },
+    {
+      "command": null,
+      "note": "320 contract/compiler tests passed; implementation or explicit fail reports, no model qualification.",
+      "outcome": "observed",
+      "sha256": "eaec1de694cae0e68ec6ae70d92b424f058d60ec4d77cddb72bcc8750a7cfddc",
+      "source": "evals/understanding/v1/development.json"
+    },
+    {
+      "command": null,
+      "note": "320 contract/compiler tests passed; implementation or explicit fail reports, no model qualification.",
+      "outcome": "observed",
+      "sha256": "6fa5bf1678da9244a2abda8a99b55fc84a3c3ec5d30c0ae79b42ee75a00bb483",
+      "source": "evals/understanding/v1/holdout.json"
+    },
+    {
+      "command": null,
+      "note": "320 contract/compiler tests passed; implementation or explicit fail reports, no model qualification.",
+      "outcome": "observed",
+      "sha256": "a21428fae5a7a1c2c5e16127602551bb86640d98fc49c0a33a124a9f8ff30be1",
+      "source": "docs/engineering/semantic-understanding-evals.md"
+    }
+  ],
+  "id": "DOC-0006",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Não constitui aceite do PO",
+    "Corpus sintético não prova cobertura de produção"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0011"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "8 casos de desenvolvimento + 8 holdout congelados, expectativas propostas e CLI de avaliação sem chamadas de modelo.",
+  "supersedes": null,
+  "tags": [
+    "corpus",
+    "holdout",
+    "understanding"
+  ],
+  "title": "Corpus v1 e protocolo offline de entendimento",
+  "updated_at": "2026-10-07T20:23:00.653198+00:00"
+}

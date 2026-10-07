@@ -1,0 +1,10 @@
+{
+  "artifacts": {
+    "development.json": "eaec1de694cae0e68ec6ae70d92b424f058d60ec4d77cddb72bcc8750a7cfddc",
+    "holdout.json": "6fa5bf1678da9244a2abda8a99b55fc84a3c3ec5d30c0ae79b42ee75a00bb483",
+    "rubric.json": "c09460182e32d77c9c59eee1751494d8135b3491c28b9fd55a708e6b1365ab85"
+  },
+  "expectation_status": "proposed-human-review-required",
+  "schema_version": "FrozenUnderstandingCorpus/v1",
+  "version": "v1"
+}

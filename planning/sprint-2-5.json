@@ -72,5 +72,7 @@
         "url": "https://github.com/leozitogs/ai-harness-compiler/issues/17"
       }
     }
-  }
+  },
+  "execution_authorization": "PO message: podes começar a executar a sprint 2.5; rubric/expectation approval and semantic acceptance not inferred.",
+  "implementation_increment": "AHC-021 frozen corpus/contracts/offline evaluator, in review; live generation and semantic acceptance pending."
 }

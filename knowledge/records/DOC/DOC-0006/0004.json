@@ -1,0 +1,84 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Casos genéricos e regra/quote/source pointer; holdout não usado em tuning ou geração.",
+  "created_at": "2026-10-07T20:23:00.653198+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "321 compiler/contract tests passed; artifact failures preserved, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "234a9e7c0e4e55fd341f6dc00d9f3a24f937d28df58ad2ec9f1b3a54082edf24",
+      "source": "evals/understanding/v1/freeze.json"
+    },
+    {
+      "command": null,
+      "note": "321 compiler/contract tests passed; artifact failures preserved, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "c09460182e32d77c9c59eee1751494d8135b3491c28b9fd55a708e6b1365ab85",
+      "source": "evals/understanding/v1/rubric.json"
+    },
+    {
+      "command": null,
+      "note": "321 compiler/contract tests passed; artifact failures preserved, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "eaec1de694cae0e68ec6ae70d92b424f058d60ec4d77cddb72bcc8750a7cfddc",
+      "source": "evals/understanding/v1/development.json"
+    },
+    {
+      "command": null,
+      "note": "321 compiler/contract tests passed; artifact failures preserved, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "6fa5bf1678da9244a2abda8a99b55fc84a3c3ec5d30c0ae79b42ee75a00bb483",
+      "source": "evals/understanding/v1/holdout.json"
+    },
+    {
+      "command": null,
+      "note": "321 compiler/contract tests passed; artifact failures preserved, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "d3e807ccafae8765d51dcdfa1277e52bcd9fff83f4fada38420c32b86cfc52d7",
+      "source": "docs/engineering/semantic-understanding-evals.md"
+    },
+    {
+      "command": null,
+      "note": "First-increment evidence and limitations, no invented semantic success.",
+      "outcome": "observed",
+      "sha256": "978fd210d58525c3d4f2201d98a96bf9f967a8d9e903e1b3b0ff67856a360424",
+      "source": "docs/delivery/ahc-021-first-increment.md"
+    }
+  ],
+  "id": "DOC-0006",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Não constitui aceite do PO",
+    "Corpus sintético não prova cobertura de produção",
+    "Holdout sintético da mesma sessão, sem cegamento independente"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0011"
+  ],
+  "resolution": null,
+  "review_note": "Updated hashes after renamed-clone guard; final 321 tests/build/checks passed, no holdout optimization or semantic acceptance.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 4,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "8 casos de desenvolvimento + 8 holdout congelados, expectativas propostas e CLI de avaliação sem chamadas de modelo.",
+  "supersedes": null,
+  "tags": [
+    "corpus",
+    "holdout",
+    "understanding"
+  ],
+  "title": "Corpus v1 e protocolo offline de entendimento",
+  "updated_at": "2026-10-07T20:28:53.687774+00:00"
+}
