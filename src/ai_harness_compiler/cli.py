@@ -110,6 +110,13 @@ def main(argv: list[str] | None = None) -> int:
     understanding_command.add_argument(
         "--max-understanding-bytes", type=int, default=4 * 1024 * 1024
     )
+    study_command = commands.add_parser("study", help="Propose understanding with local Ollama")
+    study_command.add_argument("input", type=Path)
+    study_command.add_argument("--model", required=True, help="Explicit installed Ollama model")
+    study_command.add_argument("--output", type=Path, required=True, help="New proposal JSON file")
+    study_command.add_argument("--timeout-seconds", type=int, default=60)
+    study_command.add_argument("--max-output-tokens", type=int, default=4096)
+    study_command.add_argument("--max-manifest-bytes", type=int, default=DEFAULT_MAX_MANIFEST_BYTES)
     schema_command = commands.add_parser("schema", help="Print a JSON Schema to stdout")
     schema_command.add_argument("model", choices=MODELS)
     args = parser.parse_args(argv)
@@ -124,6 +131,27 @@ def main(argv: list[str] | None = None) -> int:
             return execute(args)
         if args.command == "schema":
             print(json_text(MODELS[args.model].model_json_schema()), end="")
+            return 0
+        if args.command == "study":
+            from ai_harness_compiler.adapters.ollama import OllamaSettings, OllamaUnderstandingModel
+            from ai_harness_compiler.understanding import study_project
+
+            if args.output.exists():
+                raise FileExistsError("STUDY_EXISTS: Output exists; choose a new file")
+            model = OllamaUnderstandingModel(
+                OllamaSettings(
+                    model=args.model,
+                    timeout_seconds=args.timeout_seconds,
+                    max_output_tokens=args.max_output_tokens,
+                )
+            )
+            understanding = study_project(
+                load_project(args.input, max_manifest_bytes=args.max_manifest_bytes), model
+            )
+            with args.output.open("x", encoding="utf-8", newline="\n") as stream:
+                stream.write(json_text(understanding.model_dump()))
+            print(f"Understanding proposed: {args.output}; requested Ollama model: {args.model}.")
+            print("Human review required; proposal has not been applied to the harness.")
             return 0
         if args.command == "prepare-understanding":
             from ai_harness_compiler.understanding import prepare_understanding
@@ -202,10 +230,11 @@ def main(argv: list[str] | None = None) -> int:
         print(f"factory: {exc}", file=sys.stderr)
         return 1
     except ModuleNotFoundError as exc:
-        if args.command != "team":
+        if args.command not in {"team", "study"}:
             raise
+        extra = "understanding" if args.command == "study" else "team"
         print(
-            f"factory: install the team extra with uv sync --extra team ({exc.name})",
+            f"factory: install the {extra} extra with uv sync --extra {extra} ({exc.name})",
             file=sys.stderr,
         )
         return 1

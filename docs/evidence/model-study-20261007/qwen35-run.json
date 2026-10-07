@@ -1,0 +1,44 @@
+{
+  "counts": {
+    "business_rules": 0,
+    "conflicts": 1,
+    "domain_candidates": 0,
+    "questions": 3,
+    "statements": 0
+  },
+  "date": "2026-10-07T19:06:46.397668+00:00",
+  "elapsed_seconds": 172.128,
+  "evaluation": "single development smoke; not a reserved semantic evaluation",
+  "input": "examples/project-definition/project.yaml",
+  "input_sha256": "b3d0db0980c20a068cbddf89bf26afef915368d5e487a9e1748cf782a9ba9225",
+  "model_details": {
+    "context_length": 262144,
+    "embedding_length": 2560,
+    "families": [
+      "qwen35"
+    ],
+    "family": "qwen35",
+    "format": "gguf",
+    "parameter_size": "4.2B",
+    "parent_model": "qwen3.5:4b",
+    "quantization_level": "Q4_K_M",
+    "runner": "llamacpp"
+  },
+  "model_digest": "117f69356cc23d638635b1f1a621ef6f6a77d305bb929f1ab132bde0d70d31c8",
+  "model_parameters": "top_k                          20\ntop_p                          0.95\nnum_ctx                        8192\nnum_predict                    4096\npresence_penalty               1.5\ntemperature                    0",
+  "model_size_bytes": 3324173968,
+  "ollama_ps": "NAME                 ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL              \nahc-qwen3.5:4b-8k    117f69356cc2    3.3 GB    100% GPU     8192       llamacpp    4 minutes from now    \n",
+  "ollama_version": "ollama version is 0.40.0",
+  "output_sha256": "2800700779c206d684ffedff77cd9c3a421edff368ebc7dc39a0e6a190621f3f",
+  "requested_model": "ahc-qwen3.5:4b-8k",
+  "review": "not performed",
+  "settings": {
+    "max_output_tokens": 4096,
+    "num_ctx_model_profile": 8192,
+    "temperature": 0,
+    "think": false,
+    "timeout_seconds": 180
+  },
+  "status": "contract-valid",
+  "system_prompt_sha256": "8d40d8a6f748da09f51d6511bb4da40bc1384ee1631a77dc85e5bbc29aebc401"
+}

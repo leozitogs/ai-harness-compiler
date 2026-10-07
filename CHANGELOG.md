@@ -3,7 +3,8 @@
 ## 0.1.0 — Unreleased
 
 - AHC-019 parcial: contratos de snapshot/proposta/revisão, schemas e CLI de preparação/validação.
-- Sprint 2 iniciada por pedido do PO; adapter/modelo real e estudo semântico continuam pendentes.
+- Sprint 2 iniciada por pedido do PO; demonstração com modelo real e aceite semântico pendentes.
+- AHC-019 parcial: interface substituível, adapter local Ollama e CLI study com limites e saída exclusiva.
 
 - Revisão: DNA preserva fontes/afirmações fornecidas por ID e rejeita reativação contraditória.
 - Relatórios de benchmark validam hashes, mediana, tamanhos, repetições e unicidade de casos.

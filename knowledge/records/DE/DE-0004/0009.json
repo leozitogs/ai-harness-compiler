@@ -1,0 +1,52 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:po-replanning",
+  "challenge": null,
+  "consequences": [
+    "Fixtures não definem cobertura de nichos do produto.",
+    "Fake não comprova estudo semântico; exigir demonstração com modelo real e revisão.",
+    "Planos ainda não aprovados não iniciam execução."
+  ],
+  "context": "Modelos locais instalados no D por autorização do PO. Dois ensaios reais passaram no contrato, mas apresentaram falhas semânticas; não concluem AHC-019 nem evals reservados.",
+  "created_at": "2026-10-06T21:38:52.729684+00:00",
+  "decision": "Priorizar AHC-019 (entendimento de proposta/branding/regras) e AHC-020 (blueprint/packs), antes de síntese de prompts/skills e documentação. Core não possui lista fixa de nichos.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Direção de produto confirmada.",
+      "outcome": "observed",
+      "sha256": "24d36fc2249c493b11b6c0d94cc160d64d242a2a68347529dbc1db26a74ec0da",
+      "source": "docs/product/generalist-pipeline.md"
+    },
+    {
+      "command": null,
+      "note": "Início autorizado e tarefas restantes.",
+      "outcome": "observed",
+      "sha256": "d9ce9613e39369bf46f18fbd8e41395efcb0e26e70ee0d8e45b5d2d5cff38db4",
+      "source": "docs/delivery/sprint-2.md"
+    }
+  ],
+  "id": "DE-0004",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0002"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 9,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Nicho e regras derivam do estudo de cada projeto; packs são opcionais e extensíveis.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Compilador generalista antes da especialização",
+  "updated_at": "2026-10-07T19:20:12.084888+00:00"
+}
