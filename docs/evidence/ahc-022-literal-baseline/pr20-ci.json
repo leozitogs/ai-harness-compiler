@@ -1,0 +1,61 @@
+{
+  "headRefOid": "cea6fb9d9bc0d983bb782d68a69555318b02ecee",
+  "mergeCommit": {
+    "oid": "11c9905739837ef49bf91a587c9f978ba1667ef2"
+  },
+  "number": 20,
+  "state": "MERGED",
+  "statusCheckRollup": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-07T22:12:03Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/leozitogs/ai-harness-compiler/actions/runs/37694556729/job/113042917720",
+      "name": "quality (ubuntu-latest, 3.12)",
+      "startedAt": "2026-10-07T22:11:33Z",
+      "status": "COMPLETED",
+      "workflowName": "CI"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-07T22:11:38Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/leozitogs/ai-harness-compiler/actions/runs/37694556798/job/113042918357",
+      "name": "conventions",
+      "startedAt": "2026-10-07T22:11:33Z",
+      "status": "COMPLETED",
+      "workflowName": "Conventions"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-07T22:12:12Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/leozitogs/ai-harness-compiler/actions/runs/37694556729/job/113042918525",
+      "name": "quality (ubuntu-latest, 3.13)",
+      "startedAt": "2026-10-07T22:11:34Z",
+      "status": "COMPLETED",
+      "workflowName": "CI"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-07T22:12:32Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/leozitogs/ai-harness-compiler/actions/runs/37694556729/job/113042918077",
+      "name": "quality (windows-latest, 3.12)",
+      "startedAt": "2026-10-07T22:11:33Z",
+      "status": "COMPLETED",
+      "workflowName": "CI"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-07T22:12:20Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/leozitogs/ai-harness-compiler/actions/runs/37694556729/job/113042918376",
+      "name": "quality (windows-latest, 3.13)",
+      "startedAt": "2026-10-07T22:11:34Z",
+      "status": "COMPLETED",
+      "workflowName": "CI"
+    }
+  ],
+  "url": "https://github.com/leozitogs/ai-harness-compiler/pull/20"
+}

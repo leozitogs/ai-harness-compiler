@@ -25,6 +25,12 @@ flowchart TD
 `intake.py` e `compiler.py` são fronteiras de I/O. `cli.py` compõe as etapas.
 O comando `compile` aceita a IR serializada sem reexecutar intake ou planejamento.
 
+AHC-022 adiciona uma fronteira offline de grounding (ADR-0013): ProjectInput →
+GroundingExtraction/v1 → proposta independente → GroundingQuotationReport/v1.
+Átomos preservam declarações e metadados; quotes são verificadas sem avaliar
+significado. O adapter de estudo atual ainda usa UnderstandingRequest/v1;
+consumo dos átomos e repair semântico são o próximo incremento.
+
 `planning.py` transforma CapabilityGraph em TaskGraph/v1. O comando `tasks` permite
 selecionar capacidades para uma sprint, com gates e critérios preservados. O plano
 é estrutural e determinístico, sem executor ou decomposição semântica via LLM.

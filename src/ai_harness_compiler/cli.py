@@ -17,6 +17,7 @@ from ai_harness_compiler.models.base import Contract
 from ai_harness_compiler.models.benchmark import BenchmarkReport, BenchmarkSuite
 from ai_harness_compiler.models.domain import DomainProfile
 from ai_harness_compiler.models.evidence import EvidencePack, SourceRecord
+from ai_harness_compiler.models.grounding import GroundingExtraction, GroundingQuotationReport
 from ai_harness_compiler.models.memory import MemoryRecord, RecordDraft
 from ai_harness_compiler.models.model_session import (
     ModelSessionReport,
@@ -68,6 +69,8 @@ MODELS: dict[str, type[Contract]] = {
     "model-session-plan": SessionPlan,
     "model-session-report": ModelSessionReport,
     "model-worker-result": WorkerResult,
+    "grounding-extraction": GroundingExtraction,
+    "grounding-quotation-report": GroundingQuotationReport,
 }
 
 
@@ -125,6 +128,18 @@ def main(argv: list[str] | None = None) -> int:
     prepare_command.add_argument(
         "--max-manifest-bytes", type=int, default=DEFAULT_MAX_MANIFEST_BYTES
     )
+    grounding_command = commands.add_parser(
+        "prepare-grounding", help="Extract literal manifest evidence offline; assets are not read"
+    )
+    grounding_command.add_argument("input", type=Path)
+    grounding_command.add_argument(
+        "--max-manifest-bytes", type=int, default=DEFAULT_MAX_MANIFEST_BYTES
+    )
+    quotation_command = commands.add_parser(
+        "verify-grounding", help="Check criterion quotations; semantic judgment stays pending"
+    )
+    quotation_command.add_argument("input", type=Path)
+    quotation_command.add_argument("--output", type=Path, required=True, help="New JSON report")
     understanding_command = commands.add_parser(
         "validate-understanding", help="Validate understanding snapshot/proposal/review metadata"
     )
@@ -296,6 +311,28 @@ def main(argv: list[str] | None = None) -> int:
                 stream.write(json_text(understanding.model_dump()))
             print(f"Understanding proposed: {args.output}; requested Ollama model: {args.model}.")
             print("Human review required; proposal has not been applied to the harness.")
+            return 0
+        if args.command == "prepare-grounding":
+            from ai_harness_compiler.grounding import extract_grounding
+
+            extraction = extract_grounding(
+                load_project(args.input, max_manifest_bytes=args.max_manifest_bytes)
+            )
+            print(json_text(extraction.model_dump()), end="")
+            return 0
+        if args.command == "verify-grounding":
+            from ai_harness_compiler.grounding import verify_quotations
+            from ai_harness_compiler.semantic_eval import bounded_bytes
+
+            if args.output.exists():
+                raise FileExistsError("GROUNDING_EXISTS: Choose a new output file")
+            quotation_spec = ProjectUnderstandingSpec.model_validate_json(bounded_bytes(args.input))
+            quotation_report = verify_quotations(quotation_spec)
+            with args.output.open("x", encoding="utf-8", newline="\n") as stream:
+                stream.write(json_text(quotation_report.model_dump()))
+            quoted = sum(bool(item.quoted_by_rules) for item in quotation_report.criteria)
+            print(f"Quoted criteria: {quoted}/{len(quotation_report.criteria)}.")
+            print("Semantic coverage and model qualification: not-established.")
             return 0
         if args.command == "prepare-understanding":
             from ai_harness_compiler.understanding import prepare_understanding
