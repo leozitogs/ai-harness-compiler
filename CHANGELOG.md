@@ -2,6 +2,8 @@
 
 ## 0.1.0 — Unreleased
 
+- AHC-022 parcial: extração literal completa e relatório verificável de citações; sem promoção automática a cobertura semântica.
+
 - AHC-021: sessões locais supervisionadas, budgets, metadados de execução/modelo e journal consistente; geração não implica qualificação.
 
 - AHC-021 parcial: corpus congelado 8+8, rubrica/revisão/relatório tipados e runner offline.

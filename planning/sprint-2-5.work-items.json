@@ -48,7 +48,7 @@
         "021-03": "in_review",
         "021-04": "in_review"
       },
-      "progress_note": "PR #19 integrated; bounded isolated local generation/session journal implemented in review. Rubric/PO review and full semantic verification still pending.",
+      "progress_note": "PRs #19 and #20 integrated with green CI; rubric/PO review and full semantic verification still pending.",
       "evidence_sources": [
         "tests/test_semantic_eval.py",
         "docs/evidence/ahc-021/qwen3-cold-eval.json",
@@ -106,7 +106,13 @@
       ],
       "responsible": "code-collaborator-supported-by-codex",
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
-      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16"
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16",
+      "progress_note": "Preparatory literal extraction/quotation verification implemented for review; formal dependency on AHC-021 review remains pending. No prompt tuning or semantic completion.",
+      "evidence_sources": [
+        "docs/delivery/ahc-022-first-increment.md",
+        "docs/engineering/literal-grounding.md",
+        "tests/test_grounding.py"
+      ]
     },
     {
       "id": "s25-22-implement",

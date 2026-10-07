@@ -1,0 +1,64 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "25 new grounding tests, 381 total; no new inference calls, tuning or holdout execution.",
+  "created_at": "2026-10-07T23:54:39.469750+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "381 local tests passed; literal pilot quotation reports 0/4; semantic review and model qualification not established.",
+      "outcome": "observed",
+      "sha256": "51ff60917534e905aba7a3acc43fb03c361b883e4ebb92c40c62c2a9101239ab",
+      "source": "docs/engineering/literal-grounding.md"
+    },
+    {
+      "command": null,
+      "note": "381 local tests passed; literal pilot quotation reports 0/4; semantic review and model qualification not established.",
+      "outcome": "observed",
+      "sha256": "f7f9e6ced33d7aeb09913a4ee50926dbd236c5bf706e37ff5ddb9b81dc53f17d",
+      "source": "docs/delivery/ahc-022-first-increment.md"
+    },
+    {
+      "command": null,
+      "note": "381 local tests passed; literal pilot quotation reports 0/4; semantic review and model qualification not established.",
+      "outcome": "observed",
+      "sha256": "f8794a4bb25de8d93ef834181d6a0527524b079187106f6b4d0fdc6fd7a90e8e",
+      "source": "docs/evidence/ahc-022-literal-baseline/qwen3-quotations.json"
+    },
+    {
+      "command": null,
+      "note": "381 local tests passed; literal pilot quotation reports 0/4; semantic review and model qualification not established.",
+      "outcome": "observed",
+      "sha256": "b13ab0492a734ce5b246595910b2c8bf10d99d3a3464a7f7f0ef91a11b295542",
+      "source": "docs/evidence/ahc-022-literal-baseline/qwen35-quotations.json"
+    }
+  ],
+  "id": "DOC-0008",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Quotation matching is not semantic coverage"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0013"
+  ],
+  "resolution": null,
+  "review_note": "Existing model proposals assessed offline; results are structural observations only.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "CLI e dois relatórios offline preservam a lacuna de 0/4 critérios citados por regras extraídas.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Preparação e operação do grounding literal",
+  "updated_at": "2026-10-07T23:54:39.511714+00:00"
+}
