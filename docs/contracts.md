@@ -63,6 +63,12 @@ estados e migração explícita das IRs v1/v2 para v3.
 
 ## Reprodutibilidade e alterações
 
+ModelPolicy/v1 registra uma preferência de desenvolvimento, com estado de
+qualificação fixado em `not-established`, fallback `explicit-only` e papéis
+herdando o principal. TeamRun/v1 e AgentReport passam a aceitar engine `codex-cli`;
+leitores antigos podem rejeitar o enum adicional. Runs existentes continuam
+válidos e a revisão do PO usa o snapshot, sem resolução dinâmica de modelo.
+
 UnderstandingComparison/v1 compara duas propostas compactas ligadas ao mesmo
 GroundingExtraction. Métricas e inventário de concordâncias/divergências são
 recalculados; não constituem julgamento semântico. DevelopmentComparisonPlan/v1

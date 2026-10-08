@@ -63,7 +63,7 @@ class ToolResult(Contract):
 class AgentReport(Contract):
     agent_id: Role
     status: Literal["completed", "failed"]
-    engine: Literal["local", "ollama"]
+    engine: Literal["local", "ollama", "codex-cli"]
     summary: Text
     observations: list[ToolResult]
     model_summary_is_advisory: bool = False
@@ -75,7 +75,7 @@ class TeamConfig(Contract):
     selected: list[Identifier] = Field(min_length=1)
     request: Text = Field(max_length=4000)
     mode: Literal["prepare", "ask"] = "prepare"
-    engine: Literal["local", "ollama"] = "local"
+    engine: Literal["local", "ollama", "codex-cli"] = "local"
     model: str | None = None
     max_steps: int = Field(default=5, ge=3, le=10)
     repository_root: Text
@@ -84,6 +84,8 @@ class TeamConfig(Contract):
     def model_required(self) -> Self:
         if self.engine == "ollama" and not self.model:
             raise ValueError("Ollama mode requires an explicit installed model")
+        if self.engine == "codex-cli" and not self.model:
+            raise ValueError("Codex mode requires an explicit model in the run snapshot")
         return self
 
 

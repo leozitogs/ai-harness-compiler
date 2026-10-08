@@ -703,7 +703,8 @@
       "default": "local",
       "enum": [
         "local",
-        "ollama"
+        "ollama",
+        "codex-cli"
       ],
       "title": "Engine",
       "type": "string"

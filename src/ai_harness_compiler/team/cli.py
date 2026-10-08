@@ -24,8 +24,11 @@ def add_commands(commands: argparse._SubParsersAction[argparse.ArgumentParser]) 
     run.add_argument("--request", default="Preparar a Sprint 1 para revisão do PO.")
     run.add_argument("--select", nargs="+", default=["ahc-001", "ahc-002", "ahc-003", "ahc-004"])
     run.add_argument("--mode", choices=["prepare", "ask"], default="prepare")
-    run.add_argument("--engine", choices=["local", "ollama"], default="local")
-    run.add_argument("--model", help="Explicit installed Ollama model name")
+    run.add_argument(
+        "--engine", choices=["local", "ollama", "codex-cli", "primary"], default="local"
+    )
+    run.add_argument("--model", help="Explicit provider model override")
+    run.add_argument("--model-policy", type=Path, help="Central model policy override")
     run.add_argument("--repository", type=Path, default=Path.cwd())
     run.add_argument("--max-steps", type=int, default=5)
     review = subcommands.add_parser("review")
@@ -55,6 +58,27 @@ def execute(args: argparse.Namespace) -> int:
             ),
         )
     else:
+        engine, model = args.engine, args.model
+        if engine == "local" and model is not None:
+            raise ValueError("Local deterministic mode cannot select a model")
+        if engine == "primary":
+            from ai_harness_compiler.model_policy import load_model_policy
+
+            primary = load_model_policy(args.model_policy).primary
+            engine = primary.provider
+            model = model if model is not None else primary.model
+            if engine == "ollama":
+                from ai_harness_compiler.adapters.ollama import OllamaSettings
+
+                OllamaSettings(model=model)
+        if engine == "codex-cli":
+            from ai_harness_compiler.adapters.codex_cli import CodexCLISettings
+
+            if model is None:
+                from ai_harness_compiler.model_policy import load_model_policy
+
+                model = load_model_policy(args.model_policy).endpoint("codex-cli").model
+            CodexCLISettings(model)
         config = TeamConfig.model_validate(
             {
                 "project": load_project(
@@ -63,8 +87,8 @@ def execute(args: argparse.Namespace) -> int:
                 "selected": args.select,
                 "request": args.request,
                 "mode": args.mode,
-                "engine": args.engine,
-                "model": args.model,
+                "engine": engine,
+                "model": model,
                 "max_steps": args.max_steps,
                 "repository_root": str(args.repository.resolve()),
             }

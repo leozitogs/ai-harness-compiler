@@ -1,0 +1,101 @@
+{
+  "$defs": {
+    "ModelEndpoint": {
+      "additionalProperties": false,
+      "properties": {
+        "model": {
+          "pattern": "^[A-Za-z0-9][\\w./:-]{0,199}$",
+          "title": "Model",
+          "type": "string"
+        },
+        "provider": {
+          "enum": [
+            "codex-cli",
+            "ollama"
+          ],
+          "title": "Provider",
+          "type": "string"
+        }
+      },
+      "required": [
+        "provider",
+        "model"
+      ],
+      "title": "ModelEndpoint",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "evidence_sources": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 20,
+      "minItems": 1,
+      "title": "Evidence Sources",
+      "type": "array"
+    },
+    "fallback_policy": {
+      "const": "explicit-only",
+      "default": "explicit-only",
+      "title": "Fallback Policy",
+      "type": "string"
+    },
+    "limitations": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 20,
+      "minItems": 1,
+      "title": "Limitations",
+      "type": "array"
+    },
+    "local_alternative": {
+      "$ref": "#/$defs/ModelEndpoint"
+    },
+    "model_qualification": {
+      "const": "not-established",
+      "default": "not-established",
+      "title": "Model Qualification",
+      "type": "string"
+    },
+    "primary": {
+      "$ref": "#/$defs/ModelEndpoint"
+    },
+    "rationale": {
+      "minLength": 1,
+      "title": "Rationale",
+      "type": "string"
+    },
+    "role_policy": {
+      "const": "inherit-primary",
+      "default": "inherit-primary",
+      "title": "Role Policy",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "ModelPolicy/v1",
+      "default": "ModelPolicy/v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "selection_status": {
+      "const": "preferred-development",
+      "default": "preferred-development",
+      "title": "Selection Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "primary",
+    "local_alternative",
+    "rationale",
+    "evidence_sources",
+    "limitations"
+  ],
+  "title": "ModelPolicy",
+  "type": "object"
+}

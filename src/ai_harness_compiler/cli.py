@@ -31,6 +31,7 @@ from ai_harness_compiler.models.grounded_analysis import (
 )
 from ai_harness_compiler.models.grounding import GroundingExtraction, GroundingQuotationReport
 from ai_harness_compiler.models.memory import MemoryRecord, RecordDraft
+from ai_harness_compiler.models.model_policy import ModelPolicy
 from ai_harness_compiler.models.model_session import (
     ModelSessionReport,
     SessionPlan,
@@ -95,6 +96,7 @@ MODELS: dict[str, type[Contract]] = {
     "compact-understanding": CompactAnalysisSpec,
     "understanding-comparison": ComparisonReport,
     "understanding-comparison-plan": ComparisonPlan,
+    "model-policy": ModelPolicy,
 }
 
 
@@ -171,12 +173,16 @@ def main(argv: list[str] | None = None) -> int:
     understanding_command.add_argument(
         "--max-understanding-bytes", type=int, default=4 * 1024 * 1024
     )
-    study_command = commands.add_parser("study", help="Propose understanding with local Ollama")
+    policy_command = commands.add_parser("model-policy", help="Show the central model preference")
+    policy_command.add_argument("--model-policy", type=Path)
+    study_command = commands.add_parser("study", help="Propose understanding with the primary LLM")
     study_command.add_argument("input", type=Path)
-    study_command.add_argument("--model", required=True, help="Explicit installed Ollama model")
+    study_command.add_argument("--provider", choices=["codex-cli", "ollama"])
+    study_command.add_argument("--model", help="Override model; alone preserves legacy Ollama mode")
+    study_command.add_argument("--model-policy", type=Path)
     study_command.add_argument("--output", type=Path, required=True, help="New proposal JSON file")
-    study_command.add_argument("--timeout-seconds", type=int, default=60)
-    study_command.add_argument("--max-output-tokens", type=int, default=4096)
+    study_command.add_argument("--timeout-seconds", type=int, default=180)
+    study_command.add_argument("--max-output-tokens", type=int, help="Ollama only; default 4096")
     study_command.add_argument("--max-manifest-bytes", type=int, default=DEFAULT_MAX_MANIFEST_BYTES)
     eval_command = commands.add_parser("eval-understanding", help="Evaluate saved artifact offline")
     eval_command.add_argument("input", type=Path)
@@ -267,6 +273,11 @@ def main(argv: list[str] | None = None) -> int:
             return execute(args)
         if args.command == "schema":
             print(json_text(MODELS[args.model].model_json_schema()), end="")
+            return 0
+        if args.command == "model-policy":
+            from ai_harness_compiler.model_policy import load_model_policy
+
+            print(json_text(load_model_policy(args.model_policy).model_dump()), end="")
             return 0
         if args.command in {"compare-understanding", "validate-understanding-comparison"}:
             from ai_harness_compiler.comparison_runner import (
@@ -419,24 +430,54 @@ def main(argv: list[str] | None = None) -> int:
             print(f"Artifact eval: {eval_report.status}; model qualification: not-established.")
             return 0 if eval_report.status == "pass" else 1
         if args.command == "study":
-            from ai_harness_compiler.adapters.ollama import OllamaSettings, OllamaUnderstandingModel
-            from ai_harness_compiler.understanding import study_project
+            from ai_harness_compiler.model_policy import load_model_policy
 
             if args.output.exists():
                 raise FileExistsError("STUDY_EXISTS: Output exists; choose a new file")
-            model = OllamaUnderstandingModel(
-                OllamaSettings(
-                    model=args.model,
-                    timeout_seconds=args.timeout_seconds,
-                    max_output_tokens=args.max_output_tokens,
+            policy = load_model_policy(args.model_policy)
+            provider = args.provider or (
+                "ollama" if args.model is not None else policy.primary.provider
+            )
+            model_name = args.model if args.model is not None else policy.endpoint(provider).model
+            project = load_project(args.input, max_manifest_bytes=args.max_manifest_bytes)
+            if provider == "codex-cli":
+                from ai_harness_compiler.adapters.codex_cli import (
+                    CodexCLISettings,
+                    CodexCompactModel,
                 )
-            )
-            understanding = study_project(
-                load_project(args.input, max_manifest_bytes=args.max_manifest_bytes), model
-            )
+                from ai_harness_compiler.grounding import extract_grounding
+
+                if args.max_output_tokens is not None:
+                    raise ValueError("STUDY_OUTPUT_TOKENS: Token cap is supported only for Ollama")
+                extraction = extract_grounding(project)
+                proposal = CodexCompactModel(
+                    CodexCLISettings(model_name, args.timeout_seconds)
+                ).generate_compact(extraction)
+                understanding = CompactAnalysisSpec(
+                    extraction=extraction, interpretation=proposal
+                ).understanding
+            else:
+                from ai_harness_compiler.adapters.ollama import (
+                    OllamaSettings,
+                    OllamaUnderstandingModel,
+                )
+                from ai_harness_compiler.understanding import study_project
+
+                model = OllamaUnderstandingModel(
+                    OllamaSettings(
+                        model=model_name,
+                        timeout_seconds=args.timeout_seconds,
+                        max_output_tokens=4096
+                        if args.max_output_tokens is None
+                        else args.max_output_tokens,
+                    )
+                )
+                understanding = study_project(project, model)
             with args.output.open("x", encoding="utf-8", newline="\n") as stream:
                 stream.write(json_text(understanding.model_dump()))
-            print(f"Understanding proposed: {args.output}; requested Ollama model: {args.model}.")
+            print(
+                f"Understanding proposed: {args.output}; provider: {provider}; model: {model_name}."
+            )
             print("Human review required; proposal has not been applied to the harness.")
             return 0
         if args.command == "prepare-grounding":

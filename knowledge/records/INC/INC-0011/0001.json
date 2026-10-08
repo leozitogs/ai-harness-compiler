@@ -1,0 +1,65 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Include prerequisite stories without marking them completed",
+    "Run one specialist under primary policy",
+    "Observe fixed CODEX_EVENT_INVALID diagnostic",
+    "Clarify host-symbolic actions, required-tools inventory and JSON-only response",
+    "Execute a fresh run that reached awaiting_po with three approved host tools"
+  ],
+  "author": "codex:engineering",
+  "challenge": "Bridge persona tool requests into symbolic host API decisions without invoking Codex session tools or violating its strict final-message contract.",
+  "consequences": [],
+  "context": "Scope without prerequisites was first rejected before model calls. Corrected scope reached model boundary but first decision failed. No private stream or reasoning persisted.",
+  "created_at": "2026-10-08T22:25:11.116650+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "562 offline tests/checks; primary adversarial/example and one real specialist reached structural completion/PO gate. No semantic qualification.",
+      "outcome": "observed",
+      "sha256": "a2b26377909f56476aa5c3499a169a6af679a2a07086d07de790f4e66e67df2f",
+      "source": "docs/delivery/ahc-023-primary-selection.md"
+    },
+    {
+      "command": null,
+      "note": "562 offline tests/checks; primary adversarial/example and one real specialist reached structural completion/PO gate. No semantic qualification.",
+      "outcome": "passed",
+      "sha256": "b6cb4bb22017a1ca4a2c9e73f3e277bdcf83c383b46ad72ed9557ef08d98a483",
+      "source": "tests/test_team_codex.py"
+    },
+    {
+      "command": null,
+      "note": "562 offline tests/checks; primary adversarial/example and one real specialist reached structural completion/PO gate. No semantic qualification.",
+      "outcome": "observed",
+      "sha256": "6a15ac2bf2abc13f8ab476448b3a2bb1bc87e7396728bdd738188595dbc747b4",
+      "source": "docs/evidence/ahc-023-primary-smokes-20261008/observation.json"
+    }
+  ],
+  "id": "INC-0011",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "One live role and one successful integration run",
+    "Original offending stream metadata not retained"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0018",
+    "DOC-0013"
+  ],
+  "resolution": "Later integration run completed; causal attribution remains limited. Keep earlier failure in history and do not infer general agent robustness.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": "A stream invariant reported CODEX_EVENT_INVALID; exact offending event was not retained. Ambiguity between host API names and CLI tools is an engineering hypothesis, not proven sole cause.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "First real specialist run failed before any host observation; isolated diagnostic returned CODEX_EVENT_INVALID. Later symbolic-JSON prompt run reached PO gate.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Primeira decisão Codex do especialista rejeitada pelo protocolo",
+  "updated_at": "2026-10-08T22:25:11.116650+00:00"
+}

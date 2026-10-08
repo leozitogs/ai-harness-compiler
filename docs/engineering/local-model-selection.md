@@ -1,5 +1,9 @@
 # Estudo de modelo local — 2026-10-07
 
+Este estudo histórico compara alternativas locais. O principal atual das tarefas
+com LLM é Codex CLI / gpt-6.1-sol; Qwen3 abaixo permanece a alternativa local
+explícita. Consulte a [seleção atual](../delivery/ahc-023-primary-selection.md).
+
 Escolha provisória para desenvolvimento: **Qwen3 4B Instruct, Q4_K_M**, perfil
 `ahc-qwen3:4b-instruct-8k`. Instalado no D junto ao Qwen3.5 4B para comparação.
 Nenhum dos dois foi qualificado semanticamente para concluir a AHC-019.

@@ -1,0 +1,84 @@
+{
+  "alternatives": [
+    "Qwen3.5 4B",
+    "Modelos 8–9B com menor margem de VRAM"
+  ],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [
+    "Ambos têm falhas de conteúdo",
+    "Manter uma execução local por vez"
+  ],
+  "context": "RTX 4050 6GB, RAM 15,71 GiB. Um ensaio por modelo com mesmo manifesto/prompt; não há benchmark estatístico.",
+  "created_at": "2026-10-07T19:20:12.489863+00:00",
+  "decision": "Usar ahc-qwen3:4b-instruct-8k provisoriamente, sem adoção automática de propostas. Escolha final depende de evals semânticos.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Ensaio real de desenvolvimento com contratos válidos e findings semânticos; não é eval reservado.",
+      "outcome": "observed",
+      "sha256": "6e3580611854762c5c4b20a1dde036fb834f7eb79fb5f570adc5678d870923a3",
+      "source": "docs/engineering/local-model-selection.md"
+    },
+    {
+      "command": null,
+      "note": "Ensaio real de desenvolvimento com contratos válidos e findings semânticos; não é eval reservado.",
+      "outcome": "observed",
+      "sha256": "499be7b5e52ffd53e0f81eea62581b2602cc7f2da2c88eabe2db04f4ac7e4ef0",
+      "source": "docs/evidence/model-study-20261007/qwen3-run.json"
+    },
+    {
+      "command": null,
+      "note": "Ensaio real de desenvolvimento com contratos válidos e findings semânticos; não é eval reservado.",
+      "outcome": "observed",
+      "sha256": "fb7479c3216cb17c4523f97ac059af036031062bf125cfea9a37b7d4db3a76a9",
+      "source": "docs/evidence/model-study-20261007/qwen3-understanding.json"
+    },
+    {
+      "command": null,
+      "note": "Ensaio real de desenvolvimento com contratos válidos e findings semânticos; não é eval reservado.",
+      "outcome": "observed",
+      "sha256": "da1755a18f687e80629a2d47071a0dbdb21c047cffe314d0768b236bdb0a0149",
+      "source": "docs/evidence/model-study-20261007/qwen35-run.json"
+    },
+    {
+      "command": null,
+      "note": "Ensaio real de desenvolvimento com contratos válidos e findings semânticos; não é eval reservado.",
+      "outcome": "observed",
+      "sha256": "2800700779c206d684ffedff77cd9c3a421edff368ebc7dc39a0e6a190621f3f",
+      "source": "docs/evidence/model-study-20261007/qwen35-understanding.json"
+    }
+  ],
+  "id": "DE-0005",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "Uma fixture pública, sem holdout",
+    "Tempos incluem carregamento/cache e variam com RAM livre",
+    "Nenhum modelo aceito semanticamente pelo PO",
+    "Current source documents operational Codex primary; historical observed runs keep original programs and semantic qualification remains pending"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0010"
+  ],
+  "resolution": null,
+  "review_note": "Current sources refreshed; primary preference is operational and does not rewrite historical model findings or constitute semantic qualification.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 6,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Qwen3 4B Instruct Q4_K_M com contexto 8k como perfil local experimental; Qwen3.5 4B instalado para comparação.",
+  "supersedes": null,
+  "tags": [
+    "ollama",
+    "model-selection",
+    "semantic-quality"
+  ],
+  "title": "Modelo local provisório escolhido por hardware e ensaio",
+  "updated_at": "2026-10-08T22:24:35.417743+00:00"
+}

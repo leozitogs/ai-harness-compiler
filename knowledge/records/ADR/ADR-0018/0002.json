@@ -1,0 +1,75 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO requests best available results as primary. Existing eight-case technical inspection favors Codex source bindings and operational obligations; no formal semantic adjudication.",
+  "created_at": "2026-10-08T22:25:10.830922+00:00",
+  "decision": "Use packaged ModelPolicy/v1 for study and all six LLM roles; preserve offline compiler/team mode, explicit-only fallback, pinned team snapshots, bounds and PO gates.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "562 offline tests/checks; primary adversarial/example and one real specialist reached structural completion/PO gate. No semantic qualification.",
+      "outcome": "observed",
+      "sha256": "66bca0222d01652171fbdfb527180b7204db427794e4f41f0895004d50ebc8d2",
+      "source": "docs/adr/0018-primary-model-policy.md"
+    },
+    {
+      "command": null,
+      "note": "562 offline tests/checks; primary adversarial/example and one real specialist reached structural completion/PO gate. No semantic qualification.",
+      "outcome": "observed",
+      "sha256": "a2b26377909f56476aa5c3499a169a6af679a2a07086d07de790f4e66e67df2f",
+      "source": "docs/delivery/ahc-023-primary-selection.md"
+    },
+    {
+      "command": null,
+      "note": "562 offline tests/checks; primary adversarial/example and one real specialist reached structural completion/PO gate. No semantic qualification.",
+      "outcome": "observed",
+      "sha256": "1465465cfb8e2bdc4995733a1731b18d8cc67ba82069691e38fe54aaae44c7a4",
+      "source": "src/ai_harness_compiler/default-model-policy.json"
+    },
+    {
+      "command": null,
+      "note": "562 offline tests/checks; primary adversarial/example and one real specialist reached structural completion/PO gate. No semantic qualification.",
+      "outcome": "passed",
+      "sha256": "87f39fa0b1bced59c479d2bf6dcb435400e6afadb6b5b824b7b2ae171395636d",
+      "source": "tests/test_model_policy.py"
+    },
+    {
+      "command": null,
+      "note": "562 offline tests/checks; primary adversarial/example and one real specialist reached structural completion/PO gate. No semantic qualification.",
+      "outcome": "passed",
+      "sha256": "b6cb4bb22017a1ca4a2c9e73f3e277bdcf83c383b46ad72ed9557ef08d98a483",
+      "source": "tests/test_team_codex.py"
+    }
+  ],
+  "id": "ADR-0018",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "Not a universal-best or production qualification claim",
+    "One real specialist smoke, six fake-provider role tests",
+    "No cloud weights/resolved identity attestation",
+    "No holdout or self-authored human approval"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0017",
+    "INC-0010"
+  ],
+  "resolution": null,
+  "review_note": "Central preference, pinned runs, no-fallback and permission/budget invariants checked; selection remains provisional development.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "gpt-6.1-sol via Codex CLI is the central development preference; Qwen remains an explicit local alternative.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Principal operacional compartilhado para tarefas com LLM",
+  "updated_at": "2026-10-08T22:25:10.896110+00:00"
+}

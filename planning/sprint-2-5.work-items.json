@@ -221,7 +221,15 @@
       ],
       "responsible": "code-collaborator-supported-by-codex",
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
-      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/17"
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/17",
+      "progress_note": "Operational primary chosen from paired development source/behavior inspection: Codex CLI gpt-6.1-sol, central typed policy shared by study and six LLM-backed roles. Local alternative explicit; no automatic fallback. Example/adversarial and one specialist live smokes passed structurally. Semantic adjudication and qualification pending.",
+      "evidence_sources": [
+        "docs/delivery/ahc-023-primary-selection.md",
+        "docs/adr/0018-primary-model-policy.md",
+        "src/ai_harness_compiler/default-model-policy.json",
+        "tests/test_model_policy.py",
+        "tests/test_team_codex.py"
+      ]
     },
     {
       "id": "s25-23-verify",

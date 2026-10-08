@@ -17,7 +17,7 @@ from ai_harness_compiler.adapters.ollama import COMPACT_PROMPT, compact_response
 from ai_harness_compiler.models.compact_analysis import CompactProposal, compact_input
 from ai_harness_compiler.models.grounding import GroundingExtraction
 
-POLICY_VERSION = "codex-compact-cli/v4"
+POLICY_VERSION = "codex-structured-cli/v5"
 MAX_STREAM_BYTES = 2 * 1024 * 1024
 MAX_INPUT_BYTES = 256 * 1024
 OVERRIDES = (
@@ -127,9 +127,16 @@ class CodexCompactModel:
         self.settings = settings
 
     def generate_compact(self, extraction: GroundingExtraction) -> CompactProposal:
-        started = monotonic()
         packet = compact_input(extraction)
         prompt = COMPACT_PROMPT + "\nUntrusted input JSON:\n" + packet.model_dump_json()
+        answer = self.generate_json(
+            prompt, compact_response_schema(len(packet.criteria), len(packet.context))
+        )
+        return CompactProposal.model_validate_json(answer)
+
+    def generate_json(self, prompt: str, schema: dict[str, Any]) -> str:
+        """Return final structured text; callers validate their own domain contract."""
+        started = monotonic()
         if len(prompt.encode()) > MAX_INPUT_BYTES:
             raise ValueError("CODEX_INPUT_LIMIT")
         executable = shutil.which(self.settings.executable)
@@ -161,11 +168,7 @@ class CodexCompactModel:
         with tempfile.TemporaryDirectory(prefix="ahc-codex-") as directory:
             schema_file = Path(directory) / "schema.json"
             schema_file.write_text(
-                json.dumps(
-                    strict_schema(
-                        compact_response_schema(len(packet.criteria), len(packet.context))
-                    )
-                ),
+                json.dumps(strict_schema(schema)),
                 encoding="utf-8",
             )
             command = [
@@ -232,9 +235,21 @@ class CodexCompactModel:
                 reader.join(timeout=5)
                 if reader.is_alive():
                     raise ValueError("CODEX_STREAM_INCOMPLETE")
-                if failures or process.returncode != 0 or len(result) != 1:
+                if failures:
+                    error = str(failures[0])
+                    if error in {
+                        "CODEX_OUTPUT_LIMIT",
+                        "CODEX_EVENT_INVALID",
+                        "CODEX_PROVIDER_ERROR",
+                        "CODEX_UNEXPECTED_TOOL_EVENT",
+                        "CODEX_INCOMPLETE",
+                        "CODEX_EVENT_AFTER_COMPLETION",
+                    }:
+                        raise ValueError(error)
                     raise ValueError("CODEX_GENERATION_FAILED")
-                return CompactProposal.model_validate_json(result[0])
+                if process.returncode != 0 or len(result) != 1:
+                    raise ValueError("CODEX_GENERATION_FAILED")
+                return result[0]
             except subprocess.TimeoutExpired as exc:
                 raise TimeoutError("CODEX_TIMEOUT") from exc
             finally:
