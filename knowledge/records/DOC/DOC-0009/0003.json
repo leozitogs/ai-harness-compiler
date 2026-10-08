@@ -1,0 +1,67 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "AC observed before first smoke; one attempt per session, second case not-run. No benchmark, paired comparison or holdout.",
+  "created_at": "2026-10-08T06:21:08.410069+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "412 tests passed; mocked tests establish structural behavior only. Two live smokes rejected, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "10d4d3882165484a5aada0312cf64b1d979a4c9ba732afbdd2596c50639b5785",
+      "source": "docs/engineering/grounded-analysis.md"
+    },
+    {
+      "command": null,
+      "note": "412 tests passed; mocked tests establish structural behavior only. Two live smokes rejected, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "bb6ad232be0961394a86f165f6826e32d57d0c6c96b5bd81bba315a76140faeb",
+      "source": "docs/delivery/ahc-022-grounded-increment.md"
+    },
+    {
+      "command": null,
+      "note": "412 tests passed; mocked tests establish structural behavior only. Two live smokes rejected, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "2702407b5005f76e3602fa5fe1f9ab63c16524d4c386d11bbebfdbb39350f99b",
+      "source": "docs/evidence/ahc-022-grounded-smoke-20261008/session.json"
+    },
+    {
+      "command": null,
+      "note": "412 tests passed; mocked tests establish structural behavior only. Two live smokes rejected, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "07f33ecebeba7bcd261c7f44d39e5157cb11e5852c75cb61ad90a11f850cfb79",
+      "source": "docs/evidence/ahc-022-grounded-diagnostics-20261008/session.json"
+    }
+  ],
+  "id": "DOC-0009",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "One criterion linkage failure is not a full semantic review",
+    "No successful live grounded proposal",
+    "No causal performance claim"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0014",
+    "INC-0007"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 3,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Operação, compatibilidade e diagnósticos; 23.603 s genérico, 14.665 s criterion-rule-link-invalid.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Modo grounded e dois smokes rejeitados",
+  "updated_at": "2026-10-08T07:04:53.171111+00:00"
+}

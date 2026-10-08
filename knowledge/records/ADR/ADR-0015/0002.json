@@ -1,0 +1,73 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Generic validation failures blocked targeted correction; live feedback loop now rejects invalid references then criterion inventory and stops at its configured limit.",
+  "created_at": "2026-10-08T07:04:53.279185+00:00",
+  "decision": "Use fixed diagnostics bound to original input evidence and prior failed attempt; charge every isolated call and stop on budgets, timeout or identity drift. Never silently promote hypotheses or relax source invariants.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "450 local tests passed; two real repair journals validated, latest repair-limit with two rejected attempts. No semantic pass or qualification.",
+      "outcome": "observed",
+      "sha256": "c919fa59d9e9851b412d9d79cf57725c009f264a6d3d982ae7a17f1e076e0746",
+      "source": "docs/adr/0015-bounded-grounded-repair.md"
+    },
+    {
+      "command": null,
+      "note": "450 local tests passed; two real repair journals validated, latest repair-limit with two rejected attempts. No semantic pass or qualification.",
+      "outcome": "observed",
+      "sha256": "939c68e438ce8b8a614e8a970d1f867b33ca84a9e81c279ddb4fb26fa79a9d77",
+      "source": "src/ai_harness_compiler/models/repair.py"
+    },
+    {
+      "command": null,
+      "note": "450 local tests passed; two real repair journals validated, latest repair-limit with two rejected attempts. No semantic pass or qualification.",
+      "outcome": "observed",
+      "sha256": "558d86b4855063fe1f7ab7bb32b020b8b1cde64883df31f9b8040b8397374af5",
+      "source": "src/ai_harness_compiler/repairs.py"
+    },
+    {
+      "command": null,
+      "note": "450 local tests passed; two real repair journals validated, latest repair-limit with two rejected attempts. No semantic pass or qualification.",
+      "outcome": "passed",
+      "sha256": "33f6cd66578242818350543c65f9ee35808f5c2fd2128fba10caa33f8444e763",
+      "source": "tests/test_repair.py"
+    }
+  ],
+  "id": "ADR-0015",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "Single-case development only",
+    "Provider metadata observed, not authenticated",
+    "Startup/I-O/cleanup may exceed nominal allowance",
+    "Model remains unqualified"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0012",
+    "ADR-0014",
+    "INC-0007"
+  ],
+  "resolution": null,
+  "review_note": "Budget/history/feedback and identity-drift safeguards verified; rejected live loop preserved, no model success claim.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Uma chamada por worker e controller próprio de development; diagnóstico e journal sem proposta rejeitada ou reasoning privado.",
+  "supersedes": null,
+  "tags": [
+    "repair",
+    "budgets",
+    "grounding"
+  ],
+  "title": "Repair com feedback escopado e tentativas cobradas",
+  "updated_at": "2026-10-08T07:04:53.333494+00:00"
+}

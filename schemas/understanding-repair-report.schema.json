@@ -1351,6 +1351,81 @@
       "title": "ProviderObservation",
       "type": "object"
     },
+    "RepairAttempt": {
+      "additionalProperties": false,
+      "properties": {
+        "effective_timeout_seconds": {
+          "exclusiveMinimum": 0,
+          "maximum": 300,
+          "title": "Effective Timeout Seconds",
+          "type": "number"
+        },
+        "elapsed_seconds": {
+          "minimum": 0,
+          "title": "Elapsed Seconds",
+          "type": "number"
+        },
+        "index": {
+          "maximum": 3,
+          "minimum": 1,
+          "title": "Index",
+          "type": "integer"
+        },
+        "request": {
+          "$ref": "#/$defs/WorkerRequest"
+        },
+        "result": {
+          "$ref": "#/$defs/WorkerResult"
+        },
+        "started_after_seconds": {
+          "minimum": 0,
+          "title": "Started After Seconds",
+          "type": "number"
+        }
+      },
+      "required": [
+        "index",
+        "request",
+        "result",
+        "started_after_seconds",
+        "elapsed_seconds",
+        "effective_timeout_seconds"
+      ],
+      "title": "RepairAttempt",
+      "type": "object"
+    },
+    "RepairPlan": {
+      "additionalProperties": false,
+      "properties": {
+        "max_repairs": {
+          "default": 1,
+          "maximum": 2,
+          "minimum": 0,
+          "title": "Max Repairs",
+          "type": "integer"
+        },
+        "repair_prompt_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Repair Prompt Sha256",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "UnderstandingRepairPlan/v1",
+          "default": "UnderstandingRepairPlan/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "session": {
+          "$ref": "#/$defs/SessionPlan"
+        }
+      },
+      "required": [
+        "session",
+        "repair_prompt_sha256"
+      ],
+      "title": "RepairPlan",
+      "type": "object"
+    },
     "ReviewAnswer": {
       "additionalProperties": false,
       "properties": {
@@ -1562,91 +1637,6 @@
         "checks"
       ],
       "title": "SemanticReview",
-      "type": "object"
-    },
-    "SessionJob": {
-      "additionalProperties": false,
-      "properties": {
-        "case_id": {
-          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
-          "title": "Case Id",
-          "type": "string"
-        },
-        "effective_timeout_seconds": {
-          "default": 0,
-          "minimum": 0,
-          "title": "Effective Timeout Seconds",
-          "type": "number"
-        },
-        "elapsed_seconds": {
-          "minimum": 0,
-          "title": "Elapsed Seconds",
-          "type": "number"
-        },
-        "error_code": {
-          "anyOf": [
-            {
-              "pattern": "^[a-z][a-z0-9_-]{0,63}$",
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "Error Code"
-        },
-        "evaluation": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/UnderstandingEvalReport"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null
-        },
-        "generation": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/WorkerResult"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null
-        },
-        "index": {
-          "minimum": 1,
-          "title": "Index",
-          "type": "integer"
-        },
-        "repetition": {
-          "maximum": 3,
-          "minimum": 1,
-          "title": "Repetition",
-          "type": "integer"
-        },
-        "state": {
-          "enum": [
-            "completed",
-            "error",
-            "not-run"
-          ],
-          "title": "State",
-          "type": "string"
-        }
-      },
-      "required": [
-        "index",
-        "case_id",
-        "repetition",
-        "state",
-        "elapsed_seconds"
-      ],
-      "title": "SessionJob",
       "type": "object"
     },
     "SessionPlan": {
@@ -2421,6 +2411,40 @@
       "title": "UnderstandingStatement",
       "type": "object"
     },
+    "WorkerRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "prompt_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Prompt Sha256",
+          "type": "string"
+        },
+        "repair_feedback": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/GroundingDiagnostic"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "request": {
+          "$ref": "#/$defs/UnderstandingRequest"
+        },
+        "settings": {
+          "$ref": "#/$defs/SessionSettings"
+        }
+      },
+      "required": [
+        "settings",
+        "request",
+        "prompt_sha256"
+      ],
+      "title": "WorkerRequest",
+      "type": "object"
+    },
     "WorkerResult": {
       "additionalProperties": false,
       "properties": {
@@ -2521,34 +2545,29 @@
   },
   "additionalProperties": false,
   "properties": {
-    "attempts_used": {
-      "maximum": 30,
-      "minimum": 0,
-      "title": "Attempts Used",
-      "type": "integer"
+    "attempts": {
+      "items": {
+        "$ref": "#/$defs/RepairAttempt"
+      },
+      "maxItems": 3,
+      "title": "Attempts",
+      "type": "array"
     },
     "elapsed_seconds": {
       "minimum": 0,
       "title": "Elapsed Seconds",
       "type": "number"
     },
-    "evaluation_status": {
-      "enum": [
-        "not-run",
-        "fail",
-        "error"
+    "evaluation": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/UnderstandingEvalReport"
+        },
+        {
+          "type": "null"
+        }
       ],
-      "title": "Evaluation Status",
-      "type": "string"
-    },
-    "jobs": {
-      "items": {
-        "$ref": "#/$defs/SessionJob"
-      },
-      "maxItems": 192,
-      "minItems": 1,
-      "title": "Jobs",
-      "type": "array"
+      "default": null
     },
     "model_qualification": {
       "const": "not-established",
@@ -2557,50 +2576,34 @@
       "type": "string"
     },
     "plan": {
-      "$ref": "#/$defs/SessionPlan"
-    },
-    "run_status": {
-      "enum": [
-        "completed",
-        "limited",
-        "stopped"
-      ],
-      "title": "Run Status",
-      "type": "string"
+      "$ref": "#/$defs/RepairPlan"
     },
     "schema_version": {
-      "const": "UnderstandingModelSession/v1",
-      "default": "UnderstandingModelSession/v1",
+      "const": "UnderstandingRepairReport/v1",
+      "default": "UnderstandingRepairReport/v1",
       "title": "Schema Version",
       "type": "string"
     },
-    "stop_reason": {
-      "anyOf": [
-        {
-          "enum": [
-            "attempt-limit",
-            "time-limit",
-            "worker-timeout",
-            "model-changed"
-          ],
-          "type": "string"
-        },
-        {
-          "type": "null"
-        }
+    "termination": {
+      "enum": [
+        "completed",
+        "repair-limit",
+        "not-repairable",
+        "attempt-limit",
+        "time-limit",
+        "worker-timeout",
+        "model-changed"
       ],
-      "default": null,
-      "title": "Stop Reason"
+      "title": "Termination",
+      "type": "string"
     }
   },
   "required": [
     "plan",
-    "jobs",
-    "attempts_used",
+    "attempts",
     "elapsed_seconds",
-    "run_status",
-    "evaluation_status"
+    "termination"
   ],
-  "title": "ModelSessionReport",
+  "title": "RepairReport",
   "type": "object"
 }

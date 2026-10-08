@@ -30,7 +30,9 @@ GroundingExtraction/v1 → proposta independente → GroundingQuotationReport/v1
 Átomos preservam declarações e metadados; quotes são verificadas sem avaliar
 significado. O modo opcional grounded consome os átomos e gera GroundedAnalysis/v1,
 com destino tipado de cada critério, sob o runner supervisionado (ADR-0014).
-O modo baseline mantém UnderstandingRequest/v1. Repair semântico segue planejado.
+O modo baseline mantém UnderstandingRequest/v1. Repair estrutural opcional tem
+plano/journal próprio, tentativas explícitas e feedback escopado (ADR-0015).
+Julgamento semântico e qualificação permanecem separados.
 
 `planning.py` transforma CapabilityGraph em TaskGraph/v1. O comando `tasks` permite
 selecionar capacidades para uma sprint, com gates e critérios preservados. O plano

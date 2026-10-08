@@ -19,6 +19,8 @@ from ai_harness_compiler.models.evidence import EvidencePack, SourceRecord
 from ai_harness_compiler.models.grounded_analysis import (
     GroundedAnalysisProposal,
     GroundedAnalysisSpec,
+    GroundedRepairInput,
+    GroundingDiagnostic,
 )
 from ai_harness_compiler.models.grounding import GroundingExtraction, GroundingQuotationReport
 from ai_harness_compiler.models.memory import MemoryRecord, RecordDraft
@@ -28,6 +30,7 @@ from ai_harness_compiler.models.model_session import (
     SessionSettings,
     WorkerResult,
 )
+from ai_harness_compiler.models.repair import RepairPlan, RepairReport
 from ai_harness_compiler.models.semantic_eval import (
     FrozenUnderstandingCorpus,
     SemanticReview,
@@ -76,6 +79,10 @@ MODELS: dict[str, type[Contract]] = {
     "grounding-quotation-report": GroundingQuotationReport,
     "grounded-analysis-proposal": GroundedAnalysisProposal,
     "grounded-analysis": GroundedAnalysisSpec,
+    "grounding-diagnostic": GroundingDiagnostic,
+    "grounded-repair-input": GroundedRepairInput,
+    "understanding-repair-plan": RepairPlan,
+    "understanding-repair-report": RepairReport,
 }
 
 
@@ -200,6 +207,25 @@ def main(argv: list[str] | None = None) -> int:
     )
     session_validation.add_argument("input", type=Path, help="Session directory")
     session_validation.add_argument("--corpus", type=Path, required=True)
+    repair_command = commands.add_parser(
+        "run-understanding-repair", help="One development case with bounded charged repair attempts"
+    )
+    repair_command.add_argument("--corpus", type=Path, required=True)
+    repair_command.add_argument("--case", required=True)
+    repair_command.add_argument("--model", required=True)
+    repair_command.add_argument("--expected-model-sha256", required=True)
+    repair_command.add_argument("--output", type=Path, required=True)
+    repair_command.add_argument("--max-repairs", type=int, default=1)
+    repair_command.add_argument("--max-attempts", type=int, default=3)
+    repair_command.add_argument("--session-seconds", type=int, default=300)
+    repair_command.add_argument("--timeout-seconds", type=int, default=180)
+    repair_command.add_argument("--context-tokens", type=int, default=8192)
+    repair_command.add_argument("--max-output-tokens", type=int, default=4096)
+    repair_validation = commands.add_parser(
+        "validate-understanding-repair", help="Verify repair journal and frozen corpus"
+    )
+    repair_validation.add_argument("input", type=Path)
+    repair_validation.add_argument("--corpus", type=Path, required=True)
     schema_command = commands.add_parser("schema", help="Print a JSON Schema to stdout")
     schema_command.add_argument("model", choices=MODELS)
     args = parser.parse_args(argv)
@@ -215,6 +241,44 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "schema":
             print(json_text(MODELS[args.model].model_json_schema()), end="")
             return 0
+        if args.command in {"run-understanding-repair", "validate-understanding-repair"}:
+            from ai_harness_compiler.repairs import run_repair, validate_repair
+            from ai_harness_compiler.semantic_eval import FrozenCorpus
+
+            corpus = FrozenCorpus(args.corpus)
+            if args.command == "validate-understanding-repair":
+                repaired = validate_repair(corpus, args.input)
+                print(
+                    f"Repair journal valid: {repaired.termination}; qualification: not-established."
+                )
+                return 0
+            from ai_harness_compiler.adapters.ollama import OllamaSettings, prompt_digest
+            from ai_harness_compiler.model_sessions import IsolatedOllamaExecutor, make_plan
+
+            OllamaSettings(model=args.model)
+            settings = SessionSettings(
+                model=args.model,
+                analysis_mode="grounded",
+                expected_model_sha256=args.expected_model_sha256,
+                max_attempts=args.max_attempts,
+                session_seconds=args.session_seconds,
+                call_timeout_seconds=args.timeout_seconds,
+                context_tokens=args.context_tokens,
+                max_output_tokens=args.max_output_tokens,
+            )
+            repair_plan = RepairPlan(
+                session=make_plan(corpus, settings, prompt_digest("grounded"), [args.case]),
+                max_repairs=args.max_repairs,
+                repair_prompt_sha256=prompt_digest("repair"),
+            )
+            repaired = run_repair(repair_plan, args.output, IsolatedOllamaExecutor())
+            artifact_state = repaired.evaluation.status if repaired.evaluation else "not-run"
+            print(
+                f"Repair: {repaired.termination}; attempts: {len(repaired.attempts)}; "
+                f"artifact eval: {artifact_state}."
+            )
+            print("Semantic judgment pending; model qualification: not-established.")
+            return 0 if repaired.termination == "completed" else 1
         if args.command in {"run-understanding-evals", "validate-model-session"}:
             from ai_harness_compiler.model_sessions import (
                 IsolatedOllamaExecutor,

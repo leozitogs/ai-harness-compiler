@@ -6,7 +6,11 @@ from pydantic import Field, model_validator
 
 from ai_harness_compiler.models.base import Contract, Identifier, Text
 from ai_harness_compiler.models.evidence import Digest, canonical_project_digest
-from ai_harness_compiler.models.grounded_analysis import GroundedAnalysisSpec
+from ai_harness_compiler.models.grounded_analysis import (
+    GroundedAnalysisSpec,
+    GroundedRepairInput,
+    GroundingDiagnostic,
+)
 from ai_harness_compiler.models.semantic_eval import (
     UnderstandingEvalCase,
     UnderstandingEvalReport,
@@ -126,6 +130,20 @@ class WorkerRequest(Contract):
     settings: SessionSettings
     request: UnderstandingRequest
     prompt_sha256: Digest
+    repair_feedback: GroundingDiagnostic | None = None
+
+    @model_validator(mode="after")
+    def validate_feedback(self) -> Self:
+        if self.repair_feedback:
+            from ai_harness_compiler.grounding import extract_grounding
+
+            if self.settings.analysis_mode != "grounded":
+                raise ValueError("Repair is only supported for grounded analysis")
+            extraction = extract_grounding(self.request.original_input)
+            if extraction.request != self.request:
+                raise ValueError("Repair requires canonical input reference inventory")
+            GroundedRepairInput(extraction=extraction, feedback=self.repair_feedback)
+        return self
 
 
 class WorkerResult(Contract):
@@ -136,10 +154,13 @@ class WorkerResult(Contract):
     grounded_analysis: GroundedAnalysisSpec | None = None
     observation: ProviderObservation | None = None
     error_code: Identifier | None = None
+    failure_diagnostic: GroundingDiagnostic | None = None
 
     @model_validator(mode="after")
     def consistent_result(self) -> Self:
         if self.status == "completed":
+            if self.failure_diagnostic is not None:
+                raise ValueError("Completed generation cannot claim a failure diagnostic")
             if (
                 not all((self.identity, self.settings, self.understanding, self.observation))
                 or self.error_code
@@ -178,6 +199,8 @@ class WorkerResult(Contract):
             )
         ):
             raise ValueError("Error generation cannot claim completed execution evidence")
+        if self.failure_diagnostic and self.error_code != self.failure_diagnostic.error_code:
+            raise ValueError("Failure diagnostic contradicts worker error code")
         return self
 
 

@@ -75,7 +75,11 @@ Discharging=false. Sem alteração de plano de energia. Modelo esperado:
 
 ## Próximos incrementos
 
-Revisão semântica da rubrica/expectativas, comparação do development e repair
-limitado com diagnóstico tipado. Depois, congelar candidato antes do holdout e
+O [repair estrutural limitado](grounded-repair.md) está disponível em fluxo próprio,
+com cada chamada contabilizada. O runner de geração original mantém uma chamada
+por tentativa; classificação e suporte semântico continuam pendentes.
+
+Revisão semântica da rubrica/expectativas e comparação do development.
+Depois, congelar candidato antes do holdout e
 qualificar com repetições, energia e recursos. O smoke deste incremento verifica
 somente o caminho de execução; não mede superioridade do modelo ou do programa.
