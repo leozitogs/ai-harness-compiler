@@ -133,10 +133,15 @@
       "responsible": "code-collaborator-supported-by-codex",
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
       "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16",
-      "progress_note": "Preparatory experimental grounded-analysis/v1 program and safe diagnostics implemented. Repair, development comparison and semantic rubric acceptance remain pending. No hidden retries.",
+      "progress_note": "Separate bounded repair controller/diagnostics implemented for review. Real two-attempt smoke rejected at repair-limit; development comparison, rubric/PO acceptance and qualification remain pending.",
       "evidence_sources": [
         "docs/adr/0014-grounded-analysis-dispositions.md",
-        "docs/engineering/grounded-analysis.md"
+        "docs/engineering/grounded-analysis.md",
+        "docs/adr/0015-bounded-grounded-repair.md",
+        "docs/delivery/ahc-022-repair-increment.md",
+        "docs/engineering/grounded-repair.md",
+        "tests/test_repair.py",
+        "docs/evidence/ahc-022-repair-scoped-20261008/repair.json"
       ]
     },
     {

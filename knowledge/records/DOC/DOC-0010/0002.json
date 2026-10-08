@@ -1,0 +1,67 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "450 tests, 38 new repair cases; one real initial rejected call and a later initial/correction pair. AC observed; no benchmark or holdout.",
+  "created_at": "2026-10-08T07:04:53.388707+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "450 local tests passed; two real repair journals validated, latest repair-limit with two rejected attempts. No semantic pass or qualification.",
+      "outcome": "observed",
+      "sha256": "e6a9926efb67e371ff0003321614951b0905053c3d473a5c4c738726624ffa23",
+      "source": "docs/engineering/grounded-repair.md"
+    },
+    {
+      "command": null,
+      "note": "450 local tests passed; two real repair journals validated, latest repair-limit with two rejected attempts. No semantic pass or qualification.",
+      "outcome": "observed",
+      "sha256": "6728ecfa4772283c0432f3fbf5fd9f691b8859afa1146e4fcf9e237103b08771",
+      "source": "docs/delivery/ahc-022-repair-increment.md"
+    },
+    {
+      "command": null,
+      "note": "450 local tests passed; two real repair journals validated, latest repair-limit with two rejected attempts. No semantic pass or qualification.",
+      "outcome": "observed",
+      "sha256": "4df5637e388d4b91eea77dacc805f7751aa4116e328a3282f56424079a77ffa6",
+      "source": "docs/evidence/ahc-022-repair-smoke-20261008/repair.json"
+    },
+    {
+      "command": null,
+      "note": "450 local tests passed; two real repair journals validated, latest repair-limit with two rejected attempts. No semantic pass or qualification.",
+      "outcome": "observed",
+      "sha256": "9d9637b12c55e2c73d5f37fbc8c6587f70228ca03d84157e973b2546b136b4c8",
+      "source": "docs/evidence/ahc-022-repair-scoped-20261008/repair.json"
+    }
+  ],
+  "id": "DOC-0010",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "No accepted real proposal or semantic review",
+    "No causal latency comparison",
+    "Rejected candidate text not persisted"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0015",
+    "INC-0007"
+  ],
+  "resolution": null,
+  "review_note": "Both journals verified; explicit attempt accounting, qualification remains not-established.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "CLI, journal fechado e dois smokes preservados: not-repairable e repair-limit, nenhuma proposta aceita.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Operação e evidências de repair limitado",
+  "updated_at": "2026-10-08T07:04:53.442008+00:00"
+}

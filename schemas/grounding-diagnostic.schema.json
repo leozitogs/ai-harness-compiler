@@ -1,0 +1,74 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "atom_ids": {
+      "items": {
+        "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+        "type": "string"
+      },
+      "maxItems": 512,
+      "title": "Atom Ids",
+      "type": "array"
+    },
+    "error_code": {
+      "enum": [
+        "criterion-inventory-invalid",
+        "criterion-rule-link-invalid",
+        "criterion-requirement-link-invalid",
+        "criterion-question-link-invalid",
+        "excluded-source-used",
+        "declared-quote-invalid",
+        "extracted-quote-invalid",
+        "proposal-reference-invalid"
+      ],
+      "title": "Error Code",
+      "type": "string"
+    },
+    "input_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Input Sha256",
+      "type": "string"
+    },
+    "proposal_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Proposal Sha256",
+      "type": "string"
+    },
+    "reason": {
+      "enum": [
+        "inventory-mismatch",
+        "finding-missing",
+        "wrong-origin",
+        "quote-mismatch",
+        "source-mismatch",
+        "wrong-kind",
+        "question-not-blocking"
+      ],
+      "title": "Reason",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "GroundingDiagnostic/v1",
+      "default": "GroundingDiagnostic/v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "source_ref_ids": {
+      "items": {
+        "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+        "type": "string"
+      },
+      "maxItems": 128,
+      "title": "Source Ref Ids",
+      "type": "array"
+    }
+  },
+  "required": [
+    "input_sha256",
+    "proposal_sha256",
+    "error_code",
+    "reason"
+  ],
+  "title": "GroundingDiagnostic",
+  "type": "object"
+}

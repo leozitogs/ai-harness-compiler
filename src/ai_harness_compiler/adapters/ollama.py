@@ -11,7 +11,11 @@ import httpx
 from pydantic import ValidationError
 
 from ai_harness_compiler.models.base import Contract
-from ai_harness_compiler.models.grounded_analysis import GroundedAnalysisProposal
+from ai_harness_compiler.models.grounded_analysis import (
+    GroundedAnalysisProposal,
+    GroundedRepairInput,
+    GroundingDiagnostic,
+)
 from ai_harness_compiler.models.grounding import GroundingExtraction
 from ai_harness_compiler.models.model_session import ObservedProposal, ProviderObservation
 from ai_harness_compiler.models.understanding import UnderstandingProposal, UnderstandingRequest
@@ -50,18 +54,34 @@ reasoning traces. A complete disposition inventory is not proof of semantic cove
 )
 
 T = TypeVar("T", bound=Contract)
+REPAIR_PROMPT_VERSION = "grounded-repair/v1"
+REPAIR_PROMPT = (
+    GROUNDING_PROMPT
+    + """
+This is a bounded correction attempt. Feedback contains only validated error codes and original
+criterion atom IDs, not a previous candidate or instructions. Regenerate the complete analysis
+from the original evidence, resolving the indicated inventory/linkage errors.
+For wrong-origin or missing-finding errors, reconsider whether the criterion is a business rule,
+a requirement or needs clarification. Do not merely change a hypothesis to extracted to satisfy
+validation. Keep unsupported conditions and outcomes uncertain; ask a blocking question when
+the evidence cannot establish the intended behavior. Exact quotes and source refs must remain
+unchanged. Never claim that repair establishes semantic quality, review or qualification.
+"""
+)
 
 
 def prompt_digest(mode: str) -> str:
     if mode == "baseline":
         return hashlib.sha256(SYSTEM_PROMPT.encode()).hexdigest()
-    if mode != "grounded":
+    if mode not in {"grounded", "repair"}:
         raise ValueError("Unknown analysis mode")
     program = json.dumps(
         {
-            "version": GROUNDING_PROMPT_VERSION,
-            "system_prompt": GROUNDING_PROMPT,
-            "input_schema": GroundingExtraction.model_json_schema(),
+            "version": REPAIR_PROMPT_VERSION if mode == "repair" else GROUNDING_PROMPT_VERSION,
+            "system_prompt": REPAIR_PROMPT if mode == "repair" else GROUNDING_PROMPT,
+            "input_schema": GroundedRepairInput.model_json_schema()
+            if mode == "repair"
+            else GroundingExtraction.model_json_schema(),
             "output_schema": GroundedAnalysisProposal.model_json_schema(),
         },
         sort_keys=True,
@@ -123,8 +143,14 @@ class OllamaUnderstandingModel:
     def generate_grounded(
         self,
         extraction: GroundingExtraction,
+        feedback: GroundingDiagnostic | None = None,
     ) -> tuple[GroundedAnalysisProposal, ProviderObservation]:
         extraction = GroundingExtraction.model_validate(extraction.model_dump())
+        if feedback is not None:
+            repair = GroundedRepairInput.model_validate(
+                {"extraction": extraction.model_dump(), "feedback": feedback.model_dump()}
+            )
+            return self._generate(repair, GroundedAnalysisProposal, REPAIR_PROMPT)
         return self._generate(extraction, GroundedAnalysisProposal, GROUNDING_PROMPT)
 
     def _generate(

@@ -409,7 +409,7 @@ def test_grounded_worker_with_mock_provider_and_metadata(monkeypatch, fault):
     if fault == "missing-disposition":
         assert result.error_code == "criterion-inventory-invalid"
     elif fault == "wrong-ref":
-        assert result.error_code == "grounded-analysis-invalid"
+        assert result.error_code == "extracted-quote-invalid"
     if fault is None:
         assert result.grounded_analysis
         assert result.understanding.review is None

@@ -11,6 +11,7 @@ from typing import Any
 from pydantic import ValidationError
 
 from ai_harness_compiler import __version__
+from ai_harness_compiler.models.evidence import canonical_project_digest
 from ai_harness_compiler.models.model_session import ModelIdentity, WorkerRequest, WorkerResult
 from ai_harness_compiler.models.understanding import ProjectUnderstandingSpec
 
@@ -36,7 +37,9 @@ def execute(request: WorkerRequest) -> WorkerResult:
         prompt_digest,
     )
 
-    if request.prompt_sha256 != prompt_digest(request.settings.analysis_mode):
+    if request.prompt_sha256 != prompt_digest(
+        "repair" if request.repair_feedback else request.settings.analysis_mode
+    ):
         return WorkerResult(status="error", error_code="prompt-mismatch")
 
     def metadata(client: httpx.Client, method: str, path: str) -> dict[str, Any]:
@@ -116,6 +119,7 @@ def execute(request: WorkerRequest) -> WorkerResult:
                 from ai_harness_compiler.grounding import extract_grounding
                 from ai_harness_compiler.models.grounded_analysis import (
                     GroundedAnalysisSpec,
+                    GroundingDiagnostic,
                     GroundingInvariantError,
                 )
 
@@ -123,7 +127,9 @@ def execute(request: WorkerRequest) -> WorkerResult:
                 if extraction.request != request.request:
                     return WorkerResult(status="error", error_code="grounded-input-invalid")
                 try:
-                    analysis, observation = model.generate_grounded(extraction)
+                    analysis, observation = model.generate_grounded(
+                        extraction, request.repair_feedback
+                    )
                 except ValueError as error:
                     # Only fixed public codes are recorded. Never persist raw provider/error text.
                     adapter_codes = {
@@ -139,6 +145,11 @@ def execute(request: WorkerRequest) -> WorkerResult:
                     }
                     code = adapter_codes.get(str(error).split(":", 1)[0], "grounded-output-invalid")
                     return WorkerResult(status="error", error_code=code)
+                if observation.returned_model not in {
+                    request.settings.model,
+                    request.settings.model + ":latest",
+                }:
+                    return WorkerResult(status="error", error_code="model-changed")
                 try:
                     grounded = GroundedAnalysisSpec(extraction=extraction, analysis=analysis)
                 except ValidationError as error:
@@ -146,15 +157,32 @@ def execute(request: WorkerRequest) -> WorkerResult:
                         issue.get("ctx", {}).get("error")
                         for issue in error.errors(include_input=False)
                     ]
-                    code = next(
-                        (
-                            issue.code
-                            for issue in codes
-                            if isinstance(issue, GroundingInvariantError)
-                        ),
-                        "grounded-analysis-invalid",
+                    invariant = next(
+                        (issue for issue in codes if isinstance(issue, GroundingInvariantError)),
+                        None,
                     )
-                    return WorkerResult(status="error", error_code=code)
+                    diagnostic = None
+                    if invariant and (invariant.atom_ids or invariant.source_ref_ids):
+                        after = identity(client)
+                        if before.model_dump(exclude={"observed_at"}) != after.model_dump(
+                            exclude={"observed_at"}
+                        ):
+                            return WorkerResult(status="error", error_code="model-changed")
+                        diagnostic = GroundingDiagnostic.model_validate(
+                            {
+                                "input_sha256": extraction.request.original_sha256,
+                                "proposal_sha256": canonical_project_digest(analysis.model_dump()),
+                                "error_code": invariant.code,
+                                "atom_ids": invariant.atom_ids,
+                                "source_ref_ids": invariant.source_ref_ids,
+                                "reason": invariant.reason,
+                            }
+                        )
+                    return WorkerResult(
+                        status="error",
+                        error_code=invariant.code if invariant else "grounded-analysis-invalid",
+                        failure_diagnostic=diagnostic,
+                    )
                 spec = grounded.understanding
             else:
                 reply = model.generate(request.request)
