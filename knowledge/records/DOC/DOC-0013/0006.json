@@ -1,0 +1,67 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Old paired result remains local 8/8 and Codex 7/8; new individual adversarial call completed without rewriting prior failure. Agent report awaits PO.",
+  "created_at": "2026-10-08T22:25:10.963409+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "562 offline tests/checks; primary adversarial/example and one real specialist reached structural completion/PO gate. No semantic qualification.",
+      "outcome": "observed",
+      "sha256": "f06cd96da08065a6965a6fe8148c54fb683d8640dbab519a5f5603c1baeba8a9",
+      "source": "docs/delivery/ahc-023-primary-selection.md"
+    },
+    {
+      "command": null,
+      "note": "562 offline tests/checks; primary adversarial/example and one real specialist reached structural completion/PO gate. No semantic qualification.",
+      "outcome": "observed",
+      "sha256": "394009b9b353ae5dcb2abfd99615bd3eb7e9fd7658ce368aa189eede523c2aa6",
+      "source": "docs/evidence/ahc-023-primary-adversarial-20261008/observation.json"
+    },
+    {
+      "command": null,
+      "note": "562 offline tests/checks; primary adversarial/example and one real specialist reached structural completion/PO gate. No semantic qualification.",
+      "outcome": "observed",
+      "sha256": "92bc1aa03049d266aa9281f7d8e0e59f1643c36831fb67d2c80d01c71bb08d5c",
+      "source": "docs/evidence/ahc-023-primary-smokes-20261008/observation.json"
+    },
+    {
+      "command": null,
+      "note": "562 offline tests/checks; primary adversarial/example and one real specialist reached structural completion/PO gate. No semantic qualification.",
+      "outcome": "observed",
+      "sha256": "99fe4129bbb9c0876d7b1eefa13b6f4af7dcf6acb6d602ffe87b805a09d523d4",
+      "source": "docs/evidence/ahc-023-primary-smokes-20261008/example-understanding.json"
+    }
+  ],
+  "id": "DOC-0013",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Synthetic development and limited real-role exercise",
+    "Primary preference is not human semantic review",
+    "Prior adversarial failure cause remains unknown"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0018",
+    "INC-0010"
+  ],
+  "resolution": null,
+  "review_note": "566 final offline tests and checks passed; source hashes refreshed for provider override consistency and legacy snapshot compatibility. No semantic qualification.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 6,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Codex selected for observed business-rule/source quality; current adversarial/example and one specialist smokes accepted structurally.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Seleção do principal e verificação de integração",
+  "updated_at": "2026-10-08T22:33:50.950199+00:00"
+}

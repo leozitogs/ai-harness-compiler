@@ -51,6 +51,12 @@ com integridade em processo. Ver [confiabilidade](engineering/compiler-reliabili
 
 ## Quatro planos alvo
 
+ModelPolicy/v1 centraliza a preferência operacional de todas as funções com LLM:
+Codex CLI / gpt-6.1-sol. A política é resolvida na fronteira CLI, mantém alternativa
+local explícita e não aprova fatos/qualifica modelos. Os checkpoints da equipe
+preservam o modelo escolhido, independentemente de alterações posteriores da
+preferência. Ver [ADR-0018](adr/0018-primary-model-policy.md).
+
 | Plano | Responsabilidade | Estado inicial |
 |---|---|---|
 | Knowledge | Fontes, DNA, evidências, domínio, retrieval | Manifesto e referências locais |

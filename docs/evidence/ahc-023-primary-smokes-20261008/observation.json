@@ -1,0 +1,29 @@
+{
+  "artifact_kind": "primary-integration-smoke-observation",
+  "requested_model": "gpt-6.1-sol",
+  "engine": "codex-cli",
+  "status": "awaiting_po",
+  "agents": [
+    {
+      "id": "delivery",
+      "status": "completed",
+      "tools": [
+        "retrieve_context",
+        "retrieve_memory",
+        "delivery_plan"
+      ],
+      "model_summary_is_advisory": true
+    }
+  ],
+  "approval": null,
+  "sprint_started": false,
+  "repository_modified_by_agents": false,
+  "example_artifact_sha256": "99fe4129bbb9c0876d7b1eefa13b6f4af7dcf6acb6d602ffe87b805a09d523d4",
+  "semantic_status": "not-established",
+  "model_qualification": "not-established",
+  "limitations": [
+    "Only one real specialist; six roles verified offline with fakes",
+    "No remote identity attestation or internal HTTP request count",
+    "Not human semantic review"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": "CompactUnderstandingProposal/v1",
+  "criteria": [
+    {
+      "kind": "business-rule",
+      "condition": "Ao registrar uma publicação da equipe.",
+      "outcome": "A publicação deve conter a identidade do responsável e sua origem.",
+      "question": null,
+      "note": "Hipótese de comportamento sujeita a confirmação.",
+      "uncertainties": [
+        "Confirmar o que constitui a origem e quais dados devem identificá-la."
+      ]
+    }
+  ],
+  "context_findings": [
+    {
+      "subject": "purpose",
+      "text": "Organizar publicações da equipe, suas fontes e decisões.",
+      "note": "Finalidade declarada no contexto.",
+      "context_indices": [
+        0,
+        7
+      ]
+    },
+    {
+      "subject": "audience",
+      "text": "Autores.",
+      "note": "Público declarado.",
+      "context_indices": [
+        1
+      ]
+    },
+    {
+      "subject": "domain",
+      "text": "Gestão de workspace.",
+      "note": "Domínio declarado.",
+      "context_indices": [
+        8
+      ]
+    },
+    {
+      "subject": "capability",
+      "text": "Registrar responsável e origem de cada publicação.",
+      "note": "Capacidade proposta pelo critério e pela restrição de negócio.",
+      "context_indices": [
+        5,
+        9
+      ]
+    },
+    {
+      "subject": "constraint",
+      "text": "Limite de custo de construção de US$ 0,00.",
+      "note": "Significado monetário indicado pelo source_path.",
+      "context_indices": [
+        6
+      ]
+    },
+    {
+      "subject": "positioning",
+      "text": "Rastreabilidade e controle humano.",
+      "note": "Princípios declarados.",
+      "context_indices": [
+        3,
+        4
+      ]
+    }
+  ],
+  "issues": []
+}

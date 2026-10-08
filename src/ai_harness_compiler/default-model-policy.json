@@ -1,0 +1,12 @@
+{
+  "schema_version": "ModelPolicy/v1",
+  "primary": {"provider": "codex-cli", "model": "gpt-6.1-sol"},
+  "local_alternative": {"provider": "ollama", "model": "ahc-qwen3:4b-instruct-8k"},
+  "selection_status": "preferred-development",
+  "model_qualification": "not-established",
+  "fallback_policy": "explicit-only",
+  "role_policy": "inherit-primary",
+  "rationale": "Prefer Codex for observed source bindings and operational business-rule interpretation; all model-backed roles inherit one central choice.",
+  "evidence_sources": ["docs/delivery/ahc-022-independent-comparison.md", "docs/delivery/ahc-023-primary-selection.md"],
+  "limitations": ["Eight synthetic development cases and one paired repetition", "No universal-best or production-quality claim", "Human semantic adjudication and holdout pending", "Team roles inherit an operational preference, not independent role qualification", "Remote inference requires subscription and authorized input"]
+}

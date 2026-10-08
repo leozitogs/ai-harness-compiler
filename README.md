@@ -17,6 +17,22 @@ de um harness de desenvolvimento. O pipeline completo de IA está no roadmap.
 Foco atual: [Sprint 2.5 — qualidade semântica e modelo local](docs/delivery/sprint-2-5.md),
 com evals, grounding e qualificação antes de avançar no blueprint.
 
+**Principal das tarefas com LLM: Codex CLI / `gpt-6.1-sol`, via assinatura ChatGPT.**
+Os seis especialistas herdam a mesma preferência central. Qwen3 4B Instruct é a
+alternativa local explícita; falhas não trocam de modelo automaticamente.
+[Seleção e evidências](docs/delivery/ahc-023-primary-selection.md).
+É preferência operacional de desenvolvimento, com qualificação semântica pendente.
+
+```sh
+factory model-policy
+factory study examples/project-definition --output output/new-understanding.json
+factory team run project-definition --engine primary --output output/new-primary-team
+```
+
+O estudo padrão e a equipe com `--engine primary` enviam conteúdo autorizado ao
+serviço da assinatura; requerem CLI/login e o extra correspondente. `build`/`plan`
+e a equipe sem engine continuam offline. Para estudo local, use `--provider ollama`.
+
 ```mermaid
 flowchart LR
     I[ProjectInput] --> D[ProjectDNA]

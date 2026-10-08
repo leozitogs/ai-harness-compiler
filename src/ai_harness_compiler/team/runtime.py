@@ -16,7 +16,13 @@ from langsmith import tracing_context
 from ai_harness_compiler.compiler import json_text
 from ai_harness_compiler.models.team import POReview, Role, TeamConfig
 from ai_harness_compiler.pipeline import plan
-from ai_harness_compiler.team.agents import BoundedAgent, LocalPolicy, OllamaPolicy
+from ai_harness_compiler.team.agents import (
+    BoundedAgent,
+    CodexPolicy,
+    DecisionPolicy,
+    LocalPolicy,
+    OllamaPolicy,
+)
 from ai_harness_compiler.team.context import RepositoryContext
 from ai_harness_compiler.team.ml import IntentRouter
 from ai_harness_compiler.team.personas import PERSONAS
@@ -48,7 +54,13 @@ def build_graph(
         return [Send("specialist", {"agent_id": role}) for role in state["selected_roles"]]
 
     def specialist(state: TeamState) -> dict[str, object]:
-        policy = OllamaPolicy(config.model or "") if config.engine == "ollama" else LocalPolicy()
+        policy: DecisionPolicy
+        if config.engine == "codex-cli":
+            policy = CodexPolicy(config.model or "")
+        elif config.engine == "ollama":
+            policy = OllamaPolicy(config.model or "")
+        else:
+            policy = LocalPolicy()
         agent = BoundedAgent(PERSONAS[state["agent_id"]], tools, policy, config.max_steps)
         report = agent.run(config.request, config.engine)
         return {"reports": [report.model_dump()]}
@@ -124,6 +136,8 @@ def prepare_team(config: TeamConfig, output: Path) -> dict[str, object]:
     with SqliteSaver.from_conn_string(str(output / "checkpoints.sqlite")) as saver:
         graph = build_graph(config, tools, router, saver)
         invocation: RunnableConfig = {"configurable": {"thread_id": run_id}, "recursion_limit": 20}
+        if config.engine == "codex-cli":
+            invocation["max_concurrency"] = 2
         with tracing_context(enabled=False):
             initial: TeamState = {"reports": [], "source_digests": context.digests()}
             graph.invoke(initial, invocation)
@@ -151,6 +165,8 @@ def review_team(output: Path, decision: POReview) -> dict[str, object]:
             "configurable": {"thread_id": metadata["run_id"]},
             "recursion_limit": 20,
         }
+        if config.engine == "codex-cli":
+            invocation["max_concurrency"] = 2
         with tracing_context(enabled=False):
             state = cast(TeamState, graph.get_state(invocation).values)
             if state.get("status") != "awaiting_po":

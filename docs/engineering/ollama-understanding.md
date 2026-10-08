@@ -1,5 +1,9 @@
 # Estudo de projeto com Ollama
 
+O principal atual é Codex CLI / gpt-6.1-sol. Este documento descreve a alternativa
+local explícita: usar `--provider ollama` com ou sem override de modelo. O comando
+antigo apenas com `--model` mantém Ollama para não trocar o destino de dados.
+
 Instalar o extra `uv sync --extra understanding`. Com Ollama local ativo e um
 modelo já instalado, executar:
 

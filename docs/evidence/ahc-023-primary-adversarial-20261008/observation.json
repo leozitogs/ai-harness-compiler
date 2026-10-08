@@ -1,0 +1,11 @@
+{
+  "case_id": "dev-adversarial",
+  "requested_model": "gpt-6.1-sol",
+  "input_sha256": "90af98c2b77c32226ded9b7c5ffc5d87e4e2773695c3daa88f196523afbfd006",
+  "program_sha256": "207001bbe1110f64b329afaddf084fb39fa170ff740df20323b94b04674a9143",
+  "semantic_status": "not-established",
+  "model_qualification": "not-established",
+  "status": "completed",
+  "error_code": null,
+  "elapsed_seconds": 11.63183990001562
+}

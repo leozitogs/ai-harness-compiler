@@ -1,5 +1,11 @@
 # Equipe executável subordinada ao PO
 
+Principal das decisões LLM: **Codex CLI / gpt-6.1-sol**, herdado da política
+central. Executar com `--engine primary`; `--engine codex-cli --model ...` permite
+override explícito. A equipe sem engine permanece determinística. A escolha
+operacional não qualifica especialidades nem aprova relatos do PO.
+Consulte [seleção e limites](../delivery/ahc-023-primary-selection.md).
+
 Esta equipe opera sobre o AI Harness Compiler antes da Sprint 1. Personas são
 contratos tipados em `team/personas.py`; agentes executam ferramentas em
 `team/agents.py`; coordenação e aprovação persistente usam LangGraph em
