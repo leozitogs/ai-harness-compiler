@@ -1,0 +1,65 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Preserved preliminary v1 failures",
+    "Expanded criteria citation and labelled field paths",
+    "Executed eight independent paired development cases",
+    "Validated all journals and independently inspected original source bindings"
+  ],
+  "author": "codex:engineering",
+  "challenge": "Contract acceptance must not be mistaken for source entailment, correct business semantics or qualified model.",
+  "consequences": [],
+  "context": "Inspection of dev-branding-conflict, dev-compatible-rules, dev-rules-b and dev-new-domain found failures not detected by frozen automatic checks.",
+  "created_at": "2026-10-08T19:21:42.033490+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Offline checks verified; 8 local and 7 Codex proposals structurally accepted on frozen development. Semantic judgment/qualification not established.",
+      "outcome": "observed",
+      "sha256": "a3727b158c53fd44c2ec504d4ce97fdbb2a44dc1d122b853e29369da28635844",
+      "source": "docs/delivery/ahc-022-independent-comparison.md"
+    },
+    {
+      "command": null,
+      "note": "Offline checks verified; 8 local and 7 Codex proposals structurally accepted on frozen development. Semantic judgment/qualification not established.",
+      "outcome": "observed",
+      "sha256": "0547ebbf43c884d8612de5a7e049a3d69d275b1fc9405d7d5384f12d52d8ceca",
+      "source": "docs/evidence/ahc-022-independent-development-20261008/dev-branding-conflict/comparison.json"
+    },
+    {
+      "command": null,
+      "note": "Offline checks verified; 8 local and 7 Codex proposals structurally accepted on frozen development. Semantic judgment/qualification not established.",
+      "outcome": "observed",
+      "sha256": "d485c9a0a0af540cc84582a0941361f42b5d1f08bdf4f676273751c3b98777bd",
+      "source": "docs/evidence/ahc-022-independent-development-20261008/dev-compatible-rules/comparison.json"
+    }
+  ],
+  "id": "INC-0010",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Inspection is technical analysis, not HumanSemanticReview",
+    "Cloud adversarial invalid-proposal cause unknown"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "INC-0007",
+    "ADR-0017",
+    "DOC-0012"
+  ],
+  "resolution": "Unresolved. Next evaluation must verify per-finding support and condition/outcome meaning against sources; no self-authored human review or lesson promoted.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": "Validation checks index/ref existence and literal criterion binding, not semantic entailment of inferred findings. Why each model selects an incorrect source is not established.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Compact v2 local passes all eight structural cases but attaches domain/capability/conflict findings to unrelated evidence; remote proposals also add blocking implementation questions.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Índices válidos ainda citam fontes sem suporte ao achado",
+  "updated_at": "2026-10-08T19:21:42.033490+00:00"
+}

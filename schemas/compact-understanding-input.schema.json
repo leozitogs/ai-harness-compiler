@@ -9,10 +9,24 @@
             "branding",
             "constraint",
             "backlog-description",
-            "domain-declaration"
+            "domain-declaration",
+            "acceptance-criterion"
           ],
           "title": "Kind",
           "type": "string"
+        },
+        "source_path": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Path"
         },
         "text": {
           "maxLength": 16384,

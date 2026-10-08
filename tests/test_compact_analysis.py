@@ -36,6 +36,42 @@ from ai_harness_compiler.semantic_eval import FrozenCorpus
 CORPUS = Path(__file__).resolve().parents[1] / "evals/understanding/v1"
 
 
+def test_conflict_can_bind_branding_and_acceptance_criterion():
+    case = FrozenCorpus(CORPUS).case("development", "dev-branding-conflict")
+    extraction = extract_grounding(case.project)
+    packet = compact_input(extraction)
+    brand = next(
+        i for i, c in enumerate(packet.context) if c.source_path == "/branding/principles/0"
+    )
+    criterion = next(i for i, c in enumerate(packet.context) if c.kind == "acceptance-criterion")
+    data = value(extraction)
+    data["issues"] = [
+        {
+            "kind": "conflict",
+            "text": "Approval declarations conflict",
+            "context_indices": [brand, criterion],
+        }
+    ]
+    spec = CompactAnalysisSpec(
+        extraction=extraction, interpretation=CompactProposal.model_validate(data)
+    )
+    assert spec.understanding.proposal.conflicts[0].source_refs == ["input-2", "input-5"]
+    assert spec.semantic_status == "not-established"
+    assert packet.context[criterion].text == packet.criteria[0]
+
+
+def test_context_paths_preserve_numeric_constraint_meaning_and_old_positions():
+    case = FrozenCorpus(CORPUS).case("development", "dev-branding-conflict")
+    extraction = extract_grounding(case.project)
+    packet = compact_input(extraction)
+    original = [
+        a for a in extraction.atoms if a.kind not in {"acceptance-criterion", "asset-metadata"}
+    ]
+    assert [c.text for c in packet.context[: len(original)]] == [a.quote for a in original]
+    cost = next(c for c in packet.context if c.source_path == "/constraints/max_build_cost_usd")
+    assert cost.text == "0.0"
+
+
 def value(extraction, kind="business-rule"):
     count = len(compact_input(extraction).criteria)
     criteria = []

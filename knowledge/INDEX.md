@@ -17,24 +17,26 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [ADR-0013 — Evidência literal separada da análise e do suporte semântico](records/ADR/ADR-0013/0004.json) · active · revision 4
 - [ADR-0014 — Análise com disposições tipadas e supervisão do modelo](records/ADR/ADR-0014/0008.json) · active · revision 8
 - [ADR-0015 — Repair com feedback escopado e tentativas cobradas](records/ADR/ADR-0015/0002.json) · active · revision 2
-- [ADR-0016 — Interpretação compacta e citações sob responsabilidade do compilador](records/ADR/ADR-0016/0002.json) · active · revision 2
+- [ADR-0016 — Interpretação compacta e citações sob responsabilidade do compilador](records/ADR/ADR-0016/0004.json) · active · revision 4
+- [ADR-0017 — Comparação independente de provedores e contexto citável completo](records/ADR/ADR-0017/0004.json) · active · revision 4
 - [DE-0001 — Memória de engenharia versionada](records/DE/DE-0001/0001.json) · draft · revision 1
 - [DE-0002 — Gerar memória e especialistas para cada projeto](records/DE/DE-0002/0002.json) · active · revision 2
 - [DE-0003 — Intake limitado e YAML explícito](records/DE/DE-0003/0002.json) · active · revision 2
 - [DE-0004 — Compilador generalista antes da especialização](records/DE/DE-0004/0010.json) · active · revision 10
 - [DE-0005 — Modelo local provisório escolhido por hardware e ensaio](records/DE/DE-0005/0004.json) · active · revision 4
-- [DE-0006 — Qualidade e qualificação antes do blueprint](records/DE/DE-0006/0014.json) · active · revision 14
+- [DE-0006 — Qualidade e qualificação antes do blueprint](records/DE/DE-0006/0016.json) · active · revision 16
 - [DOC-0001 — Concepção do AI Harness Compiler](records/DOC/DOC-0001/0006.json) · active · revision 6
 - [DOC-0002 — Planejamento detalhado da Sprint 1](records/DOC/DOC-0002/0006.json) · draft · revision 6
 - [DOC-0003 — Planejamento da Sprint 2](records/DOC/DOC-0003/0012.json) · active · revision 12
 - [DOC-0004 — Estudo e evidências dos modelos locais](records/DOC/DOC-0004/0004.json) · active · revision 4
-- [DOC-0005 — Sprint 2.5 e piloto de alimentação CA](records/DOC/DOC-0005/0014.json) · active · revision 14
+- [DOC-0005 — Sprint 2.5 e piloto de alimentação CA](records/DOC/DOC-0005/0016.json) · active · revision 16
 - [DOC-0006 — Corpus v1 e protocolo offline de entendimento](records/DOC/DOC-0006/0006.json) · active · revision 6
 - [DOC-0007 — Operação e evidências de sessão local limitada](records/DOC/DOC-0007/0004.json) · active · revision 4
 - [DOC-0008 — Preparação e operação do grounding literal](records/DOC/DOC-0008/0004.json) · active · revision 4
 - [DOC-0009 — Modo grounded e dois smokes rejeitados](records/DOC/DOC-0009/0004.json) · active · revision 4
 - [DOC-0010 — Operação e evidências de repair limitado](records/DOC/DOC-0010/0002.json) · active · revision 2
-- [DOC-0011 — Protocolo compacto e comparação inicial de development](records/DOC/DOC-0011/0002.json) · active · revision 2
+- [DOC-0011 — Protocolo compacto e comparação inicial de development](records/DOC/DOC-0011/0004.json) · active · revision 4
+- [DOC-0012 — Estudos primários e desenvolvimento comparativo independente](records/DOC/DOC-0012/0004.json) · active · revision 4
 - [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2
 - [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1
 - [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1
@@ -42,9 +44,10 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [INC-0004 — Leitura de JSON UTF-8 sem encoding explícito no teste](records/INC/INC-0004/0004.json) · verified · revision 4
 - [INC-0005 — Snapshot externo divergia da evidência fornecida](records/INC/INC-0005/0002.json) · verified · revision 2
 - [INC-0006 — Relatório de benchmark aceitava medidas contraditórias](records/INC/INC-0006/0002.json) · verified · revision 2
-- [INC-0007 — Saídas estruturais válidas com conteúdo semântico inadequado](records/INC/INC-0007/0009.json) · draft · revision 9
+- [INC-0007 — Saídas estruturais válidas com conteúdo semântico inadequado](records/INC/INC-0007/0010.json) · draft · revision 10
 - [INC-0008 — Fixture de duração dependia do relógio real](records/INC/INC-0008/0003.json) · verified · revision 3
-- [INC-0009 — Ollama inativo interrompeu preflight do smoke](records/INC/INC-0009/0002.json) · verified · revision 2
+- [INC-0009 — Ollama inativo interrompeu preflight do smoke](records/INC/INC-0009/0004.json) · verified · revision 4
+- [INC-0010 — Índices válidos ainda citam fontes sem suporte ao achado](records/INC/INC-0010/0001.json) · draft · revision 1
 - [LES-0001 — Tipos estáticos podem falhar em runtime](records/LES/LES-0001/0004.json) · verified · revision 4
 - [LES-0002 — Referências válidas não garantem precedência consistente](records/LES/LES-0002/0002.json) · verified · revision 2
 - [LES-0003 — Usar IDs curtos para parametrizações com payloads grandes](records/LES/LES-0003/0002.json) · verified · revision 2

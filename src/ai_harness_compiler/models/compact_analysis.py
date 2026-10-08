@@ -6,7 +6,7 @@ from pydantic import ConfigDict, Field, model_validator
 
 from ai_harness_compiler.models.base import Contract, Text
 from ai_harness_compiler.models.evidence import Digest
-from ai_harness_compiler.models.grounding import GroundingExtraction
+from ai_harness_compiler.models.grounding import EvidenceAtom, GroundingExtraction
 from ai_harness_compiler.models.understanding import ProjectUnderstandingSpec
 
 Subject = Literal[
@@ -16,9 +16,15 @@ Subject = Literal[
 
 class CompactContext(Contract):
     kind: Literal[
-        "conception", "branding", "constraint", "backlog-description", "domain-declaration"
+        "conception",
+        "branding",
+        "constraint",
+        "backlog-description",
+        "domain-declaration",
+        "acceptance-criterion",
     ]
     text: str = Field(min_length=1, max_length=16_384)
+    source_path: Text | None = None
 
 
 class CompactInput(Contract):
@@ -36,14 +42,20 @@ def compact_input(extraction: GroundingExtraction) -> CompactInput:
         {
             "input_sha256": extraction.request.original_sha256,
             "context": [
-                {"kind": a.kind, "text": a.quote}
-                for a in extraction.atoms
-                if a.kind not in {"acceptance-criterion", "asset-metadata"}
+                {"kind": a.kind, "text": a.quote, "source_path": a.pointer}
+                for a in compact_context(extraction)
             ],
             "criteria": [a.quote for a in extraction.atoms if a.kind == "acceptance-criterion"],
             "unread_asset_count": len(extraction.request.original_input.assets),
         }
     )
+
+
+def compact_context(extraction: GroundingExtraction) -> list[EvidenceAtom]:
+    # Append criteria without shifting existing context positions in saved v1 proposals.
+    return [
+        a for a in extraction.atoms if a.kind not in {"acceptance-criterion", "asset-metadata"}
+    ] + [a for a in extraction.atoms if a.kind == "acceptance-criterion"]
 
 
 class CriterionInterpretation(Contract):
@@ -99,9 +111,7 @@ class CompactAnalysisSpec(Contract):
     def understanding(self) -> ProjectUnderstandingSpec:
         extraction = GroundingExtraction.model_validate(self.extraction.model_dump())
         interpretation = CompactProposal.model_validate(self.interpretation.model_dump())
-        context = [
-            a for a in extraction.atoms if a.kind not in {"acceptance-criterion", "asset-metadata"}
-        ]
+        context = compact_context(extraction)
         criteria = [a for a in extraction.atoms if a.kind == "acceptance-criterion"]
         if len(criteria) != len(interpretation.criteria):
             raise ValueError("Compact interpretation must account for every criterion position")

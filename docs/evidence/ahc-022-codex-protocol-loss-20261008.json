@@ -1,0 +1,93 @@
+{
+  "artifact_kind": "exploratory-protocol-reproduction",
+  "case_id": "dev-branding-conflict",
+  "requested_model": "gpt-6.1-sol",
+  "cli_version_observed_separately": "0.162.0-alpha.2",
+  "program_version": "compact-analysis/v1",
+  "execution_identity": "not-established",
+  "observed_errors": [
+    {
+      "attempt": 1,
+      "elapsed_seconds": 14.182106499996735,
+      "error": "validation-error"
+    },
+    {
+      "attempt": 2,
+      "elapsed_seconds": 8.728424900007667,
+      "error": "conflict-source-refs-too-short"
+    }
+  ],
+  "second_interpretation": {
+    "schema_version": "CompactUnderstandingProposal/v1",
+    "criteria": [
+      {
+        "kind": "business-rule",
+        "condition": "Quando uma publicação da equipe for liberada.",
+        "outcome": "Exigir aprovação humana explícita antes da liberação.",
+        "question": null,
+        "note": "Regra proposta contradiz a dispensa de aprovação declarada no contexto.",
+        "uncertainties": [
+          "Confirmar qual declaração de aprovação deve prevalecer."
+        ]
+      }
+    ],
+    "context_findings": [
+      {
+        "subject": "purpose",
+        "text": "Organizar publicações da equipe, suas fontes e decisões.",
+        "note": "Finalidade descrita na concepção e no backlog.",
+        "context_indices": [
+          0,
+          5
+        ]
+      },
+      {
+        "subject": "audience",
+        "text": "Equipe e autores.",
+        "note": "Equipe mencionada na concepção; autores indicados no branding.",
+        "context_indices": [
+          0,
+          1
+        ]
+      },
+      {
+        "subject": "domain",
+        "text": "Gestão de workspace.",
+        "note": "Domínio declarado.",
+        "context_indices": [
+          6
+        ]
+      },
+      {
+        "subject": "capability",
+        "text": "Registrar decisões e a identidade do responsável.",
+        "note": "Capacidades indicadas pelo backlog e pela restrição.",
+        "context_indices": [
+          3,
+          5
+        ]
+      }
+    ],
+    "issues": [
+      {
+        "kind": "conflict",
+        "text": "O branding dispensa qualquer aprovação humana para liberar publicações, enquanto o critério exige aprovação humana explícita. Qual declaração deve prevalecer?",
+        "context_indices": [
+          2
+        ]
+      },
+      {
+        "kind": "question",
+        "text": "O que o valor “0.0” representa como restrição?",
+        "context_indices": [
+          4
+        ]
+      }
+    ]
+  },
+  "limitations": [
+    "Exploratory attempts precede typed comparative journals",
+    "Not a valid projected understanding or semantic review",
+    "Model weights/remote resolved identity not established"
+  ]
+}
