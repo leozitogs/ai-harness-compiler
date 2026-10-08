@@ -1,0 +1,315 @@
+{
+  "artifact_sha256": {
+    "dev-adversarial/comparison.json": "860283c1538d42a6bfaced596f8ae78a1b83bded708c27c160f245a9fb6db642",
+    "dev-adversarial/local-worker.json": "ee56fea0fa0e7bb2a7c6b6f2f1772ef765628bc461d6372afe0754bc05c3e844",
+    "dev-adversarial/plan.json": "be6d0ea707d49e41316661f1152aa67342079dad0c6e8ec959bce9a7f6ac1e53",
+    "dev-ambiguous/comparison.json": "fa702a90db7c5c4b4786d9e9c61915d129775b7c50385c3513be3568d28d9466",
+    "dev-ambiguous/local-worker.json": "6145a823b26bde1a60ac7a7866c96c99e1f1a6fd5ba60bc81affa1bca83be9c1",
+    "dev-ambiguous/plan.json": "7b8103baf4465a37f9c1c1f565b020de700c3f658d31ba62b8a70eff1f8e89d2",
+    "dev-branding-conflict/comparison.json": "0547ebbf43c884d8612de5a7e049a3d69d275b1fc9405d7d5384f12d52d8ceca",
+    "dev-branding-conflict/local-worker.json": "8d0cc9e65042ad8910f090cf5360a9b135bfd0b5c6fc83e9ac9a8109ab6283dc",
+    "dev-branding-conflict/plan.json": "25643a267dbd19c123e69ced15edf45d45ce800b91895dcf30f9d28e73e9eba0",
+    "dev-compatible-rules/comparison.json": "d485c9a0a0af540cc84582a0941361f42b5d1f08bdf4f676273751c3b98777bd",
+    "dev-compatible-rules/local-worker.json": "57431445f67ee61fdd59cbefe0463a1dd21f5c136999d363f064d42734469b78",
+    "dev-compatible-rules/plan.json": "71311c0a9eceaa12087576edafd96a671afa7db71f67e7fa9caca89a45ecea63",
+    "dev-new-domain/comparison.json": "88abb6207b8f823e7ff1f7ddb5822e9348a3f19958ad2d89a996023163c54852",
+    "dev-new-domain/local-worker.json": "29dee890befeb6bf52cda8c0c0ed04474f71e08bbc746556f76d2ca88c5f9ffe",
+    "dev-new-domain/plan.json": "53fe874ef88997f18e93c950bb1b04bd6e31e4144c6e82fb845790a889f54386",
+    "dev-rules-a/comparison.json": "118a22c3d2d5d8e5727fcbd00817a53d5b800c124fa5a4629a8efb31967ce411",
+    "dev-rules-a/local-worker.json": "d7156cba5834c7ef56a5282d4c42829d1ced96ca12fdff73dd70b161ada2e99c",
+    "dev-rules-a/plan.json": "54bf8f2d7416e1ec622b3ea13969add1cfd7963b68caf7569ce2fa0aff3e0604",
+    "dev-rules-b/comparison.json": "319832bb23cb289f51cc9cc12708f1699ee6516f214148d614532586bd51ac81",
+    "dev-rules-b/local-worker.json": "193d8b219fe5e285bb7ea8f550b0539ae5d3084939c4662f9db8c5bb8358d9a6",
+    "dev-rules-b/plan.json": "57ee42c41d166d684b9d3601d0a0ebb56ed89be4545b19b7fd07f1ea71cd936f",
+    "dev-unread-assets/comparison.json": "0dfeece42ae34105d12a574e26771154f2d2dee17f5ad1cb5c4ad959aba6194a",
+    "dev-unread-assets/local-worker.json": "ab0f162aa6ca3f779a8e1e4ec39212e9be77f1818d9cd620da326b5d30022683",
+    "dev-unread-assets/plan.json": "9753cf7509ae0a1dfdc39a125f85ce3406b551fa18d7832793de1455c691f908"
+  },
+  "corpus_sha256": "234a9e7c0e4e55fd341f6dc00d9f3a24f937d28df58ad2ec9f1b3a54082edf24",
+  "limitations": [
+    "Synthetic unblinded development; one repetition",
+    "No human semantic adjudication or holdout",
+    "Concurrent providers and uncontrolled cache",
+    "CLI has no observed remote weights hash or effective output-token count",
+    "Exact textual disagreement is not semantic disagreement",
+    "No causal latency/quality ranking"
+  ],
+  "model_qualification": "not-established",
+  "observed_compiler_source_sha256": "25c73a4ec1b6375817e948655000df539f94df391fce8312b833f8dac25f85cc",
+  "repetitions": 1,
+  "report_kind": "preliminary-development-observations",
+  "requested_programs": [
+    "ahc-qwen3:4b-instruct-8k",
+    "d11faba7a2ff6e589337e51562caf2af16fb33c5e35870c1efb74a4d5123aea2",
+    "gpt-6.1-sol",
+    "a4cceac807bedce5091dd65989e4dfaa96e60b9d92982ebb5b51acc794ebaed8"
+  ],
+  "rows": [
+    {
+      "candidates": [
+        {
+          "artifact_eval_status": "not-run",
+          "automatic_failures": [],
+          "elapsed_seconds": 44.605547699989984,
+          "error_code": null,
+          "id": "local",
+          "reported_model": null,
+          "semantic_review": "pending",
+          "status": "completed"
+        },
+        {
+          "artifact_eval_status": "not-run",
+          "automatic_failures": [],
+          "elapsed_seconds": 15.617120599985356,
+          "error_code": null,
+          "id": "cloud",
+          "reported_model": null,
+          "semantic_review": "pending",
+          "status": "completed"
+        }
+      ],
+      "case": "dev-new-domain",
+      "criterion_disagreements": [
+        0
+      ],
+      "unavailable_criteria": [],
+      "wall_time_seconds": 44.621170500002336
+    },
+    {
+      "candidates": [
+        {
+          "artifact_eval_status": "not-run",
+          "automatic_failures": [],
+          "elapsed_seconds": 9.74884759998531,
+          "error_code": null,
+          "id": "local",
+          "reported_model": null,
+          "semantic_review": "pending",
+          "status": "completed"
+        },
+        {
+          "artifact_eval_status": "not-run",
+          "automatic_failures": [],
+          "elapsed_seconds": 13.062053600006038,
+          "error_code": null,
+          "id": "cloud",
+          "reported_model": null,
+          "semantic_review": "pending",
+          "status": "completed"
+        }
+      ],
+      "case": "dev-rules-a",
+      "criterion_disagreements": [
+        0
+      ],
+      "unavailable_criteria": [],
+      "wall_time_seconds": 13.075780999992276
+    },
+    {
+      "candidates": [
+        {
+          "artifact_eval_status": "not-run",
+          "automatic_failures": [],
+          "elapsed_seconds": 9.361332200001925,
+          "error_code": null,
+          "id": "local",
+          "reported_model": null,
+          "semantic_review": "pending",
+          "status": "completed"
+        },
+        {
+          "artifact_eval_status": "not-run",
+          "automatic_failures": [],
+          "elapsed_seconds": 14.543573800008744,
+          "error_code": null,
+          "id": "cloud",
+          "reported_model": null,
+          "semantic_review": "pending",
+          "status": "completed"
+        }
+      ],
+      "case": "dev-rules-b",
+      "criterion_disagreements": [
+        0
+      ],
+      "unavailable_criteria": [],
+      "wall_time_seconds": 14.551932100002887
+    },
+    {
+      "candidates": [
+        {
+          "artifact_eval_status": "not-run",
+          "automatic_failures": [],
+          "elapsed_seconds": 27.600087200000416,
+          "error_code": null,
+          "id": "local",
+          "reported_model": null,
+          "semantic_review": "pending",
+          "status": "completed"
+        },
+        {
+          "artifact_eval_status": "not-run",
+          "automatic_failures": [],
+          "elapsed_seconds": 14.040155199996661,
+          "error_code": null,
+          "id": "cloud",
+          "reported_model": null,
+          "semantic_review": "pending",
+          "status": "completed"
+        }
+      ],
+      "case": "dev-branding-conflict",
+      "criterion_disagreements": [
+        0
+      ],
+      "unavailable_criteria": [],
+      "wall_time_seconds": 27.60587359999772
+    },
+    {
+      "candidates": [
+        {
+          "artifact_eval_status": "not-run",
+          "automatic_failures": [],
+          "elapsed_seconds": 9.046616600011475,
+          "error_code": null,
+          "id": "local",
+          "reported_model": null,
+          "semantic_review": "pending",
+          "status": "completed"
+        },
+        {
+          "artifact_eval_status": "not-run",
+          "automatic_failures": [],
+          "elapsed_seconds": 16.87505279999459,
+          "error_code": null,
+          "id": "cloud",
+          "reported_model": null,
+          "semantic_review": "pending",
+          "status": "completed"
+        }
+      ],
+      "case": "dev-ambiguous",
+      "criterion_disagreements": [
+        0
+      ],
+      "unavailable_criteria": [],
+      "wall_time_seconds": 16.886557399993762
+    },
+    {
+      "candidates": [
+        {
+          "artifact_eval_status": "not-run",
+          "automatic_failures": [],
+          "elapsed_seconds": 26.407742599985795,
+          "error_code": null,
+          "id": "local",
+          "reported_model": null,
+          "semantic_review": "pending",
+          "status": "completed"
+        },
+        {
+          "artifact_eval_status": "not-run",
+          "automatic_failures": [],
+          "elapsed_seconds": 20.485447199986083,
+          "error_code": null,
+          "id": "cloud",
+          "reported_model": null,
+          "semantic_review": "pending",
+          "status": "completed"
+        }
+      ],
+      "case": "dev-compatible-rules",
+      "criterion_disagreements": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "unavailable_criteria": [],
+      "wall_time_seconds": 26.43211500000325
+    },
+    {
+      "candidates": [
+        {
+          "artifact_eval_status": "not-run",
+          "automatic_failures": [],
+          "elapsed_seconds": 8.868011299986392,
+          "error_code": null,
+          "id": "local",
+          "reported_model": null,
+          "semantic_review": "pending",
+          "status": "completed"
+        },
+        {
+          "artifact_eval_status": "not-run",
+          "automatic_failures": [],
+          "elapsed_seconds": 14.061207799997646,
+          "error_code": null,
+          "id": "cloud",
+          "reported_model": null,
+          "semantic_review": "pending",
+          "status": "completed"
+        }
+      ],
+      "case": "dev-unread-assets",
+      "criterion_disagreements": [
+        0
+      ],
+      "unavailable_criteria": [],
+      "wall_time_seconds": 14.072159100003773
+    },
+    {
+      "candidates": [
+        {
+          "artifact_eval_status": "not-run",
+          "automatic_failures": [],
+          "elapsed_seconds": 20.655358099989826,
+          "error_code": null,
+          "id": "local",
+          "reported_model": null,
+          "semantic_review": "pending",
+          "status": "completed"
+        },
+        {
+          "artifact_eval_status": "error",
+          "automatic_failures": [],
+          "elapsed_seconds": 14.690963800007012,
+          "error_code": "invalid-proposal",
+          "id": "cloud",
+          "reported_model": null,
+          "semantic_review": "pending",
+          "status": "error"
+        }
+      ],
+      "case": "dev-adversarial",
+      "criterion_disagreements": [],
+      "unavailable_criteria": [
+        0
+      ],
+      "wall_time_seconds": 20.669941500003915
+    }
+  ],
+  "semantic_status": "not-established",
+  "totals": {
+    "cloud": {
+      "artifact_eval_statuses": {
+        "error": 1,
+        "fail": 0,
+        "not-run": 7
+      },
+      "attempts": 8,
+      "completed": 7,
+      "total_call_seconds": 123.37557479998213
+    },
+    "local": {
+      "artifact_eval_statuses": {
+        "error": 0,
+        "fail": 0,
+        "not-run": 8
+      },
+      "attempts": 8,
+      "completed": 8,
+      "total_call_seconds": 156.29354329995112
+    }
+  }
+}

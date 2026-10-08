@@ -1,0 +1,670 @@
+{
+  "candidates": [
+    {
+      "compact_analysis": {
+        "extraction": {
+          "asset_contents": "not-read",
+          "atoms": [
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-1",
+              "kind": "conception",
+              "pointer": "/conception",
+              "quote": "Uma equipe organiza publicações e suas fontes.",
+              "source_ref": "input-1"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-2",
+              "kind": "branding",
+              "pointer": "/branding/audience/0",
+              "quote": "autores",
+              "source_ref": "input-2"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-3",
+              "kind": "branding",
+              "pointer": "/branding/principles/0",
+              "quote": "Liberar publicação da equipe dispensa qualquer aprovação humana.",
+              "source_ref": "input-2"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-4",
+              "kind": "constraint",
+              "pointer": "/constraints/business/0",
+              "quote": "Registrar a identidade do responsável.",
+              "source_ref": "input-3"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-5",
+              "kind": "constraint",
+              "pointer": "/constraints/max_build_cost_usd",
+              "quote": "0.0",
+              "source_ref": "input-3"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-6",
+              "kind": "backlog-description",
+              "pointer": "/backlog/0/description",
+              "quote": "Organizar publicação da equipe e registrar decisões.",
+              "source_ref": "input-4"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-7",
+              "kind": "acceptance-criterion",
+              "pointer": "/backlog/0/acceptance_criteria/0",
+              "quote": "Liberar publicação da equipe exige aprovação humana explícita.",
+              "source_ref": "input-5"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-8",
+              "kind": "domain-declaration",
+              "pointer": "/domain",
+              "quote": "workspace-management",
+              "source_ref": "input-6"
+            }
+          ],
+          "excluded_references": [],
+          "request": {
+            "original_input": {
+              "assets": [],
+              "backlog": [
+                {
+                  "acceptance_criteria": [
+                    "Liberar publicação da equipe exige aprovação humana explícita."
+                  ],
+                  "data_owner": null,
+                  "depends_on": [],
+                  "description": "Organizar publicação da equipe e registrar decisões.",
+                  "id": "register",
+                  "implementation": "undecided",
+                  "inputs": [],
+                  "outputs": [],
+                  "risk": "unknown",
+                  "side_effects": [],
+                  "title": "Registrar e liberar"
+                }
+              ],
+              "branding": {
+                "audience": [
+                  "autores"
+                ],
+                "principles": [
+                  "Liberar publicação da equipe dispensa qualquer aprovação humana."
+                ],
+                "tone": [],
+                "visual_constraints": []
+              },
+              "conception": "Uma equipe organiza publicações e suas fontes.",
+              "constraints": {
+                "business": [
+                  "Registrar a identidade do responsável."
+                ],
+                "max_build_cost_usd": 0.0,
+                "security": [],
+                "technical": []
+              },
+              "domain": "workspace-management",
+              "domain_profile": null,
+              "evidence_pack": null,
+              "id": "dev-branding-conflict",
+              "name": "Fixture dev branding-conflict",
+              "schema_version": "ProjectInput/v1"
+            },
+            "original_sha256": "6efa88484de902b19dd3011dde395a354bbb3f959e931cb71422f73aaacdc751",
+            "references": [
+              {
+                "content_trust": "untrusted-data",
+                "id": "input-1",
+                "pointer": "/conception",
+                "project_id": "dev-branding-conflict",
+                "value": "Uma equipe organiza publicações e suas fontes."
+              },
+              {
+                "content_trust": "untrusted-data",
+                "id": "input-2",
+                "pointer": "/branding",
+                "project_id": "dev-branding-conflict",
+                "value": "{\"audience\":[\"autores\"],\"principles\":[\"Liberar publicação da equipe dispensa qualquer aprovação humana.\"],\"tone\":[],\"visual_constraints\":[]}"
+              },
+              {
+                "content_trust": "untrusted-data",
+                "id": "input-3",
+                "pointer": "/constraints",
+                "project_id": "dev-branding-conflict",
+                "value": "{\"business\":[\"Registrar a identidade do responsável.\"],\"max_build_cost_usd\":0.0,\"security\":[],\"technical\":[]}"
+              },
+              {
+                "content_trust": "untrusted-data",
+                "id": "input-4",
+                "pointer": "/backlog/0/description",
+                "project_id": "dev-branding-conflict",
+                "value": "Organizar publicação da equipe e registrar decisões."
+              },
+              {
+                "content_trust": "untrusted-data",
+                "id": "input-5",
+                "pointer": "/backlog/0/acceptance_criteria/0",
+                "project_id": "dev-branding-conflict",
+                "value": "Liberar publicação da equipe exige aprovação humana explícita."
+              },
+              {
+                "content_trust": "untrusted-data",
+                "id": "input-6",
+                "pointer": "/domain",
+                "project_id": "dev-branding-conflict",
+                "value": "workspace-management"
+              }
+            ],
+            "schema_version": "UnderstandingRequest/v1"
+          },
+          "schema_version": "GroundingExtraction/v1",
+          "semantic_status": "not-established"
+        },
+        "interpretation": {
+          "context_findings": [
+            {
+              "context_indices": [
+                1
+              ],
+              "note": "O público-alvo é 'autores', indicando que a publicação é direcionada a indivíduos que escrevem, sugerindo que a responsabilidade é individual e que a liberação pode ser feita por eles diretamente, mas não elimina a necessidade de aprovação humana explícita para publicação coletiva ou organizada.",
+              "subject": "audience",
+              "text": "autores"
+            },
+            {
+              "context_indices": [
+                2
+              ],
+              "note": "O princípio de 'Liberar publicação da equipe dispensa qualquer aprovação humana' contradiz diretamente a condição de aceitação de que a liberação exige aprovação humana explícita. Isso indica uma inconsistência entre princípios de branding e critérios de aceitação.",
+              "subject": "constraint",
+              "text": "Liberar publicação da equipe dispensa qualquer aprova"
+            },
+            {
+              "context_indices": [
+                5
+              ],
+              "note": "A descrição do backlog menciona 'organizar publicação da equipe e registrar decisões', o que sugere que há um processo de decisão que deve ser documentado, mas não especifica se a liberação exige aprovação humana.",
+              "subject": "domain",
+              "text": "workspace-management"
+            },
+            {
+              "context_indices": [
+                6
+              ],
+              "note": "A condição de aceitação de que 'Liberar publicação da equipe exige aprovação humana explícita' é clara e direta. Se for parte do backlog, ela deve ser considerada como a exigência funcional de liberação, mesmo que conflita com princípios de branding.",
+              "subject": "constraint",
+              "text": "Liberar publicação da equipe exige aprovação humana explícita."
+            }
+          ],
+          "criteria": [
+            {
+              "condition": "Liberar publicação da equipe exige aprovação humana explícita.",
+              "kind": "business-rule",
+              "note": "Contradiction between branding and constraint: branding states that releasing a publication requires no human approval, while the acceptance criterion explicitly requires explicit human approval. This creates a conflict between stated principles and acceptance criteria. The conflict must be resolved by determining which source is authoritative or whether there is a misstatement in the requirements.",
+              "outcome": "A publicação deve ser liberada apenas após aprovação humana explícita, independentemente de princípios de automação.",
+              "question": null,
+              "uncertainties": [
+                "A origem da afirmação 'Liberar publicação da equipe dispensa qualquer aprovação humana' (branding) é ambígua: é um princípio de operação ou uma exceção? Se for um princípio, ele contradiz a condição de aceitação. A ausência de contexto sobre a validade ou escopo desses princípios impede uma avaliação segura."
+              ]
+            }
+          ],
+          "issues": [
+            {
+              "context_indices": [
+                1,
+                2,
+                6
+              ],
+              "kind": "conflict",
+              "text": "O princípio de branding afirma que a liberação da publicação dispensa aprovação humana, enquanto a condição de aceitação exige aprovação humana explícita. Essa contradição indica uma falha na alinhamento entre princípios de branding e critérios de aceitação. A validade de cada afirmação deve ser verificada para determinar qual é a intenção real do projeto."
+            }
+          ],
+          "schema_version": "CompactUnderstandingProposal/v1"
+        },
+        "model_qualification": "not-established",
+        "schema_version": "CompactUnderstanding/v1",
+        "semantic_status": "not-established"
+      },
+      "elapsed_seconds": 27.600087200000416,
+      "error_code": null,
+      "id": "local",
+      "program_sha256": "d11faba7a2ff6e589337e51562caf2af16fb33c5e35870c1efb74a4d5123aea2",
+      "provider": "ollama",
+      "reported_model": null,
+      "requested_model": "ahc-qwen3:4b-instruct-8k",
+      "status": "completed"
+    },
+    {
+      "compact_analysis": {
+        "extraction": {
+          "asset_contents": "not-read",
+          "atoms": [
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-1",
+              "kind": "conception",
+              "pointer": "/conception",
+              "quote": "Uma equipe organiza publicações e suas fontes.",
+              "source_ref": "input-1"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-2",
+              "kind": "branding",
+              "pointer": "/branding/audience/0",
+              "quote": "autores",
+              "source_ref": "input-2"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-3",
+              "kind": "branding",
+              "pointer": "/branding/principles/0",
+              "quote": "Liberar publicação da equipe dispensa qualquer aprovação humana.",
+              "source_ref": "input-2"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-4",
+              "kind": "constraint",
+              "pointer": "/constraints/business/0",
+              "quote": "Registrar a identidade do responsável.",
+              "source_ref": "input-3"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-5",
+              "kind": "constraint",
+              "pointer": "/constraints/max_build_cost_usd",
+              "quote": "0.0",
+              "source_ref": "input-3"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-6",
+              "kind": "backlog-description",
+              "pointer": "/backlog/0/description",
+              "quote": "Organizar publicação da equipe e registrar decisões.",
+              "source_ref": "input-4"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-7",
+              "kind": "acceptance-criterion",
+              "pointer": "/backlog/0/acceptance_criteria/0",
+              "quote": "Liberar publicação da equipe exige aprovação humana explícita.",
+              "source_ref": "input-5"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-8",
+              "kind": "domain-declaration",
+              "pointer": "/domain",
+              "quote": "workspace-management",
+              "source_ref": "input-6"
+            }
+          ],
+          "excluded_references": [],
+          "request": {
+            "original_input": {
+              "assets": [],
+              "backlog": [
+                {
+                  "acceptance_criteria": [
+                    "Liberar publicação da equipe exige aprovação humana explícita."
+                  ],
+                  "data_owner": null,
+                  "depends_on": [],
+                  "description": "Organizar publicação da equipe e registrar decisões.",
+                  "id": "register",
+                  "implementation": "undecided",
+                  "inputs": [],
+                  "outputs": [],
+                  "risk": "unknown",
+                  "side_effects": [],
+                  "title": "Registrar e liberar"
+                }
+              ],
+              "branding": {
+                "audience": [
+                  "autores"
+                ],
+                "principles": [
+                  "Liberar publicação da equipe dispensa qualquer aprovação humana."
+                ],
+                "tone": [],
+                "visual_constraints": []
+              },
+              "conception": "Uma equipe organiza publicações e suas fontes.",
+              "constraints": {
+                "business": [
+                  "Registrar a identidade do responsável."
+                ],
+                "max_build_cost_usd": 0.0,
+                "security": [],
+                "technical": []
+              },
+              "domain": "workspace-management",
+              "domain_profile": null,
+              "evidence_pack": null,
+              "id": "dev-branding-conflict",
+              "name": "Fixture dev branding-conflict",
+              "schema_version": "ProjectInput/v1"
+            },
+            "original_sha256": "6efa88484de902b19dd3011dde395a354bbb3f959e931cb71422f73aaacdc751",
+            "references": [
+              {
+                "content_trust": "untrusted-data",
+                "id": "input-1",
+                "pointer": "/conception",
+                "project_id": "dev-branding-conflict",
+                "value": "Uma equipe organiza publicações e suas fontes."
+              },
+              {
+                "content_trust": "untrusted-data",
+                "id": "input-2",
+                "pointer": "/branding",
+                "project_id": "dev-branding-conflict",
+                "value": "{\"audience\":[\"autores\"],\"principles\":[\"Liberar publicação da equipe dispensa qualquer aprovação humana.\"],\"tone\":[],\"visual_constraints\":[]}"
+              },
+              {
+                "content_trust": "untrusted-data",
+                "id": "input-3",
+                "pointer": "/constraints",
+                "project_id": "dev-branding-conflict",
+                "value": "{\"business\":[\"Registrar a identidade do responsável.\"],\"max_build_cost_usd\":0.0,\"security\":[],\"technical\":[]}"
+              },
+              {
+                "content_trust": "untrusted-data",
+                "id": "input-4",
+                "pointer": "/backlog/0/description",
+                "project_id": "dev-branding-conflict",
+                "value": "Organizar publicação da equipe e registrar decisões."
+              },
+              {
+                "content_trust": "untrusted-data",
+                "id": "input-5",
+                "pointer": "/backlog/0/acceptance_criteria/0",
+                "project_id": "dev-branding-conflict",
+                "value": "Liberar publicação da equipe exige aprovação humana explícita."
+              },
+              {
+                "content_trust": "untrusted-data",
+                "id": "input-6",
+                "pointer": "/domain",
+                "project_id": "dev-branding-conflict",
+                "value": "workspace-management"
+              }
+            ],
+            "schema_version": "UnderstandingRequest/v1"
+          },
+          "schema_version": "GroundingExtraction/v1",
+          "semantic_status": "not-established"
+        },
+        "interpretation": {
+          "context_findings": [
+            {
+              "context_indices": [
+                0,
+                5
+              ],
+              "note": "Finalidade descrita na concepção e no backlog.",
+              "subject": "purpose",
+              "text": "Organizar publicações da equipe, suas fontes e registrar decisões."
+            },
+            {
+              "context_indices": [
+                1
+              ],
+              "note": "Público declarado na marca.",
+              "subject": "audience",
+              "text": "Autores."
+            },
+            {
+              "context_indices": [
+                6
+              ],
+              "note": "Domínio declarado como workspace-management.",
+              "subject": "domain",
+              "text": "Gestão de workspace."
+            },
+            {
+              "context_indices": [
+                3
+              ],
+              "note": "Restrição de negócio declarada.",
+              "subject": "constraint",
+              "text": "Registrar a identidade do responsável."
+            },
+            {
+              "context_indices": [
+                4
+              ],
+              "note": "O significado monetário é indicado pelo campo max_build_cost_usd.",
+              "subject": "constraint",
+              "text": "Custo máximo de build de US$ 0,00."
+            }
+          ],
+          "criteria": [
+            {
+              "condition": "Quando houver solicitação para liberar uma publicação da equipe.",
+              "kind": "business-rule",
+              "note": "Hipótese de comportamento em conflito com o princípio de marca.",
+              "outcome": "Exigir aprovação humana explícita antes da liberação.",
+              "question": null,
+              "uncertainties": [
+                "Confirmar qual regra prevalece sobre aprovação humana e quem pode aprovar."
+              ]
+            }
+          ],
+          "issues": [
+            {
+              "context_indices": [
+                2,
+                7
+              ],
+              "kind": "conflict",
+              "text": "O princípio de marca dispensa qualquer aprovação humana para liberar a publicação, enquanto o critério exige aprovação humana explícita."
+            }
+          ],
+          "schema_version": "CompactUnderstandingProposal/v1"
+        },
+        "model_qualification": "not-established",
+        "schema_version": "CompactUnderstanding/v1",
+        "semantic_status": "not-established"
+      },
+      "elapsed_seconds": 14.040155199996661,
+      "error_code": null,
+      "id": "cloud",
+      "program_sha256": "a4cceac807bedce5091dd65989e4dfaa96e60b9d92982ebb5b51acc794ebaed8",
+      "provider": "codex-cli",
+      "reported_model": null,
+      "requested_model": "gpt-6.1-sol",
+      "status": "completed"
+    }
+  ],
+  "comparison_basis": "exact-criterion-fields-excluding-note",
+  "criterion_agreements": [],
+  "criterion_disagreements": [
+    0
+  ],
+  "extraction": {
+    "asset_contents": "not-read",
+    "atoms": [
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-1",
+        "kind": "conception",
+        "pointer": "/conception",
+        "quote": "Uma equipe organiza publicações e suas fontes.",
+        "source_ref": "input-1"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-2",
+        "kind": "branding",
+        "pointer": "/branding/audience/0",
+        "quote": "autores",
+        "source_ref": "input-2"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-3",
+        "kind": "branding",
+        "pointer": "/branding/principles/0",
+        "quote": "Liberar publicação da equipe dispensa qualquer aprovação humana.",
+        "source_ref": "input-2"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-4",
+        "kind": "constraint",
+        "pointer": "/constraints/business/0",
+        "quote": "Registrar a identidade do responsável.",
+        "source_ref": "input-3"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-5",
+        "kind": "constraint",
+        "pointer": "/constraints/max_build_cost_usd",
+        "quote": "0.0",
+        "source_ref": "input-3"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-6",
+        "kind": "backlog-description",
+        "pointer": "/backlog/0/description",
+        "quote": "Organizar publicação da equipe e registrar decisões.",
+        "source_ref": "input-4"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-7",
+        "kind": "acceptance-criterion",
+        "pointer": "/backlog/0/acceptance_criteria/0",
+        "quote": "Liberar publicação da equipe exige aprovação humana explícita.",
+        "source_ref": "input-5"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-8",
+        "kind": "domain-declaration",
+        "pointer": "/domain",
+        "quote": "workspace-management",
+        "source_ref": "input-6"
+      }
+    ],
+    "excluded_references": [],
+    "request": {
+      "original_input": {
+        "assets": [],
+        "backlog": [
+          {
+            "acceptance_criteria": [
+              "Liberar publicação da equipe exige aprovação humana explícita."
+            ],
+            "data_owner": null,
+            "depends_on": [],
+            "description": "Organizar publicação da equipe e registrar decisões.",
+            "id": "register",
+            "implementation": "undecided",
+            "inputs": [],
+            "outputs": [],
+            "risk": "unknown",
+            "side_effects": [],
+            "title": "Registrar e liberar"
+          }
+        ],
+        "branding": {
+          "audience": [
+            "autores"
+          ],
+          "principles": [
+            "Liberar publicação da equipe dispensa qualquer aprovação humana."
+          ],
+          "tone": [],
+          "visual_constraints": []
+        },
+        "conception": "Uma equipe organiza publicações e suas fontes.",
+        "constraints": {
+          "business": [
+            "Registrar a identidade do responsável."
+          ],
+          "max_build_cost_usd": 0.0,
+          "security": [],
+          "technical": []
+        },
+        "domain": "workspace-management",
+        "domain_profile": null,
+        "evidence_pack": null,
+        "id": "dev-branding-conflict",
+        "name": "Fixture dev branding-conflict",
+        "schema_version": "ProjectInput/v1"
+      },
+      "original_sha256": "6efa88484de902b19dd3011dde395a354bbb3f959e931cb71422f73aaacdc751",
+      "references": [
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-1",
+          "pointer": "/conception",
+          "project_id": "dev-branding-conflict",
+          "value": "Uma equipe organiza publicações e suas fontes."
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-2",
+          "pointer": "/branding",
+          "project_id": "dev-branding-conflict",
+          "value": "{\"audience\":[\"autores\"],\"principles\":[\"Liberar publicação da equipe dispensa qualquer aprovação humana.\"],\"tone\":[],\"visual_constraints\":[]}"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-3",
+          "pointer": "/constraints",
+          "project_id": "dev-branding-conflict",
+          "value": "{\"business\":[\"Registrar a identidade do responsável.\"],\"max_build_cost_usd\":0.0,\"security\":[],\"technical\":[]}"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-4",
+          "pointer": "/backlog/0/description",
+          "project_id": "dev-branding-conflict",
+          "value": "Organizar publicação da equipe e registrar decisões."
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-5",
+          "pointer": "/backlog/0/acceptance_criteria/0",
+          "project_id": "dev-branding-conflict",
+          "value": "Liberar publicação da equipe exige aprovação humana explícita."
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-6",
+          "pointer": "/domain",
+          "project_id": "dev-branding-conflict",
+          "value": "workspace-management"
+        }
+      ],
+      "schema_version": "UnderstandingRequest/v1"
+    },
+    "schema_version": "GroundingExtraction/v1",
+    "semantic_status": "not-established"
+  },
+  "human_review_required": true,
+  "input_sha256": "6efa88484de902b19dd3011dde395a354bbb3f959e931cb71422f73aaacdc751",
+  "model_qualification": "not-established",
+  "schema_version": "UnderstandingComparison/v1",
+  "semantic_status": "not-established",
+  "total_call_seconds": 41.64024239999708,
+  "unavailable_criteria": [],
+  "wall_time_seconds": 27.60587359999772
+}

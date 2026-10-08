@@ -1,0 +1,675 @@
+{
+  "candidates": [
+    {
+      "compact_analysis": {
+        "extraction": {
+          "asset_contents": "not-read",
+          "atoms": [
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-1",
+              "kind": "conception",
+              "pointer": "/conception",
+              "quote": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita.",
+              "source_ref": "input-1"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-2",
+              "kind": "branding",
+              "pointer": "/branding/audience/0",
+              "quote": "autores",
+              "source_ref": "input-2"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-3",
+              "kind": "branding",
+              "pointer": "/branding/principles/0",
+              "quote": "rastreabilidade",
+              "source_ref": "input-2"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-4",
+              "kind": "branding",
+              "pointer": "/branding/principles/1",
+              "quote": "controle humano",
+              "source_ref": "input-2"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-5",
+              "kind": "constraint",
+              "pointer": "/constraints/business/0",
+              "quote": "Registrar a identidade do responsável.",
+              "source_ref": "input-3"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-6",
+              "kind": "constraint",
+              "pointer": "/constraints/max_build_cost_usd",
+              "quote": "0.0",
+              "source_ref": "input-3"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-7",
+              "kind": "backlog-description",
+              "pointer": "/backlog/0/description",
+              "quote": "Organizar publicação da equipe e registrar decisões.",
+              "source_ref": "input-4"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-8",
+              "kind": "acceptance-criterion",
+              "pointer": "/backlog/0/acceptance_criteria/0",
+              "quote": "Cada publicação da equipe deve conter responsável e origem.",
+              "source_ref": "input-5"
+            }
+          ],
+          "excluded_references": [],
+          "request": {
+            "original_input": {
+              "assets": [],
+              "backlog": [
+                {
+                  "acceptance_criteria": [
+                    "Cada publicação da equipe deve conter responsável e origem."
+                  ],
+                  "data_owner": null,
+                  "depends_on": [],
+                  "description": "Organizar publicação da equipe e registrar decisões.",
+                  "id": "register",
+                  "implementation": "undecided",
+                  "inputs": [],
+                  "outputs": [],
+                  "risk": "unknown",
+                  "side_effects": [],
+                  "title": "Registrar e liberar"
+                }
+              ],
+              "branding": {
+                "audience": [
+                  "autores"
+                ],
+                "principles": [
+                  "rastreabilidade",
+                  "controle humano"
+                ],
+                "tone": [],
+                "visual_constraints": []
+              },
+              "conception": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita.",
+              "constraints": {
+                "business": [
+                  "Registrar a identidade do responsável."
+                ],
+                "max_build_cost_usd": 0.0,
+                "security": [],
+                "technical": []
+              },
+              "domain": null,
+              "domain_profile": null,
+              "evidence_pack": null,
+              "id": "dev-new-domain",
+              "name": "Fixture dev new-domain",
+              "schema_version": "ProjectInput/v1"
+            },
+            "original_sha256": "6d792a55af0f4e0af1c2c1f1e36ff0d31f7fb9894b7091efd3f67338141dc492",
+            "references": [
+              {
+                "content_trust": "untrusted-data",
+                "id": "input-1",
+                "pointer": "/conception",
+                "project_id": "dev-new-domain",
+                "value": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita."
+              },
+              {
+                "content_trust": "untrusted-data",
+                "id": "input-2",
+                "pointer": "/branding",
+                "project_id": "dev-new-domain",
+                "value": "{\"audience\":[\"autores\"],\"principles\":[\"rastreabilidade\",\"controle humano\"],\"tone\":[],\"visual_constraints\":[]}"
+              },
+              {
+                "content_trust": "untrusted-data",
+                "id": "input-3",
+                "pointer": "/constraints",
+                "project_id": "dev-new-domain",
+                "value": "{\"business\":[\"Registrar a identidade do responsável.\"],\"max_build_cost_usd\":0.0,\"security\":[],\"technical\":[]}"
+              },
+              {
+                "content_trust": "untrusted-data",
+                "id": "input-4",
+                "pointer": "/backlog/0/description",
+                "project_id": "dev-new-domain",
+                "value": "Organizar publicação da equipe e registrar decisões."
+              },
+              {
+                "content_trust": "untrusted-data",
+                "id": "input-5",
+                "pointer": "/backlog/0/acceptance_criteria/0",
+                "project_id": "dev-new-domain",
+                "value": "Cada publicação da equipe deve conter responsável e origem."
+              }
+            ],
+            "schema_version": "UnderstandingRequest/v1"
+          },
+          "schema_version": "GroundingExtraction/v1",
+          "semantic_status": "not-established"
+        },
+        "interpretation": {
+          "context_findings": [
+            {
+              "context_indices": [
+                0
+              ],
+              "note": "The conception text describes organizing sensory lantern cycles for an unprecedented collective experience. This sets a creative and experiential domain, suggesting that publications may be tied to sensory or participatory events. The audience is 'autores' (authors), implying a focus on authorship and contribution. This context supports the need for traceability and human control in content creation, reinforcing the importance of responsible and origin-marked publications. The domain is experiential and participatory, with emphasis on collective and sensory engagement. The capabilities implied are organizational and narrative, not technical or financial. No financial or technical constraints are present in the context beyond the max build cost of 0.0 USD, which may indicate a non-operational or conceptual phase. This suggests the project is in early conception or planning, with minimal operational constraints. The absence of asset content or external profiles limits the depth of real-­",
+              "subject": "constraint",
+              "text": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita."
+            },
+            {
+              "context_indices": [
+                1
+              ],
+              "note": "The branding element 'autores' indicates that the audience or stakeholders are authors or contributors. This implies that each publication should be attributed to a specific individual or group, supporting the need for a responsible party in publications. This aligns with the requirement for 'responsible' and 'origin' in the criterion. The principle of 'rastreabilidade' (traceability) further supports the need for clear attribution and origin in content. The principle of 'controle humano' (human control) reinforces that decisions and actions must be traceable to human actors, which is consistent with the requirement for responsible parties in publications.",
+              "subject": "constraint",
+              "text": "autores"
+            },
+            {
+              "context_indices": [
+                2
+              ],
+              "note": "The branding principle 'rastreabilidade' (traceability) emphasizes the need to track the origin and responsibility of content. This directly supports the criterion that each publication must include responsible and origin information. It establishes a domain requirement for accountability and transparency in content creation. This is consistent with the business constraint to record the identity of the responsible party. The principle of 'controle humano' (human control) reinforces that human actors must be in control of decisions, which is reflected in the need for responsible attribution.",
+              "subject": "constraint",
+              "text": "rastreabilidade"
+            },
+            {
+              "context_indices": [
+                3
+              ],
+              "note": "The branding principle 'controle humano' (human control) emphasizes that human actors must have control over decisions and actions. This supports the requirement that each publication must have a responsible party, as it ensures that decisions are made by identifiable individuals and not by automated or opaque processes. This aligns with the need for traceability and accountability in content creation.",
+              "subject": "constraint",
+              "text": "controle humano"
+            },
+            {
+              "context_indices": [
+                4
+              ],
+              "note": "The business constraint 'Registrar a identidade do responsável' (record the identity of the responsible party) directly supports the requirement in the criterion. It mandates that the responsible party must be identifiable in each publication. This is a clear requirement for accountability and traceability. The constraint is consistent with the branding principles and the acceptance criterion.",
+              "subject": "constraint",
+              "text": "Registrar a identidade do responsável."
+            },
+            {
+              "context_indices": [
+                5
+              ],
+              "note": "The constraint '0.0' for max build cost indicates no financial budget is allocated. This may suggest a conceptual or non-operational phase, where financial constraints are not a concern. It does not impact the requirement for responsible and origin information in publications, as this is a content and accountability issue, not a financial one.",
+              "subject": "constraint",
+              "text": "0.0"
+            },
+            {
+              "context_indices": [
+                6
+              ],
+              "note": "The backlog description 'Organizar publicação da equipe e registrar decisões' (organize team publications and record decisions) supports the need for structured team content and decision tracking. This implies that each publication should be part of a formalized process, and decisions must be recorded. This aligns with the requirement for responsible and origin information in publications.",
+              "subject": "constraint",
+              "text": "Organizar publicação da equipe e registrar decisões."
+            },
+            {
+              "context_indices": [
+                7
+              ],
+              "note": "The acceptance criterion 'Cada publicação da equipe deve conter responsável e origem' is a direct statement of the requirement. It is consistent with the branding principles and business constraints. It specifies that every team publication must include both a responsible party and an origin. This is a clear, actionable requirement for content governance. The lack of definition for 'origem' introduces uncertainty about its scope and meaning.",
+              "subject": "constraint",
+              "text": "Cada publicação da equipe deve conter responsável e origem."
+            }
+          ],
+          "criteria": [
+            {
+              "condition": "Each team publication must include a responsible party and origin.",
+              "kind": "business-rule",
+              "note": "The criterion 'Cada publicação da equipe deve conter responsável e origem.' is directly supported by the acceptance criterion in the backlog. It specifies a requirement for every team publication to include responsibility and origin. This aligns with the branding principle of 'rastreabilidade' (traceability), which emphasizes accountability and origin tracking. The business constraint to 'Registrar a identidade do responsável' (record the identity of the responsible party) further reinforces this requirement. No contradiction is found in the context. However, the term 'origem' is not explicitly defined, and its scope (e.g., team member, project, or event) is unclear. This requires clarification.",
+              "outcome": "Publications are traceable and accountable to individuals and sources.",
+              "question": null,
+              "uncertainties": [
+                "What constitutes 'origem'? Is it the team member, the project, or a specific event?"
+              ]
+            }
+          ],
+          "issues": [],
+          "schema_version": "CompactUnderstandingProposal/v1"
+        },
+        "model_qualification": "not-established",
+        "schema_version": "CompactUnderstanding/v1",
+        "semantic_status": "not-established"
+      },
+      "elapsed_seconds": 44.605547699989984,
+      "error_code": null,
+      "id": "local",
+      "program_sha256": "d11faba7a2ff6e589337e51562caf2af16fb33c5e35870c1efb74a4d5123aea2",
+      "provider": "ollama",
+      "reported_model": null,
+      "requested_model": "ahc-qwen3:4b-instruct-8k",
+      "status": "completed"
+    },
+    {
+      "compact_analysis": {
+        "extraction": {
+          "asset_contents": "not-read",
+          "atoms": [
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-1",
+              "kind": "conception",
+              "pointer": "/conception",
+              "quote": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita.",
+              "source_ref": "input-1"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-2",
+              "kind": "branding",
+              "pointer": "/branding/audience/0",
+              "quote": "autores",
+              "source_ref": "input-2"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-3",
+              "kind": "branding",
+              "pointer": "/branding/principles/0",
+              "quote": "rastreabilidade",
+              "source_ref": "input-2"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-4",
+              "kind": "branding",
+              "pointer": "/branding/principles/1",
+              "quote": "controle humano",
+              "source_ref": "input-2"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-5",
+              "kind": "constraint",
+              "pointer": "/constraints/business/0",
+              "quote": "Registrar a identidade do responsável.",
+              "source_ref": "input-3"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-6",
+              "kind": "constraint",
+              "pointer": "/constraints/max_build_cost_usd",
+              "quote": "0.0",
+              "source_ref": "input-3"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-7",
+              "kind": "backlog-description",
+              "pointer": "/backlog/0/description",
+              "quote": "Organizar publicação da equipe e registrar decisões.",
+              "source_ref": "input-4"
+            },
+            {
+              "content_trust": "untrusted-data",
+              "id": "atom-8",
+              "kind": "acceptance-criterion",
+              "pointer": "/backlog/0/acceptance_criteria/0",
+              "quote": "Cada publicação da equipe deve conter responsável e origem.",
+              "source_ref": "input-5"
+            }
+          ],
+          "excluded_references": [],
+          "request": {
+            "original_input": {
+              "assets": [],
+              "backlog": [
+                {
+                  "acceptance_criteria": [
+                    "Cada publicação da equipe deve conter responsável e origem."
+                  ],
+                  "data_owner": null,
+                  "depends_on": [],
+                  "description": "Organizar publicação da equipe e registrar decisões.",
+                  "id": "register",
+                  "implementation": "undecided",
+                  "inputs": [],
+                  "outputs": [],
+                  "risk": "unknown",
+                  "side_effects": [],
+                  "title": "Registrar e liberar"
+                }
+              ],
+              "branding": {
+                "audience": [
+                  "autores"
+                ],
+                "principles": [
+                  "rastreabilidade",
+                  "controle humano"
+                ],
+                "tone": [],
+                "visual_constraints": []
+              },
+              "conception": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita.",
+              "constraints": {
+                "business": [
+                  "Registrar a identidade do responsável."
+                ],
+                "max_build_cost_usd": 0.0,
+                "security": [],
+                "technical": []
+              },
+              "domain": null,
+              "domain_profile": null,
+              "evidence_pack": null,
+              "id": "dev-new-domain",
+              "name": "Fixture dev new-domain",
+              "schema_version": "ProjectInput/v1"
+            },
+            "original_sha256": "6d792a55af0f4e0af1c2c1f1e36ff0d31f7fb9894b7091efd3f67338141dc492",
+            "references": [
+              {
+                "content_trust": "untrusted-data",
+                "id": "input-1",
+                "pointer": "/conception",
+                "project_id": "dev-new-domain",
+                "value": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita."
+              },
+              {
+                "content_trust": "untrusted-data",
+                "id": "input-2",
+                "pointer": "/branding",
+                "project_id": "dev-new-domain",
+                "value": "{\"audience\":[\"autores\"],\"principles\":[\"rastreabilidade\",\"controle humano\"],\"tone\":[],\"visual_constraints\":[]}"
+              },
+              {
+                "content_trust": "untrusted-data",
+                "id": "input-3",
+                "pointer": "/constraints",
+                "project_id": "dev-new-domain",
+                "value": "{\"business\":[\"Registrar a identidade do responsável.\"],\"max_build_cost_usd\":0.0,\"security\":[],\"technical\":[]}"
+              },
+              {
+                "content_trust": "untrusted-data",
+                "id": "input-4",
+                "pointer": "/backlog/0/description",
+                "project_id": "dev-new-domain",
+                "value": "Organizar publicação da equipe e registrar decisões."
+              },
+              {
+                "content_trust": "untrusted-data",
+                "id": "input-5",
+                "pointer": "/backlog/0/acceptance_criteria/0",
+                "project_id": "dev-new-domain",
+                "value": "Cada publicação da equipe deve conter responsável e origem."
+              }
+            ],
+            "schema_version": "UnderstandingRequest/v1"
+          },
+          "schema_version": "GroundingExtraction/v1",
+          "semantic_status": "not-established"
+        },
+        "interpretation": {
+          "context_findings": [
+            {
+              "context_indices": [
+                0
+              ],
+              "note": "Objetivo declarado na concepção.",
+              "subject": "purpose",
+              "text": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita."
+            },
+            {
+              "context_indices": [
+                1
+              ],
+              "note": "Público indicado no branding.",
+              "subject": "audience",
+              "text": "Autores."
+            },
+            {
+              "context_indices": [
+                0,
+                6
+              ],
+              "note": "A relação entre os ciclos e as publicações precisa de confirmação.",
+              "subject": "domain",
+              "text": "Organização de ciclos de lanternas sensoriais e publicações da equipe."
+            },
+            {
+              "context_indices": [
+                6
+              ],
+              "note": "Capacidade descrita no backlog.",
+              "subject": "capability",
+              "text": "Organizar publicações da equipe e registrar decisões."
+            },
+            {
+              "context_indices": [
+                2,
+                3,
+                4
+              ],
+              "note": "Princípios e restrição declarados.",
+              "subject": "constraint",
+              "text": "Preservar rastreabilidade, controle humano e identidade do responsável."
+            },
+            {
+              "context_indices": [
+                5
+              ],
+              "note": "Significado monetário indicado pelo campo max_build_cost_usd; abrangência a confirmar.",
+              "subject": "constraint",
+              "text": "Limite de custo de construção de US$ 0,00."
+            }
+          ],
+          "criteria": [
+            {
+              "condition": "Quando uma publicação da equipe for registrada.",
+              "kind": "business-rule",
+              "note": "Hipótese de regra alinhada à rastreabilidade e ao registro do responsável.",
+              "outcome": "A publicação deve conter a identidade do responsável e sua origem.",
+              "question": null,
+              "uncertainties": [
+                "Confirmar o significado de origem e os dados necessários para registrá-la."
+              ]
+            }
+          ],
+          "issues": [],
+          "schema_version": "CompactUnderstandingProposal/v1"
+        },
+        "model_qualification": "not-established",
+        "schema_version": "CompactUnderstanding/v1",
+        "semantic_status": "not-established"
+      },
+      "elapsed_seconds": 15.617120599985356,
+      "error_code": null,
+      "id": "cloud",
+      "program_sha256": "a4cceac807bedce5091dd65989e4dfaa96e60b9d92982ebb5b51acc794ebaed8",
+      "provider": "codex-cli",
+      "reported_model": null,
+      "requested_model": "gpt-6.1-sol",
+      "status": "completed"
+    }
+  ],
+  "comparison_basis": "exact-criterion-fields-excluding-note",
+  "criterion_agreements": [],
+  "criterion_disagreements": [
+    0
+  ],
+  "extraction": {
+    "asset_contents": "not-read",
+    "atoms": [
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-1",
+        "kind": "conception",
+        "pointer": "/conception",
+        "quote": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita.",
+        "source_ref": "input-1"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-2",
+        "kind": "branding",
+        "pointer": "/branding/audience/0",
+        "quote": "autores",
+        "source_ref": "input-2"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-3",
+        "kind": "branding",
+        "pointer": "/branding/principles/0",
+        "quote": "rastreabilidade",
+        "source_ref": "input-2"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-4",
+        "kind": "branding",
+        "pointer": "/branding/principles/1",
+        "quote": "controle humano",
+        "source_ref": "input-2"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-5",
+        "kind": "constraint",
+        "pointer": "/constraints/business/0",
+        "quote": "Registrar a identidade do responsável.",
+        "source_ref": "input-3"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-6",
+        "kind": "constraint",
+        "pointer": "/constraints/max_build_cost_usd",
+        "quote": "0.0",
+        "source_ref": "input-3"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-7",
+        "kind": "backlog-description",
+        "pointer": "/backlog/0/description",
+        "quote": "Organizar publicação da equipe e registrar decisões.",
+        "source_ref": "input-4"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-8",
+        "kind": "acceptance-criterion",
+        "pointer": "/backlog/0/acceptance_criteria/0",
+        "quote": "Cada publicação da equipe deve conter responsável e origem.",
+        "source_ref": "input-5"
+      }
+    ],
+    "excluded_references": [],
+    "request": {
+      "original_input": {
+        "assets": [],
+        "backlog": [
+          {
+            "acceptance_criteria": [
+              "Cada publicação da equipe deve conter responsável e origem."
+            ],
+            "data_owner": null,
+            "depends_on": [],
+            "description": "Organizar publicação da equipe e registrar decisões.",
+            "id": "register",
+            "implementation": "undecided",
+            "inputs": [],
+            "outputs": [],
+            "risk": "unknown",
+            "side_effects": [],
+            "title": "Registrar e liberar"
+          }
+        ],
+        "branding": {
+          "audience": [
+            "autores"
+          ],
+          "principles": [
+            "rastreabilidade",
+            "controle humano"
+          ],
+          "tone": [],
+          "visual_constraints": []
+        },
+        "conception": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita.",
+        "constraints": {
+          "business": [
+            "Registrar a identidade do responsável."
+          ],
+          "max_build_cost_usd": 0.0,
+          "security": [],
+          "technical": []
+        },
+        "domain": null,
+        "domain_profile": null,
+        "evidence_pack": null,
+        "id": "dev-new-domain",
+        "name": "Fixture dev new-domain",
+        "schema_version": "ProjectInput/v1"
+      },
+      "original_sha256": "6d792a55af0f4e0af1c2c1f1e36ff0d31f7fb9894b7091efd3f67338141dc492",
+      "references": [
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-1",
+          "pointer": "/conception",
+          "project_id": "dev-new-domain",
+          "value": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita."
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-2",
+          "pointer": "/branding",
+          "project_id": "dev-new-domain",
+          "value": "{\"audience\":[\"autores\"],\"principles\":[\"rastreabilidade\",\"controle humano\"],\"tone\":[],\"visual_constraints\":[]}"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-3",
+          "pointer": "/constraints",
+          "project_id": "dev-new-domain",
+          "value": "{\"business\":[\"Registrar a identidade do responsável.\"],\"max_build_cost_usd\":0.0,\"security\":[],\"technical\":[]}"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-4",
+          "pointer": "/backlog/0/description",
+          "project_id": "dev-new-domain",
+          "value": "Organizar publicação da equipe e registrar decisões."
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-5",
+          "pointer": "/backlog/0/acceptance_criteria/0",
+          "project_id": "dev-new-domain",
+          "value": "Cada publicação da equipe deve conter responsável e origem."
+        }
+      ],
+      "schema_version": "UnderstandingRequest/v1"
+    },
+    "schema_version": "GroundingExtraction/v1",
+    "semantic_status": "not-established"
+  },
+  "human_review_required": true,
+  "input_sha256": "6d792a55af0f4e0af1c2c1f1e36ff0d31f7fb9894b7091efd3f67338141dc492",
+  "model_qualification": "not-established",
+  "schema_version": "UnderstandingComparison/v1",
+  "semantic_status": "not-established",
+  "total_call_seconds": 60.22266829997534,
+  "unavailable_criteria": [],
+  "wall_time_seconds": 44.621170500002336
+}

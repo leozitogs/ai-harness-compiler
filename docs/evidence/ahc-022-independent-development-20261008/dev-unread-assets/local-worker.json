@@ -1,0 +1,398 @@
+{
+  "compact_analysis": {
+    "extraction": {
+      "asset_contents": "not-read",
+      "atoms": [
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-1",
+          "kind": "conception",
+          "pointer": "/conception",
+          "quote": "Uma equipe organiza publicações e suas fontes.",
+          "source_ref": "input-1"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-2",
+          "kind": "branding",
+          "pointer": "/branding/audience/0",
+          "quote": "autores",
+          "source_ref": "input-2"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-3",
+          "kind": "branding",
+          "pointer": "/branding/principles/0",
+          "quote": "rastreabilidade",
+          "source_ref": "input-2"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-4",
+          "kind": "branding",
+          "pointer": "/branding/principles/1",
+          "quote": "controle humano",
+          "source_ref": "input-2"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-5",
+          "kind": "constraint",
+          "pointer": "/constraints/business/0",
+          "quote": "Registrar a identidade do responsável.",
+          "source_ref": "input-3"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-6",
+          "kind": "constraint",
+          "pointer": "/constraints/max_build_cost_usd",
+          "quote": "0.0",
+          "source_ref": "input-3"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-7",
+          "kind": "backlog-description",
+          "pointer": "/backlog/0/description",
+          "quote": "Organizar publicação da equipe e registrar decisões.",
+          "source_ref": "input-4"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-8",
+          "kind": "acceptance-criterion",
+          "pointer": "/backlog/0/acceptance_criteria/0",
+          "quote": "Cada publicação da equipe deve conter responsável e origem.",
+          "source_ref": "input-5"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-9",
+          "kind": "domain-declaration",
+          "pointer": "/domain",
+          "quote": "workspace-management",
+          "source_ref": "input-6"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-10",
+          "kind": "asset-metadata",
+          "pointer": "/assets/0/path",
+          "quote": "assets/brand-notes.md",
+          "source_ref": "input-7"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-11",
+          "kind": "asset-metadata",
+          "pointer": "/assets/0/description",
+          "quote": "Referência declarada; conteúdo não ingerido.",
+          "source_ref": "input-7"
+        }
+      ],
+      "excluded_references": [],
+      "request": {
+        "original_input": {
+          "assets": [
+            {
+              "description": "Referência declarada; conteúdo não ingerido.",
+              "path": "assets/brand-notes.md"
+            }
+          ],
+          "backlog": [
+            {
+              "acceptance_criteria": [
+                "Cada publicação da equipe deve conter responsável e origem."
+              ],
+              "data_owner": null,
+              "depends_on": [],
+              "description": "Organizar publicação da equipe e registrar decisões.",
+              "id": "register",
+              "implementation": "undecided",
+              "inputs": [],
+              "outputs": [],
+              "risk": "unknown",
+              "side_effects": [],
+              "title": "Registrar e liberar"
+            }
+          ],
+          "branding": {
+            "audience": [
+              "autores"
+            ],
+            "principles": [
+              "rastreabilidade",
+              "controle humano"
+            ],
+            "tone": [],
+            "visual_constraints": []
+          },
+          "conception": "Uma equipe organiza publicações e suas fontes.",
+          "constraints": {
+            "business": [
+              "Registrar a identidade do responsável."
+            ],
+            "max_build_cost_usd": 0.0,
+            "security": [],
+            "technical": []
+          },
+          "domain": "workspace-management",
+          "domain_profile": null,
+          "evidence_pack": null,
+          "id": "dev-unread-assets",
+          "name": "Fixture dev unread-assets",
+          "schema_version": "ProjectInput/v1"
+        },
+        "original_sha256": "015d3fe7ce3367ff202c52b58d00331418776a18b0b20bf09cc2dd07f26d24f2",
+        "references": [
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-1",
+            "pointer": "/conception",
+            "project_id": "dev-unread-assets",
+            "value": "Uma equipe organiza publicações e suas fontes."
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-2",
+            "pointer": "/branding",
+            "project_id": "dev-unread-assets",
+            "value": "{\"audience\":[\"autores\"],\"principles\":[\"rastreabilidade\",\"controle humano\"],\"tone\":[],\"visual_constraints\":[]}"
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-3",
+            "pointer": "/constraints",
+            "project_id": "dev-unread-assets",
+            "value": "{\"business\":[\"Registrar a identidade do responsável.\"],\"max_build_cost_usd\":0.0,\"security\":[],\"technical\":[]}"
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-4",
+            "pointer": "/backlog/0/description",
+            "project_id": "dev-unread-assets",
+            "value": "Organizar publicação da equipe e registrar decisões."
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-5",
+            "pointer": "/backlog/0/acceptance_criteria/0",
+            "project_id": "dev-unread-assets",
+            "value": "Cada publicação da equipe deve conter responsável e origem."
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-6",
+            "pointer": "/domain",
+            "project_id": "dev-unread-assets",
+            "value": "workspace-management"
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-7",
+            "pointer": "/assets",
+            "project_id": "dev-unread-assets",
+            "value": "[{\"description\":\"Referência declarada; conteúdo não ingerido.\",\"path\":\"assets/brand-notes.md\"}]"
+          }
+        ],
+        "schema_version": "UnderstandingRequest/v1"
+      },
+      "schema_version": "GroundingExtraction/v1",
+      "semantic_status": "not-established"
+    },
+    "interpretation": {
+      "context_findings": [],
+      "criteria": [
+        {
+          "condition": "Each team publication must contain a responsible party and source.",
+          "kind": "business-rule",
+          "note": "The criterion 'Cada publicação da equipe deve conter responsável e origem.' is directly supported by the context. It specifies that every team publication must include a responsible party and source. This aligns with the branding principles of 'rastreabilidade' (traceability) and 'controle humano' (human control), which emphasize accountability and human oversight. The constraint 'Registrar a identidade do responsável' further reinforces the requirement for responsibility attribution. The domain declaration 'workspace-management' indicates this is about managing team outputs, such as publications. Context indices: /conception, /branding/audience/0, /branding/principles/0, /branding/principles/1, /constraints/business/0, /backlog/0/description, /domain, /backlog/0/acceptance_criteria/0. The criterion is clearly stated and consistent with other context elements. No contradiction is found.",
+          "outcome": "Publications are traceable and accountable to a human responsible for them.",
+          "question": null,
+          "uncertainties": []
+        }
+      ],
+      "issues": [],
+      "schema_version": "CompactUnderstandingProposal/v1"
+    },
+    "model_qualification": "not-established",
+    "schema_version": "CompactUnderstanding/v1",
+    "semantic_status": "not-established"
+  },
+  "error_code": null,
+  "failure_diagnostic": null,
+  "grounded_analysis": null,
+  "identity": {
+    "compiler_source_sha256": "25c73a4ec1b6375817e948655000df539f94df391fce8312b833f8dac25f85cc",
+    "compiler_version": "0.1.0",
+    "family": "qwen3",
+    "model_sha256": "59d7f50962ef280aacad2867d041c13e22ad2d08827df5ec407ff75d348f8c90",
+    "model_size_bytes": 2497293463,
+    "observed_at": "2026-10-08T19:13:54.890012+00:00",
+    "parameters_sha256": "141606c9a342a4f3dc141484492b4922ec7d0fa300d296f3076bb02284113d4d",
+    "platform_system": "Windows",
+    "prompt_sha256": "d11faba7a2ff6e589337e51562caf2af16fb33c5e35870c1efb74a4d5123aea2",
+    "provenance": "observed-local-ollama-api-not-authenticated",
+    "provider_version": "0.40.0",
+    "python_version": "3.13.7",
+    "quantization": "Q4_K_M",
+    "requested_model": "ahc-qwen3:4b-instruct-8k"
+  },
+  "observation": {
+    "generation_duration_ns": 6723014000,
+    "load_duration_ns": 6550900,
+    "output_tokens": 262,
+    "prompt_duration_ns": 267613000,
+    "prompt_tokens": 643,
+    "response_sha256": "25464096560993c4784addfc079ed02ed03480a8d213cc887f676b0fe073d354",
+    "returned_model": "ahc-qwen3:4b-instruct-8k",
+    "total_duration_ns": 7266094900
+  },
+  "settings": {
+    "analysis_mode": "compact",
+    "call_timeout_seconds": 120,
+    "context_tokens": 8192,
+    "execution": "sequential-isolated-process-no-retries",
+    "expected_model_sha256": "59d7f50962ef280aacad2867d041c13e22ad2d08827df5ec407ff75d348f8c90",
+    "max_attempts": 1,
+    "max_output_tokens": 4096,
+    "model": "ahc-qwen3:4b-instruct-8k",
+    "repeats": 1,
+    "session_seconds": 120,
+    "temperature": 0,
+    "thinking": false
+  },
+  "status": "completed",
+  "understanding": {
+    "proposal": {
+      "business_rules": [
+        {
+          "condition": "Each team publication must contain a responsible party and source.",
+          "description": "Cada publicação da equipe deve conter responsável e origem.",
+          "exceptions": [],
+          "id": "criterion-1",
+          "origin": "hypothesis",
+          "outcome": "Publications are traceable and accountable to a human responsible for them.",
+          "source_refs": [
+            "input-5"
+          ]
+        }
+      ],
+      "conflicts": [],
+      "domain_candidates": [],
+      "questions": [],
+      "schema_version": "UnderstandingProposal/v1",
+      "statements": []
+    },
+    "request": {
+      "original_input": {
+        "assets": [
+          {
+            "description": "Referência declarada; conteúdo não ingerido.",
+            "path": "assets/brand-notes.md"
+          }
+        ],
+        "backlog": [
+          {
+            "acceptance_criteria": [
+              "Cada publicação da equipe deve conter responsável e origem."
+            ],
+            "data_owner": null,
+            "depends_on": [],
+            "description": "Organizar publicação da equipe e registrar decisões.",
+            "id": "register",
+            "implementation": "undecided",
+            "inputs": [],
+            "outputs": [],
+            "risk": "unknown",
+            "side_effects": [],
+            "title": "Registrar e liberar"
+          }
+        ],
+        "branding": {
+          "audience": [
+            "autores"
+          ],
+          "principles": [
+            "rastreabilidade",
+            "controle humano"
+          ],
+          "tone": [],
+          "visual_constraints": []
+        },
+        "conception": "Uma equipe organiza publicações e suas fontes.",
+        "constraints": {
+          "business": [
+            "Registrar a identidade do responsável."
+          ],
+          "max_build_cost_usd": 0.0,
+          "security": [],
+          "technical": []
+        },
+        "domain": "workspace-management",
+        "domain_profile": null,
+        "evidence_pack": null,
+        "id": "dev-unread-assets",
+        "name": "Fixture dev unread-assets",
+        "schema_version": "ProjectInput/v1"
+      },
+      "original_sha256": "015d3fe7ce3367ff202c52b58d00331418776a18b0b20bf09cc2dd07f26d24f2",
+      "references": [
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-1",
+          "pointer": "/conception",
+          "project_id": "dev-unread-assets",
+          "value": "Uma equipe organiza publicações e suas fontes."
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-2",
+          "pointer": "/branding",
+          "project_id": "dev-unread-assets",
+          "value": "{\"audience\":[\"autores\"],\"principles\":[\"rastreabilidade\",\"controle humano\"],\"tone\":[],\"visual_constraints\":[]}"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-3",
+          "pointer": "/constraints",
+          "project_id": "dev-unread-assets",
+          "value": "{\"business\":[\"Registrar a identidade do responsável.\"],\"max_build_cost_usd\":0.0,\"security\":[],\"technical\":[]}"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-4",
+          "pointer": "/backlog/0/description",
+          "project_id": "dev-unread-assets",
+          "value": "Organizar publicação da equipe e registrar decisões."
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-5",
+          "pointer": "/backlog/0/acceptance_criteria/0",
+          "project_id": "dev-unread-assets",
+          "value": "Cada publicação da equipe deve conter responsável e origem."
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-6",
+          "pointer": "/domain",
+          "project_id": "dev-unread-assets",
+          "value": "workspace-management"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-7",
+          "pointer": "/assets",
+          "project_id": "dev-unread-assets",
+          "value": "[{\"description\":\"Referência declarada; conteúdo não ingerido.\",\"path\":\"assets/brand-notes.md\"}]"
+        }
+      ],
+      "schema_version": "UnderstandingRequest/v1"
+    },
+    "review": null,
+    "schema_version": "ProjectUnderstanding/v1"
+  }
+}

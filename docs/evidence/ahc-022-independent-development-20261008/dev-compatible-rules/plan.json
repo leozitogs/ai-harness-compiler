@@ -1,0 +1,328 @@
+{
+  "case": {
+    "category": "compatible-rules",
+    "expected_conflicts": "none",
+    "id": "dev-compatible-rules",
+    "project": {
+      "assets": [
+        {
+          "description": "Referência visual e verbal; conteúdo não ingerido no MVP.",
+          "path": "assets/brand-notes.md"
+        }
+      ],
+      "backlog": [
+        {
+          "acceptance_criteria": [
+            "Cada material tem título, autor e referência de origem.",
+            "Materiais só são visíveis ao educador responsável."
+          ],
+          "data_owner": "educador",
+          "depends_on": [],
+          "description": "Permitir que o educador catalogue materiais e suas fontes.",
+          "id": "material-library",
+          "implementation": "deterministic",
+          "inputs": [
+            "material",
+            "metadados de origem"
+          ],
+          "outputs": [
+            "material catalogado"
+          ],
+          "risk": "medium",
+          "side_effects": [
+            "gravação na biblioteca"
+          ],
+          "title": "Biblioteca de materiais"
+        },
+        {
+          "acceptance_criteria": [
+            "As afirmações do rascunho referenciam os materiais utilizados.",
+            "A publicação exige revisão e aprovação do educador."
+          ],
+          "data_owner": "educador",
+          "depends_on": [
+            "material-library"
+          ],
+          "description": "Preparar um rascunho de aula usando os materiais selecionados.",
+          "id": "lesson-draft",
+          "implementation": "rag",
+          "inputs": [
+            "materiais selecionados",
+            "objetivos de aprendizagem"
+          ],
+          "outputs": [
+            "rascunho com referências"
+          ],
+          "risk": "medium",
+          "side_effects": [],
+          "title": "Rascunho de aula baseado em fontes"
+        }
+      ],
+      "branding": {
+        "audience": [
+          "educadores",
+          "coordenadores pedagógicos"
+        ],
+        "principles": [
+          "fontes verificáveis",
+          "controle do educador"
+        ],
+        "tone": [
+          "claro",
+          "acolhedor",
+          "preciso"
+        ],
+        "visual_constraints": [
+          "interface acessível"
+        ]
+      },
+      "conception": "Uma plataforma para educadores organizarem materiais e prepararem aulas baseadas em fontes, com revisão humana antes da publicação.",
+      "constraints": {
+        "business": [
+          "revisão humana antes de publicação"
+        ],
+        "max_build_cost_usd": 0.0,
+        "security": [
+          "não expor dados pessoais em traces"
+        ],
+        "technical": [
+          "Python 3.12 ou superior",
+          "contratos versionados"
+        ]
+      },
+      "domain": "education",
+      "domain_profile": null,
+      "evidence_pack": null,
+      "id": "learning-studio",
+      "name": "Learning Studio",
+      "schema_version": "ProjectInput/v1"
+    },
+    "required_rules": [
+      {
+        "id": "required-1",
+        "quote": "Cada material tem título, autor e referência de origem.",
+        "source_pointer": "/backlog/0/acceptance_criteria/0"
+      },
+      {
+        "id": "required-2",
+        "quote": "Materiais só são visíveis ao educador responsável.",
+        "source_pointer": "/backlog/0/acceptance_criteria/1"
+      },
+      {
+        "id": "required-3",
+        "quote": "As afirmações do rascunho referenciam os materiais utilizados.",
+        "source_pointer": "/backlog/1/acceptance_criteria/0"
+      },
+      {
+        "id": "required-4",
+        "quote": "A publicação exige revisão e aprovação do educador.",
+        "source_pointer": "/backlog/1/acceptance_criteria/1"
+      }
+    ],
+    "requires_blocking_question": false,
+    "review_guidance": "Aprovação humana e aprovação do educador são compatíveis. Não exigir revisor externo; citar domínio na fonte /domain; não inventar conteúdo do asset nem conflito entre orçamento zero e ferramentas gratuitas."
+  },
+  "codex_model": "gpt-6.1-sol",
+  "codex_program_sha256": "a4cceac807bedce5091dd65989e4dfaa96e60b9d92982ebb5b51acc794ebaed8",
+  "codex_timeout_seconds": 120,
+  "corpus_sha256": "234a9e7c0e4e55fd341f6dc00d9f3a24f937d28df58ad2ec9f1b3a54082edf24",
+  "local_request": {
+    "prompt_sha256": "d11faba7a2ff6e589337e51562caf2af16fb33c5e35870c1efb74a4d5123aea2",
+    "repair_feedback": null,
+    "request": {
+      "original_input": {
+        "assets": [
+          {
+            "description": "Referência visual e verbal; conteúdo não ingerido no MVP.",
+            "path": "assets/brand-notes.md"
+          }
+        ],
+        "backlog": [
+          {
+            "acceptance_criteria": [
+              "Cada material tem título, autor e referência de origem.",
+              "Materiais só são visíveis ao educador responsável."
+            ],
+            "data_owner": "educador",
+            "depends_on": [],
+            "description": "Permitir que o educador catalogue materiais e suas fontes.",
+            "id": "material-library",
+            "implementation": "deterministic",
+            "inputs": [
+              "material",
+              "metadados de origem"
+            ],
+            "outputs": [
+              "material catalogado"
+            ],
+            "risk": "medium",
+            "side_effects": [
+              "gravação na biblioteca"
+            ],
+            "title": "Biblioteca de materiais"
+          },
+          {
+            "acceptance_criteria": [
+              "As afirmações do rascunho referenciam os materiais utilizados.",
+              "A publicação exige revisão e aprovação do educador."
+            ],
+            "data_owner": "educador",
+            "depends_on": [
+              "material-library"
+            ],
+            "description": "Preparar um rascunho de aula usando os materiais selecionados.",
+            "id": "lesson-draft",
+            "implementation": "rag",
+            "inputs": [
+              "materiais selecionados",
+              "objetivos de aprendizagem"
+            ],
+            "outputs": [
+              "rascunho com referências"
+            ],
+            "risk": "medium",
+            "side_effects": [],
+            "title": "Rascunho de aula baseado em fontes"
+          }
+        ],
+        "branding": {
+          "audience": [
+            "educadores",
+            "coordenadores pedagógicos"
+          ],
+          "principles": [
+            "fontes verificáveis",
+            "controle do educador"
+          ],
+          "tone": [
+            "claro",
+            "acolhedor",
+            "preciso"
+          ],
+          "visual_constraints": [
+            "interface acessível"
+          ]
+        },
+        "conception": "Uma plataforma para educadores organizarem materiais e prepararem aulas baseadas em fontes, com revisão humana antes da publicação.",
+        "constraints": {
+          "business": [
+            "revisão humana antes de publicação"
+          ],
+          "max_build_cost_usd": 0.0,
+          "security": [
+            "não expor dados pessoais em traces"
+          ],
+          "technical": [
+            "Python 3.12 ou superior",
+            "contratos versionados"
+          ]
+        },
+        "domain": "education",
+        "domain_profile": null,
+        "evidence_pack": null,
+        "id": "learning-studio",
+        "name": "Learning Studio",
+        "schema_version": "ProjectInput/v1"
+      },
+      "original_sha256": "b3d0db0980c20a068cbddf89bf26afef915368d5e487a9e1748cf782a9ba9225",
+      "references": [
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-1",
+          "pointer": "/conception",
+          "project_id": "learning-studio",
+          "value": "Uma plataforma para educadores organizarem materiais e prepararem aulas baseadas em fontes, com revisão humana antes da publicação."
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-2",
+          "pointer": "/branding",
+          "project_id": "learning-studio",
+          "value": "{\"audience\":[\"educadores\",\"coordenadores pedagógicos\"],\"principles\":[\"fontes verificáveis\",\"controle do educador\"],\"tone\":[\"claro\",\"acolhedor\",\"preciso\"],\"visual_constraints\":[\"interface acessível\"]}"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-3",
+          "pointer": "/constraints",
+          "project_id": "learning-studio",
+          "value": "{\"business\":[\"revisão humana antes de publicação\"],\"max_build_cost_usd\":0.0,\"security\":[\"não expor dados pessoais em traces\"],\"technical\":[\"Python 3.12 ou superior\",\"contratos versionados\"]}"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-4",
+          "pointer": "/backlog/0/description",
+          "project_id": "learning-studio",
+          "value": "Permitir que o educador catalogue materiais e suas fontes."
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-5",
+          "pointer": "/backlog/0/acceptance_criteria/0",
+          "project_id": "learning-studio",
+          "value": "Cada material tem título, autor e referência de origem."
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-6",
+          "pointer": "/backlog/0/acceptance_criteria/1",
+          "project_id": "learning-studio",
+          "value": "Materiais só são visíveis ao educador responsável."
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-7",
+          "pointer": "/backlog/1/description",
+          "project_id": "learning-studio",
+          "value": "Preparar um rascunho de aula usando os materiais selecionados."
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-8",
+          "pointer": "/backlog/1/acceptance_criteria/0",
+          "project_id": "learning-studio",
+          "value": "As afirmações do rascunho referenciam os materiais utilizados."
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-9",
+          "pointer": "/backlog/1/acceptance_criteria/1",
+          "project_id": "learning-studio",
+          "value": "A publicação exige revisão e aprovação do educador."
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-10",
+          "pointer": "/domain",
+          "project_id": "learning-studio",
+          "value": "education"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-11",
+          "pointer": "/assets",
+          "project_id": "learning-studio",
+          "value": "[{\"description\":\"Referência visual e verbal; conteúdo não ingerido no MVP.\",\"path\":\"assets/brand-notes.md\"}]"
+        }
+      ],
+      "schema_version": "UnderstandingRequest/v1"
+    },
+    "settings": {
+      "analysis_mode": "compact",
+      "call_timeout_seconds": 120,
+      "context_tokens": 8192,
+      "execution": "sequential-isolated-process-no-retries",
+      "expected_model_sha256": "59d7f50962ef280aacad2867d041c13e22ad2d08827df5ec407ff75d348f8c90",
+      "max_attempts": 1,
+      "max_output_tokens": 4096,
+      "model": "ahc-qwen3:4b-instruct-8k",
+      "repeats": 1,
+      "session_seconds": 120,
+      "temperature": 0,
+      "thinking": false
+    }
+  },
+  "max_calls": 2,
+  "retries": 0,
+  "schema_version": "DevelopmentComparisonPlan/v1",
+  "split": "development"
+}

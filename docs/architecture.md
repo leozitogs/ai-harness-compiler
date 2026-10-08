@@ -114,5 +114,13 @@ Experience Store, biblioteca de skills e meta-tools dependerão desse controle.
 
 ## Documentação técnica consultada
 
+AHC-022 dispõe de uma comparação experimental opcional de duas propostas
+independentes, local e via Codex CLI, coordenada por LangGraph no adapter `team`.
+O contrato UnderstandingComparison/v1 preserva ambas e deriva divergências;
+não escolhe arquitetura ou modelo, aprova entendimento ou instala harness.
+O programa compacto v2 inclui caminhos de campos e critérios citáveis, corrigindo
+perdas de contexto observadas. Veja [ADR-0017](adr/0017-independent-provider-comparison.md),
+[operação](engineering/provider-comparison.md) e [protocolo científico](engineering/understanding-scientific-basis.md).
+
 - [Pydantic Models](https://docs.pydantic.dev/latest/concepts/models/): validação e serialização dos contratos.
 - [uv em GitHub Actions](https://docs.astral.sh/uv/guides/integration/github/): configuração de instalação e matriz de CI.

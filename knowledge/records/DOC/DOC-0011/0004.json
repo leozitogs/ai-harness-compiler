@@ -1,0 +1,69 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "One repetition, sequential programs with same model/profile/code and frozen eight-case development corpus; holdout not executed.",
+  "created_at": "2026-10-08T15:56:12.768987+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "475 tests; development baseline 4/8 and compact 6/8 structurally valid. Semantic judgment pending, no qualification.",
+      "outcome": "observed",
+      "sha256": "e5c4bdb8a61aaeaef97a5aa08a27e5b3031a1be26f95a1e8a18fd08ea3a93d0c",
+      "source": "docs/engineering/compact-understanding.md"
+    },
+    {
+      "command": null,
+      "note": "475 tests; development baseline 4/8 and compact 6/8 structurally valid. Semantic judgment pending, no qualification.",
+      "outcome": "observed",
+      "sha256": "ec2425862d58ba96fb805f8802f5a2c5e07eed4a7d9af3fc4f1a11f2709f127d",
+      "source": "docs/delivery/ahc-022-compact-increment.md"
+    },
+    {
+      "command": null,
+      "note": "475 tests; development baseline 4/8 and compact 6/8 structurally valid. Semantic judgment pending, no qualification.",
+      "outcome": "observed",
+      "sha256": "a57ceecaadcdc0a9a8035fc3841a5b48190a33577a4ad2ca8141a82dba8471ca",
+      "source": "docs/delivery/ahc-022-development-comparison.md"
+    },
+    {
+      "command": null,
+      "note": "475 tests; development baseline 4/8 and compact 6/8 structurally valid. Semantic judgment pending, no qualification.",
+      "outcome": "observed",
+      "sha256": "4eaf0f916c96cc62dcefd3990bc6cf6ba3a7420d96452212f1cd3bf4efa1ee9a",
+      "source": "docs/evidence/ahc-022-development-comparison-20261008.json"
+    }
+  ],
+  "id": "DOC-0011",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Synthetic/unblinded development",
+    "Execution order fixed and cache uncontrolled",
+    "Domain support and unnecessary uncertainty still observed",
+    "No causal performance ranking",
+    "Current source documentation includes compact v2 and optional independent comparison; historical v1 observations remain separate and semantic quality unestablished"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0016",
+    "INC-0007"
+  ],
+  "resolution": null,
+  "review_note": "Updated source hashes; current code/documentation adds comparison without changing historical evidence or conferring semantic approval.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 4,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Input de exemplo caiu de 8661 para 1508 bytes; baseline 4/8 vs compact 6/8 válidos estruturalmente, sem aceite semântico.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Protocolo compacto e comparação inicial de development",
+  "updated_at": "2026-10-08T19:21:41.571355+00:00"
+}

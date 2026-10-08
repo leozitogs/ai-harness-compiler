@@ -16,6 +16,12 @@ mantêm os mesmos limites e fronteiras.
 
 ## Responsabilidades
 
+O programa v2 acrescenta cada critério ao final da lista de contexto citável,
+permitindo conflitos entre branding e backlog com os dois source_refs originais.
+Os índices antigos continuam iguais. `source_path` identifica o campo do valor,
+inclusive constraints numéricas; o modelo continua sem gerar IDs ou citações.
+O histórico v1 permanece uma observação do programa anterior, não uma medição v2.
+
 | Parte | Responsabilidade |
 |---|---|
 | Extração | Snapshot completo e evidências literais canônicas |

@@ -1,0 +1,98 @@
+{
+  "alternatives": [
+    "Unbounded multi-agent voting",
+    "Intrinsic self-correction without independent evidence"
+  ],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Two exploratory CLI calls reproduced unsupported one-sided conflict citations when the criterion was not citably exposed. Development pair v2 accepted local 8/8 and CLI 7/8 structurally; support errors remain.",
+  "created_at": "2026-10-08T19:21:41.763114+00:00",
+  "decision": "Append criteria without shifting old indices, retain source paths, preserve hypotheses; compare exactly two independent proposals without selection/approval or hidden reasoning persistence.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Offline checks verified; 8 local and 7 Codex proposals structurally accepted on frozen development. Semantic judgment/qualification not established.",
+      "outcome": "observed",
+      "sha256": "c8ad638c8887d666b33c12836a6ef3f08d3b0621f816050e25398cccb47cf4c3",
+      "source": "docs/adr/0017-independent-provider-comparison.md"
+    },
+    {
+      "command": null,
+      "note": "Offline checks verified; 8 local and 7 Codex proposals structurally accepted on frozen development. Semantic judgment/qualification not established.",
+      "outcome": "observed",
+      "sha256": "190560766a66306607b764ded0124e63f3c97ca979f4128404a95138a003e4e9",
+      "source": "docs/engineering/provider-comparison.md"
+    },
+    {
+      "command": null,
+      "note": "Offline checks verified; 8 local and 7 Codex proposals structurally accepted on frozen development. Semantic judgment/qualification not established.",
+      "outcome": "observed",
+      "sha256": "260bba483f33a261edd5e7cb293e7abf7b153675068b921e29ae6f66986cf06a",
+      "source": "src/ai_harness_compiler/adapters/codex_cli.py"
+    },
+    {
+      "command": null,
+      "note": "Offline checks verified; 8 local and 7 Codex proposals structurally accepted on frozen development. Semantic judgment/qualification not established.",
+      "outcome": "observed",
+      "sha256": "f37dba81fb3a6e41f27b3ee730af678fe2174efb815d81d8ca04458c6c8aff49",
+      "source": "src/ai_harness_compiler/models/comparison.py"
+    },
+    {
+      "command": null,
+      "note": "Offline checks verified; 8 local and 7 Codex proposals structurally accepted on frozen development. Semantic judgment/qualification not established.",
+      "outcome": "passed",
+      "sha256": "e315fedb821cbf304dd79a96f7f7d6686297a5e019550822e7ed6401e209d94f",
+      "source": "tests/test_codex_cli.py"
+    },
+    {
+      "command": null,
+      "note": "Offline checks verified; 8 local and 7 Codex proposals structurally accepted on frozen development. Semantic judgment/qualification not established.",
+      "outcome": "passed",
+      "sha256": "0afaa866c674a991d4be7ed6321bb9a770f6ff765549376a4593b67e6a44353a",
+      "source": "tests/test_understanding_comparison.py"
+    },
+    {
+      "command": null,
+      "note": "Offline checks verified; 8 local and 7 Codex proposals structurally accepted on frozen development. Semantic judgment/qualification not established.",
+      "outcome": "passed",
+      "sha256": "f4673910d68342c2feef8e672f5bbc549377e69f338af4023c11d0d9d755ea01",
+      "source": "tests/test_comparison_runner.py"
+    }
+  ],
+  "id": "ADR-0017",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "No remote resolved-model or weights attestation",
+    "Timeout does not prove remote cancellation",
+    "CLI client safeguards are not universal OS isolation",
+    "No semantic adjudication or holdout"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0016",
+    "ADR-0012",
+    "INC-0007"
+  ],
+  "resolution": null,
+  "review_note": "532 offline tests and final source checks passed; refreshed hashes, live program identity remains historical, no semantic approval.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 4,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Compact v2 exposes criteria and field paths; optional subscription CLI plus local worker produce two independent proposals via bounded LangGraph.",
+  "supersedes": null,
+  "tags": [
+    "provider-comparison",
+    "langgraph",
+    "subscription-cli",
+    "source-support"
+  ],
+  "title": "Comparação independente de provedores e contexto citável completo",
+  "updated_at": "2026-10-08T19:25:01.450716+00:00"
+}

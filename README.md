@@ -186,6 +186,8 @@ independente de provedores de modelos e frameworks de agentes.
 | [Agentes do projeto](docs/engineering/project-agents.md) | Equipe executável, ML e decisão do PO |
 | [Memória de engenharia](docs/engineering/memory-system.md) | Documentação permanente, erros, soluções e aprendizagem |
 | [Geração por projeto](docs/product/project-generation-pipeline.md) | Memória e agentes especializados como produto do pipeline |
+| [Comparação de provedores](docs/engineering/provider-comparison.md) | LangGraph opcional, Ollama e Codex CLI com assinatura |
+| [Fundamentação do entendimento](docs/engineering/understanding-scientific-basis.md) | Estudos primários, limites e protocolo experimental |
 
 ## Licença
 

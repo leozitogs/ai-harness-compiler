@@ -133,7 +133,7 @@
       "responsible": "code-collaborator-supported-by-codex",
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
       "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16",
-      "progress_note": "Optional compact interpretation/projection implemented; first live proposal accepted structurally, rules remain hypotheses. Development pair executed: baseline 4/8 and compact 6/8 valid; semantic review/qualification pending.",
+      "progress_note": "Compact v2 fixes criteria citation and field meanings. Optional subscription Codex adapter and LangGraph two-provider comparison implemented; no auto-selection or semantic approval.",
       "evidence_sources": [
         "docs/adr/0014-grounded-analysis-dispositions.md",
         "docs/engineering/grounded-analysis.md",
@@ -144,7 +144,11 @@
         "docs/evidence/ahc-022-repair-scoped-20261008/repair.json",
         "docs/adr/0016-compact-interpretation-projection.md",
         "docs/delivery/ahc-022-compact-increment.md",
-        "tests/test_compact_analysis.py"
+        "tests/test_compact_analysis.py",
+        "docs/adr/0017-independent-provider-comparison.md",
+        "tests/test_understanding_comparison.py",
+        "tests/test_comparison_runner.py",
+        "tests/test_codex_cli.py"
       ]
     },
     {
@@ -162,10 +166,12 @@
       "responsible": "code-collaborator-supported-by-codex",
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
       "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16",
-      "progress_note": "Initial development comparison executed on all eight frozen cases, one repetition per program, same model/profile/code. Six compact evals not-run, two errors; no semantic acceptance or holdout.",
+      "progress_note": "Eight frozen development cases: local 8/8 and Codex 7/8 structurally accepted; 16 model calls, validated journals. Source-support errors remain in local proposals; no semantic acceptance or holdout.",
       "evidence_sources": [
         "docs/delivery/ahc-022-development-comparison.md",
-        "docs/evidence/ahc-022-development-comparison-20261008.json"
+        "docs/evidence/ahc-022-development-comparison-20261008.json",
+        "docs/delivery/ahc-022-independent-comparison.md",
+        "docs/evidence/ahc-022-independent-development-summary-20261008.json"
       ]
     },
     {

@@ -1,0 +1,68 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Eight paired synthetic cases, one repetition, concurrent local/CLI calls; code and program hashes and journal bindings preserved. Final stream-order/installation guards added after the recorded run.",
+  "created_at": "2026-10-08T19:21:41.893354+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Offline checks verified; 8 local and 7 Codex proposals structurally accepted on frozen development. Semantic judgment/qualification not established.",
+      "outcome": "observed",
+      "sha256": "ee14a83458bcc6fccbe0d746a25f633cce1ca3f182ebd875647f347e55160b34",
+      "source": "docs/engineering/understanding-scientific-basis.md"
+    },
+    {
+      "command": null,
+      "note": "Offline checks verified; 8 local and 7 Codex proposals structurally accepted on frozen development. Semantic judgment/qualification not established.",
+      "outcome": "observed",
+      "sha256": "696dfb9b99b6aaacacb2c996e4cab95537e46213245eb9adc1e158c35a7155f5",
+      "source": "docs/delivery/ahc-022-independent-comparison.md"
+    },
+    {
+      "command": null,
+      "note": "Offline checks verified; 8 local and 7 Codex proposals structurally accepted on frozen development. Semantic judgment/qualification not established.",
+      "outcome": "observed",
+      "sha256": "f9958b97f6e222455af63e9f6c11f11aecb140c0ee6849c670f7bb90ef646309",
+      "source": "docs/evidence/ahc-022-independent-development-summary-20261008.json"
+    },
+    {
+      "command": null,
+      "note": "Offline checks verified; 8 local and 7 Codex proposals structurally accepted on frozen development. Semantic judgment/qualification not established.",
+      "outcome": "observed",
+      "sha256": "91ad4412ed6e9c70a2455d7cbb85f70d34432fac4fb07b622129edcbcd3b997e",
+      "source": "scripts/analyze_understanding_comparisons.py"
+    }
+  ],
+  "id": "DOC-0012",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Research results do not certify AHC",
+    "Unblinded small synthetic development set",
+    "No causal performance/cost ranking",
+    "Automated judge and human approval are distinct"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0017",
+    "INC-0007"
+  ],
+  "resolution": null,
+  "review_note": "532 offline tests and final source checks passed; refreshed hashes, live program identity remains historical, no semantic approval.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 4,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Scientific evidence motivates ablations and independent verification; preliminary 16-call development run has 15 structurally accepted proposals and no established semantic success.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Estudos primários e desenvolvimento comparativo independente",
+  "updated_at": "2026-10-08T19:25:01.593942+00:00"
+}

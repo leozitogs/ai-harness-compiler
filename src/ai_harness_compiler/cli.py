@@ -9,6 +9,7 @@ import yaml
 from pydantic import ValidationError
 
 from ai_harness_compiler import __version__
+from ai_harness_compiler.comparison_runner import ComparisonPlan
 from ai_harness_compiler.compiler import compile_harness, json_text
 from ai_harness_compiler.intake import DEFAULT_MAX_MANIFEST_BYTES, load_project
 from ai_harness_compiler.models import CapabilityGraph, HarnessSpec, ProjectDNA, ProjectInput
@@ -19,6 +20,7 @@ from ai_harness_compiler.models.compact_analysis import (
     CompactInput,
     CompactProposal,
 )
+from ai_harness_compiler.models.comparison import ComparisonReport
 from ai_harness_compiler.models.domain import DomainProfile
 from ai_harness_compiler.models.evidence import EvidencePack, SourceRecord
 from ai_harness_compiler.models.grounded_analysis import (
@@ -91,6 +93,8 @@ MODELS: dict[str, type[Contract]] = {
     "compact-understanding-input": CompactInput,
     "compact-understanding-proposal": CompactProposal,
     "compact-understanding": CompactAnalysisSpec,
+    "understanding-comparison": ComparisonReport,
+    "understanding-comparison-plan": ComparisonPlan,
 }
 
 
@@ -234,6 +238,21 @@ def main(argv: list[str] | None = None) -> int:
     )
     repair_validation.add_argument("input", type=Path)
     repair_validation.add_argument("--corpus", type=Path, required=True)
+    comparison_command = commands.add_parser(
+        "compare-understanding", help="One development case with local and subscription proposals"
+    )
+    comparison_command.add_argument("--corpus", type=Path, required=True)
+    comparison_command.add_argument("--case", required=True)
+    comparison_command.add_argument("--ollama-model", required=True)
+    comparison_command.add_argument("--codex-model", required=True)
+    comparison_command.add_argument("--expected-model-sha256", required=True)
+    comparison_command.add_argument("--timeout-seconds", type=int, default=180)
+    comparison_command.add_argument("--output", type=Path, required=True)
+    comparison_validation = commands.add_parser(
+        "validate-understanding-comparison", help="Validate saved provider comparison offline"
+    )
+    comparison_validation.add_argument("input", type=Path)
+    comparison_validation.add_argument("--corpus", type=Path, required=True)
     schema_command = commands.add_parser("schema", help="Print a JSON Schema to stdout")
     schema_command.add_argument("model", choices=MODELS)
     args = parser.parse_args(argv)
@@ -249,6 +268,33 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "schema":
             print(json_text(MODELS[args.model].model_json_schema()), end="")
             return 0
+        if args.command in {"compare-understanding", "validate-understanding-comparison"}:
+            from ai_harness_compiler.comparison_runner import (
+                run_development_comparison,
+                validate_development_comparison,
+            )
+            from ai_harness_compiler.semantic_eval import FrozenCorpus
+
+            comparison_corpus = FrozenCorpus(args.corpus)
+            if args.command == "validate-understanding-comparison":
+                validate_development_comparison(comparison_corpus, args.input)
+                print("Comparison journal valid; semantic judgment and qualification pending.")
+                return 0
+            comparison = run_development_comparison(
+                comparison_corpus,
+                args.case,
+                args.ollama_model,
+                args.codex_model,
+                args.expected_model_sha256,
+                args.output,
+                args.timeout_seconds,
+            )
+            print(
+                f"Proposals: {sum(c.status == 'completed' for c in comparison.candidates)}/2; "
+                f"textual disagreements: {len(comparison.criterion_disagreements)}."
+            )
+            print("Semantic judgment pending; model qualification: not-established.")
+            return 0 if all(c.status == "completed" for c in comparison.candidates) else 1
         if args.command in {"run-understanding-repair", "validate-understanding-repair"}:
             from ai_harness_compiler.repairs import run_repair, validate_repair
             from ai_harness_compiler.semantic_eval import FrozenCorpus
@@ -492,9 +538,14 @@ def main(argv: list[str] | None = None) -> int:
         print(f"factory: {exc}", file=sys.stderr)
         return 1
     except ModuleNotFoundError as exc:
-        if args.command not in {"team", "study", "run-understanding-evals"}:
+        if args.command not in {
+            "team",
+            "study",
+            "run-understanding-evals",
+            "compare-understanding",
+        }:
             raise
-        extra = "team" if args.command == "team" else "understanding"
+        extra = "team" if args.command in {"team", "compare-understanding"} else "understanding"
         print(
             f"factory: install the {extra} extra with uv sync --extra {extra} ({exc.name})",
             file=sys.stderr,

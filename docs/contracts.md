@@ -63,6 +63,18 @@ estados e migração explícita das IRs v1/v2 para v3.
 
 ## Reprodutibilidade e alterações
 
+UnderstandingComparison/v1 compara duas propostas compactas ligadas ao mesmo
+GroundingExtraction. Métricas e inventário de concordâncias/divergências são
+recalculados; não constituem julgamento semântico. DevelopmentComparisonPlan/v1
+limita o journal a um caso congelado, uma chamada por provedor e nenhum reparo.
+Os dois schemas são exportados pela CLI.
+
+CompactContext/v1 ganha `source_path` opcional e kind `acceptance-criterion`.
+O programa compacto v2 acrescenta esses átomos ao final, preservando índices
+antigos. Um leitor anterior pode rejeitar o novo enum; leitores atuais aceitam
+artefatos anteriores. Prompts/hashes v1 e v2 distinguem os experimentos;
+nenhuma IR publicada é promovida ou reinterpretada como semanticamente validada.
+
 Mesma IR e mesma versão do compilador produzem os mesmos bytes, sem timestamps
 ou caminhos absolutos na saída. O manifesto registra versão do compilador, digest
 da IR e hashes dos arquivos. Ele não assina artefatos nem é prova contra adulteração
