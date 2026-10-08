@@ -734,41 +734,6 @@
       "title": "GroundedAnalysisProposal",
       "type": "object"
     },
-    "GroundedAnalysisSpec": {
-      "additionalProperties": false,
-      "properties": {
-        "analysis": {
-          "$ref": "#/$defs/GroundedAnalysisProposal"
-        },
-        "extraction": {
-          "$ref": "#/$defs/GroundingExtraction"
-        },
-        "model_qualification": {
-          "const": "not-established",
-          "default": "not-established",
-          "title": "Model Qualification",
-          "type": "string"
-        },
-        "schema_version": {
-          "const": "GroundedAnalysis/v1",
-          "default": "GroundedAnalysis/v1",
-          "title": "Schema Version",
-          "type": "string"
-        },
-        "semantic_status": {
-          "const": "not-established",
-          "default": "not-established",
-          "title": "Semantic Status",
-          "type": "string"
-        }
-      },
-      "required": [
-        "extraction",
-        "analysis"
-      ],
-      "title": "GroundedAnalysisSpec",
-      "type": "object"
-    },
     "GroundingExtraction": {
       "additionalProperties": false,
       "properties": {
@@ -857,99 +822,6 @@
         "value"
       ],
       "title": "InputReference",
-      "type": "object"
-    },
-    "ModelIdentity": {
-      "additionalProperties": false,
-      "properties": {
-        "compiler_source_sha256": {
-          "pattern": "^[0-9a-f]{64}$",
-          "title": "Compiler Source Sha256",
-          "type": "string"
-        },
-        "compiler_version": {
-          "minLength": 1,
-          "title": "Compiler Version",
-          "type": "string"
-        },
-        "family": {
-          "minLength": 1,
-          "title": "Family",
-          "type": "string"
-        },
-        "model_sha256": {
-          "pattern": "^[0-9a-f]{64}$",
-          "title": "Model Sha256",
-          "type": "string"
-        },
-        "model_size_bytes": {
-          "exclusiveMinimum": 0,
-          "title": "Model Size Bytes",
-          "type": "integer"
-        },
-        "observed_at": {
-          "minLength": 1,
-          "title": "Observed At",
-          "type": "string"
-        },
-        "parameters_sha256": {
-          "pattern": "^[0-9a-f]{64}$",
-          "title": "Parameters Sha256",
-          "type": "string"
-        },
-        "platform_system": {
-          "minLength": 1,
-          "title": "Platform System",
-          "type": "string"
-        },
-        "prompt_sha256": {
-          "pattern": "^[0-9a-f]{64}$",
-          "title": "Prompt Sha256",
-          "type": "string"
-        },
-        "provenance": {
-          "const": "observed-local-ollama-api-not-authenticated",
-          "default": "observed-local-ollama-api-not-authenticated",
-          "title": "Provenance",
-          "type": "string"
-        },
-        "provider_version": {
-          "minLength": 1,
-          "title": "Provider Version",
-          "type": "string"
-        },
-        "python_version": {
-          "minLength": 1,
-          "title": "Python Version",
-          "type": "string"
-        },
-        "quantization": {
-          "minLength": 1,
-          "title": "Quantization",
-          "type": "string"
-        },
-        "requested_model": {
-          "minLength": 1,
-          "title": "Requested Model",
-          "type": "string"
-        }
-      },
-      "required": [
-        "requested_model",
-        "model_sha256",
-        "parameters_sha256",
-        "quantization",
-        "family",
-        "model_size_bytes",
-        "provider_version",
-        "compiler_version",
-        "compiler_source_sha256",
-        "python_version",
-        "platform_system",
-        "observed_at",
-        "prompt_sha256"
-      ],
-      "title": "ModelIdentity",
       "type": "object"
     },
     "ProjectInput": {
@@ -1042,167 +914,6 @@
       "title": "ProjectInput",
       "type": "object"
     },
-    "ProjectUnderstandingSpec": {
-      "additionalProperties": false,
-      "properties": {
-        "proposal": {
-          "$ref": "#/$defs/UnderstandingProposal"
-        },
-        "request": {
-          "$ref": "#/$defs/UnderstandingRequest"
-        },
-        "review": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/UnderstandingReview"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null
-        },
-        "schema_version": {
-          "const": "ProjectUnderstanding/v1",
-          "default": "ProjectUnderstanding/v1",
-          "title": "Schema Version",
-          "type": "string"
-        }
-      },
-      "required": [
-        "request",
-        "proposal"
-      ],
-      "title": "ProjectUnderstandingSpec",
-      "type": "object"
-    },
-    "ProviderObservation": {
-      "additionalProperties": false,
-      "properties": {
-        "generation_duration_ns": {
-          "anyOf": [
-            {
-              "minimum": 0,
-              "type": "integer"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "Generation Duration Ns"
-        },
-        "load_duration_ns": {
-          "anyOf": [
-            {
-              "minimum": 0,
-              "type": "integer"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "Load Duration Ns"
-        },
-        "output_tokens": {
-          "anyOf": [
-            {
-              "minimum": 0,
-              "type": "integer"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "Output Tokens"
-        },
-        "prompt_duration_ns": {
-          "anyOf": [
-            {
-              "minimum": 0,
-              "type": "integer"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "Prompt Duration Ns"
-        },
-        "prompt_tokens": {
-          "anyOf": [
-            {
-              "minimum": 0,
-              "type": "integer"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "Prompt Tokens"
-        },
-        "response_sha256": {
-          "pattern": "^[0-9a-f]{64}$",
-          "title": "Response Sha256",
-          "type": "string"
-        },
-        "returned_model": {
-          "anyOf": [
-            {
-              "minLength": 1,
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "Returned Model"
-        },
-        "total_duration_ns": {
-          "anyOf": [
-            {
-              "minimum": 0,
-              "type": "integer"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "Total Duration Ns"
-        }
-      },
-      "required": [
-        "response_sha256"
-      ],
-      "title": "ProviderObservation",
-      "type": "object"
-    },
-    "ReviewAnswer": {
-      "additionalProperties": false,
-      "properties": {
-        "item_id": {
-          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
-          "title": "Item Id",
-          "type": "string"
-        },
-        "text": {
-          "minLength": 1,
-          "title": "Text",
-          "type": "string"
-        }
-      },
-      "required": [
-        "item_id",
-        "text"
-      ],
-      "title": "ReviewAnswer",
-      "type": "object"
-    },
     "RiskProfile": {
       "additionalProperties": false,
       "properties": {
@@ -1235,104 +946,6 @@
         }
       },
       "title": "RiskProfile",
-      "type": "object"
-    },
-    "SessionSettings": {
-      "additionalProperties": false,
-      "properties": {
-        "analysis_mode": {
-          "default": "baseline",
-          "enum": [
-            "baseline",
-            "grounded"
-          ],
-          "title": "Analysis Mode",
-          "type": "string"
-        },
-        "call_timeout_seconds": {
-          "default": 180,
-          "maximum": 300,
-          "minimum": 1,
-          "title": "Call Timeout Seconds",
-          "type": "integer"
-        },
-        "context_tokens": {
-          "default": 8192,
-          "maximum": 32768,
-          "minimum": 512,
-          "title": "Context Tokens",
-          "type": "integer"
-        },
-        "execution": {
-          "const": "sequential-isolated-process-no-retries",
-          "default": "sequential-isolated-process-no-retries",
-          "title": "Execution",
-          "type": "string"
-        },
-        "expected_model_sha256": {
-          "anyOf": [
-            {
-              "pattern": "^[0-9a-f]{64}$",
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "Expected Model Sha256"
-        },
-        "max_attempts": {
-          "default": 30,
-          "maximum": 30,
-          "minimum": 1,
-          "title": "Max Attempts",
-          "type": "integer"
-        },
-        "max_output_tokens": {
-          "default": 4096,
-          "maximum": 16384,
-          "minimum": 1,
-          "title": "Max Output Tokens",
-          "type": "integer"
-        },
-        "model": {
-          "maxLength": 200,
-          "minLength": 1,
-          "title": "Model",
-          "type": "string"
-        },
-        "repeats": {
-          "default": 1,
-          "maximum": 3,
-          "minimum": 1,
-          "title": "Repeats",
-          "type": "integer"
-        },
-        "session_seconds": {
-          "default": 3600,
-          "maximum": 3600,
-          "minimum": 1,
-          "title": "Session Seconds",
-          "type": "integer"
-        },
-        "temperature": {
-          "const": 0,
-          "default": 0,
-          "title": "Temperature",
-          "type": "integer"
-        },
-        "thinking": {
-          "const": false,
-          "default": false,
-          "title": "Thinking",
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "model"
-      ],
-      "title": "SessionSettings",
       "type": "object"
     },
     "SourceRecord": {
@@ -1585,62 +1198,6 @@
       "title": "UnderstandingRequest",
       "type": "object"
     },
-    "UnderstandingReview": {
-      "additionalProperties": false,
-      "properties": {
-        "answers": {
-          "items": {
-            "$ref": "#/$defs/ReviewAnswer"
-          },
-          "title": "Answers",
-          "type": "array"
-        },
-        "decision": {
-          "enum": [
-            "approved",
-            "rejected"
-          ],
-          "title": "Decision",
-          "type": "string"
-        },
-        "input_sha256": {
-          "pattern": "^[0-9a-f]{64}$",
-          "title": "Input Sha256",
-          "type": "string"
-        },
-        "note": {
-          "minLength": 1,
-          "title": "Note",
-          "type": "string"
-        },
-        "proposal_sha256": {
-          "pattern": "^[0-9a-f]{64}$",
-          "title": "Proposal Sha256",
-          "type": "string"
-        },
-        "resolutions": {
-          "items": {
-            "$ref": "#/$defs/ReviewAnswer"
-          },
-          "title": "Resolutions",
-          "type": "array"
-        },
-        "reviewer": {
-          "minLength": 1,
-          "title": "Reviewer",
-          "type": "string"
-        }
-      },
-      "required": [
-        "decision",
-        "reviewer",
-        "note",
-        "input_sha256",
-        "proposal_sha256"
-      ],
-      "title": "UnderstandingReview",
-      "type": "object"
-    },
     "UnderstandingStatement": {
       "additionalProperties": false,
       "properties": {
@@ -1700,86 +1257,35 @@
   },
   "additionalProperties": false,
   "properties": {
-    "error_code": {
-      "anyOf": [
-        {
-          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
-          "type": "string"
-        },
-        {
-          "type": "null"
-        }
-      ],
-      "default": null,
-      "title": "Error Code"
+    "analysis": {
+      "$ref": "#/$defs/GroundedAnalysisProposal"
     },
-    "grounded_analysis": {
-      "anyOf": [
-        {
-          "$ref": "#/$defs/GroundedAnalysisSpec"
-        },
-        {
-          "type": "null"
-        }
-      ],
-      "default": null
+    "extraction": {
+      "$ref": "#/$defs/GroundingExtraction"
     },
-    "identity": {
-      "anyOf": [
-        {
-          "$ref": "#/$defs/ModelIdentity"
-        },
-        {
-          "type": "null"
-        }
-      ],
-      "default": null
-    },
-    "observation": {
-      "anyOf": [
-        {
-          "$ref": "#/$defs/ProviderObservation"
-        },
-        {
-          "type": "null"
-        }
-      ],
-      "default": null
-    },
-    "settings": {
-      "anyOf": [
-        {
-          "$ref": "#/$defs/SessionSettings"
-        },
-        {
-          "type": "null"
-        }
-      ],
-      "default": null
-    },
-    "status": {
-      "enum": [
-        "completed",
-        "error"
-      ],
-      "title": "Status",
+    "model_qualification": {
+      "const": "not-established",
+      "default": "not-established",
+      "title": "Model Qualification",
       "type": "string"
     },
-    "understanding": {
-      "anyOf": [
-        {
-          "$ref": "#/$defs/ProjectUnderstandingSpec"
-        },
-        {
-          "type": "null"
-        }
-      ],
-      "default": null
+    "schema_version": {
+      "const": "GroundedAnalysis/v1",
+      "default": "GroundedAnalysis/v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "semantic_status": {
+      "const": "not-established",
+      "default": "not-established",
+      "title": "Semantic Status",
+      "type": "string"
     }
   },
   "required": [
-    "status"
+    "extraction",
+    "analysis"
   ],
-  "title": "WorkerResult",
+  "title": "GroundedAnalysisSpec",
   "type": "object"
 }

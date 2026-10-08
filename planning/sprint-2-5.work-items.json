@@ -107,11 +107,15 @@
       "responsible": "code-collaborator-supported-by-codex",
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
       "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16",
-      "progress_note": "Preparatory literal extraction/quotation verification implemented for review; formal dependency on AHC-021 review remains pending. No prompt tuning or semantic completion.",
+      "progress_note": "Grounded analysis/dispositions and supervised optional mode implemented for review; two development smokes rejected, latest criterion-rule-link-invalid. Rubric/PO acceptance dependency pending; no semantic completion.",
       "evidence_sources": [
         "docs/delivery/ahc-022-first-increment.md",
         "docs/engineering/literal-grounding.md",
-        "tests/test_grounding.py"
+        "tests/test_grounding.py",
+        "docs/delivery/ahc-022-grounded-increment.md",
+        "docs/engineering/grounded-analysis.md",
+        "tests/test_grounded_analysis.py",
+        "docs/evidence/ahc-022-grounded-diagnostics-20261008/session.json"
       ]
     },
     {
@@ -128,7 +132,12 @@
       ],
       "responsible": "code-collaborator-supported-by-codex",
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
-      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16"
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16",
+      "progress_note": "Preparatory experimental grounded-analysis/v1 program and safe diagnostics implemented. Repair, development comparison and semantic rubric acceptance remain pending. No hidden retries.",
+      "evidence_sources": [
+        "docs/adr/0014-grounded-analysis-dispositions.md",
+        "docs/engineering/grounded-analysis.md"
+      ]
     },
     {
       "id": "s25-22-verify",

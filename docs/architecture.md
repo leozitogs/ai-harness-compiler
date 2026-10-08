@@ -28,8 +28,9 @@ O comando `compile` aceita a IR serializada sem reexecutar intake ou planejament
 AHC-022 adiciona uma fronteira offline de grounding (ADR-0013): ProjectInput →
 GroundingExtraction/v1 → proposta independente → GroundingQuotationReport/v1.
 Átomos preservam declarações e metadados; quotes são verificadas sem avaliar
-significado. O adapter de estudo atual ainda usa UnderstandingRequest/v1;
-consumo dos átomos e repair semântico são o próximo incremento.
+significado. O modo opcional grounded consome os átomos e gera GroundedAnalysis/v1,
+com destino tipado de cada critério, sob o runner supervisionado (ADR-0014).
+O modo baseline mantém UnderstandingRequest/v1. Repair semântico segue planejado.
 
 `planning.py` transforma CapabilityGraph em TaskGraph/v1. O comando `tasks` permite
 selecionar capacidades para uma sprint, com gates e critérios preservados. O plano

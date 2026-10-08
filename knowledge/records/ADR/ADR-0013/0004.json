@@ -1,0 +1,72 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Existing pilots omit all BusinessRule; AHC-022 starts with preparatory contracts before tuning.",
+  "created_at": "2026-10-07T23:54:39.388105+00:00",
+  "decision": "Preserve literal atoms and deterministic quotation inventory; do not treat citations as semantic support.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "381 local tests passed; literal pilot quotation reports 0/4; semantic review and model qualification not established.",
+      "outcome": "observed",
+      "sha256": "32b1f3c8355f4a8a6ed7ea6c9c927ee57da0f9d31d21e9337643e7bd3d8f964a",
+      "source": "docs/adr/0013-literal-grounding-before-analysis.md"
+    },
+    {
+      "command": null,
+      "note": "381 local tests passed; literal pilot quotation reports 0/4; semantic review and model qualification not established.",
+      "outcome": "observed",
+      "sha256": "a10e75945e39b81ea1dc670f0483986900d4f645a0b4a198ede3be131bd3388a",
+      "source": "src/ai_harness_compiler/models/grounding.py"
+    },
+    {
+      "command": null,
+      "note": "381 local tests passed; literal pilot quotation reports 0/4; semantic review and model qualification not established.",
+      "outcome": "observed",
+      "sha256": "67d1bb2b91029c983d157bde7bc2f565d97a3e775706b536fee5dc1c9a1fc85d",
+      "source": "src/ai_harness_compiler/grounding.py"
+    },
+    {
+      "command": null,
+      "note": "381 local tests passed; literal pilot quotation reports 0/4; semantic review and model qualification not established.",
+      "outcome": "passed",
+      "sha256": "49c9becdc6115eeec44bd05c2715f9c990f9dd0c3a3fde114a455c1d2a114c40",
+      "source": "tests/test_grounding.py"
+    }
+  ],
+  "id": "ADR-0013",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "Grounded adapter is experimental; baseline still uses original request",
+    "No condition/outcome semantic validation",
+    "PO rubric review pending"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0009",
+    "ADR-0011",
+    "INC-0007"
+  ],
+  "resolution": null,
+  "review_note": "Sources refreshed for optional grounded analysis; baseline journals remain compatible. Semantic acceptance pending.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 4,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Extração completa e citações vinculadas ao snapshot, sem inferir regras ou sucesso semântico.",
+  "supersedes": null,
+  "tags": [
+    "grounding",
+    "provenance",
+    "typed-contracts"
+  ],
+  "title": "Evidência literal separada da análise e do suporte semântico",
+  "updated_at": "2026-10-08T06:21:07.890906+00:00"
+}

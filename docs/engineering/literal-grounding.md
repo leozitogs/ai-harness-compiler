@@ -41,6 +41,7 @@ Qwen3 Instruct e Qwen3.5 têm zero critérios citados por BusinessRule extraída
 São quatro critérios de aceitação no input de cada piloto. O resultado reafirma
 a lacuna estrutural observada; não mede a qualidade de um novo prompt.
 
-Próximo incremento: análise baseada nos átomos, verificação de suporte e repair
-limitado, com identidade/versionamento do prompt e comparação no development.
+A [análise opcional grounded](grounded-analysis.md) já consome os átomos e verifica
+disposições por critério. Verificação de suporte semântico, repair limitado e
+comparação de desenvolvimento continuam pendentes.
 A revisão da rubrica/expectativas permanece pendente. Holdout não foi executado.

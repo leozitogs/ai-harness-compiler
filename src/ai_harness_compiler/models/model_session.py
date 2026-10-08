@@ -6,6 +6,7 @@ from pydantic import Field, model_validator
 
 from ai_harness_compiler.models.base import Contract, Identifier, Text
 from ai_harness_compiler.models.evidence import Digest, canonical_project_digest
+from ai_harness_compiler.models.grounded_analysis import GroundedAnalysisSpec
 from ai_harness_compiler.models.semantic_eval import (
     UnderstandingEvalCase,
     UnderstandingEvalReport,
@@ -49,6 +50,7 @@ class ObservedProposal(Contract):
 
 class SessionSettings(Contract):
     model: Text = Field(max_length=200)
+    analysis_mode: Literal["baseline", "grounded"] = "baseline"
     repeats: int = Field(default=1, ge=1, le=3)
     max_attempts: int = Field(default=30, ge=1, le=30)
     session_seconds: int = Field(default=3600, ge=1, le=3600)
@@ -74,8 +76,10 @@ class SessionPlan(Contract):
     declared_candidate_sha256: Digest | None = None
 
     def candidate_digest(self) -> str:
+        program = {} if self.settings.analysis_mode == "baseline" else {"analysis_mode": "grounded"}
         return canonical_project_digest(
             {
+                **program,
                 "model": self.settings.model,
                 "model_sha256": self.settings.expected_model_sha256,
                 "prompt_sha256": self.prompt_sha256,
@@ -129,6 +133,7 @@ class WorkerResult(Contract):
     identity: ModelIdentity | None = None
     settings: SessionSettings | None = None
     understanding: ProjectUnderstandingSpec | None = None
+    grounded_analysis: GroundedAnalysisSpec | None = None
     observation: ProviderObservation | None = None
     error_code: Identifier | None = None
 
@@ -155,8 +160,22 @@ class WorkerResult(Contract):
                 raise ValueError("Provider returned a different model name")
             if self.understanding.review is not None:
                 raise ValueError("Generation cannot supply a human review")
+            if self.settings.analysis_mode == "grounded":
+                if (
+                    not self.grounded_analysis
+                    or self.grounded_analysis.understanding != self.understanding
+                ):
+                    raise ValueError("Grounded generation requires matching verified analysis")
+            elif self.grounded_analysis is not None:
+                raise ValueError("Baseline generation cannot claim grounded analysis")
         elif not self.error_code or any(
-            (self.identity, self.settings, self.understanding, self.observation)
+            (
+                self.identity,
+                self.settings,
+                self.understanding,
+                self.observation,
+                self.grounded_analysis,
+            )
         ):
             raise ValueError("Error generation cannot claim completed execution evidence")
         return self
