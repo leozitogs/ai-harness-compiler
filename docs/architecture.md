@@ -33,6 +33,9 @@ com destino tipado de cada critério, sob o runner supervisionado (ADR-0014).
 O modo baseline mantém UnderstandingRequest/v1. Repair estrutural opcional tem
 plano/journal próprio, tentativas explícitas e feedback escopado (ADR-0015).
 Julgamento semântico e qualificação permanecem separados.
+O modo compact acrescenta uma interpretação menor por posição e uma projeção
+pura de citações/IDs para ProjectUnderstanding/v1 (ADR-0016), mantendo condições,
+resultados e inferências como hipóteses. Os protocolos anteriores permanecem disponíveis.
 
 `planning.py` transforma CapabilityGraph em TaskGraph/v1. O comando `tasks` permite
 selecionar capacidades para uma sprint, com gates e critérios preservados. O plano

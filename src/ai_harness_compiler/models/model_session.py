@@ -5,6 +5,7 @@ from typing import Literal, Self
 from pydantic import Field, model_validator
 
 from ai_harness_compiler.models.base import Contract, Identifier, Text
+from ai_harness_compiler.models.compact_analysis import CompactAnalysisSpec
 from ai_harness_compiler.models.evidence import Digest, canonical_project_digest
 from ai_harness_compiler.models.grounded_analysis import (
     GroundedAnalysisSpec,
@@ -54,7 +55,7 @@ class ObservedProposal(Contract):
 
 class SessionSettings(Contract):
     model: Text = Field(max_length=200)
-    analysis_mode: Literal["baseline", "grounded"] = "baseline"
+    analysis_mode: Literal["baseline", "grounded", "compact"] = "baseline"
     repeats: int = Field(default=1, ge=1, le=3)
     max_attempts: int = Field(default=30, ge=1, le=30)
     session_seconds: int = Field(default=3600, ge=1, le=3600)
@@ -80,7 +81,11 @@ class SessionPlan(Contract):
     declared_candidate_sha256: Digest | None = None
 
     def candidate_digest(self) -> str:
-        program = {} if self.settings.analysis_mode == "baseline" else {"analysis_mode": "grounded"}
+        program = (
+            {}
+            if self.settings.analysis_mode == "baseline"
+            else {"analysis_mode": self.settings.analysis_mode}
+        )
         return canonical_project_digest(
             {
                 **program,
@@ -152,6 +157,7 @@ class WorkerResult(Contract):
     settings: SessionSettings | None = None
     understanding: ProjectUnderstandingSpec | None = None
     grounded_analysis: GroundedAnalysisSpec | None = None
+    compact_analysis: CompactAnalysisSpec | None = None
     observation: ProviderObservation | None = None
     error_code: Identifier | None = None
     failure_diagnostic: GroundingDiagnostic | None = None
@@ -189,6 +195,16 @@ class WorkerResult(Contract):
                     raise ValueError("Grounded generation requires matching verified analysis")
             elif self.grounded_analysis is not None:
                 raise ValueError("Baseline generation cannot claim grounded analysis")
+            if self.settings.analysis_mode == "compact":
+                if (
+                    not self.compact_analysis
+                    or self.compact_analysis.understanding != self.understanding
+                ):
+                    raise ValueError(
+                        "Compact generation requires matching interpretation/projection"
+                    )
+            elif self.compact_analysis is not None:
+                raise ValueError("Other modes cannot claim compact analysis")
         elif not self.error_code or any(
             (
                 self.identity,
@@ -196,6 +212,7 @@ class WorkerResult(Contract):
                 self.understanding,
                 self.observation,
                 self.grounded_analysis,
+                self.compact_analysis,
             )
         ):
             raise ValueError("Error generation cannot claim completed execution evidence")

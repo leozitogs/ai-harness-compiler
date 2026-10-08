@@ -2,6 +2,8 @@
 
 ## 0.1.0 — Unreleased
 
+- AHC-022 parcial: modo compacto opcional, schema dimensionado por input e projeção determinística de citações; regras e inferências não são promovidas a fatos.
+
 - AHC-022 parcial: repair supervisionado e limitado, diagnósticos de referências/citações sem saída privada e journal validado por tentativa; smokes rejeitados preservados.
 
 - AHC-022 parcial: análise grounded opcional com disposições completas por critério, programa versionado e runner supervisionado; classificação/suporte ainda aguardam julgamento semântico.

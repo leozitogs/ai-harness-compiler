@@ -1,0 +1,160 @@
+{
+  "format": "development-observation/v1",
+  "date": "2026-10-08",
+  "scope": "synthetic-development-one-repetition-not-semantic-qualification",
+  "corpus_sha256": "234a9e7c0e4e55fd341f6dc00d9f3a24f937d28df58ad2ec9f1b3a54082edf24",
+  "model_sha256": "59d7f50962ef280aacad2867d041c13e22ad2d08827df5ec407ff75d348f8c90",
+  "compiler_source_sha256": "64893b76752f76a2845a51b8827ff73510a042f275103d12f9a52adf47c8de8e",
+  "execution_order": [
+    "baseline",
+    "compact"
+  ],
+  "semantic_review": "pending",
+  "model_qualification": "not-established",
+  "limitations": [
+    "Single repetition; synthetic cases and unblinded development",
+    "Sequential execution order, cache not controlled",
+    "Generation success is not semantic approval",
+    "Failure candidate bodies not persisted"
+  ],
+  "programs": {
+    "baseline": {
+      "source": "docs/evidence/ahc-022-development-baseline-20261008/session.json",
+      "sha256": "be7b0f4f0a90cb106b8a24b4c850bf81633bac8fb9a0c9d7b09fb5748f3cfd6f",
+      "program_sha256": "8d40d8a6f748da09f51d6511bb4da40bc1384ee1631a77dc85e5bbc29aebc401",
+      "attempts": 8,
+      "generation_states": {
+        "error": 4,
+        "completed": 4
+      },
+      "elapsed_seconds": 150.00750760000665,
+      "rows": [
+        {
+          "case_id": "dev-new-domain",
+          "state": "error",
+          "error_code": "provider-or-metadata-error",
+          "business_rule_count": null,
+          "artifact_eval_status": null
+        },
+        {
+          "case_id": "dev-rules-a",
+          "state": "completed",
+          "error_code": null,
+          "business_rule_count": 0,
+          "artifact_eval_status": "fail"
+        },
+        {
+          "case_id": "dev-rules-b",
+          "state": "completed",
+          "error_code": null,
+          "business_rule_count": 0,
+          "artifact_eval_status": "fail"
+        },
+        {
+          "case_id": "dev-branding-conflict",
+          "state": "completed",
+          "error_code": null,
+          "business_rule_count": 0,
+          "artifact_eval_status": "fail"
+        },
+        {
+          "case_id": "dev-ambiguous",
+          "state": "error",
+          "error_code": "provider-or-metadata-error",
+          "business_rule_count": null,
+          "artifact_eval_status": null
+        },
+        {
+          "case_id": "dev-compatible-rules",
+          "state": "error",
+          "error_code": "provider-or-metadata-error",
+          "business_rule_count": null,
+          "artifact_eval_status": null
+        },
+        {
+          "case_id": "dev-unread-assets",
+          "state": "completed",
+          "error_code": null,
+          "business_rule_count": 0,
+          "artifact_eval_status": "fail"
+        },
+        {
+          "case_id": "dev-adversarial",
+          "state": "error",
+          "error_code": "provider-or-metadata-error",
+          "business_rule_count": null,
+          "artifact_eval_status": null
+        }
+      ]
+    },
+    "compact": {
+      "source": "docs/evidence/ahc-022-development-compact-20261008/session.json",
+      "sha256": "f43b5b1e3cdeff28dfa831c3c39d9cd0fe4e6f71cea810076f46656b07a13ea0",
+      "program_sha256": "d7f5fc8f2792533adef061daba0c6fccfaee085f82014c5aee0b7d4fde482d87",
+      "attempts": 8,
+      "generation_states": {
+        "completed": 6,
+        "error": 2
+      },
+      "elapsed_seconds": 81.47126859999844,
+      "rows": [
+        {
+          "case_id": "dev-new-domain",
+          "state": "completed",
+          "error_code": null,
+          "business_rule_count": 1,
+          "artifact_eval_status": "not-run"
+        },
+        {
+          "case_id": "dev-rules-a",
+          "state": "completed",
+          "error_code": null,
+          "business_rule_count": 1,
+          "artifact_eval_status": "not-run"
+        },
+        {
+          "case_id": "dev-rules-b",
+          "state": "completed",
+          "error_code": null,
+          "business_rule_count": 1,
+          "artifact_eval_status": "not-run"
+        },
+        {
+          "case_id": "dev-branding-conflict",
+          "state": "error",
+          "error_code": "compact-analysis-invalid",
+          "business_rule_count": null,
+          "artifact_eval_status": null
+        },
+        {
+          "case_id": "dev-ambiguous",
+          "state": "completed",
+          "error_code": null,
+          "business_rule_count": 1,
+          "artifact_eval_status": "not-run"
+        },
+        {
+          "case_id": "dev-compatible-rules",
+          "state": "completed",
+          "error_code": null,
+          "business_rule_count": 4,
+          "artifact_eval_status": "not-run"
+        },
+        {
+          "case_id": "dev-unread-assets",
+          "state": "error",
+          "error_code": "compact-analysis-invalid",
+          "business_rule_count": null,
+          "artifact_eval_status": null
+        },
+        {
+          "case_id": "dev-adversarial",
+          "state": "completed",
+          "error_code": null,
+          "business_rule_count": 1,
+          "artifact_eval_status": "not-run"
+        }
+      ]
+    }
+  }
+}

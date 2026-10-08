@@ -1,0 +1,499 @@
+{
+  "case_id": "dev-branding-conflict",
+  "effective_timeout_seconds": 180.0,
+  "elapsed_seconds": 11.899792799988063,
+  "error_code": null,
+  "evaluation": {
+    "case": {
+      "category": "branding-conflict",
+      "expected_conflicts": "present",
+      "id": "dev-branding-conflict",
+      "project": {
+        "assets": [],
+        "backlog": [
+          {
+            "acceptance_criteria": [
+              "Liberar publicação da equipe exige aprovação humana explícita."
+            ],
+            "data_owner": null,
+            "depends_on": [],
+            "description": "Organizar publicação da equipe e registrar decisões.",
+            "id": "register",
+            "implementation": "undecided",
+            "inputs": [],
+            "outputs": [],
+            "risk": "unknown",
+            "side_effects": [],
+            "title": "Registrar e liberar"
+          }
+        ],
+        "branding": {
+          "audience": [
+            "autores"
+          ],
+          "principles": [
+            "Liberar publicação da equipe dispensa qualquer aprovação humana."
+          ],
+          "tone": [],
+          "visual_constraints": []
+        },
+        "conception": "Uma equipe organiza publicações e suas fontes.",
+        "constraints": {
+          "business": [
+            "Registrar a identidade do responsável."
+          ],
+          "max_build_cost_usd": 0.0,
+          "security": [],
+          "technical": []
+        },
+        "domain": "workspace-management",
+        "domain_profile": null,
+        "evidence_pack": null,
+        "id": "dev-branding-conflict",
+        "name": "Fixture dev branding-conflict",
+        "schema_version": "ProjectInput/v1"
+      },
+      "required_rules": [
+        {
+          "id": "required-1",
+          "quote": "Liberar publicação da equipe exige aprovação humana explícita.",
+          "source_pointer": "/backlog/0/acceptance_criteria/0"
+        }
+      ],
+      "requires_blocking_question": false,
+      "review_guidance": "Revisar significado e suporte de todas as conclusões, sem inventar papéis, scores ou conteúdo externo. Contradição real entre branding e backlog deve citar ambas as fontes."
+    },
+    "checks": [
+      {
+        "criterion": "rule-coverage",
+        "note": "Required business rules absent from proposal",
+        "outcome": "fail"
+      },
+      {
+        "criterion": "citation-support",
+        "note": "Independent human judgment required",
+        "outcome": "not-run"
+      },
+      {
+        "criterion": "conflict-validity",
+        "note": "Required explicit conflict absent from proposal",
+        "outcome": "fail"
+      },
+      {
+        "criterion": "asset-bounds",
+        "note": "Independent human judgment required",
+        "outcome": "not-run"
+      },
+      {
+        "criterion": "uncertainty",
+        "note": "Independent human judgment required",
+        "outcome": "not-run"
+      },
+      {
+        "criterion": "project-understanding",
+        "note": "Independent human judgment required",
+        "outcome": "not-run"
+      }
+    ],
+    "corpus_sha256": "234a9e7c0e4e55fd341f6dc00d9f3a24f937d28df58ad2ec9f1b3a54082edf24",
+    "declared_candidate_sha256": null,
+    "error_code": null,
+    "execution_evidence": "offline-artifact-model-execution-not-established",
+    "input_sha256": "6efa88484de902b19dd3011dde395a354bbb3f959e931cb71422f73aaacdc751",
+    "model_qualification": "not-established",
+    "proposal_sha256": "7a9def151c210abf42992f57cbaad73f9fdf303fe3d363f859e433a2a8a2b449",
+    "review": null,
+    "rubric": {
+      "acceptance": "all-criteria-pass-no-critical-failure",
+      "approval": null,
+      "criteria": [
+        {
+          "description": "Todas as regras obrigatórias têm BusinessRule correspondente, condição/resultado corretos e cobertura revisada.",
+          "id": "rule-coverage"
+        },
+        {
+          "description": "Cada conclusão é sustentada pelas fontes citadas, não apenas por IDs existentes; apontar inferências sem apoio.",
+          "id": "citation-support"
+        },
+        {
+          "description": "Contradições reais são explicitadas; compatibilidade e falta de detalhe não são tratadas como conflitos.",
+          "id": "conflict-validity"
+        },
+        {
+          "description": "Não afirmar conteúdo de assets não lidos ou tratar dados externos como instruções executáveis.",
+          "id": "asset-bounds"
+        },
+        {
+          "description": "Hipóteses, fatos fornecidos e incógnitas são distintos; perguntas bloqueantes são preservadas e scores não inventados.",
+          "id": "uncertainty"
+        },
+        {
+          "description": "Domínio, objetivo, público e capacidades refletem o projeto, sem switches de nichos ou ampliação indevida de autoridade.",
+          "id": "project-understanding"
+        }
+      ],
+      "id": "understanding-quality",
+      "schema_version": "UnderstandingRubric/v1",
+      "version": "v1"
+    },
+    "schema_version": "UnderstandingArtifactEval/v1",
+    "split": "development",
+    "status": "fail",
+    "understanding": {
+      "proposal": {
+        "business_rules": [],
+        "conflicts": [],
+        "domain_candidates": [],
+        "questions": [],
+        "schema_version": "UnderstandingProposal/v1",
+        "statements": [
+          {
+            "id": "conflict-principle-acceptance",
+            "source_refs": [
+              "input-2",
+              "input-5"
+            ],
+            "status": "hypothesis",
+            "subject": "audience",
+            "text": "The branding principle states that 'Liberar publicação da equipe dispensa qualquer aprovação humana.' However, the acceptance criteria for the 'register' backlog item states that 'Liberar publicação da equipe exige aprovação humana explícita.' This creates a direct contradiction between the principle and the requirement, indicating a conflict in the project's stated rules and implementation expectations."
+          },
+          {
+            "id": "business-constraint-ambiguity",
+            "source_refs": [
+              "input-3"
+            ],
+            "status": "hypothesis",
+            "subject": "constraint",
+            "text": "The business constraint 'Registrar a identidade do responsável.' is stated, but no definition is provided for 'responsável' or the mechanism by which identity is registered. This ambiguity leaves open the question of how responsibility is assigned and verified, and whether it aligns with the principle of automated release without human approval."
+          },
+          {
+            "id": "domain-mismatch-hypothesis",
+            "source_refs": [
+              "input-6"
+            ],
+            "status": "hypothesis",
+            "subject": "domain",
+            "text": "The project is labeled under domain 'workspace-management', yet the core activity described is about organizing publications and their sources, which may fall more naturally under content management or editorial workflows. This mismatch raises a question about the alignment of the domain classification with the actual scope of the project."
+          },
+          {
+            "id": "implementation-gap",
+            "source_refs": [
+              "input-1",
+              "input-4"
+            ],
+            "status": "hypothesis",
+            "subject": "constraint",
+            "text": "The conception states that 'Uma equipe organiza publicações e suas fontes,' and the backlog item 'Registrar e liberar' describes organizing publications and recording decisions. However, there is no explicit link between the organizational activity and the data ownership or implementation plan, leaving a gap in how these actions are executed or monitored."
+          },
+          {
+            "id": "risk-uncertainty",
+            "source_refs": [
+              "input-1"
+            ],
+            "status": "hypothesis",
+            "subject": "constraint",
+            "text": "The risk field in the backlog item is marked as 'unknown,' and no mitigation strategy or assessment is provided. This indicates a lack of risk evaluation, which is critical for a system that involves automated release decisions with human approval requirements."
+          }
+        ]
+      },
+      "request": {
+        "original_input": {
+          "assets": [],
+          "backlog": [
+            {
+              "acceptance_criteria": [
+                "Liberar publicação da equipe exige aprovação humana explícita."
+              ],
+              "data_owner": null,
+              "depends_on": [],
+              "description": "Organizar publicação da equipe e registrar decisões.",
+              "id": "register",
+              "implementation": "undecided",
+              "inputs": [],
+              "outputs": [],
+              "risk": "unknown",
+              "side_effects": [],
+              "title": "Registrar e liberar"
+            }
+          ],
+          "branding": {
+            "audience": [
+              "autores"
+            ],
+            "principles": [
+              "Liberar publicação da equipe dispensa qualquer aprovação humana."
+            ],
+            "tone": [],
+            "visual_constraints": []
+          },
+          "conception": "Uma equipe organiza publicações e suas fontes.",
+          "constraints": {
+            "business": [
+              "Registrar a identidade do responsável."
+            ],
+            "max_build_cost_usd": 0.0,
+            "security": [],
+            "technical": []
+          },
+          "domain": "workspace-management",
+          "domain_profile": null,
+          "evidence_pack": null,
+          "id": "dev-branding-conflict",
+          "name": "Fixture dev branding-conflict",
+          "schema_version": "ProjectInput/v1"
+        },
+        "original_sha256": "6efa88484de902b19dd3011dde395a354bbb3f959e931cb71422f73aaacdc751",
+        "references": [
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-1",
+            "pointer": "/conception",
+            "project_id": "dev-branding-conflict",
+            "value": "Uma equipe organiza publicações e suas fontes."
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-2",
+            "pointer": "/branding",
+            "project_id": "dev-branding-conflict",
+            "value": "{\"audience\":[\"autores\"],\"principles\":[\"Liberar publicação da equipe dispensa qualquer aprovação humana.\"],\"tone\":[],\"visual_constraints\":[]}"
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-3",
+            "pointer": "/constraints",
+            "project_id": "dev-branding-conflict",
+            "value": "{\"business\":[\"Registrar a identidade do responsável.\"],\"max_build_cost_usd\":0.0,\"security\":[],\"technical\":[]}"
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-4",
+            "pointer": "/backlog/0/description",
+            "project_id": "dev-branding-conflict",
+            "value": "Organizar publicação da equipe e registrar decisões."
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-5",
+            "pointer": "/backlog/0/acceptance_criteria/0",
+            "project_id": "dev-branding-conflict",
+            "value": "Liberar publicação da equipe exige aprovação humana explícita."
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-6",
+            "pointer": "/domain",
+            "project_id": "dev-branding-conflict",
+            "value": "workspace-management"
+          }
+        ],
+        "schema_version": "UnderstandingRequest/v1"
+      },
+      "review": null,
+      "schema_version": "ProjectUnderstanding/v1"
+    }
+  },
+  "generation": {
+    "compact_analysis": null,
+    "error_code": null,
+    "failure_diagnostic": null,
+    "grounded_analysis": null,
+    "identity": {
+      "compiler_source_sha256": "64893b76752f76a2845a51b8827ff73510a042f275103d12f9a52adf47c8de8e",
+      "compiler_version": "0.1.0",
+      "family": "qwen3",
+      "model_sha256": "59d7f50962ef280aacad2867d041c13e22ad2d08827df5ec407ff75d348f8c90",
+      "model_size_bytes": 2497293463,
+      "observed_at": "2026-10-08T15:40:10.175296+00:00",
+      "parameters_sha256": "141606c9a342a4f3dc141484492b4922ec7d0fa300d296f3076bb02284113d4d",
+      "platform_system": "Windows",
+      "prompt_sha256": "8d40d8a6f748da09f51d6511bb4da40bc1384ee1631a77dc85e5bbc29aebc401",
+      "provenance": "observed-local-ollama-api-not-authenticated",
+      "provider_version": "0.40.0",
+      "python_version": "3.13.7",
+      "quantization": "Q4_K_M",
+      "requested_model": "ahc-qwen3:4b-instruct-8k"
+    },
+    "observation": {
+      "generation_duration_ns": 10883867000,
+      "load_duration_ns": 2713800,
+      "output_tokens": 633,
+      "prompt_duration_ns": 192761000,
+      "prompt_tokens": 740,
+      "response_sha256": "59d53d0153cfcfdf31fb75a31573dde61fafee88d5ad026da1abf23b85ea03be",
+      "returned_model": "ahc-qwen3:4b-instruct-8k",
+      "total_duration_ns": 11186924300
+    },
+    "settings": {
+      "analysis_mode": "baseline",
+      "call_timeout_seconds": 180,
+      "context_tokens": 8192,
+      "execution": "sequential-isolated-process-no-retries",
+      "expected_model_sha256": "59d7f50962ef280aacad2867d041c13e22ad2d08827df5ec407ff75d348f8c90",
+      "max_attempts": 8,
+      "max_output_tokens": 4096,
+      "model": "ahc-qwen3:4b-instruct-8k",
+      "repeats": 1,
+      "session_seconds": 1800,
+      "temperature": 0,
+      "thinking": false
+    },
+    "status": "completed",
+    "understanding": {
+      "proposal": {
+        "business_rules": [],
+        "conflicts": [],
+        "domain_candidates": [],
+        "questions": [],
+        "schema_version": "UnderstandingProposal/v1",
+        "statements": [
+          {
+            "id": "conflict-principle-acceptance",
+            "source_refs": [
+              "input-2",
+              "input-5"
+            ],
+            "status": "hypothesis",
+            "subject": "audience",
+            "text": "The branding principle states that 'Liberar publicação da equipe dispensa qualquer aprovação humana.' However, the acceptance criteria for the 'register' backlog item states that 'Liberar publicação da equipe exige aprovação humana explícita.' This creates a direct contradiction between the principle and the requirement, indicating a conflict in the project's stated rules and implementation expectations."
+          },
+          {
+            "id": "business-constraint-ambiguity",
+            "source_refs": [
+              "input-3"
+            ],
+            "status": "hypothesis",
+            "subject": "constraint",
+            "text": "The business constraint 'Registrar a identidade do responsável.' is stated, but no definition is provided for 'responsável' or the mechanism by which identity is registered. This ambiguity leaves open the question of how responsibility is assigned and verified, and whether it aligns with the principle of automated release without human approval."
+          },
+          {
+            "id": "domain-mismatch-hypothesis",
+            "source_refs": [
+              "input-6"
+            ],
+            "status": "hypothesis",
+            "subject": "domain",
+            "text": "The project is labeled under domain 'workspace-management', yet the core activity described is about organizing publications and their sources, which may fall more naturally under content management or editorial workflows. This mismatch raises a question about the alignment of the domain classification with the actual scope of the project."
+          },
+          {
+            "id": "implementation-gap",
+            "source_refs": [
+              "input-1",
+              "input-4"
+            ],
+            "status": "hypothesis",
+            "subject": "constraint",
+            "text": "The conception states that 'Uma equipe organiza publicações e suas fontes,' and the backlog item 'Registrar e liberar' describes organizing publications and recording decisions. However, there is no explicit link between the organizational activity and the data ownership or implementation plan, leaving a gap in how these actions are executed or monitored."
+          },
+          {
+            "id": "risk-uncertainty",
+            "source_refs": [
+              "input-1"
+            ],
+            "status": "hypothesis",
+            "subject": "constraint",
+            "text": "The risk field in the backlog item is marked as 'unknown,' and no mitigation strategy or assessment is provided. This indicates a lack of risk evaluation, which is critical for a system that involves automated release decisions with human approval requirements."
+          }
+        ]
+      },
+      "request": {
+        "original_input": {
+          "assets": [],
+          "backlog": [
+            {
+              "acceptance_criteria": [
+                "Liberar publicação da equipe exige aprovação humana explícita."
+              ],
+              "data_owner": null,
+              "depends_on": [],
+              "description": "Organizar publicação da equipe e registrar decisões.",
+              "id": "register",
+              "implementation": "undecided",
+              "inputs": [],
+              "outputs": [],
+              "risk": "unknown",
+              "side_effects": [],
+              "title": "Registrar e liberar"
+            }
+          ],
+          "branding": {
+            "audience": [
+              "autores"
+            ],
+            "principles": [
+              "Liberar publicação da equipe dispensa qualquer aprovação humana."
+            ],
+            "tone": [],
+            "visual_constraints": []
+          },
+          "conception": "Uma equipe organiza publicações e suas fontes.",
+          "constraints": {
+            "business": [
+              "Registrar a identidade do responsável."
+            ],
+            "max_build_cost_usd": 0.0,
+            "security": [],
+            "technical": []
+          },
+          "domain": "workspace-management",
+          "domain_profile": null,
+          "evidence_pack": null,
+          "id": "dev-branding-conflict",
+          "name": "Fixture dev branding-conflict",
+          "schema_version": "ProjectInput/v1"
+        },
+        "original_sha256": "6efa88484de902b19dd3011dde395a354bbb3f959e931cb71422f73aaacdc751",
+        "references": [
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-1",
+            "pointer": "/conception",
+            "project_id": "dev-branding-conflict",
+            "value": "Uma equipe organiza publicações e suas fontes."
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-2",
+            "pointer": "/branding",
+            "project_id": "dev-branding-conflict",
+            "value": "{\"audience\":[\"autores\"],\"principles\":[\"Liberar publicação da equipe dispensa qualquer aprovação humana.\"],\"tone\":[],\"visual_constraints\":[]}"
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-3",
+            "pointer": "/constraints",
+            "project_id": "dev-branding-conflict",
+            "value": "{\"business\":[\"Registrar a identidade do responsável.\"],\"max_build_cost_usd\":0.0,\"security\":[],\"technical\":[]}"
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-4",
+            "pointer": "/backlog/0/description",
+            "project_id": "dev-branding-conflict",
+            "value": "Organizar publicação da equipe e registrar decisões."
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-5",
+            "pointer": "/backlog/0/acceptance_criteria/0",
+            "project_id": "dev-branding-conflict",
+            "value": "Liberar publicação da equipe exige aprovação humana explícita."
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-6",
+            "pointer": "/domain",
+            "project_id": "dev-branding-conflict",
+            "value": "workspace-management"
+          }
+        ],
+        "schema_version": "UnderstandingRequest/v1"
+      },
+      "review": null,
+      "schema_version": "ProjectUnderstanding/v1"
+    }
+  },
+  "index": 4,
+  "repetition": 1,
+  "state": "completed"
+}

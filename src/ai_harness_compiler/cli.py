@@ -14,6 +14,11 @@ from ai_harness_compiler.intake import DEFAULT_MAX_MANIFEST_BYTES, load_project
 from ai_harness_compiler.models import CapabilityGraph, HarnessSpec, ProjectDNA, ProjectInput
 from ai_harness_compiler.models.base import Contract
 from ai_harness_compiler.models.benchmark import BenchmarkReport, BenchmarkSuite
+from ai_harness_compiler.models.compact_analysis import (
+    CompactAnalysisSpec,
+    CompactInput,
+    CompactProposal,
+)
 from ai_harness_compiler.models.domain import DomainProfile
 from ai_harness_compiler.models.evidence import EvidencePack, SourceRecord
 from ai_harness_compiler.models.grounded_analysis import (
@@ -83,6 +88,9 @@ MODELS: dict[str, type[Contract]] = {
     "grounded-repair-input": GroundedRepairInput,
     "understanding-repair-plan": RepairPlan,
     "understanding-repair-report": RepairReport,
+    "compact-understanding-input": CompactInput,
+    "compact-understanding-proposal": CompactProposal,
+    "compact-understanding": CompactAnalysisSpec,
 }
 
 
@@ -197,7 +205,7 @@ def main(argv: list[str] | None = None) -> int:
     session_command.add_argument("--context-tokens", type=int, default=8192)
     session_command.add_argument("--max-output-tokens", type=int, default=4096)
     session_command.add_argument(
-        "--analysis-mode", choices=["baseline", "grounded"], default="baseline"
+        "--analysis-mode", choices=["baseline", "grounded", "compact"], default="baseline"
     )
     session_command.add_argument("--expected-model-sha256")
     session_command.add_argument("--allow-holdout", action="store_true")

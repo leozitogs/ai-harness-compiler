@@ -1,0 +1,11 @@
+{
+  "case_id": "dev-new-domain",
+  "effective_timeout_seconds": 0,
+  "elapsed_seconds": 0.0,
+  "error_code": "session-attempt-limit",
+  "evaluation": null,
+  "generation": null,
+  "index": 2,
+  "repetition": 1,
+  "state": "not-run"
+}

@@ -1,0 +1,11 @@
+{
+  "case_id": "dev-branding-conflict",
+  "effective_timeout_seconds": 180.0,
+  "elapsed_seconds": 3.2765436000190675,
+  "error_code": "compact-analysis-invalid",
+  "evaluation": null,
+  "generation": null,
+  "index": 4,
+  "repetition": 1,
+  "state": "error"
+}

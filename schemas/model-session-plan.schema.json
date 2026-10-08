@@ -692,7 +692,8 @@
           "default": "baseline",
           "enum": [
             "baseline",
-            "grounded"
+            "grounded",
+            "compact"
           ],
           "title": "Analysis Mode",
           "type": "string"
