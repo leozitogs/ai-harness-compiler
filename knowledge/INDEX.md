@@ -38,7 +38,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0010 — Operação e evidências de repair limitado](records/DOC/DOC-0010/0002.json) · active · revision 2
 - [DOC-0011 — Protocolo compacto e comparação inicial de development](records/DOC/DOC-0011/0004.json) · active · revision 4
 - [DOC-0012 — Estudos primários e desenvolvimento comparativo independente](records/DOC/DOC-0012/0004.json) · active · revision 4
-- [DOC-0013 — Seleção do principal e verificação de integração](records/DOC/DOC-0013/0004.json) · active · revision 4
+- [DOC-0013 — Seleção do principal e verificação de integração](records/DOC/DOC-0013/0006.json) · active · revision 6
 - [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2
 - [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1
 - [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1
