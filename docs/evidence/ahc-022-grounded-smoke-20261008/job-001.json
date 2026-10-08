@@ -1,0 +1,11 @@
+{
+  "case_id": "dev-compatible-rules",
+  "effective_timeout_seconds": 180.0,
+  "elapsed_seconds": 23.60280029999558,
+  "error_code": "provider-or-metadata-error",
+  "evaluation": null,
+  "generation": null,
+  "index": 1,
+  "repetition": 1,
+  "state": "error"
+}

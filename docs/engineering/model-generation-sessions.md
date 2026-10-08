@@ -2,7 +2,9 @@
 
 `run-understanding-evals` complementa o avaliador offline com geração sequencial
 supervisionada. Só o input do projeto vai ao modelo; rubrica/expectativas permanecem
-no control plane. Prompt atual não foi otimizado e holdout não foi executado.
+no control plane. O modo baseline conserva o prompt inicial; holdout não foi executado.
+O modo opcional [grounded](grounded-analysis.md) usa átomos e disposições completas;
+é um candidato experimental, sem qualificação ou melhoria semântica demonstrada.
 
 ```sh
 factory run-understanding-evals --corpus evals/understanding/v1 \

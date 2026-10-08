@@ -688,6 +688,15 @@
     "SessionSettings": {
       "additionalProperties": false,
       "properties": {
+        "analysis_mode": {
+          "default": "baseline",
+          "enum": [
+            "baseline",
+            "grounded"
+          ],
+          "title": "Analysis Mode",
+          "type": "string"
+        },
         "call_timeout_seconds": {
           "default": 180,
           "maximum": 300,

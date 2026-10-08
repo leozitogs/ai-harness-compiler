@@ -1,0 +1,356 @@
+{
+  "$defs": {
+    "BusinessRule": {
+      "additionalProperties": false,
+      "properties": {
+        "condition": {
+          "minLength": 1,
+          "title": "Condition",
+          "type": "string"
+        },
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "exceptions": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Exceptions",
+          "type": "array"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "origin": {
+          "enum": [
+            "extracted",
+            "hypothesis"
+          ],
+          "title": "Origin",
+          "type": "string"
+        },
+        "outcome": {
+          "minLength": 1,
+          "title": "Outcome",
+          "type": "string"
+        },
+        "source_refs": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Source Refs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "source_refs",
+        "description",
+        "condition",
+        "outcome",
+        "origin"
+      ],
+      "title": "BusinessRule",
+      "type": "object"
+    },
+    "CriterionDisposition": {
+      "additionalProperties": false,
+      "properties": {
+        "atom_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Atom Id",
+          "type": "string"
+        },
+        "disposition": {
+          "enum": [
+            "business-rule",
+            "requirement",
+            "needs-clarification"
+          ],
+          "title": "Disposition",
+          "type": "string"
+        },
+        "finding_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Finding Ids",
+          "type": "array"
+        },
+        "note": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "atom_id",
+        "disposition",
+        "finding_ids",
+        "note"
+      ],
+      "title": "CriterionDisposition",
+      "type": "object"
+    },
+    "DomainCandidate": {
+      "additionalProperties": false,
+      "properties": {
+        "confidence": {
+          "default": null,
+          "title": "Confidence",
+          "type": "null"
+        },
+        "domain": {
+          "minLength": 1,
+          "title": "Domain",
+          "type": "string"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "rationale": {
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "source_refs": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Source Refs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "source_refs",
+        "domain",
+        "rationale"
+      ],
+      "title": "DomainCandidate",
+      "type": "object"
+    },
+    "UnderstandingConflict": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "source_refs": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 2,
+          "title": "Source Refs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "source_refs",
+        "description"
+      ],
+      "title": "UnderstandingConflict",
+      "type": "object"
+    },
+    "UnderstandingProposal": {
+      "additionalProperties": false,
+      "properties": {
+        "business_rules": {
+          "items": {
+            "$ref": "#/$defs/BusinessRule"
+          },
+          "maxItems": 128,
+          "title": "Business Rules",
+          "type": "array"
+        },
+        "conflicts": {
+          "items": {
+            "$ref": "#/$defs/UnderstandingConflict"
+          },
+          "maxItems": 64,
+          "title": "Conflicts",
+          "type": "array"
+        },
+        "domain_candidates": {
+          "items": {
+            "$ref": "#/$defs/DomainCandidate"
+          },
+          "maxItems": 16,
+          "title": "Domain Candidates",
+          "type": "array"
+        },
+        "questions": {
+          "items": {
+            "$ref": "#/$defs/UnderstandingQuestion"
+          },
+          "maxItems": 128,
+          "title": "Questions",
+          "type": "array"
+        },
+        "schema_version": {
+          "const": "UnderstandingProposal/v1",
+          "default": "UnderstandingProposal/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "statements": {
+          "items": {
+            "$ref": "#/$defs/UnderstandingStatement"
+          },
+          "maxItems": 128,
+          "title": "Statements",
+          "type": "array"
+        }
+      },
+      "title": "UnderstandingProposal",
+      "type": "object"
+    },
+    "UnderstandingQuestion": {
+      "additionalProperties": false,
+      "properties": {
+        "blocking": {
+          "default": true,
+          "title": "Blocking",
+          "type": "boolean"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "question": {
+          "minLength": 1,
+          "title": "Question",
+          "type": "string"
+        },
+        "source_refs": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Source Refs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "source_refs",
+        "question"
+      ],
+      "title": "UnderstandingQuestion",
+      "type": "object"
+    },
+    "UnderstandingStatement": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "source_refs": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Source Refs",
+          "type": "array"
+        },
+        "status": {
+          "enum": [
+            "declared",
+            "hypothesis"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "subject": {
+          "enum": [
+            "purpose",
+            "audience",
+            "positioning",
+            "tone",
+            "domain",
+            "entity",
+            "capability",
+            "constraint"
+          ],
+          "title": "Subject",
+          "type": "string"
+        },
+        "text": {
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "source_refs",
+        "subject",
+        "text",
+        "status"
+      ],
+      "title": "UnderstandingStatement",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "criterion_dispositions": {
+      "items": {
+        "$ref": "#/$defs/CriterionDisposition"
+      },
+      "maxItems": 512,
+      "minItems": 1,
+      "title": "Criterion Dispositions",
+      "type": "array"
+    },
+    "proposal": {
+      "$ref": "#/$defs/UnderstandingProposal"
+    },
+    "schema_version": {
+      "const": "GroundedAnalysisProposal/v1",
+      "default": "GroundedAnalysisProposal/v1",
+      "title": "Schema Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "proposal",
+    "criterion_dispositions"
+  ],
+  "title": "GroundedAnalysisProposal",
+  "type": "object"
+}

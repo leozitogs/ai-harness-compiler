@@ -2,6 +2,8 @@
 
 ## 0.1.0 — Unreleased
 
+- AHC-022 parcial: análise grounded opcional com disposições completas por critério, programa versionado e runner supervisionado; classificação/suporte ainda aguardam julgamento semântico.
+
 - AHC-022 parcial: extração literal completa e relatório verificável de citações; sem promoção automática a cobertura semântica.
 
 - AHC-021: sessões locais supervisionadas, budgets, metadados de execução/modelo e journal consistente; geração não implica qualificação.

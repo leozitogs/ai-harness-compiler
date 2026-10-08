@@ -8,6 +8,8 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
+from pydantic import ValidationError
+
 from ai_harness_compiler import __version__
 from ai_harness_compiler.models.model_session import ModelIdentity, WorkerRequest, WorkerResult
 from ai_harness_compiler.models.understanding import ProjectUnderstandingSpec
@@ -29,12 +31,12 @@ def execute(request: WorkerRequest) -> WorkerResult:
     import httpx
 
     from ai_harness_compiler.adapters.ollama import (
-        SYSTEM_PROMPT,
         OllamaSettings,
         OllamaUnderstandingModel,
+        prompt_digest,
     )
 
-    if request.prompt_sha256 != hashlib.sha256(SYSTEM_PROMPT.encode()).hexdigest():
+    if request.prompt_sha256 != prompt_digest(request.settings.analysis_mode):
         return WorkerResult(status="error", error_code="prompt-mismatch")
 
     def metadata(client: httpx.Client, method: str, path: str) -> dict[str, Any]:
@@ -108,13 +110,61 @@ def execute(request: WorkerRequest) -> WorkerResult:
                 before.model_sha256 != request.settings.expected_model_sha256
             ):
                 return WorkerResult(status="error", error_code="model-changed")
-            reply = OllamaUnderstandingModel(settings).generate(request.request)
-            if reply.observation.returned_model not in {
+            model = OllamaUnderstandingModel(settings)
+            grounded = None
+            if request.settings.analysis_mode == "grounded":
+                from ai_harness_compiler.grounding import extract_grounding
+                from ai_harness_compiler.models.grounded_analysis import (
+                    GroundedAnalysisSpec,
+                    GroundingInvariantError,
+                )
+
+                extraction = extract_grounding(request.request.original_input)
+                if extraction.request != request.request:
+                    return WorkerResult(status="error", error_code="grounded-input-invalid")
+                try:
+                    analysis, observation = model.generate_grounded(extraction)
+                except ValueError as error:
+                    # Only fixed public codes are recorded. Never persist raw provider/error text.
+                    adapter_codes = {
+                        "STUDY_INVALID": "grounded-output-invalid",
+                        "STUDY_TRUNCATED": "output-token-limit",
+                        "STUDY_INPUT_LIMIT": "input-byte-limit",
+                        "STUDY_RESPONSE_LIMIT": "response-byte-limit",
+                        "STUDY_PROPOSAL_LIMIT": "proposal-byte-limit",
+                        "STUDY_PROVIDER": "provider-call-error",
+                        "STUDY_DEADLINE": "provider-deadline",
+                        "STUDY_INCOMPLETE": "provider-response-incomplete",
+                        "STUDY_MESSAGE": "provider-message-invalid",
+                    }
+                    code = adapter_codes.get(str(error).split(":", 1)[0], "grounded-output-invalid")
+                    return WorkerResult(status="error", error_code=code)
+                try:
+                    grounded = GroundedAnalysisSpec(extraction=extraction, analysis=analysis)
+                except ValidationError as error:
+                    codes = [
+                        issue.get("ctx", {}).get("error")
+                        for issue in error.errors(include_input=False)
+                    ]
+                    code = next(
+                        (
+                            issue.code
+                            for issue in codes
+                            if isinstance(issue, GroundingInvariantError)
+                        ),
+                        "grounded-analysis-invalid",
+                    )
+                    return WorkerResult(status="error", error_code=code)
+                spec = grounded.understanding
+            else:
+                reply = model.generate(request.request)
+                observation = reply.observation
+                spec = ProjectUnderstandingSpec(request=request.request, proposal=reply.proposal)
+            if observation.returned_model not in {
                 request.settings.model,
                 request.settings.model + ":latest",
             }:
                 return WorkerResult(status="error", error_code="model-changed")
-            spec = ProjectUnderstandingSpec(request=request.request, proposal=reply.proposal)
             after = identity(client)
         if before.model_dump(exclude={"observed_at"}) != after.model_dump(exclude={"observed_at"}):
             return WorkerResult(status="error", error_code="model-changed")
@@ -123,7 +173,8 @@ def execute(request: WorkerRequest) -> WorkerResult:
             identity=before,
             settings=request.settings,
             understanding=spec,
-            observation=reply.observation,
+            grounded_analysis=grounded,
+            observation=observation,
         )
     except (httpx.HTTPError, ValueError, KeyError, TypeError, RecursionError):
         return WorkerResult(status="error", error_code="provider-or-metadata-error")

@@ -1,0 +1,11 @@
+{
+  "case_id": "dev-compatible-rules",
+  "effective_timeout_seconds": 180.0,
+  "elapsed_seconds": 14.665104100015014,
+  "error_code": "criterion-rule-link-invalid",
+  "evaluation": null,
+  "generation": null,
+  "index": 1,
+  "repetition": 1,
+  "state": "error"
+}

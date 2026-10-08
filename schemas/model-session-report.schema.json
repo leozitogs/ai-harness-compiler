@@ -263,6 +263,49 @@
       "title": "Constraints",
       "type": "object"
     },
+    "CriterionDisposition": {
+      "additionalProperties": false,
+      "properties": {
+        "atom_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Atom Id",
+          "type": "string"
+        },
+        "disposition": {
+          "enum": [
+            "business-rule",
+            "requirement",
+            "needs-clarification"
+          ],
+          "title": "Disposition",
+          "type": "string"
+        },
+        "finding_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Finding Ids",
+          "type": "array"
+        },
+        "note": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "atom_id",
+        "disposition",
+        "finding_ids",
+        "note"
+      ],
+      "title": "CriterionDisposition",
+      "type": "object"
+    },
     "DataProfile": {
       "additionalProperties": false,
       "properties": {
@@ -550,6 +593,61 @@
       "title": "Evidence",
       "type": "object"
     },
+    "EvidenceAtom": {
+      "additionalProperties": false,
+      "properties": {
+        "content_trust": {
+          "const": "untrusted-data",
+          "default": "untrusted-data",
+          "title": "Content Trust",
+          "type": "string"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "conception",
+            "branding",
+            "constraint",
+            "backlog-description",
+            "acceptance-criterion",
+            "domain-declaration",
+            "asset-metadata"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "pointer": {
+          "maxLength": 512,
+          "minLength": 1,
+          "title": "Pointer",
+          "type": "string"
+        },
+        "quote": {
+          "maxLength": 16384,
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        },
+        "source_ref": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Source Ref",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "source_ref",
+        "pointer",
+        "quote",
+        "kind"
+      ],
+      "title": "EvidenceAtom",
+      "type": "object"
+    },
     "EvidencePack": {
       "additionalProperties": false,
       "properties": {
@@ -583,6 +681,30 @@
       "title": "EvidencePack",
       "type": "object"
     },
+    "ExcludedReference": {
+      "additionalProperties": false,
+      "properties": {
+        "reason": {
+          "enum": [
+            "external-claim-not-verified",
+            "supplied-profile-not-reanalyzed"
+          ],
+          "title": "Reason",
+          "type": "string"
+        },
+        "source_ref": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Source Ref",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_ref",
+        "reason"
+      ],
+      "title": "ExcludedReference",
+      "type": "object"
+    },
     "ExpectedRule": {
       "additionalProperties": false,
       "properties": {
@@ -608,6 +730,119 @@
         "quote"
       ],
       "title": "ExpectedRule",
+      "type": "object"
+    },
+    "GroundedAnalysisProposal": {
+      "additionalProperties": false,
+      "properties": {
+        "criterion_dispositions": {
+          "items": {
+            "$ref": "#/$defs/CriterionDisposition"
+          },
+          "maxItems": 512,
+          "minItems": 1,
+          "title": "Criterion Dispositions",
+          "type": "array"
+        },
+        "proposal": {
+          "$ref": "#/$defs/UnderstandingProposal"
+        },
+        "schema_version": {
+          "const": "GroundedAnalysisProposal/v1",
+          "default": "GroundedAnalysisProposal/v1",
+          "title": "Schema Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "proposal",
+        "criterion_dispositions"
+      ],
+      "title": "GroundedAnalysisProposal",
+      "type": "object"
+    },
+    "GroundedAnalysisSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "analysis": {
+          "$ref": "#/$defs/GroundedAnalysisProposal"
+        },
+        "extraction": {
+          "$ref": "#/$defs/GroundingExtraction"
+        },
+        "model_qualification": {
+          "const": "not-established",
+          "default": "not-established",
+          "title": "Model Qualification",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "GroundedAnalysis/v1",
+          "default": "GroundedAnalysis/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "semantic_status": {
+          "const": "not-established",
+          "default": "not-established",
+          "title": "Semantic Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "extraction",
+        "analysis"
+      ],
+      "title": "GroundedAnalysisSpec",
+      "type": "object"
+    },
+    "GroundingExtraction": {
+      "additionalProperties": false,
+      "properties": {
+        "asset_contents": {
+          "const": "not-read",
+          "default": "not-read",
+          "title": "Asset Contents",
+          "type": "string"
+        },
+        "atoms": {
+          "items": {
+            "$ref": "#/$defs/EvidenceAtom"
+          },
+          "maxItems": 512,
+          "minItems": 1,
+          "title": "Atoms",
+          "type": "array"
+        },
+        "excluded_references": {
+          "items": {
+            "$ref": "#/$defs/ExcludedReference"
+          },
+          "maxItems": 128,
+          "title": "Excluded References",
+          "type": "array"
+        },
+        "request": {
+          "$ref": "#/$defs/UnderstandingRequest"
+        },
+        "schema_version": {
+          "const": "GroundingExtraction/v1",
+          "default": "GroundingExtraction/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "semantic_status": {
+          "const": "not-established",
+          "default": "not-established",
+          "title": "Semantic Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "request",
+        "atoms"
+      ],
+      "title": "GroundingExtraction",
       "type": "object"
     },
     "HumanDeclaration": {
@@ -1410,6 +1645,15 @@
     "SessionSettings": {
       "additionalProperties": false,
       "properties": {
+        "analysis_mode": {
+          "default": "baseline",
+          "enum": [
+            "baseline",
+            "grounded"
+          ],
+          "title": "Analysis Mode",
+          "type": "string"
+        },
         "call_timeout_seconds": {
           "default": 180,
           "maximum": 300,
@@ -2118,6 +2362,17 @@
           ],
           "default": null,
           "title": "Error Code"
+        },
+        "grounded_analysis": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/GroundedAnalysisSpec"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
         },
         "identity": {
           "anyOf": [

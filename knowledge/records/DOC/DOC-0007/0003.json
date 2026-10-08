@@ -1,0 +1,61 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "356 tests passed; final demonstration 28.429 seconds, 1567 output tokens, one case not-run.",
+  "created_at": "2026-10-07T22:04:41.950396+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "356 tests/checks/build passed; live session limited with eval fail and one skipped case, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "6f643241d8ddf29e6455125f93706931bacde18f5abb16af0de0a42c9c62f840",
+      "source": "docs/engineering/model-generation-sessions.md"
+    },
+    {
+      "command": null,
+      "note": "356 tests/checks/build passed; live session limited with eval fail and one skipped case, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "e066f08ab3386a259875b721b0ec410610c86d304bd334e72305d7ba4d16f0dc",
+      "source": "docs/evidence/ahc-021-live-session-final/session.json"
+    },
+    {
+      "command": null,
+      "note": "356 tests/checks/build passed; live session limited with eval fail and one skipped case, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "e8b3aaab4a268666a2de7702964be303120bc400c781db72fbc25176e1b64b09",
+      "source": "docs/evidence/ahc-021-live-session/session.json"
+    }
+  ],
+  "id": "DOC-0007",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Single-case smoke, not statistical benchmark",
+    "No holdout execution or prompt tuning"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0012"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 3,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "CLI de geração/validação, metadata e duas sessões preservadas em diretórios diferentes.",
+  "supersedes": null,
+  "tags": [
+    "model-sessions",
+    "observability"
+  ],
+  "title": "Operação e evidências de sessão local limitada",
+  "updated_at": "2026-10-08T06:21:08.127050+00:00"
+}

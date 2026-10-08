@@ -1,7 +1,6 @@
 """The public CLI: validate, plan, compile, build and export JSON Schemas."""
 
 import argparse
-import hashlib
 import json
 import sys
 from pathlib import Path
@@ -17,6 +16,10 @@ from ai_harness_compiler.models.base import Contract
 from ai_harness_compiler.models.benchmark import BenchmarkReport, BenchmarkSuite
 from ai_harness_compiler.models.domain import DomainProfile
 from ai_harness_compiler.models.evidence import EvidencePack, SourceRecord
+from ai_harness_compiler.models.grounded_analysis import (
+    GroundedAnalysisProposal,
+    GroundedAnalysisSpec,
+)
 from ai_harness_compiler.models.grounding import GroundingExtraction, GroundingQuotationReport
 from ai_harness_compiler.models.memory import MemoryRecord, RecordDraft
 from ai_harness_compiler.models.model_session import (
@@ -71,6 +74,8 @@ MODELS: dict[str, type[Contract]] = {
     "model-worker-result": WorkerResult,
     "grounding-extraction": GroundingExtraction,
     "grounding-quotation-report": GroundingQuotationReport,
+    "grounded-analysis-proposal": GroundedAnalysisProposal,
+    "grounded-analysis": GroundedAnalysisSpec,
 }
 
 
@@ -184,6 +189,9 @@ def main(argv: list[str] | None = None) -> int:
     session_command.add_argument("--timeout-seconds", type=int, default=180)
     session_command.add_argument("--context-tokens", type=int, default=8192)
     session_command.add_argument("--max-output-tokens", type=int, default=4096)
+    session_command.add_argument(
+        "--analysis-mode", choices=["baseline", "grounded"], default="baseline"
+    )
     session_command.add_argument("--expected-model-sha256")
     session_command.add_argument("--allow-holdout", action="store_true")
     session_command.add_argument("--candidate-sha256")
@@ -229,7 +237,7 @@ def main(argv: list[str] | None = None) -> int:
                 raise FileExistsError("SESSION_EXISTS: Choose a new session directory")
             if args.split == "holdout" and not args.allow_holdout:
                 raise ValueError("SESSION_HOLDOUT: Explicit opt-in required")
-            from ai_harness_compiler.adapters.ollama import SYSTEM_PROMPT, OllamaSettings
+            from ai_harness_compiler.adapters.ollama import OllamaSettings, prompt_digest
 
             OllamaSettings(model=args.model)
             settings = SessionSettings(
@@ -241,11 +249,12 @@ def main(argv: list[str] | None = None) -> int:
                 context_tokens=args.context_tokens,
                 max_output_tokens=args.max_output_tokens,
                 expected_model_sha256=args.expected_model_sha256,
+                analysis_mode=args.analysis_mode,
             )
             session_plan = make_plan(
                 FrozenCorpus(args.corpus),
                 settings,
-                hashlib.sha256(SYSTEM_PROMPT.encode()).hexdigest(),
+                prompt_digest(settings.analysis_mode),
                 args.case,
                 args.split,
                 args.candidate_sha256,
