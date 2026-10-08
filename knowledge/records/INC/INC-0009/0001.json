@@ -1,0 +1,60 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Preserved initial failed journal",
+    "Confirmed localhost API refused connection",
+    "Started existing D:/Ollama/ollama.exe serve hidden with models in D:/Ollama/models",
+    "Confirmed provider 0.40.0 and repeated to a new directory"
+  ],
+  "author": "codex:engineering",
+  "challenge": "Local provider was not running for the authorized smoke.",
+  "consequences": [],
+  "context": "2026-10-08; first smoke recorded provider-or-metadata-error, local API/version refused connection, no ollama process observed.",
+  "created_at": "2026-10-08T15:56:12.883126+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "475 tests; development baseline 4/8 and compact 6/8 structurally valid. Semantic judgment pending, no qualification.",
+      "outcome": "observed",
+      "sha256": "401ede1280fc867024cdc22056474a4b3a5e26c74cb47b86b1b1c67b2de54f30",
+      "source": "docs/engineering/compact-understanding.md"
+    },
+    {
+      "command": null,
+      "note": "475 tests; development baseline 4/8 and compact 6/8 structurally valid. Semantic judgment pending, no qualification.",
+      "outcome": "observed",
+      "sha256": "f716108dc5e33d472acc07f4aaa2f9bc73e8bd60342f69c5fb7b7070a923c411",
+      "source": "docs/evidence/ahc-022-compact-smoke-20261008/session.json"
+    },
+    {
+      "command": null,
+      "note": "475 tests; development baseline 4/8 and compact 6/8 structurally valid. Semantic judgment pending, no qualification.",
+      "outcome": "observed",
+      "sha256": "6df498d62afe1c030eda6e2dbd990cf20369c283e604a73b609b4fd36220dd4f",
+      "source": "docs/evidence/ahc-022-compact-live-20261008/session.json"
+    }
+  ],
+  "id": "INC-0009",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0016"
+  ],
+  "resolution": "Existing local server restarted; later compact live generation completed and journal validated. No model output was inferred from the failed preflight.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": "No local Ollama server listening; reason for prior shutdown unknown.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Primeira tentativa compacta falhou antes de inferência; API recusou conexão.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Ollama inativo interrompeu preflight do smoke",
+  "updated_at": "2026-10-08T15:56:12.883126+00:00"
+}

@@ -68,6 +68,7 @@ estruturado. Consulte o [exemplo](examples/project-definition/project.yaml) e o
 - Extração literal de evidências e verificação de citações por critério, sem ler assets; [grounding](docs/engineering/literal-grounding.md). Suporte semântico ainda exige revisão.
 - Análise opcional a partir de átomos, com destino explícito de cada critério e execução supervisionada; [modo grounded](docs/engineering/grounded-analysis.md). Experimental, sem qualificação semântica.
 - Correção opcional com diagnóstico escopado, budget por tentativa e journal próprio; [repair limitado](docs/engineering/grounded-repair.md). Não substitui revisão semântica.
+- Interpretação compacta com citações montadas deterministicamente e regras mantidas como hipóteses; [modo compacto](docs/engineering/compact-understanding.md). Qualidade semântica permanece em avaliação.
 - Evidence Pack com fontes, digest canônico, revisão declarada e escopos; [contrato e migração](docs/engineering/evidence-pack.md).
 - Validação de IDs, dependências, ciclos, referências e cobertura de critérios de aceitação.
 - Geração reproduzível de `AGENTS.md`, contexto, políticas, ADRs, plano de trabalho,

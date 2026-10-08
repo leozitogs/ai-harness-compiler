@@ -1,0 +1,74 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Literal extraction did not require models to account for criteria; two supervised real smokes rejected.",
+  "created_at": "2026-10-08T06:21:08.312497+00:00",
+  "decision": "Use proposed business-rule/requirement/blocking-question dispositions, validate quotes and links, and supervise one call per attempt. Never equate inventory completeness with semantic support.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "412 tests passed; mocked tests establish structural behavior only. Two live smokes rejected, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "ee1fb3635bf0aa0fc21eaaded184316c5e99b52f8056d5fe1021168e18bce0b0",
+      "source": "docs/adr/0014-grounded-analysis-dispositions.md"
+    },
+    {
+      "command": null,
+      "note": "412 tests passed; mocked tests establish structural behavior only. Two live smokes rejected, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "7d5f153f4088acf6a9b66720bc0c002db90622f32f58fa06fdfa5aa92c11c736",
+      "source": "src/ai_harness_compiler/models/grounded_analysis.py"
+    },
+    {
+      "command": null,
+      "note": "412 tests passed; mocked tests establish structural behavior only. Two live smokes rejected, no semantic qualification.",
+      "outcome": "observed",
+      "sha256": "2243ed05afc93847262781f99f09a75c4952f6fad7a1599b0e7bf56b308d5292",
+      "source": "src/ai_harness_compiler/model_worker.py"
+    },
+    {
+      "command": null,
+      "note": "412 tests passed; mocked tests establish structural behavior only. Two live smokes rejected, no semantic qualification.",
+      "outcome": "passed",
+      "sha256": "ab280141e2dfa2a0ff1d6b7c7adecbee9882af4288e98fa35f2dda5d1bac4b5e",
+      "source": "tests/test_grounded_analysis.py"
+    }
+  ],
+  "id": "ADR-0014",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "Rubric/PO semantic acceptance pending",
+    "Legacy worker has no retries; optional repair uses separate bounded journal",
+    "Aggregate reference granularity unchanged",
+    "Compact proposals accepted structurally; semantic quality and model qualification not established",
+    "Original grounded protocol has not yet produced an accepted live proposal; compact is a separate protocol"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0012",
+    "ADR-0013",
+    "INC-0007"
+  ],
+  "resolution": null,
+  "review_note": "Keep protocol-specific limitations explicit; compact acceptance is not evidence that grounded/repair succeeded.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 8,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Cada critério precisa de achado vinculado; grounded é opcional, com identidade de programa e diagnósticos fixos.",
+  "supersedes": null,
+  "tags": [
+    "grounding",
+    "analysis",
+    "bounded-execution"
+  ],
+  "title": "Análise com disposições tipadas e supervisão do modelo",
+  "updated_at": "2026-10-08T15:58:28.702656+00:00"
+}

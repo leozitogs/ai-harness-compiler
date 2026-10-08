@@ -1,0 +1,203 @@
+{
+  "$defs": {
+    "ContextInterpretation": {
+      "additionalProperties": false,
+      "properties": {
+        "context_indices": {
+          "items": {
+            "type": "integer"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Context Indices",
+          "type": "array"
+        },
+        "note": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        },
+        "subject": {
+          "enum": [
+            "purpose",
+            "audience",
+            "positioning",
+            "tone",
+            "domain",
+            "entity",
+            "capability",
+            "constraint"
+          ],
+          "title": "Subject",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "subject",
+        "text",
+        "note",
+        "context_indices"
+      ],
+      "title": "ContextInterpretation",
+      "type": "object"
+    },
+    "ContextIssue": {
+      "additionalProperties": false,
+      "properties": {
+        "context_indices": {
+          "items": {
+            "type": "integer"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Context Indices",
+          "type": "array"
+        },
+        "kind": {
+          "enum": [
+            "question",
+            "conflict"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "text",
+        "context_indices"
+      ],
+      "title": "ContextIssue",
+      "type": "object"
+    },
+    "CriterionInterpretation": {
+      "additionalProperties": false,
+      "properties": {
+        "condition": {
+          "anyOf": [
+            {
+              "maxLength": 2000,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Condition"
+        },
+        "kind": {
+          "enum": [
+            "business-rule",
+            "requirement",
+            "needs-clarification"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "note": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        },
+        "outcome": {
+          "anyOf": [
+            {
+              "maxLength": 2000,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Outcome"
+        },
+        "question": {
+          "anyOf": [
+            {
+              "maxLength": 2000,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Question"
+        },
+        "uncertainties": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 1,
+          "title": "Uncertainties",
+          "type": "array"
+        }
+      },
+      "required": [
+        "kind",
+        "note"
+      ],
+      "title": "CriterionInterpretation",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "context_findings": {
+      "items": {
+        "$ref": "#/$defs/ContextInterpretation"
+      },
+      "maxItems": 32,
+      "title": "Context Findings",
+      "type": "array"
+    },
+    "criteria": {
+      "items": {
+        "$ref": "#/$defs/CriterionInterpretation"
+      },
+      "maxItems": 64,
+      "minItems": 1,
+      "title": "Criteria",
+      "type": "array"
+    },
+    "issues": {
+      "items": {
+        "$ref": "#/$defs/ContextIssue"
+      },
+      "maxItems": 16,
+      "title": "Issues",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "CompactUnderstandingProposal/v1",
+      "default": "CompactUnderstandingProposal/v1",
+      "title": "Schema Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "criteria"
+  ],
+  "title": "CompactProposal",
+  "type": "object"
+}

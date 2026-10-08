@@ -133,7 +133,7 @@
       "responsible": "code-collaborator-supported-by-codex",
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
       "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16",
-      "progress_note": "Separate bounded repair controller/diagnostics implemented for review. Real two-attempt smoke rejected at repair-limit; development comparison, rubric/PO acceptance and qualification remain pending.",
+      "progress_note": "Optional compact interpretation/projection implemented; first live proposal accepted structurally, rules remain hypotheses. Development pair executed: baseline 4/8 and compact 6/8 valid; semantic review/qualification pending.",
       "evidence_sources": [
         "docs/adr/0014-grounded-analysis-dispositions.md",
         "docs/engineering/grounded-analysis.md",
@@ -141,7 +141,10 @@
         "docs/delivery/ahc-022-repair-increment.md",
         "docs/engineering/grounded-repair.md",
         "tests/test_repair.py",
-        "docs/evidence/ahc-022-repair-scoped-20261008/repair.json"
+        "docs/evidence/ahc-022-repair-scoped-20261008/repair.json",
+        "docs/adr/0016-compact-interpretation-projection.md",
+        "docs/delivery/ahc-022-compact-increment.md",
+        "tests/test_compact_analysis.py"
       ]
     },
     {
@@ -158,7 +161,12 @@
       ],
       "responsible": "code-collaborator-supported-by-codex",
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
-      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16"
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16",
+      "progress_note": "Initial development comparison executed on all eight frozen cases, one repetition per program, same model/profile/code. Six compact evals not-run, two errors; no semantic acceptance or holdout.",
+      "evidence_sources": [
+        "docs/delivery/ahc-022-development-comparison.md",
+        "docs/evidence/ahc-022-development-comparison-20261008.json"
+      ]
     },
     {
       "id": "s25-22-review",

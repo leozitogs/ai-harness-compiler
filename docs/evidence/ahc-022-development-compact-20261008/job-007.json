@@ -1,0 +1,11 @@
+{
+  "case_id": "dev-unread-assets",
+  "effective_timeout_seconds": 180.0,
+  "elapsed_seconds": 12.206740599998739,
+  "error_code": "compact-analysis-invalid",
+  "evaluation": null,
+  "generation": null,
+  "index": 7,
+  "repetition": 1,
+  "state": "error"
+}

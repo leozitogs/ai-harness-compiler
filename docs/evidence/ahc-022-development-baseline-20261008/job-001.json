@@ -1,0 +1,11 @@
+{
+  "case_id": "dev-new-domain",
+  "effective_timeout_seconds": 180.0,
+  "elapsed_seconds": 25.965962899994338,
+  "error_code": "provider-or-metadata-error",
+  "evaluation": null,
+  "generation": null,
+  "index": 1,
+  "repetition": 1,
+  "state": "error"
+}

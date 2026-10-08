@@ -1,0 +1,74 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Previous protocols confused reference/atom identifiers. Initial development pair: 4/8 baseline, 6/8 compact structurally accepted.",
+  "created_at": "2026-10-08T15:56:12.650147+00:00",
+  "decision": "Separate interpretation from deterministic source binding, use dimensioned response schema and preserve inferred rules as hypotheses; retain raw interpretation and reject contradictions.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "475 tests; development baseline 4/8 and compact 6/8 structurally valid. Semantic judgment pending, no qualification.",
+      "outcome": "observed",
+      "sha256": "27d26a4e22b1639a6ef15a1ad87f90521b583526851b65a1dbb62bff7a669a0b",
+      "source": "docs/adr/0016-compact-interpretation-projection.md"
+    },
+    {
+      "command": null,
+      "note": "475 tests; development baseline 4/8 and compact 6/8 structurally valid. Semantic judgment pending, no qualification.",
+      "outcome": "observed",
+      "sha256": "d3b7ebc0c2cf1406ce88bd9804b3938670edb7270dda35279a92929769a77aa6",
+      "source": "src/ai_harness_compiler/models/compact_analysis.py"
+    },
+    {
+      "command": null,
+      "note": "475 tests; development baseline 4/8 and compact 6/8 structurally valid. Semantic judgment pending, no qualification.",
+      "outcome": "passed",
+      "sha256": "8162fa537674ff9632260d277c43ae723e2ab3f69c0a25864d6d8124c5e5f888",
+      "source": "tests/test_compact_analysis.py"
+    },
+    {
+      "command": null,
+      "note": "475 tests; development baseline 4/8 and compact 6/8 structurally valid. Semantic judgment pending, no qualification.",
+      "outcome": "observed",
+      "sha256": "a57ceecaadcdc0a9a8035fc3841a5b48190a33577a4ad2ca8141a82dba8471ca",
+      "source": "docs/delivery/ahc-022-development-comparison.md"
+    }
+  ],
+  "id": "ADR-0016",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "Positional/citation semantic alignment still requires review",
+    "64 criteria cap and original projection limits apply",
+    "Conflicts need distinct original source refs",
+    "No model qualification"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0013",
+    "ADR-0014",
+    "ADR-0015",
+    "INC-0007"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Modelo propõe sem IDs/cópias de critérios; projeção usa fontes literais e mantém condições/resultados como hipóteses.",
+  "supersedes": null,
+  "tags": [
+    "compact-analysis",
+    "typed-ir",
+    "source-binding"
+  ],
+  "title": "Interpretação compacta e citações sob responsabilidade do compilador",
+  "updated_at": "2026-10-08T15:56:12.650147+00:00"
+}

@@ -1,0 +1,83 @@
+{
+  "$defs": {
+    "CompactContext": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "conception",
+            "branding",
+            "constraint",
+            "backlog-description",
+            "domain-declaration"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 16384,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "text"
+      ],
+      "title": "CompactContext",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "content_trust": {
+      "const": "untrusted-data",
+      "default": "untrusted-data",
+      "title": "Content Trust",
+      "type": "string"
+    },
+    "context": {
+      "items": {
+        "$ref": "#/$defs/CompactContext"
+      },
+      "maxItems": 512,
+      "minItems": 1,
+      "title": "Context",
+      "type": "array"
+    },
+    "criteria": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 64,
+      "minItems": 1,
+      "title": "Criteria",
+      "type": "array"
+    },
+    "input_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Input Sha256",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "CompactUnderstandingInput/v1",
+      "default": "CompactUnderstandingInput/v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "unread_asset_count": {
+      "minimum": 0,
+      "title": "Unread Asset Count",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "input_sha256",
+    "context",
+    "criteria",
+    "unread_asset_count"
+  ],
+  "title": "CompactInput",
+  "type": "object"
+}

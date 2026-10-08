@@ -115,6 +115,7 @@ def execute(request: WorkerRequest) -> WorkerResult:
                 return WorkerResult(status="error", error_code="model-changed")
             model = OllamaUnderstandingModel(settings)
             grounded = None
+            compact = None
             if request.settings.analysis_mode == "grounded":
                 from ai_harness_compiler.grounding import extract_grounding
                 from ai_harness_compiler.models.grounded_analysis import (
@@ -184,6 +185,21 @@ def execute(request: WorkerRequest) -> WorkerResult:
                         failure_diagnostic=diagnostic,
                     )
                 spec = grounded.understanding
+            elif request.settings.analysis_mode == "compact":
+                from ai_harness_compiler.grounding import extract_grounding
+                from ai_harness_compiler.models.compact_analysis import CompactAnalysisSpec
+
+                extraction = extract_grounding(request.request.original_input)
+                if extraction.request != request.request:
+                    return WorkerResult(status="error", error_code="compact-input-invalid")
+                try:
+                    interpretation, observation = model.generate_compact(extraction)
+                    compact = CompactAnalysisSpec(
+                        extraction=extraction, interpretation=interpretation
+                    )
+                    spec = compact.understanding
+                except ValueError:
+                    return WorkerResult(status="error", error_code="compact-analysis-invalid")
             else:
                 reply = model.generate(request.request)
                 observation = reply.observation
@@ -202,6 +218,7 @@ def execute(request: WorkerRequest) -> WorkerResult:
             settings=request.settings,
             understanding=spec,
             grounded_analysis=grounded,
+            compact_analysis=compact,
             observation=observation,
         )
     except (httpx.HTTPError, ValueError, KeyError, TypeError, RecursionError):
