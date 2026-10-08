@@ -79,3 +79,8 @@ semântica pendente; a seleção operacional está implementada e verificável.
 Verificação final: 566 testes sem skips; Ruff, formatação, mypy, schemas, políticas,
 três planos de sprint, memória/índice e build. O wheel contém a política principal
 empacotada; o usuário não precisa do checkout para carregar a preferência.
+
+A auditoria pós-commit detectou hashes de observações calculados com CRLF,
+enquanto Git publicou LF. Normalizamos os arquivos de evidência antes de congelar
+novos hashes e preservamos revisões anteriores. Isso corrige correspondência de
+bytes, sem alterar valores, medições ou alegar autenticidade da inferência.

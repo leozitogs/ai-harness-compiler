@@ -1,0 +1,65 @@
+{
+  "alternatives": [],
+  "applicability": [
+    "Freeze hashes only after choosing canonical artifact byte encoding/newlines"
+  ],
+  "attempts": [
+    "Detected committed-byte mismatch in DOC-0013",
+    "Normalized four synthetic evidence JSON files to LF",
+    "Created immutable updated DOC revisions with expected-version checks",
+    "Repeated committed-byte audit: 143 reusable digests matched before this new incident record"
+  ],
+  "author": "codex:engineering",
+  "challenge": "Preserve byte-accurate reproducible evidence across Windows and Git normalization.",
+  "consequences": [],
+  "context": "Windows JSON helper wrote native CRLF. Git attributes normalize text to LF; memory evidence used the pre-normalization physical SHA.",
+  "created_at": "2026-10-08T22:35:00.456311+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "LF normalized and committed-byte digest correspondence checked; model results not requalified.",
+      "outcome": "observed",
+      "sha256": "697901ba87f7f767ce001cdeb5e8dbe8be4c6a7e74a3a8a65887e454de8c9363",
+      "source": "docs/delivery/ahc-023-primary-selection.md"
+    },
+    {
+      "command": null,
+      "note": "LF normalized and committed-byte digest correspondence checked; model results not requalified.",
+      "outcome": "observed",
+      "sha256": "394009b9b353ae5dcb2abfd99615bd3eb7e9fd7658ce368aa189eede523c2aa6",
+      "source": "docs/evidence/ahc-023-primary-adversarial-20261008/observation.json"
+    },
+    {
+      "command": null,
+      "note": "LF normalized and committed-byte digest correspondence checked; model results not requalified.",
+      "outcome": "observed",
+      "sha256": "92bc1aa03049d266aa9281f7d8e0e59f1643c36831fb67d2c80d01c71bb08d5c",
+      "source": "docs/evidence/ahc-023-primary-smokes-20261008/observation.json"
+    }
+  ],
+  "id": "INC-0012",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "A matching digest proves byte correspondence, not model execution authenticity or semantic truth"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0013",
+    "ADR-0018"
+  ],
+  "resolution": "Latest reusable evidence now binds canonical LF bytes. Logical proposal values and observed metrics remain unchanged; previous memory revisions preserved.",
+  "review_note": "Cause reproduced by Git LF normalization; canonical bytes and revised digests checked after commit. No semantic or model authenticity claim.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": "Hash calculated before Git line-ending normalization, with default platform newline in exploratory evidence writer.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "verified",
+  "summary": "Post-commit reusable-evidence audit rejected DOC-0013 observation digest; logical JSON values were unchanged.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Hashes físicos CRLF divergiam dos bytes LF publicados",
+  "updated_at": "2026-10-08T22:35:00.522532+00:00"
+}

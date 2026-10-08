@@ -19,7 +19,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [ADR-0015 — Repair com feedback escopado e tentativas cobradas](records/ADR/ADR-0015/0002.json) · active · revision 2
 - [ADR-0016 — Interpretação compacta e citações sob responsabilidade do compilador](records/ADR/ADR-0016/0004.json) · active · revision 4
 - [ADR-0017 — Comparação independente de provedores e contexto citável completo](records/ADR/ADR-0017/0006.json) · active · revision 6
-- [ADR-0018 — Principal operacional compartilhado para tarefas com LLM](records/ADR/ADR-0018/0004.json) · active · revision 4
+- [ADR-0018 — Principal operacional compartilhado para tarefas com LLM](records/ADR/ADR-0018/0006.json) · active · revision 6
 - [DE-0001 — Memória de engenharia versionada](records/DE/DE-0001/0001.json) · draft · revision 1
 - [DE-0002 — Gerar memória e especialistas para cada projeto](records/DE/DE-0002/0002.json) · active · revision 2
 - [DE-0003 — Intake limitado e YAML explícito](records/DE/DE-0003/0002.json) · active · revision 2
@@ -38,7 +38,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0010 — Operação e evidências de repair limitado](records/DOC/DOC-0010/0002.json) · active · revision 2
 - [DOC-0011 — Protocolo compacto e comparação inicial de development](records/DOC/DOC-0011/0004.json) · active · revision 4
 - [DOC-0012 — Estudos primários e desenvolvimento comparativo independente](records/DOC/DOC-0012/0004.json) · active · revision 4
-- [DOC-0013 — Seleção do principal e verificação de integração](records/DOC/DOC-0013/0006.json) · active · revision 6
+- [DOC-0013 — Seleção do principal e verificação de integração](records/DOC/DOC-0013/0008.json) · active · revision 8
 - [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2
 - [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1
 - [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1
@@ -51,6 +51,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [INC-0009 — Ollama inativo interrompeu preflight do smoke](records/INC/INC-0009/0004.json) · verified · revision 4
 - [INC-0010 — Índices válidos ainda citam fontes sem suporte ao achado](records/INC/INC-0010/0001.json) · draft · revision 1
 - [INC-0011 — Primeira decisão Codex do especialista rejeitada pelo protocolo](records/INC/INC-0011/0001.json) · draft · revision 1
+- [INC-0012 — Hashes físicos CRLF divergiam dos bytes LF publicados](records/INC/INC-0012/0002.json) · verified · revision 2
 - [LES-0001 — Tipos estáticos podem falhar em runtime](records/LES/LES-0001/0004.json) · verified · revision 4
 - [LES-0002 — Referências válidas não garantem precedência consistente](records/LES/LES-0002/0002.json) · verified · revision 2
 - [LES-0003 — Usar IDs curtos para parametrizações com payloads grandes](records/LES/LES-0003/0002.json) · verified · revision 2
