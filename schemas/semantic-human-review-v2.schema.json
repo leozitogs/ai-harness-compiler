@@ -1,0 +1,185 @@
+{
+  "$defs": {
+    "FindingSupport": {
+      "additionalProperties": false,
+      "properties": {
+        "finding_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Finding Id",
+          "type": "string"
+        },
+        "finding_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Finding Sha256",
+          "type": "string"
+        },
+        "note": {
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        },
+        "outcome": {
+          "enum": [
+            "pass",
+            "fail"
+          ],
+          "title": "Outcome",
+          "type": "string"
+        },
+        "source_atom_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Source Atom Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "finding_id",
+        "finding_sha256",
+        "source_atom_ids",
+        "outcome",
+        "note"
+      ],
+      "title": "FindingSupport",
+      "type": "object"
+    },
+    "ObligationCoverage": {
+      "additionalProperties": false,
+      "properties": {
+        "finding_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Finding Id",
+          "type": "string"
+        },
+        "obligation_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Obligation Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "obligation_id",
+        "finding_id"
+      ],
+      "title": "ObligationCoverage",
+      "type": "object"
+    },
+    "SemanticCheck": {
+      "additionalProperties": false,
+      "properties": {
+        "criterion": {
+          "enum": [
+            "rule-coverage",
+            "citation-support",
+            "conflict-validity",
+            "asset-bounds",
+            "uncertainty",
+            "project-understanding"
+          ],
+          "title": "Criterion",
+          "type": "string"
+        },
+        "note": {
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        },
+        "outcome": {
+          "enum": [
+            "not-run",
+            "pass",
+            "fail"
+          ],
+          "title": "Outcome",
+          "type": "string"
+        }
+      },
+      "required": [
+        "criterion",
+        "outcome",
+        "note"
+      ],
+      "title": "SemanticCheck",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "analysis_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Analysis Sha256",
+      "type": "string"
+    },
+    "authority": {
+      "const": "human-declared-not-authenticated",
+      "default": "human-declared-not-authenticated",
+      "title": "Authority",
+      "type": "string"
+    },
+    "case_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Case Sha256",
+      "type": "string"
+    },
+    "checks": {
+      "items": {
+        "$ref": "#/$defs/SemanticCheck"
+      },
+      "maxItems": 6,
+      "minItems": 6,
+      "title": "Checks",
+      "type": "array"
+    },
+    "coverage": {
+      "items": {
+        "$ref": "#/$defs/ObligationCoverage"
+      },
+      "maxItems": 64,
+      "title": "Coverage",
+      "type": "array"
+    },
+    "finding_support": {
+      "items": {
+        "$ref": "#/$defs/FindingSupport"
+      },
+      "maxItems": 512,
+      "title": "Finding Support",
+      "type": "array"
+    },
+    "note": {
+      "minLength": 1,
+      "title": "Note",
+      "type": "string"
+    },
+    "reviewer": {
+      "minLength": 1,
+      "title": "Reviewer",
+      "type": "string"
+    },
+    "rubric_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Rubric Sha256",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "SemanticHumanReview/v2",
+      "default": "SemanticHumanReview/v2",
+      "title": "Schema Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "reviewer",
+    "note",
+    "case_sha256",
+    "rubric_sha256",
+    "analysis_sha256",
+    "checks"
+  ],
+  "title": "SemanticHumanReview",
+  "type": "object"
+}

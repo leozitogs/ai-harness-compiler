@@ -1,0 +1,230 @@
+{
+  "$defs": {
+    "BoundFinding": {
+      "additionalProperties": false,
+      "properties": {
+        "condition": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Condition"
+        },
+        "exceptions": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Exceptions",
+          "type": "array"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "impact": {
+          "anyOf": [
+            {
+              "enum": [
+                "rule",
+                "authorization",
+                "outcome",
+                "precedence",
+                "implementation-detail"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Impact"
+        },
+        "kind": {
+          "enum": [
+            "rule",
+            "requirement",
+            "statement",
+            "domain",
+            "question",
+            "conflict",
+            "rejection"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "outcome": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Outcome"
+        },
+        "rationale": {
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "rejection_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "untrusted-instruction",
+                "unread-required-source"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rejection Reason"
+        },
+        "source_atom_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Atom Ids",
+          "type": "array"
+        },
+        "subject": {
+          "anyOf": [
+            {
+              "enum": [
+                "purpose",
+                "audience",
+                "positioning",
+                "tone",
+                "domain",
+                "entity",
+                "capability",
+                "constraint"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Subject"
+        },
+        "text": {
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "text",
+        "rationale",
+        "source_atom_ids"
+      ],
+      "title": "BoundFinding",
+      "type": "object"
+    },
+    "SourceBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "atom_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Atom Id",
+          "type": "string"
+        },
+        "pointer": {
+          "minLength": 1,
+          "title": "Pointer",
+          "type": "string"
+        },
+        "quote": {
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        },
+        "quote_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Quote Sha256",
+          "type": "string"
+        },
+        "source_ref": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Source Ref",
+          "type": "string"
+        }
+      },
+      "required": [
+        "atom_id",
+        "source_ref",
+        "pointer",
+        "quote",
+        "quote_sha256"
+      ],
+      "title": "SourceBinding",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "analysis_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Analysis Sha256",
+      "type": "string"
+    },
+    "content_trust": {
+      "const": "untrusted-data",
+      "default": "untrusted-data",
+      "title": "Content Trust",
+      "type": "string"
+    },
+    "findings": {
+      "items": {
+        "$ref": "#/$defs/BoundFinding"
+      },
+      "maxItems": 512,
+      "minItems": 1,
+      "title": "Findings",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "SemanticVerificationPacket/v2",
+      "default": "SemanticVerificationPacket/v2",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "sources": {
+      "items": {
+        "$ref": "#/$defs/SourceBinding"
+      },
+      "maxItems": 512,
+      "minItems": 1,
+      "title": "Sources",
+      "type": "array"
+    }
+  },
+  "required": [
+    "analysis_sha256",
+    "findings",
+    "sources"
+  ],
+  "title": "VerificationPacket",
+  "type": "object"
+}

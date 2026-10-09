@@ -1,0 +1,292 @@
+{
+  "$defs": {
+    "AnalysisIssue": {
+      "additionalProperties": false,
+      "properties": {
+        "context_indices": {
+          "items": {
+            "type": "integer"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Context Indices",
+          "type": "array"
+        },
+        "impact": {
+          "anyOf": [
+            {
+              "enum": [
+                "rule",
+                "authorization",
+                "outcome",
+                "precedence",
+                "implementation-detail"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Impact"
+        },
+        "kind": {
+          "enum": [
+            "question",
+            "conflict",
+            "safe-rejection"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "rationale": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "rejection_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "untrusted-instruction",
+                "unread-required-source"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rejection Reason"
+        },
+        "text": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "text",
+        "context_indices",
+        "rationale"
+      ],
+      "title": "AnalysisIssue",
+      "type": "object"
+    },
+    "ContextInterpretation": {
+      "additionalProperties": false,
+      "properties": {
+        "context_indices": {
+          "items": {
+            "type": "integer"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Context Indices",
+          "type": "array"
+        },
+        "note": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        },
+        "subject": {
+          "enum": [
+            "purpose",
+            "audience",
+            "positioning",
+            "tone",
+            "domain",
+            "entity",
+            "capability",
+            "constraint"
+          ],
+          "title": "Subject",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "subject",
+        "text",
+        "note",
+        "context_indices"
+      ],
+      "title": "ContextInterpretation",
+      "type": "object"
+    },
+    "CriterionAnalysis": {
+      "additionalProperties": false,
+      "properties": {
+        "condition": {
+          "anyOf": [
+            {
+              "maxLength": 2000,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Condition"
+        },
+        "exceptions": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 8,
+          "title": "Exceptions",
+          "type": "array"
+        },
+        "kind": {
+          "enum": [
+            "business-rule",
+            "requirement",
+            "needs-clarification"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "note": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        },
+        "outcome": {
+          "anyOf": [
+            {
+              "maxLength": 2000,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Outcome"
+        },
+        "question": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MaterialQuestion"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "source_atom_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Source Atom Id",
+          "type": "string"
+        },
+        "uncertainties": {
+          "items": {
+            "$ref": "#/$defs/MaterialQuestion"
+          },
+          "maxItems": 4,
+          "title": "Uncertainties",
+          "type": "array"
+        }
+      },
+      "required": [
+        "source_atom_id",
+        "kind",
+        "note"
+      ],
+      "title": "CriterionAnalysis",
+      "type": "object"
+    },
+    "MaterialQuestion": {
+      "additionalProperties": false,
+      "properties": {
+        "impact": {
+          "enum": [
+            "rule",
+            "authorization",
+            "outcome",
+            "precedence",
+            "implementation-detail"
+          ],
+          "title": "Impact",
+          "type": "string"
+        },
+        "rationale": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "impact",
+        "rationale"
+      ],
+      "title": "MaterialQuestion",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "context_findings": {
+      "items": {
+        "$ref": "#/$defs/ContextInterpretation"
+      },
+      "maxItems": 32,
+      "title": "Context Findings",
+      "type": "array"
+    },
+    "criteria": {
+      "items": {
+        "$ref": "#/$defs/CriterionAnalysis"
+      },
+      "maxItems": 64,
+      "minItems": 1,
+      "title": "Criteria",
+      "type": "array"
+    },
+    "issues": {
+      "items": {
+        "$ref": "#/$defs/AnalysisIssue"
+      },
+      "maxItems": 16,
+      "title": "Issues",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "SemanticAnalysisProposal/v2",
+      "default": "SemanticAnalysisProposal/v2",
+      "title": "Schema Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "criteria"
+  ],
+  "title": "AnalysisProposal",
+  "type": "object"
+}

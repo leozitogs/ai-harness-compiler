@@ -1,0 +1,68 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Approved criteria and independent business-rule review led to a new version preserving all v1 evidence.",
+  "created_at": "2026-10-09T20:15:26.399387+00:00",
+  "decision": "Use standalone typed v2 analysis, model advice and human assessment; require exact finding/source/program fingerprints and independently approved case expectations.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "623 full offline tests passed before final fingerprint fix; 58 targeted tests passed after fix. Real public development analysis and advisory valid, human assessment not-run; no qualification.",
+      "outcome": "observed",
+      "sha256": "1eb7db60915d16191b569900ca2c09ff579ac5a585ec923d6cbfe74dedf1f371",
+      "source": "docs/adr/0019-semantic-verification-v2.md"
+    },
+    {
+      "command": null,
+      "note": "623 full offline tests passed before final fingerprint fix; 58 targeted tests passed after fix. Real public development analysis and advisory valid, human assessment not-run; no qualification.",
+      "outcome": "observed",
+      "sha256": "eaed53c2b8a096f1d4ab16fb923bf0be44a6263c6fb673a072f36d95b51d96bf",
+      "source": "src/ai_harness_compiler/models/semantic_analysis.py"
+    },
+    {
+      "command": null,
+      "note": "623 full offline tests passed before final fingerprint fix; 58 targeted tests passed after fix. Real public development analysis and advisory valid, human assessment not-run; no qualification.",
+      "outcome": "observed",
+      "sha256": "26fe4b00d30e740bd45e550d4bcb451378583ba099510004a2d639adab4c50fb",
+      "source": "src/ai_harness_compiler/models/semantic_assessment.py"
+    },
+    {
+      "command": null,
+      "note": "623 full offline tests passed before final fingerprint fix; 58 targeted tests passed after fix. Real public development analysis and advisory valid, human assessment not-run; no qualification.",
+      "outcome": "observed",
+      "sha256": "f1995ba72c9a07d06c78cfc695858fb692d816807fe218181a7cb3b4321f002e",
+      "source": "src/ai_harness_compiler/models/semantic_verification.py"
+    }
+  ],
+  "id": "ADR-0019",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "No automatic migration or human approval",
+    "Verifier uses same requested model; no scientifically independent assurance",
+    "No corpus v2 freeze, holdout or model qualification"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0007",
+    "DOC-0015",
+    "ADR-0018"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Exact atom bindings, question impact, expected behavior and advisory/human contracts are separate; evaluation cannot authorize compilation.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Análise e verificação v2 sem promoção de autoridade",
+  "updated_at": "2026-10-09T20:15:26.399387+00:00"
+}

@@ -1,115 +1,104 @@
 {
+  "execution_started": true,
   "format": "sprint-work-items/v1",
   "sprint_id": "sprint-2-5",
   "status": "in_progress",
-  "execution_started": true,
   "work_items": [
     {
-      "id": "s25-21-design",
       "capability_id": "ahc-021",
-      "task_graph_id": "task-21-design",
-      "stage": "design",
-      "status": "in_progress",
       "depends_on": [],
-      "subtask_ids": [
-        "021-01",
-        "021-02"
-      ],
-      "responsible": "code-collaborator-supported-by-codex",
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
-      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/15",
-      "subtask_status": {
-        "021-01": "in_review",
-        "021-02": "in_review"
-      },
-      "progress_note": "PO approved six quality criteria and four decisions on 2026-10-09, including expected safe blocking. Independent business-rule review completed; per-case expectations and new-version contracts/corpus still pending. Original v1 preserved.",
       "evidence_sources": [
         "evals/understanding/v1/freeze.json",
         "docs/engineering/semantic-understanding-evals.md",
         "docs/delivery/ahc-021-quality-criteria-review.md",
         "docs/reviews/20261009-understanding-business-rules.md"
-      ]
+      ],
+      "id": "s25-21-design",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/15",
+      "progress_note": "PO approved six criteria/four decisions; rubric v2 materialized. Independent review findings implemented in new version. Individual case expectations and corpus freeze pending; v1 preserved.",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "design",
+      "status": "in_progress",
+      "subtask_ids": [
+        "021-01",
+        "021-02"
+      ],
+      "subtask_status": {
+        "021-01": "in_review",
+        "021-02": "in_review"
+      },
+      "task_graph_id": "task-21-design"
     },
     {
-      "id": "s25-21-implement",
       "capability_id": "ahc-021",
-      "task_graph_id": "task-21-implement",
-      "stage": "implement",
-      "status": "in_progress",
       "depends_on": [
         "s25-21-design"
       ],
-      "subtask_ids": [
-        "021-03",
-        "021-04"
-      ],
-      "responsible": "code-collaborator-supported-by-codex",
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
-      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/15",
-      "subtask_status": {
-        "021-03": "in_review",
-        "021-04": "in_review"
-      },
-      "progress_note": "PRs #19 and #20 integrated with green CI; rubric/PO review and full semantic verification still pending.",
       "evidence_sources": [
         "tests/test_semantic_eval.py",
         "docs/evidence/ahc-021/qwen3-cold-eval.json",
         "docs/engineering/model-generation-sessions.md",
         "docs/evidence/ahc-021-live-session-final/session.json",
         "tests/test_model_sessions.py"
-      ]
+      ],
+      "id": "s25-21-implement",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/15",
+      "progress_note": "PRs #19 and #20 integrated with green CI; rubric/PO review and full semantic verification still pending.",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "implement",
+      "status": "in_progress",
+      "subtask_ids": [
+        "021-03",
+        "021-04"
+      ],
+      "subtask_status": {
+        "021-03": "in_review",
+        "021-04": "in_review"
+      },
+      "task_graph_id": "task-21-implement"
     },
     {
-      "id": "s25-21-verify",
       "capability_id": "ahc-021",
-      "task_graph_id": "task-21-verify",
-      "stage": "verify",
-      "status": "planned",
       "depends_on": [
         "s25-21-implement"
       ],
+      "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
+      "id": "s25-21-verify",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/15",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "verify",
+      "status": "planned",
       "subtask_ids": [
         "corpus-isolation",
         "report-invariants"
       ],
-      "responsible": "code-collaborator-supported-by-codex",
-      "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
-      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/15"
+      "task_graph_id": "task-21-verify"
     },
     {
-      "id": "s25-21-review",
       "capability_id": "ahc-021",
-      "task_graph_id": "task-21-review",
-      "stage": "review",
-      "status": "planned",
       "depends_on": [
         "s25-21-verify"
       ],
+      "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
+      "id": "s25-21-review",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/15",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "review",
+      "status": "planned",
       "subtask_ids": [
         "rubric-review",
         "integration"
       ],
-      "responsible": "code-collaborator-supported-by-codex",
-      "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
-      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/15"
+      "task_graph_id": "task-21-review"
     },
     {
-      "id": "s25-22-design",
       "capability_id": "ahc-022",
-      "task_graph_id": "task-22-design",
-      "stage": "design",
-      "status": "planned",
       "depends_on": [
         "s25-21-review"
       ],
-      "subtask_ids": [
-        "022-01",
-        "022-02"
-      ],
-      "responsible": "code-collaborator-supported-by-codex",
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
-      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16",
-      "progress_note": "Grounded analysis/dispositions and supervised optional mode implemented for review; two development smokes rejected, latest criterion-rule-link-invalid. Rubric/PO acceptance dependency pending; no semantic completion.",
       "evidence_sources": [
         "docs/delivery/ahc-022-first-increment.md",
         "docs/engineering/literal-grounding.md",
@@ -118,24 +107,25 @@
         "docs/engineering/grounded-analysis.md",
         "tests/test_grounded_analysis.py",
         "docs/evidence/ahc-022-grounded-diagnostics-20261008/session.json"
-      ]
+      ],
+      "id": "s25-22-design",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16",
+      "progress_note": "Grounded analysis/dispositions and supervised optional mode implemented for review; two development smokes rejected, latest criterion-rule-link-invalid. Rubric/PO acceptance dependency pending; no semantic completion.",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "design",
+      "status": "planned",
+      "subtask_ids": [
+        "022-01",
+        "022-02"
+      ],
+      "task_graph_id": "task-22-design"
     },
     {
-      "id": "s25-22-implement",
       "capability_id": "ahc-022",
-      "task_graph_id": "task-22-implement",
-      "stage": "implement",
-      "status": "planned",
       "depends_on": [
         "s25-22-design"
       ],
-      "subtask_ids": [
-        "022-03"
-      ],
-      "responsible": "code-collaborator-supported-by-codex",
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
-      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16",
-      "progress_note": "Compact v2 fixes criteria citation and field meanings. Optional subscription Codex adapter and LangGraph two-provider comparison implemented; no auto-selection or semantic approval.",
       "evidence_sources": [
         "docs/adr/0014-grounded-analysis-dispositions.md",
         "docs/engineering/grounded-analysis.md",
@@ -150,120 +140,134 @@
         "docs/adr/0017-independent-provider-comparison.md",
         "tests/test_understanding_comparison.py",
         "tests/test_comparison_runner.py",
-        "tests/test_codex_cli.py"
-      ]
+        "tests/test_codex_cli.py",
+        "docs/engineering/semantic-verification-v2.md",
+        "docs/adr/0019-semantic-verification-v2.md",
+        "tests/test_semantic_verification.py",
+        "tests/test_semantic_assessment.py"
+      ],
+      "id": "s25-22-implement",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16",
+      "progress_note": "Semantic v2 contracts, exact atom binding, question impact, independent advisory verifier and offline human assessment implemented. One real public development smoke saved. Case expectations/human review/holdout remain pending; story not Done.",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "implement",
+      "status": "in_progress",
+      "subtask_ids": [
+        "022-03"
+      ],
+      "task_graph_id": "task-22-implement"
     },
     {
-      "id": "s25-22-verify",
       "capability_id": "ahc-022",
-      "task_graph_id": "task-22-verify",
-      "stage": "verify",
-      "status": "planned",
       "depends_on": [
         "s25-22-implement"
       ],
-      "subtask_ids": [
-        "022-04"
-      ],
-      "responsible": "code-collaborator-supported-by-codex",
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
-      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16",
-      "progress_note": "Eight frozen development cases: local 8/8 and Codex 7/8 structurally accepted; 16 model calls, validated journals. Source-support errors remain in local proposals; no semantic acceptance or holdout.",
       "evidence_sources": [
         "docs/delivery/ahc-022-development-comparison.md",
         "docs/evidence/ahc-022-development-comparison-20261008.json",
         "docs/delivery/ahc-022-independent-comparison.md",
         "docs/evidence/ahc-022-independent-development-summary-20261008.json"
-      ]
+      ],
+      "id": "s25-22-verify",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16",
+      "progress_note": "Eight frozen development cases: local 8/8 and Codex 7/8 structurally accepted; 16 model calls, validated journals. Source-support errors remain in local proposals; no semantic acceptance or holdout.",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "verify",
+      "status": "planned",
+      "subtask_ids": [
+        "022-04"
+      ],
+      "task_graph_id": "task-22-verify"
     },
     {
-      "id": "s25-22-review",
       "capability_id": "ahc-022",
-      "task_graph_id": "task-22-review",
-      "stage": "review",
-      "status": "planned",
       "depends_on": [
         "s25-22-verify"
       ],
+      "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
+      "id": "s25-22-review",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "review",
+      "status": "planned",
       "subtask_ids": [
         "semantic-review",
         "integration"
       ],
-      "responsible": "code-collaborator-supported-by-codex",
-      "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
-      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16"
+      "task_graph_id": "task-22-review"
     },
     {
-      "id": "s25-23-design",
       "capability_id": "ahc-023",
-      "task_graph_id": "task-23-design",
-      "stage": "design",
-      "status": "planned",
       "depends_on": [
         "s25-22-review"
       ],
+      "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
+      "id": "s25-23-design",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/17",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "design",
+      "status": "planned",
       "subtask_ids": [
         "023-01"
       ],
-      "responsible": "code-collaborator-supported-by-codex",
-      "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
-      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/17"
+      "task_graph_id": "task-23-design"
     },
     {
-      "id": "s25-23-implement",
       "capability_id": "ahc-023",
-      "task_graph_id": "task-23-implement",
-      "stage": "implement",
-      "status": "planned",
       "depends_on": [
         "s25-23-design"
       ],
-      "subtask_ids": [
-        "023-02"
-      ],
-      "responsible": "code-collaborator-supported-by-codex",
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
-      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/17",
-      "progress_note": "Operational primary chosen from paired development source/behavior inspection: Codex CLI gpt-6.1-sol, central typed policy shared by study and six LLM-backed roles. Local alternative explicit; no automatic fallback. Example/adversarial and one specialist live smokes passed structurally. Semantic adjudication and qualification pending.",
       "evidence_sources": [
         "docs/delivery/ahc-023-primary-selection.md",
         "docs/adr/0018-primary-model-policy.md",
         "src/ai_harness_compiler/default-model-policy.json",
         "tests/test_model_policy.py",
         "tests/test_team_codex.py"
-      ]
+      ],
+      "id": "s25-23-implement",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/17",
+      "progress_note": "Operational primary chosen from paired development source/behavior inspection: Codex CLI gpt-6.1-sol, central typed policy shared by study and six LLM-backed roles. Local alternative explicit; no automatic fallback. Example/adversarial and one specialist live smokes passed structurally. Semantic adjudication and qualification pending.",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "implement",
+      "status": "planned",
+      "subtask_ids": [
+        "023-02"
+      ],
+      "task_graph_id": "task-23-implement"
     },
     {
-      "id": "s25-23-verify",
       "capability_id": "ahc-023",
-      "task_graph_id": "task-23-verify",
-      "stage": "verify",
-      "status": "planned",
       "depends_on": [
         "s25-23-implement"
       ],
+      "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
+      "id": "s25-23-verify",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/17",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "verify",
+      "status": "planned",
       "subtask_ids": [
         "023-03"
       ],
-      "responsible": "code-collaborator-supported-by-codex",
-      "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
-      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/17"
+      "task_graph_id": "task-23-verify"
     },
     {
-      "id": "s25-23-review",
       "capability_id": "ahc-023",
-      "task_graph_id": "task-23-review",
-      "stage": "review",
-      "status": "planned",
       "depends_on": [
         "s25-23-verify"
       ],
+      "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
+      "id": "s25-23-review",
+      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/17",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "review",
+      "status": "planned",
       "subtask_ids": [
         "023-04"
       ],
-      "responsible": "code-collaborator-supported-by-codex",
-      "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
-      "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/17"
+      "task_graph_id": "task-23-review"
     }
   ]
 }

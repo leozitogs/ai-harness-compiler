@@ -1,0 +1,82 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Two real gpt-6.1-sol subscription calls on public dev-new-domain, no tools, no holdout; exact artifacts saved without private reasoning or credentials.",
+  "created_at": "2026-10-09T20:15:26.549557+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "623 full offline tests passed before final fingerprint fix; 58 targeted tests passed after fix. Real public development analysis and advisory valid, human assessment not-run; no qualification.",
+      "outcome": "observed",
+      "sha256": "5478737be7c1d6436fb3d24e87bc208a61214b90682e3f2ac0116e39c691797b",
+      "source": "docs/delivery/ahc-022-semantic-v2-increment.md"
+    },
+    {
+      "command": null,
+      "note": "623 full offline tests passed before final fingerprint fix; 58 targeted tests passed after fix. Real public development analysis and advisory valid, human assessment not-run; no qualification.",
+      "outcome": "observed",
+      "sha256": "9f99e343ce4134fa81e52cc1276543bb05e08325d997892cf3168d641d4a4c3a",
+      "source": "docs/engineering/semantic-verification-v2.md"
+    },
+    {
+      "command": null,
+      "note": "623 full offline tests passed before final fingerprint fix; 58 targeted tests passed after fix. Real public development analysis and advisory valid, human assessment not-run; no qualification.",
+      "outcome": "passed",
+      "sha256": "11f7b67259b9eeed81af99c229778ce25fa9c2422684474e1176ff6e28d6850d",
+      "source": "tests/test_semantic_assessment.py"
+    },
+    {
+      "command": null,
+      "note": "623 full offline tests passed before final fingerprint fix; 58 targeted tests passed after fix. Real public development analysis and advisory valid, human assessment not-run; no qualification.",
+      "outcome": "passed",
+      "sha256": "2de17518b8d91dc16574325b98e6a1924e27cbed4e8be6cdfc0502d31835f43f",
+      "source": "tests/test_semantic_verification.py"
+    },
+    {
+      "command": null,
+      "note": "623 full offline tests passed before final fingerprint fix; 58 targeted tests passed after fix. Real public development analysis and advisory valid, human assessment not-run; no qualification.",
+      "outcome": "observed",
+      "sha256": "69e48dddfcc6c4dfb1fb0f548b52b609975fbe59a945754a001d7c856b99d5a5",
+      "source": "docs/evidence/ahc-022-semantic-v2-20261009/advice.json"
+    },
+    {
+      "command": null,
+      "note": "623 full offline tests passed before final fingerprint fix; 58 targeted tests passed after fix. Real public development analysis and advisory valid, human assessment not-run; no qualification.",
+      "outcome": "observed",
+      "sha256": "6ca4309c699d91948a0a8ede36914d79106a4a90d6e3eebf14bb75d6df5c5c2a",
+      "source": "docs/evidence/ahc-022-semantic-v2-20261009/assessment.json"
+    }
+  ],
+  "id": "DOC-0016",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Same model agreement is not semantic validation",
+    "requested_model is requested, not authenticated observed identity",
+    "Single-call CLI failures lack session attempt journal"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0019",
+    "DOC-0014",
+    "DOC-0015"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Functional v2 CLI analysis, independent model advice and offline human assessment; real development smoke remained not-run semantically.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Incremento semântico v2 e smoke público",
+  "updated_at": "2026-10-09T20:15:26.549557+00:00"
+}
