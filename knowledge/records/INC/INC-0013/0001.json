@@ -1,0 +1,59 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Independent source/rule review",
+    "Offline clarification-only reproduction",
+    "Offline nonblocking-detail reproduction",
+    "Offline negative-support/pending-aggregate reproduction",
+    "Documented required invariants/tests for new version"
+  ],
+  "author": "codex:engineering",
+  "challenge": "Implement newly approved quality semantics without rewarding inventions, hiding material failures or releasing blocked harnesses.",
+  "consequences": [],
+  "context": "Independent rules review after explicit PO criteria approval; legacy corpus/outputs remain unqualified and are not retroactively regraded.",
+  "created_at": "2026-10-09T19:47:03.569357+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Independent rules review and offline reproductions; 67 existing protocol tests passed. No semantic output approval or qualification.",
+      "outcome": "observed",
+      "sha256": "39e09f8013ac8e146d9af05b4aaf450eadc00f463532bc1ee6e1fb9b3f56bf4a",
+      "source": "docs/reviews/20261009-understanding-business-rules.md"
+    },
+    {
+      "command": null,
+      "note": "Independent rules review and offline reproductions; 67 existing protocol tests passed. No semantic output approval or qualification.",
+      "outcome": "observed",
+      "sha256": "bb24f3a1c77b67a5dd417508b2777aaa1c0790fcc2cb66dd176b9f704fabe3d8",
+      "source": "scripts/reproduce_understanding_business_review.py"
+    }
+  ],
+  "id": "INC-0013",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Cause describes representation limits; no claim of why a model generated an incorrect inference",
+    "No fixes implemented in this review increment"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0007",
+    "DOC-0015",
+    "INC-0010"
+  ],
+  "resolution": "Open: evolve contracts and verifier in a new version, then validate regressions before corpus/candidate qualification.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": "v1 expects BusinessRule coverage without per-case behavior/disposition, uses a single blocking flag on projection, and human-review binding observes parent refs rather than selected atom snapshot.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Question-only safe blocking fails coverage, implementation uncertainties always block, parent refs lose selected atoms and negative item support may remain pending in aggregate.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Contratos v1 não representam todos os critérios de qualidade aprovados",
+  "updated_at": "2026-10-09T19:47:03.569357+00:00"
+}

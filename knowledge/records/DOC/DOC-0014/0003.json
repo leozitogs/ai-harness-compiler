@@ -1,0 +1,47 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "2026-10-09: explicit PO approval in current session, followed by requested independent business-rule review. Approval does not cover outputs, case expectations or model qualification.",
+  "created_at": "2026-10-09T18:47:45.507273+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Independent rules review and offline reproductions; 67 existing protocol tests passed. No semantic output approval or qualification.",
+      "outcome": "observed",
+      "sha256": "a607318f5284477e0e00fa9ba98c4c4cbd8aefaf319cbd9ad710430b7248e7a4",
+      "source": "docs/delivery/ahc-021-quality-criteria-review.md"
+    }
+  ],
+  "id": "DOC-0014",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Criteria approval only; no output/corpus/qualification acceptance",
+    "v1 frozen artifacts remain intact",
+    "Expected behavior/source-atom binding/question-impact contracts still to be implemented"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0011",
+    "ADR-0018",
+    "INC-0010"
+  ],
+  "resolution": null,
+  "review_note": "PO explicitly approved all criteria and four decisions in this conversation; independent review scope and unresolved implementation gaps recorded. Not authenticated externally; not semantic output approval.",
+  "reviewed_by": "leozitogs:po-declared",
+  "revision": 3,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "PO approved all six criteria/four decisions, including expected safe blocking; independent review found v1/new-contract gaps.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Critérios objetivos de entendimento para validação do PO",
+  "updated_at": "2026-10-09T19:47:03.101517+00:00"
+}

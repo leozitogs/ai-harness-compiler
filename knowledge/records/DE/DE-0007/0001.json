@@ -1,0 +1,54 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO approved four detailed quality decisions and requested an independent business-rule robustness check; reviewer identified representation/protocol gaps before verifier implementation.",
+  "created_at": "2026-10-09T19:47:03.193756+00:00",
+  "decision": "Design new-version contracts with explicit complete/blocked/safely-rejected expectations, rule dispositions, grounded question impact and atom-level stale-review binding; model advisory separate from human judgment.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Independent rules review and offline reproductions; 67 existing protocol tests passed. No semantic output approval or qualification.",
+      "outcome": "observed",
+      "sha256": "a607318f5284477e0e00fa9ba98c4c4cbd8aefaf319cbd9ad710430b7248e7a4",
+      "source": "docs/delivery/ahc-021-quality-criteria-review.md"
+    },
+    {
+      "command": null,
+      "note": "Independent rules review and offline reproductions; 67 existing protocol tests passed. No semantic output approval or qualification.",
+      "outcome": "observed",
+      "sha256": "39e09f8013ac8e146d9af05b4aaf450eadc00f463532bc1ee6e1fb9b3f56bf4a",
+      "source": "docs/reviews/20261009-understanding-business-rules.md"
+    }
+  ],
+  "id": "DE-0007",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "Not an implemented verifier",
+    "Case-level expected outcomes still need review",
+    "Frozen v1 unchanged; no model qualification"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0014",
+    "ADR-0011",
+    "ADR-0018"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Correct expected blocking can satisfy case behavior without authorizing the harness; material source/rule failures cannot be compensated by latency or pending aggregate.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Critérios aprovados e resultado do eval separado da compilação",
+  "updated_at": "2026-10-09T19:47:03.193756+00:00"
+}

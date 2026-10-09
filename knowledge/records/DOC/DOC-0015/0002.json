@@ -1,0 +1,67 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Read-only source review, development-only offline fixtures, no adapter model calls or holdout tuning. Existing protocol tests passed, but do not establish the new criteria.",
+  "created_at": "2026-10-09T19:47:03.387304+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Independent rules review and offline reproductions; 67 existing protocol tests passed. No semantic output approval or qualification.",
+      "outcome": "observed",
+      "sha256": "39e09f8013ac8e146d9af05b4aaf450eadc00f463532bc1ee6e1fb9b3f56bf4a",
+      "source": "docs/reviews/20261009-understanding-business-rules.md"
+    },
+    {
+      "command": null,
+      "note": "Independent rules review and offline reproductions; 67 existing protocol tests passed. No semantic output approval or qualification.",
+      "outcome": "observed",
+      "sha256": "bb24f3a1c77b67a5dd417508b2777aaa1c0790fcc2cb66dd176b9f704fabe3d8",
+      "source": "scripts/reproduce_understanding_business_review.py"
+    },
+    {
+      "command": null,
+      "note": "Independent rules review and offline reproductions; 67 existing protocol tests passed. No semantic output approval or qualification.",
+      "outcome": "passed",
+      "sha256": "08c0aab142c354951fd3f3d8d76a69baf3166713cc2936741db346d0e08e58b7",
+      "source": "tests/test_semantic_eval.py"
+    },
+    {
+      "command": null,
+      "note": "Independent rules review and offline reproductions; 67 existing protocol tests passed. No semantic output approval or qualification.",
+      "outcome": "passed",
+      "sha256": "f810c67f279660d6a66c82ba65751f02928dbed17c88c054bee2dad5633f299c",
+      "source": "tests/test_compact_analysis.py"
+    }
+  ],
+  "id": "DOC-0015",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "No HumanSemanticReview of model answers",
+    "Legacy v1 behavior is distinct from new approved expectations",
+    "No robustness guarantee for untested scenarios"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0014",
+    "DE-0007"
+  ],
+  "resolution": null,
+  "review_note": "Code locations and offline reproductions checked; findings distinguished between current behavior and future contract requirements.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Agent found four v1/new-contract gaps; collaborator reproduced clarification failure, implementation-question blocking and pending aggregate despite negative support.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Revisão independente de regras de negócio e reproduções",
+  "updated_at": "2026-10-09T19:47:03.478954+00:00"
+}

@@ -1,0 +1,48 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "2026-10-09 client date. PO approved the work sequence and requested detailed objective questions before validating criteria. Specific rubric and case expectations remain pending.",
+  "created_at": "2026-10-09T18:47:45.507273+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Prepared reviewable proposal and four objective PO questions; responses pending.",
+      "outcome": "observed",
+      "sha256": "c5c4161834afa928d1e5813cada39c921476c36b2a1e4afc0d071713bd1c9dda",
+      "source": "docs/delivery/ahc-021-quality-criteria-review.md"
+    }
+  ],
+  "id": "DOC-0014",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Draft reference only; no approval inferred from work-sequence authorization",
+    "Does not approve existing outputs or qualify models",
+    "Original v1 corpus/report hashes preserved",
+    "Expected blocked-vs-complete case contract still to be designed after answers"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0011",
+    "ADR-0018",
+    "INC-0010"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Six rubric dimensions and four explicit PO decisions proposed, including expected blocked behavior for ambiguous input.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Critérios objetivos de entendimento para validação do PO",
+  "updated_at": "2026-10-09T18:47:45.507273+00:00"
+}

@@ -22,10 +22,12 @@
         "021-01": "in_review",
         "021-02": "in_review"
       },
-      "progress_note": "Rubric proposed and 8+8 case corpus frozen; PO review pending. No prompt tuning or holdout execution.",
+      "progress_note": "PO approved six quality criteria and four decisions on 2026-10-09, including expected safe blocking. Independent business-rule review completed; per-case expectations and new-version contracts/corpus still pending. Original v1 preserved.",
       "evidence_sources": [
         "evals/understanding/v1/freeze.json",
-        "docs/engineering/semantic-understanding-evals.md"
+        "docs/engineering/semantic-understanding-evals.md",
+        "docs/delivery/ahc-021-quality-criteria-review.md",
+        "docs/reviews/20261009-understanding-business-rules.md"
       ]
     },
     {
