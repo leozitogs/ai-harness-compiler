@@ -1,0 +1,92 @@
+{
+  "$defs": {
+    "VerificationFinding": {
+      "additionalProperties": false,
+      "properties": {
+        "finding_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Finding Id",
+          "type": "string"
+        },
+        "finding_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Finding Sha256",
+          "type": "string"
+        },
+        "materiality": {
+          "enum": [
+            "appropriate",
+            "inappropriate",
+            "not-applicable"
+          ],
+          "title": "Materiality",
+          "type": "string"
+        },
+        "note": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        },
+        "source_atom_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Source Atom Ids",
+          "type": "array"
+        },
+        "support": {
+          "enum": [
+            "supports",
+            "contradicts",
+            "insufficient-evidence"
+          ],
+          "title": "Support",
+          "type": "string"
+        }
+      },
+      "required": [
+        "finding_id",
+        "finding_sha256",
+        "source_atom_ids",
+        "support",
+        "materiality",
+        "note"
+      ],
+      "title": "VerificationFinding",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "analysis_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Analysis Sha256",
+      "type": "string"
+    },
+    "findings": {
+      "items": {
+        "$ref": "#/$defs/VerificationFinding"
+      },
+      "maxItems": 512,
+      "minItems": 1,
+      "title": "Findings",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "SemanticVerifierProposal/v2",
+      "default": "SemanticVerifierProposal/v2",
+      "title": "Schema Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "analysis_sha256",
+    "findings"
+  ],
+  "title": "VerifierProposal",
+  "type": "object"
+}

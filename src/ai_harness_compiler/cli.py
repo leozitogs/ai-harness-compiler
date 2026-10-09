@@ -39,12 +39,23 @@ from ai_harness_compiler.models.model_session import (
     WorkerResult,
 )
 from ai_harness_compiler.models.repair import RepairPlan, RepairReport
+from ai_harness_compiler.models.semantic_analysis import AnalysisProposal, SemanticAnalysis
+from ai_harness_compiler.models.semantic_assessment import (
+    AssessmentCase,
+    SemanticAssessment,
+    SemanticHumanReview,
+)
 from ai_harness_compiler.models.semantic_eval import (
     FrozenUnderstandingCorpus,
     SemanticReview,
     UnderstandingEvalReport,
     UnderstandingEvalSuite,
     UnderstandingRubric,
+)
+from ai_harness_compiler.models.semantic_verification import (
+    SemanticVerifierReport,
+    VerificationPacket,
+    VerifierProposal,
 )
 from ai_harness_compiler.models.task import TaskGraph
 from ai_harness_compiler.models.team import AgentReport, Persona, TeamConfig
@@ -97,6 +108,14 @@ MODELS: dict[str, type[Contract]] = {
     "understanding-comparison": ComparisonReport,
     "understanding-comparison-plan": ComparisonPlan,
     "model-policy": ModelPolicy,
+    "semantic-analysis-v2": SemanticAnalysis,
+    "semantic-analysis-proposal-v2": AnalysisProposal,
+    "semantic-assessment-case-v2": AssessmentCase,
+    "semantic-human-review-v2": SemanticHumanReview,
+    "semantic-assessment-v2": SemanticAssessment,
+    "semantic-verification-packet-v2": VerificationPacket,
+    "semantic-verifier-proposal-v2": VerifierProposal,
+    "semantic-verifier-report-v2": SemanticVerifierReport,
 }
 
 
@@ -261,8 +280,25 @@ def main(argv: list[str] | None = None) -> int:
     comparison_validation.add_argument("--corpus", type=Path, required=True)
     schema_command = commands.add_parser("schema", help="Print a JSON Schema to stdout")
     schema_command.add_argument("model", choices=MODELS)
+    for name in ("analyze-project-v2", "verify-analysis-v2"):
+        semantic_command = commands.add_parser(name, help="Opt-in v2 semantic model call")
+        semantic_command.add_argument("input", type=Path)
+        semantic_command.add_argument("--output", type=Path, required=True)
+        semantic_command.add_argument("--model-policy", type=Path)
+        semantic_command.add_argument("--model")
+        semantic_command.add_argument("--timeout-seconds", type=int, default=180)
+    assessment_command = commands.add_parser("assess-analysis-v2", help="Offline human assessment")
+    assessment_command.add_argument("input", type=Path)
+    assessment_command.add_argument("--case", type=Path, required=True)
+    assessment_command.add_argument("--rubric", type=Path, required=True)
+    assessment_command.add_argument("--review", type=Path)
+    assessment_command.add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
     try:
+        if args.command in {"analyze-project-v2", "verify-analysis-v2", "assess-analysis-v2"}:
+            from ai_harness_compiler.semantic_cli import execute as execute_semantic
+
+            return execute_semantic(args)
         if args.command == "memory":
             from ai_harness_compiler.memory.cli import execute as execute_memory
 

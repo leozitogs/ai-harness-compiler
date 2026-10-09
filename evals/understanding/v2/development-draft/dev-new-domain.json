@@ -1,0 +1,63 @@
+{
+  "conflict_source_pointers": [],
+  "expectations_approval": null,
+  "expected_behavior": "ready",
+  "id": "dev-new-domain",
+  "obligations": [
+    {
+      "disposition": "rule",
+      "id": "publication-origin",
+      "quote": "Cada publicação da equipe deve conter responsável e origem.",
+      "source_pointer": "/backlog/0/acceptance_criteria/0"
+    }
+  ],
+  "project": {
+    "assets": [],
+    "backlog": [
+      {
+        "acceptance_criteria": [
+          "Cada publicação da equipe deve conter responsável e origem."
+        ],
+        "data_owner": null,
+        "depends_on": [],
+        "description": "Organizar publicação da equipe e registrar decisões.",
+        "id": "register",
+        "implementation": "undecided",
+        "inputs": [],
+        "outputs": [],
+        "risk": "unknown",
+        "side_effects": [],
+        "title": "Registrar e liberar"
+      }
+    ],
+    "branding": {
+      "audience": [
+        "autores"
+      ],
+      "principles": [
+        "rastreabilidade",
+        "controle humano"
+      ],
+      "tone": [],
+      "visual_constraints": []
+    },
+    "conception": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita.",
+    "constraints": {
+      "business": [
+        "Registrar a identidade do responsável."
+      ],
+      "max_build_cost_usd": 0.0,
+      "security": [],
+      "technical": []
+    },
+    "domain": null,
+    "domain_profile": null,
+    "evidence_pack": null,
+    "id": "dev-new-domain",
+    "name": "Fixture dev new-domain",
+    "schema_version": "ProjectInput/v1"
+  },
+  "refusal_source_pointers": [],
+  "requires_conflict": false,
+  "schema_version": "AssessmentCase/v2"
+}

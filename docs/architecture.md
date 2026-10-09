@@ -37,6 +37,11 @@ O modo compact acrescenta uma interpretação menor por posição e uma projeç�
 pura de citações/IDs para ProjectUnderstanding/v1 (ADR-0016), mantendo condições,
 resultados e inferências como hipóteses. Os protocolos anteriores permanecem disponíveis.
 
+A [análise e verificação v2](engineering/semantic-verification-v2.md) conserva
+bindings por átomo e impacto de perguntas, separando disposição, parecer do modelo,
+avaliação humana e autorização de compilação (ADR-0019). A segunda chamada é
+diagnóstica; não integra automaticamente a proposta ao build determinístico.
+
 `planning.py` transforma CapabilityGraph em TaskGraph/v1. O comando `tasks` permite
 selecionar capacidades para uma sprint, com gates e critérios preservados. O plano
 é estrutural e determinístico, sem executor ou decomposição semântica via LLM.
