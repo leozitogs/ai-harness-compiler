@@ -43,7 +43,8 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0013 — Seleção do principal e verificação de integração](records/DOC/DOC-0013/0008.json) · active · revision 8
 - [DOC-0014 — Critérios objetivos de entendimento para validação do PO](records/DOC/DOC-0014/0003.json) · active · revision 3
 - [DOC-0015 — Revisão independente de regras de negócio e reproduções](records/DOC/DOC-0015/0002.json) · active · revision 2
-- [DOC-0016 — Incremento semântico v2 e smoke público](records/DOC/DOC-0016/0002.json) · active · revision 2
+- [DOC-0016 — Incremento semântico v2 e smoke público](records/DOC/DOC-0016/0004.json) · active · revision 4
+- [DOC-0017 — Expectativas e rodada de desenvolvimento v2](records/DOC/DOC-0017/0004.json) · active · revision 4
 - [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2
 - [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1
 - [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1
@@ -57,7 +58,9 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [INC-0010 — Índices válidos ainda citam fontes sem suporte ao achado](records/INC/INC-0010/0001.json) · draft · revision 1
 - [INC-0011 — Primeira decisão Codex do especialista rejeitada pelo protocolo](records/INC/INC-0011/0001.json) · draft · revision 1
 - [INC-0012 — Hashes físicos CRLF divergiam dos bytes LF publicados](records/INC/INC-0012/0002.json) · verified · revision 2
-- [INC-0013 — Contratos v1 não representam todos os critérios de qualidade aprovados](records/INC/INC-0013/0003.json) · verified · revision 3
+- [INC-0013 — Contratos v1 não representam todos os critérios de qualidade aprovados](records/INC/INC-0013/0005.json) · verified · revision 5
+- [INC-0014 — Schema do provedor não expressava invariantes de issue](records/INC/INC-0014/0002.json) · verified · revision 2
+- [INC-0015 — Verificação local de suporte não comprova completude](records/INC/INC-0015/0001.json) · draft · revision 1
 - [LES-0001 — Tipos estáticos podem falhar em runtime](records/LES/LES-0001/0004.json) · verified · revision 4
 - [LES-0002 — Referências válidas não garantem precedência consistente](records/LES/LES-0002/0002.json) · verified · revision 2
 - [LES-0003 — Usar IDs curtos para parametrizações com payloads grandes](records/LES/LES-0003/0002.json) · verified · revision 2

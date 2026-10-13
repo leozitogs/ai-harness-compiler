@@ -1,0 +1,32 @@
+{
+  "attempts": "Initial run then two explicit diagnostic/shape attempts; no failed output replaced.",
+  "files": {
+    "docs/evidence/ahc-021-development-v2-review-20261013/constrained-schema-attempt-3/dev-adversarial-analysis.json": "915c656c828f62b553daa7f259711bdab347dbbc54b7f55d00747749e20e90bc",
+    "docs/evidence/ahc-021-development-v2-review-20261013/constrained-schema-attempt-3/dev-adversarial-assessment.json": "f64bb92d1aadecef7eeb74582ff8425f8065dcbd11d9735eb0d67052021ade01",
+    "docs/evidence/ahc-021-development-v2-review-20261013/constrained-schema-attempt-3/dev-adversarial-diagnostic.json": "342c44be4887af915ffb3b7d632f9727773d2686e721aa84b83327c931e37ab3",
+    "docs/evidence/ahc-021-development-v2-review-20261013/constrained-schema-attempt-3/dev-adversarial-proposal.json": "79b9029022f31af2f1c89236df7221b48ec0e6575897b6423d8e9dd4155ec242",
+    "docs/evidence/ahc-021-development-v2-review-20261013/constrained-schema-attempt-3/dev-branding-conflict-analysis.json": "2b12ba26181e8a849782d0a6f41d0d2f9db154cfc308878909a6257243cc6f26",
+    "docs/evidence/ahc-021-development-v2-review-20261013/constrained-schema-attempt-3/dev-branding-conflict-assessment.json": "b9c427444a9f2030c806366e3b0e0845d2136780181cc910e361c51974bc1ef2",
+    "docs/evidence/ahc-021-development-v2-review-20261013/constrained-schema-attempt-3/dev-branding-conflict-diagnostic.json": "07c38c4a12157b16214077a92407d56ef308c7456213c4b6661a8267a28421d2",
+    "docs/evidence/ahc-021-development-v2-review-20261013/constrained-schema-attempt-3/dev-branding-conflict-proposal.json": "1653230e2f7e4a121e687f9cb4da613058872ab6a835dce63ad4005980781525",
+    "docs/evidence/ahc-021-development-v2-review-20261013/diagnostic-attempt-2/dev-adversarial-diagnostic.json": "3f188f8f7a8a0c9325916f9a14cdbcaacffa1662cb9f769be67fcd23349c9c01",
+    "docs/evidence/ahc-021-development-v2-review-20261013/diagnostic-attempt-2/dev-adversarial-proposal.json": "f50a83d2a173125876ae2a01ef45d7e1e8c0788534cf5b8944dbb8d58fdfa0c8",
+    "docs/evidence/ahc-021-development-v2-review-20261013/diagnostic-attempt-2/dev-branding-conflict-diagnostic.json": "c9b3cb71d54435133519e8e24d4c7ecb1f73a55d115ec7a99b69af35cb1cd6ee",
+    "docs/evidence/ahc-021-development-v2-review-20261013/diagnostic-attempt-2/dev-branding-conflict-proposal.json": "50a0167707097571ea1e287f335ba803f28377673139394877fb2ab721854492",
+    "docs/evidence/ahc-021-development-v2-review-20261013/initial/dev-adversarial/summary.json": "a7107262b727474b39c23c66f1c8f4ff98b6316b23e3255a04defee8fed428cc",
+    "docs/evidence/ahc-021-development-v2-review-20261013/initial/dev-ambiguous/advice.json": "b840e7ca748524d8f1e0d963157bbd2eefec48604ae56d1be58e7d16bde5f3e7",
+    "docs/evidence/ahc-021-development-v2-review-20261013/initial/dev-ambiguous/analysis.json": "5922d289bb82c961c382290e75937bbd107bb03c4aeed1325aceeeb48a731a3e",
+    "docs/evidence/ahc-021-development-v2-review-20261013/initial/dev-ambiguous/assessment.json": "c02a274b2646b4773e8a860b8237db964d63e21d5c6eec0c7f753dbf6fe23a88",
+    "docs/evidence/ahc-021-development-v2-review-20261013/initial/dev-ambiguous/summary.json": "ef85d7e796c531d731453153f1a5b1d15f8da1de381b18b422086b8f14074012",
+    "docs/evidence/ahc-021-development-v2-review-20261013/initial/dev-branding-conflict/summary.json": "bf883b34878d0d1d92ee434341445e4db87c3ee0d0c3cdeff4a3009d572d2a8b",
+    "docs/evidence/ahc-021-development-v2-review-20261013/initial/dev-rules-b/advice.json": "75e0dd5f6ab97f130a484c2188a221161db1d7f41cc5a281825e714d32e33fd9",
+    "docs/evidence/ahc-021-development-v2-review-20261013/initial/dev-rules-b/analysis.json": "9238dfe1b7141c32bbc4548050ca667ec907c08829fff96bebcba7d51b3855c3",
+    "docs/evidence/ahc-021-development-v2-review-20261013/initial/dev-rules-b/assessment.json": "e31ebc13a50fba8d93c3fcfe08e0573b88394c7c7bda77dc833077f614dc313f",
+    "docs/evidence/ahc-021-development-v2-review-20261013/initial/dev-rules-b/summary.json": "702b39038f360e45c7dc84ea13d8c454d1abfd1280564017498939066a777bc4",
+    "docs/evidence/ahc-021-development-v2-review-20261013/initial/summary.json": "f9b5af4a2362642a269bfd02501914de649b9de45fe76221700d1e2561f377f2"
+  },
+  "holdout": "not-read",
+  "human_output_review": "absent",
+  "qualification": "not-established",
+  "scope": "public-development-only"
+}

@@ -1,0 +1,69 @@
+{
+  "conflict_source_pointers": [],
+  "expectations_approval": null,
+  "expected_behavior": "blocked",
+  "id": "dev-ambiguous",
+  "obligations": [
+    {
+      "disposition": "rule",
+      "id": "required-1",
+      "quote": "O operador confirma publicação da equipe antes de concluir.",
+      "source_pointer": "/backlog/0/acceptance_criteria/0"
+    },
+    {
+      "disposition": "required-question",
+      "id": "completion-definition",
+      "quote": "Precisamos melhorar o processo; etapas, papéis e condições de conclusão não foram definidos.",
+      "source_pointer": "/conception"
+    }
+  ],
+  "project": {
+    "assets": [],
+    "backlog": [
+      {
+        "acceptance_criteria": [
+          "O operador confirma publicação da equipe antes de concluir."
+        ],
+        "data_owner": null,
+        "depends_on": [],
+        "description": "Organizar publicação da equipe e registrar decisões.",
+        "id": "register",
+        "implementation": "undecided",
+        "inputs": [],
+        "outputs": [],
+        "risk": "unknown",
+        "side_effects": [],
+        "title": "Registrar e liberar"
+      }
+    ],
+    "branding": {
+      "audience": [
+        "autores"
+      ],
+      "principles": [
+        "rastreabilidade",
+        "controle humano"
+      ],
+      "tone": [],
+      "visual_constraints": []
+    },
+    "conception": "Precisamos melhorar o processo; etapas, papéis e condições de conclusão não foram definidos.",
+    "constraints": {
+      "business": [
+        "Registrar a identidade do responsável."
+      ],
+      "max_build_cost_usd": 0.0,
+      "security": [],
+      "technical": []
+    },
+    "domain": null,
+    "domain_profile": null,
+    "evidence_pack": null,
+    "id": "dev-ambiguous",
+    "name": "Fixture dev ambiguous",
+    "schema_version": "ProjectInput/v1"
+  },
+  "refusal_source_pointers": [],
+  "requires_conflict": false,
+  "schema_version": "AssessmentCase/v2"
+}

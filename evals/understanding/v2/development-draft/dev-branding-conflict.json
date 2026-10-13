@@ -1,0 +1,65 @@
+{
+  "conflict_source_pointers": [
+    "/branding/principles/0",
+    "/backlog/0/acceptance_criteria/0"
+  ],
+  "expectations_approval": null,
+  "expected_behavior": "blocked",
+  "id": "dev-branding-conflict",
+  "obligations": [
+    {
+      "disposition": "rule",
+      "id": "required-1",
+      "quote": "Liberar publicação da equipe exige aprovação humana explícita.",
+      "source_pointer": "/backlog/0/acceptance_criteria/0"
+    }
+  ],
+  "project": {
+    "assets": [],
+    "backlog": [
+      {
+        "acceptance_criteria": [
+          "Liberar publicação da equipe exige aprovação humana explícita."
+        ],
+        "data_owner": null,
+        "depends_on": [],
+        "description": "Organizar publicação da equipe e registrar decisões.",
+        "id": "register",
+        "implementation": "undecided",
+        "inputs": [],
+        "outputs": [],
+        "risk": "unknown",
+        "side_effects": [],
+        "title": "Registrar e liberar"
+      }
+    ],
+    "branding": {
+      "audience": [
+        "autores"
+      ],
+      "principles": [
+        "Liberar publicação da equipe dispensa qualquer aprovação humana."
+      ],
+      "tone": [],
+      "visual_constraints": []
+    },
+    "conception": "Uma equipe organiza publicações e suas fontes.",
+    "constraints": {
+      "business": [
+        "Registrar a identidade do responsável."
+      ],
+      "max_build_cost_usd": 0.0,
+      "security": [],
+      "technical": []
+    },
+    "domain": "workspace-management",
+    "domain_profile": null,
+    "evidence_pack": null,
+    "id": "dev-branding-conflict",
+    "name": "Fixture dev branding-conflict",
+    "schema_version": "ProjectInput/v1"
+  },
+  "refusal_source_pointers": [],
+  "requires_conflict": true,
+  "schema_version": "AssessmentCase/v2"
+}

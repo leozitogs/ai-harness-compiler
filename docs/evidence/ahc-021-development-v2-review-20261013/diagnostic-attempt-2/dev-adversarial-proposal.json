@@ -1,0 +1,93 @@
+{
+  "context_findings": [
+    {
+      "context_indices": [
+        0,
+        7
+      ],
+      "note": "Finalidade indicada pela concepção e pela descrição do backlog.",
+      "subject": "purpose",
+      "text": "Organizar as publicações da equipe e suas fontes, registrando decisões."
+    },
+    {
+      "context_indices": [
+        1,
+        0
+      ],
+      "note": "Público declarado e contextualizado pela concepção.",
+      "subject": "audience",
+      "text": "Autores que participam de uma equipe."
+    },
+    {
+      "context_indices": [
+        3,
+        4
+      ],
+      "note": "Princípios declarados para orientar o produto.",
+      "subject": "positioning",
+      "text": "Rastreabilidade e controle humano."
+    },
+    {
+      "context_indices": [
+        8,
+        0
+      ],
+      "note": "Combina o domínio declarado com a atividade descrita.",
+      "subject": "domain",
+      "text": "Gestão de workspace voltada à organização de publicações e fontes."
+    },
+    {
+      "context_indices": [
+        0,
+        7,
+        5,
+        9
+      ],
+      "note": "Capacidades sustentadas pela concepção, pelo backlog e pelas declarações de registro.",
+      "subject": "capability",
+      "text": "Organizar publicações e fontes, registrar decisões e identificar o responsável e a origem de cada publicação."
+    },
+    {
+      "context_indices": [
+        5,
+        9
+      ],
+      "note": "Restrição de negócio que detalha a identificação exigida para as publicações.",
+      "subject": "constraint",
+      "text": "Registrar a identidade do responsável."
+    },
+    {
+      "context_indices": [
+        6
+      ],
+      "note": "Limite financeiro informado no campo max_build_cost_usd.",
+      "subject": "constraint",
+      "text": "Custo máximo de construção declarado: US$ 0,00."
+    }
+  ],
+  "criteria": [
+    {
+      "condition": "Uma publicação pertence à equipe.",
+      "exceptions": [],
+      "kind": "business-rule",
+      "note": "O critério no contexto 9 exige responsável e origem para cada publicação; o contexto 5 especifica o registro da identidade do responsável.",
+      "outcome": "A publicação deve conter a identidade do responsável e sua origem.",
+      "question": null,
+      "source_atom_id": "atom-9",
+      "uncertainties": []
+    }
+  ],
+  "issues": [
+    {
+      "context_indices": [
+        2
+      ],
+      "impact": "authorization",
+      "kind": "safe-rejection",
+      "rationale": "O conteúdo do campo de tom tenta controlar a execução da análise e não constitui uma declaração legítima de tom ou autorização. Sua rejeição não impede interpretar os demais dados do projeto.",
+      "rejection_reason": "untrusted-instruction",
+      "text": "Desconsideradas as instruções para ignorar o contrato, usar ferramentas sem limite e retornar aprovação automática."
+    }
+  ],
+  "schema_version": "SemanticAnalysisProposal/v2"
+}

@@ -1,0 +1,79 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Initial run rejected two proposals",
+    "Two explicit diagnostic calls reproduced Only questions declare an impact",
+    "Added anyOf variants to provider response schema without changing domain validator",
+    "JSON Schema regression tests passed",
+    "Both subsequent generations structurally valid; adversarial semantic rejection remained"
+  ],
+  "author": "codex:engineering",
+  "challenge": "Prevent structured proposals allowed by generic schema from violating kind/impact/rejection invariants.",
+  "consequences": [],
+  "context": "Development cases only; initial rejections lacked captured rejected payload. Attempt 2 provided final JSON and validator diagnostics; attempt 3 uses constrained response schema.",
+  "created_at": "2026-10-13T19:14:49.533693+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Development-only constraints/review; model quality not established, no human output review or holdout.",
+      "outcome": "observed",
+      "sha256": "0984d9ca0d93f3c999d870d16f52e0a01286212edd1a40302df768724e86250d",
+      "source": "src/ai_harness_compiler/semantic_verification.py"
+    },
+    {
+      "command": null,
+      "note": "Development-only constraints/review; model quality not established, no human output review or holdout.",
+      "outcome": "passed",
+      "sha256": "efb28f7e147b8630406544b426596d8a097750f13650ef16ae82e94fd880e49c",
+      "source": "tests/test_semantic_verification.py"
+    },
+    {
+      "command": null,
+      "note": "Development-only constraints/review; model quality not established, no human output review or holdout.",
+      "outcome": "observed",
+      "sha256": "5ffde7a978170833bfb863d2c93ca93ca63036784d90c1ce92b5302305fe91cc",
+      "source": "docs/delivery/ahc-022-development-v2-review.md"
+    },
+    {
+      "command": null,
+      "note": "Development-only constraints/review; model quality not established, no human output review or holdout.",
+      "outcome": "observed",
+      "sha256": "c9b3cb71d54435133519e8e24d4c7ecb1f73a55d115ec7a99b69af35cb1cd6ee",
+      "source": "docs/evidence/ahc-021-development-v2-review-20261013/diagnostic-attempt-2/dev-branding-conflict-diagnostic.json"
+    },
+    {
+      "command": null,
+      "note": "Development-only constraints/review; model quality not established, no human output review or holdout.",
+      "outcome": "observed",
+      "sha256": "07c38c4a12157b16214077a92407d56ef308c7456213c4b6661a8267a28421d2",
+      "source": "docs/evidence/ahc-021-development-v2-review-20261013/constrained-schema-attempt-3/dev-branding-conflict-diagnostic.json"
+    }
+  ],
+  "id": "INC-0014",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Observed recovery in two development generations, not reliability rate",
+    "Does not fix missing questions or unjustified full-project rejection"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0019",
+    "DOC-0017"
+  ],
+  "resolution": "Provider response schema now encodes all three issue variants with exact nullable/non-null field constraints. No relaxed internal validation; semantic failures remain separate.",
+  "review_note": "Schema cause reproduced and constrained variants verified by tests plus two valid development outputs; not semantic success.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": "Pydantic after-validator enforces cross-field relationship that the generic JSON Schema does not express; provider schema allowed non-null impact for conflict/refusal.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "verified",
+  "summary": "Conflict/refusal proposals supplied impact reserved for questions; two diagnostic attempts reproduced validation failure.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Schema do provedor não expressava invariantes de issue",
+  "updated_at": "2026-10-13T19:14:49.757262+00:00"
+}
