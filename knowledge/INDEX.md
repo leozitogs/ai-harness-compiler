@@ -18,7 +18,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [ADR-0014 — Análise com disposições tipadas e supervisão do modelo](records/ADR/ADR-0014/0008.json) · active · revision 8
 - [ADR-0015 — Repair com feedback escopado e tentativas cobradas](records/ADR/ADR-0015/0002.json) · active · revision 2
 - [ADR-0016 — Interpretação compacta e citações sob responsabilidade do compilador](records/ADR/ADR-0016/0004.json) · active · revision 4
-- [ADR-0017 — Comparação independente de provedores e contexto citável completo](records/ADR/ADR-0017/0006.json) · active · revision 6
+- [ADR-0017 — Comparação independente de provedores e contexto citável completo](records/ADR/ADR-0017/0008.json) · active · revision 8
 - [ADR-0018 — Principal operacional compartilhado para tarefas com LLM](records/ADR/ADR-0018/0006.json) · active · revision 6
 - [ADR-0019 — Análise e verificação v2 sem promoção de autoridade](records/ADR/ADR-0019/0002.json) · active · revision 2
 - [ADR-0020 — Auditoria consultiva de fontes e omissões](records/ADR/ADR-0020/0002.json) · active · revision 2
@@ -66,6 +66,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [INC-0014 — Schema do provedor não expressava invariantes de issue](records/INC/INC-0014/0004.json) · verified · revision 4
 - [INC-0015 — Verificação local de suporte não comprova completude](records/INC/INC-0015/0003.json) · verified · revision 3
 - [INC-0016 — Regra composta cita apenas o critério original](records/INC/INC-0016/0001.json) · draft · revision 1
+- [INC-0017 — Fixture de wall time dependia do tempo real arredondado](records/INC/INC-0017/0002.json) · verified · revision 2
 - [LES-0001 — Tipos estáticos podem falhar em runtime](records/LES/LES-0001/0004.json) · verified · revision 4
 - [LES-0002 — Referências válidas não garantem precedência consistente](records/LES/LES-0002/0002.json) · verified · revision 2
 - [LES-0003 — Usar IDs curtos para parametrizações com payloads grandes](records/LES/LES-0003/0002.json) · verified · revision 2
