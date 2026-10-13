@@ -1,0 +1,62 @@
+{
+  "alternatives": [
+    "Only publication",
+    "Only decisions",
+    "Block entire understanding",
+    "Assume executor equals author, owner or approver"
+  ],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering-under-po-delegation",
+  "challenge": null,
+  "consequences": [
+    "Requires durable recording, idempotency and retention/access design before runtime activation",
+    "New derived input makes scope explicit; original case/history unchanged"
+  ],
+  "context": "2026-10-13: PO explicitly requested studying possibilities and deciding. Sources do not resolve operational scope themselves; this is a delegated design addition, not a discovered original rule or HumanReview.",
+  "created_at": "2026-10-13T20:12:54.996179+00:00",
+  "decision": "Trace both publication release and persisted decisions; define operational responsibility as verified executor for the event; retain declared business responsibility/delegation separately. Verified identity does not grant authorization. Required identity/audit failure blocks future covered operation, not current understanding of resolved intent.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Business decision under explicit PO delegation; source/contract validation and two public development calls, not human semantic approval. Operational tests remain planned.",
+      "outcome": "observed",
+      "sha256": "9dd9c827099ba03294b369bdf155a6596065aa9588c64b7efae48d2c6034961f",
+      "source": "docs/engineering/traceability-business-resolution.md"
+    },
+    {
+      "command": null,
+      "note": "Business decision under explicit PO delegation; source/contract validation and two public development calls, not human semantic approval. Operational tests remain planned.",
+      "outcome": "observed",
+      "sha256": "c1617ca05ab59070dc33a40609617d6022aeda9b86aba14cb95db9fab1e133be",
+      "source": "docs/evidence/traceability-decision-20261013/candidate-case.json"
+    }
+  ],
+  "id": "DE-0008",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "Specific to this project input, not universal niche template",
+    "No runtime identity/audit mechanism implemented",
+    "No human output review or qualification",
+    "Composite generated rule needs source-binding review"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0020",
+    "DOC-0018"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Chosen project-specific engineering policy records verified executor for both persisted actions, preserving author release without third-party approval and distinct business roles.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Rastreabilidade operacional em liberações e decisões persistidas",
+  "updated_at": "2026-10-13T20:12:54.996179+00:00"
+}
