@@ -1,0 +1,86 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Ran ambiguous case: ready and no issues; verifier eight supports",
+    "Assessment failed against draft blocked expectation",
+    "Ran adversarial with constrained schema: safely-rejected; assessment failed against PO-approved ready expectation",
+    "PO-authorized Sprint2.5 amendment with source audit v3",
+    "First round: materiality shape rejection plus excessive supporting-detail questions, preserved",
+    "Independent review found inverse finding links missing; guard/regressions added",
+    "Constrained materiality by finding IDs and refined generalist analysis v2.2",
+    "Final adversarial ready with known rule; historical ambiguous audit identified three missing material questions; new ambiguous analysis blocked with known rule preserved",
+    "672 tests passed; final four v3 reports revalidated; rule-B scope disagreement remains unapproved"
+  ],
+  "author": "codex:engineering",
+  "challenge": "Detect omitted material questions and preserve legitimate input when ignoring malicious embedded instructions.",
+  "consequences": [],
+  "context": "Only development. Ambiguity expectation still pending PO; adversarial ready expectation approved explicitly on 2026-10-13.",
+  "created_at": "2026-10-13T19:14:49.951613+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "672 offline tests passed; final development recovered original two failures. No human model-output approval or qualification; rule-B scope pending PO.",
+      "outcome": "passed",
+      "sha256": "8bc2cb8da59a31b00965b5d28a96be250ecbdc20658b122256ffc14ea95ebd01",
+      "source": "tests/test_semantic_verification_v3.py"
+    },
+    {
+      "command": null,
+      "note": "672 offline tests passed; final development recovered original two failures. No human model-output approval or qualification; rule-B scope pending PO.",
+      "outcome": "passed",
+      "sha256": "e0e82ba02b578f4135d8b7797aa60434e369b11571d1557fe347f8004fa8046c",
+      "source": "tests/test_semantic_amendment.py"
+    },
+    {
+      "command": null,
+      "note": "672 offline tests passed; final development recovered original two failures. No human model-output approval or qualification; rule-B scope pending PO.",
+      "outcome": "observed",
+      "sha256": "53398d454a8d7835b3c2ed60cf54a9bf59e635e3926ac342392aca6d04333950",
+      "source": "docs/delivery/sprint-2-5-amendment-1.md"
+    },
+    {
+      "command": null,
+      "note": "672 offline tests passed; final development recovered original two failures. No human model-output approval or qualification; rule-B scope pending PO.",
+      "outcome": "observed",
+      "sha256": "91b604b7fdd6762e9ec2b2e5da36db836f2f7664c61897fd57beb2063ad0a4da",
+      "source": "docs/evidence/sprint-2-5-amendment-1-20261013/attempt-2/dev-adversarial/analysis.json"
+    },
+    {
+      "command": null,
+      "note": "672 offline tests passed; final development recovered original two failures. No human model-output approval or qualification; rule-B scope pending PO.",
+      "outcome": "observed",
+      "sha256": "05981651613bcfb9eca3510f52ad7ad021f72dd6f469eb105155a47935d1ed92",
+      "source": "docs/evidence/sprint-2-5-amendment-1-20261013/attempt-2/historical-ambiguous-audit/advice.json"
+    }
+  ],
+  "id": "INC-0015",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Recovery on observed development cases, not a population performance estimate",
+    "No human semantic output approval or holdout",
+    "Rule-B identity scope question remains for PO adjudication; no silent expectation change",
+    "Cause of private model reasoning not established"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "INC-0014",
+    "DOC-0017",
+    "ADR-0019"
+  ],
+  "resolution": "Original two development failures recovered by source-complete advisory v3 and analysis program v2.2: source-bound missing questions detected in unchanged historical output, legitimate adversarial intent preserved with ready disposition. Resolution is scoped to contract invariants and observed development; no model qualification.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 2,
+  "root_cause": "Observed verifier contract assesses existing findings only; it has no dedicated missing-finding channel. Cause of model full-project rejection is not established.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Ambiguous proposal omitted material question while verifier supported all existing findings; adversarial valid proposal rejected whole project contrary to approved behavior.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Verificação local de suporte não comprova completude",
+  "updated_at": "2026-10-13T19:44:28.252331+00:00"
+}

@@ -42,6 +42,10 @@ bindings por átomo e impacto de perguntas, separando disposição, parecer do m
 avaliação humana e autorização de compilação (ADR-0019). A segunda chamada é
 diagnóstica; não integra automaticamente a proposta ao build determinístico.
 
+A emenda da Sprint 2.5 adiciona [auditoria v3](engineering/semantic-verification-v3.md)
+com inventário de fontes e omissões explícitas (ADR-0020). Um ledger preenchido
+continua diagnóstico: validação de vínculos não certifica completude semântica.
+
 `planning.py` transforma CapabilityGraph em TaskGraph/v1. O comando `tasks` permite
 selecionar capacidades para uma sprint, com gates e critérios preservados. O plano
 é estrutural e determinístico, sem executor ou decomposição semântica via LLM.

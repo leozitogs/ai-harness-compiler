@@ -1,0 +1,231 @@
+{
+  "analysis_sha256": "9f09034987e5fa5fe4ee19107b76f1e785902b3932ba9716701a9abfc6c08a7a",
+  "findings": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "c1e016fe5260c889341118b299a141826dbc8d5d5a6ba27ceb074e828308e6b9",
+      "materiality": "not-applicable",
+      "note": "A fonte exige confirmação pelo operador antes da conclusão; não declara exceções.",
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "18162dd5701bcbd5e9f94d160202589b5966dae932d5f94d94f4ea4fa5732406",
+      "materiality": "not-applicable",
+      "note": "As fontes combinam melhoria do processo, organização da publicação e registro de decisões; etapas, papéis e conclusão permanecem indefinidos.",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-7"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "b4bbdfa1988fe860e6dbb9ce516355b74e64d146991554b824393baae8ed29fc",
+      "materiality": "not-applicable",
+      "note": "Autores são o público declarado e o operador confirma a publicação.",
+      "source_atom_ids": [
+        "atom-2",
+        "atom-8"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "c30d1a037bfc57318df1c86c6f5c69625eb8303d99fd0e5fda460872bc868031",
+      "materiality": "not-applicable",
+      "note": "Organização e confirmação da publicação da equipe sustentam o domínio descrito, sem especificar o tipo de publicação.",
+      "source_atom_ids": [
+        "atom-7",
+        "atom-8"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "50dd4636b59504d3d8fa14f2eb036015884399380aa4d6d67471c47359d9acce",
+      "materiality": "not-applicable",
+      "note": "Os princípios são explícitos; identidade do responsável e confirmação pelo operador os concretizam.",
+      "source_atom_ids": [
+        "atom-3",
+        "atom-4",
+        "atom-5",
+        "atom-8"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "c9ca4d7d6d7199535cf8ea86271fdbc33fc8f0d5e2f28b1bd806ab037fe31f09",
+      "materiality": "not-applicable",
+      "note": "As três fontes exigem registro de identidade, registro de decisões e confirmação anterior à conclusão.",
+      "source_atom_ids": [
+        "atom-5",
+        "atom-7",
+        "atom-8"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-6",
+      "finding_sha256": "e9736cb67163e82b13880e3ca4dbdfb1676e5102f535f9c16328dd7700469d42",
+      "materiality": "not-applicable",
+      "note": "Reproduz a obrigação explícita de registrar a identidade do responsável.",
+      "source_atom_ids": [
+        "atom-5"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-7",
+      "finding_sha256": "972eb75e593ecfd8a4e2a1c9773f0afd438b74cdab6324fd14aeff4e0cf6123c",
+      "materiality": "not-applicable",
+      "note": "O valor 0.0 no campo max_build_cost_usd estabelece teto de construção de zero dólares; não informa custos operacionais.",
+      "source_atom_ids": [
+        "atom-6"
+      ],
+      "support": "supports"
+    }
+  ],
+  "omissions": [
+    {
+      "id": "omission-1",
+      "impact": "rule",
+      "kind": "question",
+      "rationale": "Atom-1 declara que as etapas não foram definidas. Reconhecer essa indefinição não resolve a pergunta que determina o fluxo obrigatório.",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-7"
+      ],
+      "text": "Quais etapas são obrigatórias no processo de publicação da equipe?"
+    },
+    {
+      "id": "omission-2",
+      "impact": "authorization",
+      "kind": "question",
+      "rationale": "Atom-1 declara papéis indefinidos; atom-5 exige identificar o responsável e atom-8 atribui confirmação ao operador, sem definir a atribuição desses papéis.",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-5",
+        "atom-8"
+      ],
+      "text": "Como os papéis e suas responsabilidades são atribuídos, incluindo quem é o responsável registrado e quem pode atuar como operador?"
+    },
+    {
+      "id": "omission-3",
+      "impact": "outcome",
+      "kind": "question",
+      "rationale": "Atom-1 declara condições de conclusão indefinidas. Atom-8 estabelece uma condição necessária, mas não afirma que seja suficiente.",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-8"
+      ],
+      "text": "A confirmação pelo operador basta para concluir o processo ou existem outras condições obrigatórias de conclusão?"
+    }
+  ],
+  "schema_version": "SemanticVerifierProposal/v3",
+  "source_coverage": [
+    {
+      "atom_id": "atom-1",
+      "disposition": "missing",
+      "finding_ids": [
+        "context-1"
+      ],
+      "note": "O propósito está representado; faltam perguntas materiais sobre etapas, papéis e conclusão explicitamente indefinidos.",
+      "omission_ids": [
+        "omission-1",
+        "omission-2",
+        "omission-3"
+      ],
+      "quote_sha256": "12c881ea64cc68b9aaf7a45d4f29375b8d95498dbb4859448f7c857eb0f202c8"
+    },
+    {
+      "atom_id": "atom-2",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-2"
+      ],
+      "note": "O público autores está representado.",
+      "omission_ids": [],
+      "quote_sha256": "75f26d13ebd8877644c57a369ce71b82b639903217ed12ebe61beeffd8c11586"
+    },
+    {
+      "atom_id": "atom-3",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-4"
+      ],
+      "note": "O princípio de rastreabilidade está representado; a fonte não especifica outras obrigações.",
+      "omission_ids": [],
+      "quote_sha256": "e8a964e534bd9189a4c1ee68dc1e80429c5b14930ce7df548075257a8a8dccc7"
+    },
+    {
+      "atom_id": "atom-4",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-4"
+      ],
+      "note": "O princípio de controle humano está representado, sem outras condições explícitas.",
+      "omission_ids": [],
+      "quote_sha256": "a6e3b461d6bc6975496196edb2b7d4ea96130a66c49e4e058c4d66078d23422f"
+    },
+    {
+      "atom_id": "atom-5",
+      "disposition": "missing",
+      "finding_ids": [
+        "context-4",
+        "context-5",
+        "context-6"
+      ],
+      "note": "O registro da identidade está representado; a definição do papel responsável permanece aberta junto à indefinição de papéis em atom-1.",
+      "omission_ids": [
+        "omission-2"
+      ],
+      "quote_sha256": "22accd7ad33a45ad61811a4737a68f2c8dfd45b650550aec3cdae8de95fc1a0e"
+    },
+    {
+      "atom_id": "atom-6",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-7"
+      ],
+      "note": "O teto de construção está integralmente representado.",
+      "omission_ids": [],
+      "quote_sha256": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7"
+    },
+    {
+      "atom_id": "atom-7",
+      "disposition": "missing",
+      "finding_ids": [
+        "context-1",
+        "context-3",
+        "context-5"
+      ],
+      "note": "Organização e registro de decisões estão representados; as etapas do processo a organizar permanecem indefinidas em atom-1.",
+      "omission_ids": [
+        "omission-1"
+      ],
+      "quote_sha256": "5f77f5215732224df6e88a779d30470fdd1c968ff4e40c54ff9fa444e009e034"
+    },
+    {
+      "atom_id": "atom-8",
+      "disposition": "missing",
+      "finding_ids": [
+        "criterion-1",
+        "context-2",
+        "context-3",
+        "context-4",
+        "context-5"
+      ],
+      "note": "A confirmação prévia está representada; faltam definição da atribuição do operador e esclarecimento da suficiência dessa condição.",
+      "omission_ids": [
+        "omission-2",
+        "omission-3"
+      ],
+      "quote_sha256": "c52f9dd3da88167ffe7a9e1bf99a6efa142a0bb83392caacb04c20e3d767b055"
+    }
+  ]
+}

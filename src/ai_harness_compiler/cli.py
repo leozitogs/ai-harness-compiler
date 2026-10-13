@@ -57,6 +57,10 @@ from ai_harness_compiler.models.semantic_verification import (
     VerificationPacket,
     VerifierProposal,
 )
+from ai_harness_compiler.models.semantic_verification_v3 import (
+    SemanticVerifierReportV3,
+    VerifierProposalV3,
+)
 from ai_harness_compiler.models.task import TaskGraph
 from ai_harness_compiler.models.team import AgentReport, Persona, TeamConfig
 from ai_harness_compiler.models.understanding import (
@@ -116,6 +120,8 @@ MODELS: dict[str, type[Contract]] = {
     "semantic-verification-packet-v2": VerificationPacket,
     "semantic-verifier-proposal-v2": VerifierProposal,
     "semantic-verifier-report-v2": SemanticVerifierReport,
+    "semantic-verifier-proposal-v3": VerifierProposalV3,
+    "semantic-verifier-report-v3": SemanticVerifierReportV3,
 }
 
 
@@ -280,7 +286,7 @@ def main(argv: list[str] | None = None) -> int:
     comparison_validation.add_argument("--corpus", type=Path, required=True)
     schema_command = commands.add_parser("schema", help="Print a JSON Schema to stdout")
     schema_command.add_argument("model", choices=MODELS)
-    for name in ("analyze-project-v2", "verify-analysis-v2"):
+    for name in ("analyze-project-v2", "verify-analysis-v2", "verify-analysis-v3"):
         semantic_command = commands.add_parser(name, help="Opt-in v2 semantic model call")
         semantic_command.add_argument("input", type=Path)
         semantic_command.add_argument("--output", type=Path, required=True)
@@ -295,7 +301,12 @@ def main(argv: list[str] | None = None) -> int:
     assessment_command.add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
     try:
-        if args.command in {"analyze-project-v2", "verify-analysis-v2", "assess-analysis-v2"}:
+        if args.command in {
+            "analyze-project-v2",
+            "verify-analysis-v2",
+            "verify-analysis-v3",
+            "assess-analysis-v2",
+        }:
             from ai_harness_compiler.semantic_cli import execute as execute_semantic
 
             return execute_semantic(args)

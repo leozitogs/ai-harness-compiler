@@ -1,0 +1,18 @@
+{
+  "analysis_program": "semantic-analysis/v2.2",
+  "assessment": "not-run",
+  "disposition": "blocked",
+  "generation": "valid",
+  "human_review": "absent",
+  "job": "dev-ambiguous",
+  "omissions": [],
+  "qualification": "not-established",
+  "requested_model": "gpt-6.1-sol",
+  "source_rows": 8,
+  "support_counts": {
+    "contradicts": 0,
+    "insufficient-evidence": 0,
+    "supports": 11
+  },
+  "verification": "valid"
+}

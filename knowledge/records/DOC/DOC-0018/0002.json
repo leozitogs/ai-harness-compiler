@@ -1,0 +1,75 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Two explicit development rounds, 14 calls total; first failures preserved, no hidden retries or holdout. No case approval generalized from scope authorization.",
+  "created_at": "2026-10-13T19:44:27.814007+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "672 offline tests passed; final development recovered original two failures. No human model-output approval or qualification; rule-B scope pending PO.",
+      "outcome": "observed",
+      "sha256": "53398d454a8d7835b3c2ed60cf54a9bf59e635e3926ac342392aca6d04333950",
+      "source": "docs/delivery/sprint-2-5-amendment-1.md"
+    },
+    {
+      "command": null,
+      "note": "672 offline tests passed; final development recovered original two failures. No human model-output approval or qualification; rule-B scope pending PO.",
+      "outcome": "observed",
+      "sha256": "3bfca8e2973ca39d20bba2da05883cd58fd86f81dabfe75a68d645adca257975",
+      "source": "planning/sprint-2-5.amendment-1.json"
+    },
+    {
+      "command": null,
+      "note": "672 offline tests passed; final development recovered original two failures. No human model-output approval or qualification; rule-B scope pending PO.",
+      "outcome": "observed",
+      "sha256": "53ee90a9c53df8d1a713190bba1711605e274c20cd10869692bd80cb3941bec2",
+      "source": "docs/engineering/semantic-verification-v3.md"
+    },
+    {
+      "command": null,
+      "note": "672 offline tests passed; final development recovered original two failures. No human model-output approval or qualification; rule-B scope pending PO.",
+      "outcome": "observed",
+      "sha256": "ed29bcfd2d2854ad8a0c2546af1ababdd3480e4c70e550dbc136c2081dae5e3d",
+      "source": "docs/evidence/sprint-2-5-amendment-1-20261013/inventory.json"
+    },
+    {
+      "command": null,
+      "note": "672 offline tests passed; final development recovered original two failures. No human model-output approval or qualification; rule-B scope pending PO.",
+      "outcome": "passed",
+      "sha256": "e0e82ba02b578f4135d8b7797aa60434e369b11571d1557fe347f8004fa8046c",
+      "source": "tests/test_semantic_amendment.py"
+    }
+  ],
+  "id": "DOC-0018",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "No human semantic output approval or model qualification",
+    "Rule B ready expectation remains proposed; actual blocked question can be business-material or excess blocking",
+    "No assertion of robustness outside observed development inputs"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0020",
+    "DOC-0017",
+    "INC-0015"
+  ],
+  "resolution": null,
+  "review_note": "Checked recovery scope, final program fingerprint, preserved failed attempts and independent review. No output promoted to human review.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "PO-authorized amendment implemented with verifier v3 and analysis v2.2; development adversarial ready, new ambiguity blocked, historical omissions detected. Clear-rule B scope remains for PO review.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Emenda 1 da Sprint 2.5 e evidências de recuperação",
+  "updated_at": "2026-10-13T19:44:27.964070+00:00"
+}

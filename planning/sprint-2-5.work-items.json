@@ -144,11 +144,13 @@
         "docs/engineering/semantic-verification-v2.md",
         "docs/adr/0019-semantic-verification-v2.md",
         "tests/test_semantic_verification.py",
-        "tests/test_semantic_assessment.py"
+        "tests/test_semantic_assessment.py",
+        "planning/sprint-2-5.amendment-1.json",
+        "docs/delivery/sprint-2-5-amendment-1.md"
       ],
       "id": "s25-22-implement",
       "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16",
-      "progress_note": "Semantic v2 contracts, exact atom binding, question impact, independent advisory verifier and offline human assessment implemented. One real public development smoke saved. Case expectations/human review/holdout remain pending; story not Done.",
+      "progress_note": "Amendment 1: explicit source-bound omission channel and complete source ledger in verifier v3; generalist analysis program v2.2 preserves legitimate intent and material questions. Original incidents reproduced then recovered on development; no semantic qualification.",
       "responsible": "code-collaborator-supported-by-codex",
       "stage": "implement",
       "status": "in_progress",

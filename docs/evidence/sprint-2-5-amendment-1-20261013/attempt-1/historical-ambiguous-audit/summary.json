@@ -1,0 +1,18 @@
+{
+  "analysis_program": "historical-v2-unchanged",
+  "candidate_analysis_program": "semantic-analysis/v2.1",
+  "disposition": "ready",
+  "errors": [
+    {
+      "loc": [],
+      "msg": "Value error, Materiality applies exactly to questions",
+      "type": "value_error"
+    }
+  ],
+  "generation": "historical-unchanged",
+  "human_review": "absent",
+  "job": "historical-ambiguous-audit",
+  "qualification": "not-established",
+  "requested_model": "gpt-6.1-sol",
+  "verification": "invalid"
+}
