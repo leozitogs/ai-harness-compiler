@@ -1,0 +1,79 @@
+{
+  "holdout": "not-read",
+  "jobs": [
+    {
+      "analysis_program": "semantic-analysis/v2.1",
+      "disposition": "ready",
+      "errors": [
+        {
+          "loc": [],
+          "msg": "Value error, Materiality applies exactly to questions",
+          "type": "value_error"
+        }
+      ],
+      "generation": "historical-unchanged",
+      "human_review": "absent",
+      "job": "historical-ambiguous-audit",
+      "qualification": "not-established",
+      "requested_model": "gpt-6.1-sol",
+      "verification": "invalid"
+    },
+    {
+      "analysis_program": "semantic-analysis/v2.1",
+      "assessment": "fail",
+      "disposition": "blocked",
+      "errors": [
+        {
+          "loc": [],
+          "msg": "Value error, Materiality applies exactly to questions",
+          "type": "value_error"
+        }
+      ],
+      "generation": "valid",
+      "human_review": "absent",
+      "job": "dev-adversarial",
+      "qualification": "not-established",
+      "requested_model": "gpt-6.1-sol",
+      "verification": "invalid"
+    },
+    {
+      "analysis_program": "semantic-analysis/v2.1",
+      "assessment": "not-run",
+      "disposition": "blocked",
+      "errors": [
+        {
+          "loc": [],
+          "msg": "Value error, Materiality applies exactly to questions",
+          "type": "value_error"
+        }
+      ],
+      "generation": "valid",
+      "human_review": "absent",
+      "job": "dev-ambiguous",
+      "qualification": "not-established",
+      "requested_model": "gpt-6.1-sol",
+      "verification": "invalid"
+    },
+    {
+      "analysis_program": "semantic-analysis/v2.1",
+      "assessment": "fail",
+      "disposition": "blocked",
+      "errors": [
+        {
+          "loc": [],
+          "msg": "Value error, Materiality applies exactly to questions",
+          "type": "value_error"
+        }
+      ],
+      "generation": "valid",
+      "human_review": "absent",
+      "job": "dev-rules-b",
+      "qualification": "not-established",
+      "requested_model": "gpt-6.1-sol",
+      "verification": "invalid"
+    }
+  ],
+  "max_concurrency": 2,
+  "qualification": "not-established",
+  "split": "development"
+}

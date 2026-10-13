@@ -40,7 +40,7 @@ def execute(args: argparse.Namespace) -> int:
         exit_code = 0 if assessment.status == "pass" else 1
     else:
         from ai_harness_compiler.adapters.codex_cli import CodexCLISettings, CodexCompactModel
-        from ai_harness_compiler.semantic_verification import analyze, verify
+        from ai_harness_compiler.semantic_verification import analyze, verify, verify_complete
 
         policy = load_model_policy(args.model_policy)
         if policy.primary.provider != "codex-cli":
@@ -49,6 +49,10 @@ def execute(args: argparse.Namespace) -> int:
         generator = CodexCompactModel(CodexCLISettings(model_name, args.timeout_seconds))
         if args.command == "analyze-project-v2":
             artifact = analyze(extract_grounding(load_project(args.input)), generator)
+        elif args.command == "verify-analysis-v3":
+            artifact = verify_complete(
+                read_contract(args.input, SemanticAnalysis), generator, model_name
+            )
         else:
             artifact = verify(read_contract(args.input, SemanticAnalysis), generator, model_name)
         exit_code = 0

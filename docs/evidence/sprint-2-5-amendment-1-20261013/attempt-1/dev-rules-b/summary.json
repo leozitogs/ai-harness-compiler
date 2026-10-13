@@ -1,0 +1,18 @@
+{
+  "analysis_program": "semantic-analysis/v2.1",
+  "assessment": "fail",
+  "disposition": "blocked",
+  "errors": [
+    {
+      "loc": [],
+      "msg": "Value error, Materiality applies exactly to questions",
+      "type": "value_error"
+    }
+  ],
+  "generation": "valid",
+  "human_review": "absent",
+  "job": "dev-rules-b",
+  "qualification": "not-established",
+  "requested_model": "gpt-6.1-sol",
+  "verification": "invalid"
+}

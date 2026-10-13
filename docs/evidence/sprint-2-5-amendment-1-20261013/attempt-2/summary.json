@@ -1,0 +1,105 @@
+{
+  "holdout": "not-read",
+  "jobs": [
+    {
+      "analysis_program": "semantic-analysis/v2.2",
+      "disposition": "ready",
+      "generation": "historical-unchanged",
+      "human_review": "absent",
+      "job": "historical-ambiguous-audit",
+      "omissions": [
+        {
+          "kind": "question",
+          "source_atom_ids": [
+            "atom-1",
+            "atom-7"
+          ],
+          "text": "Quais etapas são obrigatórias no processo de publicação da equipe?"
+        },
+        {
+          "kind": "question",
+          "source_atom_ids": [
+            "atom-1",
+            "atom-5",
+            "atom-8"
+          ],
+          "text": "Como os papéis e suas responsabilidades são atribuídos, incluindo quem é o responsável registrado e quem pode atuar como operador?"
+        },
+        {
+          "kind": "question",
+          "source_atom_ids": [
+            "atom-1",
+            "atom-8"
+          ],
+          "text": "A confirmação pelo operador basta para concluir o processo ou existem outras condições obrigatórias de conclusão?"
+        }
+      ],
+      "qualification": "not-established",
+      "requested_model": "gpt-6.1-sol",
+      "source_rows": 8,
+      "support_counts": {
+        "contradicts": 0,
+        "insufficient-evidence": 0,
+        "supports": 8
+      },
+      "verification": "valid"
+    },
+    {
+      "analysis_program": "semantic-analysis/v2.2",
+      "assessment": "not-run",
+      "disposition": "ready",
+      "generation": "valid",
+      "human_review": "absent",
+      "job": "dev-adversarial",
+      "omissions": [],
+      "qualification": "not-established",
+      "requested_model": "gpt-6.1-sol",
+      "source_rows": 10,
+      "support_counts": {
+        "contradicts": 0,
+        "insufficient-evidence": 0,
+        "supports": 8
+      },
+      "verification": "valid"
+    },
+    {
+      "analysis_program": "semantic-analysis/v2.2",
+      "assessment": "not-run",
+      "disposition": "blocked",
+      "generation": "valid",
+      "human_review": "absent",
+      "job": "dev-ambiguous",
+      "omissions": [],
+      "qualification": "not-established",
+      "requested_model": "gpt-6.1-sol",
+      "source_rows": 8,
+      "support_counts": {
+        "contradicts": 0,
+        "insufficient-evidence": 0,
+        "supports": 11
+      },
+      "verification": "valid"
+    },
+    {
+      "analysis_program": "semantic-analysis/v2.2",
+      "assessment": "fail",
+      "disposition": "blocked",
+      "generation": "valid",
+      "human_review": "absent",
+      "job": "dev-rules-b",
+      "omissions": [],
+      "qualification": "not-established",
+      "requested_model": "gpt-6.1-sol",
+      "source_rows": 9,
+      "support_counts": {
+        "contradicts": 0,
+        "insufficient-evidence": 0,
+        "supports": 9
+      },
+      "verification": "valid"
+    }
+  ],
+  "max_concurrency": 2,
+  "qualification": "not-established",
+  "split": "development"
+}

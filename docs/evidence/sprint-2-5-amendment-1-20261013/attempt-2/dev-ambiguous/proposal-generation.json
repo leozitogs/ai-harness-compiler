@@ -1,0 +1,112 @@
+{
+  "context_findings": [
+    {
+      "context_indices": [
+        0,
+        6
+      ],
+      "note": "O processo ainda tem etapas, papéis e condições de conclusão indefinidos.",
+      "subject": "purpose",
+      "text": "Melhorar o processo de publicação da equipe e registrar decisões."
+    },
+    {
+      "context_indices": [
+        1
+      ],
+      "note": "Público explicitamente informado.",
+      "subject": "audience",
+      "text": "Autores."
+    },
+    {
+      "context_indices": [
+        2,
+        3
+      ],
+      "note": "Princípios declarados para orientar o projeto.",
+      "subject": "positioning",
+      "text": "Rastreabilidade e controle humano."
+    },
+    {
+      "context_indices": [
+        6,
+        7
+      ],
+      "note": "Domínio inferido da descrição do backlog e do critério.",
+      "subject": "domain",
+      "text": "Publicação da equipe e gestão de decisões do processo."
+    },
+    {
+      "context_indices": [
+        6
+      ],
+      "note": "Capacidades amplas que não exigem definição prévia de formatos de registro.",
+      "subject": "capability",
+      "text": "Organizar a publicação da equipe e registrar decisões."
+    },
+    {
+      "context_indices": [
+        4
+      ],
+      "note": "Obrigação explícita de rastreabilidade.",
+      "subject": "constraint",
+      "text": "Registrar a identidade do responsável."
+    },
+    {
+      "context_indices": [
+        5
+      ],
+      "note": "Limite informado em max_build_cost_usd.",
+      "subject": "constraint",
+      "text": "Custo máximo de construção de US$ 0,00."
+    }
+  ],
+  "criteria": [
+    {
+      "condition": "Antes de concluir o processo de publicação da equipe.",
+      "exceptions": [],
+      "kind": "business-rule",
+      "note": "A confirmação pelo operador é uma condição necessária para concluir; as demais condições de conclusão não estão definidas.",
+      "outcome": "O operador deve confirmar a publicação da equipe.",
+      "question": null,
+      "source_atom_id": "atom-8",
+      "uncertainties": []
+    }
+  ],
+  "issues": [
+    {
+      "context_indices": [
+        0,
+        6
+      ],
+      "impact": "rule",
+      "kind": "question",
+      "rationale": "As etapas estão explicitamente indefinidas; sua definição determina quais obrigações devem ser cumpridas durante o processo.",
+      "rejection_reason": null,
+      "text": "Quais etapas são obrigatórias no processo de publicação da equipe?"
+    },
+    {
+      "context_indices": [
+        0,
+        4,
+        7
+      ],
+      "impact": "authorization",
+      "kind": "question",
+      "rationale": "Os papéis estão explicitamente indefinidos, embora existam obrigações de confirmação pelo operador e identificação do responsável; a resposta determina quem pode cumprir essas obrigações.",
+      "rejection_reason": null,
+      "text": "Quais papéis podem executar as etapas e quem atua como operador e responsável?"
+    },
+    {
+      "context_indices": [
+        0,
+        7
+      ],
+      "impact": "outcome",
+      "kind": "question",
+      "rationale": "A confirmação é obrigatória, mas as condições gerais de conclusão estão explicitamente indefinidas; falta determinar quando essa confirmação é suficiente para concluir.",
+      "rejection_reason": null,
+      "text": "Além da confirmação da publicação pelo operador, quais condições permitem considerar o processo concluído?"
+    }
+  ],
+  "schema_version": "SemanticAnalysisProposal/v2"
+}
