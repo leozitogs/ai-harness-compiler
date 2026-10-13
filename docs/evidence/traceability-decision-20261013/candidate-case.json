@@ -1,0 +1,68 @@
+{
+  "conflict_source_pointers": [],
+  "expectations_approval": null,
+  "expected_behavior": "ready",
+  "id": "dev-rules-b-trace-resolved",
+  "obligations": [
+    {
+      "disposition": "rule",
+      "id": "required-1",
+      "quote": "O autor pode liberar publicação da equipe sem aprovação de terceiros.",
+      "source_pointer": "/backlog/0/acceptance_criteria/0"
+    }
+  ],
+  "project": {
+    "assets": [],
+    "backlog": [
+      {
+        "acceptance_criteria": [
+          "O autor pode liberar publicação da equipe sem aprovação de terceiros."
+        ],
+        "data_owner": null,
+        "depends_on": [],
+        "description": "Organizar publicação da equipe e registrar decisões.",
+        "id": "register",
+        "implementation": "undecided",
+        "inputs": [],
+        "outputs": [],
+        "risk": "unknown",
+        "side_effects": [],
+        "title": "Registrar e liberar"
+      }
+    ],
+    "branding": {
+      "audience": [
+        "autores"
+      ],
+      "principles": [
+        "rastreabilidade",
+        "controle humano"
+      ],
+      "tone": [],
+      "visual_constraints": []
+    },
+    "conception": "Uma equipe organiza publicações e suas fontes.",
+    "constraints": {
+      "business": [
+        "Registrar a identidade do responsável.",
+        "A rastreabilidade operacional cobre cada liberação de publicação e cada registro de decisão persistida.",
+        "Para essa rastreabilidade, responsável operacional é a identidade autenticada de quem executou a ação; isso não define proprietário do conteúdo, aprovador ou responsável de negócio.",
+        "A identificação do executor não altera a autorização explícita do autor para liberar sem aprovação de terceiros.",
+        "Papéis de negócio diferentes do executor só são registrados se declarados pelo projeto, separadamente e sem inferir equivalência.",
+        "Uma ação coberta pela rastreabilidade não pode ser executada se a identidade operacional não puder ser verificada ou seu registro obrigatório não puder ser garantido."
+      ],
+      "max_build_cost_usd": 0.0,
+      "security": [],
+      "technical": []
+    },
+    "domain": "workspace-management",
+    "domain_profile": null,
+    "evidence_pack": null,
+    "id": "dev-rules-b-trace-resolved",
+    "name": "Fixture rules B with delegated engineering trace decision",
+    "schema_version": "ProjectInput/v1"
+  },
+  "refusal_source_pointers": [],
+  "requires_conflict": false,
+  "schema_version": "AssessmentCase/v2"
+}

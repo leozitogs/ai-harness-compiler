@@ -1,0 +1,15 @@
+{
+  "authority": "agent-decision-under-po-delegation",
+  "base_case": "evals/understanding/v2/development-draft/dev-rules-b.json",
+  "base_input_sha256": "b3f1743dc0c1b25e7e7d659acb7d3d2db5d57664467af2e6ee9ed65488b5382c",
+  "changed_fields": [
+    "project.id",
+    "project.name",
+    "project.constraints.business"
+  ],
+  "decision_record": "knowledge/records/DE/DE-0008/0002.json",
+  "decision_record_sha256": "2b052e117e5358894f1507cfaa12ca09c30327e138845a07b1ca76c0c4236a23",
+  "derived_input_sha256": "011624c5a0a1694923bdc469ac6ec8fe428507ba573daaf935af6b31f3adddc9",
+  "qualification": "not-established",
+  "semantic_approval": "absent"
+}

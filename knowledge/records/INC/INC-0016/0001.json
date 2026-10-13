@@ -1,0 +1,65 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Inspected generated condition/exception and criterion atom quote",
+    "Compared guard declarations in derived constraints",
+    "Preserved v3 supports as advisory, not semantic proof"
+  ],
+  "author": "codex:engineering",
+  "challenge": "Ensure conditions composed from multiple project declarations cite every supporting source without silently adding or removing guards.",
+  "consequences": [],
+  "context": "Public development candidate from DE-0008; scope decision itself remains explicit and valid as a delegated engineering choice.",
+  "created_at": "2026-10-13T20:12:55.937722+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Business decision under explicit PO delegation; source/contract validation and two public development calls, not human semantic approval. Operational tests remain planned.",
+      "outcome": "observed",
+      "sha256": "5de84fc4ae7c07299a972d0be8abb13a4462d87c72e17ae9d692172ead940975",
+      "source": "docs/evidence/traceability-decision-20261013/analysis.json"
+    },
+    {
+      "command": null,
+      "note": "Business decision under explicit PO delegation; source/contract validation and two public development calls, not human semantic approval. Operational tests remain planned.",
+      "outcome": "observed",
+      "sha256": "4ce092caa6e105d7d7cc9d7ee831470702111530eb89bde2b1076cbc109dcb3f",
+      "source": "docs/evidence/traceability-decision-20261013/advice.json"
+    },
+    {
+      "command": null,
+      "note": "Business decision under explicit PO delegation; source/contract validation and two public development calls, not human semantic approval. Operational tests remain planned.",
+      "outcome": "observed",
+      "sha256": "9dd9c827099ba03294b369bdf155a6596065aa9588c64b7efae48d2c6034961f",
+      "source": "docs/engineering/traceability-business-resolution.md"
+    }
+  ],
+  "id": "INC-0016",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Not a change to original project rules",
+    "No diagnosis of private model reasoning",
+    "No model qualification or runtime testing"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0008",
+    "ADR-0020",
+    "DOC-0019"
+  ],
+  "resolution": "Open: preserve distinct rule and guard artifacts or introduce explicit validated compound source bindings before qualification; no silent model-output rewrite.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": "Criterion projection binds interpretation to its original criterion atom, while model may compose condition/exception using other context constraints; composed provenance not represented by that single edge.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Derived trace resolution analysis combined permission with new trace guards, while criterion binding cites only original permission. Auditor returned supports despite incomplete combined provenance.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Regra composta cita apenas o critério original",
+  "updated_at": "2026-10-13T20:12:55.937722+00:00"
+}
