@@ -1,0 +1,89 @@
+{
+  "context_findings": [
+    {
+      "context_indices": [
+        0,
+        5
+      ],
+      "note": "Finalidade descrita pela concepção e pelo backlog.",
+      "subject": "purpose",
+      "text": "Organizar publicações da equipe, suas fontes e o registro de decisões."
+    },
+    {
+      "context_indices": [
+        1,
+        0
+      ],
+      "note": "Público declarado e contextualizado pela concepção.",
+      "subject": "audience",
+      "text": "Autores que trabalham em equipe."
+    },
+    {
+      "context_indices": [
+        0,
+        3,
+        5
+      ],
+      "note": "Capacidades derivadas das declarações fornecidas.",
+      "subject": "capability",
+      "text": "Organizar publicações e fontes, registrar decisões e identificar o responsável."
+    },
+    {
+      "context_indices": [
+        6,
+        0
+      ],
+      "note": "Domínio declarado como workspace-management e contextualizado pela concepção.",
+      "subject": "domain",
+      "text": "Gestão de espaço de trabalho, com foco na organização de publicações da equipe."
+    },
+    {
+      "context_indices": [
+        3
+      ],
+      "note": "Obrigação expressa; não especifica qual responsabilidade deve ser identificada.",
+      "subject": "constraint",
+      "text": "Registrar a identidade do responsável."
+    },
+    {
+      "context_indices": [
+        4
+      ],
+      "note": "Limite informado no campo max_build_cost_usd.",
+      "subject": "constraint",
+      "text": "Custo máximo de construção de US$ 0,00."
+    }
+  ],
+  "criteria": [
+    {
+      "condition": "Ao liberar publicação da equipe.",
+      "exceptions": [],
+      "kind": "business-rule",
+      "note": "Regra determinável no contexto 7, incompatível com a dispensa de aprovação no contexto 2. A precedência permanece indefinida.",
+      "outcome": "Exigir aprovação humana explícita.",
+      "question": null,
+      "source_atom_id": "atom-7",
+      "uncertainties": [
+        {
+          "impact": "precedence",
+          "rationale": "As declarações dos contextos 2 e 7 determinam autorizações incompatíveis para a mesma ação.",
+          "text": "Qual declaração prevalece ao liberar publicação da equipe: exigir aprovação humana explícita ou dispensar qualquer aprovação humana?"
+        }
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "context_indices": [
+        2,
+        7
+      ],
+      "impact": "authorization",
+      "kind": "conflict",
+      "rationale": "As duas declarações impõem condições incompatíveis para liberar a publicação. Não há precedência estabelecida entre elas.",
+      "rejection_reason": null,
+      "text": "O contexto 2 declara que liberar publicação da equipe dispensa qualquer aprovação humana; o contexto 7 declara que a mesma ação exige aprovação humana explícita."
+    }
+  ],
+  "schema_version": "SemanticAnalysisProposal/v2"
+}

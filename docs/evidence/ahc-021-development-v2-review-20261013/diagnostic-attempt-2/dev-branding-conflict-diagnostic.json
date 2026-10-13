@@ -1,0 +1,15 @@
+{
+  "attempt": 2,
+  "case_id": "dev-branding-conflict",
+  "errors": [
+    {
+      "loc": [
+        "issues",
+        0
+      ],
+      "msg": "Value error, Only questions declare an impact",
+      "type": "value_error"
+    }
+  ],
+  "status": "invalid"
+}

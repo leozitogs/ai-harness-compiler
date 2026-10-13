@@ -1,0 +1,20 @@
+{
+  "actual_behavior": "ready",
+  "advice_counts": {
+    "contradicts": 0,
+    "insufficient-evidence": 0,
+    "supports": 8
+  },
+  "assessment": "fail",
+  "automatic_failures": [
+    "uncertainty",
+    "project-understanding"
+  ],
+  "case_id": "dev-ambiguous",
+  "expectations": "draft",
+  "generation": "valid",
+  "human_review": "absent",
+  "model_qualification": "not-established",
+  "requested_model": "gpt-6.1-sol",
+  "verification": "valid"
+}

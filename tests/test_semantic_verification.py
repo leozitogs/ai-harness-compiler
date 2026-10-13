@@ -4,6 +4,7 @@ import copy
 import json
 
 import pytest
+from jsonschema import Draft202012Validator
 from pydantic import ValidationError
 from test_semantic_assessment import fixtures
 
@@ -11,7 +12,7 @@ from ai_harness_compiler.cli import main
 from ai_harness_compiler.models.compact_analysis import compact_context
 from ai_harness_compiler.models.semantic_analysis import SemanticAnalysis
 from ai_harness_compiler.models.semantic_verification import SemanticVerifierReport
-from ai_harness_compiler.semantic_verification import analyze, verify
+from ai_harness_compiler.semantic_verification import analysis_response_schema, analyze, verify
 
 
 class FakeGenerator:
@@ -22,6 +23,35 @@ class FakeGenerator:
     def generate_json(self, prompt, schema):
         self.calls.append((prompt, schema))
         return json.dumps(self.result)
+
+
+@pytest.mark.parametrize("kind", ["question", "conflict", "safe-rejection"])
+def test_provider_schema_enforces_issue_kind_fields(project, kind):
+    _, _, analysis = fixtures(project)
+    schema = analysis_response_schema(analysis.extraction)
+    Draft202012Validator.check_schema(schema)
+    data = analysis.proposal.model_dump()
+    issue = {
+        "kind": kind,
+        "text": "Fixture issue",
+        "context_indices": [0, 1],
+        "rationale": "Fixture only",
+        "impact": "rule" if kind == "question" else None,
+        "rejection_reason": "untrusted-instruction" if kind == "safe-rejection" else None,
+    }
+    data["issues"] = [issue]
+    assert not list(Draft202012Validator(schema).iter_errors(data))
+    issue["impact"] = None if kind == "question" else "rule"
+    assert list(Draft202012Validator(schema).iter_errors(data))
+
+
+def test_provider_schema_does_not_mutate_exported_contract(project):
+    from ai_harness_compiler.models.semantic_analysis import AnalysisProposal
+
+    _, _, analysis = fixtures(project)
+    before = AnalysisProposal.model_json_schema()
+    analysis_response_schema(analysis.extraction)
+    assert AnalysisProposal.model_json_schema() == before
 
 
 def advice(analysis):

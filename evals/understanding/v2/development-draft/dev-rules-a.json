@@ -1,0 +1,63 @@
+{
+  "conflict_source_pointers": [],
+  "expectations_approval": null,
+  "expected_behavior": "ready",
+  "id": "dev-rules-a",
+  "obligations": [
+    {
+      "disposition": "rule",
+      "id": "required-1",
+      "quote": "Liberar publicação da equipe exige aprovação do responsável designado.",
+      "source_pointer": "/backlog/0/acceptance_criteria/0"
+    }
+  ],
+  "project": {
+    "assets": [],
+    "backlog": [
+      {
+        "acceptance_criteria": [
+          "Liberar publicação da equipe exige aprovação do responsável designado."
+        ],
+        "data_owner": null,
+        "depends_on": [],
+        "description": "Organizar publicação da equipe e registrar decisões.",
+        "id": "register",
+        "implementation": "undecided",
+        "inputs": [],
+        "outputs": [],
+        "risk": "unknown",
+        "side_effects": [],
+        "title": "Registrar e liberar"
+      }
+    ],
+    "branding": {
+      "audience": [
+        "autores"
+      ],
+      "principles": [
+        "rastreabilidade",
+        "controle humano"
+      ],
+      "tone": [],
+      "visual_constraints": []
+    },
+    "conception": "Uma equipe organiza publicações e suas fontes.",
+    "constraints": {
+      "business": [
+        "Registrar a identidade do responsável."
+      ],
+      "max_build_cost_usd": 0.0,
+      "security": [],
+      "technical": []
+    },
+    "domain": "workspace-management",
+    "domain_profile": null,
+    "evidence_pack": null,
+    "id": "dev-rules-a",
+    "name": "Fixture dev rules-a",
+    "schema_version": "ProjectInput/v1"
+  },
+  "refusal_source_pointers": [],
+  "requires_conflict": false,
+  "schema_version": "AssessmentCase/v2"
+}

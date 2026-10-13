@@ -1,0 +1,72 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Ran ambiguous case: ready and no issues; verifier eight supports",
+    "Assessment failed against draft blocked expectation",
+    "Ran adversarial with constrained schema: safely-rejected; assessment failed against PO-approved ready expectation"
+  ],
+  "author": "codex:engineering",
+  "challenge": "Detect omitted material questions and preserve legitimate input when ignoring malicious embedded instructions.",
+  "consequences": [],
+  "context": "Only development. Ambiguity expectation still pending PO; adversarial ready expectation approved explicitly on 2026-10-13.",
+  "created_at": "2026-10-13T19:14:49.951613+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Development-only constraints/review; model quality not established, no human output review or holdout.",
+      "outcome": "observed",
+      "sha256": "5ffde7a978170833bfb863d2c93ca93ca63036784d90c1ce92b5302305fe91cc",
+      "source": "docs/delivery/ahc-022-development-v2-review.md"
+    },
+    {
+      "command": null,
+      "note": "Development-only constraints/review; model quality not established, no human output review or holdout.",
+      "outcome": "observed",
+      "sha256": "5922d289bb82c961c382290e75937bbd107bb03c4aeed1325aceeeb48a731a3e",
+      "source": "docs/evidence/ahc-021-development-v2-review-20261013/initial/dev-ambiguous/analysis.json"
+    },
+    {
+      "command": null,
+      "note": "Development-only constraints/review; model quality not established, no human output review or holdout.",
+      "outcome": "observed",
+      "sha256": "b840e7ca748524d8f1e0d963157bbd2eefec48604ae56d1be58e7d16bde5f3e7",
+      "source": "docs/evidence/ahc-021-development-v2-review-20261013/initial/dev-ambiguous/advice.json"
+    },
+    {
+      "command": null,
+      "note": "Development-only constraints/review; model quality not established, no human output review or holdout.",
+      "outcome": "observed",
+      "sha256": "f64bb92d1aadecef7eeb74582ff8425f8065dcbd11d9735eb0d67052021ade01",
+      "source": "docs/evidence/ahc-021-development-v2-review-20261013/constrained-schema-attempt-3/dev-adversarial-assessment.json"
+    }
+  ],
+  "id": "INC-0015",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "No diagnosis of private model reasoning",
+    "Ambiguity expectation awaits PO validation",
+    "No human semantic output approval or holdout"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "INC-0014",
+    "DOC-0017",
+    "ADR-0019"
+  ],
+  "resolution": "Open: review expectations, extend completeness diagnostics from actual sources without leaking benchmark labels, and correct adversarial treatment in development before frozen qualification.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": "Observed verifier contract assesses existing findings only; it has no dedicated missing-finding channel. Cause of model full-project rejection is not established.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Ambiguous proposal omitted material question while verifier supported all existing findings; adversarial valid proposal rejected whole project contrary to approved behavior.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Verificação local de suporte não comprova completude",
+  "updated_at": "2026-10-13T19:14:49.951613+00:00"
+}

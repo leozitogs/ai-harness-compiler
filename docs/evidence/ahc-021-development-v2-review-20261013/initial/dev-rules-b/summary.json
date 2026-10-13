@@ -1,0 +1,17 @@
+{
+  "actual_behavior": "ready",
+  "advice_counts": {
+    "contradicts": 0,
+    "insufficient-evidence": 1,
+    "supports": 7
+  },
+  "assessment": "not-run",
+  "automatic_failures": [],
+  "case_id": "dev-rules-b",
+  "expectations": "draft",
+  "generation": "valid",
+  "human_review": "absent",
+  "model_qualification": "not-established",
+  "requested_model": "gpt-6.1-sol",
+  "verification": "valid"
+}
