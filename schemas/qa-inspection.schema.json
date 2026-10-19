@@ -1,0 +1,178 @@
+{
+  "$defs": {
+    "QACitation": {
+      "additionalProperties": false,
+      "properties": {
+        "line": {
+          "minimum": 1,
+          "title": "Line",
+          "type": "integer"
+        },
+        "path": {
+          "minLength": 1,
+          "title": "Path",
+          "type": "string"
+        },
+        "quote": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "line",
+        "quote"
+      ],
+      "title": "QACitation",
+      "type": "object"
+    },
+    "QAInspectionFinding": {
+      "additionalProperties": false,
+      "properties": {
+        "citations": {
+          "items": {
+            "$ref": "#/$defs/QACitation"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Citations",
+          "type": "array"
+        },
+        "criterion_index": {
+          "minimum": 0,
+          "title": "Criterion Index",
+          "type": "integer"
+        },
+        "facet": {
+          "enum": [
+            "code",
+            "contracts",
+            "provenance",
+            "security",
+            "regressions",
+            "business",
+            "artifacts"
+          ],
+          "title": "Facet",
+          "type": "string"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "impact": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Impact",
+          "type": "string"
+        },
+        "recommendation": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Recommendation",
+          "type": "string"
+        },
+        "reproduction": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Reproduction",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "P0",
+            "P1",
+            "P2",
+            "P3"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "story_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Story Id",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "verification": {
+          "const": "not-executed",
+          "default": "not-executed",
+          "title": "Verification",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "severity",
+        "facet",
+        "story_id",
+        "criterion_index",
+        "title",
+        "impact",
+        "recommendation",
+        "citations",
+        "reproduction"
+      ],
+      "title": "QAInspectionFinding",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "A model or analyst proposes findings, never check success or closure.",
+  "properties": {
+    "findings": {
+      "items": {
+        "$ref": "#/$defs/QAInspectionFinding"
+      },
+      "maxItems": 32,
+      "title": "Findings",
+      "type": "array"
+    },
+    "inspected_facets": {
+      "items": {
+        "enum": [
+          "code",
+          "contracts",
+          "provenance",
+          "security",
+          "regressions",
+          "business",
+          "artifacts"
+        ],
+        "type": "string"
+      },
+      "maxItems": 7,
+      "title": "Inspected Facets",
+      "type": "array"
+    },
+    "limitations": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 32,
+      "minItems": 1,
+      "title": "Limitations",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "QAInspection/v1",
+      "default": "QAInspection/v1",
+      "title": "Schema Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "limitations"
+  ],
+  "title": "QAInspection",
+  "type": "object"
+}

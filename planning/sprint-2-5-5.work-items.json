@@ -233,12 +233,16 @@
         "s255-29-review"
       ],
       "evidence_sources": [
-        "docs/delivery/ahc-030-reviewer-scope.md"
+        "docs/adr/0026-vera-evidence-bound-review.md",
+        "docs/engineering/vera-review.md",
+        "tests/test_qa.py",
+        "tests/test_qa_runtime.py",
+        "tests/test_qa_inspection.py"
       ],
       "id": "s255-30-design",
       "responsible": "code-collaborator-supported-by-codex",
       "stage": "design",
-      "status": "planned",
+      "status": "in_review",
       "task_graph_id": "task-30-design",
       "verification_source": "docs/delivery/ahc-030-reviewer-scope.md"
     },
@@ -249,12 +253,16 @@
         "s255-30-design"
       ],
       "evidence_sources": [
-        "docs/delivery/ahc-030-reviewer-scope.md"
+        "docs/adr/0026-vera-evidence-bound-review.md",
+        "docs/engineering/vera-review.md",
+        "tests/test_qa.py",
+        "tests/test_qa_runtime.py",
+        "tests/test_qa_inspection.py"
       ],
       "id": "s255-30-implement",
       "responsible": "code-collaborator-supported-by-codex",
       "stage": "implement",
-      "status": "planned",
+      "status": "in_review",
       "task_graph_id": "task-30-implement",
       "verification_source": "docs/delivery/ahc-030-reviewer-scope.md"
     },
@@ -265,12 +273,16 @@
         "s255-30-implement"
       ],
       "evidence_sources": [
-        "docs/delivery/ahc-030-reviewer-scope.md"
+        "docs/adr/0026-vera-evidence-bound-review.md",
+        "docs/engineering/vera-review.md",
+        "tests/test_qa.py",
+        "tests/test_qa_runtime.py",
+        "tests/test_qa_inspection.py"
       ],
       "id": "s255-30-verify",
       "responsible": "code-collaborator-supported-by-codex",
       "stage": "verify",
-      "status": "planned",
+      "status": "in_review",
       "task_graph_id": "task-30-verify",
       "verification_source": "docs/delivery/ahc-030-reviewer-scope.md"
     },
@@ -281,7 +293,11 @@
         "s255-30-verify"
       ],
       "evidence_sources": [
-        "docs/delivery/ahc-030-reviewer-scope.md"
+        "docs/adr/0026-vera-evidence-bound-review.md",
+        "docs/engineering/vera-review.md",
+        "tests/test_qa.py",
+        "tests/test_qa_runtime.py",
+        "tests/test_qa_inspection.py"
       ],
       "id": "s255-30-review",
       "responsible": "code-collaborator-supported-by-codex",

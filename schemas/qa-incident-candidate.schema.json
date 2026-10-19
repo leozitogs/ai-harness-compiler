@@ -1,0 +1,75 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "check_id": {
+      "enum": [
+        "lint",
+        "format",
+        "typing",
+        "tests",
+        "schemas",
+        "repo-policy",
+        "sprint-plan"
+      ],
+      "title": "Check Id",
+      "type": "string"
+    },
+    "head_commit": {
+      "pattern": "^[0-9a-f]{40}$",
+      "title": "Head Commit",
+      "type": "string"
+    },
+    "memory_promotion": {
+      "const": "human-review-required",
+      "default": "human-review-required",
+      "title": "Memory Promotion",
+      "type": "string"
+    },
+    "observed_status": {
+      "enum": [
+        "failed",
+        "timed-out",
+        "output-limit"
+      ],
+      "title": "Observed Status",
+      "type": "string"
+    },
+    "output_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Output Sha256",
+      "type": "string"
+    },
+    "qa_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Qa Sha256",
+      "type": "string"
+    },
+    "resolution": {
+      "const": "not-established",
+      "default": "not-established",
+      "title": "Resolution",
+      "type": "string"
+    },
+    "root_cause": {
+      "const": "not-established",
+      "default": "not-established",
+      "title": "Root Cause",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "QAIncidentCandidate/v1",
+      "default": "QAIncidentCandidate/v1",
+      "title": "Schema Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "qa_sha256",
+    "head_commit",
+    "check_id",
+    "observed_status",
+    "output_sha256"
+  ],
+  "title": "QAIncidentCandidate",
+  "type": "object"
+}

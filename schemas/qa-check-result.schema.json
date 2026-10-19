@@ -1,0 +1,83 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "exit_code": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Exit Code"
+    },
+    "finished_at": {
+      "minLength": 1,
+      "title": "Finished At",
+      "type": "string"
+    },
+    "head_commit": {
+      "pattern": "^[0-9a-f]{40}$",
+      "title": "Head Commit",
+      "type": "string"
+    },
+    "id": {
+      "enum": [
+        "lint",
+        "format",
+        "typing",
+        "tests",
+        "schemas",
+        "repo-policy",
+        "sprint-plan"
+      ],
+      "title": "Id",
+      "type": "string"
+    },
+    "output": {
+      "default": "",
+      "maxLength": 32768,
+      "title": "Output",
+      "type": "string"
+    },
+    "output_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Output Sha256",
+      "type": "string"
+    },
+    "request_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Request Sha256",
+      "type": "string"
+    },
+    "started_at": {
+      "minLength": 1,
+      "title": "Started At",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "passed",
+        "failed",
+        "timed-out",
+        "not-run",
+        "output-limit"
+      ],
+      "title": "Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "request_sha256",
+    "head_commit",
+    "status",
+    "started_at",
+    "finished_at",
+    "output_sha256"
+  ],
+  "title": "QACheckResult",
+  "type": "object"
+}

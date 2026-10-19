@@ -16,6 +16,7 @@ from langsmith import tracing_context
 from ai_harness_compiler.compiler import json_text
 from ai_harness_compiler.models.team import POReview, Role, TeamConfig
 from ai_harness_compiler.pipeline import plan
+from ai_harness_compiler.qa_collection import assert_current_request
 from ai_harness_compiler.scrum_collection import timestamp
 from ai_harness_compiler.scrum_planning import assert_current
 from ai_harness_compiler.team.agents import (
@@ -45,6 +46,8 @@ def source_digests(context: RepositoryContext, config: TeamConfig) -> dict[str, 
     digests = context.digests()
     if config.scrum_snapshot is not None:
         digests["scrum-observation"] = config.scrum_snapshot.observation_sha256
+    if config.qa_report is not None:
+        digests["qa-report"] = config.qa_report.report_sha256
     return digests
 
 
@@ -56,10 +59,14 @@ def build_graph(
 ) -> CompiledStateGraph[TeamState, None, TeamState, TeamState]:
     def dispatch(state: TeamState) -> dict[str, object]:
         route = router.route(config.request)
-        if config.scrum_snapshot is not None:
+        if config.qa_report is not None:
+            route = {**route, "selected_role": "quality", "qa_scope_override": True}
+        elif config.scrum_snapshot is not None:
             route = {**route, "selected_role": "delivery", "scrum_scope_override": True}
         roles = (
-            ["delivery"]
+            ["quality", "delivery"]
+            if config.qa_report is not None
+            else ["delivery"]
             if config.scrum_snapshot is not None
             else list(PERSONAS)
             if config.mode == "prepare"
@@ -137,10 +144,18 @@ def write_report(output: Path, state: TeamState, router: IntentRouter) -> None:
 
 def prepare_team(config: TeamConfig, output: Path) -> dict[str, object]:
     config = TeamConfig.model_validate(config.model_dump())
+    if config.qa_report is not None:
+        assert_current_request(config.qa_report.request, Path(config.repository_root), timestamp())
     if config.scrum_snapshot is not None:
         assert_current(config.scrum_snapshot, Path(config.repository_root), timestamp())
     context = RepositoryContext(Path(config.repository_root), config.project.id)
-    tools = TeamTools(plan(config.project), list(config.selected), context, config.scrum_snapshot)
+    tools = TeamTools(
+        plan(config.project),
+        list(config.selected),
+        context,
+        config.scrum_snapshot,
+        config.qa_report,
+    )
     router = IntentRouter()
     output.mkdir(parents=True, exist_ok=False)
     run_id = f"run-{uuid4().hex}"
@@ -173,12 +188,20 @@ def review_team(output: Path, decision: POReview) -> dict[str, object]:
     decision = POReview.model_validate(decision.model_dump())
     metadata = json.loads((output / "run.json").read_text(encoding="utf-8"))
     config = TeamConfig.model_validate(metadata["config"])
+    if config.qa_report is not None:
+        assert_current_request(config.qa_report.request, Path(config.repository_root), timestamp())
     if config.scrum_snapshot is not None:
         assert_current(config.scrum_snapshot, Path(config.repository_root), timestamp())
     if not (output / "checkpoints.sqlite").is_file():
         raise ValueError("Run checkpoint does not exist")
     context = RepositoryContext(Path(config.repository_root), config.project.id)
-    tools = TeamTools(plan(config.project), list(config.selected), context, config.scrum_snapshot)
+    tools = TeamTools(
+        plan(config.project),
+        list(config.selected),
+        context,
+        config.scrum_snapshot,
+        config.qa_report,
+    )
     router = IntentRouter()
     with SqliteSaver.from_conn_string(str(output / "checkpoints.sqlite")) as saver:
         graph = build_graph(config, tools, router, saver)

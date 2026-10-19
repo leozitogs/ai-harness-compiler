@@ -1,0 +1,62 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:planning",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO: faz como uma sprint 2.5.5 pra isso, on 2026-10-19.",
+  "created_at": "2026-10-19T20:39:10.443060+00:00",
+  "decision": "Plan 027/028/029 sequentially; deterministic evidence/status core, optional bounded LLM and persistent authorized operations in team adapter; no fine-tuning or autonomous acceptance.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Approved sprint structuring; plan and GitHub queue only. No Nexo capability execution, sprint start or story completion claimed.",
+      "outcome": "observed",
+      "sha256": "2b00e5775dae91d99dca1cdba3571e1e47520c22d7b0f634c977fad19818e37a",
+      "source": "docs/delivery/sprint-2-5-5.md"
+    },
+    {
+      "command": null,
+      "note": "Approved sprint structuring; plan and GitHub queue only. No Nexo capability execution, sprint start or story completion claimed.",
+      "outcome": "observed",
+      "sha256": "b3eb6f2578530314c26e7e6a0080beb32f6a2ab1138edefe6035004594638866",
+      "source": "planning/sprint-2-5-5.json"
+    },
+    {
+      "command": null,
+      "note": "Approved sprint structuring; plan and GitHub queue only. No Nexo capability execution, sprint start or story completion claimed.",
+      "outcome": "observed",
+      "sha256": "c5f6a4e98dceb7518d4af9d791b32ce085e49f55d31047ce36d82b0707542071",
+      "source": "project-definition/project.yaml"
+    }
+  ],
+  "id": "DE-0011",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "Capacity and duration unconfirmed",
+    "Generated task graph is not execution",
+    "Semantic review/qualification carryover remains open"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0021",
+    "DE-0010",
+    "DE-0012",
+    "DOC-0026"
+  ],
+  "resolution": null,
+  "review_note": "Refresh current source digests after AHC-030 implementation; preserve historical experiment identity, pending semantic qualification and human acceptance limits.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 12,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "PO requested Nexo Scrum evolution, then explicitly added planned AHC-030 deep QA reviewer and review/closure support before Sprint2.5.5 review; preserve semantic carryover and human decisions.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Nexo em Sprint 2.5.5 antes da otimização",
+  "updated_at": "2026-10-19T22:45:58.929858+00:00"
+}

@@ -1,0 +1,78 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO authorized continuing after the observer increment; AHC-028 execution, no story acceptance inferred.",
+  "created_at": "2026-10-19T21:19:49.172417+00:00",
+  "decision": "Keep deterministic proposal authority separate from optional model commentary; no capacity or Done inferred; bind snapshot digest to persistent checkpoint.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "AHC-028 grounded Nexo increment; 857 offline tests passed, historical local demo awaiting PO, no semantic qualification or criterion acceptance.",
+      "outcome": "observed",
+      "sha256": "bd00d7690b5acc3f4b80b4558f8bb8bc42e58a9fd63321fdb678619f7c858ab5",
+      "source": "docs/adr/0024-grounded-nexo-proposals.md"
+    },
+    {
+      "command": null,
+      "note": "AHC-028 grounded Nexo increment; 857 offline tests passed, historical local demo awaiting PO, no semantic qualification or criterion acceptance.",
+      "outcome": "observed",
+      "sha256": "6330ced535d89e31ace474a698720539d3435edf51c6fccb3d71d5971534362c",
+      "source": "src/ai_harness_compiler/models/scrum_planning.py"
+    },
+    {
+      "command": null,
+      "note": "AHC-028 grounded Nexo increment; 857 offline tests passed, historical local demo awaiting PO, no semantic qualification or criterion acceptance.",
+      "outcome": "observed",
+      "sha256": "316499f7314024c88ec786f32d3aeb230765227abe135007c49e5ef7fbbfb066",
+      "source": "src/ai_harness_compiler/scrum_planning.py"
+    },
+    {
+      "command": null,
+      "note": "AHC-028 grounded Nexo increment; 857 offline tests passed, historical local demo awaiting PO, no semantic qualification or criterion acceptance.",
+      "outcome": "observed",
+      "sha256": "2b5210ec68fc803a91332d5443c416967dd0863e0300d61358a1c1097fab9d51",
+      "source": "src/ai_harness_compiler/team/runtime.py"
+    },
+    {
+      "command": null,
+      "note": "AHC-028 grounded Nexo increment; 857 offline tests passed, historical local demo awaiting PO, no semantic qualification or criterion acceptance.",
+      "outcome": "observed",
+      "sha256": "c39224453e8e5ff9e1732185e70d3953dafa126a062ffe41a2ee280b1dd2870c",
+      "source": "tests/test_scrum_planning.py"
+    }
+  ],
+  "id": "ADR-0024",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "No human criterion acceptance or DoD certification",
+    "Historical demo must be recollected after source or memory changes",
+    "Cache is session-local with full invalidation; no inference speedup claimed",
+    "Planning increment is separate from later operator ADR-0025/DOC-0025; no real POST demonstrated or automatically authorized."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0023",
+    "DE-0011",
+    "DOC-0022",
+    "ADR-0025",
+    "DOC-0025"
+  ],
+  "resolution": null,
+  "review_note": "Refresh current source digests after AHC-030 implementation; preserve historical experiment identity, pending semantic qualification and human acceptance limits.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 6,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Typed proposals derive from captured evidence; Nexo reuses bounded tools and review checkpoint, with current-source checks and immutable session cache.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Propostas Scrum fundamentadas e gate persistente do Nexo",
+  "updated_at": "2026-10-19T22:45:57.835671+00:00"
+}

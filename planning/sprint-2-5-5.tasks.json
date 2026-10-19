@@ -811,10 +811,11 @@
           "memória revisada"
         ],
         "outputs": [
-          "QAReviewRequest proposto",
-          "QAReviewReport proposto",
-          "SprintClosureAssessment proposto",
-          "achados e parecer consultivo"
+          "QAReviewRequest/v1",
+          "QAReviewReport/v1",
+          "SprintClosureAssessment/v1",
+          "QAReviewComparison/v1",
+          "candidatos de incidente"
         ],
         "risk": "high",
         "side_effects": [],

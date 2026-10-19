@@ -1,0 +1,77 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO explicitly authorized implementing the reviewer before the Sprint2.5.5 review on 2026-10-19.",
+  "created_at": "2026-10-19T22:45:57.104524+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "970 offline tests passed; real QA runner and LangGraph gate demonstrated. Model results/limitations are explicit in the immutable demo inventory.",
+      "outcome": "observed",
+      "sha256": "0defbfb46610df64cc86e6638d86cae2e2e20d62beefe2c4a46bb0f02ffa329d",
+      "source": "docs/delivery/ahc-030-vera-increment.md"
+    },
+    {
+      "command": null,
+      "note": "970 offline tests passed; real QA runner and LangGraph gate demonstrated. Model results/limitations are explicit in the immutable demo inventory.",
+      "outcome": "observed",
+      "sha256": "666925dd7115acca5f405692db1f3eda8109ef79ac944ee4125325d1a6fe092d",
+      "source": "docs/engineering/vera-review.md"
+    },
+    {
+      "command": null,
+      "note": "970 offline tests passed; real QA runner and LangGraph gate demonstrated. Model results/limitations are explicit in the immutable demo inventory.",
+      "outcome": "observed",
+      "sha256": "3faa9644f60dbe8f8ef920d9079f489ab31498b4a1246f68151854803dd0c406",
+      "source": "docs/evidence/ahc-030-vera-20261019/inventory.json"
+    },
+    {
+      "command": null,
+      "note": "970 offline tests passed; real QA runner and LangGraph gate demonstrated. Model results/limitations are explicit in the immutable demo inventory.",
+      "outcome": "observed",
+      "sha256": "b3eb6f2578530314c26e7e6a0080beb32f6a2ab1138edefe6035004594638866",
+      "source": "planning/sprint-2-5-5.json"
+    },
+    {
+      "command": null,
+      "note": "970 offline tests passed; real QA runner and LangGraph gate demonstrated. Model results/limitations are explicit in the immutable demo inventory.",
+      "outcome": "observed",
+      "sha256": "a43d3383ca41314faf25aad572bc6dd667ee7bcd3d350ee428beeaaeac94e83d",
+      "source": "planning/sprint-2-5-5.work-items.json"
+    }
+  ],
+  "id": "DOC-0027",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "No human criterion acceptance, sprint closure or model qualification inferred.",
+    "Model inspection is advisory; literal citations do not establish semantic correctness.",
+    "Historical demo is not a reusable current approval; head/source/memory changes require a new capture.",
+    "Trusted fixed checks execute repository code; the runner is not an isolation sandbox."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0012",
+    "DOC-0026",
+    "ADR-0024",
+    "ADR-0025"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 3,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Implemented executable capture/run/assess/compare, optional model inspection, observed check evidence, incident candidates and Vera/Nexo awaiting PO. Real model attempt outcomes remain explicit, including rejected/inconclusive results.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Incremento funcional AHC-030 e demonstração Vera/Nexo",
+  "updated_at": "2026-10-19T22:49:06.496091+00:00"
+}

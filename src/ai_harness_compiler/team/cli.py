@@ -7,6 +7,7 @@ from pathlib import Path
 
 from ai_harness_compiler.compiler import json_text
 from ai_harness_compiler.intake import DEFAULT_MAX_MANIFEST_BYTES, load_project
+from ai_harness_compiler.models.qa import QAReviewReport
 from ai_harness_compiler.models.scrum import SprintSnapshot
 from ai_harness_compiler.models.team import POReview, TeamConfig
 
@@ -32,6 +33,7 @@ def add_commands(commands: argparse._SubParsersAction[argparse.ArgumentParser]) 
     run.add_argument("--model-policy", type=Path, help="Central model policy override")
     run.add_argument("--repository", type=Path, default=Path.cwd())
     run.add_argument("--max-steps", type=int, default=5)
+    run.add_argument("--qa-report", type=Path, help="Vera review and Nexo closure advisory session")
     run.add_argument(
         "--scrum-snapshot", type=Path, help="Observed sprint; forces dedicated Nexo ask mode"
     )
@@ -90,6 +92,14 @@ def execute(args: argparse.Namespace) -> int:
             if len(raw) > 8 * 1024 * 1024:
                 raise ValueError("Scrum snapshot exceeds 8 MiB")
             snapshot = SprintSnapshot.model_validate_json(raw)
+        qa_report = None
+        if getattr(args, "qa_report", None) is not None:
+            from ai_harness_compiler.scrum_operation_cli import read_model
+
+            qa_report = read_model(args.qa_report, QAReviewReport)
+            if snapshot is not None and snapshot != qa_report.request.snapshot:
+                raise ValueError("Explicit snapshot differs from QA evidence")
+            snapshot = qa_report.request.snapshot
         config = TeamConfig.model_validate(
             {
                 "project": load_project(
@@ -99,6 +109,7 @@ def execute(args: argparse.Namespace) -> int:
                 "request": args.request,
                 "mode": "ask" if snapshot else args.mode,
                 "scrum_snapshot": snapshot.model_dump() if snapshot else None,
+                "qa_report": qa_report.model_dump() if qa_report else None,
                 "engine": engine,
                 "model": model,
                 "max_steps": args.max_steps,

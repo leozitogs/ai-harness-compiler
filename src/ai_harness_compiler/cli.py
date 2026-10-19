@@ -38,6 +38,15 @@ from ai_harness_compiler.models.model_session import (
     SessionSettings,
     WorkerResult,
 )
+from ai_harness_compiler.models.qa import (
+    QACheckResult,
+    QAIncidentCandidate,
+    QAInspection,
+    QAReviewComparison,
+    QAReviewReport,
+    QAReviewRequest,
+    SprintClosureAssessment,
+)
 from ai_harness_compiler.models.repair import RepairPlan, RepairReport
 from ai_harness_compiler.models.scrum import (
     DeliveryEvidence,
@@ -94,6 +103,13 @@ from ai_harness_compiler.pipeline import plan
 from ai_harness_compiler.planning import decompose
 
 MODELS: dict[str, type[Contract]] = {
+    "qa-review-request": QAReviewRequest,
+    "qa-review-comparison": QAReviewComparison,
+    "qa-incident-candidate": QAIncidentCandidate,
+    "qa-review-report": QAReviewReport,
+    "qa-inspection": QAInspection,
+    "qa-check-result": QACheckResult,
+    "sprint-closure-assessment": SprintClosureAssessment,
     "scrum-operation-plan": ScrumOperationPlan,
     "operation-authorization": OperationAuthorization,
     "operation-receipt": OperationReceipt,
@@ -371,8 +387,15 @@ def main(argv: list[str] | None = None) -> int:
     from ai_harness_compiler.scrum_operation_cli import add_commands as add_operation_commands
 
     add_operation_commands(scrum_commands)
+    from ai_harness_compiler.qa_cli import add_commands as add_qa_commands
+
+    add_qa_commands(commands)
     args = parser.parse_args(argv)
     try:
+        if args.command == "qa":
+            from ai_harness_compiler.qa_cli import execute as execute_qa
+
+            return execute_qa(args)
         if args.command == "scrum":
             if args.scrum_command == "operation":
                 from ai_harness_compiler.scrum_operation_cli import execute as execute_operation
@@ -710,6 +733,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     except ModuleNotFoundError as exc:
         if args.command not in {
+            "qa",
             "team",
             "study",
             "run-understanding-evals",
@@ -721,7 +745,12 @@ def main(argv: list[str] | None = None) -> int:
             "verify-analysis-v4",
         }:
             raise
-        extra = "team" if args.command in {"team", "compare-understanding"} else "understanding"
+        extra = (
+            "team"
+            if args.command in {"team", "compare-understanding"}
+            or (args.command == "qa" and getattr(args, "team", False))
+            else "understanding"
+        )
         print(
             f"factory: install the {extra} extra with uv sync --extra {extra} ({exc.name})",
             file=sys.stderr,

@@ -2,7 +2,8 @@
 
 Planejada e iniciada em 2026-10-19 por pedido explícito do PO (`podes começar`).
 AHC-027/028/029 integradas via PR48/49/50 e em revisão. Por emenda explícita
-do PO, AHC-030 foi adicionada antes da review; implementação ainda não iniciada.
+do PO, AHC-030 foi adicionada antes da review; implementação foi autorizada
+separadamente e o incremento da Vera está em execução/revisão.
 Nenhum aceite por critério é inferido. Capacidade e duração não estão
 calibradas; proposta de cinco dias úteis não é prazo de entrega prometido.
 

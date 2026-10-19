@@ -111,6 +111,10 @@ com autorização por diff, journal SQLite e adapter GitHub aditivo. Chamadas ex
 ficam fora das transações locais; resultados incertos exigem reconciliação sem retry
 de escrita. Não há CAS remoto, autoridade de aceite ou coordenação entre journals
 independentes. Ver ADR-0024/0025.
+AHC-030 adiciona QAReviewRequest/Report e SprintClosureAssessment independentes de
+framework. Captura Git e runner ficam nas fronteiras; inspeção por modelo não
+produz evidência de execução. Vera/Nexo usam o adapter team existente, com digest
+de QA vinculado ao checkpoint e sem autoridade de fechamento. Ver ADR-0026.
 
 ## Evolução da IR
 

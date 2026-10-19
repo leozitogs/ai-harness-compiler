@@ -6,6 +6,7 @@ from pydantic import ConfigDict, Field, model_validator
 
 from ai_harness_compiler.models.base import Contract, Identifier, Text
 from ai_harness_compiler.models.project import ProjectInput
+from ai_harness_compiler.models.qa import QAReviewReport
 from ai_harness_compiler.models.scrum import SprintSnapshot
 
 Role = Literal["analyst", "architect", "engineer", "quality", "security", "delivery"]
@@ -82,9 +83,17 @@ class TeamConfig(Contract):
     max_steps: int = Field(default=5, ge=3, le=10)
     repository_root: Text
     scrum_snapshot: SprintSnapshot | None = None
+    qa_report: QAReviewReport | None = None
 
     @model_validator(mode="after")
     def model_required(self) -> Self:
+        if self.qa_report is not None:
+            qa = QAReviewReport.model_validate(self.qa_report.model_dump())
+            if (
+                self.scrum_snapshot is None
+                or qa.request.snapshot.model_dump() != self.scrum_snapshot.model_dump()
+            ):
+                raise ValueError("QA evidence must match the configured Scrum snapshot")
         if self.scrum_snapshot is not None:
             from ai_harness_compiler.scrum_observer import decode_document
 
