@@ -1,0 +1,31 @@
+{
+  "synthetic_repository": true,
+  "human_confirmation_simulated": true,
+  "real_project_acceptance": false,
+  "model_calls": 0,
+  "old_tests": "failed",
+  "new_tests": "passed",
+  "global_semantic_acceptance": "not-established",
+  "runs": [
+    {
+      "id": "pending",
+      "status": "awaiting_po",
+      "recommendation": "changes-required",
+      "blockers": 1,
+      "pending": [
+        "approval-bypass"
+      ],
+      "resolved": []
+    },
+    {
+      "id": "confirmed",
+      "status": "awaiting_po",
+      "recommendation": "ready-for-po",
+      "blockers": 0,
+      "pending": [],
+      "resolved": [
+        "approval-bypass"
+      ]
+    }
+  ]
+}

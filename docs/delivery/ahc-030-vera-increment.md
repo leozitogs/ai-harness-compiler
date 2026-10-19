@@ -5,6 +5,9 @@ captura Git limitada, contratos QA v1, runner de checks por revisão confiável,
 inspeção opcional em uma tentativa e integração Vera/Nexo no LangGraph existente.
 A história permanece em revisão; não há aceite ou encerramento automático.
 
+Complemento posterior: [correções e nova review](ahc-030-review-followups.md),
+com revalidação das exclusões, resolução por evidência e decisão humana separada.
+
 ## Comportamento
 
 Vera recebe fontes e diff por base/head, critérios preservados e evidências de

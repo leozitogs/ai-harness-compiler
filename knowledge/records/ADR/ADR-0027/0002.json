@@ -1,0 +1,81 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO authorized correcting pending Sprint2.5.5 review findings on 2026-10-19.",
+  "created_at": "2026-10-19T23:14:38.264171+00:00",
+  "decision": "Use typed proposal/review bound to exact reports, preserved criteria, inspected facet, passed checks and current citations. Only explicit independent declared-human confirmation clears a finding; no global acceptance is inferred.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "988 offline tests passed; explicit model inspections completed on 18 selected sources; real resolution proposed only, fixture decision explicitly simulated.",
+      "outcome": "observed",
+      "sha256": "4228f7f6d252432045cd25d7838c82b5ec0a0924f898e1da7b13bc5dad43ec65",
+      "source": "docs/adr/0027-qa-resolution-evidence-and-human-review.md"
+    },
+    {
+      "command": null,
+      "note": "988 offline tests passed; explicit model inspections completed on 18 selected sources; real resolution proposed only, fixture decision explicitly simulated.",
+      "outcome": "observed",
+      "sha256": "51eec625be571baa23fe396d7b5c460e356098321de4215f7abd89e889af6597",
+      "source": "src/ai_harness_compiler/models/qa.py"
+    },
+    {
+      "command": null,
+      "note": "988 offline tests passed; explicit model inspections completed on 18 selected sources; real resolution proposed only, fixture decision explicitly simulated.",
+      "outcome": "observed",
+      "sha256": "e667859dda224de78b026cf07d0760b5efa1141ee9d55ecb014ac7500eae926e",
+      "source": "src/ai_harness_compiler/qa.py"
+    },
+    {
+      "command": null,
+      "note": "988 offline tests passed; explicit model inspections completed on 18 selected sources; real resolution proposed only, fixture decision explicitly simulated.",
+      "outcome": "observed",
+      "sha256": "16ee612f0ea361b95f2edfad70adc6caf40f62d2ee495f1fa489adc1563990e6",
+      "source": "src/ai_harness_compiler/qa_collection.py"
+    },
+    {
+      "command": null,
+      "note": "988 offline tests passed; explicit model inspections completed on 18 selected sources; real resolution proposed only, fixture decision explicitly simulated.",
+      "outcome": "observed",
+      "sha256": "300b793940c4200b6f982a1f74df945665a8034789bec7bfcca6b0528f27119d",
+      "source": "src/ai_harness_compiler/team/tools.py"
+    },
+    {
+      "command": null,
+      "note": "988 offline tests passed; explicit model inspections completed on 18 selected sources; real resolution proposed only, fixture decision explicitly simulated.",
+      "outcome": "observed",
+      "sha256": "cc9ad9b36184bcefdd5ad78c3892ea8dc24f9b037c65bc3b92d7149d775f6bda",
+      "source": "tests/test_qa_resolution.py"
+    }
+  ],
+  "id": "ADR-0027",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "No semantic model qualification, human criterion acceptance or sprint closure established.",
+    "Actor declaration in trusted local CLI is not authentication or a signature.",
+    "Historical packets require fresh capture before any current human decision."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0026",
+    "DOC-0027"
+  ],
+  "resolution": null,
+  "review_note": "Verified specific failure/cause/correction against regressions and documented real-vs-fixture boundaries; no PO acceptance or model qualification inferred.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Recompute Git exclusions and separate new-revision resolution evidence from human confirmation. Nexo carries unresolved findings into its combined advice.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Resolução de achados por evidência e decisão humana",
+  "updated_at": "2026-10-19T23:14:38.467693+00:00"
+}

@@ -25,9 +25,10 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [ADR-0021 — Proveniência por componente e guards separados](records/ADR/ADR-0021/0002.json) · active · revision 2
 - [ADR-0022 — Revisão humana de proveniência por componente](records/ADR/ADR-0022/0002.json) · active · revision 2
 - [ADR-0023 — Observação Scrum separada de aceite e operação](records/ADR/ADR-0023/0006.json) · active · revision 6
-- [ADR-0024 — Propostas Scrum fundamentadas e gate persistente do Nexo](records/ADR/ADR-0024/0006.json) · active · revision 6
+- [ADR-0024 — Propostas Scrum fundamentadas e gate persistente do Nexo](records/ADR/ADR-0024/0008.json) · active · revision 8
 - [ADR-0025 — Operador Scrum aditivo com autorização e journal](records/ADR/ADR-0025/0002.json) · active · revision 2
-- [ADR-0026 — Vera com evidência vinculada à revisão e parecer do Nexo](records/ADR/ADR-0026/0004.json) · active · revision 4
+- [ADR-0026 — Vera com evidência vinculada à revisão e parecer do Nexo](records/ADR/ADR-0026/0006.json) · active · revision 6
+- [ADR-0027 — Resolução de achados por evidência e decisão humana](records/ADR/ADR-0027/0002.json) · active · revision 2
 - [DE-0001 — Memória de engenharia versionada](records/DE/DE-0001/0001.json) · draft · revision 1
 - [DE-0002 — Gerar memória e especialistas para cada projeto](records/DE/DE-0002/0002.json) · active · revision 2
 - [DE-0003 — Intake limitado e YAML explícito](records/DE/DE-0003/0004.json) · active · revision 4
@@ -66,7 +67,8 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0024 — Incremento AHC-028 e demo do Nexo](records/DOC/DOC-0024/0008.json) · active · revision 8
 - [DOC-0025 — Incremento AHC-029 e demonstração de recuperação](records/DOC/DOC-0025/0006.json) · active · revision 6
 - [DOC-0026 — Escopo e tarefas do agente revisor AHC-030](records/DOC/DOC-0026/0004.json) · active · revision 4
-- [DOC-0027 — Incremento funcional AHC-030 e demonstração Vera/Nexo](records/DOC/DOC-0027/0004.json) · active · revision 4
+- [DOC-0027 — Incremento funcional AHC-030 e demonstração Vera/Nexo](records/DOC/DOC-0027/0006.json) · active · revision 6
+- [DOC-0028 — Correções da review e demonstração de resolução AHC-030](records/DOC/DOC-0028/0002.json) · active · revision 2
 - [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2
 - [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1
 - [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1
@@ -86,7 +88,9 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [INC-0016 — Regra composta cita apenas o critério original](records/INC/INC-0016/0005.json) · verified · revision 5
 - [INC-0017 — Fixture de wall time dependia do tempo real arredondado](records/INC/INC-0017/0002.json) · verified · revision 2
 - [INC-0018 — Provedor preenche componentes de regra em requisito](records/INC/INC-0018/0002.json) · verified · revision 2
-- [INC-0019 — Constante Windows causava falha de tipagem Linux no runner QA](records/INC/INC-0019/0002.json) · verified · revision 2
+- [INC-0019 — Constante Windows causava falha de tipagem Linux no runner QA](records/INC/INC-0019/0004.json) · verified · revision 4
+- [INC-0020 — Captura importada ocultava arquivos excluídos da inspeção](records/INC/INC-0020/0002.json) · verified · revision 2
+- [INC-0021 — Nexo omitiria bloqueios históricos pendentes na comparação](records/INC/INC-0021/0002.json) · verified · revision 2
 - [LES-0001 — Tipos estáticos podem falhar em runtime](records/LES/LES-0001/0004.json) · verified · revision 4
 - [LES-0002 — Referências válidas não garantem precedência consistente](records/LES/LES-0002/0002.json) · verified · revision 2
 - [LES-0003 — Usar IDs curtos para parametrizações com payloads grandes](records/LES/LES-0003/0002.json) · verified · revision 2
