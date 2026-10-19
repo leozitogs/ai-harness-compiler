@@ -648,6 +648,11 @@ def main(argv: list[str] | None = None) -> int:
             "study",
             "run-understanding-evals",
             "compare-understanding",
+            "analyze-project-v2",
+            "analyze-project-v3",
+            "verify-analysis-v2",
+            "verify-analysis-v3",
+            "verify-analysis-v4",
         }:
             raise
         extra = "team" if args.command in {"team", "compare-understanding"} else "understanding"
