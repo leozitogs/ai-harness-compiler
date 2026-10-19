@@ -9,13 +9,13 @@
   ],
   "display_name": "Sprint 2.6",
   "entry_gates": [
-    "Sprint2.5.5 Nexo review or explicit PO reprioritization recorded",
-    "Sprint2.5 review and carryover decision recorded",
-    "Human-reviewable baseline and error taxonomy",
-    "Budgets and data permissions defined before experiments"
+    "Explicit PO start and Sprint2.5.5 closure recorded",
+    "Carryover selected explicitly instead of falsely declaring prerequisites completed",
+    "Frozen development and historical baseline integrity audited; human semantic reviews remain work in progress",
+    "Budgets and data permissions required before experiments"
   ],
   "execution_guide": "docs/delivery/sprint-2-6.md",
-  "execution_started": false,
+  "execution_started": true,
   "exit_gates": [
     "Compatible versioned profiles and complete fingerprints",
     "Controlled development comparison preserving failures",
@@ -46,17 +46,20 @@
   "product_owner": "leozitogs",
   "relationship": {
     "carryover_origin": "sprint-2-5",
-    "policy": "Queued focus, no parallel sprint or new training execution authorized by registration.",
+    "policy": "Single active sprint. Resolve prerequisite work before optimization; no fabricated completion, parallel capacity, reserved-corpus access or training.",
     "predecessor": "sprint-2-5-5"
   },
   "selected_capabilities": [
+    "ahc-021",
+    "ahc-022",
+    "ahc-023",
     "ahc-024",
     "ahc-025",
     "ahc-026"
   ],
-  "status": "planned",
-  "task_graph_note": "Do not generate a runnable graph until AHC-021/022 gates are actually met or scope is explicitly replanned; never declare them completed to satisfy planning.",
-  "task_graph_status": "deferred-unmet-prerequisites",
+  "status": "in_progress",
+  "task_graph_note": "Replanned by including unmet AHC021/022/023 in selection; none declared complete. Generated stages are not execution or semantic approval.",
+  "task_graph_status": "generated-with-explicit-prerequisite-work",
   "timebox_status": "not-committed",
   "tracking": {
     "issues": {
@@ -71,9 +74,48 @@
       "ahc-026": {
         "number": 43,
         "url": "https://github.com/leozitogs/ai-harness-compiler/issues/43"
+      },
+      "ahc-021": {
+        "number": 15,
+        "url": "https://github.com/leozitogs/ai-harness-compiler/issues/15"
+      },
+      "ahc-022": {
+        "number": 16,
+        "url": "https://github.com/leozitogs/ai-harness-compiler/issues/16"
+      },
+      "ahc-023": {
+        "number": 17,
+        "url": "https://github.com/leozitogs/ai-harness-compiler/issues/17"
       }
     },
     "milestone_number": 3,
     "milestone_url": "https://github.com/leozitogs/ai-harness-compiler/milestone/3"
-  }
+  },
+  "started_on": "2026-10-19",
+  "execution_authorization": "PO: pode fechar a sprint 2.5.5 e seguir para a sprint 2.6",
+  "active_phase": "prerequisite-review-and-baseline-audit",
+  "capability_status": {
+    "ahc-021": "in_progress",
+    "ahc-022": "blocked",
+    "ahc-023": "blocked",
+    "ahc-024": "blocked",
+    "ahc-025": "blocked",
+    "ahc-026": "blocked"
+  },
+  "work_items_file": "planning/sprint-2-6.work-items.json",
+  "initial_execution": {
+    "id": "s26-entry-audit",
+    "status": "performed-review-pending",
+    "document": "docs/delivery/sprint-2-6-kickoff.md",
+    "evidence": "docs/evidence/sprint-2-6-entry-20261019/audit.json",
+    "model_calls": 0,
+    "holdout_read": false
+  },
+  "budgets": {
+    "preparatory_phase": "offline-only-zero-model-calls",
+    "experiments": "not-authorized-until-concrete-budget-and-data-gates",
+    "external_paid_services": "not-authorized",
+    "training": "conditional-not-started"
+  },
+  "task_plan_file": "planning/sprint-2-6.tasks.json"
 }

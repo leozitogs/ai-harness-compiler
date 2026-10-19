@@ -1,7 +1,10 @@
 # Sprint 2.6 — Otimização experimental de modelos
 
-Status: planejada na esteira em 2026-10-19; não iniciada. PO autorizou registrar a
-análise e priorizar a conclusão da Sprint 2.5. Não há prazo, capacidade ou ganho prometido.
+Status: **iniciada em 2026-10-19**, por pedido explícito do PO após encerrar a 2.5.5.
+O [kickoff e a auditoria executada](sprint-2-6-kickoff.md) registram a fase atual:
+revisão dos pré-requisitos e baseline antes dos experimentos. Seleção adaptada para
+incluir AHC-021/022/023 remanescentes junto de AHC-024/025/026; não houve declaração
+fictícia de conclusão para liberar o TaskGraph. Não há prazo, capacidade ou ganho prometido.
 
 A Sprint 2.5.5 do Nexo foi posicionada antes desta sprint por pedido posterior do
 PO. Sua review (ou repriorização explícita) e os gates semânticos remanescentes da

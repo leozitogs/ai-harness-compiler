@@ -1,0 +1,77 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO authorized continuing after PR49; action-specific real label authorization was not requested or inferred.",
+  "created_at": "2026-10-19T21:39:58.397439+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "907 offline tests passed; fake dispatch/recovery simulation and one real issue GET. No real operator POST, human criterion acceptance or model qualification.",
+      "outcome": "observed",
+      "sha256": "b4b917da1eb221eeef809fad9ceb1659330ffa7c71a1ff3890c0f2cf7db02300",
+      "source": "docs/delivery/ahc-029-operator-increment.md"
+    },
+    {
+      "command": null,
+      "note": "907 offline tests passed; fake dispatch/recovery simulation and one real issue GET. No real operator POST, human criterion acceptance or model qualification.",
+      "outcome": "observed",
+      "sha256": "a5cdd5b0c9c798e88fd06c74e218b065384e3b928b63ed14421b29dd52118186",
+      "source": "docs/engineering/scrum-operations.md"
+    },
+    {
+      "command": null,
+      "note": "907 offline tests passed; fake dispatch/recovery simulation and one real issue GET. No real operator POST, human criterion acceptance or model qualification.",
+      "outcome": "observed",
+      "sha256": "5fb4da86035078b04b43fa5ef6a7373767d39e36fb3170bcb9aabbeda014503c",
+      "source": "docs/evidence/ahc-029-operator-20261019/inventory.json"
+    },
+    {
+      "command": null,
+      "note": "907 offline tests passed; fake dispatch/recovery simulation and one real issue GET. No real operator POST, human criterion acceptance or model qualification.",
+      "outcome": "observed",
+      "sha256": "e06c7f91146585d178de4be264124260047b23bc82ebfd5382069289bc742d26",
+      "source": "planning/sprint-2-5-5.json"
+    },
+    {
+      "command": null,
+      "note": "907 offline tests passed; fake dispatch/recovery simulation and one real issue GET. No real operator POST, human criterion acceptance or model qualification.",
+      "outcome": "observed",
+      "sha256": "05a78a0ed5d1ad0ebac16a4d5f03090b817b21c14bdc28d2c30d1c4fdea20002",
+      "source": "planning/sprint-2-5-5.work-items.json"
+    }
+  ],
+  "id": "DOC-0025",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "No real POST integration demonstrated; fake authorization is not a real PO decision",
+    "Trusted CLI actor declaration is not authenticated identity",
+    "One shared local journal required; independent hosts/files do not coordinate",
+    "Remote check/write race remains; uncertain targets are not automatically released",
+    "No sprint completion, criterion acceptance or model qualification"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0024",
+    "DOC-0024",
+    "DE-0011"
+  ],
+  "resolution": null,
+  "review_note": "Refresh current delivery sources for explicit PO closure/start; preserve historical demonstrations and remaining human/semantic gates. No completion of AHC021/022/023 declared.",
+  "reviewed_by": "codex:delivery-review",
+  "revision": 8,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "A fake timeout after one label effect left uncertain; read-only reconciliation observed the effect and replay returned the same receipt. Real adapter inspected issue46 without writing.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Incremento AHC-029 e demonstração de recuperação",
+  "updated_at": "2026-10-19T23:26:53.886144+00:00"
+}

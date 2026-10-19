@@ -1,5 +1,10 @@
 # Sprint 2.5.5 — Nexo: operações Scrum com evidências
 
+**Encerrada por autorização explícita do PO em 2026-10-19, com pendências preservadas.**
+Ver [review e fechamento](sprint-2-5-5-review.md). Sprint 2.6 iniciada na fase de
+[auditoria e revisão dos pré-requisitos](sprint-2-6-kickoff.md).
+
+O texto abaixo preserva o plano e as condições de execução originais.
 Planejada e iniciada em 2026-10-19 por pedido explícito do PO (`podes começar`).
 AHC-027/028/029 integradas via PR48/49/50 e em revisão. Por emenda explícita
 do PO, AHC-030 foi adicionada antes da review; implementação foi autorizada

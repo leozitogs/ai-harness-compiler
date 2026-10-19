@@ -2,7 +2,7 @@
   "execution_started": true,
   "format": "sprint-work-items/v1",
   "sprint_id": "sprint-2-5-5",
-  "status": "in_progress",
+  "status": "closed_with_carryover",
   "work_items": [
     {
       "capability_id": "ahc-027",
@@ -19,7 +19,9 @@
       "stage": "design",
       "status": "in_review",
       "task_graph_id": "task-27-design",
-      "verification_source": "docs/delivery/sprint-2-5-5.md"
+      "verification_source": "docs/delivery/sprint-2-5-5.md",
+      "carryover_note": "Timebox explicitly closed by PO; functional increment integrated, no individual criterion acceptance inferred. Track unresolved review separately from Sprint2.6 execution.",
+      "completion": "integrated-review-pending"
     },
     {
       "capability_id": "ahc-027",
@@ -38,7 +40,9 @@
       "stage": "implement",
       "status": "in_review",
       "task_graph_id": "task-27-implement",
-      "verification_source": "docs/delivery/sprint-2-5-5.md"
+      "verification_source": "docs/delivery/sprint-2-5-5.md",
+      "carryover_note": "Timebox explicitly closed by PO; functional increment integrated, no individual criterion acceptance inferred. Track unresolved review separately from Sprint2.6 execution.",
+      "completion": "integrated-review-pending"
     },
     {
       "capability_id": "ahc-027",
@@ -57,7 +61,9 @@
       "stage": "verify",
       "status": "in_review",
       "task_graph_id": "task-27-verify",
-      "verification_source": "docs/delivery/sprint-2-5-5.md"
+      "verification_source": "docs/delivery/sprint-2-5-5.md",
+      "carryover_note": "Timebox explicitly closed by PO; functional increment integrated, no individual criterion acceptance inferred. Track unresolved review separately from Sprint2.6 execution.",
+      "completion": "integrated-review-pending"
     },
     {
       "capability_id": "ahc-027",
@@ -74,9 +80,11 @@
       "id": "s255-27-review",
       "responsible": "code-collaborator-supported-by-codex",
       "stage": "review",
-      "status": "planned",
+      "status": "in_review",
       "task_graph_id": "task-27-review",
-      "verification_source": "docs/delivery/sprint-2-5-5.md"
+      "verification_source": "docs/delivery/sprint-2-5-5.md",
+      "carryover_note": "Timebox explicitly closed by PO; functional increment integrated, no individual criterion acceptance inferred. Track unresolved review separately from Sprint2.6 execution.",
+      "completion": "integrated-review-pending"
     },
     {
       "capability_id": "ahc-028",
@@ -94,7 +102,9 @@
       "stage": "design",
       "status": "in_review",
       "task_graph_id": "task-28-design",
-      "verification_source": "docs/delivery/sprint-2-5-5.md"
+      "verification_source": "docs/delivery/sprint-2-5-5.md",
+      "carryover_note": "Timebox explicitly closed by PO; functional increment integrated, no individual criterion acceptance inferred. Track unresolved review separately from Sprint2.6 execution.",
+      "completion": "integrated-review-pending"
     },
     {
       "capability_id": "ahc-028",
@@ -112,7 +122,9 @@
       "stage": "implement",
       "status": "in_review",
       "task_graph_id": "task-28-implement",
-      "verification_source": "docs/delivery/sprint-2-5-5.md"
+      "verification_source": "docs/delivery/sprint-2-5-5.md",
+      "carryover_note": "Timebox explicitly closed by PO; functional increment integrated, no individual criterion acceptance inferred. Track unresolved review separately from Sprint2.6 execution.",
+      "completion": "integrated-review-pending"
     },
     {
       "capability_id": "ahc-028",
@@ -130,7 +142,9 @@
       "stage": "verify",
       "status": "in_review",
       "task_graph_id": "task-28-verify",
-      "verification_source": "docs/delivery/sprint-2-5-5.md"
+      "verification_source": "docs/delivery/sprint-2-5-5.md",
+      "carryover_note": "Timebox explicitly closed by PO; functional increment integrated, no individual criterion acceptance inferred. Track unresolved review separately from Sprint2.6 execution.",
+      "completion": "integrated-review-pending"
     },
     {
       "capability_id": "ahc-028",
@@ -146,9 +160,11 @@
       "id": "s255-28-review",
       "responsible": "code-collaborator-supported-by-codex",
       "stage": "review",
-      "status": "planned",
+      "status": "in_review",
       "task_graph_id": "task-28-review",
-      "verification_source": "docs/delivery/sprint-2-5-5.md"
+      "verification_source": "docs/delivery/sprint-2-5-5.md",
+      "carryover_note": "Timebox explicitly closed by PO; functional increment integrated, no individual criterion acceptance inferred. Track unresolved review separately from Sprint2.6 execution.",
+      "completion": "integrated-review-pending"
     },
     {
       "capability_id": "ahc-029",
@@ -167,7 +183,9 @@
       "stage": "design",
       "status": "in_review",
       "task_graph_id": "task-29-design",
-      "verification_source": "docs/delivery/sprint-2-5-5.md"
+      "verification_source": "docs/delivery/sprint-2-5-5.md",
+      "carryover_note": "Timebox explicitly closed by PO; functional increment integrated, no individual criterion acceptance inferred. Track unresolved review separately from Sprint2.6 execution.",
+      "completion": "integrated-review-pending"
     },
     {
       "capability_id": "ahc-029",
@@ -186,7 +204,9 @@
       "stage": "implement",
       "status": "in_review",
       "task_graph_id": "task-29-implement",
-      "verification_source": "docs/delivery/sprint-2-5-5.md"
+      "verification_source": "docs/delivery/sprint-2-5-5.md",
+      "carryover_note": "Timebox explicitly closed by PO; functional increment integrated, no individual criterion acceptance inferred. Track unresolved review separately from Sprint2.6 execution.",
+      "completion": "integrated-review-pending"
     },
     {
       "capability_id": "ahc-029",
@@ -205,7 +225,9 @@
       "stage": "verify",
       "status": "in_review",
       "task_graph_id": "task-29-verify",
-      "verification_source": "docs/delivery/sprint-2-5-5.md"
+      "verification_source": "docs/delivery/sprint-2-5-5.md",
+      "carryover_note": "Timebox explicitly closed by PO; functional increment integrated, no individual criterion acceptance inferred. Track unresolved review separately from Sprint2.6 execution.",
+      "completion": "integrated-review-pending"
     },
     {
       "capability_id": "ahc-029",
@@ -222,9 +244,11 @@
       "id": "s255-29-review",
       "responsible": "code-collaborator-supported-by-codex",
       "stage": "review",
-      "status": "planned",
+      "status": "in_review",
       "task_graph_id": "task-29-review",
-      "verification_source": "docs/delivery/sprint-2-5-5.md"
+      "verification_source": "docs/delivery/sprint-2-5-5.md",
+      "carryover_note": "Timebox explicitly closed by PO; functional increment integrated, no individual criterion acceptance inferred. Track unresolved review separately from Sprint2.6 execution.",
+      "completion": "integrated-review-pending"
     },
     {
       "capability_id": "ahc-030",
@@ -244,7 +268,9 @@
       "stage": "design",
       "status": "in_review",
       "task_graph_id": "task-30-design",
-      "verification_source": "docs/delivery/ahc-030-reviewer-scope.md"
+      "verification_source": "docs/delivery/ahc-030-reviewer-scope.md",
+      "carryover_note": "Timebox explicitly closed by PO; functional increment integrated, no individual criterion acceptance inferred. Track unresolved review separately from Sprint2.6 execution.",
+      "completion": "integrated-review-pending"
     },
     {
       "capability_id": "ahc-030",
@@ -264,7 +290,9 @@
       "stage": "implement",
       "status": "in_review",
       "task_graph_id": "task-30-implement",
-      "verification_source": "docs/delivery/ahc-030-reviewer-scope.md"
+      "verification_source": "docs/delivery/ahc-030-reviewer-scope.md",
+      "carryover_note": "Timebox explicitly closed by PO; functional increment integrated, no individual criterion acceptance inferred. Track unresolved review separately from Sprint2.6 execution.",
+      "completion": "integrated-review-pending"
     },
     {
       "capability_id": "ahc-030",
@@ -284,7 +312,9 @@
       "stage": "verify",
       "status": "in_review",
       "task_graph_id": "task-30-verify",
-      "verification_source": "docs/delivery/ahc-030-reviewer-scope.md"
+      "verification_source": "docs/delivery/ahc-030-reviewer-scope.md",
+      "carryover_note": "Timebox explicitly closed by PO; functional increment integrated, no individual criterion acceptance inferred. Track unresolved review separately from Sprint2.6 execution.",
+      "completion": "integrated-review-pending"
     },
     {
       "capability_id": "ahc-030",
@@ -302,9 +332,12 @@
       "id": "s255-30-review",
       "responsible": "code-collaborator-supported-by-codex",
       "stage": "review",
-      "status": "planned",
+      "status": "in_review",
       "task_graph_id": "task-30-review",
-      "verification_source": "docs/delivery/ahc-030-reviewer-scope.md"
+      "verification_source": "docs/delivery/ahc-030-reviewer-scope.md",
+      "carryover_note": "Timebox explicitly closed by PO; functional increment integrated, no individual criterion acceptance inferred. Track unresolved review separately from Sprint2.6 execution.",
+      "completion": "integrated-review-pending"
     }
-  ]
+  ],
+  "closure_document": "docs/delivery/sprint-2-5-5-review.md"
 }

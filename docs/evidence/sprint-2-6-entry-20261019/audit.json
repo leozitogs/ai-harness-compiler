@@ -1,0 +1,240 @@
+{
+  "schema_version": "Sprint26EntryAudit/v1",
+  "recorded_on": "2026-10-19",
+  "source_revision": "f510fd6ed6a8fb5651a15fbf16cdc31af7371af6",
+  "scope": "offline-development-artifact-audit-only",
+  "model_calls": 0,
+  "holdout_read": false,
+  "parameters_changed": false,
+  "training_started": false,
+  "model_qualified": false,
+  "development_cases_verified": 8,
+  "development_freeze_verified": true,
+  "historical_artifacts_verified": 62,
+  "human_output_review": "absent",
+  "assessment_rows": 8,
+  "assessment_states": {
+    "not-run": 8
+  },
+  "baseline_cases": [
+    {
+      "case": "dev-adversarial",
+      "generation": "valid",
+      "disposition": "ready",
+      "expected_behavior": "ready",
+      "consultative_omissions": 1,
+      "consultative_negative_components": 0,
+      "human_review": "absent",
+      "qualification": "not-established",
+      "source": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-adversarial/summary.json"
+    },
+    {
+      "case": "dev-ambiguous",
+      "generation": "valid",
+      "disposition": "blocked",
+      "expected_behavior": "blocked",
+      "consultative_omissions": 0,
+      "consultative_negative_components": 1,
+      "human_review": "absent",
+      "qualification": "not-established",
+      "source": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-ambiguous/summary.json"
+    },
+    {
+      "case": "dev-branding-conflict",
+      "generation": "valid",
+      "disposition": "blocked",
+      "expected_behavior": "blocked",
+      "consultative_omissions": 1,
+      "consultative_negative_components": 0,
+      "human_review": "absent",
+      "qualification": "not-established",
+      "source": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-branding-conflict/summary.json"
+    },
+    {
+      "case": "dev-compatible-rules",
+      "generation": "error",
+      "disposition": null,
+      "expected_behavior": null,
+      "consultative_omissions": null,
+      "consultative_negative_components": null,
+      "human_review": "absent",
+      "qualification": "not-established",
+      "source": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-compatible-rules/summary.json"
+    },
+    {
+      "case": "dev-new-domain",
+      "generation": "valid",
+      "disposition": "ready",
+      "expected_behavior": "ready",
+      "consultative_omissions": 0,
+      "consultative_negative_components": 0,
+      "human_review": "absent",
+      "qualification": "not-established",
+      "source": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-new-domain/summary.json"
+    },
+    {
+      "case": "dev-rules-a",
+      "generation": "valid",
+      "disposition": "ready",
+      "expected_behavior": "ready",
+      "consultative_omissions": 2,
+      "consultative_negative_components": 0,
+      "human_review": "absent",
+      "qualification": "not-established",
+      "source": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-rules-a/summary.json"
+    },
+    {
+      "case": "dev-rules-b",
+      "generation": "valid",
+      "disposition": "ready",
+      "expected_behavior": "ready",
+      "consultative_omissions": 1,
+      "consultative_negative_components": 0,
+      "human_review": "absent",
+      "qualification": "not-established",
+      "source": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-rules-b/summary.json"
+    },
+    {
+      "case": "dev-unread-assets",
+      "generation": "valid",
+      "disposition": "ready",
+      "expected_behavior": "ready",
+      "consultative_omissions": 0,
+      "consultative_negative_components": 0,
+      "human_review": "absent",
+      "qualification": "not-established",
+      "source": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-unread-assets/summary.json"
+    }
+  ],
+  "recovery_cases": [
+    {
+      "adapter_program": "codex-structured-cli/v5",
+      "audit": "valid",
+      "case": "dev-compatible-rules",
+      "case_input_sha256": "b3d0db0980c20a068cbddf89bf26afef915368d5e487a9e1748cf782a9ba9225",
+      "disposition": "ready",
+      "expected_behavior": "ready",
+      "generation": "valid",
+      "guards": 2,
+      "human_review": "absent",
+      "negative_components": 0,
+      "observed_model": null,
+      "omissions": 1,
+      "qualification": "not-established",
+      "requested_model": "gpt-6.1-sol"
+    }
+  ],
+  "error_taxonomy": [
+    {
+      "id": "structural-type-fields",
+      "status": "observed-generation-error",
+      "case": "dev-compatible-rules",
+      "note": "Original v3 error preserved; targeted v3.1 valid retry is not a complete comparison."
+    },
+    {
+      "id": "semantic-source-support",
+      "status": "consultative-pending-human-adjudication",
+      "case": "dev-ambiguous"
+    },
+    {
+      "id": "semantic-rule-omissions",
+      "status": "consultative-pending-human-adjudication",
+      "cases": [
+        "dev-adversarial",
+        "dev-branding-conflict",
+        "dev-rules-a",
+        "dev-rules-b"
+      ]
+    }
+  ],
+  "gates": [
+    {
+      "id": "sprint255-po-closure",
+      "status": "authorized-by-po"
+    },
+    {
+      "id": "development-freeze",
+      "status": "verified-by-hashes"
+    },
+    {
+      "id": "human-semantic-output-review",
+      "status": "pending"
+    },
+    {
+      "id": "complete-v31-baseline-comparison",
+      "status": "pending"
+    },
+    {
+      "id": "reserved-protocol-and-candidate-freeze",
+      "status": "pending"
+    },
+    {
+      "id": "experiment-budget-and-data-permission",
+      "status": "must-be-defined-before-calls"
+    }
+  ],
+  "limitations": [
+    "Integrity verification is not semantic approval.",
+    "Model omissions/support findings remain advisory and may be false positives.",
+    "Historical recovery is a single case, not repeated controlled v3.1 evaluation.",
+    "No experiment, reserved evaluation, model promotion or training authorized by this audit."
+  ],
+  "sources": [
+    {
+      "path": "evals/understanding/v2/development-draft/dev-adversarial.json",
+      "sha256": "a1d3462f196b12614886b30f6bb4ce9d013b45550feda5ec358193aff7b95e99"
+    },
+    {
+      "path": "evals/understanding/v2/development-draft/dev-ambiguous.json",
+      "sha256": "b4b91de66473ba2ce628faae3aefddc571213af16ae08a34c00ef2f2440df3ae"
+    },
+    {
+      "path": "evals/understanding/v2/development-draft/dev-branding-conflict.json",
+      "sha256": "b03ca50cc215814759a8b6c072eb3857ba19fefdc6487dc29674e73ec4af6530"
+    },
+    {
+      "path": "evals/understanding/v2/development-draft/dev-compatible-rules.json",
+      "sha256": "fc8a20bcd49950df782e5fc0e7ef39aea912e0b656b0198e24bfd546d7e96622"
+    },
+    {
+      "path": "evals/understanding/v2/development-draft/dev-new-domain.json",
+      "sha256": "03d5682c906e6b053951195ef3c97d81453306cf51584f861e06e9d7dff0b16c"
+    },
+    {
+      "path": "evals/understanding/v2/development-draft/dev-rules-a.json",
+      "sha256": "5c22bb8748b1badaca5f7e2ba66d5ef628fc95128bdb5479617a7f5094220063"
+    },
+    {
+      "path": "evals/understanding/v2/development-draft/dev-rules-b.json",
+      "sha256": "9e516037eefd452f56323845d4aa5adc613a713d34b77da788c5629eaf131fa0"
+    },
+    {
+      "path": "evals/understanding/v2/development-draft/dev-unread-assets.json",
+      "sha256": "9027b07f6a0c14f4dd56fc6321c5345864884c230f3ff02641817c48596a2b17"
+    },
+    {
+      "path": "evals/understanding/v2/development-approved-manifest.json",
+      "sha256": "e7af7a3f74b017db4d8d8ef79dac38d533d74ee93a7329217ddd77577a5895e6"
+    },
+    {
+      "path": "evals/understanding/v2/rubric.json",
+      "sha256": "b1a9d26e2132798138ad035830d1caac65b3951f28e0e046630f7a5735fc77f0"
+    },
+    {
+      "path": "docs/evidence/sprint-2-5-final-20261019/inventory.json",
+      "sha256": "9fcb4fd5c0fc85d0461ffdbdc7926193c6ca4a7472cfffdebbadee88eb73a40d"
+    },
+    {
+      "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/summary.json",
+      "sha256": "5aeb1db54c233e77e82ab124e6d064388adbb0c7a718f7fa896d7a99bd20f2e7"
+    },
+    {
+      "path": "docs/evidence/sprint-2-5-final-20261019/schema-v31-recovery/summary.json",
+      "sha256": "663ea33ed3c993502c59630c8959a7a92005a7fb4669698e9a25e46c6378b093"
+    },
+    {
+      "path": "docs/evidence/sprint-2-5-final-20261019/assessment-summary.json",
+      "sha256": "f41e61a8398de02de6fb4bd5f2af2912a428ff2eeecfb3d9738cede3e9a41086"
+    }
+  ]
+}

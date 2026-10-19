@@ -1,10 +1,10 @@
 {
   "authorization": "PO: faz como uma sprint 2.5.5 pra isso; authorizes structuring Nexo Scrum agent sprint, not claiming execution or Done.",
   "capability_status": {
-    "ahc-027": "in_progress",
-    "ahc-028": "in_progress",
-    "ahc-029": "in_progress",
-    "ahc-030": "in_progress"
+    "ahc-027": "in_review",
+    "ahc-028": "in_review",
+    "ahc-029": "in_review",
+    "ahc-030": "in_review"
   },
   "capacity_confirmed": false,
   "declared_completed_capabilities": [
@@ -33,7 +33,7 @@
   ],
   "goal": "Evoluir Nexo para observar entrega, preparar decisões Scrum e aplicar operações autorizadas com evidências, retomada segura e apoio de revisão aprofundada de QA.",
   "id": "sprint-2-5-5",
-  "implementation_increment": "AHC-027/028/029 integrated through PR48/49/50; AHC-030 functional Vera reviewer, typed evidence, trusted-check runner and Nexo closure advice implemented and in review. 970 offline tests passed; two historical live runs preserve model failure and partial completed inspection. No human acceptance, semantic qualification or sprint completion inferred.",
+  "implementation_increment": "AHC-027/028/029/030 functional increments integrated in PR48/49/50/53/54; 988 tests passed, CI and independent reviews completed. Timebox closed by explicit PO decision; individual criterion acceptance and specific QA resolution are not inferred.",
   "planning_date": "2026-10-19",
   "product_owner": "leozitogs",
   "relationship": {
@@ -67,7 +67,7 @@
     "ahc-030"
   ],
   "started_on": "2026-10-19",
-  "status": "in_progress",
+  "status": "closed_with_carryover",
   "timebox_status": "proposed-not-committed",
   "tracking": {
     "issues": {
@@ -91,5 +91,28 @@
     "milestone_number": 4,
     "milestone_url": "https://github.com/leozitogs/ai-harness-compiler/milestone/4"
   },
-  "work_items_file": "planning/sprint-2-5-5.work-items.json"
+  "work_items_file": "planning/sprint-2-5-5.work-items.json",
+  "closed_on": "2026-10-19",
+  "closure": {
+    "authorization": "PO: pode fechar a sprint 2.5.5 e seguir para a sprint 2.6",
+    "review_document": "docs/delivery/sprint-2-5-5-review.md",
+    "closed_on": "2026-10-19",
+    "story_completion_claimed": false,
+    "goal_outcome": "functional-increments-integrated-acceptance-not-certified",
+    "carryover": [
+      "ahc-027",
+      "ahc-028",
+      "ahc-029",
+      "ahc-030"
+    ],
+    "semantic_carryover_preserved": [
+      "ahc-021",
+      "ahc-022",
+      "ahc-023"
+    ],
+    "specific_qa_resolution": "human-confirmation-pending-no-identity-or-specific-decision-fabricated",
+    "qualification": "not-established",
+    "ceremonies": "Asynchronous review performed; no synchronous meeting claimed",
+    "next_focus": "Sprint2.6 starts with prerequisite audit/review before optimization or training"
+  }
 }
