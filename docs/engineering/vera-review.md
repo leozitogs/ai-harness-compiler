@@ -71,6 +71,32 @@ A comparação preserva achados antigos como pendentes, mesmo quando omitidos pe
 modelo. Só declara checks anteriormente falhos agora aprovados sob os mesmos
 critérios em um novo head. Esse resultado não equivale a resolução semântica.
 
+### Confirmação de resolução
+
+Preparar um JSON de evidência com `finding_id`, `citations` (path, linha e trecho
+literal da revisão atual), `check_ids` aprovados e `rationale`. O achado deve existir
+na revisão anterior; a nova revisão deve manter os critérios, inspecionar sua faceta
+e executar checks. Citação e CI não comprovam sozinhas a resolução.
+
+```sh
+factory qa propose-resolution previous.json current.json --evidence evidence.json --repository . --output .factory/proposal.json
+```
+
+O resultado aguarda revisão humana. Somente após uma decisão humana específica,
+o operador registra a confirmação ou rejeição com sua identidade declarada:
+
+```sh
+factory qa review-resolution .factory/proposal.json --decision confirm --actor HUMAN_REVIEWER --comment "Justificativa da decisão humana" --repository . --output .factory/decision.json
+factory qa compare previous.json current.json --resolution .factory/decision.json --team-output .factory/new-resolution-team --repository . --output .factory/comparison.json
+```
+
+Vera/Nexo/autores não são revisores de resolução. O ator é autodeclarado em CLI
+confiável, sem autenticação; não preencher identidade do PO por iniciativa do agente.
+Sem confirmação, achados antigos continuam no parecer combinado do Nexo e P0/P1
+continuam bloqueando. O checkpoint vincula a comparação e suas decisões por hash.
+Resolução de um achado não aceita história, não encerra sprint e não qualifica modelo.
+Ver [ADR-0027](../adr/0027-qa-resolution-evidence-and-human-review.md).
+
 Modificar head, arquivo, diff, snapshot ou contexto de memória invalida reutilização
 e aprovação persistente; recolher nova sessão. Registrar bugs confirmados como INC,
 com causa/tentativas/resolução; LES exige evidência revisada. O revisor não promove

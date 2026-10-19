@@ -40,6 +40,8 @@ from ai_harness_compiler.models.model_session import (
 )
 from ai_harness_compiler.models.qa import (
     QACheckResult,
+    QAFindingResolutionProposal,
+    QAFindingResolutionReview,
     QAIncidentCandidate,
     QAInspection,
     QAReviewComparison,
@@ -104,6 +106,8 @@ from ai_harness_compiler.planning import decompose
 
 MODELS: dict[str, type[Contract]] = {
     "qa-review-request": QAReviewRequest,
+    "qa-finding-resolution-proposal": QAFindingResolutionProposal,
+    "qa-finding-resolution-review": QAFindingResolutionReview,
     "qa-review-comparison": QAReviewComparison,
     "qa-incident-candidate": QAIncidentCandidate,
     "qa-review-report": QAReviewReport,
@@ -748,7 +752,10 @@ def main(argv: list[str] | None = None) -> int:
         extra = (
             "team"
             if args.command in {"team", "compare-understanding"}
-            or (args.command == "qa" and getattr(args, "team", False))
+            or (
+                args.command == "qa"
+                and (getattr(args, "team", False) or getattr(args, "team_output", None) is not None)
+            )
             else "understanding"
         )
         print(

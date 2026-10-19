@@ -5,7 +5,7 @@ import json
 
 from ai_harness_compiler.memory.store import MemoryStore
 from ai_harness_compiler.models import HarnessSpec
-from ai_harness_compiler.models.qa import QAReviewReport
+from ai_harness_compiler.models.qa import QAReviewComparison, QAReviewReport
 from ai_harness_compiler.models.scrum import SprintSnapshot
 from ai_harness_compiler.models.team import Finding, ToolName, ToolResult
 from ai_harness_compiler.planning import decompose
@@ -22,7 +22,9 @@ CHANGE_MAP = {
 }
 
 
-def qa_findings(report: QAReviewReport) -> list[Finding]:
+def qa_findings(
+    report: QAReviewReport, selected_ids: set[str] | None = None, *, include_checks: bool = True
+) -> list[Finding]:
     findings = [
         Finding.model_validate(
             {
@@ -37,6 +39,7 @@ def qa_findings(report: QAReviewReport) -> list[Finding]:
             }
         )
         for f in report.inspection.findings
+        if selected_ids is None or f.id in selected_ids
     ]
     findings.extend(
         Finding(
@@ -45,7 +48,7 @@ def qa_findings(report: QAReviewReport) -> list[Finding]:
             message=f"Observed fixed check {c.id}: {c.status}; not semantic acceptance.",
         )
         for c in report.checks
-        if c.status in {"failed", "timed-out", "output-limit"}
+        if include_checks and c.status in {"failed", "timed-out", "output-limit"}
     )
     return findings
 
@@ -58,11 +61,13 @@ class TeamTools:
         context: RepositoryContext,
         scrum_snapshot: SprintSnapshot | None = None,
         qa_report: QAReviewReport | None = None,
+        qa_comparison: QAReviewComparison | None = None,
     ) -> None:
         self.spec = spec
         self.context = context
         self.scrum_snapshot = scrum_snapshot
         self.qa_report = qa_report
+        self.qa_comparison = qa_comparison
         self._scrum_cache: dict[str, str] = {}
         completed = []
         if scrum_snapshot is not None:
@@ -233,11 +238,38 @@ class TeamTools:
                 if self.qa_report is not None:
                     from ai_harness_compiler.qa import assess_closure
 
+                    findings = qa_findings(self.qa_report)
+                    recommendation = self.qa_report.recommendation
+                    if self.qa_comparison is not None:
+                        pending = set(self.qa_comparison.pending_previous_findings)
+                        prior = qa_findings(
+                            self.qa_comparison.previous, pending, include_checks=False
+                        )
+                        existing = {(f.capability_id, f.source, f.message) for f in findings}
+                        findings.extend(
+                            f
+                            for f in prior
+                            if (f.capability_id, f.source, f.message) not in existing
+                        )
+                        if any(f.severity == "blocker" for f in findings):
+                            recommendation = "changes-required"
+                        elif pending and recommendation == "ready-for-po":
+                            recommendation = "inconclusive"
                     return ToolResult(
                         tool=name,
-                        summary="Nexo prepared QA-bound review and carryover advice.",
-                        findings=qa_findings(self.qa_report),
-                        data={"closure_assessment": assess_closure(self.qa_report).model_dump()},
+                        summary=f"Nexo combined review: {recommendation}; PO review required.",
+                        findings=findings,
+                        data={
+                            "closure_assessment": assess_closure(self.qa_report).model_dump(),
+                            "closure_assessment_scope": "current-inspection-only",
+                            "combined_review_recommendation": recommendation,
+                            "combined_blocking_findings": [
+                                f.model_dump() for f in findings if f.severity == "blocker"
+                            ],
+                            "finding_resolution": self.qa_comparison.model_dump()
+                            if self.qa_comparison is not None
+                            else None,
+                        },
                     )
                 if self.scrum_snapshot is not None:
                     from ai_harness_compiler.scrum_planning import propose

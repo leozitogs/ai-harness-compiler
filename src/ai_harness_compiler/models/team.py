@@ -6,7 +6,7 @@ from pydantic import ConfigDict, Field, model_validator
 
 from ai_harness_compiler.models.base import Contract, Identifier, Text
 from ai_harness_compiler.models.project import ProjectInput
-from ai_harness_compiler.models.qa import QAReviewReport
+from ai_harness_compiler.models.qa import QAReviewComparison, QAReviewReport
 from ai_harness_compiler.models.scrum import SprintSnapshot
 
 Role = Literal["analyst", "architect", "engineer", "quality", "security", "delivery"]
@@ -84,9 +84,17 @@ class TeamConfig(Contract):
     repository_root: Text
     scrum_snapshot: SprintSnapshot | None = None
     qa_report: QAReviewReport | None = None
+    qa_comparison: QAReviewComparison | None = None
 
     @model_validator(mode="after")
     def model_required(self) -> Self:
+        if self.qa_comparison is not None:
+            comparison = QAReviewComparison.model_validate(self.qa_comparison.model_dump())
+            if (
+                self.qa_report is None
+                or comparison.current.report_sha256 != self.qa_report.report_sha256
+            ):
+                raise ValueError("QA comparison must match the configured current report")
         if self.qa_report is not None:
             qa = QAReviewReport.model_validate(self.qa_report.model_dump())
             if (
