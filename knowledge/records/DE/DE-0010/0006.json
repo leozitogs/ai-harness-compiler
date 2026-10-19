@@ -1,0 +1,60 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO approved analysis and requested recording/queueing on 2026-10-19; no new training or paid resources executed.",
+  "created_at": "2026-10-19T20:11:59.539961+00:00",
+  "decision": "Prioritize 021/022/023 carryover; version complete fingerprints before parameter search, require reviewed data and resource feasibility before training.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "764 offline tests passed; actual model-output human review absent. Sprint closure is partial; no model qualification or holdout.",
+      "outcome": "observed",
+      "sha256": "0306e9364c767a0c9a47a66b5db9b22d83aafa94dbd3cfa2ea503cff6fe7a473",
+      "source": "docs/delivery/sprint-2-6.md"
+    },
+    {
+      "command": null,
+      "note": "764 offline tests passed; actual model-output human review absent. Sprint closure is partial; no model qualification or holdout.",
+      "outcome": "observed",
+      "sha256": "8e4729f0c937bb9d376b8a88fa411c9a6dedad3e4f67db4ff7137016b02a48f6",
+      "source": "planning/sprint-2-6.json"
+    },
+    {
+      "command": null,
+      "note": "764 offline tests passed; actual model-output human review absent. Sprint closure is partial; no model qualification or holdout.",
+      "outcome": "observed",
+      "sha256": "ef0f18d105fb540ebdca5d6387fa4c73a6c6ed0612706c34a242f1c940b25cc0",
+      "source": "project-definition/project.yaml"
+    }
+  ],
+  "id": "DE-0010",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "Hardware feasibility not measured for training",
+    "No improvement claimed from recommended sampling values",
+    "Model/provider capabilities must be rechecked before execution"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0006",
+    "DOC-0021"
+  ],
+  "resolution": null,
+  "review_note": "Refresh current source bytes for queued Nexo sprint and regenerated source graph; historical experiments remain unchanged and semantic qualification pending.",
+  "reviewed_by": "codex:planning-review",
+  "revision": 6,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Queue Sprint2.6 with provider-specific profiles, controlled experiments and conditional LoRA/QLoRA feasibility; preserve generalist behavior and project rules in input.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Otimização de inferência antes de fine-tuning condicionado",
+  "updated_at": "2026-10-19T20:39:11.787803+00:00"
+}

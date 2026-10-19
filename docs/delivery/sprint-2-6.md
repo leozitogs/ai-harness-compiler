@@ -3,6 +3,10 @@
 Status: planejada na esteira em 2026-10-19; não iniciada. PO autorizou registrar a
 análise e priorizar a conclusão da Sprint 2.5. Não há prazo, capacidade ou ganho prometido.
 
+A Sprint 2.5.5 do Nexo foi posicionada antes desta sprint por pedido posterior do
+PO. Sua review (ou repriorização explícita) e os gates semânticos remanescentes da
+2.5 precedem os experimentos; uma proposta do Nexo não qualifica o modelo.
+
 ## Objetivo e entrada
 
 Comparar perfis rastreáveis por qualidade semântica, estabilidade e recursos, e

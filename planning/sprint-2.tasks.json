@@ -683,6 +683,102 @@
         "risk": "high",
         "side_effects": [],
         "title": "Viabilidade e piloto condicionado de fine-tuning"
+      },
+      {
+        "acceptance_criteria": [
+          "Contratos versionados de snapshot, evidência e impedimento preservam origem, instante de observação, hashes ou revisões e estado desconhecido; regras de gestão ficam independentes de LangGraph e do provider.",
+          "Coletores somente leitura reconciliam planejamento local e GitHub com precedência explícita por campo; dado indisponível, stale ou divergente nunca é convertido em conclusão ou aceite.",
+          "Regressões incluem PR integrado com critério pendente, dependência aberta, CI sem julgamento semântico e fechamento parcial da Sprint 2.5; nenhum teste padrão chama serviço externo."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-003",
+          "ahc-004"
+        ],
+        "description": "Como PO, quero um retrato verificável de backlog, sprints, PRs, CI e impedimentos para detectar divergências sem inventar entregas.",
+        "evidence_ids": [
+          "backlog-27"
+        ],
+        "id": "ahc-027",
+        "implementation": "deterministic",
+        "inputs": [
+          "backlog",
+          "planos",
+          "documentação",
+          "issues",
+          "PRs",
+          "CI",
+          "revisões"
+        ],
+        "outputs": [
+          "SprintSnapshot",
+          "DeliveryEvidence",
+          "Impediment",
+          "diagnóstico rastreável"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Nexo observador com estado e evidências de Scrum"
+      },
+      {
+        "acceptance_criteria": [
+          "Propostas tipadas vinculam Sprint Goal, histórias, dependências, critérios e evidências; capacidade ausente gera incógnita, sem velocity, prazo ou estimativa inventados.",
+          "Nexo usa ferramentas permitidas, contexto incremental e memória revisada; regra determinística cobre status e DoD, LLM opcional interpreta ambiguidades sob budgets, sem converter relatório em início ou conclusão de sprint.",
+          "Demo offline prepara diagnóstico e review da Sprint 2.5 com carryover explícito; testes rejeitam injeção, fonte alterada, aceitação inexistente e confusão entre proposta, execução e aceite humano."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-027"
+        ],
+        "description": "Como PO, quero propostas de refinamento, planning, acompanhamento e review fundamentadas no estado observado e nas decisões humanas.",
+        "evidence_ids": [
+          "backlog-28"
+        ],
+        "id": "ahc-028",
+        "implementation": "llm",
+        "inputs": [
+          "SprintSnapshot",
+          "política Scrum",
+          "objetivos",
+          "capacidade declarada",
+          "memória"
+        ],
+        "outputs": [
+          "ScrumActionProposal",
+          "propostas de refinamento e cerimônias"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Nexo planejador e facilitador Scrum"
+      },
+      {
+        "acceptance_criteria": [
+          "Escritas limitadas a operações tipadas e autorizadas, com alvo, diff e revisão esperada; mudanças de escopo, ordem, status e marcos respeitam decisões humanas e a DoD, sem shell arbitrário.",
+          "Journal persistente e recibos registram proposta, autorização, tentativa e estado remoto observado; replay, timeout após escrita e concorrência não repetem efeitos silenciosamente, exigindo reconciliação quando o resultado é incerto.",
+          "Testes com adapter fake exercitam idempotência, autorização stale, revisão remota alterada, cancelamento e falha parcial; integração real depende de autorização por ação e não declara reunião, aceite ou tarefa executada sem evidência."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-028"
+        ],
+        "description": "Como PO, quero aplicar propostas autorizadas sem duplicar operações, sobrescrever alterações concorrentes ou dar autoridade irrestrita ao agente.",
+        "evidence_ids": [
+          "backlog-29"
+        ],
+        "id": "ahc-029",
+        "implementation": "deterministic",
+        "inputs": [
+          "ScrumActionProposal revisada",
+          "autorização",
+          "snapshot do alvo"
+        ],
+        "outputs": [
+          "ActionReceipt",
+          "journal e estado reconciliado"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Nexo operador com autorização e retomada segura"
       }
     ],
     "project_id": "ai-harness-compiler",

@@ -16,8 +16,9 @@ de um harness de desenvolvimento. O pipeline completo de IA está no roadmap.
 
 [Sprint 2.5 encerrada com resultado parcial](docs/delivery/sprint-2-5-review.md):
 contratos/evals entregues, nenhum modelo qualificado e revisão semântica pendente.
-[Sprint 2.6 na esteira](docs/delivery/sprint-2-6.md), ainda não iniciada; resolver
-os gates remanescentes antes de promoção, holdout ou treinamento.
+[Sprint 2.5.5 planejada para evoluir o Nexo](docs/delivery/sprint-2-5-5.md), antes da
+[Sprint 2.6 de otimização](docs/delivery/sprint-2-6.md). Ambas ainda não iniciadas;
+os gates remanescentes continuam exigidos antes de promoção, holdout ou treinamento.
 
 **Principal das tarefas com LLM: Codex CLI / `gpt-6.1-sol`, via assinatura ChatGPT.**
 Os seis especialistas herdam a mesma preferência central. Qwen3 4B Instruct é a
