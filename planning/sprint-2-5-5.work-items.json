@@ -1,0 +1,162 @@
+{
+  "execution_started": false,
+  "format": "sprint-work-items/v1",
+  "sprint_id": "sprint-2-5-5",
+  "status": "planned",
+  "work_items": [
+    {
+      "capability_id": "ahc-027",
+      "completion_rule": "Source criteria, reviewed evidence and DoD required; generated plans are not execution evidence.",
+      "depends_on": [],
+      "id": "s255-27-design",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "design",
+      "status": "planned",
+      "task_graph_id": "task-27-design",
+      "verification_source": "docs/delivery/sprint-2-5-5.md"
+    },
+    {
+      "capability_id": "ahc-027",
+      "completion_rule": "Source criteria, reviewed evidence and DoD required; generated plans are not execution evidence.",
+      "depends_on": [
+        "s255-27-design"
+      ],
+      "id": "s255-27-implement",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "implement",
+      "status": "planned",
+      "task_graph_id": "task-27-implement",
+      "verification_source": "docs/delivery/sprint-2-5-5.md"
+    },
+    {
+      "capability_id": "ahc-027",
+      "completion_rule": "Source criteria, reviewed evidence and DoD required; generated plans are not execution evidence.",
+      "depends_on": [
+        "s255-27-implement"
+      ],
+      "id": "s255-27-verify",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "verify",
+      "status": "planned",
+      "task_graph_id": "task-27-verify",
+      "verification_source": "docs/delivery/sprint-2-5-5.md"
+    },
+    {
+      "capability_id": "ahc-027",
+      "completion_rule": "Source criteria, reviewed evidence and DoD required; generated plans are not execution evidence.",
+      "depends_on": [
+        "s255-27-verify"
+      ],
+      "id": "s255-27-review",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "review",
+      "status": "planned",
+      "task_graph_id": "task-27-review",
+      "verification_source": "docs/delivery/sprint-2-5-5.md"
+    },
+    {
+      "capability_id": "ahc-028",
+      "completion_rule": "Source criteria, reviewed evidence and DoD required; generated plans are not execution evidence.",
+      "depends_on": [
+        "s255-27-review"
+      ],
+      "id": "s255-28-design",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "design",
+      "status": "planned",
+      "task_graph_id": "task-28-design",
+      "verification_source": "docs/delivery/sprint-2-5-5.md"
+    },
+    {
+      "capability_id": "ahc-028",
+      "completion_rule": "Source criteria, reviewed evidence and DoD required; generated plans are not execution evidence.",
+      "depends_on": [
+        "s255-28-design"
+      ],
+      "id": "s255-28-implement",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "implement",
+      "status": "planned",
+      "task_graph_id": "task-28-implement",
+      "verification_source": "docs/delivery/sprint-2-5-5.md"
+    },
+    {
+      "capability_id": "ahc-028",
+      "completion_rule": "Source criteria, reviewed evidence and DoD required; generated plans are not execution evidence.",
+      "depends_on": [
+        "s255-28-implement"
+      ],
+      "id": "s255-28-verify",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "verify",
+      "status": "planned",
+      "task_graph_id": "task-28-verify",
+      "verification_source": "docs/delivery/sprint-2-5-5.md"
+    },
+    {
+      "capability_id": "ahc-028",
+      "completion_rule": "Source criteria, reviewed evidence and DoD required; generated plans are not execution evidence.",
+      "depends_on": [
+        "s255-28-verify"
+      ],
+      "id": "s255-28-review",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "review",
+      "status": "planned",
+      "task_graph_id": "task-28-review",
+      "verification_source": "docs/delivery/sprint-2-5-5.md"
+    },
+    {
+      "capability_id": "ahc-029",
+      "completion_rule": "Source criteria, reviewed evidence and DoD required; generated plans are not execution evidence.",
+      "depends_on": [
+        "s255-28-review"
+      ],
+      "id": "s255-29-design",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "design",
+      "status": "planned",
+      "task_graph_id": "task-29-design",
+      "verification_source": "docs/delivery/sprint-2-5-5.md"
+    },
+    {
+      "capability_id": "ahc-029",
+      "completion_rule": "Source criteria, reviewed evidence and DoD required; generated plans are not execution evidence.",
+      "depends_on": [
+        "s255-29-design"
+      ],
+      "id": "s255-29-implement",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "implement",
+      "status": "planned",
+      "task_graph_id": "task-29-implement",
+      "verification_source": "docs/delivery/sprint-2-5-5.md"
+    },
+    {
+      "capability_id": "ahc-029",
+      "completion_rule": "Source criteria, reviewed evidence and DoD required; generated plans are not execution evidence.",
+      "depends_on": [
+        "s255-29-implement"
+      ],
+      "id": "s255-29-verify",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "verify",
+      "status": "planned",
+      "task_graph_id": "task-29-verify",
+      "verification_source": "docs/delivery/sprint-2-5-5.md"
+    },
+    {
+      "capability_id": "ahc-029",
+      "completion_rule": "Source criteria, reviewed evidence and DoD required; generated plans are not execution evidence.",
+      "depends_on": [
+        "s255-29-verify"
+      ],
+      "id": "s255-29-review",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "review",
+      "status": "planned",
+      "task_graph_id": "task-29-review",
+      "verification_source": "docs/delivery/sprint-2-5-5.md"
+    }
+  ]
+}

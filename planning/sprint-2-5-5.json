@@ -1,0 +1,66 @@
+{
+  "authorization": "PO: faz como uma sprint 2.5.5 pra isso; authorizes structuring Nexo Scrum agent sprint, not claiming execution or Done.",
+  "capacity_confirmed": false,
+  "declared_completed_capabilities": [
+    "ahc-001",
+    "ahc-002",
+    "ahc-003",
+    "ahc-004"
+  ],
+  "display_name": "Sprint 2.5.5",
+  "duration_working_days_proposed": 5,
+  "entry_gates": [
+    "Existing Nexo and source bounds inspected",
+    "Confirm capacity and execution scope before starting",
+    "Live operations require specific authorization"
+  ],
+  "execution_guide": "docs/delivery/sprint-2-5-5.md",
+  "execution_started": false,
+  "exit_gates": [
+    "Read-only diagnosis cites source revisions and unknowns",
+    "Scrum proposals preserve human decisions and DoD",
+    "Authorized action replay/concurrency tested without duplicate silent effects",
+    "Efficiency measured against fixed fixtures",
+    "Required CI, review, integration, docs and memory current"
+  ],
+  "goal": "Evoluir Nexo para observar entrega, preparar decisões Scrum e aplicar operações autorizadas com evidências e retomada segura.",
+  "id": "sprint-2-5-5",
+  "planning_date": "2026-10-19",
+  "product_owner": "leozitogs",
+  "relationship": {
+    "carryover_preserved": [
+      "ahc-021",
+      "ahc-022",
+      "ahc-023"
+    ],
+    "policy": "One planned focus before optimization; no semantic qualification inferred or parallel capacity promised.",
+    "predecessor": "sprint-2-5",
+    "successor": "sprint-2-6"
+  },
+  "selected_capabilities": [
+    "ahc-027",
+    "ahc-028",
+    "ahc-029"
+  ],
+  "status": "planned",
+  "timebox_status": "proposed-not-committed",
+  "tracking": {
+    "issues": {
+      "ahc-027": {
+        "number": 44,
+        "url": "https://github.com/leozitogs/ai-harness-compiler/issues/44"
+      },
+      "ahc-028": {
+        "number": 45,
+        "url": "https://github.com/leozitogs/ai-harness-compiler/issues/45"
+      },
+      "ahc-029": {
+        "number": 46,
+        "url": "https://github.com/leozitogs/ai-harness-compiler/issues/46"
+      }
+    },
+    "milestone_number": 4,
+    "milestone_url": "https://github.com/leozitogs/ai-harness-compiler/milestone/4"
+  },
+  "work_items_file": "planning/sprint-2-5-5.work-items.json"
+}

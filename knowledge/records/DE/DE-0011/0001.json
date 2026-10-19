@@ -1,0 +1,60 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:planning",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO: faz como uma sprint 2.5.5 pra isso, on 2026-10-19.",
+  "created_at": "2026-10-19T20:39:10.443060+00:00",
+  "decision": "Plan 027/028/029 sequentially; deterministic evidence/status core, optional bounded LLM and persistent authorized operations in team adapter; no fine-tuning or autonomous acceptance.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Approved sprint structuring; plan and GitHub queue only. No Nexo capability execution, sprint start or story completion claimed.",
+      "outcome": "observed",
+      "sha256": "e1acd47d4f6e6133900b06f68929f1dab13788dcff69e40a90d8e4418fe8a0cf",
+      "source": "docs/delivery/sprint-2-5-5.md"
+    },
+    {
+      "command": null,
+      "note": "Approved sprint structuring; plan and GitHub queue only. No Nexo capability execution, sprint start or story completion claimed.",
+      "outcome": "observed",
+      "sha256": "02731de26776ea62cb050fde9938c588a7a6f959faef9b01015ea942c99c6b1d",
+      "source": "planning/sprint-2-5-5.json"
+    },
+    {
+      "command": null,
+      "note": "Approved sprint structuring; plan and GitHub queue only. No Nexo capability execution, sprint start or story completion claimed.",
+      "outcome": "observed",
+      "sha256": "ef0f18d105fb540ebdca5d6387fa4c73a6c6ed0612706c34a242f1c940b25cc0",
+      "source": "project-definition/project.yaml"
+    }
+  ],
+  "id": "DE-0011",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "Capacity and duration unconfirmed",
+    "Generated task graph is not execution",
+    "Semantic review/qualification carryover remains open"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0021",
+    "DE-0010"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "PO requested Scrum-agent sprint: evolve existing Nexo through observer, planner and authorized operator, preserving semantic carryover and human decisions.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Nexo em Sprint 2.5.5 antes da otimização",
+  "updated_at": "2026-10-19T20:39:10.443060+00:00"
+}

@@ -39,7 +39,9 @@ def test_sprint_25_generation_and_dependency_gates():
         "sprint-02-5",
         "sprint-2-0",
         "sprint-2.5",
-        "sprint-2-5-1",
+        "sprint-2-5-5-1",
+        "sprint-2-05-5",
+        "sprint-2-5-0",
     ],
 )
 def test_invalid_sprint_identifier_fails_before_read(identifier):
@@ -53,3 +55,19 @@ def test_invalid_sprint_identifier_fails_before_read(identifier):
     assert result.returncode == 2
     assert "Sprint ID must match" in result.stderr
     assert "Traceback" not in result.stderr
+
+
+def test_sprint_255_plan_preserves_order_and_unexecuted_status():
+    result = subprocess.run(
+        [sys.executable, "scripts/generate_sprint_plan.py", "--sprint", "sprint-2-5-5", "--check"],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    assert result.returncode == 0, result.stderr
+    graph = TaskGraph.model_validate_json((ROOT / "planning/sprint-2-5-5.tasks.json").read_bytes())
+    assert graph.selected_capabilities == ["ahc-027", "ahc-028", "ahc-029"]
+    assert graph.tasks[4].depends_on == ["task-27-review"]
+    assert graph.tasks[8].depends_on == ["task-28-review"]
+    assert graph.execution_status == "not-run"

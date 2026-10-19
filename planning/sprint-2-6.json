@@ -9,6 +9,7 @@
   ],
   "display_name": "Sprint 2.6",
   "entry_gates": [
+    "Sprint2.5.5 Nexo review or explicit PO reprioritization recorded",
     "Sprint2.5 review and carryover decision recorded",
     "Human-reviewable baseline and error taxonomy",
     "Budgets and data permissions defined before experiments"
@@ -44,8 +45,9 @@
   ],
   "product_owner": "leozitogs",
   "relationship": {
+    "carryover_origin": "sprint-2-5",
     "policy": "Queued focus, no parallel sprint or new training execution authorized by registration.",
-    "predecessor": "sprint-2-5"
+    "predecessor": "sprint-2-5-5"
   },
   "selected_capabilities": [
     "ahc-024",
