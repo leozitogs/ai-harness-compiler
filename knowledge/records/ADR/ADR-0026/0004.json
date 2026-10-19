@@ -1,0 +1,91 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO explicitly authorized implementing the reviewer before the Sprint2.5.5 review on 2026-10-19.",
+  "created_at": "2026-10-19T22:45:56.735393+00:00",
+  "decision": "Separate observed check execution from model hypotheses and human acceptance. Preserve pending findings across comparisons, currentness guards and the persistent PO gate.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "970 offline tests passed; real QA runner and LangGraph gate demonstrated. Model results/limitations are explicit in the immutable demo inventory.",
+      "outcome": "observed",
+      "sha256": "0f7d92a3a2b504c6193b7157b0c0824483697ca943b5ab8034f6f8ec6cbb07b9",
+      "source": "docs/adr/0026-vera-evidence-bound-review.md"
+    },
+    {
+      "command": null,
+      "note": "970 offline tests passed; real QA runner and LangGraph gate demonstrated. Model results/limitations are explicit in the immutable demo inventory.",
+      "outcome": "observed",
+      "sha256": "ef401afcc8bfa480230dbafbbcda60a29f57bb9eb2c594beaec5d806e19d9119",
+      "source": "src/ai_harness_compiler/models/qa.py"
+    },
+    {
+      "command": null,
+      "note": "970 offline tests passed; real QA runner and LangGraph gate demonstrated. Model results/limitations are explicit in the immutable demo inventory.",
+      "outcome": "observed",
+      "sha256": "19d16f7d3dc54b78cb730858d855b09f24a1e464c4f7358ce0814d66eb83efdd",
+      "source": "src/ai_harness_compiler/qa.py"
+    },
+    {
+      "command": null,
+      "note": "970 offline tests passed; real QA runner and LangGraph gate demonstrated. Model results/limitations are explicit in the immutable demo inventory.",
+      "outcome": "observed",
+      "sha256": "ac5739b023ecda1dec3539e34ec0f651682d47c6fbfa21920690d7d4f6d11d81",
+      "source": "src/ai_harness_compiler/qa_collection.py"
+    },
+    {
+      "command": null,
+      "note": "970 offline tests passed; real QA runner and LangGraph gate demonstrated. Model results/limitations are explicit in the immutable demo inventory.",
+      "outcome": "observed",
+      "sha256": "e4632a119a8697d8e559793bfd7dee15bbeb30f3e13adf0f83d36ad3e1f1f69e",
+      "source": "src/ai_harness_compiler/qa_runner.py"
+    },
+    {
+      "command": null,
+      "note": "970 offline tests passed; real QA runner and LangGraph gate demonstrated. Model results/limitations are explicit in the immutable demo inventory.",
+      "outcome": "observed",
+      "sha256": "a85d6669eb4ae4959780f29ece0df2ea279df3ef720f34bce3a9b07fde8693ad",
+      "source": "tests/test_qa.py"
+    },
+    {
+      "command": null,
+      "note": "970 offline tests passed; real QA runner and LangGraph gate demonstrated. Model results/limitations are explicit in the immutable demo inventory.",
+      "outcome": "observed",
+      "sha256": "5356d62366871bf8c23a971808ea117040e4cf8d414e5b44b4b7734fbc3b38b2",
+      "source": "tests/test_qa_runtime.py"
+    }
+  ],
+  "id": "ADR-0026",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "No human criterion acceptance, sprint closure or model qualification inferred.",
+    "Model inspection is advisory; literal citations do not establish semantic correctness.",
+    "Historical demo is not a reusable current approval; head/source/memory changes require a new capture.",
+    "Trusted fixed checks execute repository code; the runner is not an isolation sandbox."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0012",
+    "DOC-0026",
+    "ADR-0024",
+    "ADR-0025"
+  ],
+  "resolution": null,
+  "review_note": "Refresh current code/document digest after INC-0019 portability correction; historical model demonstration identity and limitations remain unchanged.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 4,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Typed QA contracts bind sources, diff, fixed checks, criterion matrix and advisory inspection to an exact Git revision. Nexo consumes evidence without accepting criteria or closing sprints.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Vera com evidência vinculada à revisão e parecer do Nexo",
+  "updated_at": "2026-10-19T22:49:06.345143+00:00"
+}

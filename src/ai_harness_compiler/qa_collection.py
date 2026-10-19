@@ -36,6 +36,9 @@ def stop_tree(process: subprocess.Popen[bytes]) -> None:
 def bounded_process(
     command: list[str], root: Path, timeout: float, limit: int
 ) -> tuple[int | None, str, str]:
+    creationflags = 0
+    if sys.platform == "win32":
+        creationflags = subprocess.CREATE_NEW_PROCESS_GROUP
     process = subprocess.Popen(
         command,
         cwd=root,
@@ -43,7 +46,7 @@ def bounded_process(
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         start_new_session=sys.platform != "win32",
-        creationflags=subprocess.CREATE_NEW_PROCESS_GROUP if sys.platform == "win32" else 0,
+        creationflags=creationflags,
     )
     chunks: list[bytes] = []
     exceeded: list[bool] = []

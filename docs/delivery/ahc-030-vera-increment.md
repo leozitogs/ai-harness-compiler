@@ -56,6 +56,17 @@ O primeiro resultado não foi descartado ou convertido em sucesso. Zero achados
 na segunda seleção não demonstra ausência de defeitos no incremento completo.
 Não foram produzidos INC/LES sem problema confirmado e evidência de resolução.
 
+## Incidente de portabilidade na integração
+
+A primeira matriz do PR #53, execução `39337315890`, falhou na tipagem Linux
+(Python 3.12 e 3.13): `subprocess.CREATE_NEW_PROCESS_GROUP` não existe nos stubs
+desse alvo. A expressão condicional usada como argumento não excluía a referência
+na análise do mypy, embora funcionasse na execução Windows. A correção usa um
+bloco explícito `if sys.platform == "win32"`, preservando o grupo e o cleanup
+por plataforma. `mypy src --platform linux` e `--platform win32` passaram
+localmente. INC-0019 registra causa, tentativa, correção e limites da verificação;
+a demonstração anterior continua histórica, sem alteração de seus relatórios.
+
 A publicação desta evidência altera o checkout e a memória: os relatórios são
 históricos. Para uma decisão atual do PO, recolher snapshot/captura e executar
 nova sessão no head vigente. AHC-030 segue em revisão, com aceite pendente;

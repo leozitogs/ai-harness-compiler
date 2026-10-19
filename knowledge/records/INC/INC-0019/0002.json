@@ -1,0 +1,64 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Default Windows mypy passed before CI; that alone did not exercise Linux stubs.",
+    "CI Linux reported attr-defined for CREATE_NEW_PROCESS_GROUP.",
+    "Move constant assignment into an explicit sys.platform win32 block; run mypy with both platform targets and runtime regression suite."
+  ],
+  "author": "codex:engineering",
+  "challenge": "Cross-platform type check rejected a Windows-only subprocess constant inside a conditional argument.",
+  "consequences": [],
+  "context": "GitHub Actions run39337315890: Linux Python3.12/3.13 rejected subprocess.CREATE_NEW_PROCESS_GROUP in qa_collection.py:46; Windows local check had passed.",
+  "created_at": "2026-10-19T22:49:05.848988+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Both explicit mypy platform targets passed; bounded process and QA runtime regressions passed after correction.",
+      "outcome": "passed",
+      "sha256": "ac5739b023ecda1dec3539e34ec0f651682d47c6fbfa21920690d7d4f6d11d81",
+      "source": "src/ai_harness_compiler/qa_collection.py"
+    },
+    {
+      "command": null,
+      "note": "Both explicit mypy platform targets passed; bounded process and QA runtime regressions passed after correction.",
+      "outcome": "passed",
+      "sha256": "5356d62366871bf8c23a971808ea117040e4cf8d414e5b44b4b7734fbc3b38b2",
+      "source": "tests/test_qa_runtime.py"
+    },
+    {
+      "command": null,
+      "note": "Both explicit mypy platform targets passed; bounded process and QA runtime regressions passed after correction.",
+      "outcome": "passed",
+      "sha256": "0defbfb46610df64cc86e6638d86cae2e2e20d62beefe2c4a46bb0f02ffa329d",
+      "source": "docs/delivery/ahc-030-vera-increment.md"
+    }
+  ],
+  "id": "INC-0019",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Local static checks target both platforms; local process runtime is Windows.",
+    "Historical model demos precede this portability correction and remain unmodified.",
+    "No semantic model quality or human acceptance established."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0026",
+    "DOC-0027"
+  ],
+  "resolution": "Initialize creationflags to zero, assign CREATE_NEW_PROCESS_GROUP only inside an explicit Windows platform branch, and pass the resulting integer to Popen.",
+  "review_note": "Observed CI diagnostic has a concrete cause; explicit platform target checks and runtime regressions verify the scoped correction. No private model traces or inferred business acceptance stored.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": "Mypy on Linux did not prune the Windows-only attribute in a conditional expression; typeshed does not expose this constant for Linux.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "verified",
+  "summary": "Initial PR53 Linux jobs failed at mypy, before tests. Explicit platform branch fixes typeshed visibility while preserving runtime behavior.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Constante Windows causava falha de tipagem Linux no runner QA",
+  "updated_at": "2026-10-19T22:49:05.970761+00:00"
+}
