@@ -1,0 +1,235 @@
+{
+  "$defs": {
+    "DeliveryEvidence": {
+      "additionalProperties": false,
+      "properties": {
+        "content": {
+          "anyOf": [
+            {
+              "maxLength": 262144,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Content"
+        },
+        "content_sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Content Sha256"
+        },
+        "content_trust": {
+          "const": "untrusted-reference-data",
+          "default": "untrusted-reference-data",
+          "title": "Content Trust",
+          "type": "string"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "project",
+            "plan",
+            "work-items",
+            "policy",
+            "memory-index",
+            "issue",
+            "pull-request"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "locator": {
+          "maxLength": 512,
+          "minLength": 1,
+          "title": "Locator",
+          "type": "string"
+        },
+        "number": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Number"
+        },
+        "observed_at": {
+          "maxLength": 40,
+          "minLength": 1,
+          "title": "Observed At",
+          "type": "string"
+        },
+        "project_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Project Id",
+          "type": "string"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not-requested",
+                "read-failed",
+                "limit-exceeded",
+                "provider-failed"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reason"
+        },
+        "repository": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}/[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$",
+          "title": "Repository",
+          "type": "string"
+        },
+        "revision": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Revision"
+        },
+        "schema_version": {
+          "const": "DeliveryEvidence/v1",
+          "default": "DeliveryEvidence/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "observed",
+            "unavailable"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "project_id",
+        "repository",
+        "kind",
+        "locator",
+        "observed_at",
+        "status"
+      ],
+      "title": "DeliveryEvidence",
+      "type": "object"
+    },
+    "StoryPRLink": {
+      "additionalProperties": false,
+      "properties": {
+        "number": {
+          "minimum": 1,
+          "title": "Number",
+          "type": "integer"
+        },
+        "story_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Story Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "story_id",
+        "number"
+      ],
+      "title": "StoryPRLink",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "max_age_seconds": {
+      "default": 3600,
+      "maximum": 86400,
+      "minimum": 1,
+      "title": "Max Age Seconds",
+      "type": "integer"
+    },
+    "observed_at": {
+      "minLength": 1,
+      "title": "Observed At",
+      "type": "string"
+    },
+    "project_id": {
+      "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+      "title": "Project Id",
+      "type": "string"
+    },
+    "pull_request_links": {
+      "items": {
+        "$ref": "#/$defs/StoryPRLink"
+      },
+      "maxItems": 128,
+      "title": "Pull Request Links",
+      "type": "array"
+    },
+    "repository": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}/[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$",
+      "title": "Repository",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "ScrumObservation/v1",
+      "default": "ScrumObservation/v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "sources": {
+      "items": {
+        "$ref": "#/$defs/DeliveryEvidence"
+      },
+      "maxItems": 256,
+      "minItems": 5,
+      "title": "Sources",
+      "type": "array"
+    },
+    "sprint_id": {
+      "maxLength": 64,
+      "pattern": "^sprint-[1-9][0-9]*(?:-[1-9][0-9]*){0,2}$",
+      "title": "Sprint Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "project_id",
+    "repository",
+    "sprint_id",
+    "observed_at",
+    "sources"
+  ],
+  "title": "ScrumObservation",
+  "type": "object"
+}

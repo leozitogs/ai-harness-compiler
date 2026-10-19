@@ -1,0 +1,18 @@
+{
+  "captured_github_reads": 4,
+  "completion_authority": "none",
+  "files": [
+    {
+      "path": "github-snapshot.json",
+      "sha256": "1f2ef31a42521af2008799123d56f3c5fac4b102869463c3bc044d105924a7d2"
+    },
+    {
+      "path": "reconciled-snapshot.json",
+      "sha256": "2661b6af116a10cddb33953af7d11c1732308d5776a265cbd2c6b84ada0f2186"
+    }
+  ],
+  "note": "Final collection only; earlier prototype smoke also read the same four GitHub resources. Reconciliation did not recollect sources.",
+  "observed_model_calls": 0,
+  "split": "engineering-live-read-only-demo",
+  "writes_to_github": 0
+}

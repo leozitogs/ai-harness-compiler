@@ -82,6 +82,11 @@ def load_project(
         raise IntakeError("INTAKE_READ", "Unable to read project manifest.") from exc
     if len(content) > max_manifest_bytes:
         raise IntakeError("INTAKE_TOO_LARGE", "Manifest exceeds configured byte limit.")
+    return parse_project_manifest(content)
+
+
+def parse_project_manifest(content: bytes) -> ProjectInput:
+    """Parse already bounded bytes; callers enforce their own read/size boundary."""
     try:
         text = content.decode("utf-8-sig")
     except UnicodeDecodeError as exc:

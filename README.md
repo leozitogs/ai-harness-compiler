@@ -16,8 +16,8 @@ de um harness de desenvolvimento. O pipeline completo de IA está no roadmap.
 
 [Sprint 2.5 encerrada com resultado parcial](docs/delivery/sprint-2-5-review.md):
 contratos/evals entregues, nenhum modelo qualificado e revisão semântica pendente.
-[Sprint 2.5.5 planejada para evoluir o Nexo](docs/delivery/sprint-2-5-5.md), antes da
-[Sprint 2.6 de otimização](docs/delivery/sprint-2-6.md). Ambas ainda não iniciadas;
+[Sprint 2.5.5 em execução para evoluir o Nexo](docs/delivery/sprint-2-5-5.md), antes da
+[Sprint 2.6 de otimização](docs/delivery/sprint-2-6.md), ainda não iniciada;
 os gates remanescentes continuam exigidos antes de promoção, holdout ou treinamento.
 
 **Principal das tarefas com LLM: Codex CLI / `gpt-6.1-sol`, via assinatura ChatGPT.**
@@ -25,6 +25,9 @@ Os seis especialistas herdam a mesma preferência central. Qwen3 4B Instruct é 
 alternativa local explícita; falhas não trocam de modelo automaticamente.
 [Seleção e evidências](docs/delivery/ahc-023-primary-selection.md).
 É preferência operacional de desenvolvimento, com qualificação semântica pendente.
+
+AHC-027 adiciona um [observador Scrum somente leitura](docs/engineering/scrum-observer.md),
+com fontes limitadas, diagnóstico rastreável e nenhuma autoridade de aceite.
 
 ```sh
 factory model-policy

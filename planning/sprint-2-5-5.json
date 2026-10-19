@@ -1,5 +1,10 @@
 {
   "authorization": "PO: faz como uma sprint 2.5.5 pra isso; authorizes structuring Nexo Scrum agent sprint, not claiming execution or Done.",
+  "capability_status": {
+    "ahc-027": "in_progress",
+    "ahc-028": "planned",
+    "ahc-029": "planned"
+  },
   "capacity_confirmed": false,
   "declared_completed_capabilities": [
     "ahc-001",
@@ -14,8 +19,9 @@
     "Confirm capacity and execution scope before starting",
     "Live operations require specific authorization"
   ],
+  "execution_authorization": "PO: podes começar. Explicit human authorization to start Sprint2.5.5; no model qualification or remote write delegation inferred.",
   "execution_guide": "docs/delivery/sprint-2-5-5.md",
-  "execution_started": false,
+  "execution_started": true,
   "exit_gates": [
     "Read-only diagnosis cites source revisions and unknowns",
     "Scrum proposals preserve human decisions and DoD",
@@ -25,6 +31,7 @@
   ],
   "goal": "Evoluir Nexo para observar entrega, preparar decisões Scrum e aplicar operações autorizadas com evidências e retomada segura.",
   "id": "sprint-2-5-5",
+  "implementation_increment": "AHC-027 read-only observer contracts, bounded collectors and deterministic reconciliation under implementation. AHC-028/029 remain planned.",
   "planning_date": "2026-10-19",
   "product_owner": "leozitogs",
   "relationship": {
@@ -42,7 +49,8 @@
     "ahc-028",
     "ahc-029"
   ],
-  "status": "planned",
+  "started_on": "2026-10-19",
+  "status": "in_progress",
   "timebox_status": "proposed-not-committed",
   "tracking": {
     "issues": {

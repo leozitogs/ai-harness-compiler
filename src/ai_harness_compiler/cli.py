@@ -39,6 +39,12 @@ from ai_harness_compiler.models.model_session import (
     WorkerResult,
 )
 from ai_harness_compiler.models.repair import RepairPlan, RepairReport
+from ai_harness_compiler.models.scrum import (
+    DeliveryEvidence,
+    Impediment,
+    ScrumObservation,
+    SprintSnapshot,
+)
 from ai_harness_compiler.models.semantic_analysis import AnalysisProposal, SemanticAnalysis
 from ai_harness_compiler.models.semantic_analysis_v3 import AnalysisProposalV3, SemanticAnalysisV3
 from ai_harness_compiler.models.semantic_assessment import (
@@ -81,6 +87,10 @@ from ai_harness_compiler.pipeline import plan
 from ai_harness_compiler.planning import decompose
 
 MODELS: dict[str, type[Contract]] = {
+    "delivery-evidence": DeliveryEvidence,
+    "scrum-observation": ScrumObservation,
+    "sprint-snapshot": SprintSnapshot,
+    "scrum-impediment": Impediment,
     "project-input": ProjectInput,
     "project-dna": ProjectDNA,
     "capability-graph": CapabilityGraph,
@@ -321,8 +331,31 @@ def main(argv: list[str] | None = None) -> int:
         assessment_command.add_argument("--rubric", type=Path, required=True)
         assessment_command.add_argument("--review", type=Path)
         assessment_command.add_argument("--output", type=Path, required=True)
+    scrum_command = commands.add_parser("scrum", help="Read-only Scrum observation")
+    scrum_commands = scrum_command.add_subparsers(dest="scrum_command", required=True)
+    scrum_collect = scrum_commands.add_parser(
+        "observe", help="Collect bounded local/optional GitHub sources"
+    )
+    scrum_collect.add_argument("root", type=Path)
+    scrum_collect.add_argument("--project-id", required=True)
+    scrum_collect.add_argument("--repo", required=True)
+    scrum_collect.add_argument("--sprint", required=True)
+    scrum_collect.add_argument("--github", action="store_true")
+    scrum_collect.add_argument("--pull-request", action="append", default=[])
+    scrum_collect.add_argument("--max-age-seconds", type=int, default=3600)
+    scrum_collect.add_argument("--max-remote-reads", type=int, default=16)
+    scrum_collect.add_argument("--output", type=Path, required=True)
+    scrum_reconcile = scrum_commands.add_parser(
+        "reconcile", help="Reconcile saved sources at current time without network"
+    )
+    scrum_reconcile.add_argument("input", type=Path)
+    scrum_reconcile.add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
     try:
+        if args.command == "scrum":
+            from ai_harness_compiler.scrum_cli import execute as execute_scrum
+
+            return execute_scrum(args)
         if args.command in {
             "analyze-project-v2",
             "verify-analysis-v2",

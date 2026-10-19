@@ -1,0 +1,67 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "code": {
+      "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+      "title": "Code",
+      "type": "string"
+    },
+    "evidence_ids": {
+      "items": {
+        "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+        "type": "string"
+      },
+      "maxItems": 256,
+      "minItems": 1,
+      "title": "Evidence Ids",
+      "type": "array"
+    },
+    "id": {
+      "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "message": {
+      "minLength": 1,
+      "title": "Message",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "Impediment/v1",
+      "default": "Impediment/v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "severity": {
+      "enum": [
+        "info",
+        "warning",
+        "blocker"
+      ],
+      "title": "Severity",
+      "type": "string"
+    },
+    "story_id": {
+      "anyOf": [
+        {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Story Id"
+    }
+  },
+  "required": [
+    "id",
+    "code",
+    "severity",
+    "message",
+    "evidence_ids"
+  ],
+  "title": "Impediment",
+  "type": "object"
+}
