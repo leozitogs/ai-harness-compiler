@@ -102,6 +102,11 @@ O extra `team` usa LangGraph como adapter de coordenação da equipe do projeto,
 com SQLite para checkpoints e scikit-learn para ML local. A IR do compilador
 permanece independente. Veja ADR-0004 e a documentação dos agentes do projeto.
 
+AHC-027 adiciona [observação Scrum somente leitura](engineering/scrum-observer.md)
+com contratos independentes, coletores limitados e reconciliação pura (ADR-0023).
+Fontes capturadas sustentam diagnósticos; lifecycle remoto e checks não certificam
+aceite. A integração procedural no Nexo e escritas autorizadas pertencem à AHC-028/029.
+
 ## Evolução da IR
 
 A v1 atual cobre o harness de desenvolvimento. Antes de runtime, introduzir contratos

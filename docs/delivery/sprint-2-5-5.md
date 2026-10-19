@@ -1,8 +1,8 @@
 # Sprint 2.5.5 — Nexo: operações Scrum com evidências
 
-Planejada em 2026-10-19 por pedido explícito do PO. Escopo autorizado para
-estruturação; execução ainda não iniciada. Capacidade, datas e duração não foram
-confirmadas. Proposta inicial de cinco dias úteis, sujeita a ajuste de escopo.
+Planejada e iniciada em 2026-10-19 por pedido explícito do PO (`podes começar`).
+AHC-027 ativa; AHC-028/029 permanecem planejadas. Capacidade e duração não estão
+calibradas; proposta de cinco dias úteis não é prazo de entrega prometido.
 
 ## Sprint Goal
 
@@ -16,7 +16,7 @@ humanas. Referências: [acordo local](scrum.md) e [Scrum Guide](https://scrumgui
 
 ## Posição na esteira
 
-Sprint 2.5 encerrada com carryover → **2.5.5 planejada** → 2.6 planejada.
+Sprint 2.5 encerrada com carryover → **2.5.5 em execução** → 2.6 planejada.
 AHC-021/022/023 continuam abertas e seus gates de semântica/qualificação permanecem.
 A 2.5.5 inspeciona essas pendências; não as conclui por produzir um relatório.
 AHC-024/025/026 continuam na 2.6. Não há capacidade paralela ou início automático.

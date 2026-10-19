@@ -1,0 +1,74 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO explicitly authorized starting Sprint2.5.5 on 2026-10-19.",
+  "created_at": "2026-10-19T21:00:42.272368+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Read-only observer implementation and captured engineering demo; no criterion acceptance, model call or remote write.",
+      "outcome": "observed",
+      "sha256": "887afad37d3101b60100543911fada2b421b47bc1438b6af28d0a79f1b7c070d",
+      "source": "docs/delivery/ahc-027-observer-increment.md"
+    },
+    {
+      "command": null,
+      "note": "Read-only observer implementation and captured engineering demo; no criterion acceptance, model call or remote write.",
+      "outcome": "observed",
+      "sha256": "06b6e1a55e7dd53dd2f0f989933e74da6167906933cc1fd26cd723e1eea9183c",
+      "source": "docs/engineering/scrum-observer.md"
+    },
+    {
+      "command": null,
+      "note": "Read-only observer implementation and captured engineering demo; no criterion acceptance, model call or remote write.",
+      "outcome": "observed",
+      "sha256": "cda5d8263c08de2fde87ad79cb4b50a37d1b07f351adcd7f78f9f77a48cbb3c3",
+      "source": "docs/evidence/ahc-027-observer-20261019/inventory.json"
+    },
+    {
+      "command": null,
+      "note": "Read-only observer implementation and captured engineering demo; no criterion acceptance, model call or remote write.",
+      "outcome": "observed",
+      "sha256": "0d5e7183e33c8bc67d9fb6b320d5c1439d459f4c27a7a86a9b8fe96df6dcbb2c",
+      "source": "planning/sprint-2-5-5.json"
+    },
+    {
+      "command": null,
+      "note": "Read-only observer implementation and captured engineering demo; no criterion acceptance, model call or remote write.",
+      "outcome": "observed",
+      "sha256": "fd3bba37ba1f91d78d2b6cf5640962e8ac9c974304e1da77862bae94afff658a",
+      "source": "tests/test_scrum_collection.py"
+    }
+  ],
+  "id": "DOC-0023",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "No Nexo procedural planning or operation yet",
+    "Checksums prove internal consistency, not authenticity",
+    "No per-criterion human review ingestion or Done certification"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0011",
+    "DOC-0022"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 3,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Sprint2.5.5 explicitly started. AHC-027 observer implemented: final demo captured three open issues, one merged PR with successful reported checks, partial closure and no acceptance authority.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Incremento e demo real do observador AHC-027",
+  "updated_at": "2026-10-19T21:04:27.396709+00:00"
+}
