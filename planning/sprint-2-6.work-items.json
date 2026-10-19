@@ -1,0 +1,392 @@
+{
+  "format": "sprint-work-items/v1",
+  "sprint_id": "sprint-2-6",
+  "status": "in_progress",
+  "execution_started": true,
+  "active_phase": "prerequisite-review-and-baseline-audit",
+  "work_items": [
+    {
+      "id": "s26-21-design",
+      "capability_id": "ahc-021",
+      "stage": "design",
+      "task_graph_id": "task-21-design",
+      "status": "in_review",
+      "depends_on": [],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-21-implement",
+      "capability_id": "ahc-021",
+      "stage": "implement",
+      "task_graph_id": "task-21-implement",
+      "status": "in_review",
+      "depends_on": [
+        "s26-21-design"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-21-verify",
+      "capability_id": "ahc-021",
+      "stage": "verify",
+      "task_graph_id": "task-21-verify",
+      "status": "in_progress",
+      "depends_on": [
+        "s26-21-implement"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-21-review",
+      "capability_id": "ahc-021",
+      "stage": "review",
+      "task_graph_id": "task-21-review",
+      "status": "planned",
+      "depends_on": [
+        "s26-21-verify"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-22-design",
+      "capability_id": "ahc-022",
+      "stage": "design",
+      "task_graph_id": "task-22-design",
+      "status": "in_review",
+      "depends_on": [
+        "s26-21-review"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-22-implement",
+      "capability_id": "ahc-022",
+      "stage": "implement",
+      "task_graph_id": "task-22-implement",
+      "status": "in_review",
+      "depends_on": [
+        "s26-22-design"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-22-verify",
+      "capability_id": "ahc-022",
+      "stage": "verify",
+      "task_graph_id": "task-22-verify",
+      "status": "planned",
+      "depends_on": [
+        "s26-22-implement"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-22-review",
+      "capability_id": "ahc-022",
+      "stage": "review",
+      "task_graph_id": "task-22-review",
+      "status": "planned",
+      "depends_on": [
+        "s26-22-verify"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-23-design",
+      "capability_id": "ahc-023",
+      "stage": "design",
+      "task_graph_id": "task-23-design",
+      "status": "in_review",
+      "depends_on": [
+        "s26-22-review"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-23-implement",
+      "capability_id": "ahc-023",
+      "stage": "implement",
+      "task_graph_id": "task-23-implement",
+      "status": "in_review",
+      "depends_on": [
+        "s26-23-design"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-23-verify",
+      "capability_id": "ahc-023",
+      "stage": "verify",
+      "task_graph_id": "task-23-verify",
+      "status": "planned",
+      "depends_on": [
+        "s26-23-implement"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-23-review",
+      "capability_id": "ahc-023",
+      "stage": "review",
+      "task_graph_id": "task-23-review",
+      "status": "planned",
+      "depends_on": [
+        "s26-23-verify"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-24-design",
+      "capability_id": "ahc-024",
+      "stage": "design",
+      "task_graph_id": "task-24-design",
+      "status": "blocked",
+      "depends_on": [
+        "s26-21-review",
+        "s26-22-review"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-24-implement",
+      "capability_id": "ahc-024",
+      "stage": "implement",
+      "task_graph_id": "task-24-implement",
+      "status": "blocked",
+      "depends_on": [
+        "s26-24-design"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-24-verify",
+      "capability_id": "ahc-024",
+      "stage": "verify",
+      "task_graph_id": "task-24-verify",
+      "status": "blocked",
+      "depends_on": [
+        "s26-24-implement"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-24-review",
+      "capability_id": "ahc-024",
+      "stage": "review",
+      "task_graph_id": "task-24-review",
+      "status": "blocked",
+      "depends_on": [
+        "s26-24-verify"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-25-design",
+      "capability_id": "ahc-025",
+      "stage": "design",
+      "task_graph_id": "task-25-design",
+      "status": "blocked",
+      "depends_on": [
+        "s26-24-review"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-25-implement",
+      "capability_id": "ahc-025",
+      "stage": "implement",
+      "task_graph_id": "task-25-implement",
+      "status": "blocked",
+      "depends_on": [
+        "s26-25-design"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-25-verify",
+      "capability_id": "ahc-025",
+      "stage": "verify",
+      "task_graph_id": "task-25-verify",
+      "status": "blocked",
+      "depends_on": [
+        "s26-25-implement"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-25-review",
+      "capability_id": "ahc-025",
+      "stage": "review",
+      "task_graph_id": "task-25-review",
+      "status": "blocked",
+      "depends_on": [
+        "s26-25-verify"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-26-design",
+      "capability_id": "ahc-026",
+      "stage": "design",
+      "task_graph_id": "task-26-design",
+      "status": "blocked",
+      "depends_on": [
+        "s26-25-review"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-26-implement",
+      "capability_id": "ahc-026",
+      "stage": "implement",
+      "task_graph_id": "task-26-implement",
+      "status": "blocked",
+      "depends_on": [
+        "s26-26-design"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-26-verify",
+      "capability_id": "ahc-026",
+      "stage": "verify",
+      "task_graph_id": "task-26-verify",
+      "status": "blocked",
+      "depends_on": [
+        "s26-26-implement"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    },
+    {
+      "id": "s26-26-review",
+      "capability_id": "ahc-026",
+      "stage": "review",
+      "task_graph_id": "task-26-review",
+      "status": "blocked",
+      "depends_on": [
+        "s26-26-verify"
+      ],
+      "responsible": "code-collaborator-supported-by-codex",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-6-kickoff.md",
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+      ],
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+    }
+  ]
+}

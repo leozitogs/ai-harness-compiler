@@ -1,0 +1,65 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:planning",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO explicitly requested adding reviewer creation to Sprint2.5.5 before its concluding review on 2026-10-19.",
+  "created_at": "2026-10-19T22:06:23.007656+00:00",
+  "decision": "Extend the existing quality persona instead of duplicating responsibility; keep authorship, QA advice, execution evidence and human acceptance separate. Do not conclude Sprint2.5.5 before implementing and verifying the new scope.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Current implementation state documented; historical planning remains in prior immutable revisions. 970 tests passed, human acceptance pending.",
+      "outcome": "observed",
+      "sha256": "326e2156270cbc454e07ce357af82f12f80cc4499e3f6a5bca0fc79e482e6f3e",
+      "source": "docs/delivery/ahc-030-reviewer-scope.md"
+    },
+    {
+      "command": null,
+      "note": "Current implementation state documented; historical planning remains in prior immutable revisions. 970 tests passed, human acceptance pending.",
+      "outcome": "observed",
+      "sha256": "c5f6a4e98dceb7518d4af9d791b32ce085e49f55d31047ce36d82b0707542071",
+      "source": "project-definition/project.yaml"
+    },
+    {
+      "command": null,
+      "note": "Current implementation state documented; historical planning remains in prior immutable revisions. 970 tests passed, human acceptance pending.",
+      "outcome": "observed",
+      "sha256": "e06c7f91146585d178de4be264124260047b23bc82ebfd5382069289bc742d26",
+      "source": "planning/sprint-2-5-5.json"
+    }
+  ],
+  "id": "DE-0012",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "No human criterion acceptance, sprint closure or model qualification inferred.",
+    "Model inspection is advisory; literal citations do not establish semantic correctness.",
+    "Historical demo is not a reusable current approval; head/source/memory changes require a new capture.",
+    "Trusted fixed checks execute repository code; the runner is not an isolation sandbox."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0011",
+    "DOC-0022",
+    "ADR-0024",
+    "ADR-0025",
+    "ADR-0026",
+    "DOC-0027"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 5,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Initial scope amendment followed by explicit PO implementation authorization. Functional AHC-030 reviewer and Nexo review package implemented and verified; human acceptance and Sprint2.5.5 closure remain pending. See ADR-0026/DOC-0027 for actual evidence and limits.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Emenda da Sprint2.5.5 para Vera revisora de QA",
+  "updated_at": "2026-10-19T23:26:49.423089+00:00"
+}

@@ -16,8 +16,8 @@ de um harness de desenvolvimento. O pipeline completo de IA está no roadmap.
 
 [Sprint 2.5 encerrada com resultado parcial](docs/delivery/sprint-2-5-review.md):
 contratos/evals entregues, nenhum modelo qualificado e revisão semântica pendente.
-[Sprint 2.5.5 em execução para evoluir o Nexo](docs/delivery/sprint-2-5-5.md), antes da
-[Sprint 2.6 de otimização](docs/delivery/sprint-2-6.md), ainda não iniciada;
+[Sprint 2.5.5 encerrada por decisão do PO](docs/delivery/sprint-2-5-5-review.md), com pendências preservadas.
+[Sprint 2.6 iniciada](docs/delivery/sprint-2-6-kickoff.md) pela auditoria da baseline e revisão dos pré-requisitos;
 os gates remanescentes continuam exigidos antes de promoção, holdout ou treinamento.
 
 **Principal das tarefas com LLM: Codex CLI / `gpt-6.1-sol`, via assinatura ChatGPT.**

@@ -1,0 +1,63 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:planning",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO: faz como uma sprint 2.5.5 pra isso, on 2026-10-19.",
+  "created_at": "2026-10-19T20:39:10.443060+00:00",
+  "decision": "Plan 027/028/029 sequentially; deterministic evidence/status core, optional bounded LLM and persistent authorized operations in team adapter; no fine-tuning or autonomous acceptance.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Approved sprint structuring; plan and GitHub queue only. No Nexo capability execution, sprint start or story completion claimed.",
+      "outcome": "observed",
+      "sha256": "5513787fad7ce84dd9eae979e9f7e7b0a186ead3562c8b71c5a8f0506ca7dfd9",
+      "source": "docs/delivery/sprint-2-5-5.md"
+    },
+    {
+      "command": null,
+      "note": "Approved sprint structuring; plan and GitHub queue only. No Nexo capability execution, sprint start or story completion claimed.",
+      "outcome": "observed",
+      "sha256": "e06c7f91146585d178de4be264124260047b23bc82ebfd5382069289bc742d26",
+      "source": "planning/sprint-2-5-5.json"
+    },
+    {
+      "command": null,
+      "note": "Approved sprint structuring; plan and GitHub queue only. No Nexo capability execution, sprint start or story completion claimed.",
+      "outcome": "observed",
+      "sha256": "c5f6a4e98dceb7518d4af9d791b32ce085e49f55d31047ce36d82b0707542071",
+      "source": "project-definition/project.yaml"
+    }
+  ],
+  "id": "DE-0011",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "Capacity and duration unconfirmed",
+    "Generated task graph is not execution",
+    "Semantic review/qualification carryover remains open"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0021",
+    "DE-0010",
+    "DE-0012",
+    "DOC-0026",
+    "DE-0013"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 13,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "PO requested Nexo Scrum sprint and Vera scope, authorized execution, then explicitly closed Sprint2.5.5 and started Sprint2.6. Functional increments integrated; pending individual reviews and semantic carryover preserved.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Nexo em Sprint 2.5.5 antes da otimização",
+  "updated_at": "2026-10-19T23:26:48.469564+00:00"
+}

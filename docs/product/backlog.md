@@ -31,9 +31,12 @@ Owner no refinamento. Estimativas são hipóteses de discussão, não compromiss
 | AHC-018 | E5 / Aprendizagem por experiências do projeto | P2 | 008, 010, 016, 017 | A refinar |
 | AHC-019 | E1 / Entendimento generalista e regras de negócio | P0 | 002, 003 | In progress — contratos/adapter integrados; qualificação semântica pendente |
 | AHC-020 | E2 / Blueprint e packs opcionais | P0 | 019 | Sprint 2 aprovada; depende da entrega 019 |
-| AHC-021 | E1 / Rubrica e evals semânticos do entendimento | P0 | 002, 003, 004 | Sprint 2.5 — design em andamento |
-| AHC-022 | E1 / Grounding e cobertura de regras | P0 | 021 | Sprint 2.5 — planned |
-| AHC-023 | E1 / Qualificação do modelo e perfil local | P0 | 022 | Sprint 2.5 — planned; piloto não conclui história |
+| AHC-021 | E1 / Rubrica e evals semânticos do entendimento | P0 | 002, 003, 004 | Sprint 2.6 — carryover; auditoria de entrada executada, revisão humana pendente |
+| AHC-022 | E1 / Grounding e cobertura de regras | P0 | 021 | Sprint 2.6 — carryover; comparação completa e revisão pendentes |
+| AHC-023 | E1 / Qualificação do modelo e perfil local | P0 | 022 | Sprint 2.6 — carryover; nenhum modelo qualificado |
+| AHC-024 | E1 / Perfis de inferência por provider | P1 | 021, 022 | Sprint 2.6 — bloqueada pelos pré-requisitos |
+| AHC-025 | E1 / Experimentos controlados | P1 | 024 | Sprint 2.6 — bloqueada; orçamento antes das chamadas |
+| AHC-026 | E1 / Viabilidade de fine-tuning | P2 | 025 | Sprint 2.6 — condicional; treino não iniciado |
 
 O [pipeline por projeto](project-generation-pipeline.md)
 define o caminho dos novos itens e as diferenças entre capacidade interna e produto gerado.
@@ -67,5 +70,8 @@ qualificação do modelo antes de avançar no blueprint. Não declara Sprint 2 c
 
 AHC-030 foi incluída pelo PO na Sprint 2.5.5 antes da review: evolução funcional
 da Vera para QA aprofundado, achados reproduzíveis e apoio ao Nexo no encerramento.
-[Escopo e critérios](../delivery/ahc-030-reviewer-scope.md). Estado: in progress por autorização posterior do PO; incremento funcional em
-revisão, sem aceite das histórias ou encerramento de sprint inferidos.
+[Escopo e critérios](../delivery/ahc-030-reviewer-scope.md). Incremento funcional integrado
+com correções; a [timebox 2.5.5 foi fechada por decisão explícita do PO](../delivery/sprint-2-5-5-review.md),
+preservando revisões por critério e confirmação específica do achado.
+A [Sprint 2.6 está em execução](../delivery/sprint-2-6-kickoff.md) na fase de
+auditoria e revisão dos pré-requisitos, antes de perfis, experimentos e treinamento.
