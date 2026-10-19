@@ -4,7 +4,7 @@
     "ahc-027": "in_progress",
     "ahc-028": "in_progress",
     "ahc-029": "in_progress",
-    "ahc-030": "planned"
+    "ahc-030": "in_progress"
   },
   "capacity_confirmed": false,
   "declared_completed_capabilities": [
@@ -33,7 +33,7 @@
   ],
   "goal": "Evoluir Nexo para observar entrega, preparar decisões Scrum e aplicar operações autorizadas com evidências, retomada segura e apoio de revisão aprofundada de QA.",
   "id": "sprint-2-5-5",
-  "implementation_increment": "AHC-027/028/029 integrated through PR48/49/50 and remain in review. PO added planned AHC-030 functional Vera reviewer and Nexo review/closure support before Sprint2.5.5 review. AHC-030 implementation not started; no acceptance or sprint completion inferred.",
+  "implementation_increment": "AHC-027/028/029 integrated through PR48/49/50; AHC-030 functional Vera reviewer, typed evidence, trusted-check runner and Nexo closure advice under implementation/review by explicit PO authorization. No criterion acceptance or sprint completion inferred.",
   "planning_date": "2026-10-19",
   "product_owner": "leozitogs",
   "relationship": {
@@ -55,7 +55,8 @@
       "capacity_impact": "unknown; no revised duration commitment",
       "date": "2026-10-19",
       "document": "docs/delivery/ahc-030-reviewer-scope.md",
-      "implementation_started": false,
+      "implementation_authorization": "PO: pode implementar.",
+      "implementation_started": true,
       "status": "approved-for-planning"
     }
   ],

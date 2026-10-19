@@ -67,5 +67,5 @@ qualificação do modelo antes de avançar no blueprint. Não declara Sprint 2 c
 
 AHC-030 foi incluída pelo PO na Sprint 2.5.5 antes da review: evolução funcional
 da Vera para QA aprofundado, achados reproduzíveis e apoio ao Nexo no encerramento.
-[Escopo e critérios](../delivery/ahc-030-reviewer-scope.md). Estado: planned; não
-representa agente já implementado ou aceite das histórias anteriores.
+[Escopo e critérios](../delivery/ahc-030-reviewer-scope.md). Estado: in progress por autorização posterior do PO; incremento funcional em
+revisão, sem aceite das histórias ou encerramento de sprint inferidos.

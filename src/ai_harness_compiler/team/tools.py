@@ -5,6 +5,7 @@ import json
 
 from ai_harness_compiler.memory.store import MemoryStore
 from ai_harness_compiler.models import HarnessSpec
+from ai_harness_compiler.models.qa import QAReviewReport
 from ai_harness_compiler.models.scrum import SprintSnapshot
 from ai_harness_compiler.models.team import Finding, ToolName, ToolResult
 from ai_harness_compiler.planning import decompose
@@ -21,6 +22,34 @@ CHANGE_MAP = {
 }
 
 
+def qa_findings(report: QAReviewReport) -> list[Finding]:
+    findings = [
+        Finding.model_validate(
+            {
+                "capability_id": f.story_id,
+                "severity": "blocker"
+                if f.severity in {"P0", "P1"}
+                else "warning"
+                if f.severity == "P2"
+                else "info",
+                "message": f"Advisory {f.severity}: {f.title}; reproduction not executed.",
+                "source": f"{f.citations[0].path}:{f.citations[0].line}",
+            }
+        )
+        for f in report.inspection.findings
+    ]
+    findings.extend(
+        Finding(
+            severity="blocker",
+            source=f"qa/checks/{c.id}",
+            message=f"Observed fixed check {c.id}: {c.status}; not semantic acceptance.",
+        )
+        for c in report.checks
+        if c.status in {"failed", "timed-out", "output-limit"}
+    )
+    return findings
+
+
 class TeamTools:
     def __init__(
         self,
@@ -28,10 +57,12 @@ class TeamTools:
         selected: list[str],
         context: RepositoryContext,
         scrum_snapshot: SprintSnapshot | None = None,
+        qa_report: QAReviewReport | None = None,
     ) -> None:
         self.spec = spec
         self.context = context
         self.scrum_snapshot = scrum_snapshot
+        self.qa_report = qa_report
         self._scrum_cache: dict[str, str] = {}
         completed = []
         if scrum_snapshot is not None:
@@ -136,6 +167,14 @@ class TeamTools:
                     },
                 )
             case "quality_review":
+                if self.qa_report is not None:
+                    qa = QAReviewReport.model_validate(self.qa_report.model_dump())
+                    return ToolResult(
+                        tool=name,
+                        summary="Vera reviewed bound check and inspection evidence.",
+                        findings=qa_findings(qa),
+                        data={"qa_review": qa.model_dump(), "acceptance": "not-established"},
+                    )
                 inventory: dict[str, object] = {}
                 for source, content in self.context.documents.items():
                     if source.startswith("tests/"):
@@ -191,6 +230,15 @@ class TeamTools:
                     },
                 )
             case "delivery_plan":
+                if self.qa_report is not None:
+                    from ai_harness_compiler.qa import assess_closure
+
+                    return ToolResult(
+                        tool=name,
+                        summary="Nexo prepared QA-bound review and carryover advice.",
+                        findings=qa_findings(self.qa_report),
+                        data={"closure_assessment": assess_closure(self.qa_report).model_dump()},
+                    )
                 if self.scrum_snapshot is not None:
                     from ai_harness_compiler.scrum_planning import propose
 

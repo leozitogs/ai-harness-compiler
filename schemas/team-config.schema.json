@@ -896,6 +896,599 @@
       "title": "ProjectInput",
       "type": "object"
     },
+    "QACheckResult": {
+      "additionalProperties": false,
+      "properties": {
+        "exit_code": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Exit Code"
+        },
+        "finished_at": {
+          "minLength": 1,
+          "title": "Finished At",
+          "type": "string"
+        },
+        "head_commit": {
+          "pattern": "^[0-9a-f]{40}$",
+          "title": "Head Commit",
+          "type": "string"
+        },
+        "id": {
+          "enum": [
+            "lint",
+            "format",
+            "typing",
+            "tests",
+            "schemas",
+            "repo-policy",
+            "sprint-plan"
+          ],
+          "title": "Id",
+          "type": "string"
+        },
+        "output": {
+          "default": "",
+          "maxLength": 32768,
+          "title": "Output",
+          "type": "string"
+        },
+        "output_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Output Sha256",
+          "type": "string"
+        },
+        "request_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Request Sha256",
+          "type": "string"
+        },
+        "started_at": {
+          "minLength": 1,
+          "title": "Started At",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "passed",
+            "failed",
+            "timed-out",
+            "not-run",
+            "output-limit"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "request_sha256",
+        "head_commit",
+        "status",
+        "started_at",
+        "finished_at",
+        "output_sha256"
+      ],
+      "title": "QACheckResult",
+      "type": "object"
+    },
+    "QACitation": {
+      "additionalProperties": false,
+      "properties": {
+        "line": {
+          "minimum": 1,
+          "title": "Line",
+          "type": "integer"
+        },
+        "path": {
+          "minLength": 1,
+          "title": "Path",
+          "type": "string"
+        },
+        "quote": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "line",
+        "quote"
+      ],
+      "title": "QACitation",
+      "type": "object"
+    },
+    "QACriterionResult": {
+      "additionalProperties": false,
+      "properties": {
+        "criterion": {
+          "minLength": 1,
+          "title": "Criterion",
+          "type": "string"
+        },
+        "criterion_index": {
+          "minimum": 0,
+          "title": "Criterion Index",
+          "type": "integer"
+        },
+        "finding_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 32,
+          "title": "Finding Ids",
+          "type": "array"
+        },
+        "story_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Story Id",
+          "type": "string"
+        },
+        "verification": {
+          "const": "not-established",
+          "default": "not-established",
+          "title": "Verification",
+          "type": "string"
+        }
+      },
+      "required": [
+        "story_id",
+        "criterion_index",
+        "criterion",
+        "finding_ids"
+      ],
+      "title": "QACriterionResult",
+      "type": "object"
+    },
+    "QAInspection": {
+      "additionalProperties": false,
+      "description": "A model or analyst proposes findings, never check success or closure.",
+      "properties": {
+        "findings": {
+          "items": {
+            "$ref": "#/$defs/QAInspectionFinding"
+          },
+          "maxItems": 32,
+          "title": "Findings",
+          "type": "array"
+        },
+        "inspected_facets": {
+          "items": {
+            "enum": [
+              "code",
+              "contracts",
+              "provenance",
+              "security",
+              "regressions",
+              "business",
+              "artifacts"
+            ],
+            "type": "string"
+          },
+          "maxItems": 7,
+          "title": "Inspected Facets",
+          "type": "array"
+        },
+        "limitations": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Limitations",
+          "type": "array"
+        },
+        "schema_version": {
+          "const": "QAInspection/v1",
+          "default": "QAInspection/v1",
+          "title": "Schema Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "limitations"
+      ],
+      "title": "QAInspection",
+      "type": "object"
+    },
+    "QAInspectionFinding": {
+      "additionalProperties": false,
+      "properties": {
+        "citations": {
+          "items": {
+            "$ref": "#/$defs/QACitation"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Citations",
+          "type": "array"
+        },
+        "criterion_index": {
+          "minimum": 0,
+          "title": "Criterion Index",
+          "type": "integer"
+        },
+        "facet": {
+          "enum": [
+            "code",
+            "contracts",
+            "provenance",
+            "security",
+            "regressions",
+            "business",
+            "artifacts"
+          ],
+          "title": "Facet",
+          "type": "string"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "impact": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Impact",
+          "type": "string"
+        },
+        "recommendation": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Recommendation",
+          "type": "string"
+        },
+        "reproduction": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Reproduction",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "P0",
+            "P1",
+            "P2",
+            "P3"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "story_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Story Id",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "verification": {
+          "const": "not-executed",
+          "default": "not-executed",
+          "title": "Verification",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "severity",
+        "facet",
+        "story_id",
+        "criterion_index",
+        "title",
+        "impact",
+        "recommendation",
+        "citations",
+        "reproduction"
+      ],
+      "title": "QAInspectionFinding",
+      "type": "object"
+    },
+    "QAReviewReport": {
+      "additionalProperties": false,
+      "properties": {
+        "acceptance": {
+          "const": "not-established",
+          "default": "not-established",
+          "title": "Acceptance",
+          "type": "string"
+        },
+        "authority": {
+          "const": "advisory-only",
+          "default": "advisory-only",
+          "title": "Authority",
+          "type": "string"
+        },
+        "checks": {
+          "items": {
+            "$ref": "#/$defs/QACheckResult"
+          },
+          "maxItems": 7,
+          "title": "Checks",
+          "type": "array"
+        },
+        "criterion_count": {
+          "minimum": 0,
+          "title": "Criterion Count",
+          "type": "integer"
+        },
+        "criterion_matrix": {
+          "items": {
+            "$ref": "#/$defs/QACriterionResult"
+          },
+          "maxItems": 4096,
+          "title": "Criterion Matrix",
+          "type": "array"
+        },
+        "engine": {
+          "enum": [
+            "local",
+            "codex-cli",
+            "ollama",
+            "provided-inspection"
+          ],
+          "title": "Engine",
+          "type": "string"
+        },
+        "inspection": {
+          "$ref": "#/$defs/QAInspection"
+        },
+        "inspection_status": {
+          "default": "not-requested",
+          "enum": [
+            "completed",
+            "not-requested",
+            "rejected"
+          ],
+          "title": "Inspection Status",
+          "type": "string"
+        },
+        "missing_facets": {
+          "items": {
+            "enum": [
+              "code",
+              "contracts",
+              "provenance",
+              "security",
+              "regressions",
+              "business",
+              "artifacts"
+            ],
+            "type": "string"
+          },
+          "title": "Missing Facets",
+          "type": "array"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "model_attempts": {
+          "default": 0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Model Attempts",
+          "type": "integer"
+        },
+        "model_calls": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": 0,
+          "title": "Model Calls"
+        },
+        "recommendation": {
+          "enum": [
+            "changes-required",
+            "inconclusive",
+            "ready-for-po"
+          ],
+          "title": "Recommendation",
+          "type": "string"
+        },
+        "request": {
+          "$ref": "#/$defs/QAReviewRequest"
+        },
+        "request_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Request Sha256",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "QAReviewReport/v1",
+          "default": "QAReviewReport/v1",
+          "title": "Schema Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "request",
+        "request_sha256",
+        "engine",
+        "inspection",
+        "checks",
+        "recommendation",
+        "missing_facets",
+        "criterion_count",
+        "criterion_matrix"
+      ],
+      "title": "QAReviewReport",
+      "type": "object"
+    },
+    "QAReviewRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "author": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Author",
+          "type": "string"
+        },
+        "base_commit": {
+          "pattern": "^[0-9a-f]{40}$",
+          "title": "Base Commit",
+          "type": "string"
+        },
+        "captured_at": {
+          "minLength": 1,
+          "title": "Captured At",
+          "type": "string"
+        },
+        "check_ids": {
+          "items": {
+            "enum": [
+              "lint",
+              "format",
+              "typing",
+              "tests",
+              "schemas",
+              "repo-policy",
+              "sprint-plan"
+            ],
+            "type": "string"
+          },
+          "title": "Check Ids",
+          "type": "array"
+        },
+        "check_timeout_seconds": {
+          "default": 120,
+          "maximum": 300,
+          "minimum": 1,
+          "title": "Check Timeout Seconds",
+          "type": "integer"
+        },
+        "diff": {
+          "default": "",
+          "maxLength": 65536,
+          "title": "Diff",
+          "type": "string"
+        },
+        "diff_sha256": {
+          "default": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Diff Sha256",
+          "type": "string"
+        },
+        "excluded_paths": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 256,
+          "title": "Excluded Paths",
+          "type": "array"
+        },
+        "head_commit": {
+          "pattern": "^[0-9a-f]{40}$",
+          "title": "Head Commit",
+          "type": "string"
+        },
+        "max_age_seconds": {
+          "default": 3600,
+          "maximum": 3600,
+          "minimum": 60,
+          "title": "Max Age Seconds",
+          "type": "integer"
+        },
+        "reviewer": {
+          "const": "vera",
+          "default": "vera",
+          "title": "Reviewer",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "QAReviewRequest/v1",
+          "default": "QAReviewRequest/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "snapshot": {
+          "$ref": "#/$defs/SprintSnapshot"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/ReviewSource"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Sources",
+          "type": "array"
+        },
+        "total_check_seconds": {
+          "default": 300,
+          "maximum": 600,
+          "minimum": 1,
+          "title": "Total Check Seconds",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "snapshot",
+        "base_commit",
+        "head_commit",
+        "author",
+        "captured_at",
+        "sources"
+      ],
+      "title": "QAReviewRequest",
+      "type": "object"
+    },
+    "ReviewSource": {
+      "additionalProperties": false,
+      "properties": {
+        "content": {
+          "maxLength": 65536,
+          "title": "Content",
+          "type": "string"
+        },
+        "path": {
+          "maxLength": 512,
+          "minLength": 1,
+          "title": "Path",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "content",
+        "sha256"
+      ],
+      "title": "ReviewSource",
+      "type": "object"
+    },
     "RiskProfile": {
       "additionalProperties": false,
       "properties": {
@@ -1221,6 +1814,17 @@
     },
     "project": {
       "$ref": "#/$defs/ProjectInput"
+    },
+    "qa_report": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/QAReviewReport"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
     },
     "repository_root": {
       "minLength": 1,

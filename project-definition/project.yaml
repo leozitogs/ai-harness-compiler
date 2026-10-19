@@ -362,6 +362,6 @@ backlog:
       - Testes e demo exercitam falso sucesso, falha de negócio com CI verde, evidência stale ou ausente, reprodução inválida, achado resolvido em nova revisão e fechamento parcial; falhas reais alimentam INC e lições somente com evidência revisada, sem criar aprovação, cerimônia ou encerramento fictício.
     depends_on: [ahc-029]
     inputs: [SprintSnapshot, código e diff por revisão, critérios de aceitação, política de qualidade, evidências de checks, memória revisada]
-    outputs: [QAReviewRequest proposto, QAReviewReport proposto, SprintClosureAssessment proposto, achados e parecer consultivo]
+    outputs: [QAReviewRequest/v1, QAReviewReport/v1, SprintClosureAssessment/v1, QAReviewComparison/v1, candidatos de incidente]
     risk: high
     implementation: llm

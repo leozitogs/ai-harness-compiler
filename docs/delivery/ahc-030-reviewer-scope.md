@@ -1,8 +1,9 @@
 # AHC-030 — Vera revisora e apoio ao encerramento
 
 Emenda solicitada pelo PO em 2026-10-19, antes da review da Sprint 2.5.5.
-**Escopo aprovado para planejamento; implementação ainda não iniciada.**
-Não há novo agente funcional entregue por este documento. Evoluir a Vera existente
+**Implementação autorizada pelo PO: pode implementar. Incremento em execução/revisão.**
+A emenda original permanece no histórico Git; a operação implementada está em
+[vera-review](../engineering/vera-review.md). Evoluir a Vera existente
 com modo de revisão aprofundada evita duplicar a responsabilidade de qualidade.
 O objetivo é código executável e integração com Nexo, não apenas uma nova persona.
 
@@ -21,8 +22,8 @@ quando aplicável. Não exigir a invenção de defeitos quando nenhum for encont
 
 ## Entrega funcional prevista
 
-Contratos propostos, ainda não implementados: `QAReviewRequest`, `QAReviewReport` e
-`SprintClosureAssessment`. Definir versão e schemas antes do adapter. A requisição
+Contratos v1 implementados neste incremento: `QAReviewRequest`, `QAReviewReport` e
+`SprintClosureAssessment`. Schemas versionados acompanham o adapter. A requisição
 deve delimitar projeto/repositório, sprint, commit/base/head, snapshot, critérios,
 fontes permitidas e budgets. O parecer deve registrar cobertura, achados P0–P3,
 evidências, checks realmente executados, checks não executados e limitações.
