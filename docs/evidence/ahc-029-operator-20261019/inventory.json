@@ -1,0 +1,15 @@
+{
+  "artifacts": [
+    {
+      "path": "docs/evidence/ahc-029-operator-20261019/read-only-inspection.json",
+      "sha256": "d3f4d7cf36e030c0ed3c894613804c063b528b1d3878c6d2ba8d1bc4ddccb4e8"
+    },
+    {
+      "path": "docs/evidence/ahc-029-operator-20261019/simulation.json",
+      "sha256": "e40702be928062f927000c19fe4e614e3870293ddad27479f62e1368c6c917fc"
+    }
+  ],
+  "kind": "engineering-evidence-inventory",
+  "live_check": "one real issue GET only; POST not exercised against GitHub",
+  "simulation": "fake adapter and simulated authorization; no real PO decision or GitHub write"
+}

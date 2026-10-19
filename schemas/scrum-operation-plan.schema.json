@@ -1,0 +1,810 @@
+{
+  "$defs": {
+    "DeliveryEvidence": {
+      "additionalProperties": false,
+      "properties": {
+        "content": {
+          "anyOf": [
+            {
+              "maxLength": 262144,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Content"
+        },
+        "content_sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Content Sha256"
+        },
+        "content_trust": {
+          "const": "untrusted-reference-data",
+          "default": "untrusted-reference-data",
+          "title": "Content Trust",
+          "type": "string"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "project",
+            "plan",
+            "work-items",
+            "policy",
+            "memory-index",
+            "issue",
+            "pull-request"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "locator": {
+          "maxLength": 512,
+          "minLength": 1,
+          "title": "Locator",
+          "type": "string"
+        },
+        "number": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Number"
+        },
+        "observed_at": {
+          "maxLength": 40,
+          "minLength": 1,
+          "title": "Observed At",
+          "type": "string"
+        },
+        "project_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Project Id",
+          "type": "string"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not-requested",
+                "read-failed",
+                "limit-exceeded",
+                "provider-failed"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reason"
+        },
+        "repository": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}/[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$",
+          "title": "Repository",
+          "type": "string"
+        },
+        "revision": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Revision"
+        },
+        "schema_version": {
+          "const": "DeliveryEvidence/v1",
+          "default": "DeliveryEvidence/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "observed",
+            "unavailable"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "project_id",
+        "repository",
+        "kind",
+        "locator",
+        "observed_at",
+        "status"
+      ],
+      "title": "DeliveryEvidence",
+      "type": "object"
+    },
+    "Impediment": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Code",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 256,
+          "minItems": 1,
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "message": {
+          "minLength": 1,
+          "title": "Message",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "Impediment/v1",
+          "default": "Impediment/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "info",
+            "warning",
+            "blocker"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "story_id": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Story Id"
+        }
+      },
+      "required": [
+        "id",
+        "code",
+        "severity",
+        "message",
+        "evidence_ids"
+      ],
+      "title": "Impediment",
+      "type": "object"
+    },
+    "ObservedPullRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "checks": {
+          "enum": [
+            "all-success",
+            "failure",
+            "pending",
+            "unknown"
+          ],
+          "title": "Checks",
+          "type": "string"
+        },
+        "evidence_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "head_sha": {
+          "pattern": "^[0-9a-f]{40}$",
+          "title": "Head Sha",
+          "type": "string"
+        },
+        "number": {
+          "minimum": 1,
+          "title": "Number",
+          "type": "integer"
+        },
+        "state": {
+          "enum": [
+            "OPEN",
+            "CLOSED",
+            "MERGED"
+          ],
+          "title": "State",
+          "type": "string"
+        }
+      },
+      "required": [
+        "number",
+        "state",
+        "head_sha",
+        "checks",
+        "evidence_id"
+      ],
+      "title": "ObservedPullRequest",
+      "type": "object"
+    },
+    "ObservedStory": {
+      "additionalProperties": false,
+      "properties": {
+        "acceptance": {
+          "const": "not-established",
+          "default": "not-established",
+          "title": "Acceptance",
+          "type": "string"
+        },
+        "declared_status": {
+          "minLength": 1,
+          "title": "Declared Status",
+          "type": "string"
+        },
+        "dependencies": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 128,
+          "title": "Dependencies",
+          "type": "array"
+        },
+        "evidence_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 256,
+          "minItems": 1,
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "issue_state": {
+          "enum": [
+            "OPEN",
+            "CLOSED",
+            "unknown"
+          ],
+          "title": "Issue State",
+          "type": "string"
+        },
+        "pull_requests": {
+          "items": {
+            "$ref": "#/$defs/ObservedPullRequest"
+          },
+          "maxItems": 128,
+          "title": "Pull Requests",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "declared_status",
+        "issue_state",
+        "evidence_ids"
+      ],
+      "title": "ObservedStory",
+      "type": "object"
+    },
+    "RemoteIssueState": {
+      "additionalProperties": false,
+      "properties": {
+        "assignee_ids": {
+          "items": {
+            "type": "integer"
+          },
+          "maxItems": 100,
+          "title": "Assignee Ids",
+          "type": "array"
+        },
+        "body_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Body Sha256",
+          "type": "string"
+        },
+        "labels": {
+          "items": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 256,
+          "title": "Labels",
+          "type": "array"
+        },
+        "milestone_id": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Milestone Id"
+        },
+        "node_id": {
+          "maxLength": 160,
+          "minLength": 1,
+          "title": "Node Id",
+          "type": "string"
+        },
+        "number": {
+          "minimum": 1,
+          "title": "Number",
+          "type": "integer"
+        },
+        "observed_at": {
+          "minLength": 1,
+          "title": "Observed At",
+          "type": "string"
+        },
+        "repository": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}/[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$",
+          "title": "Repository",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "RemoteIssueState/v1",
+          "default": "RemoteIssueState/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "state": {
+          "enum": [
+            "open",
+            "closed"
+          ],
+          "title": "State",
+          "type": "string"
+        },
+        "title_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Title Sha256",
+          "type": "string"
+        },
+        "updated_at": {
+          "minLength": 1,
+          "title": "Updated At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "repository",
+        "number",
+        "node_id",
+        "observed_at",
+        "updated_at",
+        "state",
+        "title_sha256",
+        "body_sha256",
+        "labels"
+      ],
+      "title": "RemoteIssueState",
+      "type": "object"
+    },
+    "ScrumActionProposal": {
+      "additionalProperties": false,
+      "properties": {
+        "acceptance": {
+          "const": "not-established",
+          "default": "not-established",
+          "title": "Acceptance",
+          "type": "string"
+        },
+        "acceptance_criteria": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 512,
+          "title": "Acceptance Criteria",
+          "type": "array"
+        },
+        "alternatives": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 4,
+          "minItems": 2,
+          "title": "Alternatives",
+          "type": "array"
+        },
+        "capacity": {
+          "const": "unknown",
+          "default": "unknown",
+          "title": "Capacity",
+          "type": "string"
+        },
+        "decision_recipient": {
+          "enum": [
+            "human-product-owner",
+            "developers"
+          ],
+          "title": "Decision Recipient",
+          "type": "string"
+        },
+        "dependencies": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 128,
+          "title": "Dependencies",
+          "type": "array"
+        },
+        "diagnostic_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 1024,
+          "title": "Diagnostic Ids",
+          "type": "array"
+        },
+        "evidence_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 256,
+          "minItems": 1,
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "execution": {
+          "const": "not-authorized",
+          "default": "not-authorized",
+          "title": "Execution",
+          "type": "string"
+        },
+        "goal": {
+          "minLength": 1,
+          "title": "Goal",
+          "type": "string"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "refinement",
+            "planning",
+            "review"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "recommendation": {
+          "minLength": 1,
+          "title": "Recommendation",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "ScrumActionProposal/v1",
+          "default": "ScrumActionProposal/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "story_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 64,
+          "title": "Story Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "goal",
+        "story_ids",
+        "evidence_ids",
+        "recommendation",
+        "alternatives",
+        "decision_recipient"
+      ],
+      "title": "ScrumActionProposal",
+      "type": "object"
+    },
+    "ScrumObservation": {
+      "additionalProperties": false,
+      "properties": {
+        "max_age_seconds": {
+          "default": 3600,
+          "maximum": 86400,
+          "minimum": 1,
+          "title": "Max Age Seconds",
+          "type": "integer"
+        },
+        "observed_at": {
+          "minLength": 1,
+          "title": "Observed At",
+          "type": "string"
+        },
+        "project_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Project Id",
+          "type": "string"
+        },
+        "pull_request_links": {
+          "items": {
+            "$ref": "#/$defs/StoryPRLink"
+          },
+          "maxItems": 128,
+          "title": "Pull Request Links",
+          "type": "array"
+        },
+        "repository": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}/[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$",
+          "title": "Repository",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "ScrumObservation/v1",
+          "default": "ScrumObservation/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/DeliveryEvidence"
+          },
+          "maxItems": 256,
+          "minItems": 5,
+          "title": "Sources",
+          "type": "array"
+        },
+        "sprint_id": {
+          "maxLength": 64,
+          "pattern": "^sprint-[1-9][0-9]*(?:-[1-9][0-9]*){0,2}$",
+          "title": "Sprint Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "project_id",
+        "repository",
+        "sprint_id",
+        "observed_at",
+        "sources"
+      ],
+      "title": "ScrumObservation",
+      "type": "object"
+    },
+    "ScrumPlanningReport": {
+      "additionalProperties": false,
+      "properties": {
+        "authority": {
+          "const": "proposal-only",
+          "default": "proposal-only",
+          "title": "Authority",
+          "type": "string"
+        },
+        "backlog_modified": {
+          "const": false,
+          "default": false,
+          "title": "Backlog Modified",
+          "type": "boolean"
+        },
+        "proposals": {
+          "items": {
+            "$ref": "#/$defs/ScrumActionProposal"
+          },
+          "maxItems": 66,
+          "minItems": 2,
+          "title": "Proposals",
+          "type": "array"
+        },
+        "schema_version": {
+          "const": "ScrumPlanningReport/v1",
+          "default": "ScrumPlanningReport/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "snapshot": {
+          "$ref": "#/$defs/SprintSnapshot"
+        },
+        "sprint_started": {
+          "const": false,
+          "default": false,
+          "title": "Sprint Started",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "snapshot",
+        "proposals"
+      ],
+      "title": "ScrumPlanningReport",
+      "type": "object"
+    },
+    "SprintSnapshot": {
+      "additionalProperties": false,
+      "properties": {
+        "authority": {
+          "const": "read-only-diagnostic",
+          "default": "read-only-diagnostic",
+          "title": "Authority",
+          "type": "string"
+        },
+        "completion_authority": {
+          "const": "none",
+          "default": "none",
+          "title": "Completion Authority",
+          "type": "string"
+        },
+        "declared_goal_outcome": {
+          "enum": [
+            "achieved",
+            "not-achieved",
+            "unknown"
+          ],
+          "title": "Declared Goal Outcome",
+          "type": "string"
+        },
+        "declared_state": {
+          "minLength": 1,
+          "title": "Declared State",
+          "type": "string"
+        },
+        "impediments": {
+          "items": {
+            "$ref": "#/$defs/Impediment"
+          },
+          "maxItems": 1024,
+          "title": "Impediments",
+          "type": "array"
+        },
+        "observation": {
+          "$ref": "#/$defs/ScrumObservation"
+        },
+        "observation_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Observation Sha256",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "SprintSnapshot/v1",
+          "default": "SprintSnapshot/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "stories": {
+          "items": {
+            "$ref": "#/$defs/ObservedStory"
+          },
+          "maxItems": 64,
+          "title": "Stories",
+          "type": "array"
+        }
+      },
+      "required": [
+        "observation",
+        "observation_sha256",
+        "declared_state",
+        "declared_goal_outcome"
+      ],
+      "title": "SprintSnapshot",
+      "type": "object"
+    },
+    "StoryPRLink": {
+      "additionalProperties": false,
+      "properties": {
+        "number": {
+          "minimum": 1,
+          "title": "Number",
+          "type": "integer"
+        },
+        "story_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Story Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "story_id",
+        "number"
+      ],
+      "title": "StoryPRLink",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "expected": {
+      "$ref": "#/$defs/RemoteIssueState"
+    },
+    "kind": {
+      "const": "add-issue-label",
+      "default": "add-issue-label",
+      "title": "Kind",
+      "type": "string"
+    },
+    "label": {
+      "enum": [
+        "nexo:needs-refinement",
+        "nexo:needs-capacity",
+        "nexo:needs-evidence"
+      ],
+      "title": "Label",
+      "type": "string"
+    },
+    "proposal_id": {
+      "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+      "title": "Proposal Id",
+      "type": "string"
+    },
+    "report": {
+      "$ref": "#/$defs/ScrumPlanningReport"
+    },
+    "schema_version": {
+      "const": "ScrumOperationPlan/v1",
+      "default": "ScrumOperationPlan/v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "story_id": {
+      "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+      "title": "Story Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "report",
+    "proposal_id",
+    "story_id",
+    "label",
+    "expected"
+  ],
+  "title": "ScrumOperationPlan",
+  "type": "object"
+}

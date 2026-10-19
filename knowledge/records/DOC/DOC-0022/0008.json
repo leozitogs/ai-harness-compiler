@@ -1,0 +1,74 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:planning",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO: faz como uma sprint 2.5.5 pra isso, on 2026-10-19. Later PO message: podes começar; this is explicit start authorization, separate from report approval.",
+  "created_at": "2026-10-19T20:39:10.705256+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Approved sprint structuring; plan and GitHub queue only. No Nexo capability execution, sprint start or story completion claimed.",
+      "outcome": "observed",
+      "sha256": "44769cf1e57a863d979e12d264b9057217d212066e0e10dd50cd465958702d74",
+      "source": "planning/sprint-2-5-5.json"
+    },
+    {
+      "command": null,
+      "note": "Approved sprint structuring; plan and GitHub queue only. No Nexo capability execution, sprint start or story completion claimed.",
+      "outcome": "observed",
+      "sha256": "bf6f3ff449d377917b17fd2b67823ed1a561c6d2aa8a4f8738573168d0379b9d",
+      "source": "planning/sprint-2-5-5.tasks.json"
+    },
+    {
+      "command": null,
+      "note": "Approved sprint structuring; plan and GitHub queue only. No Nexo capability execution, sprint start or story completion claimed.",
+      "outcome": "observed",
+      "sha256": "0c8473d94e09d9dfbffcae064734f0fcac043e196da2d646f1f46019eb15c0aa",
+      "source": "planning/sprint-2-5-5.work-items.json"
+    },
+    {
+      "command": null,
+      "note": "Approved sprint structuring; plan and GitHub queue only. No Nexo capability execution, sprint start or story completion claimed.",
+      "outcome": "observed",
+      "sha256": "88c02ef961d79a7ef6f9918c03e4e96db3b3b99684bed6aa122d0e35b4be4b8c",
+      "source": "docs/delivery/sprint-2-5-5.md"
+    },
+    {
+      "command": null,
+      "note": "Approved sprint structuring; plan and GitHub queue only. No Nexo capability execution, sprint start or story completion claimed.",
+      "outcome": "observed",
+      "sha256": "df1bef7e72011e59d954c05d0122223240a51717abd02805280b046203b6c9b6",
+      "source": "tests/test_sprint_ids.py"
+    }
+  ],
+  "id": "DOC-0022",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Capacity and duration unconfirmed",
+    "Generated task graph is not execution",
+    "Semantic review/qualification carryover remains open"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0021",
+    "DE-0010"
+  ],
+  "resolution": null,
+  "review_note": "Refresh current sprint sources for explicitly authorized AHC-029 continuation; preserve historical demos, pending acceptance and semantic qualification limitations.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 8,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Sprint2.5.5 explicitly in execution; observer and Nexo planning integrated through PR48/49, operator increment AHC-029 in implementation/review. All stories remain in review; no human criterion acceptance or completion inferred.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Plano e esteira da Sprint 2.5.5",
+  "updated_at": "2026-10-19T21:39:59.331073+00:00"
+}

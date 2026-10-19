@@ -1,0 +1,488 @@
+{
+  "actual_human_authorization": false,
+  "actual_remote_writes": 0,
+  "authorization_fixture": "Simulated PO decision for tests only, not a real authorization.",
+  "criterion_acceptance": "not-established",
+  "declared_goal_outcome": "not-achieved",
+  "fake_dispatches": 1,
+  "fake_effects": 1,
+  "fake_reads": 2,
+  "kind": "offline-simulation",
+  "model_calls": 0,
+  "operation_sha256": "1933f57d2c145fa669a0146d6eb193eec77a58305a6f3aa35c2990de0e90b102",
+  "plan": {
+    "expected": {
+      "assignee_ids": [],
+      "body_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "labels": [
+        "existing"
+      ],
+      "milestone_id": null,
+      "node_id": "issue-node-1",
+      "number": 1,
+      "observed_at": "2026-10-19T21:38:18.354515+00:00",
+      "repository": "owner/repo",
+      "schema_version": "RemoteIssueState/v1",
+      "state": "open",
+      "title_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "updated_at": "2026-10-19T12:00:00+00:00"
+    },
+    "kind": "add-issue-label",
+    "label": "nexo:needs-refinement",
+    "proposal_id": "refine-1",
+    "report": {
+      "authority": "proposal-only",
+      "backlog_modified": false,
+      "proposals": [
+        {
+          "acceptance": "not-established",
+          "acceptance_criteria": [
+            "Rule"
+          ],
+          "alternatives": [
+            "Refine before selecting scope.",
+            "Defer explicitly and retain the original criteria."
+          ],
+          "capacity": "unknown",
+          "decision_recipient": "human-product-owner",
+          "dependencies": [],
+          "diagnostic_ids": [],
+          "evidence_ids": [
+            "source-1",
+            "source-2",
+            "source-6"
+          ],
+          "execution": "not-authorized",
+          "goal": "Meaningful delivery",
+          "id": "refine-1",
+          "kind": "refinement",
+          "recommendation": "Review source criteria, unresolved dependencies and acceptance evidence with the PO.",
+          "schema_version": "ScrumActionProposal/v1",
+          "story_ids": [
+            "alpha"
+          ]
+        },
+        {
+          "acceptance": "not-established",
+          "acceptance_criteria": [
+            "Rule"
+          ],
+          "alternatives": [
+            "Refine before selecting scope.",
+            "Defer explicitly and retain the original criteria."
+          ],
+          "capacity": "unknown",
+          "decision_recipient": "human-product-owner",
+          "dependencies": [
+            "alpha"
+          ],
+          "diagnostic_ids": [
+            "observation-1",
+            "observation-2",
+            "observation-3"
+          ],
+          "evidence_ids": [
+            "source-1",
+            "source-2",
+            "source-7"
+          ],
+          "execution": "not-authorized",
+          "goal": "Meaningful delivery",
+          "id": "refine-2",
+          "kind": "refinement",
+          "recommendation": "Review source criteria, unresolved dependencies and acceptance evidence with the PO.",
+          "schema_version": "ScrumActionProposal/v1",
+          "story_ids": [
+            "beta"
+          ]
+        },
+        {
+          "acceptance": "not-established",
+          "acceptance_criteria": [],
+          "alternatives": [
+            "Confirm capacity and discuss feasible scope with the PO.",
+            "Keep planning pending while missing information is collected."
+          ],
+          "capacity": "unknown",
+          "decision_recipient": "developers",
+          "dependencies": [],
+          "diagnostic_ids": [
+            "observation-1",
+            "observation-2",
+            "observation-3",
+            "observation-4"
+          ],
+          "evidence_ids": [
+            "source-1",
+            "source-2",
+            "source-3",
+            "source-4",
+            "source-5",
+            "source-6",
+            "source-7"
+          ],
+          "execution": "not-authorized",
+          "goal": "Meaningful delivery",
+          "id": "planning-capacity",
+          "kind": "planning",
+          "recommendation": "Ask Developers for available capacity and dependency feasibility before proposing a Sprint Backlog; no forecast is established.",
+          "schema_version": "ScrumActionProposal/v1",
+          "story_ids": [
+            "alpha",
+            "beta"
+          ]
+        },
+        {
+          "acceptance": "not-established",
+          "acceptance_criteria": [],
+          "alternatives": [
+            "Inspect evidence and record a separate human decision.",
+            "Request missing evidence and retain unresolved work as carryover."
+          ],
+          "capacity": "unknown",
+          "decision_recipient": "human-product-owner",
+          "dependencies": [],
+          "diagnostic_ids": [
+            "observation-1",
+            "observation-2",
+            "observation-3",
+            "observation-4"
+          ],
+          "evidence_ids": [
+            "source-1",
+            "source-2",
+            "source-3",
+            "source-4",
+            "source-5",
+            "source-6",
+            "source-7"
+          ],
+          "execution": "not-authorized",
+          "goal": "Meaningful delivery",
+          "id": "review-evidence",
+          "kind": "review",
+          "recommendation": "Review declared outcome (not-achieved) and carryover; CI and merged PRs do not establish criterion acceptance.",
+          "schema_version": "ScrumActionProposal/v1",
+          "story_ids": [
+            "alpha",
+            "beta"
+          ]
+        }
+      ],
+      "schema_version": "ScrumPlanningReport/v1",
+      "snapshot": {
+        "authority": "read-only-diagnostic",
+        "completion_authority": "none",
+        "declared_goal_outcome": "not-achieved",
+        "declared_state": "closed_with_carryover",
+        "impediments": [
+          {
+            "code": "done-unverified",
+            "evidence_ids": [
+              "source-1",
+              "source-2",
+              "source-7"
+            ],
+            "id": "observation-1",
+            "message": "Done or closed is declared; criteria acceptance and DoD are not established.",
+            "schema_version": "Impediment/v1",
+            "severity": "blocker",
+            "story_id": "beta"
+          },
+          {
+            "code": "status-divergence",
+            "evidence_ids": [
+              "source-1",
+              "source-2",
+              "source-7"
+            ],
+            "id": "observation-2",
+            "message": "Local completion declaration and observed issue lifecycle disagree.",
+            "schema_version": "Impediment/v1",
+            "severity": "warning",
+            "story_id": "beta"
+          },
+          {
+            "code": "dependency-unresolved",
+            "evidence_ids": [
+              "source-1",
+              "source-2",
+              "source-6"
+            ],
+            "id": "observation-3",
+            "message": "Dependencies not declared complete or observed open: alpha",
+            "schema_version": "Impediment/v1",
+            "severity": "warning",
+            "story_id": "beta"
+          },
+          {
+            "code": "closed-with-carryover",
+            "evidence_ids": [
+              "source-2"
+            ],
+            "id": "observation-4",
+            "message": "Sprint closed with unfinished/unverified work; no story is promoted to Done.",
+            "schema_version": "Impediment/v1",
+            "severity": "warning",
+            "story_id": null
+          }
+        ],
+        "observation": {
+          "max_age_seconds": 3600,
+          "observed_at": "2026-10-19T21:38:18.351049+00:00",
+          "project_id": "demo",
+          "pull_request_links": [],
+          "repository": "owner/repo",
+          "schema_version": "ScrumObservation/v1",
+          "sources": [
+            {
+              "content": "{\"schema_version\":\"ProjectInput/v1\",\"id\":\"demo\",\"name\":\"Demo\",\"conception\":\"Fixture\",\"domain\":null,\"branding\":{\"audience\":[],\"tone\":[],\"principles\":[],\"visual_constraints\":[]},\"backlog\":[{\"id\":\"alpha\",\"title\":\"alpha\",\"description\":\"Work\",\"acceptance_criteria\":[\"Rule\"],\"depends_on\":[],\"inputs\":[],\"outputs\":[],\"data_owner\":null,\"side_effects\":[],\"risk\":\"unknown\",\"implementation\":\"undecided\"},{\"id\":\"beta\",\"title\":\"beta\",\"description\":\"Work\",\"acceptance_criteria\":[\"Rule\"],\"depends_on\":[\"alpha\"],\"inputs\":[],\"outputs\":[],\"data_owner\":null,\"side_effects\":[],\"risk\":\"unknown\",\"implementation\":\"undecided\"}],\"constraints\":{\"technical\":[],\"security\":[],\"business\":[],\"max_build_cost_usd\":0.0},\"assets\":[],\"evidence_pack\":null,\"domain_profile\":null}",
+              "content_sha256": "a5fb60971120ecfe966eda5cb0a4e19c1fc12696c01aa601f69f827287e1e36c",
+              "content_trust": "untrusted-reference-data",
+              "id": "source-1",
+              "kind": "project",
+              "locator": "project-definition/project.yaml",
+              "number": null,
+              "observed_at": "2026-10-19T21:38:18.347178+00:00",
+              "project_id": "demo",
+              "reason": null,
+              "repository": "owner/repo",
+              "revision": "44d2370ecee47cbf0fd61317d8814f9e600b2119059bc84c47f66e7651564cff",
+              "schema_version": "DeliveryEvidence/v1",
+              "status": "observed"
+            },
+            {
+              "content": "{\"id\": \"sprint-2-5\", \"goal\": \"Meaningful delivery\", \"status\": \"closed_with_carryover\", \"selected_capabilities\": [\"alpha\", \"beta\"], \"declared_completed_capabilities\": [], \"capability_status\": {\"alpha\": \"in_progress\", \"beta\": \"planned\"}, \"closure\": {\"goal_achieved\": false}, \"tracking\": {\"issues\": {\"alpha\": {\"number\": 1, \"url\": \"https://github.com/owner/repo/issues/1\"}, \"beta\": {\"number\": 2, \"url\": \"https://github.com/owner/repo/issues/2\"}}}}",
+              "content_sha256": "f7246873d3fb65e5c76cedf4ef421942507d08b8b6ef299b1e090450cc2dd2c8",
+              "content_trust": "untrusted-reference-data",
+              "id": "source-2",
+              "kind": "plan",
+              "locator": "planning/sprint-2-5.json",
+              "number": null,
+              "observed_at": "2026-10-19T21:38:18.348042+00:00",
+              "project_id": "demo",
+              "reason": null,
+              "repository": "owner/repo",
+              "revision": "f7246873d3fb65e5c76cedf4ef421942507d08b8b6ef299b1e090450cc2dd2c8",
+              "schema_version": "DeliveryEvidence/v1",
+              "status": "observed"
+            },
+            {
+              "content": "{\"sprint_id\": \"sprint-2-5\", \"work_items\": []}",
+              "content_sha256": "5c2742668cc5ea1ec2d04e2d38e71a1b279793426d6ce352377dddf4a984fb20",
+              "content_trust": "untrusted-reference-data",
+              "id": "source-3",
+              "kind": "work-items",
+              "locator": "planning/sprint-2-5.work-items.json",
+              "number": null,
+              "observed_at": "2026-10-19T21:38:18.348824+00:00",
+              "project_id": "demo",
+              "reason": null,
+              "repository": "owner/repo",
+              "revision": "5c2742668cc5ea1ec2d04e2d38e71a1b279793426d6ce352377dddf4a984fb20",
+              "schema_version": "DeliveryEvidence/v1",
+              "status": "observed"
+            },
+            {
+              "content": "\"Definition of Done\"",
+              "content_sha256": "cf1708f4e8ebcf847d97a31dd95cf0fae450ae69f2b16a9f8176e3061f984856",
+              "content_trust": "untrusted-reference-data",
+              "id": "source-4",
+              "kind": "policy",
+              "locator": "docs/delivery/scrum.md",
+              "number": null,
+              "observed_at": "2026-10-19T21:38:18.349539+00:00",
+              "project_id": "demo",
+              "reason": null,
+              "repository": "owner/repo",
+              "revision": "cf1708f4e8ebcf847d97a31dd95cf0fae450ae69f2b16a9f8176e3061f984856",
+              "schema_version": "DeliveryEvidence/v1",
+              "status": "observed"
+            },
+            {
+              "content": "\"Reviewed index\"",
+              "content_sha256": "2b7535b03c65746b639473d38465d5ee8ca539cad28d17b57e1af0b366b3e4f6",
+              "content_trust": "untrusted-reference-data",
+              "id": "source-5",
+              "kind": "memory-index",
+              "locator": "knowledge/INDEX.md",
+              "number": null,
+              "observed_at": "2026-10-19T21:38:18.350224+00:00",
+              "project_id": "demo",
+              "reason": null,
+              "repository": "owner/repo",
+              "revision": "2b7535b03c65746b639473d38465d5ee8ca539cad28d17b57e1af0b366b3e4f6",
+              "schema_version": "DeliveryEvidence/v1",
+              "status": "observed"
+            },
+            {
+              "content": "{\"number\": 1, \"url\": \"https://github.com/owner/repo/issues/1\", \"state\": \"OPEN\", \"updatedAt\": \"2026-10-19T12:00:00+00:00\"}",
+              "content_sha256": "89305b0eb91e4c945342be9c4e83a48f1b5083271a2a68510f2b3cc3b5e31577",
+              "content_trust": "untrusted-reference-data",
+              "id": "source-6",
+              "kind": "issue",
+              "locator": "https://github.com/owner/repo/issues/1",
+              "number": 1,
+              "observed_at": "2026-10-19T21:38:18.350747+00:00",
+              "project_id": "demo",
+              "reason": null,
+              "repository": "owner/repo",
+              "revision": null,
+              "schema_version": "DeliveryEvidence/v1",
+              "status": "observed"
+            },
+            {
+              "content": "{\"number\": 2, \"url\": \"https://github.com/owner/repo/issues/2\", \"state\": \"CLOSED\", \"updatedAt\": \"2026-10-19T12:00:00+00:00\"}",
+              "content_sha256": "d3eb2e6749091f2b1a914498fbe511b4fcb203c27abdc4401f9889643c6e3de7",
+              "content_trust": "untrusted-reference-data",
+              "id": "source-7",
+              "kind": "issue",
+              "locator": "https://github.com/owner/repo/issues/2",
+              "number": 2,
+              "observed_at": "2026-10-19T21:38:18.351039+00:00",
+              "project_id": "demo",
+              "reason": null,
+              "repository": "owner/repo",
+              "revision": null,
+              "schema_version": "DeliveryEvidence/v1",
+              "status": "observed"
+            }
+          ],
+          "sprint_id": "sprint-2-5"
+        },
+        "observation_sha256": "a9299ab6bab35e18b38023b55ed3b4a47f77ee5e63c87266469271cb2de8ca51",
+        "schema_version": "SprintSnapshot/v1",
+        "stories": [
+          {
+            "acceptance": "not-established",
+            "declared_status": "in_progress",
+            "dependencies": [],
+            "evidence_ids": [
+              "source-1",
+              "source-2",
+              "source-6"
+            ],
+            "id": "alpha",
+            "issue_state": "OPEN",
+            "pull_requests": []
+          },
+          {
+            "acceptance": "not-established",
+            "declared_status": "planned",
+            "dependencies": [
+              "alpha"
+            ],
+            "evidence_ids": [
+              "source-1",
+              "source-2",
+              "source-7"
+            ],
+            "id": "beta",
+            "issue_state": "CLOSED",
+            "pull_requests": []
+          }
+        ]
+      },
+      "sprint_started": false
+    },
+    "schema_version": "ScrumOperationPlan/v1",
+    "story_id": "alpha"
+  },
+  "receipts": [
+    {
+      "receipt": {
+        "authorization": null,
+        "operation_sha256": "1933f57d2c145fa669a0146d6eb193eec77a58305a6f3aa35c2990de0e90b102",
+        "previous_sha256": null,
+        "reason": "prepared",
+        "recorded_at": "2026-10-19T21:38:18.388647+00:00",
+        "remote": null,
+        "schema_version": "OperationReceipt/v1",
+        "sequence": 1,
+        "state": "prepared"
+      },
+      "sha256": "4146fb505c9d2909b188adddc3fd6de7740adb743bd4a49a274e9bd333f8b995"
+    },
+    {
+      "receipt": {
+        "authorization": {
+          "actor": "human-product-owner",
+          "comment": "Approve only this label diff",
+          "expires_at": "2026-10-19T21:48:18.396958+00:00",
+          "issued_at": "2026-10-19T21:38:18.396958+00:00",
+          "operation_sha256": "1933f57d2c145fa669a0146d6eb193eec77a58305a6f3aa35c2990de0e90b102",
+          "schema_version": "OperationAuthorization/v1"
+        },
+        "operation_sha256": "1933f57d2c145fa669a0146d6eb193eec77a58305a6f3aa35c2990de0e90b102",
+        "previous_sha256": "4146fb505c9d2909b188adddc3fd6de7740adb743bd4a49a274e9bd333f8b995",
+        "reason": "human-authorized",
+        "recorded_at": "2026-10-19T21:38:18.396958+00:00",
+        "remote": null,
+        "schema_version": "OperationReceipt/v1",
+        "sequence": 2,
+        "state": "authorized"
+      },
+      "sha256": "b500f55141e5a07304917769c1fe8f4ff97791af15a0f631ca95e0569b8c2a1e"
+    },
+    {
+      "receipt": {
+        "authorization": null,
+        "operation_sha256": "1933f57d2c145fa669a0146d6eb193eec77a58305a6f3aa35c2990de0e90b102",
+        "previous_sha256": "b500f55141e5a07304917769c1fe8f4ff97791af15a0f631ca95e0569b8c2a1e",
+        "reason": "dispatch-recorded",
+        "recorded_at": "2026-10-19T21:38:18.415203+00:00",
+        "remote": null,
+        "schema_version": "OperationReceipt/v1",
+        "sequence": 3,
+        "state": "attempted"
+      },
+      "sha256": "fe004d4e347156edfb67b10b867c0a9957de9b696af40b5bb1a905922565e896"
+    },
+    {
+      "receipt": {
+        "authorization": null,
+        "operation_sha256": "1933f57d2c145fa669a0146d6eb193eec77a58305a6f3aa35c2990de0e90b102",
+        "previous_sha256": "fe004d4e347156edfb67b10b867c0a9957de9b696af40b5bb1a905922565e896",
+        "reason": "write-or-observation-uncertain",
+        "recorded_at": "2026-10-19T21:38:18.425494+00:00",
+        "remote": null,
+        "schema_version": "OperationReceipt/v1",
+        "sequence": 4,
+        "state": "uncertain"
+      },
+      "sha256": "21d99a388eb60db6041fc3bc9cd7f84f71ab1a333832ef054571bdc10d5c196f"
+    },
+    {
+      "receipt": {
+        "authorization": null,
+        "operation_sha256": "1933f57d2c145fa669a0146d6eb193eec77a58305a6f3aa35c2990de0e90b102",
+        "previous_sha256": "21d99a388eb60db6041fc3bc9cd7f84f71ab1a333832ef054571bdc10d5c196f",
+        "reason": "desired-state-observed",
+        "recorded_at": "2026-10-19T21:38:18.436883+00:00",
+        "remote": {
+          "assignee_ids": [],
+          "body_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "labels": [
+            "existing",
+            "nexo:needs-refinement"
+          ],
+          "milestone_id": null,
+          "node_id": "issue-node-1",
+          "number": 1,
+          "observed_at": "2026-10-19T21:38:18.436843+00:00",
+          "repository": "owner/repo",
+          "schema_version": "RemoteIssueState/v1",
+          "state": "open",
+          "title_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "updated_at": "2026-10-19T21:38:18.425474+00:00"
+        },
+        "schema_version": "OperationReceipt/v1",
+        "sequence": 5,
+        "state": "observed"
+      },
+      "sha256": "34e7f5ae34134dda75bd689978be390d82968521a3c6283a20cba4bfe6f65077"
+    }
+  ],
+  "replay_receipt_sha256": "34e7f5ae34134dda75bd689978be390d82968521a3c6283a20cba4bfe6f65077",
+  "sprint_started": false
+}

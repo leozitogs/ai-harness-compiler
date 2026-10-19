@@ -105,7 +105,12 @@ permanece independente. Veja ADR-0004 e a documentação dos agentes do projeto.
 AHC-027 adiciona [observação Scrum somente leitura](engineering/scrum-observer.md)
 com contratos independentes, coletores limitados e reconciliação pura (ADR-0023).
 Fontes capturadas sustentam diagnósticos; lifecycle remoto e checks não certificam
-aceite. A integração procedural no Nexo e escritas autorizadas pertencem à AHC-028/029.
+aceite. AHC-028 acrescenta propostas tipadas no Nexo e gate persistente vinculado
+à observação. AHC-029 adiciona [operador explícito](engineering/scrum-operations.md),
+com autorização por diff, journal SQLite e adapter GitHub aditivo. Chamadas externas
+ficam fora das transações locais; resultados incertos exigem reconciliação sem retry
+de escrita. Não há CAS remoto, autoridade de aceite ou coordenação entre journals
+independentes. Ver ADR-0024/0025.
 
 ## Evolução da IR
 

@@ -156,10 +156,16 @@
       "depends_on": [
         "s255-28-review"
       ],
+      "evidence_sources": [
+        "docs/adr/0025-authorized-scrum-operation-journal.md",
+        "docs/engineering/scrum-operations.md",
+        "tests/test_scrum_operations.py",
+        "tests/test_github_operations.py"
+      ],
       "id": "s255-29-design",
       "responsible": "code-collaborator-supported-by-codex",
       "stage": "design",
-      "status": "planned",
+      "status": "in_review",
       "task_graph_id": "task-29-design",
       "verification_source": "docs/delivery/sprint-2-5-5.md"
     },
@@ -169,10 +175,16 @@
       "depends_on": [
         "s255-29-design"
       ],
+      "evidence_sources": [
+        "docs/adr/0025-authorized-scrum-operation-journal.md",
+        "docs/engineering/scrum-operations.md",
+        "tests/test_scrum_operations.py",
+        "tests/test_github_operations.py"
+      ],
       "id": "s255-29-implement",
       "responsible": "code-collaborator-supported-by-codex",
       "stage": "implement",
-      "status": "planned",
+      "status": "in_review",
       "task_graph_id": "task-29-implement",
       "verification_source": "docs/delivery/sprint-2-5-5.md"
     },
@@ -182,10 +194,16 @@
       "depends_on": [
         "s255-29-implement"
       ],
+      "evidence_sources": [
+        "docs/adr/0025-authorized-scrum-operation-journal.md",
+        "docs/engineering/scrum-operations.md",
+        "tests/test_scrum_operations.py",
+        "tests/test_github_operations.py"
+      ],
       "id": "s255-29-verify",
       "responsible": "code-collaborator-supported-by-codex",
       "stage": "verify",
-      "status": "planned",
+      "status": "in_review",
       "task_graph_id": "task-29-verify",
       "verification_source": "docs/delivery/sprint-2-5-5.md"
     },
@@ -194,6 +212,12 @@
       "completion_rule": "Source criteria, reviewed evidence and DoD required; generated plans are not execution evidence.",
       "depends_on": [
         "s255-29-verify"
+      ],
+      "evidence_sources": [
+        "docs/adr/0025-authorized-scrum-operation-journal.md",
+        "docs/engineering/scrum-operations.md",
+        "tests/test_scrum_operations.py",
+        "tests/test_github_operations.py"
       ],
       "id": "s255-29-review",
       "responsible": "code-collaborator-supported-by-codex",
