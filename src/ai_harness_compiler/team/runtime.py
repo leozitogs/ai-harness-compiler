@@ -14,9 +14,10 @@ from langgraph.types import Command, Send, interrupt
 from langsmith import tracing_context
 
 from ai_harness_compiler.compiler import json_text
+from ai_harness_compiler.models.evidence import canonical_project_digest
 from ai_harness_compiler.models.team import POReview, Role, TeamConfig
 from ai_harness_compiler.pipeline import plan
-from ai_harness_compiler.qa_collection import assert_current_request
+from ai_harness_compiler.qa_collection import assert_current_comparison, assert_current_request
 from ai_harness_compiler.scrum_collection import timestamp
 from ai_harness_compiler.scrum_planning import assert_current
 from ai_harness_compiler.team.agents import (
@@ -48,6 +49,8 @@ def source_digests(context: RepositoryContext, config: TeamConfig) -> dict[str, 
         digests["scrum-observation"] = config.scrum_snapshot.observation_sha256
     if config.qa_report is not None:
         digests["qa-report"] = config.qa_report.report_sha256
+    if config.qa_comparison is not None:
+        digests["qa-comparison"] = canonical_project_digest(config.qa_comparison.model_dump())
     return digests
 
 
@@ -144,7 +147,9 @@ def write_report(output: Path, state: TeamState, router: IntentRouter) -> None:
 
 def prepare_team(config: TeamConfig, output: Path) -> dict[str, object]:
     config = TeamConfig.model_validate(config.model_dump())
-    if config.qa_report is not None:
+    if config.qa_comparison is not None:
+        assert_current_comparison(config.qa_comparison, Path(config.repository_root), timestamp())
+    elif config.qa_report is not None:
         assert_current_request(config.qa_report.request, Path(config.repository_root), timestamp())
     if config.scrum_snapshot is not None:
         assert_current(config.scrum_snapshot, Path(config.repository_root), timestamp())
@@ -155,6 +160,7 @@ def prepare_team(config: TeamConfig, output: Path) -> dict[str, object]:
         context,
         config.scrum_snapshot,
         config.qa_report,
+        config.qa_comparison,
     )
     router = IntentRouter()
     output.mkdir(parents=True, exist_ok=False)
@@ -188,7 +194,9 @@ def review_team(output: Path, decision: POReview) -> dict[str, object]:
     decision = POReview.model_validate(decision.model_dump())
     metadata = json.loads((output / "run.json").read_text(encoding="utf-8"))
     config = TeamConfig.model_validate(metadata["config"])
-    if config.qa_report is not None:
+    if config.qa_comparison is not None:
+        assert_current_comparison(config.qa_comparison, Path(config.repository_root), timestamp())
+    elif config.qa_report is not None:
         assert_current_request(config.qa_report.request, Path(config.repository_root), timestamp())
     if config.scrum_snapshot is not None:
         assert_current(config.scrum_snapshot, Path(config.repository_root), timestamp())
@@ -201,6 +209,7 @@ def review_team(output: Path, decision: POReview) -> dict[str, object]:
         context,
         config.scrum_snapshot,
         config.qa_report,
+        config.qa_comparison,
     )
     router = IntentRouter()
     with SqliteSaver.from_conn_string(str(output / "checkpoints.sqlite")) as saver:

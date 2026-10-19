@@ -3,12 +3,19 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from pathlib import Path
 
 from ai_harness_compiler.compiler import json_text
-from ai_harness_compiler.models.qa import QAInspection, QAReviewReport, QAReviewRequest
-from ai_harness_compiler.models.scrum import SprintSnapshot
+from ai_harness_compiler.models.qa import (
+    QAFindingResolutionProposal,
+    QAFindingResolutionReview,
+    QAInspection,
+    QAReviewReport,
+    QAReviewRequest,
+)
+from ai_harness_compiler.models.scrum import SprintSnapshot, instant
 from ai_harness_compiler.qa import (
     assess_closure,
     compare_reviews,
@@ -60,6 +67,21 @@ def add_commands(commands: argparse._SubParsersAction[argparse.ArgumentParser]) 
     compare.add_argument("current", type=Path)
     compare.add_argument("--repository", type=Path, default=Path.cwd())
     compare.add_argument("--output", type=Path, required=True)
+    compare.add_argument("--resolution", type=Path, action="append", default=[])
+    compare.add_argument("--team-output", type=Path)
+    propose = sub.add_parser("propose-resolution")
+    propose.add_argument("previous", type=Path)
+    propose.add_argument("current", type=Path)
+    propose.add_argument("--evidence", type=Path, required=True)
+    propose.add_argument("--repository", type=Path, default=Path.cwd())
+    propose.add_argument("--output", type=Path, required=True)
+    review = sub.add_parser("review-resolution")
+    review.add_argument("input", type=Path)
+    review.add_argument("--decision", choices=["confirm", "reject"], required=True)
+    review.add_argument("--actor", required=True)
+    review.add_argument("--comment", required=True)
+    review.add_argument("--repository", type=Path, default=Path.cwd())
+    review.add_argument("--output", type=Path, required=True)
 
 
 def save_new(path: Path, data: dict[str, object]) -> None:
@@ -71,13 +93,73 @@ def execute(args: argparse.Namespace) -> int:
     if args.output.exists():
         raise ValueError("QA output already exists; choose a new path")
     root = args.repository.resolve()
+    if args.qa_command == "propose-resolution":
+        previous = read_model(args.previous, QAReviewReport)
+        current = read_model(args.current, QAReviewReport)
+        assert_current_request(current.request, root, timestamp())
+        if args.evidence.stat().st_size > 32768:
+            raise ValueError("Resolution evidence exceeds its budget")
+        data = json.loads(args.evidence.read_text(encoding="utf-8"))
+        if not isinstance(data, dict) or set(data) != {
+            "finding_id",
+            "citations",
+            "check_ids",
+            "rationale",
+        }:
+            raise ValueError(
+                "Resolution evidence requires finding, citations, checks and rationale"
+            )
+        proposal = QAFindingResolutionProposal.model_validate(
+            {
+                **data,
+                "previous": previous.model_dump(),
+                "current": current.model_dump(),
+            }
+        )
+        save_new(args.output, proposal.model_dump())
+        print("Resolution proposed; explicit human review pending. No acceptance or closure.")
+        return 0
+    if args.qa_command == "review-resolution":
+        proposal = read_model(args.input, QAFindingResolutionProposal)
+        assert_current_request(proposal.current.request, root, timestamp())
+        review = QAFindingResolutionReview(
+            proposal=proposal,
+            decision=args.decision,
+            actor=args.actor,
+            reviewed_at=timestamp(),
+            comment=args.comment,
+        )
+        save_new(args.output, review.model_dump())
+        print("Recorded declared human resolution decision; no story acceptance or sprint closure.")
+        return 0
     if args.qa_command == "compare":
         previous, current = (
             read_model(args.previous, QAReviewReport),
             read_model(args.current, QAReviewReport),
         )
         assert_current_request(current.request, root, timestamp())
-        save_new(args.output, compare_reviews(previous, current).model_dump())
+        resolutions = [read_model(path, QAFindingResolutionReview) for path in args.resolution]
+        if any(instant(r.reviewed_at) > instant(timestamp()) for r in resolutions):
+            raise ValueError("Resolution decision lies in the future")
+        comparison = compare_reviews(previous, current, resolutions)
+        if args.team_output is not None and args.team_output.exists():
+            raise ValueError("Team output already exists")
+        save_new(args.output, comparison.model_dump())
+        if args.team_output is not None:
+            from ai_harness_compiler.models.team import TeamConfig
+            from ai_harness_compiler.team.runtime import prepare_team
+
+            config = TeamConfig(
+                project=project_for(current.request),
+                selected=[s.id for s in current.request.snapshot.stories],
+                request="Review finding resolution evidence and pending findings with Nexo.",
+                mode="ask",
+                repository_root=str(root),
+                scrum_snapshot=current.request.snapshot,
+                qa_report=current,
+                qa_comparison=comparison,
+            )
+            prepare_team(config, args.team_output)
         print("Compared observed checks; missing model findings do not establish resolution.")
         return 0
     if args.qa_command == "capture":

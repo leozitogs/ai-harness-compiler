@@ -1050,6 +1050,131 @@
       "title": "QACriterionResult",
       "type": "object"
     },
+    "QAFindingResolutionProposal": {
+      "additionalProperties": false,
+      "description": "Evidence for a human decision; never a model-generated resolution.",
+      "properties": {
+        "check_ids": {
+          "items": {
+            "enum": [
+              "lint",
+              "format",
+              "typing",
+              "tests",
+              "schemas",
+              "repo-policy",
+              "sprint-plan"
+            ],
+            "type": "string"
+          },
+          "maxItems": 7,
+          "minItems": 1,
+          "title": "Check Ids",
+          "type": "array"
+        },
+        "citations": {
+          "items": {
+            "$ref": "#/$defs/QACitation"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Citations",
+          "type": "array"
+        },
+        "current": {
+          "$ref": "#/$defs/QAReviewReport"
+        },
+        "finding_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Finding Id",
+          "type": "string"
+        },
+        "previous": {
+          "$ref": "#/$defs/QAReviewReport"
+        },
+        "rationale": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "QAFindingResolutionProposal/v1",
+          "default": "QAFindingResolutionProposal/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "status": {
+          "const": "awaiting-human-review",
+          "default": "awaiting-human-review",
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "previous",
+        "current",
+        "finding_id",
+        "citations",
+        "check_ids",
+        "rationale"
+      ],
+      "title": "QAFindingResolutionProposal",
+      "type": "object"
+    },
+    "QAFindingResolutionReview": {
+      "additionalProperties": false,
+      "properties": {
+        "actor": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Actor",
+          "type": "string"
+        },
+        "comment": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Comment",
+          "type": "string"
+        },
+        "completion_authority": {
+          "const": "none",
+          "default": "none",
+          "title": "Completion Authority",
+          "type": "string"
+        },
+        "decision": {
+          "enum": [
+            "confirm",
+            "reject"
+          ],
+          "title": "Decision",
+          "type": "string"
+        },
+        "proposal": {
+          "$ref": "#/$defs/QAFindingResolutionProposal"
+        },
+        "reviewed_at": {
+          "minLength": 1,
+          "title": "Reviewed At",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "QAFindingResolutionReview/v1",
+          "default": "QAFindingResolutionReview/v1",
+          "title": "Schema Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "proposal",
+        "decision",
+        "actor",
+        "reviewed_at",
+        "comment"
+      ],
+      "title": "QAFindingResolutionReview",
+      "type": "object"
+    },
     "QAInspection": {
       "additionalProperties": false,
       "description": "A model or analyst proposes findings, never check success or closure.",
@@ -1196,6 +1321,77 @@
         "reproduction"
       ],
       "title": "QAInspectionFinding",
+      "type": "object"
+    },
+    "QAReviewComparison": {
+      "additionalProperties": false,
+      "properties": {
+        "cleared_check_failures": {
+          "items": {
+            "enum": [
+              "lint",
+              "format",
+              "typing",
+              "tests",
+              "schemas",
+              "repo-policy",
+              "sprint-plan"
+            ],
+            "type": "string"
+          },
+          "title": "Cleared Check Failures",
+          "type": "array"
+        },
+        "current": {
+          "$ref": "#/$defs/QAReviewReport"
+        },
+        "pending_previous_findings": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "title": "Pending Previous Findings",
+          "type": "array"
+        },
+        "previous": {
+          "$ref": "#/$defs/QAReviewReport"
+        },
+        "resolution_reviews": {
+          "items": {
+            "$ref": "#/$defs/QAFindingResolutionReview"
+          },
+          "maxItems": 32,
+          "title": "Resolution Reviews",
+          "type": "array"
+        },
+        "resolved_previous_findings": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "title": "Resolved Previous Findings",
+          "type": "array"
+        },
+        "schema_version": {
+          "const": "QAReviewComparison/v1",
+          "default": "QAReviewComparison/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "semantic_resolution": {
+          "const": "not-established",
+          "default": "not-established",
+          "title": "Semantic Resolution",
+          "type": "string"
+        }
+      },
+      "required": [
+        "previous",
+        "current",
+        "cleared_check_failures",
+        "pending_previous_findings"
+      ],
+      "title": "QAReviewComparison",
       "type": "object"
     },
     "QAReviewReport": {
@@ -1814,6 +2010,17 @@
     },
     "project": {
       "$ref": "#/$defs/ProjectInput"
+    },
+    "qa_comparison": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/QAReviewComparison"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
     },
     "qa_report": {
       "anyOf": [

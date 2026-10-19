@@ -278,6 +278,53 @@ class SprintClosureAssessment(Contract):
         return self
 
 
+class QAFindingResolutionProposal(Contract):
+    """Evidence for a human decision; never a model-generated resolution."""
+
+    model_config = ConfigDict(hide_input_in_errors=True)
+    schema_version: Literal["QAFindingResolutionProposal/v1"] = "QAFindingResolutionProposal/v1"
+    previous: QAReviewReport
+    current: QAReviewReport
+    finding_id: Identifier
+    citations: list[QACitation] = Field(min_length=1, max_length=8)
+    check_ids: list[CheckID] = Field(min_length=1, max_length=7)
+    rationale: Text = Field(max_length=2000)
+    status: Literal["awaiting-human-review"] = "awaiting-human-review"
+
+    @model_validator(mode="after")
+    def bound_evidence(self) -> Self:
+        from ai_harness_compiler.qa import validate_resolution_proposal
+
+        validate_resolution_proposal(self)
+        return self
+
+
+class QAFindingResolutionReview(Contract):
+    model_config = ConfigDict(hide_input_in_errors=True)
+    schema_version: Literal["QAFindingResolutionReview/v1"] = "QAFindingResolutionReview/v1"
+    proposal: QAFindingResolutionProposal
+    decision: Literal["confirm", "reject"]
+    actor: Identifier
+    reviewed_at: Text
+    comment: Text = Field(max_length=2000)
+    completion_authority: Literal["none"] = "none"
+
+    @model_validator(mode="after")
+    def separate_human_decision(self) -> Self:
+        proposal = QAFindingResolutionProposal.model_validate(self.proposal.model_dump())
+        if self.actor in {
+            "vera",
+            "nexo",
+            proposal.previous.request.author,
+            proposal.current.request.author,
+        }:
+            raise ValueError("Resolution reviewer must be separate from authors and agents")
+        latest = max(instant(c.finished_at) for c in proposal.current.checks)
+        if instant(self.reviewed_at) < latest:
+            raise ValueError("Human review predates current check evidence")
+        return self
+
+
 class QAReviewComparison(Contract):
     model_config = ConfigDict(hide_input_in_errors=True)
     schema_version: Literal["QAReviewComparison/v1"] = "QAReviewComparison/v1"
@@ -285,17 +332,23 @@ class QAReviewComparison(Contract):
     current: QAReviewReport
     cleared_check_failures: list[CheckID]
     pending_previous_findings: list[Identifier]
+    resolution_reviews: list[QAFindingResolutionReview] = Field(default_factory=list, max_length=32)
+    resolved_previous_findings: list[Identifier] = Field(default_factory=list)
     semantic_resolution: Literal["not-established"] = "not-established"
 
     @model_validator(mode="after")
     def observed_changes_only(self) -> Self:
-        from ai_harness_compiler.qa import comparison_facts
+        from ai_harness_compiler.qa import comparison_facts, resolution_facts
 
         previous = QAReviewReport.model_validate(self.previous.model_dump())
         current = QAReviewReport.model_validate(self.current.model_dump())
-        if (self.cleared_check_failures, self.pending_previous_findings) != comparison_facts(
-            previous, current
-        ):
+        cleared, pending = comparison_facts(previous, current)
+        resolved = resolution_facts(previous, current, self.resolution_reviews)
+        if (
+            self.cleared_check_failures,
+            self.pending_previous_findings,
+            self.resolved_previous_findings,
+        ) != (cleared, [p for p in pending if p not in resolved], resolved):
             raise ValueError("QA comparison differs from observed checks and open findings")
         return self
 

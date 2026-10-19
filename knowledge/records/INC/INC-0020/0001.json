@@ -1,0 +1,64 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Independent agent reproduced with isolated Git fixture, actual passing lint and provided inspection.",
+    "Coordinator repeated reproduction.",
+    "Recompute complete NUL-delimited changed paths in capture and guard; reject omitted, invented or duplicate exclusions before runner/model use."
+  ],
+  "author": "codex:engineering",
+  "challenge": "Imported QA capture removed excluded_paths while retaining valid selected diff/source hashes; guard accepted it.",
+  "consequences": [],
+  "context": "PO authorized correcting pending Sprint2.5.5 review findings on 2026-10-19.",
+  "created_at": "2026-10-19T23:14:39.080791+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "988 offline tests passed; explicit model inspections completed on 18 selected sources; real resolution proposed only, fixture decision explicitly simulated.",
+      "outcome": "observed",
+      "sha256": "16ee612f0ea361b95f2edfad70adc6caf40f62d2ee495f1fa489adc1563990e6",
+      "source": "src/ai_harness_compiler/qa_collection.py"
+    },
+    {
+      "command": null,
+      "note": "988 offline tests passed; explicit model inspections completed on 18 selected sources; real resolution proposed only, fixture decision explicitly simulated.",
+      "outcome": "observed",
+      "sha256": "ac38ef26b2e7e73bf834f25aaccf57d2c42c7571b6d2c3ceb34e0ce82459a58d",
+      "source": "tests/test_qa_runtime.py"
+    },
+    {
+      "command": null,
+      "note": "988 offline tests passed; explicit model inspections completed on 18 selected sources; real resolution proposed only, fixture decision explicitly simulated.",
+      "outcome": "observed",
+      "sha256": "8564e304e06ac83e049744798bee04e4ddd20cb3bf33fbb9aa9599062f2cecec",
+      "source": "docs/delivery/ahc-030-review-followups.md"
+    }
+  ],
+  "id": "INC-0020",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "No semantic model qualification, human criterion acceptance or sprint closure established.",
+    "Actor declaration in trusted local CLI is not authentication or a signature.",
+    "Historical packets require fresh capture before any current human decision."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0027",
+    "DOC-0028"
+  ],
+  "resolution": "Require exact exclusions equal Git changed paths minus selected sources, in every currentness guard. Parametrized guard/CLI regression now rejects adulteration.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": "Git guard validated only selected-source diff and bytes, without reconciling exclusions against all changed paths.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Review reproduced omitted changed files being hidden by clearing excluded_paths, allowing ready-for-po without complete selected-scope accounting.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Captura importada ocultava arquivos excluídos da inspeção",
+  "updated_at": "2026-10-19T23:14:39.080791+00:00"
+}

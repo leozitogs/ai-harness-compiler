@@ -1,0 +1,198 @@
+{
+  "historical": true,
+  "real_po_confirmation": false,
+  "real_sprint_closed": false,
+  "fixture_human_confirmation_simulated": true,
+  "runs": [
+    {
+      "id": "core",
+      "head": "5ae0ab9afd8b132634e6dd67d7442a466889e74c",
+      "engine": "codex-cli",
+      "model": "gpt-6.1-sol",
+      "inspection_status": "completed",
+      "model_attempts": 1,
+      "model_calls": 1,
+      "findings": 0,
+      "facets": [
+        "code",
+        "contracts",
+        "provenance",
+        "security",
+        "regressions",
+        "business"
+      ],
+      "checks": [
+        {
+          "id": "lint",
+          "status": "passed"
+        },
+        {
+          "id": "format",
+          "status": "passed"
+        },
+        {
+          "id": "typing",
+          "status": "passed"
+        },
+        {
+          "id": "tests",
+          "status": "passed"
+        },
+        {
+          "id": "schemas",
+          "status": "passed"
+        },
+        {
+          "id": "repo-policy",
+          "status": "passed"
+        },
+        {
+          "id": "sprint-plan",
+          "status": "passed"
+        }
+      ],
+      "recommendation": "inconclusive"
+    },
+    {
+      "id": "integration",
+      "head": "5ae0ab9afd8b132634e6dd67d7442a466889e74c",
+      "engine": "codex-cli",
+      "model": "gpt-6.1-sol",
+      "inspection_status": "completed",
+      "model_attempts": 1,
+      "model_calls": 1,
+      "findings": 0,
+      "facets": [
+        "code",
+        "contracts",
+        "provenance",
+        "security",
+        "regressions",
+        "business",
+        "artifacts"
+      ],
+      "checks": [
+        {
+          "id": "schemas",
+          "status": "not-run"
+        }
+      ],
+      "recommendation": "inconclusive"
+    }
+  ],
+  "files": [
+    {
+      "path": "core-qa-report.json",
+      "sha256": "fd5a798a843444bca6fb4e77bc3d8425a583be80342e8095730341e0856d6d60",
+      "source": ".factory/s255-followup-core/qa-report.json"
+    },
+    {
+      "path": "core-closure-assessment.json",
+      "sha256": "4109ebd8e0dead5a63e2535c5a40c001a64896dde4fafaa5a77bc1869976599e",
+      "source": ".factory/s255-followup-core/closure-assessment.json"
+    },
+    {
+      "path": "core-team-report.json",
+      "sha256": "b02de09814704fb521fcd90a6a5a9c0b23f86de6837f3c6efb2688217254aea3",
+      "source": ".factory/s255-followup-core/team/team-report.json"
+    },
+    {
+      "path": "integration-qa-report.json",
+      "sha256": "0f5aeb7af157eaceebc0d445b625f63eab1619d8ee7138ab4cfbd188d6311f46",
+      "source": ".factory/s255-followup-integration/qa-report.json"
+    },
+    {
+      "path": "integration-closure-assessment.json",
+      "sha256": "1961284bc3117b880fa210d50007d9a1d823497909aae881285a492b202f4a0d",
+      "source": ".factory/s255-followup-integration/closure-assessment.json"
+    },
+    {
+      "path": "integration-team-report.json",
+      "sha256": "2ff2e501982365c3baea4a3ca629f87f2e95b25ecc50f09c526d08978ced6450",
+      "source": ".factory/s255-followup-integration/team/team-report.json"
+    },
+    {
+      "path": "fixture-inventory.json",
+      "sha256": "743c57df3fee784c73073b153a4d2f3c9726ceee18e184ded84931f8f60c200e",
+      "source": ".factory/qa-resolution-fixture-final2/inventory.json"
+    },
+    {
+      "path": "fixture-previous.json",
+      "sha256": "edc3ba7a4e9c624e469b3f1c5b2425fee224efc990cc740de859e051b03a4daf",
+      "source": ".factory/qa-resolution-fixture-final2/previous.json"
+    },
+    {
+      "path": "fixture-current.json",
+      "sha256": "640a9acdd3ebb40d8de954ce5445cce22c0df76d4463cc08aad302e2a258a485",
+      "source": ".factory/qa-resolution-fixture-final2/current.json"
+    },
+    {
+      "path": "fixture-proposal.json",
+      "sha256": "32bab3ecd2832df2678a254629c02d3a56625ce684df6df13d8b0d4153eb6f02",
+      "source": ".factory/qa-resolution-fixture-final2/proposal.json"
+    },
+    {
+      "path": "fixture-simulated-decision.json",
+      "sha256": "2604702f6e71c60119b3dbe78a8ecfdbffc91da4c30d9a8f86bcfd1033709fa1",
+      "source": ".factory/qa-resolution-fixture-final2/simulated-decision.json"
+    },
+    {
+      "path": "fixture-pending-comparison.json",
+      "sha256": "88707f49f0e43da1c356ad149eccdd69e5de7d17db9d5c25debcf0b423be3740",
+      "source": ".factory/qa-resolution-fixture-final2/pending-comparison.json"
+    },
+    {
+      "path": "fixture-confirmed-comparison.json",
+      "sha256": "a177aa24c7a202a22477723e00f4fa67a703796127da18af5feb608abcc0b3ac",
+      "source": ".factory/qa-resolution-fixture-final2/confirmed-comparison.json"
+    },
+    {
+      "path": "fixture-reproduce.py",
+      "sha256": "5b419dbf880fa5c4ba46babe9aa4136332a9e592b3cd4da0458148ad38c666ef",
+      "source": ".factory/demo-qa-resolution.py",
+      "executed_source_sha256": "7f36c57494a1be1556cb1a405fc871391b28eb266701f4042b6baa884a9f8c63",
+      "note": "Archived script formatted for repository lint; same test bytes and behavior as executed source."
+    },
+    {
+      "path": "real-resolution-proposal.json",
+      "sha256": "85a9368212cd32aa850688c30b364d90c0378d90d25ec203dd6b87b689e97364",
+      "source": ".factory/s255-followup-resolution/proposal.json"
+    },
+    {
+      "path": "real-resolution-comparison.json",
+      "sha256": "a17b139122e947b076136fbf3129b238815d1405a70ef1fcd5353d1addf32856",
+      "source": ".factory/s255-followup-resolution/comparison.json"
+    },
+    {
+      "path": "real-resolution-team-report.json",
+      "sha256": "3cafe7585963d054003beb7ce1cbe2db8a76220b5cb33f75a25f738a98cf2db0",
+      "source": ".factory/s255-followup-resolution/team/team-report.json"
+    }
+  ],
+  "source_scope": [
+    "docs/adr/0027-qa-resolution-evidence-and-human-review.md",
+    "docs/engineering/vera-review.md",
+    "src/ai_harness_compiler/adapters/qa_inspection.py",
+    "src/ai_harness_compiler/cli.py",
+    "src/ai_harness_compiler/models/qa.py",
+    "src/ai_harness_compiler/models/team.py",
+    "src/ai_harness_compiler/qa.py",
+    "src/ai_harness_compiler/qa_cli.py",
+    "src/ai_harness_compiler/qa_collection.py",
+    "src/ai_harness_compiler/qa_runner.py",
+    "src/ai_harness_compiler/team/cli.py",
+    "src/ai_harness_compiler/team/personas.py",
+    "src/ai_harness_compiler/team/runtime.py",
+    "src/ai_harness_compiler/team/tools.py",
+    "tests/test_qa.py",
+    "tests/test_qa_inspection.py",
+    "tests/test_qa_resolution.py",
+    "tests/test_qa_runtime.py"
+  ],
+  "limitations": [
+    "Model outputs are advisory, scoped inspection; not semantic qualification or acceptance.",
+    "Integration run deliberately did not authorize check execution; full checks are in core run.",
+    "Real finding resolution remains proposed, not confirmed. Fixture confirmation is simulated only.",
+    "Publication changes repository state; all captured sessions become historical."
+  ]
+}

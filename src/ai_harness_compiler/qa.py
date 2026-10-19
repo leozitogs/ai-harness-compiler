@@ -7,6 +7,8 @@ from ai_harness_compiler.models.qa import (
     Facet,
     QACheckResult,
     QACriterionResult,
+    QAFindingResolutionProposal,
+    QAFindingResolutionReview,
     QAIncidentCandidate,
     QAInspection,
     QAReviewComparison,
@@ -173,15 +175,81 @@ def comparison_facts(
     return cleared, [f.id for f in previous.inspection.findings]
 
 
-def compare_reviews(previous: QAReviewReport, current: QAReviewReport) -> QAReviewComparison:
+def validate_resolution_proposal(proposal: QAFindingResolutionProposal) -> None:
+    previous = QAReviewReport.model_validate(proposal.previous.model_dump())
+    current = QAReviewReport.model_validate(proposal.current.model_dump())
+    comparison_facts(previous, current)
+    if previous.request.head_commit == current.request.head_commit:
+        raise ValueError("Resolution needs a new revision")
+    old_matrix = [(c.story_id, c.criterion_index, c.criterion) for c in previous.criterion_matrix]
+    new_matrix = [(c.story_id, c.criterion_index, c.criterion) for c in current.criterion_matrix]
+    if old_matrix != new_matrix:
+        raise ValueError("Resolution cannot change criterion scope")
+    findings = {f.id: f for f in previous.inspection.findings}
+    if proposal.finding_id not in findings:
+        raise ValueError("Resolution refers to an unknown previous finding")
+    finding = findings[proposal.finding_id]
+    if (
+        current.inspection_status != "completed"
+        or finding.facet not in current.inspection.inspected_facets
+    ):
+        raise ValueError("Resolution requires current inspection of the finding facet")
+    if any(f.id == finding.id for f in current.inspection.findings):
+        raise ValueError("Finding remains open in the current inspection")
+    if len(set(proposal.check_ids)) != len(proposal.check_ids):
+        raise ValueError("Resolution checks must be unique")
+    checks = {c.id: c for c in current.checks}
+    if any(
+        identifier not in checks or checks[identifier].status != "passed"
+        for identifier in proposal.check_ids
+    ):
+        raise ValueError("Resolution requires observed passing checks")
+    sources = {s.path: s for s in current.request.sources}
+    for citation in proposal.citations:
+        source = sources.get(citation.path)
+        lines = source.content.splitlines() if source else []
+        if citation.line > len(lines) or citation.quote not in lines[citation.line - 1]:
+            raise ValueError("Resolution citation is absent from the current source")
+
+
+def resolution_facts(
+    previous: QAReviewReport, current: QAReviewReport, reviews: list[QAFindingResolutionReview]
+) -> list[str]:
+    resolved = []
+    seen = set()
+    for value in reviews:
+        review = QAFindingResolutionReview.model_validate(value.model_dump())
+        proposal = review.proposal
+        if (
+            proposal.previous.report_sha256 != previous.report_sha256
+            or proposal.current.report_sha256 != current.report_sha256
+        ):
+            raise ValueError("Resolution belongs to different QA reports")
+        if proposal.finding_id in seen:
+            raise ValueError("Duplicate resolution decision for a finding")
+        seen.add(proposal.finding_id)
+        if review.decision == "confirm":
+            resolved.append(proposal.finding_id)
+    return resolved
+
+
+def compare_reviews(
+    previous: QAReviewReport,
+    current: QAReviewReport,
+    resolutions: list[QAFindingResolutionReview] | None = None,
+) -> QAReviewComparison:
     previous = QAReviewReport.model_validate(previous.model_dump())
     current = QAReviewReport.model_validate(current.model_dump())
     cleared, pending = comparison_facts(previous, current)
+    reviews = resolutions or []
+    resolved = resolution_facts(previous, current, reviews)
     return QAReviewComparison(
         previous=previous,
         current=current,
         cleared_check_failures=cleared,
-        pending_previous_findings=pending,
+        pending_previous_findings=[p for p in pending if p not in resolved],
+        resolution_reviews=reviews,
+        resolved_previous_findings=resolved,
     )
 
 

@@ -34,6 +34,8 @@ AHC-029 acrescenta [operador autorizado](docs/engineering/scrum-operations.md),
 com diff limitado a etiquetas, journal persistente e reconciliação de resultado incerto.
 AHC-030 implementa [Vera revisora](docs/engineering/vera-review.md), com captura por
 commit, checks opt-in, inspeção consultiva e pacote de review do Nexo.
+As [correções da review](docs/delivery/ahc-030-review-followups.md) acrescentam
+confirmação humana de resolução com evidências e preservam bloqueios anteriores.
 
 ```sh
 factory model-policy

@@ -1,0 +1,71 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Independent reproduction retained approval-bypass P1 but emitted zero Nexo findings.",
+    "Merge unresolved prior findings into combined advice, retain current-only assessment scope explicitly.",
+    "Runtime regression and real synthetic fixture verify P1 blocker until explicit simulated human confirmation."
+  ],
+  "author": "codex:engineering",
+  "challenge": "Comparison retained prior finding id, but Nexo considered current report alone and could summarize no blockers.",
+  "consequences": [],
+  "context": "PO authorized correcting pending Sprint2.5.5 review findings on 2026-10-19.",
+  "created_at": "2026-10-19T23:14:39.493890+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "988 offline tests passed; explicit model inspections completed on 18 selected sources; real resolution proposed only, fixture decision explicitly simulated.",
+      "outcome": "observed",
+      "sha256": "300b793940c4200b6f982a1f74df945665a8034789bec7bfcca6b0528f27119d",
+      "source": "src/ai_harness_compiler/team/tools.py"
+    },
+    {
+      "command": null,
+      "note": "988 offline tests passed; explicit model inspections completed on 18 selected sources; real resolution proposed only, fixture decision explicitly simulated.",
+      "outcome": "observed",
+      "sha256": "761afc8e329987b5ce64b9381f219e352a02999e998de9689a437dc53a6a5b33",
+      "source": "src/ai_harness_compiler/team/runtime.py"
+    },
+    {
+      "command": null,
+      "note": "988 offline tests passed; explicit model inspections completed on 18 selected sources; real resolution proposed only, fixture decision explicitly simulated.",
+      "outcome": "observed",
+      "sha256": "ac38ef26b2e7e73bf834f25aaccf57d2c42c7571b6d2c3ceb34e0ce82459a58d",
+      "source": "tests/test_qa_runtime.py"
+    },
+    {
+      "command": null,
+      "note": "988 offline tests passed; explicit model inspections completed on 18 selected sources; real resolution proposed only, fixture decision explicitly simulated.",
+      "outcome": "observed",
+      "sha256": "cc9ad9b36184bcefdd5ad78c3892ea8dc24f9b037c65bc3b92d7149d775f6bda",
+      "source": "tests/test_qa_resolution.py"
+    }
+  ],
+  "id": "INC-0021",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "No semantic model qualification, human criterion acceptance or sprint closure established.",
+    "Actor declaration in trusted local CLI is not authentication or a signature.",
+    "Historical packets require fresh capture before any current human decision."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0027",
+    "DOC-0028"
+  ],
+  "resolution": "Nexo emits combined recommendation/blockers from current and pending prior findings; bound comparison digest invalidates altered gate decisions. Future decision guard applies to CLI and Python team entrypoints.",
+  "review_note": "Verified specific failure/cause/correction against regressions and documented real-vs-fixture boundaries; no PO acceptance or model qualification inferred.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": "Team delivery_plan ignored pending_previous_findings while constructing findings and recommendation.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "verified",
+  "summary": "During followup implementation, independent review found pending prior P1 absent from Nexo findings/combined advice when current inspection omitted it.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Nexo omitiria bloqueios históricos pendentes na comparação",
+  "updated_at": "2026-10-19T23:14:39.686602+00:00"
+}

@@ -8,7 +8,12 @@ import sys
 import threading
 from pathlib import Path
 
-from ai_harness_compiler.models.qa import QAReviewRequest, ReviewSource, safe_review_path
+from ai_harness_compiler.models.qa import (
+    QAReviewComparison,
+    QAReviewRequest,
+    ReviewSource,
+    safe_review_path,
+)
 from ai_harness_compiler.models.scrum import SprintSnapshot, instant
 from ai_harness_compiler.scrum_collection import timestamp
 from ai_harness_compiler.scrum_planning import assert_current
@@ -143,7 +148,9 @@ def capture(
                 path=path, content=content, sha256=hashlib.sha256(content.encode()).hexdigest()
             )
         )
-    changed = git(root, "diff", "--no-ext-diff", "--name-only", base, head, "--").splitlines()
+    changed = git(
+        root, "diff", "--no-ext-diff", "--no-textconv", "--name-only", "-z", base, head
+    ).split("\0")
     diff = git(
         root, "diff", "--no-ext-diff", "--no-textconv", "--unified=3", base, head, "--", *paths
     )
@@ -156,13 +163,20 @@ def capture(
         "sources": [s.model_dump() for s in sources],
         "diff": diff,
         "diff_sha256": hashlib.sha256(diff.encode()).hexdigest(),
-        "excluded_paths": [p for p in changed if p not in paths],
+        "excluded_paths": [p for p in changed if p and p not in paths],
     }
     if check_ids is not None:
         data["check_ids"] = check_ids
     request = QAReviewRequest.model_validate(data)
     assert_current_request(request, root, timestamp())
     return request
+
+
+def assert_current_comparison(comparison: QAReviewComparison, root: Path, now: str) -> None:
+    comparison = QAReviewComparison.model_validate(comparison.model_dump())
+    assert_current_request(comparison.current.request, root, now)
+    if any(instant(review.reviewed_at) > instant(now) for review in comparison.resolution_reviews):
+        raise ValueError("Resolution decision lies in the future")
 
 
 def assert_current_request(request: QAReviewRequest, root: Path, now: str) -> None:
@@ -182,6 +196,20 @@ def assert_current_request(request: QAReviewRequest, root: Path, now: str) -> No
         root, "status", "--porcelain", "--untracked-files=normal", "--ignore-submodules=all"
     ).strip():
         raise ValueError("QA requires a clean tracked revision and no untracked source files")
+    changed = git(
+        root,
+        "diff",
+        "--no-ext-diff",
+        "--no-textconv",
+        "--name-only",
+        "-z",
+        request.base_commit,
+        request.head_commit,
+    ).split("\0")
+    selected = {source.path for source in request.sources}
+    excluded = [path for path in changed if path and path not in selected]
+    if request.excluded_paths != excluded:
+        raise ValueError("QA excluded paths differ from complete Git changes")
     if (
         git(
             root,

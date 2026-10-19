@@ -1,0 +1,670 @@
+{
+  "check_ids": [
+    "tests"
+  ],
+  "citations": [
+    {
+      "line": 2,
+      "path": "src/approval.py",
+      "quote": "return approved"
+    }
+  ],
+  "current": {
+    "acceptance": "not-established",
+    "authority": "advisory-only",
+    "checks": [
+      {
+        "exit_code": 0,
+        "finished_at": "2026-10-19T23:09:39.210946+00:00",
+        "head_commit": "5ce5dfa2c0b4ccba432b21f39e349762d1577e4c",
+        "id": "tests",
+        "output": ".                                                                        [100%]\r\n1 passed in 0.01s\r\n",
+        "output_sha256": "67a785682d36684fac18a5d24de36b38ad3852b9f22c33c36f235ecaf7a3c226",
+        "request_sha256": "b79f3980968ca41571c3a644c999a79c10bebc07d144e189597dcac9e4820b62",
+        "started_at": "2026-10-19T23:09:38.007779+00:00",
+        "status": "passed"
+      }
+    ],
+    "criterion_count": 2,
+    "criterion_matrix": [
+      {
+        "criterion": "Rule",
+        "criterion_index": 0,
+        "finding_ids": [],
+        "story_id": "alpha",
+        "verification": "not-established"
+      },
+      {
+        "criterion": "Rule",
+        "criterion_index": 0,
+        "finding_ids": [],
+        "story_id": "beta",
+        "verification": "not-established"
+      }
+    ],
+    "engine": "provided-inspection",
+    "inspection": {
+      "findings": [],
+      "inspected_facets": [
+        "code",
+        "contracts",
+        "provenance",
+        "security",
+        "regressions",
+        "business",
+        "artifacts"
+      ],
+      "limitations": [
+        "Synthetic known fix; analyst inspection, no model."
+      ],
+      "schema_version": "QAInspection/v1"
+    },
+    "inspection_status": "completed",
+    "missing_facets": [],
+    "model": null,
+    "model_attempts": 0,
+    "model_calls": 0,
+    "recommendation": "ready-for-po",
+    "request": {
+      "author": "fixture-author",
+      "base_commit": "a22dfdbd7a8a770f0503c8c34c635e99fd38fa2c",
+      "captured_at": "2026-10-19T23:09:37.403349+00:00",
+      "check_ids": [
+        "tests"
+      ],
+      "check_timeout_seconds": 120,
+      "diff": "diff --git a/src/approval.py b/src/approval.py\nindex c26720a..321d2d2 100644\n--- a/src/approval.py\n+++ b/src/approval.py\n@@ -1,2 +1,2 @@\n def authorize(approved):\n-    return True\n+    return approved\n",
+      "diff_sha256": "0edd9690a2e8f4980079c9437f134ea0d69b262ea9e7e718f014b2fad4916670",
+      "excluded_paths": [],
+      "head_commit": "5ce5dfa2c0b4ccba432b21f39e349762d1577e4c",
+      "max_age_seconds": 3600,
+      "reviewer": "vera",
+      "schema_version": "QAReviewRequest/v1",
+      "snapshot": {
+        "authority": "read-only-diagnostic",
+        "completion_authority": "none",
+        "declared_goal_outcome": "not-achieved",
+        "declared_state": "closed_with_carryover",
+        "impediments": [
+          {
+            "code": "source-unavailable",
+            "evidence_ids": [
+              "source-6"
+            ],
+            "id": "observation-1",
+            "message": "Source unavailable; no current fact is inferred.",
+            "schema_version": "Impediment/v1",
+            "severity": "warning",
+            "story_id": null
+          },
+          {
+            "code": "source-unavailable",
+            "evidence_ids": [
+              "source-7"
+            ],
+            "id": "observation-2",
+            "message": "Source unavailable; no current fact is inferred.",
+            "schema_version": "Impediment/v1",
+            "severity": "warning",
+            "story_id": null
+          },
+          {
+            "code": "issue-unobserved",
+            "evidence_ids": [
+              "source-2"
+            ],
+            "id": "observation-3",
+            "message": "Tracked issue state has not been observed as fresh valid evidence.",
+            "schema_version": "Impediment/v1",
+            "severity": "warning",
+            "story_id": "alpha"
+          },
+          {
+            "code": "issue-unobserved",
+            "evidence_ids": [
+              "source-2"
+            ],
+            "id": "observation-4",
+            "message": "Tracked issue state has not been observed as fresh valid evidence.",
+            "schema_version": "Impediment/v1",
+            "severity": "warning",
+            "story_id": "beta"
+          },
+          {
+            "code": "dependency-unresolved",
+            "evidence_ids": [
+              "source-1",
+              "source-2"
+            ],
+            "id": "observation-5",
+            "message": "Dependencies not declared complete or observed open: alpha",
+            "schema_version": "Impediment/v1",
+            "severity": "warning",
+            "story_id": "beta"
+          },
+          {
+            "code": "closed-with-carryover",
+            "evidence_ids": [
+              "source-2"
+            ],
+            "id": "observation-6",
+            "message": "Sprint closed with unfinished/unverified work; no story is promoted to Done.",
+            "schema_version": "Impediment/v1",
+            "severity": "warning",
+            "story_id": null
+          }
+        ],
+        "observation": {
+          "max_age_seconds": 3600,
+          "observed_at": "2026-10-19T23:09:33.108589+00:00",
+          "project_id": "demo",
+          "pull_request_links": [],
+          "repository": "owner/repo",
+          "schema_version": "ScrumObservation/v1",
+          "sources": [
+            {
+              "content": "{\"schema_version\":\"ProjectInput/v1\",\"id\":\"demo\",\"name\":\"Demo\",\"conception\":\"Fixture\",\"domain\":null,\"branding\":{\"audience\":[],\"tone\":[],\"principles\":[],\"visual_constraints\":[]},\"backlog\":[{\"id\":\"alpha\",\"title\":\"alpha\",\"description\":\"Work\",\"acceptance_criteria\":[\"Rule\"],\"depends_on\":[],\"inputs\":[],\"outputs\":[],\"data_owner\":null,\"side_effects\":[],\"risk\":\"unknown\",\"implementation\":\"undecided\"},{\"id\":\"beta\",\"title\":\"beta\",\"description\":\"Work\",\"acceptance_criteria\":[\"Rule\"],\"depends_on\":[\"alpha\"],\"inputs\":[],\"outputs\":[],\"data_owner\":null,\"side_effects\":[],\"risk\":\"unknown\",\"implementation\":\"undecided\"}],\"constraints\":{\"technical\":[],\"security\":[],\"business\":[],\"max_build_cost_usd\":0.0},\"assets\":[],\"evidence_pack\":null,\"domain_profile\":null}",
+              "content_sha256": "a5fb60971120ecfe966eda5cb0a4e19c1fc12696c01aa601f69f827287e1e36c",
+              "content_trust": "untrusted-reference-data",
+              "id": "source-1",
+              "kind": "project",
+              "locator": "project-definition/project.yaml",
+              "number": null,
+              "observed_at": "2026-10-19T23:09:33.105261+00:00",
+              "project_id": "demo",
+              "reason": null,
+              "repository": "owner/repo",
+              "revision": "44d2370ecee47cbf0fd61317d8814f9e600b2119059bc84c47f66e7651564cff",
+              "schema_version": "DeliveryEvidence/v1",
+              "status": "observed"
+            },
+            {
+              "content": "{\"id\": \"sprint-2-5\", \"goal\": \"Meaningful delivery\", \"status\": \"closed_with_carryover\", \"selected_capabilities\": [\"alpha\", \"beta\"], \"declared_completed_capabilities\": [], \"capability_status\": {\"alpha\": \"in_progress\", \"beta\": \"planned\"}, \"closure\": {\"goal_achieved\": false}, \"tracking\": {\"issues\": {\"alpha\": {\"number\": 1, \"url\": \"https://github.com/owner/repo/issues/1\"}, \"beta\": {\"number\": 2, \"url\": \"https://github.com/owner/repo/issues/2\"}}}}",
+              "content_sha256": "f7246873d3fb65e5c76cedf4ef421942507d08b8b6ef299b1e090450cc2dd2c8",
+              "content_trust": "untrusted-reference-data",
+              "id": "source-2",
+              "kind": "plan",
+              "locator": "planning/sprint-2-5.json",
+              "number": null,
+              "observed_at": "2026-10-19T23:09:33.106153+00:00",
+              "project_id": "demo",
+              "reason": null,
+              "repository": "owner/repo",
+              "revision": "f7246873d3fb65e5c76cedf4ef421942507d08b8b6ef299b1e090450cc2dd2c8",
+              "schema_version": "DeliveryEvidence/v1",
+              "status": "observed"
+            },
+            {
+              "content": "{\"sprint_id\": \"sprint-2-5\", \"work_items\": []}",
+              "content_sha256": "5c2742668cc5ea1ec2d04e2d38e71a1b279793426d6ce352377dddf4a984fb20",
+              "content_trust": "untrusted-reference-data",
+              "id": "source-3",
+              "kind": "work-items",
+              "locator": "planning/sprint-2-5.work-items.json",
+              "number": null,
+              "observed_at": "2026-10-19T23:09:33.106933+00:00",
+              "project_id": "demo",
+              "reason": null,
+              "repository": "owner/repo",
+              "revision": "5c2742668cc5ea1ec2d04e2d38e71a1b279793426d6ce352377dddf4a984fb20",
+              "schema_version": "DeliveryEvidence/v1",
+              "status": "observed"
+            },
+            {
+              "content": "\"Definition of Done\"",
+              "content_sha256": "cf1708f4e8ebcf847d97a31dd95cf0fae450ae69f2b16a9f8176e3061f984856",
+              "content_trust": "untrusted-reference-data",
+              "id": "source-4",
+              "kind": "policy",
+              "locator": "docs/delivery/scrum.md",
+              "number": null,
+              "observed_at": "2026-10-19T23:09:33.107664+00:00",
+              "project_id": "demo",
+              "reason": null,
+              "repository": "owner/repo",
+              "revision": "cf1708f4e8ebcf847d97a31dd95cf0fae450ae69f2b16a9f8176e3061f984856",
+              "schema_version": "DeliveryEvidence/v1",
+              "status": "observed"
+            },
+            {
+              "content": "\"Reviewed index\"",
+              "content_sha256": "2b7535b03c65746b639473d38465d5ee8ca539cad28d17b57e1af0b366b3e4f6",
+              "content_trust": "untrusted-reference-data",
+              "id": "source-5",
+              "kind": "memory-index",
+              "locator": "knowledge/INDEX.md",
+              "number": null,
+              "observed_at": "2026-10-19T23:09:33.108389+00:00",
+              "project_id": "demo",
+              "reason": null,
+              "repository": "owner/repo",
+              "revision": "2b7535b03c65746b639473d38465d5ee8ca539cad28d17b57e1af0b366b3e4f6",
+              "schema_version": "DeliveryEvidence/v1",
+              "status": "observed"
+            },
+            {
+              "content": null,
+              "content_sha256": null,
+              "content_trust": "untrusted-reference-data",
+              "id": "source-6",
+              "kind": "issue",
+              "locator": "https://github.com/owner/repo/issues/1",
+              "number": 1,
+              "observed_at": "2026-10-19T23:09:33.108566+00:00",
+              "project_id": "demo",
+              "reason": "not-requested",
+              "repository": "owner/repo",
+              "revision": null,
+              "schema_version": "DeliveryEvidence/v1",
+              "status": "unavailable"
+            },
+            {
+              "content": null,
+              "content_sha256": null,
+              "content_trust": "untrusted-reference-data",
+              "id": "source-7",
+              "kind": "issue",
+              "locator": "https://github.com/owner/repo/issues/2",
+              "number": 2,
+              "observed_at": "2026-10-19T23:09:33.108582+00:00",
+              "project_id": "demo",
+              "reason": "not-requested",
+              "repository": "owner/repo",
+              "revision": null,
+              "schema_version": "DeliveryEvidence/v1",
+              "status": "unavailable"
+            }
+          ],
+          "sprint_id": "sprint-2-5"
+        },
+        "observation_sha256": "8a384e495518b9f5e4d334ae21a684325df7bd4d61021783beb225849d16f469",
+        "schema_version": "SprintSnapshot/v1",
+        "stories": [
+          {
+            "acceptance": "not-established",
+            "declared_status": "in_progress",
+            "dependencies": [],
+            "evidence_ids": [
+              "source-1",
+              "source-2"
+            ],
+            "id": "alpha",
+            "issue_state": "unknown",
+            "pull_requests": []
+          },
+          {
+            "acceptance": "not-established",
+            "declared_status": "planned",
+            "dependencies": [
+              "alpha"
+            ],
+            "evidence_ids": [
+              "source-1",
+              "source-2"
+            ],
+            "id": "beta",
+            "issue_state": "unknown",
+            "pull_requests": []
+          }
+        ]
+      },
+      "sources": [
+        {
+          "content": "def authorize(approved):\n    return approved\n",
+          "path": "src/approval.py",
+          "sha256": "e41ad257ce286ff9cb5a4ab0dd33cd0f30f551ef1e0248576ab285f38817202d"
+        },
+        {
+          "content": "from pathlib import Path\nimport sys\nsys.path.insert(0,str(Path.cwd()/\"src\"))\nfrom approval import authorize\ndef test_rejects_unapproved_request():\n    assert authorize(False) is False\n",
+          "path": "tests/test_approval.py",
+          "sha256": "716c2416453ef953285681082021df0409cbbe7459e01475c3faf2cadd3c2471"
+        }
+      ],
+      "total_check_seconds": 300
+    },
+    "request_sha256": "b79f3980968ca41571c3a644c999a79c10bebc07d144e189597dcac9e4820b62",
+    "schema_version": "QAReviewReport/v1"
+  },
+  "finding_id": "approval-bypass",
+  "previous": {
+    "acceptance": "not-established",
+    "authority": "advisory-only",
+    "checks": [
+      {
+        "exit_code": 1,
+        "finished_at": "2026-10-19T23:09:36.528916+00:00",
+        "head_commit": "a22dfdbd7a8a770f0503c8c34c635e99fd38fa2c",
+        "id": "tests",
+        "output": "F                                                                        [100%]\r\n================================== FAILURES ===================================\r\n_______________________ test_rejects_unapproved_request _______________________\r\n\r\n    def test_rejects_unapproved_request():\r\n>       assert authorize(False) is False\r\nE       assert True is False\r\nE        +  where True = authorize(False)\r\n\r\ntests\\test_approval.py:6: AssertionError\r\n=========================== short test summary info ===========================\r\nFAILED tests/test_approval.py::test_rejects_unapproved_request - assert True ...\r\n1 failed in 0.10s\r\n",
+        "output_sha256": "5018f9a0a24ae3bea802d6ab8761a5dcb5595337775bfd4a9dc81e4570faccca",
+        "request_sha256": "4e00c33092b4ba0fb6dffb7f8f1b19cb6aff9ce1f67e44a9539f4a05b34dc9a3",
+        "started_at": "2026-10-19T23:09:34.871576+00:00",
+        "status": "failed"
+      }
+    ],
+    "criterion_count": 2,
+    "criterion_matrix": [
+      {
+        "criterion": "Rule",
+        "criterion_index": 0,
+        "finding_ids": [
+          "approval-bypass"
+        ],
+        "story_id": "alpha",
+        "verification": "not-established"
+      },
+      {
+        "criterion": "Rule",
+        "criterion_index": 0,
+        "finding_ids": [],
+        "story_id": "beta",
+        "verification": "not-established"
+      }
+    ],
+    "engine": "provided-inspection",
+    "inspection": {
+      "findings": [
+        {
+          "citations": [
+            {
+              "line": 2,
+              "path": "src/approval.py",
+              "quote": "return True"
+            }
+          ],
+          "criterion_index": 0,
+          "facet": "business",
+          "id": "approval-bypass",
+          "impact": "An unapproved request could be accepted.",
+          "recommendation": "Check the explicit approval decision.",
+          "reproduction": "Call authorize(False) and compare against the declared rule.",
+          "severity": "P1",
+          "story_id": "alpha",
+          "title": "Approval input ignored",
+          "verification": "not-executed"
+        }
+      ],
+      "inspected_facets": [
+        "code",
+        "contracts",
+        "provenance",
+        "security",
+        "regressions",
+        "business",
+        "artifacts"
+      ],
+      "limitations": [
+        "Synthetic known bug; analyst inspection, no model."
+      ],
+      "schema_version": "QAInspection/v1"
+    },
+    "inspection_status": "completed",
+    "missing_facets": [],
+    "model": null,
+    "model_attempts": 0,
+    "model_calls": 0,
+    "recommendation": "changes-required",
+    "request": {
+      "author": "fixture-author",
+      "base_commit": "a22dfdbd7a8a770f0503c8c34c635e99fd38fa2c",
+      "captured_at": "2026-10-19T23:09:34.210686+00:00",
+      "check_ids": [
+        "tests"
+      ],
+      "check_timeout_seconds": 120,
+      "diff": "",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "excluded_paths": [],
+      "head_commit": "a22dfdbd7a8a770f0503c8c34c635e99fd38fa2c",
+      "max_age_seconds": 3600,
+      "reviewer": "vera",
+      "schema_version": "QAReviewRequest/v1",
+      "snapshot": {
+        "authority": "read-only-diagnostic",
+        "completion_authority": "none",
+        "declared_goal_outcome": "not-achieved",
+        "declared_state": "closed_with_carryover",
+        "impediments": [
+          {
+            "code": "source-unavailable",
+            "evidence_ids": [
+              "source-6"
+            ],
+            "id": "observation-1",
+            "message": "Source unavailable; no current fact is inferred.",
+            "schema_version": "Impediment/v1",
+            "severity": "warning",
+            "story_id": null
+          },
+          {
+            "code": "source-unavailable",
+            "evidence_ids": [
+              "source-7"
+            ],
+            "id": "observation-2",
+            "message": "Source unavailable; no current fact is inferred.",
+            "schema_version": "Impediment/v1",
+            "severity": "warning",
+            "story_id": null
+          },
+          {
+            "code": "issue-unobserved",
+            "evidence_ids": [
+              "source-2"
+            ],
+            "id": "observation-3",
+            "message": "Tracked issue state has not been observed as fresh valid evidence.",
+            "schema_version": "Impediment/v1",
+            "severity": "warning",
+            "story_id": "alpha"
+          },
+          {
+            "code": "issue-unobserved",
+            "evidence_ids": [
+              "source-2"
+            ],
+            "id": "observation-4",
+            "message": "Tracked issue state has not been observed as fresh valid evidence.",
+            "schema_version": "Impediment/v1",
+            "severity": "warning",
+            "story_id": "beta"
+          },
+          {
+            "code": "dependency-unresolved",
+            "evidence_ids": [
+              "source-1",
+              "source-2"
+            ],
+            "id": "observation-5",
+            "message": "Dependencies not declared complete or observed open: alpha",
+            "schema_version": "Impediment/v1",
+            "severity": "warning",
+            "story_id": "beta"
+          },
+          {
+            "code": "closed-with-carryover",
+            "evidence_ids": [
+              "source-2"
+            ],
+            "id": "observation-6",
+            "message": "Sprint closed with unfinished/unverified work; no story is promoted to Done.",
+            "schema_version": "Impediment/v1",
+            "severity": "warning",
+            "story_id": null
+          }
+        ],
+        "observation": {
+          "max_age_seconds": 3600,
+          "observed_at": "2026-10-19T23:09:33.108589+00:00",
+          "project_id": "demo",
+          "pull_request_links": [],
+          "repository": "owner/repo",
+          "schema_version": "ScrumObservation/v1",
+          "sources": [
+            {
+              "content": "{\"schema_version\":\"ProjectInput/v1\",\"id\":\"demo\",\"name\":\"Demo\",\"conception\":\"Fixture\",\"domain\":null,\"branding\":{\"audience\":[],\"tone\":[],\"principles\":[],\"visual_constraints\":[]},\"backlog\":[{\"id\":\"alpha\",\"title\":\"alpha\",\"description\":\"Work\",\"acceptance_criteria\":[\"Rule\"],\"depends_on\":[],\"inputs\":[],\"outputs\":[],\"data_owner\":null,\"side_effects\":[],\"risk\":\"unknown\",\"implementation\":\"undecided\"},{\"id\":\"beta\",\"title\":\"beta\",\"description\":\"Work\",\"acceptance_criteria\":[\"Rule\"],\"depends_on\":[\"alpha\"],\"inputs\":[],\"outputs\":[],\"data_owner\":null,\"side_effects\":[],\"risk\":\"unknown\",\"implementation\":\"undecided\"}],\"constraints\":{\"technical\":[],\"security\":[],\"business\":[],\"max_build_cost_usd\":0.0},\"assets\":[],\"evidence_pack\":null,\"domain_profile\":null}",
+              "content_sha256": "a5fb60971120ecfe966eda5cb0a4e19c1fc12696c01aa601f69f827287e1e36c",
+              "content_trust": "untrusted-reference-data",
+              "id": "source-1",
+              "kind": "project",
+              "locator": "project-definition/project.yaml",
+              "number": null,
+              "observed_at": "2026-10-19T23:09:33.105261+00:00",
+              "project_id": "demo",
+              "reason": null,
+              "repository": "owner/repo",
+              "revision": "44d2370ecee47cbf0fd61317d8814f9e600b2119059bc84c47f66e7651564cff",
+              "schema_version": "DeliveryEvidence/v1",
+              "status": "observed"
+            },
+            {
+              "content": "{\"id\": \"sprint-2-5\", \"goal\": \"Meaningful delivery\", \"status\": \"closed_with_carryover\", \"selected_capabilities\": [\"alpha\", \"beta\"], \"declared_completed_capabilities\": [], \"capability_status\": {\"alpha\": \"in_progress\", \"beta\": \"planned\"}, \"closure\": {\"goal_achieved\": false}, \"tracking\": {\"issues\": {\"alpha\": {\"number\": 1, \"url\": \"https://github.com/owner/repo/issues/1\"}, \"beta\": {\"number\": 2, \"url\": \"https://github.com/owner/repo/issues/2\"}}}}",
+              "content_sha256": "f7246873d3fb65e5c76cedf4ef421942507d08b8b6ef299b1e090450cc2dd2c8",
+              "content_trust": "untrusted-reference-data",
+              "id": "source-2",
+              "kind": "plan",
+              "locator": "planning/sprint-2-5.json",
+              "number": null,
+              "observed_at": "2026-10-19T23:09:33.106153+00:00",
+              "project_id": "demo",
+              "reason": null,
+              "repository": "owner/repo",
+              "revision": "f7246873d3fb65e5c76cedf4ef421942507d08b8b6ef299b1e090450cc2dd2c8",
+              "schema_version": "DeliveryEvidence/v1",
+              "status": "observed"
+            },
+            {
+              "content": "{\"sprint_id\": \"sprint-2-5\", \"work_items\": []}",
+              "content_sha256": "5c2742668cc5ea1ec2d04e2d38e71a1b279793426d6ce352377dddf4a984fb20",
+              "content_trust": "untrusted-reference-data",
+              "id": "source-3",
+              "kind": "work-items",
+              "locator": "planning/sprint-2-5.work-items.json",
+              "number": null,
+              "observed_at": "2026-10-19T23:09:33.106933+00:00",
+              "project_id": "demo",
+              "reason": null,
+              "repository": "owner/repo",
+              "revision": "5c2742668cc5ea1ec2d04e2d38e71a1b279793426d6ce352377dddf4a984fb20",
+              "schema_version": "DeliveryEvidence/v1",
+              "status": "observed"
+            },
+            {
+              "content": "\"Definition of Done\"",
+              "content_sha256": "cf1708f4e8ebcf847d97a31dd95cf0fae450ae69f2b16a9f8176e3061f984856",
+              "content_trust": "untrusted-reference-data",
+              "id": "source-4",
+              "kind": "policy",
+              "locator": "docs/delivery/scrum.md",
+              "number": null,
+              "observed_at": "2026-10-19T23:09:33.107664+00:00",
+              "project_id": "demo",
+              "reason": null,
+              "repository": "owner/repo",
+              "revision": "cf1708f4e8ebcf847d97a31dd95cf0fae450ae69f2b16a9f8176e3061f984856",
+              "schema_version": "DeliveryEvidence/v1",
+              "status": "observed"
+            },
+            {
+              "content": "\"Reviewed index\"",
+              "content_sha256": "2b7535b03c65746b639473d38465d5ee8ca539cad28d17b57e1af0b366b3e4f6",
+              "content_trust": "untrusted-reference-data",
+              "id": "source-5",
+              "kind": "memory-index",
+              "locator": "knowledge/INDEX.md",
+              "number": null,
+              "observed_at": "2026-10-19T23:09:33.108389+00:00",
+              "project_id": "demo",
+              "reason": null,
+              "repository": "owner/repo",
+              "revision": "2b7535b03c65746b639473d38465d5ee8ca539cad28d17b57e1af0b366b3e4f6",
+              "schema_version": "DeliveryEvidence/v1",
+              "status": "observed"
+            },
+            {
+              "content": null,
+              "content_sha256": null,
+              "content_trust": "untrusted-reference-data",
+              "id": "source-6",
+              "kind": "issue",
+              "locator": "https://github.com/owner/repo/issues/1",
+              "number": 1,
+              "observed_at": "2026-10-19T23:09:33.108566+00:00",
+              "project_id": "demo",
+              "reason": "not-requested",
+              "repository": "owner/repo",
+              "revision": null,
+              "schema_version": "DeliveryEvidence/v1",
+              "status": "unavailable"
+            },
+            {
+              "content": null,
+              "content_sha256": null,
+              "content_trust": "untrusted-reference-data",
+              "id": "source-7",
+              "kind": "issue",
+              "locator": "https://github.com/owner/repo/issues/2",
+              "number": 2,
+              "observed_at": "2026-10-19T23:09:33.108582+00:00",
+              "project_id": "demo",
+              "reason": "not-requested",
+              "repository": "owner/repo",
+              "revision": null,
+              "schema_version": "DeliveryEvidence/v1",
+              "status": "unavailable"
+            }
+          ],
+          "sprint_id": "sprint-2-5"
+        },
+        "observation_sha256": "8a384e495518b9f5e4d334ae21a684325df7bd4d61021783beb225849d16f469",
+        "schema_version": "SprintSnapshot/v1",
+        "stories": [
+          {
+            "acceptance": "not-established",
+            "declared_status": "in_progress",
+            "dependencies": [],
+            "evidence_ids": [
+              "source-1",
+              "source-2"
+            ],
+            "id": "alpha",
+            "issue_state": "unknown",
+            "pull_requests": []
+          },
+          {
+            "acceptance": "not-established",
+            "declared_status": "planned",
+            "dependencies": [
+              "alpha"
+            ],
+            "evidence_ids": [
+              "source-1",
+              "source-2"
+            ],
+            "id": "beta",
+            "issue_state": "unknown",
+            "pull_requests": []
+          }
+        ]
+      },
+      "sources": [
+        {
+          "content": "def authorize(approved):\n    return True\n",
+          "path": "src/approval.py",
+          "sha256": "6baf5437e9accaccfb149815ece681cfff36f55f740501cf720eaff2dc6ec01f"
+        },
+        {
+          "content": "from pathlib import Path\nimport sys\nsys.path.insert(0,str(Path.cwd()/\"src\"))\nfrom approval import authorize\ndef test_rejects_unapproved_request():\n    assert authorize(False) is False\n",
+          "path": "tests/test_approval.py",
+          "sha256": "716c2416453ef953285681082021df0409cbbe7459e01475c3faf2cadd3c2471"
+        }
+      ],
+      "total_check_seconds": 300
+    },
+    "request_sha256": "4e00c33092b4ba0fb6dffb7f8f1b19cb6aff9ce1f67e44a9539f4a05b34dc9a3",
+    "schema_version": "QAReviewReport/v1"
+  },
+  "rationale": "Known fixture previously returned True for False; same real regression now passes after fix.",
+  "schema_version": "QAFindingResolutionProposal/v1",
+  "status": "awaiting-human-review"
+}
