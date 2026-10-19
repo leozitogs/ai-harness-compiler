@@ -10,7 +10,8 @@
   "selected_capabilities": [
     "ahc-027",
     "ahc-028",
-    "ahc-029"
+    "ahc-029",
+    "ahc-030"
   ],
   "source_graph": {
     "capabilities": [
@@ -781,6 +782,43 @@
         "risk": "high",
         "side_effects": [],
         "title": "Nexo operador com autorização e retomada segura"
+      },
+      {
+        "acceptance_criteria": [
+          "A Vera existente evolui com modo revisor executável no adapter team, contratos tipados de entrada, achados e parecer, contexto limitado, memória revisada, ferramentas permitidas e budgets; uma persona em Markdown ou matriz sem execução não constitui entrega.",
+          "Cada achado identifica severidade P0 a P3, revisão e escopo inspecionados, regra ou critério afetado, evidência, reprodução quando verificável, impacto e recomendação; linhas, testes, benchmarks, falhas e sucessos nunca são inventados e cobertura ausente fica inconclusiva.",
+          "A revisão cobre código, contratos, referências, proveniência, regras de negócio, regressões, segurança e integridade dos artefatos; checks determinísticos e julgamento semântico permanecem separados, e uma chamada de LLM ou CI verde não estabelece correção de negócio.",
+          "O fluxo distingue autoria, revisão e aceite, revalida hashes e revisões antes de reutilizar pareceres, resiste a prompt injection e não permite autoaprovação; modelo opcional é consultivo, sem chamadas pagas ou de rede na suíte padrão e sem shell arbitrário ou escrita remota pelo revisor.",
+          "Nexo consome o parecer vinculado ao snapshot e commit corretos para preparar review, matriz de critérios, pendências, riscos e carryover; P0 e P1 abertos bloqueiam recomendação de entrega plena, critérios não verificados não viram Done e fechamento parcial permanece explícito para decisão humana.",
+          "Testes e demo exercitam falso sucesso, falha de negócio com CI verde, evidência stale ou ausente, reprodução inválida, achado resolvido em nova revisão e fechamento parcial; falhas reais alimentam INC e lições somente com evidência revisada, sem criar aprovação, cerimônia ou encerramento fictício."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-029"
+        ],
+        "description": "Como PO, quero um agente revisor funcional que investigue falhas técnicas e de regras de negócio e forneça ao Nexo evidências para a review e a decisão de encerramento da sprint.",
+        "evidence_ids": [
+          "backlog-30"
+        ],
+        "id": "ahc-030",
+        "implementation": "llm",
+        "inputs": [
+          "SprintSnapshot",
+          "código e diff por revisão",
+          "critérios de aceitação",
+          "política de qualidade",
+          "evidências de checks",
+          "memória revisada"
+        ],
+        "outputs": [
+          "QAReviewRequest proposto",
+          "QAReviewReport proposto",
+          "SprintClosureAssessment proposto",
+          "achados e parecer consultivo"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Vera revisora de QA aprofundado e apoio ao encerramento"
       }
     ],
     "project_id": "ai-harness-compiler",
@@ -1079,6 +1117,118 @@
       "objective": "Review evidence, documentation and integration for: Nexo operador com autorização e retomada segura",
       "required_context": [
         "project.yaml#/backlog/28",
+        "project.yaml#/constraints",
+        "project.yaml#/branding"
+      ],
+      "stage": "review",
+      "status": "planned"
+    },
+    {
+      "acceptance_criteria": [
+        "A Vera existente evolui com modo revisor executável no adapter team, contratos tipados de entrada, achados e parecer, contexto limitado, memória revisada, ferramentas permitidas e budgets; uma persona em Markdown ou matriz sem execução não constitui entrega.",
+        "Cada achado identifica severidade P0 a P3, revisão e escopo inspecionados, regra ou critério afetado, evidência, reprodução quando verificável, impacto e recomendação; linhas, testes, benchmarks, falhas e sucessos nunca são inventados e cobertura ausente fica inconclusiva.",
+        "A revisão cobre código, contratos, referências, proveniência, regras de negócio, regressões, segurança e integridade dos artefatos; checks determinísticos e julgamento semântico permanecem separados, e uma chamada de LLM ou CI verde não estabelece correção de negócio.",
+        "O fluxo distingue autoria, revisão e aceite, revalida hashes e revisões antes de reutilizar pareceres, resiste a prompt injection e não permite autoaprovação; modelo opcional é consultivo, sem chamadas pagas ou de rede na suíte padrão e sem shell arbitrário ou escrita remota pelo revisor.",
+        "Nexo consome o parecer vinculado ao snapshot e commit corretos para preparar review, matriz de critérios, pendências, riscos e carryover; P0 e P1 abertos bloqueiam recomendação de entrega plena, critérios não verificados não viram Done e fechamento parcial permanece explícito para decisão humana.",
+        "Testes e demo exercitam falso sucesso, falha de negócio com CI verde, evidência stale ou ausente, reprodução inválida, achado resolvido em nova revisão e fechamento parcial; falhas reais alimentam INC e lições somente com evidência revisada, sem criar aprovação, cerimônia ou encerramento fictício."
+      ],
+      "capability_id": "ahc-030",
+      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
+      "deliverables": [
+        "Contract/architecture proposal",
+        "Acceptance test plan"
+      ],
+      "depends_on": [
+        "task-29-review"
+      ],
+      "id": "task-30-design",
+      "objective": "Define contracts, boundaries and test cases for: Vera revisora de QA aprofundado e apoio ao encerramento",
+      "required_context": [
+        "project.yaml#/backlog/29",
+        "project.yaml#/constraints",
+        "project.yaml#/branding"
+      ],
+      "stage": "design",
+      "status": "planned"
+    },
+    {
+      "acceptance_criteria": [
+        "A Vera existente evolui com modo revisor executável no adapter team, contratos tipados de entrada, achados e parecer, contexto limitado, memória revisada, ferramentas permitidas e budgets; uma persona em Markdown ou matriz sem execução não constitui entrega.",
+        "Cada achado identifica severidade P0 a P3, revisão e escopo inspecionados, regra ou critério afetado, evidência, reprodução quando verificável, impacto e recomendação; linhas, testes, benchmarks, falhas e sucessos nunca são inventados e cobertura ausente fica inconclusiva.",
+        "A revisão cobre código, contratos, referências, proveniência, regras de negócio, regressões, segurança e integridade dos artefatos; checks determinísticos e julgamento semântico permanecem separados, e uma chamada de LLM ou CI verde não estabelece correção de negócio.",
+        "O fluxo distingue autoria, revisão e aceite, revalida hashes e revisões antes de reutilizar pareceres, resiste a prompt injection e não permite autoaprovação; modelo opcional é consultivo, sem chamadas pagas ou de rede na suíte padrão e sem shell arbitrário ou escrita remota pelo revisor.",
+        "Nexo consome o parecer vinculado ao snapshot e commit corretos para preparar review, matriz de critérios, pendências, riscos e carryover; P0 e P1 abertos bloqueiam recomendação de entrega plena, critérios não verificados não viram Done e fechamento parcial permanece explícito para decisão humana.",
+        "Testes e demo exercitam falso sucesso, falha de negócio com CI verde, evidência stale ou ausente, reprodução inválida, achado resolvido em nova revisão e fechamento parcial; falhas reais alimentam INC e lições somente com evidência revisada, sem criar aprovação, cerimônia ou encerramento fictício."
+      ],
+      "capability_id": "ahc-030",
+      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
+      "deliverables": [
+        "Implementation changes",
+        "Automated tests"
+      ],
+      "depends_on": [
+        "task-30-design"
+      ],
+      "id": "task-30-implement",
+      "objective": "Implement the agreed scope for: Vera revisora de QA aprofundado e apoio ao encerramento",
+      "required_context": [
+        "project.yaml#/backlog/29",
+        "project.yaml#/constraints",
+        "project.yaml#/branding"
+      ],
+      "stage": "implement",
+      "status": "planned"
+    },
+    {
+      "acceptance_criteria": [
+        "A Vera existente evolui com modo revisor executável no adapter team, contratos tipados de entrada, achados e parecer, contexto limitado, memória revisada, ferramentas permitidas e budgets; uma persona em Markdown ou matriz sem execução não constitui entrega.",
+        "Cada achado identifica severidade P0 a P3, revisão e escopo inspecionados, regra ou critério afetado, evidência, reprodução quando verificável, impacto e recomendação; linhas, testes, benchmarks, falhas e sucessos nunca são inventados e cobertura ausente fica inconclusiva.",
+        "A revisão cobre código, contratos, referências, proveniência, regras de negócio, regressões, segurança e integridade dos artefatos; checks determinísticos e julgamento semântico permanecem separados, e uma chamada de LLM ou CI verde não estabelece correção de negócio.",
+        "O fluxo distingue autoria, revisão e aceite, revalida hashes e revisões antes de reutilizar pareceres, resiste a prompt injection e não permite autoaprovação; modelo opcional é consultivo, sem chamadas pagas ou de rede na suíte padrão e sem shell arbitrário ou escrita remota pelo revisor.",
+        "Nexo consome o parecer vinculado ao snapshot e commit corretos para preparar review, matriz de critérios, pendências, riscos e carryover; P0 e P1 abertos bloqueiam recomendação de entrega plena, critérios não verificados não viram Done e fechamento parcial permanece explícito para decisão humana.",
+        "Testes e demo exercitam falso sucesso, falha de negócio com CI verde, evidência stale ou ausente, reprodução inválida, achado resolvido em nova revisão e fechamento parcial; falhas reais alimentam INC e lições somente com evidência revisada, sem criar aprovação, cerimônia ou encerramento fictício."
+      ],
+      "capability_id": "ahc-030",
+      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
+      "deliverables": [
+        "Test results linked to each acceptance criterion",
+        "Regression results"
+      ],
+      "depends_on": [
+        "task-30-implement"
+      ],
+      "id": "task-30-verify",
+      "objective": "Collect acceptance and regression evidence for: Vera revisora de QA aprofundado e apoio ao encerramento",
+      "required_context": [
+        "project.yaml#/backlog/29",
+        "project.yaml#/constraints",
+        "project.yaml#/branding"
+      ],
+      "stage": "verify",
+      "status": "planned"
+    },
+    {
+      "acceptance_criteria": [
+        "A Vera existente evolui com modo revisor executável no adapter team, contratos tipados de entrada, achados e parecer, contexto limitado, memória revisada, ferramentas permitidas e budgets; uma persona em Markdown ou matriz sem execução não constitui entrega.",
+        "Cada achado identifica severidade P0 a P3, revisão e escopo inspecionados, regra ou critério afetado, evidência, reprodução quando verificável, impacto e recomendação; linhas, testes, benchmarks, falhas e sucessos nunca são inventados e cobertura ausente fica inconclusiva.",
+        "A revisão cobre código, contratos, referências, proveniência, regras de negócio, regressões, segurança e integridade dos artefatos; checks determinísticos e julgamento semântico permanecem separados, e uma chamada de LLM ou CI verde não estabelece correção de negócio.",
+        "O fluxo distingue autoria, revisão e aceite, revalida hashes e revisões antes de reutilizar pareceres, resiste a prompt injection e não permite autoaprovação; modelo opcional é consultivo, sem chamadas pagas ou de rede na suíte padrão e sem shell arbitrário ou escrita remota pelo revisor.",
+        "Nexo consome o parecer vinculado ao snapshot e commit corretos para preparar review, matriz de critérios, pendências, riscos e carryover; P0 e P1 abertos bloqueiam recomendação de entrega plena, critérios não verificados não viram Done e fechamento parcial permanece explícito para decisão humana.",
+        "Testes e demo exercitam falso sucesso, falha de negócio com CI verde, evidência stale ou ausente, reprodução inválida, achado resolvido em nova revisão e fechamento parcial; falhas reais alimentam INC e lições somente com evidência revisada, sem criar aprovação, cerimônia ou encerramento fictício."
+      ],
+      "capability_id": "ahc-030",
+      "completion_rule": "Human-reviewed evidence must satisfy this stage's deliverables and source criteria. A generated plan is not completion evidence.",
+      "deliverables": [
+        "Reviewed pull request",
+        "Updated documentation and completion evidence"
+      ],
+      "depends_on": [
+        "task-30-verify"
+      ],
+      "id": "task-30-review",
+      "objective": "Review evidence, documentation and integration for: Vera revisora de QA aprofundado e apoio ao encerramento",
+      "required_context": [
+        "project.yaml#/backlog/29",
         "project.yaml#/constraints",
         "project.yaml#/branding"
       ],
