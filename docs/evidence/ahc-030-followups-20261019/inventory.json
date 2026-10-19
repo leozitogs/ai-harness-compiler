@@ -148,8 +148,10 @@
     },
     {
       "path": "fixture-reproduce.py",
-      "sha256": "7f36c57494a1be1556cb1a405fc871391b28eb266701f4042b6baa884a9f8c63",
-      "source": ".factory/demo-qa-resolution.py"
+      "sha256": "5b419dbf880fa5c4ba46babe9aa4136332a9e592b3cd4da0458148ad38c666ef",
+      "source": ".factory/demo-qa-resolution.py",
+      "executed_source_sha256": "7f36c57494a1be1556cb1a405fc871391b28eb266701f4042b6baa884a9f8c63",
+      "note": "Archived script formatted for repository lint; same test bytes and behavior as executed source."
     },
     {
       "path": "real-resolution-proposal.json",

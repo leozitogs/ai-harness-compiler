@@ -68,7 +68,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0025 — Incremento AHC-029 e demonstração de recuperação](records/DOC/DOC-0025/0006.json) · active · revision 6
 - [DOC-0026 — Escopo e tarefas do agente revisor AHC-030](records/DOC/DOC-0026/0004.json) · active · revision 4
 - [DOC-0027 — Incremento funcional AHC-030 e demonstração Vera/Nexo](records/DOC/DOC-0027/0006.json) · active · revision 6
-- [DOC-0028 — Correções da review e demonstração de resolução AHC-030](records/DOC/DOC-0028/0002.json) · active · revision 2
+- [DOC-0028 — Correções da review e demonstração de resolução AHC-030](records/DOC/DOC-0028/0004.json) · active · revision 4
 - [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2
 - [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1
 - [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1
