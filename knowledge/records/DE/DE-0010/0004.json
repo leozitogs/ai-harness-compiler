@@ -1,0 +1,60 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO approved analysis and requested recording/queueing on 2026-10-19; no new training or paid resources executed.",
+  "created_at": "2026-10-19T20:11:59.539961+00:00",
+  "decision": "Prioritize 021/022/023 carryover; version complete fingerprints before parameter search, require reviewed data and resource feasibility before training.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "764 offline tests passed; actual model-output human review absent. Sprint closure is partial; no model qualification or holdout.",
+      "outcome": "observed",
+      "sha256": "bb7986684fb4468095c335e4a1cd8b52999a108b4fa3bfe0983a90b5acb7f247",
+      "source": "docs/delivery/sprint-2-6.md"
+    },
+    {
+      "command": null,
+      "note": "764 offline tests passed; actual model-output human review absent. Sprint closure is partial; no model qualification or holdout.",
+      "outcome": "observed",
+      "sha256": "3e3d52b185bb224ac99227e3e074b98d65b22efe7917e06bfa827c43f03a37e1",
+      "source": "planning/sprint-2-6.json"
+    },
+    {
+      "command": null,
+      "note": "764 offline tests passed; actual model-output human review absent. Sprint closure is partial; no model qualification or holdout.",
+      "outcome": "observed",
+      "sha256": "93299a987b1836c0110021f37e47066855cdd3e9613ad39031301eaa5ea6e4cb",
+      "source": "project-definition/project.yaml"
+    }
+  ],
+  "id": "DE-0010",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "Hardware feasibility not measured for training",
+    "No improvement claimed from recommended sampling values",
+    "Model/provider capabilities must be rechecked before execution"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0006",
+    "DOC-0021"
+  ],
+  "resolution": null,
+  "review_note": "Added GitHub queued milestone and issues 41/42/43; no execution or promotion authorized by tracking.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 4,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Queue Sprint2.6 with provider-specific profiles, controlled experiments and conditional LoRA/QLoRA feasibility; preserve generalist behavior and project rules in input.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Otimização de inferência antes de fine-tuning condicionado",
+  "updated_at": "2026-10-19T20:15:05.240858+00:00"
+}

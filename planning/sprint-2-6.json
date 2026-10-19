@@ -55,5 +55,23 @@
   "status": "planned",
   "task_graph_note": "Do not generate a runnable graph until AHC-021/022 gates are actually met or scope is explicitly replanned; never declare them completed to satisfy planning.",
   "task_graph_status": "deferred-unmet-prerequisites",
-  "timebox_status": "not-committed"
+  "timebox_status": "not-committed",
+  "tracking": {
+    "issues": {
+      "ahc-024": {
+        "number": 41,
+        "url": "https://github.com/leozitogs/ai-harness-compiler/issues/41"
+      },
+      "ahc-025": {
+        "number": 42,
+        "url": "https://github.com/leozitogs/ai-harness-compiler/issues/42"
+      },
+      "ahc-026": {
+        "number": 43,
+        "url": "https://github.com/leozitogs/ai-harness-compiler/issues/43"
+      }
+    },
+    "milestone_number": 3,
+    "milestone_url": "https://github.com/leozitogs/ai-harness-compiler/milestone/3"
+  }
 }

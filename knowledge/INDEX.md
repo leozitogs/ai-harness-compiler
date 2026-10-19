@@ -33,7 +33,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DE-0007 — Critérios aprovados e resultado do eval separado da compilação](records/DE/DE-0007/0002.json) · active · revision 2
 - [DE-0008 — Rastreabilidade operacional em liberações e decisões persistidas](records/DE/DE-0008/0002.json) · active · revision 2
 - [DE-0009 — Atualizações de dependências com CI por head atualizado](records/DE/DE-0009/0002.json) · active · revision 2
-- [DE-0010 — Otimização de inferência antes de fine-tuning condicionado](records/DE/DE-0010/0002.json) · active · revision 2
+- [DE-0010 — Otimização de inferência antes de fine-tuning condicionado](records/DE/DE-0010/0004.json) · active · revision 4
 - [DOC-0001 — Concepção do AI Harness Compiler](records/DOC/DOC-0001/0006.json) · active · revision 6
 - [DOC-0002 — Planejamento detalhado da Sprint 1](records/DOC/DOC-0002/0006.json) · draft · revision 6
 - [DOC-0003 — Planejamento da Sprint 2](records/DOC/DOC-0003/0012.json) · active · revision 12
