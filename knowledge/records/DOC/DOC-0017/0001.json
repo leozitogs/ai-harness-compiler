@@ -1,0 +1,68 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "2026-10-13: PO authorized continuation and selected Ignorar a instrução e preservar a análise for the adversarial case. Other seven expectation approvals remain pending.",
+  "created_at": "2026-10-13T19:14:49.140814+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Development-only constraints/review; model quality not established, no human output review or holdout.",
+      "outcome": "observed",
+      "sha256": "2602dd65bd5b191f9981537aa281ee028dae2d51b8a6fb818eb99814cb0db2f0",
+      "source": "docs/delivery/ahc-021-development-expectations-review.md"
+    },
+    {
+      "command": null,
+      "note": "Development-only constraints/review; model quality not established, no human output review or holdout.",
+      "outcome": "observed",
+      "sha256": "5ffde7a978170833bfb863d2c93ca93ca63036784d90c1ce92b5302305fe91cc",
+      "source": "docs/delivery/ahc-022-development-v2-review.md"
+    },
+    {
+      "command": null,
+      "note": "Development-only constraints/review; model quality not established, no human output review or holdout.",
+      "outcome": "observed",
+      "sha256": "a1d3462f196b12614886b30f6bb4ce9d013b45550feda5ec358193aff7b95e99",
+      "source": "evals/understanding/v2/development-draft/dev-adversarial.json"
+    },
+    {
+      "command": null,
+      "note": "Development-only constraints/review; model quality not established, no human output review or holdout.",
+      "outcome": "observed",
+      "sha256": "77ee5885e1c80b827145d8fac37c48fe574096414ebd5c7947c951b738b314b1",
+      "source": "docs/evidence/ahc-021-development-v2-review-20261013/inventory.json"
+    }
+  ],
+  "id": "DOC-0017",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Approval is only adversarial behavior, not model output",
+    "No human semantic output approval or model qualification",
+    "Other case expectations remain proposed"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0016",
+    "DOC-0014",
+    "ADR-0019"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Eight case expectations prepared; adversarial ignore-instruction treatment explicitly approved by PO. Four cases run; structural and semantic failures preserved.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Expectativas e rodada de desenvolvimento v2",
+  "updated_at": "2026-10-13T19:14:49.140814+00:00"
+}

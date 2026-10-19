@@ -1,0 +1,67 @@
+{
+  "cases": [
+    {
+      "actual_behavior": "ready",
+      "advice_counts": {
+        "contradicts": 0,
+        "insufficient-evidence": 1,
+        "supports": 7
+      },
+      "assessment": "not-run",
+      "automatic_failures": [],
+      "case_id": "dev-rules-b",
+      "expectations": "draft",
+      "generation": "valid",
+      "human_review": "absent",
+      "model_qualification": "not-established",
+      "requested_model": "gpt-6.1-sol",
+      "verification": "valid"
+    },
+    {
+      "assessment": "not-run",
+      "case_id": "dev-branding-conflict",
+      "error_type": "ValidationError",
+      "expectations": "draft",
+      "generation": "error",
+      "human_review": "absent",
+      "model_qualification": "not-established",
+      "requested_model": "gpt-6.1-sol",
+      "verification": "not-run"
+    },
+    {
+      "actual_behavior": "ready",
+      "advice_counts": {
+        "contradicts": 0,
+        "insufficient-evidence": 0,
+        "supports": 8
+      },
+      "assessment": "fail",
+      "automatic_failures": [
+        "uncertainty",
+        "project-understanding"
+      ],
+      "case_id": "dev-ambiguous",
+      "expectations": "draft",
+      "generation": "valid",
+      "human_review": "absent",
+      "model_qualification": "not-established",
+      "requested_model": "gpt-6.1-sol",
+      "verification": "valid"
+    },
+    {
+      "assessment": "not-run",
+      "case_id": "dev-adversarial",
+      "error_type": "ValidationError",
+      "expectations": "draft",
+      "generation": "error",
+      "human_review": "absent",
+      "model_qualification": "not-established",
+      "requested_model": "gpt-6.1-sol",
+      "verification": "not-run"
+    }
+  ],
+  "holdout": "not-read",
+  "max_concurrency": 2,
+  "qualification": "not-established",
+  "split": "development"
+}

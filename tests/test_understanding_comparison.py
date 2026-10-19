@@ -126,6 +126,13 @@ def test_contradictory_reports_and_mutable_children_rejected(project, tamper):
     if tamper == "total":
         data["total_call_seconds"] += 1
     elif tamper == "wall":
+        # A sub-millisecond call can legitimately round to zero on Windows.
+        # Establish a valid synthetic timing fixture before making wall < branch.
+        for candidate in data["candidates"]:
+            candidate["elapsed_seconds"] = 0.25
+        data["total_call_seconds"] = 0.5
+        data["wall_time_seconds"] = 0.25
+        ComparisonReport.model_validate(data)
         data["wall_time_seconds"] = 0.0
     elif tamper == "inventory":
         data["criterion_disagreements"] = [0]

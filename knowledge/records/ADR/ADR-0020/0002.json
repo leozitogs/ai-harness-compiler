@@ -1,0 +1,60 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO authorized correcting INC-0015 as Sprint2.5 amendment; v2 histories kept intact.",
+  "created_at": "2026-10-13T19:44:27.504227+00:00",
+  "decision": "Add versioned source-complete advisory contract, exact hashes/link inventories and omissions; generalist analysis program v2.2 ignores injected commands while preserving usable project intent and material questions.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "672 offline tests passed; final development recovered original two failures. No human model-output approval or qualification; rule-B scope pending PO.",
+      "outcome": "observed",
+      "sha256": "28b8c5fc51fb767ce900c39fc9da2ec28abcf47bbe66c1c11cd46c1105830905",
+      "source": "docs/adr/0020-source-completeness-audit.md"
+    },
+    {
+      "command": null,
+      "note": "672 offline tests passed; final development recovered original two failures. No human model-output approval or qualification; rule-B scope pending PO.",
+      "outcome": "observed",
+      "sha256": "33af845c3eafccd6630029040af1eb0ee9d7bd193c16fe5cfcf8f5138ff38f67",
+      "source": "src/ai_harness_compiler/models/semantic_verification_v3.py"
+    },
+    {
+      "command": null,
+      "note": "672 offline tests passed; final development recovered original two failures. No human model-output approval or qualification; rule-B scope pending PO.",
+      "outcome": "passed",
+      "sha256": "8bc2cb8da59a31b00965b5d28a96be250ecbdc20658b122256ffc14ea95ebd01",
+      "source": "tests/test_semantic_verification_v3.py"
+    }
+  ],
+  "id": "ADR-0020",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "Filled ledger does not prove semantic completeness",
+    "Same requested model, no scientific independent assurance",
+    "Case expectations and holdout qualification remain pending"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0019",
+    "INC-0015"
+  ],
+  "resolution": null,
+  "review_note": "Independent review caught lost partial links; inverse ledger guard/regressions now reject them. Authority and compilation gates preserved.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Verifier v3 accounts for every literal source and existing finding linkage, with explicit material omissions; model advice never repairs or approves analysis.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Auditoria consultiva de fontes e omissões",
+  "updated_at": "2026-10-13T19:44:27.665148+00:00"
+}

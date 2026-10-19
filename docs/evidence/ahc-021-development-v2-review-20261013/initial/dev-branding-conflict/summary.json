@@ -1,0 +1,11 @@
+{
+  "assessment": "not-run",
+  "case_id": "dev-branding-conflict",
+  "error_type": "ValidationError",
+  "expectations": "draft",
+  "generation": "error",
+  "human_review": "absent",
+  "model_qualification": "not-established",
+  "requested_model": "gpt-6.1-sol",
+  "verification": "not-run"
+}

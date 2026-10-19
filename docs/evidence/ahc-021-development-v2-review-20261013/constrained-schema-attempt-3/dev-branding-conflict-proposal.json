@@ -1,0 +1,90 @@
+{
+  "context_findings": [
+    {
+      "context_indices": [
+        0,
+        5
+      ],
+      "note": "Propósito derivado da concepção e da descrição do backlog.",
+      "subject": "purpose",
+      "text": "Organizar publicações da equipe, suas fontes e registrar decisões."
+    },
+    {
+      "context_indices": [
+        0,
+        1
+      ],
+      "note": "Público declarado no branding, contextualizado pela concepção.",
+      "subject": "audience",
+      "text": "Autores que trabalham em equipe."
+    },
+    {
+      "context_indices": [
+        0,
+        5,
+        6
+      ],
+      "note": "Combina o domínio declarado com o escopo descrito.",
+      "subject": "domain",
+      "text": "Gestão de workspace com foco em publicações da equipe."
+    },
+    {
+      "context_indices": [
+        0,
+        5,
+        7
+      ],
+      "note": "Capacidades descritas no conteúdo; a autorização da liberação está em conflito.",
+      "subject": "capability",
+      "text": "Organizar publicações e fontes, registrar decisões e liberar publicações."
+    },
+    {
+      "context_indices": [
+        3
+      ],
+      "note": "Obrigação explícita de identificação do responsável.",
+      "subject": "constraint",
+      "text": "Registrar a identidade do responsável."
+    },
+    {
+      "context_indices": [
+        4
+      ],
+      "note": "Limite informado pelo campo max_build_cost_usd.",
+      "subject": "constraint",
+      "text": "Custo máximo de construção de US$ 0,00."
+    }
+  ],
+  "criteria": [
+    {
+      "condition": "Quando for solicitada a liberação de uma publicação da equipe.",
+      "exceptions": [],
+      "kind": "business-rule",
+      "note": "Regra determinável, mas incompatível com a dispensa de aprovação declarada no contexto 2. A precedência permanece indefinida.",
+      "outcome": "A liberação exige aprovação humana explícita.",
+      "question": null,
+      "source_atom_id": "atom-7",
+      "uncertainties": [
+        {
+          "impact": "precedence",
+          "rationale": "A decisão altera a autorização para liberar uma publicação; as duas declarações não podem reger simultaneamente a mesma liberação.",
+          "text": "Qual declaração prevalece na liberação de publicações: exigir aprovação humana explícita ou dispensar qualquer aprovação humana?"
+        }
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "context_indices": [
+        2,
+        7
+      ],
+      "impact": null,
+      "kind": "conflict",
+      "rationale": "As declarações estabelecem condições incompatíveis de autorização. Não há precedência informada que permita decidir qual aplicar.",
+      "rejection_reason": null,
+      "text": "O contexto 2 declara que liberar publicação da equipe dispensa qualquer aprovação humana; o contexto 7 exige aprovação humana explícita para a mesma ação."
+    }
+  ],
+  "schema_version": "SemanticAnalysisProposal/v2"
+}

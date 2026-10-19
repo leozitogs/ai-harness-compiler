@@ -1,0 +1,13 @@
+{
+  "assessment": "not-run",
+  "decision_authority": "agent-decision-under-po-delegation",
+  "disposition": "ready",
+  "human_output_review": "absent",
+  "model_qualification": "not-established",
+  "omissions": [],
+  "support_counts": {
+    "contradicts": 0,
+    "insufficient-evidence": 0,
+    "supports": 9
+  }
+}

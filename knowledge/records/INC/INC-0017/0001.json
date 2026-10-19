@@ -1,0 +1,50 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Inspected failed Windows3.12 CI log",
+    "Built a validated synthetic fixture with branch durations0.25,total0.5,wall0.25",
+    "Set wall to zero and preserved expected ValidationError",
+    "25 targeted comparison tests passed, Ruff/format passed"
+  ],
+  "author": "codex:engineering",
+  "challenge": "Keep contradictory-time validation tested without relying on a minimum duration or weakening the runtime guard.",
+  "consequences": [],
+  "context": "PR34 docs-only initial change; unchanged comparison test exposed intermittent timing assumption. Failed run https://github.com/leozitogs/ai-harness-compiler/actions/runs/38461294800 retained.",
+  "created_at": "2026-10-13T20:19:12.399935+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "25 comparison tests passed; synthetic wall-duration seed validated before tamper.",
+      "outcome": "passed",
+      "sha256": "65a19b8b23e128469aac1e397a35ee8dbcbd16db284a904c1a49daaa26a2366f",
+      "source": "tests/test_understanding_comparison.py"
+    }
+  ],
+  "id": "INC-0017",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Synthetic timings verify invariants, not performance",
+    "CI matrix still required before merge"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0019",
+    "INC-0008"
+  ],
+  "resolution": "Wall tamper test now establishes known positive branch duration and validates fixture before tampering. No sleep, skip or change to runtime timing guard.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": "Test assumed all actual branch durations round above zero; a valid zero-duration sample defeats its intended tamper condition.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Windows/Python3.12 CI: 671 passed, wall tamper test failed because replacing elapsed wall with zero can leave a valid report for sub-millisecond calls.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Fixture de wall time dependia do tempo real arredondado",
+  "updated_at": "2026-10-13T20:19:12.399935+00:00"
+}

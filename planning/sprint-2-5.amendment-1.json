@@ -1,0 +1,47 @@
+{
+  "approval_bounds": "Authorizes this amendment, not case expectations, model outputs, corpus freeze, holdout or story completion.",
+  "authorization": "PO: corrije essas pendências como emenda da sprint 2.5.",
+  "date": "2026-10-13",
+  "evidence": [
+    "docs/delivery/sprint-2-5-amendment-1.md",
+    "docs/evidence/sprint-2-5-amendment-1-20261013/inventory.json"
+  ],
+  "format": "sprint-amendment/v1",
+  "id": "sprint-2-5-amendment-1",
+  "incident": "INC-0015",
+  "qualification": "not-established",
+  "scope": [
+    "Preserve legitimate project intent while ignoring embedded instructions",
+    "Represent source-bound missing material questions and rules in verifier advice"
+  ],
+  "sprint_id": "sprint-2-5",
+  "status": "in_review",
+  "story": "ahc-022",
+  "tasks": [
+    {
+      "depends_on": [],
+      "id": "s25a1-analysis",
+      "verification": "Development adversarial stays ready with original rule; known rules retained alongside material questions"
+    },
+    {
+      "depends_on": [],
+      "id": "s25a1-verifier-v3",
+      "verification": "Source-complete ledger, exact hashes and explicit omissions; historical incomplete analysis produces missing-question advice"
+    },
+    {
+      "depends_on": [
+        "s25a1-analysis",
+        "s25a1-verifier-v3"
+      ],
+      "id": "s25a1-regression",
+      "verification": "Offline invariants, live development evidence and preservation of failed attempts; no benchmark labels in model input"
+    },
+    {
+      "depends_on": [
+        "s25a1-regression"
+      ],
+      "id": "s25a1-integration",
+      "verification": "Independent review, required CI, merge and memory records"
+    }
+  ]
+}

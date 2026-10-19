@@ -1,0 +1,44 @@
+{
+  "analysis_program": "historical-v2-unchanged",
+  "candidate_analysis_program": "semantic-analysis/v2.2",
+  "disposition": "ready",
+  "generation": "historical-unchanged",
+  "human_review": "absent",
+  "job": "historical-ambiguous-audit",
+  "omissions": [
+    {
+      "kind": "question",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-7"
+      ],
+      "text": "Quais etapas são obrigatórias no processo de publicação da equipe?"
+    },
+    {
+      "kind": "question",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-5",
+        "atom-8"
+      ],
+      "text": "Como os papéis e suas responsabilidades são atribuídos, incluindo quem é o responsável registrado e quem pode atuar como operador?"
+    },
+    {
+      "kind": "question",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-8"
+      ],
+      "text": "A confirmação pelo operador basta para concluir o processo ou existem outras condições obrigatórias de conclusão?"
+    }
+  ],
+  "qualification": "not-established",
+  "requested_model": "gpt-6.1-sol",
+  "source_rows": 8,
+  "support_counts": {
+    "contradicts": 0,
+    "insufficient-evidence": 0,
+    "supports": 8
+  },
+  "verification": "valid"
+}
