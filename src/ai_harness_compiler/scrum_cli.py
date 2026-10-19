@@ -38,8 +38,13 @@ def execute(args: argparse.Namespace) -> int:
         data["observed_at"] = timestamp()
         observation = ScrumObservation.model_validate(data)
     snapshot = observe(observation)
+    report = snapshot.model_dump()
+    if args.scrum_command == "propose":
+        from ai_harness_compiler.scrum_planning import propose
+
+        report = propose(snapshot).model_dump()
     with args.output.open("x", encoding="utf-8", newline="\n") as stream:
-        stream.write(json_text(snapshot.model_dump()))
+        stream.write(json_text(report))
     print(
         f"Saved read-only Scrum snapshot: {args.output}; "
         f"{len(snapshot.impediments)} diagnostics; no completion authority."

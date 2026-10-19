@@ -45,6 +45,7 @@ from ai_harness_compiler.models.scrum import (
     ScrumObservation,
     SprintSnapshot,
 )
+from ai_harness_compiler.models.scrum_planning import ScrumActionProposal, ScrumPlanningReport
 from ai_harness_compiler.models.semantic_analysis import AnalysisProposal, SemanticAnalysis
 from ai_harness_compiler.models.semantic_analysis_v3 import AnalysisProposalV3, SemanticAnalysisV3
 from ai_harness_compiler.models.semantic_assessment import (
@@ -87,6 +88,8 @@ from ai_harness_compiler.pipeline import plan
 from ai_harness_compiler.planning import decompose
 
 MODELS: dict[str, type[Contract]] = {
+    "scrum-action-proposal": ScrumActionProposal,
+    "scrum-planning-report": ScrumPlanningReport,
     "delivery-evidence": DeliveryEvidence,
     "scrum-observation": ScrumObservation,
     "sprint-snapshot": SprintSnapshot,
@@ -350,6 +353,11 @@ def main(argv: list[str] | None = None) -> int:
     )
     scrum_reconcile.add_argument("input", type=Path)
     scrum_reconcile.add_argument("--output", type=Path, required=True)
+    scrum_propose = scrum_commands.add_parser(
+        "propose", help="Derive offline proposals from saved evidence at current time"
+    )
+    scrum_propose.add_argument("input", type=Path)
+    scrum_propose.add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
     try:
         if args.command == "scrum":

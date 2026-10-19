@@ -16,6 +16,8 @@ from langsmith import tracing_context
 from ai_harness_compiler.compiler import json_text
 from ai_harness_compiler.models.team import POReview, Role, TeamConfig
 from ai_harness_compiler.pipeline import plan
+from ai_harness_compiler.scrum_collection import timestamp
+from ai_harness_compiler.scrum_planning import assert_current
 from ai_harness_compiler.team.agents import (
     BoundedAgent,
     CodexPolicy,
@@ -39,6 +41,13 @@ class TeamState(TypedDict, total=False):
     approval: dict[str, Any]
 
 
+def source_digests(context: RepositoryContext, config: TeamConfig) -> dict[str, str]:
+    digests = context.digests()
+    if config.scrum_snapshot is not None:
+        digests["scrum-observation"] = config.scrum_snapshot.observation_sha256
+    return digests
+
+
 def build_graph(
     config: TeamConfig,
     tools: TeamTools,
@@ -47,7 +56,15 @@ def build_graph(
 ) -> CompiledStateGraph[TeamState, None, TeamState, TeamState]:
     def dispatch(state: TeamState) -> dict[str, object]:
         route = router.route(config.request)
-        roles = list(PERSONAS) if config.mode == "prepare" else [cast(Role, route["selected_role"])]
+        if config.scrum_snapshot is not None:
+            route = {**route, "selected_role": "delivery", "scrum_scope_override": True}
+        roles = (
+            ["delivery"]
+            if config.scrum_snapshot is not None
+            else list(PERSONAS)
+            if config.mode == "prepare"
+            else [cast(Role, route["selected_role"])]
+        )
         return {"selected_roles": roles, "route": route, "status": "running"}
 
     def route_agents(state: TeamState) -> list[Send]:
@@ -120,8 +137,10 @@ def write_report(output: Path, state: TeamState, router: IntentRouter) -> None:
 
 def prepare_team(config: TeamConfig, output: Path) -> dict[str, object]:
     config = TeamConfig.model_validate(config.model_dump())
+    if config.scrum_snapshot is not None:
+        assert_current(config.scrum_snapshot, Path(config.repository_root), timestamp())
     context = RepositoryContext(Path(config.repository_root), config.project.id)
-    tools = TeamTools(plan(config.project), list(config.selected), context)
+    tools = TeamTools(plan(config.project), list(config.selected), context, config.scrum_snapshot)
     router = IntentRouter()
     output.mkdir(parents=True, exist_ok=False)
     run_id = f"run-{uuid4().hex}"
@@ -139,7 +158,7 @@ def prepare_team(config: TeamConfig, output: Path) -> dict[str, object]:
         if config.engine == "codex-cli":
             invocation["max_concurrency"] = 2
         with tracing_context(enabled=False):
-            initial: TeamState = {"reports": [], "source_digests": context.digests()}
+            initial: TeamState = {"reports": [], "source_digests": source_digests(context, config)}
             graph.invoke(initial, invocation)
             state = cast(TeamState, graph.get_state(invocation).values)
         write_report(output, state, router)
@@ -154,10 +173,12 @@ def review_team(output: Path, decision: POReview) -> dict[str, object]:
     decision = POReview.model_validate(decision.model_dump())
     metadata = json.loads((output / "run.json").read_text(encoding="utf-8"))
     config = TeamConfig.model_validate(metadata["config"])
+    if config.scrum_snapshot is not None:
+        assert_current(config.scrum_snapshot, Path(config.repository_root), timestamp())
     if not (output / "checkpoints.sqlite").is_file():
         raise ValueError("Run checkpoint does not exist")
     context = RepositoryContext(Path(config.repository_root), config.project.id)
-    tools = TeamTools(plan(config.project), list(config.selected), context)
+    tools = TeamTools(plan(config.project), list(config.selected), context, config.scrum_snapshot)
     router = IntentRouter()
     with SqliteSaver.from_conn_string(str(output / "checkpoints.sqlite")) as saver:
         graph = build_graph(config, tools, router, saver)
@@ -171,7 +192,7 @@ def review_team(output: Path, decision: POReview) -> dict[str, object]:
             state = cast(TeamState, graph.get_state(invocation).values)
             if state.get("status") != "awaiting_po":
                 raise ValueError("Only a pending, successful team proposal can be reviewed")
-            if state["source_digests"] != context.digests():
+            if state["source_digests"] != source_digests(context, config):
                 raise ValueError(
                     "Repository context changed; prepare a new proposal before acceptance"
                 )

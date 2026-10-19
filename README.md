@@ -28,6 +28,8 @@ alternativa local explícita; falhas não trocam de modelo automaticamente.
 
 AHC-027 adiciona um [observador Scrum somente leitura](docs/engineering/scrum-observer.md),
 com fontes limitadas, diagnóstico rastreável e nenhuma autoridade de aceite.
+AHC-028 integra [propostas Scrum ao Nexo](docs/engineering/nexo-scrum-planning.md),
+com critérios preservados, capacidade desconhecida e revisão humana persistente.
 
 ```sh
 factory model-policy
