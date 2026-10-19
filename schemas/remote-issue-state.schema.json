@@ -1,0 +1,99 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "assignee_ids": {
+      "items": {
+        "type": "integer"
+      },
+      "maxItems": 100,
+      "title": "Assignee Ids",
+      "type": "array"
+    },
+    "body_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Body Sha256",
+      "type": "string"
+    },
+    "labels": {
+      "items": {
+        "maxLength": 100,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 256,
+      "title": "Labels",
+      "type": "array"
+    },
+    "milestone_id": {
+      "anyOf": [
+        {
+          "minimum": 1,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Milestone Id"
+    },
+    "node_id": {
+      "maxLength": 160,
+      "minLength": 1,
+      "title": "Node Id",
+      "type": "string"
+    },
+    "number": {
+      "minimum": 1,
+      "title": "Number",
+      "type": "integer"
+    },
+    "observed_at": {
+      "minLength": 1,
+      "title": "Observed At",
+      "type": "string"
+    },
+    "repository": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}/[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$",
+      "title": "Repository",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "RemoteIssueState/v1",
+      "default": "RemoteIssueState/v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "state": {
+      "enum": [
+        "open",
+        "closed"
+      ],
+      "title": "State",
+      "type": "string"
+    },
+    "title_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Title Sha256",
+      "type": "string"
+    },
+    "updated_at": {
+      "minLength": 1,
+      "title": "Updated At",
+      "type": "string"
+    }
+  },
+  "required": [
+    "repository",
+    "number",
+    "node_id",
+    "observed_at",
+    "updated_at",
+    "state",
+    "title_sha256",
+    "body_sha256",
+    "labels"
+  ],
+  "title": "RemoteIssueState",
+  "type": "object"
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "real-read-only-inspection",
+  "real_remote_writes": 0,
+  "remote": {
+    "assignee_ids": [],
+    "body_sha256": "396a6d096727ea74bffdf3bb40b92a6aae6989a3b0858e733e6d1cc6b27648ca",
+    "labels": [],
+    "milestone_id": 18728139,
+    "node_id": "I_kwDOU9RSU88AAAABYYacVA",
+    "number": 46,
+    "observed_at": "2026-10-19T21:34:49.076645+00:00",
+    "repository": "leozitogs/ai-harness-compiler",
+    "schema_version": "RemoteIssueState/v1",
+    "state": "open",
+    "title_sha256": "c77a463c46135b30388537e748e38875b620497ecdaefb0729ff63eee1b09a1b",
+    "updated_at": "2026-10-19T20:38:11Z"
+  }
+}

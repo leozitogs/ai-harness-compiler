@@ -1,7 +1,8 @@
 # Sprint 2.5.5 — Nexo: operações Scrum com evidências
 
 Planejada e iniciada em 2026-10-19 por pedido explícito do PO (`podes começar`).
-AHC-027 ativa; AHC-028/029 permanecem planejadas. Capacidade e duração não estão
+AHC-027/028 integradas via PR48/49 e em revisão; AHC-029 em execução por
+continuação explícita do PO. Nenhum aceite por critério é inferido. Capacidade e duração não estão
 calibradas; proposta de cinco dias úteis não é prazo de entrega prometido.
 
 ## Sprint Goal
@@ -91,3 +92,14 @@ Aplicar DoD local: critérios evidenciados, regressões, schemas quando houver n
 contratos, docs/memória, revisão, CI e PR integrado. Sprint Review reúne resultados
 e pendências; retrospectiva propõe uma melhoria verificável. Nenhuma cerimônia está
 agendada ou declarada realizada por este plano.
+
+
+## Evolução observada dos incrementos
+
+- AHC-028 adotou cache em sessão com invalidação completa, em vez de invalidar por
+  história; a escolha conservadora está no ADR-0024, sem alegar economia de inferência.
+- AHC-029 limita a primeira operação à adição de etiquetas de pendência, com diff
+  autorizado e journal local compartilhado. Alterações de status/marcos/ordem e
+  resolução administrativa de efeitos não estabelecidos ficam fora deste incremento.
+- Não há promessa de CAS/exactly-once remoto. Escrita real continua exigindo decisão
+  humana sobre ação concreta; a demo de recuperação usa adapter fake explicitamente.

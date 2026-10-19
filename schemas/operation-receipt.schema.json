@@ -1,0 +1,247 @@
+{
+  "$defs": {
+    "OperationAuthorization": {
+      "additionalProperties": false,
+      "properties": {
+        "actor": {
+          "const": "human-product-owner",
+          "default": "human-product-owner",
+          "title": "Actor",
+          "type": "string"
+        },
+        "comment": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Comment",
+          "type": "string"
+        },
+        "expires_at": {
+          "minLength": 1,
+          "title": "Expires At",
+          "type": "string"
+        },
+        "issued_at": {
+          "minLength": 1,
+          "title": "Issued At",
+          "type": "string"
+        },
+        "operation_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Operation Sha256",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "OperationAuthorization/v1",
+          "default": "OperationAuthorization/v1",
+          "title": "Schema Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "operation_sha256",
+        "issued_at",
+        "expires_at",
+        "comment"
+      ],
+      "title": "OperationAuthorization",
+      "type": "object"
+    },
+    "RemoteIssueState": {
+      "additionalProperties": false,
+      "properties": {
+        "assignee_ids": {
+          "items": {
+            "type": "integer"
+          },
+          "maxItems": 100,
+          "title": "Assignee Ids",
+          "type": "array"
+        },
+        "body_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Body Sha256",
+          "type": "string"
+        },
+        "labels": {
+          "items": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 256,
+          "title": "Labels",
+          "type": "array"
+        },
+        "milestone_id": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Milestone Id"
+        },
+        "node_id": {
+          "maxLength": 160,
+          "minLength": 1,
+          "title": "Node Id",
+          "type": "string"
+        },
+        "number": {
+          "minimum": 1,
+          "title": "Number",
+          "type": "integer"
+        },
+        "observed_at": {
+          "minLength": 1,
+          "title": "Observed At",
+          "type": "string"
+        },
+        "repository": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}/[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$",
+          "title": "Repository",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "RemoteIssueState/v1",
+          "default": "RemoteIssueState/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "state": {
+          "enum": [
+            "open",
+            "closed"
+          ],
+          "title": "State",
+          "type": "string"
+        },
+        "title_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Title Sha256",
+          "type": "string"
+        },
+        "updated_at": {
+          "minLength": 1,
+          "title": "Updated At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "repository",
+        "number",
+        "node_id",
+        "observed_at",
+        "updated_at",
+        "state",
+        "title_sha256",
+        "body_sha256",
+        "labels"
+      ],
+      "title": "RemoteIssueState",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "authorization": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/OperationAuthorization"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "operation_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Operation Sha256",
+      "type": "string"
+    },
+    "previous_sha256": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Previous Sha256"
+    },
+    "reason": {
+      "enum": [
+        "prepared",
+        "human-authorized",
+        "human-cancelled",
+        "dispatch-recorded",
+        "desired-state-observed",
+        "remote-changed",
+        "authorization-expired",
+        "source-changed",
+        "preflight-unavailable",
+        "write-or-observation-uncertain",
+        "effect-not-established"
+      ],
+      "title": "Reason",
+      "type": "string"
+    },
+    "recorded_at": {
+      "minLength": 1,
+      "title": "Recorded At",
+      "type": "string"
+    },
+    "remote": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/RemoteIssueState"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "schema_version": {
+      "const": "OperationReceipt/v1",
+      "default": "OperationReceipt/v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "sequence": {
+      "minimum": 1,
+      "title": "Sequence",
+      "type": "integer"
+    },
+    "state": {
+      "enum": [
+        "prepared",
+        "authorized",
+        "attempted",
+        "observed",
+        "uncertain",
+        "blocked",
+        "cancelled"
+      ],
+      "title": "State",
+      "type": "string"
+    }
+  },
+  "required": [
+    "operation_sha256",
+    "sequence",
+    "state",
+    "recorded_at",
+    "reason"
+  ],
+  "title": "OperationReceipt",
+  "type": "object"
+}

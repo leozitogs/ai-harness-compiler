@@ -30,6 +30,8 @@ AHC-027 adiciona um [observador Scrum somente leitura](docs/engineering/scrum-ob
 com fontes limitadas, diagnóstico rastreável e nenhuma autoridade de aceite.
 AHC-028 integra [propostas Scrum ao Nexo](docs/engineering/nexo-scrum-planning.md),
 com critérios preservados, capacidade desconhecida e revisão humana persistente.
+AHC-029 acrescenta [operador autorizado](docs/engineering/scrum-operations.md),
+com diff limitado a etiquetas, journal persistente e reconciliação de resultado incerto.
 
 ```sh
 factory model-policy

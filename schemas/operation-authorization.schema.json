@@ -1,0 +1,46 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "actor": {
+      "const": "human-product-owner",
+      "default": "human-product-owner",
+      "title": "Actor",
+      "type": "string"
+    },
+    "comment": {
+      "maxLength": 1000,
+      "minLength": 1,
+      "title": "Comment",
+      "type": "string"
+    },
+    "expires_at": {
+      "minLength": 1,
+      "title": "Expires At",
+      "type": "string"
+    },
+    "issued_at": {
+      "minLength": 1,
+      "title": "Issued At",
+      "type": "string"
+    },
+    "operation_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Operation Sha256",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "OperationAuthorization/v1",
+      "default": "OperationAuthorization/v1",
+      "title": "Schema Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "operation_sha256",
+    "issued_at",
+    "expires_at",
+    "comment"
+  ],
+  "title": "OperationAuthorization",
+  "type": "object"
+}

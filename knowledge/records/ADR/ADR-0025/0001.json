@@ -1,0 +1,84 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO authorized continuing after PR49; action-specific real label authorization was not requested or inferred.",
+  "created_at": "2026-10-19T21:39:58.173938+00:00",
+  "decision": "Allow only scoped pending-work labels through a trusted operator CLI; local SQLite transactions and target reservation do not promise remote CAS or cross-host exactly-once.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "907 offline tests passed; fake dispatch/recovery simulation and one real issue GET. No real operator POST, human criterion acceptance or model qualification.",
+      "outcome": "observed",
+      "sha256": "0064eb93204910a8820892207f55299ce64605f30874e776cfaf4d16429e34cf",
+      "source": "docs/adr/0025-authorized-scrum-operation-journal.md"
+    },
+    {
+      "command": null,
+      "note": "907 offline tests passed; fake dispatch/recovery simulation and one real issue GET. No real operator POST, human criterion acceptance or model qualification.",
+      "outcome": "observed",
+      "sha256": "cd583f507f6ba85bb12253e509f1167e3b023aecad8fd842ef8b73aab907e5b8",
+      "source": "src/ai_harness_compiler/models/scrum_operations.py"
+    },
+    {
+      "command": null,
+      "note": "907 offline tests passed; fake dispatch/recovery simulation and one real issue GET. No real operator POST, human criterion acceptance or model qualification.",
+      "outcome": "observed",
+      "sha256": "185ec8634eeb579f55e6e1cf9327086a4e76eb5eabb72a6827d592ed55506358",
+      "source": "src/ai_harness_compiler/scrum_operations.py"
+    },
+    {
+      "command": null,
+      "note": "907 offline tests passed; fake dispatch/recovery simulation and one real issue GET. No real operator POST, human criterion acceptance or model qualification.",
+      "outcome": "observed",
+      "sha256": "361fb0c438d38c75398cdda47399ef24d9786aecb1a8417b1eaa49258e44101b",
+      "source": "src/ai_harness_compiler/adapters/github_operations.py"
+    },
+    {
+      "command": null,
+      "note": "907 offline tests passed; fake dispatch/recovery simulation and one real issue GET. No real operator POST, human criterion acceptance or model qualification.",
+      "outcome": "observed",
+      "sha256": "c7a7cb88e085d24d3b28ae2b665814401bc888cd02cad55f72d3598017f6d75e",
+      "source": "tests/test_scrum_operations.py"
+    },
+    {
+      "command": null,
+      "note": "907 offline tests passed; fake dispatch/recovery simulation and one real issue GET. No real operator POST, human criterion acceptance or model qualification.",
+      "outcome": "observed",
+      "sha256": "e36993d2faaab2c55a8dda733f48f0c1a2d92d41e99814a30ce0c8dc5013036c",
+      "source": "tests/test_github_operations.py"
+    }
+  ],
+  "id": "ADR-0025",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "No real POST integration demonstrated; fake authorization is not a real PO decision",
+    "Trusted CLI actor declaration is not authenticated identity",
+    "One shared local journal required; independent hosts/files do not coordinate",
+    "Remote check/write race remains; uncertain targets are not automatically released",
+    "No sprint completion, criterion acceptance or model qualification"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0024",
+    "DOC-0024",
+    "DE-0011"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Separate exact-action authorization from report review; persist intent before remote dispatch and reconcile uncertain outcomes without replaying writes.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Operador Scrum aditivo com autorização e journal",
+  "updated_at": "2026-10-19T21:39:58.173938+00:00"
+}

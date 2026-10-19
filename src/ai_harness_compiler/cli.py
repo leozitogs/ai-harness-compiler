@@ -45,6 +45,12 @@ from ai_harness_compiler.models.scrum import (
     ScrumObservation,
     SprintSnapshot,
 )
+from ai_harness_compiler.models.scrum_operations import (
+    OperationAuthorization,
+    OperationReceipt,
+    RemoteIssueState,
+    ScrumOperationPlan,
+)
 from ai_harness_compiler.models.scrum_planning import ScrumActionProposal, ScrumPlanningReport
 from ai_harness_compiler.models.semantic_analysis import AnalysisProposal, SemanticAnalysis
 from ai_harness_compiler.models.semantic_analysis_v3 import AnalysisProposalV3, SemanticAnalysisV3
@@ -88,6 +94,10 @@ from ai_harness_compiler.pipeline import plan
 from ai_harness_compiler.planning import decompose
 
 MODELS: dict[str, type[Contract]] = {
+    "scrum-operation-plan": ScrumOperationPlan,
+    "operation-authorization": OperationAuthorization,
+    "operation-receipt": OperationReceipt,
+    "remote-issue-state": RemoteIssueState,
     "scrum-action-proposal": ScrumActionProposal,
     "scrum-planning-report": ScrumPlanningReport,
     "delivery-evidence": DeliveryEvidence,
@@ -358,9 +368,16 @@ def main(argv: list[str] | None = None) -> int:
     )
     scrum_propose.add_argument("input", type=Path)
     scrum_propose.add_argument("--output", type=Path, required=True)
+    from ai_harness_compiler.scrum_operation_cli import add_commands as add_operation_commands
+
+    add_operation_commands(scrum_commands)
     args = parser.parse_args(argv)
     try:
         if args.command == "scrum":
+            if args.scrum_command == "operation":
+                from ai_harness_compiler.scrum_operation_cli import execute as execute_operation
+
+                return execute_operation(args)
             from ai_harness_compiler.scrum_cli import execute as execute_scrum
 
             return execute_scrum(args)

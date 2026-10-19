@@ -1,0 +1,78 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO authorized continuing after the observer increment; AHC-028 execution, no story acceptance inferred.",
+  "created_at": "2026-10-19T21:19:49.622589+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "AHC-028 grounded Nexo increment; 857 offline tests passed, historical local demo awaiting PO, no semantic qualification or criterion acceptance.",
+      "outcome": "observed",
+      "sha256": "a05f11bf1b00dad0a0a882d314ed94b0eefe0778822408688e11d51a3876ac68",
+      "source": "docs/delivery/ahc-028-nexo-increment.md"
+    },
+    {
+      "command": null,
+      "note": "AHC-028 grounded Nexo increment; 857 offline tests passed, historical local demo awaiting PO, no semantic qualification or criterion acceptance.",
+      "outcome": "observed",
+      "sha256": "64ae9e6a610d6dffccc65a6e93fa7570a1f70bbbcac43368985fa46fe16b8ee8",
+      "source": "docs/engineering/nexo-scrum-planning.md"
+    },
+    {
+      "command": null,
+      "note": "AHC-028 grounded Nexo increment; 857 offline tests passed, historical local demo awaiting PO, no semantic qualification or criterion acceptance.",
+      "outcome": "observed",
+      "sha256": "6856c57675bb9f7af66afbb2bb6858b9b647398695c1f0fefe61fac7215ee680",
+      "source": "docs/evidence/ahc-028-nexo-20261019/inventory.json"
+    },
+    {
+      "command": null,
+      "note": "AHC-028 grounded Nexo increment; 857 offline tests passed, historical local demo awaiting PO, no semantic qualification or criterion acceptance.",
+      "outcome": "observed",
+      "sha256": "44769cf1e57a863d979e12d264b9057217d212066e0e10dd50cd465958702d74",
+      "source": "planning/sprint-2-5-5.json"
+    },
+    {
+      "command": null,
+      "note": "AHC-028 grounded Nexo increment; 857 offline tests passed, historical local demo awaiting PO, no semantic qualification or criterion acceptance.",
+      "outcome": "observed",
+      "sha256": "0c8473d94e09d9dfbffcae064734f0fcac043e196da2d646f1f46019eb15c0aa",
+      "source": "planning/sprint-2-5-5.work-items.json"
+    }
+  ],
+  "id": "DOC-0024",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "No human criterion acceptance or DoD certification",
+    "Historical demo must be recollected after source or memory changes",
+    "Cache is session-local with full invalidation; no inference speedup claimed",
+    "Planning increment is separate from later operator ADR-0025/DOC-0025; no real POST demonstrated or automatically authorized."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0023",
+    "DE-0011",
+    "DOC-0022",
+    "ADR-0025",
+    "DOC-0025"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 3,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Five grounded proposals from one local Nexo session and three tools; partial Sprint2.5 outcome and carryover retained; approval pending, zero model calls or remote writes.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Incremento AHC-028 e demo do Nexo",
+  "updated_at": "2026-10-19T21:39:59.671144+00:00"
+}
