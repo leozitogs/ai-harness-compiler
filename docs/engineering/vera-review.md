@@ -38,7 +38,10 @@ hipóteses consultivas, sob o mesmo contrato de citações, sem executar reprodu
 
 ## Artefatos e revisão humana
 
-O diretório novo contém `qa-report.json` e `closure-assessment.json`. Com `--team`,
+O diretório novo contém `qa-report.json`, `closure-assessment.json` e
+`incident-candidates.json`. Candidatos registram falhas observadas de checks,
+com causa e resolução não estabelecidas; não gravam INC/LES automaticamente.
+Com `--team`,
 Vera e Nexo executam as três ferramentas permitidas e param no gate persistente:
 
 ```sh

@@ -1,0 +1,102 @@
+{
+  "historical": true,
+  "human_acceptance": false,
+  "sprint_closed": false,
+  "runs": [
+    {
+      "id": "live",
+      "head_commit": "a1f7c6bad03217985d60c6d96f5c56df06500b91",
+      "base_commit": "be47a4899b00b5e51c220328847278ae6053daeb",
+      "engine": "codex-cli",
+      "model": "gpt-6.1-sol",
+      "inspection_status": "rejected",
+      "model_attempts": 1,
+      "model_calls": null,
+      "recommendation": "inconclusive",
+      "checks": [
+        {
+          "id": "lint",
+          "status": "passed"
+        },
+        {
+          "id": "format",
+          "status": "passed"
+        },
+        {
+          "id": "typing",
+          "status": "passed"
+        },
+        {
+          "id": "tests",
+          "status": "passed"
+        },
+        {
+          "id": "schemas",
+          "status": "passed"
+        }
+      ],
+      "advisory_findings": 0,
+      "team_status": "awaiting_po",
+      "files": [
+        {
+          "path": "live-qa-report.json",
+          "sha256": "44f425a453f86c8bb6dcb3f26fabdf3c12027f0f637f330cec7026a516c7531a"
+        },
+        {
+          "path": "live-closure-assessment.json",
+          "sha256": "64cadc7f5e7cbaccb11e264c9d8c7d4ffc603e601cb4303bef768bd34120e06c"
+        },
+        {
+          "path": "live-incident-candidates.json",
+          "sha256": "e051cfe867be5169e49f76907c9eb533617820fab9fca191eb44bb1770e85266"
+        },
+        {
+          "path": "live-team-report.json",
+          "sha256": "29fdbccf2e4f6757cd0bf0e44cd7b47296bfe95f8385b0d993d566669cd2b23f"
+        }
+      ]
+    },
+    {
+      "id": "narrow",
+      "head_commit": "a1f7c6bad03217985d60c6d96f5c56df06500b91",
+      "base_commit": "be47a4899b00b5e51c220328847278ae6053daeb",
+      "engine": "codex-cli",
+      "model": "gpt-6.1-sol",
+      "inspection_status": "completed",
+      "model_attempts": 1,
+      "model_calls": 1,
+      "recommendation": "inconclusive",
+      "checks": [
+        {
+          "id": "schemas",
+          "status": "passed"
+        }
+      ],
+      "advisory_findings": 0,
+      "team_status": "awaiting_po",
+      "files": [
+        {
+          "path": "narrow-qa-report.json",
+          "sha256": "30a2eef4263ff3b80ab6fee703e4122de08a543d585ad9b306e7cd143cd64cb0"
+        },
+        {
+          "path": "narrow-closure-assessment.json",
+          "sha256": "c244bd9e583256c6163742b77c1e7eac41ca509d7342dc013810cbbeb6e9e394"
+        },
+        {
+          "path": "narrow-incident-candidates.json",
+          "sha256": "e051cfe867be5169e49f76907c9eb533617820fab9fca191eb44bb1770e85266"
+        },
+        {
+          "path": "narrow-team-report.json",
+          "sha256": "7a92c67fbef937f97fdbd98262dfa48121046239e87c4defa8d16f27546a4bd3"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Selected source scope only; no semantic qualification or benchmark established.",
+    "Publishing this evidence changes repository state; recollect before a human review.",
+    "Model failure has unknown call count and does not become semantic success."
+  ]
+}
