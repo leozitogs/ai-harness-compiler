@@ -1,0 +1,16 @@
+{
+  "adapter_program": "codex-structured-cli/v5",
+  "audit": "valid",
+  "case": "dev-new-domain",
+  "case_input_sha256": "6d792a55af0f4e0af1c2c1f1e36ff0d31f7fb9894b7091efd3f67338141dc492",
+  "disposition": "ready",
+  "expected_behavior": "ready",
+  "generation": "valid",
+  "guards": 0,
+  "human_review": "absent",
+  "negative_components": 0,
+  "observed_model": null,
+  "omissions": 0,
+  "qualification": "not-established",
+  "requested_model": "gpt-6.1-sol"
+}

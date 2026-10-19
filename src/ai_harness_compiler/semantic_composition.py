@@ -19,7 +19,7 @@ from ai_harness_compiler.semantic_verification import (
     analysis_response_schema,
 )
 
-COMPOSITION_PROGRAM_VERSION = "semantic-composition/v3"
+COMPOSITION_PROGRAM_VERSION = "semantic-composition/v3.1"
 COMPOSITION_PROMPT = (
     ANALYSIS_PROMPT.replace("SemanticAnalysisProposal/v2", "SemanticAnalysisProposal/v3")
     + """
@@ -50,6 +50,27 @@ def composition_response_schema(extraction: GroundingExtraction) -> dict[str, An
         "type": "string",
         "enum": [a.id for a in compact_context(extraction)],
     }
+    criterion = schema["$defs"]["CriterionV3"]
+    criterion_variants = []
+    for kind in ("business-rule", "requirement", "needs-clarification"):
+        variant = deepcopy(criterion)
+        properties = variant["properties"]
+        properties["kind"] = {"type": "string", "const": kind}
+        if kind == "business-rule":
+            for name in ("condition", "outcome"):
+                properties[name] = {"$ref": "#/$defs/EvidenceText"}
+            properties["question"] = {"type": "null"}
+        else:
+            for name in ("condition", "outcome"):
+                properties[name] = {"type": "null"}
+            properties["exceptions"]["maxItems"] = 0
+            properties["question"] = (
+                {"$ref": "#/$defs/MaterialQuestion"}
+                if kind == "needs-clarification"
+                else {"type": "null"}
+            )
+        criterion_variants.append(variant)
+    schema["$defs"]["CriterionV3"] = {"anyOf": criterion_variants}
     guard = schema["$defs"]["GuardSpec"]
     variants = []
     for scope in ("project", "criteria"):

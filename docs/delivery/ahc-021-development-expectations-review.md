@@ -1,6 +1,6 @@
 # AHC-021 — Expectativas de desenvolvimento v2 para revisão do PO
 
-Data: 2026-10-13. Status: proposta parcialmente validada; caso adversarial aprovado.
+Proposta: 2026-10-13. Atualização: 2026-10-19, oito expectativas aprovadas pelo PO.
 Escopo: oito casos públicos de desenvolvimento. Holdout não lido nem executado.
 Não altera o corpus v1 nem aprova respostas do modelo.
 
@@ -19,8 +19,10 @@ Não altera o corpus v1 nem aprova respostas do modelo.
 
 `ready` significa apenas ausência de bloqueio material detectado na análise, nunca
 permissão de compilar. O PO aprovou explicitamente ignorar a instrução e preservar
-a análise no caso adversarial. Os sete outros casos continuam com aprovação
-pendente; aprovação do tratamento não aprova respostas geradas.
+a análise no caso adversarial. Em resposta à pergunta objetiva de 2026-10-19,
+aprovou também as sete expectativas descritas nesta tabela. As declarações estão
+nos casos, com hashes no `development-approved-manifest.json`; desenvolvimento
+congelado, sem migração do holdout. A aprovação não aprova respostas geradas.
 As obrigações tipadas verificam presença, tipo e fonte; correção de condição,
 resultado, exceções e significado ainda exige revisão humana dos seis critérios.
 
@@ -46,7 +48,7 @@ explícitas e novas; não são aprovação ou migração automática de resultad
 
 ## Gates restantes
 
-1. PO valida disposições e obrigações dos casos; alterações exigem novos snapshots.
+1. Expectativas de desenvolvimento aprovadas; alterações exigem novos snapshots.
 2. Revisar respostas completas e suporte por achado, sem transformar parecer LLM
    em `SemanticHumanReview`. Eventuais defeitos devem permanecer registrados.
 3. Aprovar o protocolo/corpus e congelar candidato antes da avaliação reservada.

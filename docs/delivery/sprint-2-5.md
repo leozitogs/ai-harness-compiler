@@ -1,5 +1,9 @@
 # Sprint 2.5 — Qualidade semântica e modelo adequado
 
+Fechamento do foco em 2026-10-19 com resultado parcial e carryover:
+[review, evidências e gates pendentes](sprint-2-5-review.md). O plano abaixo preserva
+o escopo original; não declara as três histórias Done nem modelo qualificado.
+
 Aberta por pedido explícito do PO em 2026-10-07. Foco autorizado: tornar o estudo
 de projetos útil e confiável com o modelo/perfil adequado. Implementação das três
 histórias ainda não entregue; abertura e plano não são evidência de conclusão.

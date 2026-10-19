@@ -23,20 +23,22 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [ADR-0019 — Análise e verificação v2 sem promoção de autoridade](records/ADR/ADR-0019/0002.json) · active · revision 2
 - [ADR-0020 — Auditoria consultiva de fontes e omissões](records/ADR/ADR-0020/0002.json) · active · revision 2
 - [ADR-0021 — Proveniência por componente e guards separados](records/ADR/ADR-0021/0002.json) · active · revision 2
+- [ADR-0022 — Revisão humana de proveniência por componente](records/ADR/ADR-0022/0002.json) · active · revision 2
 - [DE-0001 — Memória de engenharia versionada](records/DE/DE-0001/0001.json) · draft · revision 1
 - [DE-0002 — Gerar memória e especialistas para cada projeto](records/DE/DE-0002/0002.json) · active · revision 2
 - [DE-0003 — Intake limitado e YAML explícito](records/DE/DE-0003/0002.json) · active · revision 2
 - [DE-0004 — Compilador generalista antes da especialização](records/DE/DE-0004/0010.json) · active · revision 10
 - [DE-0005 — Modelo local provisório escolhido por hardware e ensaio](records/DE/DE-0005/0006.json) · active · revision 6
-- [DE-0006 — Qualidade e qualificação antes do blueprint](records/DE/DE-0006/0026.json) · active · revision 26
+- [DE-0006 — Qualidade e qualificação antes do blueprint](records/DE/DE-0006/0028.json) · active · revision 28
 - [DE-0007 — Critérios aprovados e resultado do eval separado da compilação](records/DE/DE-0007/0002.json) · active · revision 2
 - [DE-0008 — Rastreabilidade operacional em liberações e decisões persistidas](records/DE/DE-0008/0002.json) · active · revision 2
 - [DE-0009 — Atualizações de dependências com CI por head atualizado](records/DE/DE-0009/0002.json) · active · revision 2
+- [DE-0010 — Otimização de inferência antes de fine-tuning condicionado](records/DE/DE-0010/0004.json) · active · revision 4
 - [DOC-0001 — Concepção do AI Harness Compiler](records/DOC/DOC-0001/0006.json) · active · revision 6
 - [DOC-0002 — Planejamento detalhado da Sprint 1](records/DOC/DOC-0002/0006.json) · draft · revision 6
 - [DOC-0003 — Planejamento da Sprint 2](records/DOC/DOC-0003/0012.json) · active · revision 12
 - [DOC-0004 — Estudo e evidências dos modelos locais](records/DOC/DOC-0004/0006.json) · active · revision 6
-- [DOC-0005 — Sprint 2.5 e piloto de alimentação CA](records/DOC/DOC-0005/0026.json) · active · revision 26
+- [DOC-0005 — Sprint 2.5 e piloto de alimentação CA](records/DOC/DOC-0005/0028.json) · active · revision 28
 - [DOC-0006 — Corpus v1 e protocolo offline de entendimento](records/DOC/DOC-0006/0006.json) · active · revision 6
 - [DOC-0007 — Operação e evidências de sessão local limitada](records/DOC/DOC-0007/0004.json) · active · revision 4
 - [DOC-0008 — Preparação e operação do grounding literal](records/DOC/DOC-0008/0004.json) · active · revision 4
@@ -48,10 +50,11 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0014 — Critérios objetivos de entendimento para validação do PO](records/DOC/DOC-0014/0003.json) · active · revision 3
 - [DOC-0015 — Revisão independente de regras de negócio e reproduções](records/DOC/DOC-0015/0002.json) · active · revision 2
 - [DOC-0016 — Incremento semântico v2 e smoke público](records/DOC/DOC-0016/0004.json) · active · revision 4
-- [DOC-0017 — Expectativas e rodada de desenvolvimento v2](records/DOC/DOC-0017/0004.json) · active · revision 4
+- [DOC-0017 — Expectativas e rodada de desenvolvimento v2](records/DOC/DOC-0017/0006.json) · active · revision 6
 - [DOC-0018 — Emenda 1 da Sprint 2.5 e evidências de recuperação](records/DOC/DOC-0018/0002.json) · active · revision 2
 - [DOC-0019 — Estudo e ensaio da resolução delegada de identidade](records/DOC/DOC-0019/0002.json) · active · revision 2
-- [DOC-0020 — Incremento de proveniência e controle negativo de desenvolvimento](records/DOC/DOC-0020/0002.json) · active · revision 2
+- [DOC-0020 — Incremento de proveniência e controle negativo de desenvolvimento](records/DOC/DOC-0020/0004.json) · active · revision 4
+- [DOC-0021 — Fechamento parcial da Sprint 2.5 e rodada final](records/DOC/DOC-0021/0002.json) · active · revision 2
 - [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2
 - [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1
 - [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1
@@ -68,8 +71,9 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [INC-0013 — Contratos v1 não representam todos os critérios de qualidade aprovados](records/INC/INC-0013/0005.json) · verified · revision 5
 - [INC-0014 — Schema do provedor não expressava invariantes de issue](records/INC/INC-0014/0004.json) · verified · revision 4
 - [INC-0015 — Verificação local de suporte não comprova completude](records/INC/INC-0015/0003.json) · verified · revision 3
-- [INC-0016 — Regra composta cita apenas o critério original](records/INC/INC-0016/0003.json) · verified · revision 3
+- [INC-0016 — Regra composta cita apenas o critério original](records/INC/INC-0016/0005.json) · verified · revision 5
 - [INC-0017 — Fixture de wall time dependia do tempo real arredondado](records/INC/INC-0017/0002.json) · verified · revision 2
+- [INC-0018 — Provedor preenche componentes de regra em requisito](records/INC/INC-0018/0002.json) · verified · revision 2
 - [LES-0001 — Tipos estáticos podem falhar em runtime](records/LES/LES-0001/0004.json) · verified · revision 4
 - [LES-0002 — Referências válidas não garantem precedência consistente](records/LES/LES-0002/0002.json) · verified · revision 2
 - [LES-0003 — Usar IDs curtos para parametrizações com payloads grandes](records/LES/LES-0003/0002.json) · verified · revision 2

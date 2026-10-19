@@ -1,0 +1,78 @@
+{
+  "context_findings": [
+    {
+      "context_indices": [
+        0
+      ],
+      "note": "Propósito declarado.",
+      "subject": "purpose",
+      "text": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita."
+    },
+    {
+      "context_indices": [
+        1
+      ],
+      "note": "Público declarado.",
+      "subject": "audience",
+      "text": "Autores."
+    },
+    {
+      "context_indices": [
+        2,
+        3
+      ],
+      "note": "Os princípios não definem, por si só, etapas de aprovação.",
+      "subject": "positioning",
+      "text": "Rastreabilidade e controle humano são princípios do projeto."
+    },
+    {
+      "context_indices": [
+        6
+      ],
+      "note": "Capacidades declaradas no backlog.",
+      "subject": "capability",
+      "text": "Organizar a publicação da equipe e registrar decisões."
+    },
+    {
+      "context_indices": [
+        4
+      ],
+      "note": "Obrigação explícita de registro.",
+      "subject": "constraint",
+      "text": "Registrar a identidade do responsável."
+    },
+    {
+      "context_indices": [
+        5
+      ],
+      "note": "Limite informado em max_build_cost_usd.",
+      "subject": "constraint",
+      "text": "O custo máximo de construção é US$ 0,00."
+    }
+  ],
+  "criteria": [
+    {
+      "condition": {
+        "source_atom_ids": [
+          "atom-8"
+        ],
+        "text": "Para cada publicação da equipe."
+      },
+      "exceptions": [],
+      "kind": "business-rule",
+      "note": "A exigência de registrar a identidade do responsável também consta na restrição de negócio do contexto.",
+      "outcome": {
+        "source_atom_ids": [
+          "atom-8"
+        ],
+        "text": "A publicação deve conter responsável e origem."
+      },
+      "question": null,
+      "source_atom_id": "atom-8",
+      "uncertainties": []
+    }
+  ],
+  "guards": [],
+  "issues": [],
+  "schema_version": "SemanticAnalysisProposal/v3"
+}

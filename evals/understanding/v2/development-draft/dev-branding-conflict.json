@@ -3,7 +3,11 @@
     "/branding/principles/0",
     "/backlog/0/acceptance_criteria/0"
   ],
-  "expectations_approval": null,
+  "expectations_approval": {
+    "authority": "human-declared-not-authenticated",
+    "note": "PO explicitly approved the seven development expectations described in the async question on 2026-10-19; does not approve model outputs or qualification.",
+    "reviewer": "leozitogs:po-declared"
+  },
   "expected_behavior": "blocked",
   "id": "dev-branding-conflict",
   "obligations": [

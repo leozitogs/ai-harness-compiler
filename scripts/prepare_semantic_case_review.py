@@ -1,6 +1,7 @@
 """Draft explicit development expectations without modifying or approving the v1 corpus."""
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 
@@ -83,12 +84,32 @@ def main() -> None:
                 if existing.expectations_approval is not None:
                     raise SystemExit("Do not overwrite approved cases; create a new version")
             path.write_text(content, encoding="utf-8", newline="\n")
+    manifest_path = TARGET.parent / "development-approved-manifest.json"
+    frozen = False
+    if args.check and manifest_path.exists():
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        actual = [
+            {
+                "path": p.relative_to(TARGET.parent).as_posix(),
+                "sha256": hashlib.sha256(p.read_bytes()).hexdigest(),
+            }
+            for p in sorted(TARGET.glob("*.json"))
+        ]
+        rubric_sha = hashlib.sha256((TARGET.parent / "rubric.json").read_bytes()).hexdigest()
+        if (
+            approved_count != len(cases)
+            or manifest.get("cases") != actual
+            or manifest.get("rubric_sha256") != rubric_sha
+            or manifest.get("scope") != "development-only"
+        ):
+            raise SystemExit("Frozen development expectations differ from approved manifest")
+        frozen = True
     print(
         json.dumps(
             {
                 "cases": len(cases),
                 "approved_cases": approved_count,
-                "expectations": "not-frozen",
+                "expectations": "frozen-development" if frozen else "not-frozen",
                 "holdout": "not-read",
                 "v1": "unchanged",
             }

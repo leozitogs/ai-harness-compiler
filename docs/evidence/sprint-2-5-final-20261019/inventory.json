@@ -1,0 +1,259 @@
+{
+  "files": [
+    {
+      "path": "assessment-summary.json",
+      "sha256": "f41e61a8398de02de6fb4bd5f2af2912a428ff2eeecfb3d9738cede3e9a41086"
+    },
+    {
+      "path": "baseline-v3/dev-adversarial/advice.json",
+      "sha256": "bd13c5ca42c35ce39b81dd4453744522c43561e14e92e3dd5cd79ba60568b149"
+    },
+    {
+      "path": "baseline-v3/dev-adversarial/analysis.json",
+      "sha256": "2737a8cb48f28ca55062ffd1d88ea42479204a8dbddbd4af2d5cb80178749bb3"
+    },
+    {
+      "path": "baseline-v3/dev-adversarial/assessment.json",
+      "sha256": "36208b52333776c725b3a5ba65264a5400e4dd8da6f868307202a56c38af3197"
+    },
+    {
+      "path": "baseline-v3/dev-adversarial/calls.json",
+      "sha256": "6becd34e0c8c79dfb724d65c15b6cd88778c02ec3f73e92a6246c3e369e8c9ff"
+    },
+    {
+      "path": "baseline-v3/dev-adversarial/proposal-audit.json",
+      "sha256": "7c1221bfcc862c74d6c898795b5013a472ec3f0998ce24a936f35d1845701265"
+    },
+    {
+      "path": "baseline-v3/dev-adversarial/proposal-generation.json",
+      "sha256": "33693604ca504a3fae514807302186308faac6f1727e5cfb0109354b372945a1"
+    },
+    {
+      "path": "baseline-v3/dev-adversarial/summary.json",
+      "sha256": "4ad68631d0bf1c99060bd15fc61f9becfc7777d48d0bac7e29d5b45d3531b6bd"
+    },
+    {
+      "path": "baseline-v3/dev-ambiguous/advice.json",
+      "sha256": "3b60db0dbaf855a7ca7cfcce67318fa84120e3665d81608ead50477d196cd5ee"
+    },
+    {
+      "path": "baseline-v3/dev-ambiguous/analysis.json",
+      "sha256": "a5c9bed24fc0e21a8b2ae2cb01bb7b881eeb9340150532b48935356d57c80468"
+    },
+    {
+      "path": "baseline-v3/dev-ambiguous/assessment.json",
+      "sha256": "40bf69932ae0fd8cfd30125324177e00b7f5e4fe8e221bad72e8c2c8a85bc9e9"
+    },
+    {
+      "path": "baseline-v3/dev-ambiguous/calls.json",
+      "sha256": "908faf4c257b1cc37f48969399833969cf3d9d5d1c2593cfb68e77da02fd0d3d"
+    },
+    {
+      "path": "baseline-v3/dev-ambiguous/proposal-audit.json",
+      "sha256": "e26aa99d2c4ecae83e189ae5acf7783bee18aec6876cb0d6fdbb7751878bc4ba"
+    },
+    {
+      "path": "baseline-v3/dev-ambiguous/proposal-generation.json",
+      "sha256": "5e7c7196c3436ae5abaca244068a70ed8132f7417040a968dae82602d7d8f3a5"
+    },
+    {
+      "path": "baseline-v3/dev-ambiguous/summary.json",
+      "sha256": "2610e1c8452ea781335ff8d1ffae21ea44934ad68170f4607d986b37caf2ed18"
+    },
+    {
+      "path": "baseline-v3/dev-branding-conflict/advice.json",
+      "sha256": "b5b015d8ab966870670b2b76dd19ad520c1779ca38f9e1c6cb22a54c10ea2056"
+    },
+    {
+      "path": "baseline-v3/dev-branding-conflict/analysis.json",
+      "sha256": "7bf4ead0e21f2f0550df3ef8159a134434037db33a17c96d00416a85aefe1170"
+    },
+    {
+      "path": "baseline-v3/dev-branding-conflict/assessment.json",
+      "sha256": "2c2f6718b1a0d83f298f679a3226a83548732d2bcd39e83de2031a2b430d944a"
+    },
+    {
+      "path": "baseline-v3/dev-branding-conflict/calls.json",
+      "sha256": "3fe22b7ed1c854d4cf536a69b8483f8532e89347d48381fe80f6a7058e49d401"
+    },
+    {
+      "path": "baseline-v3/dev-branding-conflict/proposal-audit.json",
+      "sha256": "16277abbd69f3e2f332921bdb056659bdb477956664866a20cd34805b7b6b8c0"
+    },
+    {
+      "path": "baseline-v3/dev-branding-conflict/proposal-generation.json",
+      "sha256": "0147317760e08f50a018eda62b300cd87311cb9f1ae1e24443366e92103ec649"
+    },
+    {
+      "path": "baseline-v3/dev-branding-conflict/summary.json",
+      "sha256": "76ad22518b993f19b19424cb6027fd074edd45ff1f23b1cc9b4a3bd311805653"
+    },
+    {
+      "path": "baseline-v3/dev-compatible-rules/calls.json",
+      "sha256": "9f3c05b0b89e5c5749b6b0c9b46ce0d382b1e5ccee3993bf7fcc8db23eb7b889"
+    },
+    {
+      "path": "baseline-v3/dev-compatible-rules/proposal-generation.json",
+      "sha256": "b86ee17a7feae5dc22ba33b7a9e94a04ebcb2ee7a04a27bfbe94df4cf7b3b4af"
+    },
+    {
+      "path": "baseline-v3/dev-compatible-rules/summary.json",
+      "sha256": "3737a3464ba48cc7c2710a45d6a240f6a2a6c08c3f9efb5924c5d64281a44158"
+    },
+    {
+      "path": "baseline-v3/dev-new-domain/advice.json",
+      "sha256": "af158fa3939c0499c70b377640c0299d32c5a84b63e511cac439a925e6ca2097"
+    },
+    {
+      "path": "baseline-v3/dev-new-domain/analysis.json",
+      "sha256": "ffc9cf1762b809f89c70d9421d531c94ded8d3f965651ad6c928763282074f87"
+    },
+    {
+      "path": "baseline-v3/dev-new-domain/assessment.json",
+      "sha256": "a40b3316c75e88a36e486c380b8d3067b09d2b6456c7053f8b0115f9117a25f4"
+    },
+    {
+      "path": "baseline-v3/dev-new-domain/calls.json",
+      "sha256": "9076507553b0604964c716a4e09b81515970208aa87665849273dba5aa7b3222"
+    },
+    {
+      "path": "baseline-v3/dev-new-domain/proposal-audit.json",
+      "sha256": "d076f41f31fb411aa58c5f1be56c5f6e83e72ea4ddf05a6a8a5cde323b2941f2"
+    },
+    {
+      "path": "baseline-v3/dev-new-domain/proposal-generation.json",
+      "sha256": "c81ec9fa25e77481341e8f650ac81e0ee1ff033f3f9682f30bc944022dc56a5f"
+    },
+    {
+      "path": "baseline-v3/dev-new-domain/summary.json",
+      "sha256": "9267bd79347f958d76e967007334c62e689b3a1f5a6c90267ad06f3da5bada64"
+    },
+    {
+      "path": "baseline-v3/dev-rules-a/advice.json",
+      "sha256": "975a733f92ad1e123d2b140ee4ffe05a5da9a40a5217dc1e5a96b6bf479b9ce7"
+    },
+    {
+      "path": "baseline-v3/dev-rules-a/analysis.json",
+      "sha256": "8eb4b4cea262fd3164cccc2024f76cb500f1fcb637a419cc16bb022a4496dfa9"
+    },
+    {
+      "path": "baseline-v3/dev-rules-a/assessment.json",
+      "sha256": "ce1bbd3466b1d45b34e1192a334204b91009b19662f5c1d11b0035439bff17d4"
+    },
+    {
+      "path": "baseline-v3/dev-rules-a/calls.json",
+      "sha256": "2bec20bc42bfe3611914e2b56e3b778284c89013d9c699516eafe9aadf47959a"
+    },
+    {
+      "path": "baseline-v3/dev-rules-a/proposal-audit.json",
+      "sha256": "be52477972e984597c11f596756fcb721b39079022c72e6ec91fd12a5c98539f"
+    },
+    {
+      "path": "baseline-v3/dev-rules-a/proposal-generation.json",
+      "sha256": "439842f9dccd34ba31e21889f46aeb192403edd6800f961cc38a19c40528d27a"
+    },
+    {
+      "path": "baseline-v3/dev-rules-a/summary.json",
+      "sha256": "c9730154bd376cec9d4ff86fab0f960af45f994870cd3c664c03975c9b015219"
+    },
+    {
+      "path": "baseline-v3/dev-rules-b/advice.json",
+      "sha256": "320d60565bb66c35b7251097e364ff002c630f35c0555525523eadf5c6b423fd"
+    },
+    {
+      "path": "baseline-v3/dev-rules-b/analysis.json",
+      "sha256": "56ed52e69d22d0e3a95eaa07c31986550360813cff9bee444845ac4e6406b905"
+    },
+    {
+      "path": "baseline-v3/dev-rules-b/assessment.json",
+      "sha256": "f70a0e97a7b183f5f03dd1285412f8b7efbdaee96ae257e433c416308f55e9f0"
+    },
+    {
+      "path": "baseline-v3/dev-rules-b/calls.json",
+      "sha256": "cf5107e85a099b02497b103108fedb4b6007cda2d7278c82f5a287ce6088abea"
+    },
+    {
+      "path": "baseline-v3/dev-rules-b/proposal-audit.json",
+      "sha256": "34897549cd78d3527448f7130e524854d33c86de7186dee025db5e385db63bf2"
+    },
+    {
+      "path": "baseline-v3/dev-rules-b/proposal-generation.json",
+      "sha256": "3fb73c013a519980f03e3738216f7a9b2eb0a743136611ff2e22522b3c4b9056"
+    },
+    {
+      "path": "baseline-v3/dev-rules-b/summary.json",
+      "sha256": "0c6802f79372271a788a427c76d3f97ca1edc5b60a4413eb930a2dc0fc3a79f0"
+    },
+    {
+      "path": "baseline-v3/dev-unread-assets/advice.json",
+      "sha256": "e848cb4c6fb26b432da7940a6d54cb4eedf78c5851efc407d5dfef5783d70147"
+    },
+    {
+      "path": "baseline-v3/dev-unread-assets/analysis.json",
+      "sha256": "365cbf5c8f47d8ab1b40775a254c1d408877e0ba8a53c141c93656069b76d954"
+    },
+    {
+      "path": "baseline-v3/dev-unread-assets/assessment.json",
+      "sha256": "4a2231775765dbb903da657426336dbfc6064d1a4627ce75dda8776cb3143b95"
+    },
+    {
+      "path": "baseline-v3/dev-unread-assets/calls.json",
+      "sha256": "96853d794d6df7c53d6a28c5fbb12a8d4b34058315d631fdcc208ee21637610b"
+    },
+    {
+      "path": "baseline-v3/dev-unread-assets/proposal-audit.json",
+      "sha256": "e31ef3a262dd79aef045fc95c9ec8a626eba1f6c94e47414040f05dcc9c8403c"
+    },
+    {
+      "path": "baseline-v3/dev-unread-assets/proposal-generation.json",
+      "sha256": "0a56be211c15be449c240b32074ea6f9908b25ef90c513d921376e0a7f6d3afd"
+    },
+    {
+      "path": "baseline-v3/dev-unread-assets/summary.json",
+      "sha256": "62c6d614feaf96bd39e92f71c46fbd65e69630ec50223b3ba86cbb045f0e0b9d"
+    },
+    {
+      "path": "baseline-v3/summary.json",
+      "sha256": "5aeb1db54c233e77e82ab124e6d064388adbb0c7a718f7fa896d7a99bd20f2e7"
+    },
+    {
+      "path": "schema-v31-recovery/dev-compatible-rules/advice.json",
+      "sha256": "7ec1bb51c60432cc95f3b30215d906cae768f7f1ecab1bd35bedc90ce2723534"
+    },
+    {
+      "path": "schema-v31-recovery/dev-compatible-rules/analysis.json",
+      "sha256": "d2701f9b11e6b9c06d5c0603fc77bc6f452743892fa90b2cbb80e1110cbf6ea2"
+    },
+    {
+      "path": "schema-v31-recovery/dev-compatible-rules/assessment.json",
+      "sha256": "05f55c66fe4dabd3327975e7fee405e8bdd8547712fc9671338bd55c7817c308"
+    },
+    {
+      "path": "schema-v31-recovery/dev-compatible-rules/calls.json",
+      "sha256": "5aa65a4847657c93f00c11e28b758b92cf83d3965e0b79bcc6688ef33e9d8c9d"
+    },
+    {
+      "path": "schema-v31-recovery/dev-compatible-rules/proposal-audit.json",
+      "sha256": "1da7c644bb306856630d618fc2f1641976a185155edf2ab97a51241dc27899f9"
+    },
+    {
+      "path": "schema-v31-recovery/dev-compatible-rules/proposal-generation.json",
+      "sha256": "f8391472920222869203b29b07492a685e53f6d5e4755222d2ad63273fca1b3e"
+    },
+    {
+      "path": "schema-v31-recovery/dev-compatible-rules/summary.json",
+      "sha256": "e675c32971b98e04e886367ba9083c7110e95190e617d11ae20c73d210f87359"
+    },
+    {
+      "path": "schema-v31-recovery/summary.json",
+      "sha256": "663ea33ed3c993502c59630c8959a7a92005a7fb4669698e9a25e46c6378b093"
+    }
+  ],
+  "holdout": "not-read",
+  "human_review": "absent",
+  "model_calls": 17,
+  "no_hidden_retries": true,
+  "observed_model": null,
+  "requested_model": "gpt-6.1-sol",
+  "split": "development"
+}

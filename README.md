@@ -14,8 +14,10 @@ educação/comércio são fixtures, e packs opcionais não limitam os domínios 
 **Status: fundação v0.1.** O repositório contém um compilador local determinístico
 de um harness de desenvolvimento. O pipeline completo de IA está no roadmap.
 
-Foco atual: [Sprint 2.5 — qualidade semântica e modelo local](docs/delivery/sprint-2-5.md),
-com evals, grounding e qualificação antes de avançar no blueprint.
+[Sprint 2.5 encerrada com resultado parcial](docs/delivery/sprint-2-5-review.md):
+contratos/evals entregues, nenhum modelo qualificado e revisão semântica pendente.
+[Sprint 2.6 na esteira](docs/delivery/sprint-2-6.md), ainda não iniciada; resolver
+os gates remanescentes antes de promoção, holdout ou treinamento.
 
 **Principal das tarefas com LLM: Codex CLI / `gpt-6.1-sol`, via assinatura ChatGPT.**
 Os seis especialistas herdam a mesma preferência central. Qwen3 4B Instruct é a

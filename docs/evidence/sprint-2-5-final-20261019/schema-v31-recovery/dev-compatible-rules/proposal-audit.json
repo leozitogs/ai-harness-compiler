@@ -1,0 +1,517 @@
+{
+  "analysis_sha256": "09f6148f4cf0303325d2c3380e32f2735a13f543797df23da3b0ca9b4e956581",
+  "component_judgments": [
+    {
+      "component_index": null,
+      "component_name": "condition",
+      "finding_id": "criterion-1",
+      "note": "Cada material estabelece aplicação individual no contexto de catalogação.",
+      "source_atom_ids": [
+        "atom-16"
+      ],
+      "support": "supports"
+    },
+    {
+      "component_index": null,
+      "component_name": "outcome",
+      "finding_id": "criterion-1",
+      "note": "Os três campos exigidos constam expressamente.",
+      "source_atom_ids": [
+        "atom-16"
+      ],
+      "support": "supports"
+    },
+    {
+      "component_index": null,
+      "component_name": "condition",
+      "finding_id": "criterion-2",
+      "note": "A restrição se aplica à visualização dos materiais.",
+      "source_atom_ids": [
+        "atom-17"
+      ],
+      "support": "supports"
+    },
+    {
+      "component_index": null,
+      "component_name": "outcome",
+      "finding_id": "criterion-2",
+      "note": "Só o educador responsável pode visualizar.",
+      "source_atom_ids": [
+        "atom-17"
+      ],
+      "support": "supports"
+    },
+    {
+      "component_index": null,
+      "component_name": "condition",
+      "finding_id": "criterion-3",
+      "note": "A fonte trata das afirmações presentes no rascunho.",
+      "source_atom_ids": [
+        "atom-19"
+      ],
+      "support": "supports"
+    },
+    {
+      "component_index": null,
+      "component_name": "outcome",
+      "finding_id": "criterion-3",
+      "note": "As afirmações devem referenciar os materiais utilizados.",
+      "source_atom_ids": [
+        "atom-19"
+      ],
+      "support": "supports"
+    },
+    {
+      "component_index": null,
+      "component_name": "condition",
+      "finding_id": "criterion-4",
+      "note": "A publicação é o evento sujeito ao requisito.",
+      "source_atom_ids": [
+        "atom-20"
+      ],
+      "support": "supports"
+    },
+    {
+      "component_index": null,
+      "component_name": "outcome",
+      "finding_id": "criterion-4",
+      "note": "A fonte exige tanto revisão quanto aprovação do educador.",
+      "source_atom_ids": [
+        "atom-20"
+      ],
+      "support": "supports"
+    },
+    {
+      "component_index": null,
+      "component_name": "condition",
+      "finding_id": "guard-human-review",
+      "note": "Ambas situam o requisito antes da publicação.",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-13"
+      ],
+      "support": "supports"
+    },
+    {
+      "component_index": null,
+      "component_name": "outcome",
+      "finding_id": "guard-human-review",
+      "note": "Ambas exigem revisão humana prévia.",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-13"
+      ],
+      "support": "supports"
+    },
+    {
+      "component_index": null,
+      "component_name": "condition",
+      "finding_id": "guard-trace-privacy",
+      "note": "A proibição tem traces como contexto explícito.",
+      "source_atom_ids": [
+        "atom-12"
+      ],
+      "support": "supports"
+    },
+    {
+      "component_index": null,
+      "component_name": "outcome",
+      "finding_id": "guard-trace-privacy",
+      "note": "A fonte proíbe expor dados pessoais nesse contexto.",
+      "source_atom_ids": [
+        "atom-12"
+      ],
+      "support": "supports"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "df91a95e5c94578f8d13ce5e9e2bacd423159038ac0419ea82bb133a71ce5aa3",
+      "materiality": "not-applicable",
+      "note": "A fonte exige título, autor e referência de origem para cada material.",
+      "source_atom_ids": [
+        "atom-16"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "criterion-2",
+      "finding_sha256": "7f2320d14d56d6004c584f3b68e2bac8bd2194e9d059f8f1bf631e13e70901ef",
+      "materiality": "not-applicable",
+      "note": "A fonte restringe expressamente a visibilidade ao educador responsável, sem exceções.",
+      "source_atom_ids": [
+        "atom-17"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "criterion-3",
+      "finding_sha256": "b0ed268f97ffd94f6ed8fcb43bbba2ecb5e95dd13d76bb01821b1d5530f8f277",
+      "materiality": "not-applicable",
+      "note": "A fonte exige referências aos materiais utilizados nas afirmações do rascunho.",
+      "source_atom_ids": [
+        "atom-19"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "criterion-4",
+      "finding_sha256": "409a1dcd028c682edd56eaf1dea9585bf3cc194e1d1ad4a9a8a5ff156aee2018",
+      "materiality": "not-applicable",
+      "note": "Revisão e aprovação do educador são requisitos explícitos de publicação.",
+      "source_atom_ids": [
+        "atom-20"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "guard-human-review",
+      "finding_sha256": "3a4d8443bf5441acb303c924c14be9f59d44e5cc2e8833bd325b2ae0dfefefb6",
+      "materiality": "not-applicable",
+      "note": "Ambas as fontes exigem revisão humana anterior à publicação; isso não concede autorização.",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-13"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "guard-trace-privacy",
+      "finding_sha256": "2b4c8a46ab397424a23e850b736e971f4457c7b1b117ad7755dc2277b374d0b3",
+      "materiality": "not-applicable",
+      "note": "A fonte proíbe exposição de dados pessoais em traces.",
+      "source_atom_ids": [
+        "atom-12"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "60b73f42a8932e35705a94fe16c91f66ad4ab5d149548f07f90ee5f9c5bc2c5c",
+      "materiality": "not-applicable",
+      "note": "O propósito e a revisão humana prévia constam da concepção.",
+      "source_atom_ids": [
+        "atom-1"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "e03e208a0409313f45df949bfc19e73c41468750b6d551c01fbd3c93f4611984",
+      "materiality": "not-applicable",
+      "note": "As fontes identificam os dois públicos, sem conceder acesso.",
+      "source_atom_ids": [
+        "atom-2",
+        "atom-3"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "dc4cc56e3a25b94678ff6925258221635d383516cc4035dcd602d76a503598ee",
+      "materiality": "not-applicable",
+      "note": "Os três atributos de tom estão explícitos.",
+      "source_atom_ids": [
+        "atom-4",
+        "atom-5",
+        "atom-6"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "3a5b38afcee60aeeded2ae3bcfb20f515886dabc6b7e15e207755564f5e3dab7",
+      "materiality": "not-applicable",
+      "note": "As fontes declaram verificabilidade e controle do educador.",
+      "source_atom_ids": [
+        "atom-7",
+        "atom-8"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "dd59bf0b810573b17042ec1105ac4fbdd58d5d3a836e1e82bb7d007c60d0e1e1",
+      "materiality": "not-applicable",
+      "note": "Acessibilidade da interface é uma restrição explícita.",
+      "source_atom_ids": [
+        "atom-9"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-6",
+      "finding_sha256": "171ce65f6bac851d0806d78df72851dbad644a901b141b8f2754b9a5f4d45241",
+      "materiality": "not-applicable",
+      "note": "As fontes especificam a versão mínima de Python e contratos versionados.",
+      "source_atom_ids": [
+        "atom-10",
+        "atom-11"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-7",
+      "finding_sha256": "794cb5423b3d1d70d2d48e88c854d18e5b4a8e1f474a5f86329ad50590c88805",
+      "materiality": "not-applicable",
+      "note": "O campo max_build_cost_usd contém 0.0.",
+      "source_atom_ids": [
+        "atom-14"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-8",
+      "finding_sha256": "ac8f5549da2c50c4d94cea7c9d6978a4720ab9eb8f516b3ff2d99515bb5c93af",
+      "materiality": "not-applicable",
+      "note": "As fontes descrevem catalogação pelo educador e preparação com materiais selecionados.",
+      "source_atom_ids": [
+        "atom-15",
+        "atom-18"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-9",
+      "finding_sha256": "8046ed7a4e968c7b87962ce6e0c36529e3ce9685988e550e39913c792b4e8f78",
+      "materiality": "not-applicable",
+      "note": "Educação corresponde ao domínio declarado como education.",
+      "source_atom_ids": [
+        "atom-21"
+      ],
+      "support": "supports"
+    }
+  ],
+  "omissions": [
+    {
+      "id": "omission-1",
+      "impact": "authorization",
+      "kind": "question",
+      "rationale": "As fontes restringem acesso e exigem aprovação, mas não definem a atribuição dessas responsabilidades nem estabelecem se pertencem à mesma pessoa.",
+      "source_atom_ids": [
+        "atom-17",
+        "atom-20"
+      ],
+      "text": "Como se determina o educador responsável por um material e qual educador pode revisar e aprovar a publicação da aula?"
+    }
+  ],
+  "schema_version": "SemanticVerifierProposal/v4",
+  "source_coverage": [
+    {
+      "atom_id": "atom-1",
+      "disposition": "represented",
+      "finding_ids": [
+        "guard-human-review",
+        "context-1"
+      ],
+      "note": "Concepção e revisão prévia representadas.",
+      "omission_ids": [],
+      "quote_sha256": "6b1e42851e6b8515c7190f3acc926e4cfb328a53aaf17678156fa2350c35fe95"
+    },
+    {
+      "atom_id": "atom-2",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-2"
+      ],
+      "note": "Público representado.",
+      "omission_ids": [],
+      "quote_sha256": "6f9e4050f26e11615351b7b695a5f5bedd8591d0b0557c05056ae6ca7f702f50"
+    },
+    {
+      "atom_id": "atom-3",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-2"
+      ],
+      "note": "Público representado; não implica permissão de acesso.",
+      "omission_ids": [],
+      "quote_sha256": "caf6c915a0adb43c362a413ec22f04d1f1405cfb3f9998f4c722cc811495a14a"
+    },
+    {
+      "atom_id": "atom-4",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-3"
+      ],
+      "note": "Tom claro representado.",
+      "omission_ids": [],
+      "quote_sha256": "bdae5d555cce9e9bb1828b74b1dfa90f1c3a65d5ed322e06c3e38609b7f4823f"
+    },
+    {
+      "atom_id": "atom-5",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-3"
+      ],
+      "note": "Tom acolhedor representado.",
+      "omission_ids": [],
+      "quote_sha256": "5fcd5ac268c8a79c4c06d537c621653be7bfdbaf396a3ea67272b17e903ebd80"
+    },
+    {
+      "atom_id": "atom-6",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-3"
+      ],
+      "note": "Tom preciso representado.",
+      "omission_ids": [],
+      "quote_sha256": "6398bad0d1c9c033b689e5356a3508389fc537bb10bdc26f0b49fa723dc90c7d"
+    },
+    {
+      "atom_id": "atom-7",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-4"
+      ],
+      "note": "Princípio de fontes verificáveis representado.",
+      "omission_ids": [],
+      "quote_sha256": "cdcc2409dcbbd79f68e88e2e825e96687492d6f7ecff72ebaaf4eab385025f83"
+    },
+    {
+      "atom_id": "atom-8",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-4"
+      ],
+      "note": "Controle do educador representado.",
+      "omission_ids": [],
+      "quote_sha256": "54d11f2ad21a073d7e949afde270223730ec58eea046afb9767244b35cc586bc"
+    },
+    {
+      "atom_id": "atom-9",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-5"
+      ],
+      "note": "Restrição de acessibilidade representada.",
+      "omission_ids": [],
+      "quote_sha256": "37dc387dfd2c4dcc23b99e59ae48a1baf860b032c9b7cee1bc2cd4b0d59b4742"
+    },
+    {
+      "atom_id": "atom-10",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-6"
+      ],
+      "note": "Restrição de Python representada.",
+      "omission_ids": [],
+      "quote_sha256": "3821baa85deb28950411e56953927f45af87e0a728d986031c058603caf5e1c8"
+    },
+    {
+      "atom_id": "atom-11",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-6"
+      ],
+      "note": "Versionamento de contratos representado.",
+      "omission_ids": [],
+      "quote_sha256": "6c8c51d22c903bcf20655c5144f6d989a99c35e6cf9e4951f4c8eb3b1927754d"
+    },
+    {
+      "atom_id": "atom-12",
+      "disposition": "represented",
+      "finding_ids": [
+        "guard-trace-privacy"
+      ],
+      "note": "Restrição de privacidade representada separadamente.",
+      "omission_ids": [],
+      "quote_sha256": "6478d143ac8b69895c72097fb00c45295bad95897de88bb4592e63b8914e1637"
+    },
+    {
+      "atom_id": "atom-13",
+      "disposition": "represented",
+      "finding_ids": [
+        "guard-human-review"
+      ],
+      "note": "Revisão humana prévia representada separadamente.",
+      "omission_ids": [],
+      "quote_sha256": "d8b7fccf2b4a31be4c721e436190f938b2f1e03ca0c4d691864ed5a1b4561f33"
+    },
+    {
+      "atom_id": "atom-14",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-7"
+      ],
+      "note": "Limite de custo representado.",
+      "omission_ids": [],
+      "quote_sha256": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7"
+    },
+    {
+      "atom_id": "atom-15",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-8"
+      ],
+      "note": "Capacidade de catalogação representada.",
+      "omission_ids": [],
+      "quote_sha256": "3fb9a9c8225ab5a8fb76ef8e2b80f2bf8d752c02d5792345edc73b3124b42549"
+    },
+    {
+      "atom_id": "atom-18",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-8"
+      ],
+      "note": "Preparação com materiais selecionados representada.",
+      "omission_ids": [],
+      "quote_sha256": "f8a24f791bf5b85fbeaf21d5ce87a5aa89b2607a6dbf71a906872cc1d98d16dc"
+    },
+    {
+      "atom_id": "atom-21",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-9"
+      ],
+      "note": "Domínio representado.",
+      "omission_ids": [],
+      "quote_sha256": "68bf0109c6f8a87bfa96d1ecd9503326ba35cf4a6086988a1d2c8a20fbef00d1"
+    },
+    {
+      "atom_id": "atom-16",
+      "disposition": "represented",
+      "finding_ids": [
+        "criterion-1"
+      ],
+      "note": "Campos obrigatórios representados.",
+      "omission_ids": [],
+      "quote_sha256": "1c22b4c7b58ee92b7c21483afc80020fd4232e80f2c81b95ff7a3e4cfd8e6f0e"
+    },
+    {
+      "atom_id": "atom-17",
+      "disposition": "missing",
+      "finding_ids": [
+        "criterion-2"
+      ],
+      "note": "Restrição representada; atribuição do educador responsável permanece indefinida.",
+      "omission_ids": [
+        "omission-1"
+      ],
+      "quote_sha256": "87b05e3851eb9a5e12ef9326599a17b615cbd7e06106fd39df19b6ae423cbd93"
+    },
+    {
+      "atom_id": "atom-19",
+      "disposition": "represented",
+      "finding_ids": [
+        "criterion-3"
+      ],
+      "note": "Referências das afirmações representadas.",
+      "omission_ids": [],
+      "quote_sha256": "ecf4bb47b217cf3dc704089e2056fd1cbffaed0ab081d1f0dec726a68d33b60e"
+    },
+    {
+      "atom_id": "atom-20",
+      "disposition": "missing",
+      "finding_ids": [
+        "criterion-4"
+      ],
+      "note": "Requisitos representados; identidade do educador habilitado a aprovar permanece indefinida.",
+      "omission_ids": [
+        "omission-1"
+      ],
+      "quote_sha256": "6a4337aa2ca248e7621e409463d8ddb97aada7996a5684315e032b1548ae16f0"
+    }
+  ]
+}

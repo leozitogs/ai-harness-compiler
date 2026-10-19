@@ -1,0 +1,182 @@
+{
+  "analysis_sha256": "8baff4b157478c6a6bc91fca505875990ff3e3dddb73350149faea240a897a2a",
+  "component_judgments": [
+    {
+      "component_index": null,
+      "component_name": "condition",
+      "finding_id": "criterion-1",
+      "note": "“Cada publicação da equipe” estabelece o escopo universal da condição.",
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "support": "supports"
+    },
+    {
+      "component_index": null,
+      "component_name": "outcome",
+      "finding_id": "criterion-1",
+      "note": "“Deve conter responsável e origem” estabelece exatamente o resultado exigido.",
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "support": "supports"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "d3490912739dc7a6411f3286f8aabc4c791e6724bfa8a8b5fe549b71e3e4441e",
+      "materiality": "not-applicable",
+      "note": "O critério exige responsável e origem em cada publicação da equipe.",
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "df071651be13dfaa0bd4289d20fdf446de9535324aad414780c4f3fb68bf0440",
+      "materiality": "not-applicable",
+      "note": "Reproduz o propósito declarado na concepção.",
+      "source_atom_ids": [
+        "atom-1"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "1a9bf07de01a3fcdc9549801f59f507d9b19e6cf9c192aaafb7dfecfee24496d",
+      "materiality": "not-applicable",
+      "note": "O público informado é autores.",
+      "source_atom_ids": [
+        "atom-2"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "c14ec4453e2915655fc98dead495a3ab39c143d65c7151ea51d378cf27377ae6",
+      "materiality": "not-applicable",
+      "note": "Os dois princípios constam expressamente no branding; não especificam aprovação.",
+      "source_atom_ids": [
+        "atom-3",
+        "atom-4"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "ff1d2dbefc7df36cf60f536d822048992443e86d49c189066ced1433312702a5",
+      "materiality": "not-applicable",
+      "note": "A descrição do backlog declara ambas as capacidades.",
+      "source_atom_ids": [
+        "atom-7"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "1b288c2a8a6bb932a257cda3bb62e897a6e58319f48fe5f78c57718acf4220a9",
+      "materiality": "not-applicable",
+      "note": "A restrição exige explicitamente registrar a identidade do responsável.",
+      "source_atom_ids": [
+        "atom-5"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-6",
+      "finding_sha256": "fcca810a9f36bf26cdffb58f3f02de27eff428f8141560061e383623b01a65ae",
+      "materiality": "not-applicable",
+      "note": "O campo max_build_cost_usd informa limite de 0.0.",
+      "source_atom_ids": [
+        "atom-6"
+      ],
+      "support": "supports"
+    }
+  ],
+  "omissions": [],
+  "schema_version": "SemanticVerifierProposal/v4",
+  "source_coverage": [
+    {
+      "atom_id": "atom-1",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-1"
+      ],
+      "note": "Concepção representada integralmente.",
+      "omission_ids": [],
+      "quote_sha256": "6a4cc099f7c4beb8d98900b9d05f869383bb403a8803126d3f55c73886e0e7ce"
+    },
+    {
+      "atom_id": "atom-2",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-2"
+      ],
+      "note": "Público representado.",
+      "omission_ids": [],
+      "quote_sha256": "75f26d13ebd8877644c57a369ce71b82b639903217ed12ebe61beeffd8c11586"
+    },
+    {
+      "atom_id": "atom-3",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-3"
+      ],
+      "note": "Princípio de rastreabilidade representado.",
+      "omission_ids": [],
+      "quote_sha256": "e8a964e534bd9189a4c1ee68dc1e80429c5b14930ce7df548075257a8a8dccc7"
+    },
+    {
+      "atom_id": "atom-4",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-3"
+      ],
+      "note": "Princípio de controle humano representado, sem inferir autorização.",
+      "omission_ids": [],
+      "quote_sha256": "a6e3b461d6bc6975496196edb2b7d4ea96130a66c49e4e058c4d66078d23422f"
+    },
+    {
+      "atom_id": "atom-5",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-5"
+      ],
+      "note": "Obrigação de identidade preservada separadamente do critério de publicação.",
+      "omission_ids": [],
+      "quote_sha256": "22accd7ad33a45ad61811a4737a68f2c8dfd45b650550aec3cdae8de95fc1a0e"
+    },
+    {
+      "atom_id": "atom-6",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-6"
+      ],
+      "note": "Limite de custo representado.",
+      "omission_ids": [],
+      "quote_sha256": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7"
+    },
+    {
+      "atom_id": "atom-7",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-4"
+      ],
+      "note": "As duas capacidades declaradas estão representadas.",
+      "omission_ids": [],
+      "quote_sha256": "5f77f5215732224df6e88a779d30470fdd1c968ff4e40c54ff9fa444e009e034"
+    },
+    {
+      "atom_id": "atom-8",
+      "disposition": "represented",
+      "finding_ids": [
+        "criterion-1"
+      ],
+      "note": "Condição e obrigação de publicação integralmente representadas.",
+      "omission_ids": [],
+      "quote_sha256": "a79c1f7e236f6dadc2d66f9ab1ce333e7c271bfe617435c1f8e49ce579b92ef2"
+    }
+  ]
+}

@@ -1,0 +1,565 @@
+{
+  "analysis": {
+    "extraction": {
+      "asset_contents": "not-read",
+      "atoms": [
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-1",
+          "kind": "conception",
+          "pointer": "/conception",
+          "quote": "Precisamos melhorar o processo; etapas, papéis e condições de conclusão não foram definidos.",
+          "source_ref": "input-1"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-2",
+          "kind": "branding",
+          "pointer": "/branding/audience/0",
+          "quote": "autores",
+          "source_ref": "input-2"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-3",
+          "kind": "branding",
+          "pointer": "/branding/principles/0",
+          "quote": "rastreabilidade",
+          "source_ref": "input-2"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-4",
+          "kind": "branding",
+          "pointer": "/branding/principles/1",
+          "quote": "controle humano",
+          "source_ref": "input-2"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-5",
+          "kind": "constraint",
+          "pointer": "/constraints/business/0",
+          "quote": "Registrar a identidade do responsável.",
+          "source_ref": "input-3"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-6",
+          "kind": "constraint",
+          "pointer": "/constraints/max_build_cost_usd",
+          "quote": "0.0",
+          "source_ref": "input-3"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-7",
+          "kind": "backlog-description",
+          "pointer": "/backlog/0/description",
+          "quote": "Organizar publicação da equipe e registrar decisões.",
+          "source_ref": "input-4"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-8",
+          "kind": "acceptance-criterion",
+          "pointer": "/backlog/0/acceptance_criteria/0",
+          "quote": "O operador confirma publicação da equipe antes de concluir.",
+          "source_ref": "input-5"
+        }
+      ],
+      "excluded_references": [],
+      "request": {
+        "original_input": {
+          "assets": [],
+          "backlog": [
+            {
+              "acceptance_criteria": [
+                "O operador confirma publicação da equipe antes de concluir."
+              ],
+              "data_owner": null,
+              "depends_on": [],
+              "description": "Organizar publicação da equipe e registrar decisões.",
+              "id": "register",
+              "implementation": "undecided",
+              "inputs": [],
+              "outputs": [],
+              "risk": "unknown",
+              "side_effects": [],
+              "title": "Registrar e liberar"
+            }
+          ],
+          "branding": {
+            "audience": [
+              "autores"
+            ],
+            "principles": [
+              "rastreabilidade",
+              "controle humano"
+            ],
+            "tone": [],
+            "visual_constraints": []
+          },
+          "conception": "Precisamos melhorar o processo; etapas, papéis e condições de conclusão não foram definidos.",
+          "constraints": {
+            "business": [
+              "Registrar a identidade do responsável."
+            ],
+            "max_build_cost_usd": 0.0,
+            "security": [],
+            "technical": []
+          },
+          "domain": null,
+          "domain_profile": null,
+          "evidence_pack": null,
+          "id": "dev-ambiguous",
+          "name": "Fixture dev ambiguous",
+          "schema_version": "ProjectInput/v1"
+        },
+        "original_sha256": "70e1e4e7503fc348f7a26224386c90c55e49129ef321a8e2c6ff000c9ff38436",
+        "references": [
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-1",
+            "pointer": "/conception",
+            "project_id": "dev-ambiguous",
+            "value": "Precisamos melhorar o processo; etapas, papéis e condições de conclusão não foram definidos."
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-2",
+            "pointer": "/branding",
+            "project_id": "dev-ambiguous",
+            "value": "{\"audience\":[\"autores\"],\"principles\":[\"rastreabilidade\",\"controle humano\"],\"tone\":[],\"visual_constraints\":[]}"
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-3",
+            "pointer": "/constraints",
+            "project_id": "dev-ambiguous",
+            "value": "{\"business\":[\"Registrar a identidade do responsável.\"],\"max_build_cost_usd\":0.0,\"security\":[],\"technical\":[]}"
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-4",
+            "pointer": "/backlog/0/description",
+            "project_id": "dev-ambiguous",
+            "value": "Organizar publicação da equipe e registrar decisões."
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-5",
+            "pointer": "/backlog/0/acceptance_criteria/0",
+            "project_id": "dev-ambiguous",
+            "value": "O operador confirma publicação da equipe antes de concluir."
+          }
+        ],
+        "schema_version": "UnderstandingRequest/v1"
+      },
+      "schema_version": "GroundingExtraction/v1",
+      "semantic_status": "not-established"
+    },
+    "proposal": {
+      "context_findings": [
+        {
+          "context_indices": [
+            0,
+            6
+          ],
+          "note": "O processo ainda carece de definições operacionais.",
+          "subject": "purpose",
+          "text": "Melhorar a organização da publicação da equipe e registrar decisões."
+        },
+        {
+          "context_indices": [
+            1
+          ],
+          "note": "Público explicitamente declarado.",
+          "subject": "audience",
+          "text": "Autores."
+        },
+        {
+          "context_indices": [
+            2,
+            3
+          ],
+          "note": "Princípios declarados.",
+          "subject": "positioning",
+          "text": "Rastreabilidade e controle humano orientam o projeto."
+        },
+        {
+          "context_indices": [
+            6,
+            7
+          ],
+          "note": "Não há indicação do tipo de conteúdo publicado.",
+          "subject": "domain",
+          "text": "Processo de publicação em equipe."
+        },
+        {
+          "context_indices": [
+            6
+          ],
+          "note": "Capacidades de apoio declaradas em termos amplos.",
+          "subject": "capability",
+          "text": "Organizar publicações da equipe e registrar decisões."
+        },
+        {
+          "context_indices": [
+            5
+          ],
+          "note": "Limite financeiro informado.",
+          "subject": "constraint",
+          "text": "O custo máximo de construção é US$ 0,00."
+        }
+      ],
+      "criteria": [
+        {
+          "condition": {
+            "source_atom_ids": [
+              "atom-8"
+            ],
+            "text": "Antes de concluir a publicação da equipe."
+          },
+          "exceptions": [],
+          "kind": "business-rule",
+          "note": "A confirmação é uma condição necessária para concluir; as demais condições de conclusão não estão definidas.",
+          "outcome": {
+            "source_atom_ids": [
+              "atom-8"
+            ],
+            "text": "O operador deve confirmar a publicação da equipe."
+          },
+          "question": null,
+          "source_atom_id": "atom-8",
+          "uncertainties": []
+        }
+      ],
+      "guards": [
+        {
+          "condition": {
+            "source_atom_ids": [
+              "atom-7"
+            ],
+            "text": "Ao registrar decisões no processo de publicação da equipe."
+          },
+          "effect": {
+            "source_atom_ids": [
+              "atom-5"
+            ],
+            "text": "Registrar a identidade do responsável."
+          },
+          "id": "guard-1",
+          "note": "Exigência de rastreabilidade; não concede autorização para publicar ou concluir.",
+          "target_criterion_atom_ids": [],
+          "target_scope": "project"
+        }
+      ],
+      "issues": [
+        {
+          "context_indices": [
+            0,
+            7
+          ],
+          "impact": "outcome",
+          "kind": "question",
+          "rationale": "As condições de conclusão estão explicitamente indefinidas. A confirmação conhecida permanece obrigatória, mas não estabelece sozinha quando a conclusão é válida.",
+          "rejection_reason": null,
+          "text": "Além da confirmação do operador, quais condições determinam que o processo de publicação da equipe pode ser concluído?"
+        },
+        {
+          "context_indices": [
+            0,
+            6
+          ],
+          "impact": "rule",
+          "kind": "question",
+          "rationale": "As etapas estão explicitamente indefinidas; é necessário esclarecer quais atividades fazem parte do processo que deve ser organizado.",
+          "rejection_reason": null,
+          "text": "Quais etapas compõem o processo de publicação da equipe?"
+        },
+        {
+          "context_indices": [
+            0,
+            3,
+            7
+          ],
+          "impact": "authorization",
+          "kind": "question",
+          "rationale": "Os papéis estão explicitamente indefinidos. A menção ao operador estabelece sua obrigação de confirmar, mas não determina quem pode exercer esse papel ou autorizar a conclusão.",
+          "rejection_reason": null,
+          "text": "Como se distribuem os papéis e as responsabilidades no processo, incluindo quem pode atuar como operador e concluir a publicação?"
+        }
+      ],
+      "schema_version": "SemanticAnalysisProposal/v3"
+    },
+    "schema_version": "SemanticAnalysis/v3"
+  },
+  "authority": "model-advisory",
+  "compilation_eligibility": "not-authorized",
+  "model_qualification": "not-established",
+  "program_sha256": "06e6f88819b86686f02a461a3fffa0ccc9bf1a23cb2530e8ea6a84cd30896459",
+  "proposal": {
+    "analysis_sha256": "44f9c5bbb4d4461109433ede9bddcbb99b27131c08af8714d6fd314fd86adc54",
+    "component_judgments": [
+      {
+        "component_index": null,
+        "component_name": "condition",
+        "finding_id": "criterion-1",
+        "note": "A expressão antes de concluir estabelece a condição temporal.",
+        "source_atom_ids": [
+          "atom-8"
+        ],
+        "support": "supports"
+      },
+      {
+        "component_index": null,
+        "component_name": "outcome",
+        "finding_id": "criterion-1",
+        "note": "A fonte atribui ao operador a confirmação da publicação.",
+        "source_atom_ids": [
+          "atom-8"
+        ],
+        "support": "supports"
+      },
+      {
+        "component_index": null,
+        "component_name": "condition",
+        "finding_id": "guard-1",
+        "note": "A fonte prevê registrar decisões, mas não estabelece esse evento como condição de aplicação do registro de identidade.",
+        "source_atom_ids": [
+          "atom-7"
+        ],
+        "support": "insufficient-evidence"
+      },
+      {
+        "component_index": null,
+        "component_name": "outcome",
+        "finding_id": "guard-1",
+        "note": "A fonte exige literalmente registrar a identidade do responsável, sem identificar esse responsável.",
+        "source_atom_ids": [
+          "atom-5"
+        ],
+        "support": "supports"
+      }
+    ],
+    "findings": [
+      {
+        "finding_id": "criterion-1",
+        "finding_sha256": "f86cdc3b676314c69e97c03d4ee26ca8a0970107962abcce857e5f73b977d2f4",
+        "materiality": "not-applicable",
+        "note": "A fonte exige confirmação pelo operador antes da conclusão.",
+        "source_atom_ids": [
+          "atom-8"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "guard-1",
+        "finding_sha256": "d0e87fb9a5d0fe1da38f7b9a9f97c42ad09c246e9028fc65dd9624c1b11f8a28",
+        "materiality": "not-applicable",
+        "note": "A obrigação de registrar a identidade é explícita, mas sua vinculação ao registro de decisões não está estabelecida pelas fontes dos componentes.",
+        "source_atom_ids": [
+          "atom-7",
+          "atom-5"
+        ],
+        "support": "insufficient-evidence"
+      },
+      {
+        "finding_id": "context-1",
+        "finding_sha256": "340c3255639a966f6d90d93ab2ef022dbc532e884a11ef5396e7d4242c98545d",
+        "materiality": "not-applicable",
+        "note": "As fontes declaram a melhoria do processo, a organização da publicação e o registro de decisões.",
+        "source_atom_ids": [
+          "atom-1",
+          "atom-7"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "context-2",
+        "finding_sha256": "21dc6c05c2a088cab8529fa0e078ade2a529107573d3220261170e6468056dd9",
+        "materiality": "not-applicable",
+        "note": "O público declarado é autores.",
+        "source_atom_ids": [
+          "atom-2"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "context-3",
+        "finding_sha256": "4c735e89c28f60cf50d508514af746bce5517f89e3a98b253993483af277f1a2",
+        "materiality": "not-applicable",
+        "note": "Rastreabilidade e controle humano constam como princípios.",
+        "source_atom_ids": [
+          "atom-3",
+          "atom-4"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "context-4",
+        "finding_sha256": "4a435d02417a6e89c3d7f6a0d8bf68c1d3d8ab3d0bfb47e1cbd1ba3fd36a0b6d",
+        "materiality": "not-applicable",
+        "note": "Ambas as fontes tratam da publicação da equipe.",
+        "source_atom_ids": [
+          "atom-7",
+          "atom-8"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "context-5",
+        "finding_sha256": "fa9157944a8f7811ff1ea2d66703e5c2830c3e7971e4167481f658fcf7ef2f66",
+        "materiality": "not-applicable",
+        "note": "Organizar publicação e registrar decisões são capacidades expressas.",
+        "source_atom_ids": [
+          "atom-7"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "context-6",
+        "finding_sha256": "979f0c11e0e076e9c133022e6952483189e1a3f4027ffa11b705c5193404db19",
+        "materiality": "not-applicable",
+        "note": "O campo de custo máximo de construção em dólares informa 0.0.",
+        "source_atom_ids": [
+          "atom-6"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "issue-1",
+        "finding_sha256": "61044d20f272e0aed4b8859d39a0182288656ef5e4c7dfd6bf641593d9927b07",
+        "materiality": "appropriate",
+        "note": "As condições de conclusão estão indefinidas; a confirmação explícita não determina sua suficiência.",
+        "source_atom_ids": [
+          "atom-1",
+          "atom-8"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "issue-2",
+        "finding_sha256": "bf66afaf7f0d8220a30496c9d08abe849f4a504c949e67039fb45e73bc5321e4",
+        "materiality": "appropriate",
+        "note": "As etapas estão explicitamente indefinidas e determinam quais atividades integram o processo.",
+        "source_atom_ids": [
+          "atom-1",
+          "atom-7"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "issue-3",
+        "finding_sha256": "ae659c0009a4acd480ad7cc5eb46aa6deb4854d608a3037b2867229d938a1403",
+        "materiality": "appropriate",
+        "note": "Os papéis estão indefinidos; controle humano e confirmação pelo operador não identificam quem está autorizado a concluir.",
+        "source_atom_ids": [
+          "atom-1",
+          "atom-4",
+          "atom-8"
+        ],
+        "support": "supports"
+      }
+    ],
+    "omissions": [],
+    "schema_version": "SemanticVerifierProposal/v4",
+    "source_coverage": [
+      {
+        "atom_id": "atom-1",
+        "disposition": "represented",
+        "finding_ids": [
+          "context-1",
+          "issue-1",
+          "issue-2",
+          "issue-3"
+        ],
+        "note": "A intenção de melhoria e as três indefinições estão contempladas.",
+        "omission_ids": [],
+        "quote_sha256": "12c881ea64cc68b9aaf7a45d4f29375b8d95498dbb4859448f7c857eb0f202c8"
+      },
+      {
+        "atom_id": "atom-2",
+        "disposition": "represented",
+        "finding_ids": [
+          "context-2"
+        ],
+        "note": "Público contemplado.",
+        "omission_ids": [],
+        "quote_sha256": "75f26d13ebd8877644c57a369ce71b82b639903217ed12ebe61beeffd8c11586"
+      },
+      {
+        "atom_id": "atom-3",
+        "disposition": "represented",
+        "finding_ids": [
+          "context-3"
+        ],
+        "note": "Princípio de rastreabilidade contemplado.",
+        "omission_ids": [],
+        "quote_sha256": "e8a964e534bd9189a4c1ee68dc1e80429c5b14930ce7df548075257a8a8dccc7"
+      },
+      {
+        "atom_id": "atom-4",
+        "disposition": "represented",
+        "finding_ids": [
+          "context-3",
+          "issue-3"
+        ],
+        "note": "Controle humano contemplado sem inferir autorização individual.",
+        "omission_ids": [],
+        "quote_sha256": "a6e3b461d6bc6975496196edb2b7d4ea96130a66c49e4e058c4d66078d23422f"
+      },
+      {
+        "atom_id": "atom-5",
+        "disposition": "represented",
+        "finding_ids": [
+          "guard-1"
+        ],
+        "note": "A obrigação de identidade está registrada; a condição acrescentada foi julgada insuficientemente fundamentada.",
+        "omission_ids": [],
+        "quote_sha256": "22accd7ad33a45ad61811a4737a68f2c8dfd45b650550aec3cdae8de95fc1a0e"
+      },
+      {
+        "atom_id": "atom-6",
+        "disposition": "represented",
+        "finding_ids": [
+          "context-6"
+        ],
+        "note": "Limite financeiro contemplado.",
+        "omission_ids": [],
+        "quote_sha256": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7"
+      },
+      {
+        "atom_id": "atom-7",
+        "disposition": "represented",
+        "finding_ids": [
+          "guard-1",
+          "context-1",
+          "context-4",
+          "context-5",
+          "issue-2"
+        ],
+        "note": "Organização e decisões contempladas; preservada a citação cuja ligação ao guard é incerta.",
+        "omission_ids": [],
+        "quote_sha256": "5f77f5215732224df6e88a779d30470fdd1c968ff4e40c54ff9fa444e009e034"
+      },
+      {
+        "atom_id": "atom-8",
+        "disposition": "represented",
+        "finding_ids": [
+          "criterion-1",
+          "context-4",
+          "issue-1",
+          "issue-3"
+        ],
+        "note": "Confirmação prévia contemplada, sem presumir suficiência ou autorização do operador.",
+        "omission_ids": [],
+        "quote_sha256": "c52f9dd3da88167ffe7a9e1bf99a6efa142a0bb83392caacb04c20e3d767b055"
+      }
+    ]
+  },
+  "requested_model": "gpt-6.1-sol",
+  "schema_version": "SemanticVerifierReport/v4",
+  "semantic_status": "not-established"
+}

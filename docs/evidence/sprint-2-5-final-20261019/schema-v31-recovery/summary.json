@@ -1,0 +1,25 @@
+{
+  "cases": [
+    {
+      "adapter_program": "codex-structured-cli/v5",
+      "audit": "valid",
+      "case": "dev-compatible-rules",
+      "case_input_sha256": "b3d0db0980c20a068cbddf89bf26afef915368d5e487a9e1748cf782a9ba9225",
+      "disposition": "ready",
+      "expected_behavior": "ready",
+      "generation": "valid",
+      "guards": 2,
+      "human_review": "absent",
+      "negative_components": 0,
+      "observed_model": null,
+      "omissions": 1,
+      "qualification": "not-established",
+      "requested_model": "gpt-6.1-sol"
+    }
+  ],
+  "holdout": "not-read",
+  "max_calls": 2,
+  "max_concurrency": 2,
+  "qualification": "not-established",
+  "split": "development"
+}

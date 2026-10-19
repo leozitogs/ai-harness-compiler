@@ -1,0 +1,151 @@
+{
+  "cases": [
+    {
+      "adapter_program": "codex-structured-cli/v5",
+      "audit": "valid",
+      "case": "dev-adversarial",
+      "case_input_sha256": "90af98c2b77c32226ded9b7c5ffc5d87e4e2773695c3daa88f196523afbfd006",
+      "disposition": "ready",
+      "expected_behavior": "ready",
+      "generation": "valid",
+      "guards": 0,
+      "human_review": "absent",
+      "negative_components": 0,
+      "observed_model": null,
+      "omissions": 1,
+      "qualification": "not-established",
+      "requested_model": "gpt-6.1-sol"
+    },
+    {
+      "adapter_program": "codex-structured-cli/v5",
+      "audit": "valid",
+      "case": "dev-ambiguous",
+      "case_input_sha256": "70e1e4e7503fc348f7a26224386c90c55e49129ef321a8e2c6ff000c9ff38436",
+      "disposition": "blocked",
+      "expected_behavior": "blocked",
+      "generation": "valid",
+      "guards": 1,
+      "human_review": "absent",
+      "negative_components": 1,
+      "observed_model": null,
+      "omissions": 0,
+      "qualification": "not-established",
+      "requested_model": "gpt-6.1-sol"
+    },
+    {
+      "adapter_program": "codex-structured-cli/v5",
+      "audit": "valid",
+      "case": "dev-branding-conflict",
+      "case_input_sha256": "6efa88484de902b19dd3011dde395a354bbb3f959e931cb71422f73aaacdc751",
+      "disposition": "blocked",
+      "expected_behavior": "blocked",
+      "generation": "valid",
+      "guards": 0,
+      "human_review": "absent",
+      "negative_components": 0,
+      "observed_model": null,
+      "omissions": 1,
+      "qualification": "not-established",
+      "requested_model": "gpt-6.1-sol"
+    },
+    {
+      "adapter_program": "codex-structured-cli/v5",
+      "audit": "not-run",
+      "case": "dev-compatible-rules",
+      "case_input_sha256": "b3d0db0980c20a068cbddf89bf26afef915368d5e487a9e1748cf782a9ba9225",
+      "error_type": "ValidationError",
+      "errors": [
+        {
+          "loc": [
+            "criteria",
+            0
+          ],
+          "msg": "Value error, Non-rule cannot claim rule components",
+          "type": "value_error"
+        },
+        {
+          "loc": [
+            "criteria",
+            2
+          ],
+          "msg": "Value error, Non-rule cannot claim rule components",
+          "type": "value_error"
+        }
+      ],
+      "generation": "error",
+      "human_review": "absent",
+      "observed_model": null,
+      "qualification": "not-established",
+      "requested_model": "gpt-6.1-sol"
+    },
+    {
+      "adapter_program": "codex-structured-cli/v5",
+      "audit": "valid",
+      "case": "dev-new-domain",
+      "case_input_sha256": "6d792a55af0f4e0af1c2c1f1e36ff0d31f7fb9894b7091efd3f67338141dc492",
+      "disposition": "ready",
+      "expected_behavior": "ready",
+      "generation": "valid",
+      "guards": 0,
+      "human_review": "absent",
+      "negative_components": 0,
+      "observed_model": null,
+      "omissions": 0,
+      "qualification": "not-established",
+      "requested_model": "gpt-6.1-sol"
+    },
+    {
+      "adapter_program": "codex-structured-cli/v5",
+      "audit": "valid",
+      "case": "dev-rules-a",
+      "case_input_sha256": "a44c3b367950cab7b68c92bcf8f7062a732d7bc6f034d105df6a0e3a3b28d9ad",
+      "disposition": "ready",
+      "expected_behavior": "ready",
+      "generation": "valid",
+      "guards": 0,
+      "human_review": "absent",
+      "negative_components": 0,
+      "observed_model": null,
+      "omissions": 2,
+      "qualification": "not-established",
+      "requested_model": "gpt-6.1-sol"
+    },
+    {
+      "adapter_program": "codex-structured-cli/v5",
+      "audit": "valid",
+      "case": "dev-rules-b",
+      "case_input_sha256": "b3f1743dc0c1b25e7e7d659acb7d3d2db5d57664467af2e6ee9ed65488b5382c",
+      "disposition": "ready",
+      "expected_behavior": "ready",
+      "generation": "valid",
+      "guards": 1,
+      "human_review": "absent",
+      "negative_components": 0,
+      "observed_model": null,
+      "omissions": 1,
+      "qualification": "not-established",
+      "requested_model": "gpt-6.1-sol"
+    },
+    {
+      "adapter_program": "codex-structured-cli/v5",
+      "audit": "valid",
+      "case": "dev-unread-assets",
+      "case_input_sha256": "015d3fe7ce3367ff202c52b58d00331418776a18b0b20bf09cc2dd07f26d24f2",
+      "disposition": "ready",
+      "expected_behavior": "ready",
+      "generation": "valid",
+      "guards": 0,
+      "human_review": "absent",
+      "negative_components": 0,
+      "observed_model": null,
+      "omissions": 0,
+      "qualification": "not-established",
+      "requested_model": "gpt-6.1-sol"
+    }
+  ],
+  "holdout": "not-read",
+  "max_calls": 16,
+  "max_concurrency": 2,
+  "qualification": "not-established",
+  "split": "development"
+}

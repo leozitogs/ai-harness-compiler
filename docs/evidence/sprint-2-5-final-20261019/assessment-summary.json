@@ -1,0 +1,303 @@
+{
+  "compilation": "not-authorized",
+  "human_review": "absent",
+  "qualification": "not-established",
+  "rows": [
+    {
+      "assessment_status": "not-run",
+      "attempt": "baseline-v3",
+      "case": "dev-adversarial",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "citation-support",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "conflict-validity",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "asset-bounds",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "uncertainty",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "project-understanding",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        }
+      ]
+    },
+    {
+      "assessment_status": "not-run",
+      "attempt": "baseline-v3",
+      "case": "dev-ambiguous",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "citation-support",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "conflict-validity",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "asset-bounds",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "uncertainty",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "project-understanding",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        }
+      ]
+    },
+    {
+      "assessment_status": "not-run",
+      "attempt": "baseline-v3",
+      "case": "dev-branding-conflict",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "citation-support",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "conflict-validity",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "asset-bounds",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "uncertainty",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "project-understanding",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        }
+      ]
+    },
+    {
+      "assessment_status": "not-run",
+      "attempt": "baseline-v3",
+      "case": "dev-new-domain",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "citation-support",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "conflict-validity",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "asset-bounds",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "uncertainty",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "project-understanding",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        }
+      ]
+    },
+    {
+      "assessment_status": "not-run",
+      "attempt": "baseline-v3",
+      "case": "dev-rules-a",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "citation-support",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "conflict-validity",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "asset-bounds",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "uncertainty",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "project-understanding",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        }
+      ]
+    },
+    {
+      "assessment_status": "not-run",
+      "attempt": "baseline-v3",
+      "case": "dev-rules-b",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "citation-support",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "conflict-validity",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "asset-bounds",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "uncertainty",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "project-understanding",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        }
+      ]
+    },
+    {
+      "assessment_status": "not-run",
+      "attempt": "baseline-v3",
+      "case": "dev-unread-assets",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "citation-support",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "conflict-validity",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "asset-bounds",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "uncertainty",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "project-understanding",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        }
+      ]
+    },
+    {
+      "assessment_status": "not-run",
+      "attempt": "schema-v31-recovery",
+      "case": "dev-compatible-rules",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "citation-support",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "conflict-validity",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "asset-bounds",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "uncertainty",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        },
+        {
+          "criterion": "project-understanding",
+          "note": "Independent human judgment required",
+          "outcome": "not-run"
+        }
+      ]
+    }
+  ]
+}

@@ -1,22 +1,26 @@
 {
+  "closure_document": "docs/delivery/sprint-2-5-review.md",
   "execution_started": true,
   "format": "sprint-work-items/v1",
   "sprint_id": "sprint-2-5",
-  "status": "in_progress",
+  "status": "closed_with_carryover",
   "work_items": [
     {
       "capability_id": "ahc-021",
+      "carryover_note": "See final review for delivered increments and unmet human-review/qualification gates. No generated-plan stage is promoted to Done.",
+      "completion": "not-done-carried-over",
       "depends_on": [],
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
       "evidence_sources": [
         "evals/understanding/v1/freeze.json",
         "docs/engineering/semantic-understanding-evals.md",
         "docs/delivery/ahc-021-quality-criteria-review.md",
-        "docs/reviews/20261009-understanding-business-rules.md"
+        "docs/reviews/20261009-understanding-business-rules.md",
+        "docs/delivery/sprint-2-5-review.md"
       ],
       "id": "s25-21-design",
       "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/15",
-      "progress_note": "PO approved six criteria/four decisions; rubric v2 materialized. Independent review findings implemented in new version. Individual case expectations and corpus freeze pending; v1 preserved.",
+      "progress_note": "All eight development expectations explicitly approved by PO; development bytes and rubric frozen in approved manifest. Reserved protocol/output review pending.",
       "responsible": "code-collaborator-supported-by-codex",
       "stage": "design",
       "status": "in_progress",
@@ -32,6 +36,8 @@
     },
     {
       "capability_id": "ahc-021",
+      "carryover_note": "See final review for delivered increments and unmet human-review/qualification gates. No generated-plan stage is promoted to Done.",
+      "completion": "not-done-carried-over",
       "depends_on": [
         "s25-21-design"
       ],
@@ -41,7 +47,8 @@
         "docs/evidence/ahc-021/qwen3-cold-eval.json",
         "docs/engineering/model-generation-sessions.md",
         "docs/evidence/ahc-021-live-session-final/session.json",
-        "tests/test_model_sessions.py"
+        "tests/test_model_sessions.py",
+        "docs/delivery/sprint-2-5-review.md"
       ],
       "id": "s25-21-implement",
       "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/15",
@@ -61,10 +68,15 @@
     },
     {
       "capability_id": "ahc-021",
+      "carryover_note": "See final review for delivered increments and unmet human-review/qualification gates. No generated-plan stage is promoted to Done.",
+      "completion": "not-done-carried-over",
       "depends_on": [
         "s25-21-implement"
       ],
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-5-review.md"
+      ],
       "id": "s25-21-verify",
       "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/15",
       "responsible": "code-collaborator-supported-by-codex",
@@ -78,10 +90,15 @@
     },
     {
       "capability_id": "ahc-021",
+      "carryover_note": "See final review for delivered increments and unmet human-review/qualification gates. No generated-plan stage is promoted to Done.",
+      "completion": "not-done-carried-over",
       "depends_on": [
         "s25-21-verify"
       ],
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-5-review.md"
+      ],
       "id": "s25-21-review",
       "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/15",
       "responsible": "code-collaborator-supported-by-codex",
@@ -95,6 +112,8 @@
     },
     {
       "capability_id": "ahc-022",
+      "carryover_note": "See final review for delivered increments and unmet human-review/qualification gates. No generated-plan stage is promoted to Done.",
+      "completion": "not-done-carried-over",
       "depends_on": [
         "s25-21-review"
       ],
@@ -106,7 +125,8 @@
         "docs/delivery/ahc-022-grounded-increment.md",
         "docs/engineering/grounded-analysis.md",
         "tests/test_grounded_analysis.py",
-        "docs/evidence/ahc-022-grounded-diagnostics-20261008/session.json"
+        "docs/evidence/ahc-022-grounded-diagnostics-20261008/session.json",
+        "docs/delivery/sprint-2-5-review.md"
       ],
       "id": "s25-22-design",
       "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16",
@@ -122,6 +142,8 @@
     },
     {
       "capability_id": "ahc-022",
+      "carryover_note": "See final review for delivered increments and unmet human-review/qualification gates. No generated-plan stage is promoted to Done.",
+      "completion": "not-done-carried-over",
       "depends_on": [
         "s25-22-design"
       ],
@@ -146,7 +168,8 @@
         "tests/test_semantic_verification.py",
         "tests/test_semantic_assessment.py",
         "planning/sprint-2-5.amendment-1.json",
-        "docs/delivery/sprint-2-5-amendment-1.md"
+        "docs/delivery/sprint-2-5-amendment-1.md",
+        "docs/delivery/sprint-2-5-review.md"
       ],
       "id": "s25-22-implement",
       "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16",
@@ -161,6 +184,8 @@
     },
     {
       "capability_id": "ahc-022",
+      "carryover_note": "See final review for delivered increments and unmet human-review/qualification gates. No generated-plan stage is promoted to Done.",
+      "completion": "not-done-carried-over",
       "depends_on": [
         "s25-22-implement"
       ],
@@ -169,7 +194,8 @@
         "docs/delivery/ahc-022-development-comparison.md",
         "docs/evidence/ahc-022-development-comparison-20261008.json",
         "docs/delivery/ahc-022-independent-comparison.md",
-        "docs/evidence/ahc-022-independent-development-summary-20261008.json"
+        "docs/evidence/ahc-022-independent-development-summary-20261008.json",
+        "docs/delivery/sprint-2-5-review.md"
       ],
       "id": "s25-22-verify",
       "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16",
@@ -184,10 +210,15 @@
     },
     {
       "capability_id": "ahc-022",
+      "carryover_note": "See final review for delivered increments and unmet human-review/qualification gates. No generated-plan stage is promoted to Done.",
+      "completion": "not-done-carried-over",
       "depends_on": [
         "s25-22-verify"
       ],
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-5-review.md"
+      ],
       "id": "s25-22-review",
       "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/16",
       "responsible": "code-collaborator-supported-by-codex",
@@ -201,10 +232,15 @@
     },
     {
       "capability_id": "ahc-023",
+      "carryover_note": "See final review for delivered increments and unmet human-review/qualification gates. No generated-plan stage is promoted to Done.",
+      "completion": "not-done-carried-over",
       "depends_on": [
         "s25-22-review"
       ],
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-5-review.md"
+      ],
       "id": "s25-23-design",
       "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/17",
       "responsible": "code-collaborator-supported-by-codex",
@@ -217,6 +253,8 @@
     },
     {
       "capability_id": "ahc-023",
+      "carryover_note": "See final review for delivered increments and unmet human-review/qualification gates. No generated-plan stage is promoted to Done.",
+      "completion": "not-done-carried-over",
       "depends_on": [
         "s25-23-design"
       ],
@@ -226,7 +264,8 @@
         "docs/adr/0018-primary-model-policy.md",
         "src/ai_harness_compiler/default-model-policy.json",
         "tests/test_model_policy.py",
-        "tests/test_team_codex.py"
+        "tests/test_team_codex.py",
+        "docs/delivery/sprint-2-5-review.md"
       ],
       "id": "s25-23-implement",
       "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/17",
@@ -241,10 +280,15 @@
     },
     {
       "capability_id": "ahc-023",
+      "carryover_note": "See final review for delivered increments and unmet human-review/qualification gates. No generated-plan stage is promoted to Done.",
+      "completion": "not-done-carried-over",
       "depends_on": [
         "s25-23-implement"
       ],
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-5-review.md"
+      ],
       "id": "s25-23-verify",
       "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/17",
       "responsible": "code-collaborator-supported-by-codex",
@@ -257,10 +301,15 @@
     },
     {
       "capability_id": "ahc-023",
+      "carryover_note": "See final review for delivered increments and unmet human-review/qualification gates. No generated-plan stage is promoted to Done.",
+      "completion": "not-done-carried-over",
       "depends_on": [
         "s25-23-verify"
       ],
       "evidence_policy": "Source acceptance criteria and reviewed deliverables required; plan/pilot/schema success alone is not completion.",
+      "evidence_sources": [
+        "docs/delivery/sprint-2-5-review.md"
+      ],
       "id": "s25-23-review",
       "issue_url": "https://github.com/leozitogs/ai-harness-compiler/issues/17",
       "responsible": "code-collaborator-supported-by-codex",

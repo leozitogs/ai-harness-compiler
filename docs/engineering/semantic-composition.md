@@ -35,3 +35,15 @@ O host não resolve contradições ou reescreve componentes após a resposta. Gu
 são especificações propostas, não controles operacionais implementados. Semântica
 continua requerendo revisão; a avaliação humana/holdout permanece num gate posterior.
 Os comandos antigos continuam disponíveis e não migram automaticamente para v3/v4.
+
+## Revisão humana offline
+
+`factory assess-analysis-v3 analysis.json --case case.json --rubric rubric.json
+--output assessment.json` produz `not-run` sem revisão (ou `fail` se já houver
+incompatibilidade objetiva). `--review human-review-v3.json` recebe apenas uma
+declaração humana real. A revisão inclui seis critérios, cobertura de obrigações,
+suporte por achado e por componente, com nome, índice de exceção e fontes exatas.
+IDs, hashes ou fontes stale são rejeitados; um guard alterado exige nova revisão.
+Pass requer inventários positivos completos, caso e rubrica aprovados. O comando
+retorna 0 apenas para pass e recusa sobrescrever arquivos. Parecer v4 é consultivo
+e não é convertido para declaração humana v3. A compilação continua não autorizada.

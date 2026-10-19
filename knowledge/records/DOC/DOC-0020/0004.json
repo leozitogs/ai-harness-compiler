@@ -1,0 +1,61 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Sprint2.5 amendment continues after delegated business trace decision; no model-output approval inferred.",
+  "created_at": "2026-10-19T19:50:53.521757+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Versioned component contracts and observed development; no human semantic approval or holdout qualification.",
+      "outcome": "observed",
+      "sha256": "5a95357b21191c51d2d9b65c5d886f64a9083535471d2ea9094c982a490c5edc",
+      "source": "docs/delivery/ahc-022-component-provenance-increment.md"
+    },
+    {
+      "command": null,
+      "note": "Versioned component contracts and observed development; no human semantic approval or holdout qualification.",
+      "outcome": "observed",
+      "sha256": "6a54fc470df889fa2aaddf4e46398d7b626967d64bade18090daa09f5dfc52d0",
+      "source": "docs/evidence/compound-provenance-20261013/inventory.json"
+    },
+    {
+      "command": null,
+      "note": "Versioned component contracts and observed development; no human semantic approval or holdout qualification.",
+      "outcome": "observed",
+      "sha256": "0005a6449be6d723b66482e215b978b1d74350fc0ab43e494ed6ef6d06a94d11",
+      "source": "planning/sprint-2-5.json"
+    }
+  ],
+  "id": "DOC-0020",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Same-model advisory audit is not independent semantic assurance",
+    "Observed development only",
+    "Human review and holdout remain pending"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0021",
+    "INC-0016",
+    "DOC-0019"
+  ],
+  "resolution": null,
+  "review_note": "Refresh current bytes after approved expectations, queued backlog and partial Sprint2.5 closure; historical runs remain historical, qualification not established.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 4,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Three model-generated development analyses plus a constructed negative control, four advisory audits, seven calls captured October 13 and revalidated October 19.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Incremento de proveniência e controle negativo de desenvolvimento",
+  "updated_at": "2026-10-19T20:12:13.329808+00:00"
+}
