@@ -2,10 +2,11 @@
 
 from typing import Literal, Self
 
-from pydantic import Field, model_validator
+from pydantic import ConfigDict, Field, model_validator
 
 from ai_harness_compiler.models.base import Contract, Identifier, Text
 from ai_harness_compiler.models.project import ProjectInput
+from ai_harness_compiler.models.scrum import SprintSnapshot
 
 Role = Literal["analyst", "architect", "engineer", "quality", "security", "delivery"]
 ToolName = Literal[
@@ -70,6 +71,7 @@ class AgentReport(Contract):
 
 
 class TeamConfig(Contract):
+    model_config = ConfigDict(hide_input_in_errors=True)
     schema_version: Literal["TeamRun/v1"] = "TeamRun/v1"
     project: ProjectInput
     selected: list[Identifier] = Field(min_length=1)
@@ -79,9 +81,22 @@ class TeamConfig(Contract):
     model: str | None = None
     max_steps: int = Field(default=5, ge=3, le=10)
     repository_root: Text
+    scrum_snapshot: SprintSnapshot | None = None
 
     @model_validator(mode="after")
     def model_required(self) -> Self:
+        if self.scrum_snapshot is not None:
+            from ai_harness_compiler.scrum_observer import decode_document
+
+            snapshot = SprintSnapshot.model_validate(self.scrum_snapshot.model_dump())
+            source = next(s for s in snapshot.observation.sources if s.kind == "project")
+            captured = ProjectInput.model_validate(decode_document(source.content or ""))
+            if captured != self.project or snapshot.observation.project_id != self.project.id:
+                raise ValueError("Scrum context differs from the configured project")
+            if self.selected != [story.id for story in snapshot.stories]:
+                raise ValueError("Scrum selection must match the observed stories in order")
+            if self.mode != "ask":
+                raise ValueError("Scrum context requires a dedicated Nexo ask session")
         if self.engine == "ollama" and not self.model:
             raise ValueError("Ollama mode requires an explicit installed model")
         if self.engine == "codex-cli" and not self.model:

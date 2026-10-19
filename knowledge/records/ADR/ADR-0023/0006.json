@@ -1,0 +1,69 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO explicitly authorized starting Sprint2.5.5 on 2026-10-19.",
+  "created_at": "2026-10-19T21:00:41.877003+00:00",
+  "decision": "Separate provider-independent contracts and pure reconciliation from bounded filesystem/GitHub read adapters. Reconciliation at current time does not refresh sources.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Read-only observer implementation and captured engineering demo; no criterion acceptance, model call or remote write.",
+      "outcome": "observed",
+      "sha256": "81c7338746f663ab59dc36b75dacae8326c17586b9a1798ffb4757bbd497e8e3",
+      "source": "docs/adr/0023-read-only-scrum-observer.md"
+    },
+    {
+      "command": null,
+      "note": "Read-only observer implementation and captured engineering demo; no criterion acceptance, model call or remote write.",
+      "outcome": "observed",
+      "sha256": "01e4d2a07f7a5e0f5193f17beb23c742fbf9c6ebd9fd2df0a608cbd630469ab5",
+      "source": "src/ai_harness_compiler/models/scrum.py"
+    },
+    {
+      "command": null,
+      "note": "Read-only observer implementation and captured engineering demo; no criterion acceptance, model call or remote write.",
+      "outcome": "observed",
+      "sha256": "70dc49a6896d19a9b62ee874b0adfa2afb5ac779e83cbcc2d336f271f11d9224",
+      "source": "src/ai_harness_compiler/scrum_observer.py"
+    },
+    {
+      "command": null,
+      "note": "Read-only observer implementation and captured engineering demo; no criterion acceptance, model call or remote write.",
+      "outcome": "observed",
+      "sha256": "074cea840e87eb81496501586c8a66e572a7dded514aa16addc471bfa36eb512",
+      "source": "tests/test_scrum_observer.py"
+    }
+  ],
+  "id": "ADR-0023",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "Checksums prove internal consistency, not authenticity",
+    "No per-criterion human review ingestion or Done certification",
+    "This record describes the observer increment; subsequent Nexo planning is documented separately in ADR-0024 and DOC-0024."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0011",
+    "DOC-0022",
+    "ADR-0024",
+    "DOC-0024"
+  ],
+  "resolution": null,
+  "review_note": "Preserve historical observer evidence and semantic limitations; update current sprint progress to AHC-028 review without marking any story Done.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 6,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Capture scoped source content, time and digest; derive read-only diagnostics and revalidate them on deserialization. Lifecycle and reported checks never establish acceptance.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Observação Scrum separada de aceite e operação",
+  "updated_at": "2026-10-19T21:19:50.556322+00:00"
+}

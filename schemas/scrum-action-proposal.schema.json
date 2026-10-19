@@ -1,0 +1,129 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "acceptance": {
+      "const": "not-established",
+      "default": "not-established",
+      "title": "Acceptance",
+      "type": "string"
+    },
+    "acceptance_criteria": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 512,
+      "title": "Acceptance Criteria",
+      "type": "array"
+    },
+    "alternatives": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 4,
+      "minItems": 2,
+      "title": "Alternatives",
+      "type": "array"
+    },
+    "capacity": {
+      "const": "unknown",
+      "default": "unknown",
+      "title": "Capacity",
+      "type": "string"
+    },
+    "decision_recipient": {
+      "enum": [
+        "human-product-owner",
+        "developers"
+      ],
+      "title": "Decision Recipient",
+      "type": "string"
+    },
+    "dependencies": {
+      "items": {
+        "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+        "type": "string"
+      },
+      "maxItems": 128,
+      "title": "Dependencies",
+      "type": "array"
+    },
+    "diagnostic_ids": {
+      "items": {
+        "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+        "type": "string"
+      },
+      "maxItems": 1024,
+      "title": "Diagnostic Ids",
+      "type": "array"
+    },
+    "evidence_ids": {
+      "items": {
+        "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+        "type": "string"
+      },
+      "maxItems": 256,
+      "minItems": 1,
+      "title": "Evidence Ids",
+      "type": "array"
+    },
+    "execution": {
+      "const": "not-authorized",
+      "default": "not-authorized",
+      "title": "Execution",
+      "type": "string"
+    },
+    "goal": {
+      "minLength": 1,
+      "title": "Goal",
+      "type": "string"
+    },
+    "id": {
+      "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "refinement",
+        "planning",
+        "review"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "recommendation": {
+      "minLength": 1,
+      "title": "Recommendation",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "ScrumActionProposal/v1",
+      "default": "ScrumActionProposal/v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "story_ids": {
+      "items": {
+        "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+        "type": "string"
+      },
+      "maxItems": 64,
+      "title": "Story Ids",
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "kind",
+    "goal",
+    "story_ids",
+    "evidence_ids",
+    "recommendation",
+    "alternatives",
+    "decision_recipient"
+  ],
+  "title": "ScrumActionProposal",
+  "type": "object"
+}

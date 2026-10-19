@@ -84,10 +84,15 @@
       "depends_on": [
         "s255-27-review"
       ],
+      "evidence_sources": [
+        "docs/adr/0024-grounded-nexo-proposals.md",
+        "docs/engineering/nexo-scrum-planning.md",
+        "tests/test_scrum_planning.py"
+      ],
       "id": "s255-28-design",
       "responsible": "code-collaborator-supported-by-codex",
       "stage": "design",
-      "status": "planned",
+      "status": "in_review",
       "task_graph_id": "task-28-design",
       "verification_source": "docs/delivery/sprint-2-5-5.md"
     },
@@ -97,10 +102,15 @@
       "depends_on": [
         "s255-28-design"
       ],
+      "evidence_sources": [
+        "docs/adr/0024-grounded-nexo-proposals.md",
+        "docs/engineering/nexo-scrum-planning.md",
+        "tests/test_scrum_planning.py"
+      ],
       "id": "s255-28-implement",
       "responsible": "code-collaborator-supported-by-codex",
       "stage": "implement",
-      "status": "planned",
+      "status": "in_review",
       "task_graph_id": "task-28-implement",
       "verification_source": "docs/delivery/sprint-2-5-5.md"
     },
@@ -110,10 +120,15 @@
       "depends_on": [
         "s255-28-implement"
       ],
+      "evidence_sources": [
+        "docs/adr/0024-grounded-nexo-proposals.md",
+        "docs/engineering/nexo-scrum-planning.md",
+        "tests/test_scrum_planning.py"
+      ],
       "id": "s255-28-verify",
       "responsible": "code-collaborator-supported-by-codex",
       "stage": "verify",
-      "status": "planned",
+      "status": "in_review",
       "task_graph_id": "task-28-verify",
       "verification_source": "docs/delivery/sprint-2-5-5.md"
     },
@@ -122,6 +137,11 @@
       "completion_rule": "Source criteria, reviewed evidence and DoD required; generated plans are not execution evidence.",
       "depends_on": [
         "s255-28-verify"
+      ],
+      "evidence_sources": [
+        "docs/adr/0024-grounded-nexo-proposals.md",
+        "docs/engineering/nexo-scrum-planning.md",
+        "tests/test_scrum_planning.py"
       ],
       "id": "s255-28-review",
       "responsible": "code-collaborator-supported-by-codex",

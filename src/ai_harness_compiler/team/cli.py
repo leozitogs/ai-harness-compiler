@@ -7,6 +7,7 @@ from pathlib import Path
 
 from ai_harness_compiler.compiler import json_text
 from ai_harness_compiler.intake import DEFAULT_MAX_MANIFEST_BYTES, load_project
+from ai_harness_compiler.models.scrum import SprintSnapshot
 from ai_harness_compiler.models.team import POReview, TeamConfig
 
 
@@ -31,6 +32,9 @@ def add_commands(commands: argparse._SubParsersAction[argparse.ArgumentParser]) 
     run.add_argument("--model-policy", type=Path, help="Central model policy override")
     run.add_argument("--repository", type=Path, default=Path.cwd())
     run.add_argument("--max-steps", type=int, default=5)
+    run.add_argument(
+        "--scrum-snapshot", type=Path, help="Observed sprint; forces dedicated Nexo ask mode"
+    )
     review = subcommands.add_parser("review")
     review.add_argument("output", type=Path)
     review.add_argument("--decision", choices=["approve", "reject"], required=True)
@@ -79,14 +83,22 @@ def execute(args: argparse.Namespace) -> int:
 
                 model = load_model_policy(args.model_policy).endpoint("codex-cli").model
             CodexCLISettings(model)
+        snapshot = None
+        if getattr(args, "scrum_snapshot", None) is not None:
+            with args.scrum_snapshot.open("rb") as stream:
+                raw = stream.read(8 * 1024 * 1024 + 1)
+            if len(raw) > 8 * 1024 * 1024:
+                raise ValueError("Scrum snapshot exceeds 8 MiB")
+            snapshot = SprintSnapshot.model_validate_json(raw)
         config = TeamConfig.model_validate(
             {
                 "project": load_project(
                     args.input, max_manifest_bytes=args.max_manifest_bytes
                 ).model_dump(),
-                "selected": args.select,
+                "selected": [s.id for s in snapshot.stories] if snapshot else args.select,
                 "request": args.request,
-                "mode": args.mode,
+                "mode": "ask" if snapshot else args.mode,
+                "scrum_snapshot": snapshot.model_dump() if snapshot else None,
                 "engine": engine,
                 "model": model,
                 "max_steps": args.max_steps,

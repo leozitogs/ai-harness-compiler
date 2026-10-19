@@ -2,7 +2,7 @@
   "authorization": "PO: faz como uma sprint 2.5.5 pra isso; authorizes structuring Nexo Scrum agent sprint, not claiming execution or Done.",
   "capability_status": {
     "ahc-027": "in_progress",
-    "ahc-028": "planned",
+    "ahc-028": "in_progress",
     "ahc-029": "planned"
   },
   "capacity_confirmed": false,
@@ -31,7 +31,7 @@
   ],
   "goal": "Evoluir Nexo para observar entrega, preparar decisões Scrum e aplicar operações autorizadas com evidências e retomada segura.",
   "id": "sprint-2-5-5",
-  "implementation_increment": "AHC-027 read-only observer contracts, bounded collectors and deterministic reconciliation under implementation. AHC-028/029 remain planned.",
+  "implementation_increment": "AHC-027 observer integrated via PR48 and remains in review. AHC-028 grounded Nexo proposals under implementation/review. AHC-029 remains planned; no story acceptance inferred.",
   "planning_date": "2026-10-19",
   "product_owner": "leozitogs",
   "relationship": {

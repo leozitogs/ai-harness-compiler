@@ -1,0 +1,30 @@
+{
+  "agents_executed": 1,
+  "artifacts": [
+    {
+      "path": "docs/evidence/ahc-028-nexo-20261019/snapshot.json",
+      "sha256": "6fe344be32da1c88f7041e45376c69e08205cd44873c44e774830dc00abc447a"
+    },
+    {
+      "path": "docs/evidence/ahc-028-nexo-20261019/team-report.json",
+      "sha256": "7c0c2362bc8375b7b4b3ec08d7065f4e68d3e795b103274087577171caf5ec58"
+    }
+  ],
+  "date": "2026-10-19",
+  "declared_goal_outcome": "not-achieved",
+  "engine": "local",
+  "human_review": null,
+  "kind": "observed-engineering-demo",
+  "model_calls": 0,
+  "notes": [
+    "Captured sources are historical as of their timestamps, not current-state assertions.",
+    "ML evaluation is the existing small routing holdout, not production or Scrum planning performance.",
+    "No optimization speedup, model qualification or criterion acceptance inferred.",
+    "One preliminary local Nexo smoke preceded the final published run, with the same captured sources and no additional remote reads."
+  ],
+  "proposal_count": 5,
+  "remote_reads": 4,
+  "remote_writes": 0,
+  "status": "awaiting_po",
+  "tool_calls": 3
+}

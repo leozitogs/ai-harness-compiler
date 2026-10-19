@@ -1,9 +1,11 @@
 """Concrete tools over compiler contracts and a bounded repository snapshot."""
 
 import ast
+import json
 
 from ai_harness_compiler.memory.store import MemoryStore
 from ai_harness_compiler.models import HarnessSpec
+from ai_harness_compiler.models.scrum import SprintSnapshot
 from ai_harness_compiler.models.team import Finding, ToolName, ToolResult
 from ai_harness_compiler.planning import decompose
 from ai_harness_compiler.team.context import RepositoryContext
@@ -20,10 +22,26 @@ CHANGE_MAP = {
 
 
 class TeamTools:
-    def __init__(self, spec: HarnessSpec, selected: list[str], context: RepositoryContext) -> None:
+    def __init__(
+        self,
+        spec: HarnessSpec,
+        selected: list[str],
+        context: RepositoryContext,
+        scrum_snapshot: SprintSnapshot | None = None,
+    ) -> None:
         self.spec = spec
         self.context = context
-        self.tasks = decompose(spec.capability_graph, selected)
+        self.scrum_snapshot = scrum_snapshot
+        self._scrum_cache: dict[str, str] = {}
+        completed = []
+        if scrum_snapshot is not None:
+            from ai_harness_compiler.scrum_observer import PlanProjection, decode_document
+
+            source = next(s for s in scrum_snapshot.observation.sources if s.kind == "plan")
+            completed = PlanProjection.model_validate(
+                decode_document(source.content or "")
+            ).declared_completed_capabilities
+        self.tasks = decompose(spec.capability_graph, selected, completed)
         self.nodes = [node for node in spec.capability_graph.capabilities if node.id in selected]
 
     def call(self, name: ToolName, query: str = "") -> ToolResult:
@@ -173,6 +191,23 @@ class TeamTools:
                     },
                 )
             case "delivery_plan":
+                if self.scrum_snapshot is not None:
+                    from ai_harness_compiler.scrum_planning import propose
+
+                    snapshot = SprintSnapshot.model_validate(self.scrum_snapshot.model_dump())
+                    key = snapshot.observation_sha256
+                    hit = key in self._scrum_cache
+                    if not hit:
+                        self._scrum_cache[key] = propose(snapshot).model_dump_json()
+                    return ToolResult(
+                        tool=name,
+                        summary="Nexo prepared grounded Scrum proposals for human review.",
+                        data={
+                            "scrum_planning": json.loads(self._scrum_cache[key]),
+                            "cache_hit": hit,
+                            "cache_scope": "validated-observation-within-session",
+                        },
+                    )
                 return ToolResult(
                     tool=name,
                     summary="Prepared a dependency-aware sprint proposal for PO review.",
