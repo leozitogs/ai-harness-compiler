@@ -63,3 +63,9 @@ com início autorizado separadamente. PR #9 e #14 integrados; Review/Retrospecti
 anteriores e capacidade continuam sem confirmação. Por pedido do PO, a
 [Sprint 2.5](../delivery/sprint-2-5.md) concentra o foco em qualidade semântica e
 qualificação do modelo antes de avançar no blueprint. Não declara Sprint 2 concluída.
+
+
+AHC-030 foi incluída pelo PO na Sprint 2.5.5 antes da review: evolução funcional
+da Vera para QA aprofundado, achados reproduzíveis e apoio ao Nexo no encerramento.
+[Escopo e critérios](../delivery/ahc-030-reviewer-scope.md). Estado: planned; não
+representa agente já implementado ou aceite das histórias anteriores.

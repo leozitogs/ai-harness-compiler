@@ -1,0 +1,62 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:planning",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO explicitly requested adding reviewer creation to Sprint2.5.5 before its concluding review on 2026-10-19.",
+  "created_at": "2026-10-19T22:06:23.007656+00:00",
+  "decision": "Extend the existing quality persona instead of duplicating responsibility; keep authorship, QA advice, execution evidence and human acceptance separate. Do not conclude Sprint2.5.5 before implementing and verifying the new scope.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "PO scope amendment only; AHC-030 planned, reviewer code/contracts not implemented. Existing 907 regression tests passed; generated sprint now has 16 planned tasks.",
+      "outcome": "observed",
+      "sha256": "a02904b49124cd8fbe0ab33b630b0cd3448e1b0ffc07c57f7b628fb92046722f",
+      "source": "docs/delivery/ahc-030-reviewer-scope.md"
+    },
+    {
+      "command": null,
+      "note": "PO scope amendment only; AHC-030 planned, reviewer code/contracts not implemented. Existing 907 regression tests passed; generated sprint now has 16 planned tasks.",
+      "outcome": "observed",
+      "sha256": "f5d131360eab726dc23ae645f5bc27f34c7e99b8317a8b302e1e9a648fd8725a",
+      "source": "project-definition/project.yaml"
+    },
+    {
+      "command": null,
+      "note": "PO scope amendment only; AHC-030 planned, reviewer code/contracts not implemented. Existing 907 regression tests passed; generated sprint now has 16 planned tasks.",
+      "outcome": "observed",
+      "sha256": "4cc46852dc1887138a02e339929745df2ca3f33bdb2eac442f03568666fa704b",
+      "source": "planning/sprint-2-5-5.json"
+    }
+  ],
+  "id": "DE-0012",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "Planning amendment only; functional QA mode and proposed contracts not implemented",
+    "Capacity and additional duration unknown",
+    "QA advice cannot establish acceptance, semantic qualification or actual sprint closure"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0011",
+    "DOC-0022",
+    "ADR-0024",
+    "ADR-0025"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "PO added AHC-030 before sprint review: evolve Vera into a functional deep QA reviewer and bind Nexo review/closure advice to verified findings and current evidence.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Emenda da Sprint2.5.5 para Vera revisora de QA",
+  "updated_at": "2026-10-19T22:06:23.007656+00:00"
+}

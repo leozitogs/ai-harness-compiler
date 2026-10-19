@@ -225,6 +225,70 @@
       "status": "planned",
       "task_graph_id": "task-29-review",
       "verification_source": "docs/delivery/sprint-2-5-5.md"
+    },
+    {
+      "capability_id": "ahc-030",
+      "completion_rule": "Functional reviewer, reproducible findings, evidence and DoD required; QA advice does not establish human acceptance or sprint closure.",
+      "depends_on": [
+        "s255-29-review"
+      ],
+      "evidence_sources": [
+        "docs/delivery/ahc-030-reviewer-scope.md"
+      ],
+      "id": "s255-30-design",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "design",
+      "status": "planned",
+      "task_graph_id": "task-30-design",
+      "verification_source": "docs/delivery/ahc-030-reviewer-scope.md"
+    },
+    {
+      "capability_id": "ahc-030",
+      "completion_rule": "Functional reviewer, reproducible findings, evidence and DoD required; QA advice does not establish human acceptance or sprint closure.",
+      "depends_on": [
+        "s255-30-design"
+      ],
+      "evidence_sources": [
+        "docs/delivery/ahc-030-reviewer-scope.md"
+      ],
+      "id": "s255-30-implement",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "implement",
+      "status": "planned",
+      "task_graph_id": "task-30-implement",
+      "verification_source": "docs/delivery/ahc-030-reviewer-scope.md"
+    },
+    {
+      "capability_id": "ahc-030",
+      "completion_rule": "Functional reviewer, reproducible findings, evidence and DoD required; QA advice does not establish human acceptance or sprint closure.",
+      "depends_on": [
+        "s255-30-implement"
+      ],
+      "evidence_sources": [
+        "docs/delivery/ahc-030-reviewer-scope.md"
+      ],
+      "id": "s255-30-verify",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "verify",
+      "status": "planned",
+      "task_graph_id": "task-30-verify",
+      "verification_source": "docs/delivery/ahc-030-reviewer-scope.md"
+    },
+    {
+      "capability_id": "ahc-030",
+      "completion_rule": "Functional reviewer, reproducible findings, evidence and DoD required; QA advice does not establish human acceptance or sprint closure.",
+      "depends_on": [
+        "s255-30-verify"
+      ],
+      "evidence_sources": [
+        "docs/delivery/ahc-030-reviewer-scope.md"
+      ],
+      "id": "s255-30-review",
+      "responsible": "code-collaborator-supported-by-codex",
+      "stage": "review",
+      "status": "planned",
+      "task_graph_id": "task-30-review",
+      "verification_source": "docs/delivery/ahc-030-reviewer-scope.md"
     }
   ]
 }

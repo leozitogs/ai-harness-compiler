@@ -67,7 +67,8 @@ def test_sprint_255_plan_preserves_order_and_unexecuted_status():
     )
     assert result.returncode == 0, result.stderr
     graph = TaskGraph.model_validate_json((ROOT / "planning/sprint-2-5-5.tasks.json").read_bytes())
-    assert graph.selected_capabilities == ["ahc-027", "ahc-028", "ahc-029"]
+    assert graph.selected_capabilities == ["ahc-027", "ahc-028", "ahc-029", "ahc-030"]
     assert graph.tasks[4].depends_on == ["task-27-review"]
     assert graph.tasks[8].depends_on == ["task-28-review"]
+    assert graph.tasks[12].depends_on == ["task-29-review"]
     assert graph.execution_status == "not-run"

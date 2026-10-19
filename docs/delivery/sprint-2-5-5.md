@@ -1,14 +1,16 @@
 # Sprint 2.5.5 — Nexo: operações Scrum com evidências
 
 Planejada e iniciada em 2026-10-19 por pedido explícito do PO (`podes começar`).
-AHC-027/028 integradas via PR48/49 e em revisão; AHC-029 em execução por
-continuação explícita do PO. Nenhum aceite por critério é inferido. Capacidade e duração não estão
+AHC-027/028/029 integradas via PR48/49/50 e em revisão. Por emenda explícita
+do PO, AHC-030 foi adicionada antes da review; implementação ainda não iniciada.
+Nenhum aceite por critério é inferido. Capacidade e duração não estão
 calibradas; proposta de cinco dias úteis não é prazo de entrega prometido.
 
 ## Sprint Goal
 
 Evoluir o Nexo existente para observar o estado de entrega, preparar decisões Scrum
-e aplicar operações autorizadas com rastreabilidade. Reduzir trabalho administrativo
+e aplicar operações autorizadas com rastreabilidade e apoio de QA aprofundado à review.
+Reduzir trabalho administrativo
 sem confundir relatório, atividade, incremento Done e aceite humano.
 
 O PO ordena valor e backlog; Developers selecionam e adaptam o plano de execução.
@@ -29,9 +31,10 @@ AHC-024/025/026 continuam na 2.6. Não há capacidade paralela ou início autom�
 | AHC-027 | Observador: contratos, coletores somente leitura, reconciliação e impedimentos | AHC-003/004 integradas |
 | AHC-028 | Planejador: refinamento, planning, acompanhamento, review e propostas de retrospectiva | AHC-027 revisada |
 | AHC-029 | Operador: autorização, journal, recibos e reconciliação de escritas limitadas | AHC-028 revisada |
+| AHC-030 | Vera revisora funcional de QA e parecer para review/encerramento pelo Nexo | AHC-029 revisada |
 
-Ordem obrigatória: observador → planejador → operador. Se capacidade não comportar
-os três, renegociar com PO; não reduzir evidências ou segurança para aparentar entrega.
+Ordem obrigatória: observador → planejador → operador → revisão aprofundada.
+Se capacidade não comportar o escopo ampliado, renegociar com PO; não reduzir evidências ou segurança para aparentar entrega.
 Não inclui fine-tuning, previsões com ML, dashboard, notificações contínuas ou geração
 de times Scrum nos projetos alvo. Aproveita o adapter `team` sem acoplar o core a ele.
 
@@ -63,6 +66,10 @@ de times Scrum nos projetos alvo. Aproveita o adapter `team` sem acoplar o core 
 12. **029-review:** conferir diff proposto e recibos; operação remota real somente
     com autorização específica e conferência do resultado. Fake não prova integração real.
 
+AHC-030 acrescenta quatro etapas 030-design/implement/verify/review, detalhadas na
+[emenda do agente revisor](ahc-030-reviewer-scope.md). A review de encerramento
+aguarda sua implementação e verificação; não basta incluir o agente no plano.
+
 TaskGraph gerado contém design → implement → verify → review de cada história,
 com dependências entre histórias. Ele é plano observável, não executor, prazo ou
 declaração de que as tarefas foram realizadas.
@@ -78,7 +85,8 @@ declaração de que as tarefas foram realizadas.
 - Contar chamadas, tokens quando observáveis, tempo e cache hit/miss; registrar
   desconhecido quando não medido. Comparar execução completa e incremental sob o
   mesmo fixture, sem prometer SLA ou economia antes da medição.
-- Usar um agente e ferramentas determinísticas; LLM opcional para interpretação.
+- Usar Nexo e Vera com responsabilidades distintas e ferramentas determinísticas;
+  LLM opcional para interpretação, sem autoaprovação.
   Sem previsão de velocity, desempenho individual ou prazo a partir de poucos dados.
 
 ## Demo e Definition of Done
