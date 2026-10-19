@@ -24,7 +24,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [ADR-0020 — Auditoria consultiva de fontes e omissões](records/ADR/ADR-0020/0002.json) · active · revision 2
 - [ADR-0021 — Proveniência por componente e guards separados](records/ADR/ADR-0021/0002.json) · active · revision 2
 - [ADR-0022 — Revisão humana de proveniência por componente](records/ADR/ADR-0022/0002.json) · active · revision 2
-- [ADR-0023 — Observação Scrum separada de aceite e operação](records/ADR/ADR-0023/0002.json) · active · revision 2
+- [ADR-0023 — Observação Scrum separada de aceite e operação](records/ADR/ADR-0023/0004.json) · active · revision 4
 - [DE-0001 — Memória de engenharia versionada](records/DE/DE-0001/0001.json) · draft · revision 1
 - [DE-0002 — Gerar memória e especialistas para cada projeto](records/DE/DE-0002/0002.json) · active · revision 2
 - [DE-0003 — Intake limitado e YAML explícito](records/DE/DE-0003/0004.json) · active · revision 4
@@ -58,7 +58,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0020 — Incremento de proveniência e controle negativo de desenvolvimento](records/DOC/DOC-0020/0004.json) · active · revision 4
 - [DOC-0021 — Fechamento parcial da Sprint 2.5 e rodada final](records/DOC/DOC-0021/0002.json) · active · revision 2
 - [DOC-0022 — Plano e esteira da Sprint 2.5.5](records/DOC/DOC-0022/0004.json) · active · revision 4
-- [DOC-0023 — Incremento e demo real do observador AHC-027](records/DOC/DOC-0023/0002.json) · active · revision 2
+- [DOC-0023 — Incremento e demo real do observador AHC-027](records/DOC/DOC-0023/0004.json) · active · revision 4
 - [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2
 - [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1
 - [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1

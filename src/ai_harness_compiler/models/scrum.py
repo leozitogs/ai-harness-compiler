@@ -6,7 +6,7 @@ from datetime import datetime
 from pathlib import PurePosixPath
 from typing import Annotated, Literal, Self
 
-from pydantic import Field, StringConstraints, model_validator
+from pydantic import ConfigDict, Field, StringConstraints, model_validator
 
 from ai_harness_compiler.models.base import Contract, Identifier, Text
 from ai_harness_compiler.models.evidence import Digest, canonical_project_digest
@@ -33,6 +33,7 @@ def instant(value: str) -> datetime:
 
 
 class DeliveryEvidence(Contract):
+    model_config = ConfigDict(hide_input_in_errors=True)
     schema_version: Literal["DeliveryEvidence/v1"] = "DeliveryEvidence/v1"
     id: Identifier
     project_id: Identifier
@@ -100,6 +101,7 @@ class StoryPRLink(Contract):
 
 
 class ScrumObservation(Contract):
+    model_config = ConfigDict(hide_input_in_errors=True)
     schema_version: Literal["ScrumObservation/v1"] = "ScrumObservation/v1"
     project_id: Identifier
     repository: RepositoryName
@@ -174,6 +176,7 @@ class Impediment(Contract):
 
 
 class SprintSnapshot(Contract):
+    model_config = ConfigDict(hide_input_in_errors=True)
     schema_version: Literal["SprintSnapshot/v1"] = "SprintSnapshot/v1"
     observation: ScrumObservation
     observation_sha256: Digest

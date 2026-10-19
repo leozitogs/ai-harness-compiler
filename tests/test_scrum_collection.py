@@ -189,6 +189,16 @@ def test_cli_reconcile_ages_sources_without_network(tmp_path, monkeypatch):
     assert refreshed.observation_sha256 != original.observation_sha256
 
 
+def test_cli_invalid_snapshot_does_not_echo_source_content(tmp_path, capsys):
+    data = observe(fixture_observation()).model_dump()
+    data["observation"]["sources"][0]["content"] = {"private": "PRIVATE-SOURCE-MARKER"}
+    source = tmp_path / "invalid.json"
+    source.write_text(json.dumps(data), encoding="utf-8")
+    assert main(["scrum", "reconcile", str(source), "--output", str(tmp_path / "out.json")]) == 1
+    assert "PRIVATE-SOURCE-MARKER" not in capsys.readouterr().err
+    assert not (tmp_path / "out.json").exists()
+
+
 @pytest.mark.parametrize("mode", ["success", "oversize", "error", "timeout"])
 def test_gh_boundary_uses_only_fixed_reads_and_bounded_output(monkeypatch, mode):
     import ai_harness_compiler.scrum_collection as module

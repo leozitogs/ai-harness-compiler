@@ -25,11 +25,14 @@ avaliação e o digest da observação; não fez nova consulta remota.
 
 ## Verificação
 
-830 testes passam na suíte ampliada, com todos os extras; 63 testes novos do observador
+831 testes na suíte ampliada, com todos os extras; 64 testes novos do observador
 e coletores cobrem escopo, hashes, timestamps, fontes stale/ausentes, JSON duplicado,
 dependência aberta escondida por declaração local, falha de CI entre successes,
 no-overwrite, falhas/limites do adapter e envelhecimento offline. Intake existente
 preserva testes após extração do parser puro dos bytes capturados.
+
+Erros de validação dos novos contratos omitem valores de input; regressão da CLI
+confere que fonte malformada não é ecoada em stderr nem produz arquivo de saída.
 
 Lint, formatação, mypy, schemas e planos gerados verificados. Revisão e CI do PR
 completam o fluxo de integração; este documento não representa aceite humano.
