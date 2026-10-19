@@ -1,0 +1,21 @@
+{
+  "component_counts": {
+    "contradicts": 0,
+    "insufficient-evidence": 3,
+    "supports": 0
+  },
+  "disposition": "ready",
+  "generation": "synthetic-negative-reproduction",
+  "guards": 0,
+  "human_review": "absent",
+  "job": "negative-compound-reproduction",
+  "omissions": [
+    {
+      "kind": "rule",
+      "text": "Cada liberação de publicação e cada registro de decisão persistida fica impedido se a identidade operacional não puder ser verificada ou seu registro obrigatório não puder ser garantido."
+    }
+  ],
+  "program": "semantic-composition/v3",
+  "qualification": "not-established",
+  "verification": "valid"
+}

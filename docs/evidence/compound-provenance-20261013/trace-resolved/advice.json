@@ -1,0 +1,691 @@
+{
+  "analysis": {
+    "extraction": {
+      "asset_contents": "not-read",
+      "atoms": [
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-1",
+          "kind": "conception",
+          "pointer": "/conception",
+          "quote": "Uma equipe organiza publicações e suas fontes.",
+          "source_ref": "input-1"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-2",
+          "kind": "branding",
+          "pointer": "/branding/audience/0",
+          "quote": "autores",
+          "source_ref": "input-2"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-3",
+          "kind": "branding",
+          "pointer": "/branding/principles/0",
+          "quote": "rastreabilidade",
+          "source_ref": "input-2"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-4",
+          "kind": "branding",
+          "pointer": "/branding/principles/1",
+          "quote": "controle humano",
+          "source_ref": "input-2"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-5",
+          "kind": "constraint",
+          "pointer": "/constraints/business/0",
+          "quote": "Registrar a identidade do responsável.",
+          "source_ref": "input-3"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-6",
+          "kind": "constraint",
+          "pointer": "/constraints/business/1",
+          "quote": "A rastreabilidade operacional cobre cada liberação de publicação e cada registro de decisão persistida.",
+          "source_ref": "input-3"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-7",
+          "kind": "constraint",
+          "pointer": "/constraints/business/2",
+          "quote": "Para essa rastreabilidade, responsável operacional é a identidade autenticada de quem executou a ação; isso não define proprietário do conteúdo, aprovador ou responsável de negócio.",
+          "source_ref": "input-3"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-8",
+          "kind": "constraint",
+          "pointer": "/constraints/business/3",
+          "quote": "A identificação do executor não altera a autorização explícita do autor para liberar sem aprovação de terceiros.",
+          "source_ref": "input-3"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-9",
+          "kind": "constraint",
+          "pointer": "/constraints/business/4",
+          "quote": "Papéis de negócio diferentes do executor só são registrados se declarados pelo projeto, separadamente e sem inferir equivalência.",
+          "source_ref": "input-3"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-10",
+          "kind": "constraint",
+          "pointer": "/constraints/business/5",
+          "quote": "Uma ação coberta pela rastreabilidade não pode ser executada se a identidade operacional não puder ser verificada ou seu registro obrigatório não puder ser garantido.",
+          "source_ref": "input-3"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-11",
+          "kind": "constraint",
+          "pointer": "/constraints/max_build_cost_usd",
+          "quote": "0.0",
+          "source_ref": "input-3"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-12",
+          "kind": "backlog-description",
+          "pointer": "/backlog/0/description",
+          "quote": "Organizar publicação da equipe e registrar decisões.",
+          "source_ref": "input-4"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-13",
+          "kind": "acceptance-criterion",
+          "pointer": "/backlog/0/acceptance_criteria/0",
+          "quote": "O autor pode liberar publicação da equipe sem aprovação de terceiros.",
+          "source_ref": "input-5"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-14",
+          "kind": "domain-declaration",
+          "pointer": "/domain",
+          "quote": "workspace-management",
+          "source_ref": "input-6"
+        }
+      ],
+      "excluded_references": [],
+      "request": {
+        "original_input": {
+          "assets": [],
+          "backlog": [
+            {
+              "acceptance_criteria": [
+                "O autor pode liberar publicação da equipe sem aprovação de terceiros."
+              ],
+              "data_owner": null,
+              "depends_on": [],
+              "description": "Organizar publicação da equipe e registrar decisões.",
+              "id": "register",
+              "implementation": "undecided",
+              "inputs": [],
+              "outputs": [],
+              "risk": "unknown",
+              "side_effects": [],
+              "title": "Registrar e liberar"
+            }
+          ],
+          "branding": {
+            "audience": [
+              "autores"
+            ],
+            "principles": [
+              "rastreabilidade",
+              "controle humano"
+            ],
+            "tone": [],
+            "visual_constraints": []
+          },
+          "conception": "Uma equipe organiza publicações e suas fontes.",
+          "constraints": {
+            "business": [
+              "Registrar a identidade do responsável.",
+              "A rastreabilidade operacional cobre cada liberação de publicação e cada registro de decisão persistida.",
+              "Para essa rastreabilidade, responsável operacional é a identidade autenticada de quem executou a ação; isso não define proprietário do conteúdo, aprovador ou responsável de negócio.",
+              "A identificação do executor não altera a autorização explícita do autor para liberar sem aprovação de terceiros.",
+              "Papéis de negócio diferentes do executor só são registrados se declarados pelo projeto, separadamente e sem inferir equivalência.",
+              "Uma ação coberta pela rastreabilidade não pode ser executada se a identidade operacional não puder ser verificada ou seu registro obrigatório não puder ser garantido."
+            ],
+            "max_build_cost_usd": 0.0,
+            "security": [],
+            "technical": []
+          },
+          "domain": "workspace-management",
+          "domain_profile": null,
+          "evidence_pack": null,
+          "id": "dev-rules-b-trace-resolved",
+          "name": "Fixture rules B with delegated engineering trace decision",
+          "schema_version": "ProjectInput/v1"
+        },
+        "original_sha256": "011624c5a0a1694923bdc469ac6ec8fe428507ba573daaf935af6b31f3adddc9",
+        "references": [
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-1",
+            "pointer": "/conception",
+            "project_id": "dev-rules-b-trace-resolved",
+            "value": "Uma equipe organiza publicações e suas fontes."
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-2",
+            "pointer": "/branding",
+            "project_id": "dev-rules-b-trace-resolved",
+            "value": "{\"audience\":[\"autores\"],\"principles\":[\"rastreabilidade\",\"controle humano\"],\"tone\":[],\"visual_constraints\":[]}"
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-3",
+            "pointer": "/constraints",
+            "project_id": "dev-rules-b-trace-resolved",
+            "value": "{\"business\":[\"Registrar a identidade do responsável.\",\"A rastreabilidade operacional cobre cada liberação de publicação e cada registro de decisão persistida.\",\"Para essa rastreabilidade, responsável operacional é a identidade autenticada de quem executou a ação; isso não define proprietário do conteúdo, aprovador ou responsável de negócio.\",\"A identificação do executor não altera a autorização explícita do autor para liberar sem aprovação de terceiros.\",\"Papéis de negócio diferentes do executor só são registrados se declarados pelo projeto, separadamente e sem inferir equivalência.\",\"Uma ação coberta pela rastreabilidade não pode ser executada se a identidade operacional não puder ser verificada ou seu registro obrigatório não puder ser garantido.\"],\"max_build_cost_usd\":0.0,\"security\":[],\"technical\":[]}"
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-4",
+            "pointer": "/backlog/0/description",
+            "project_id": "dev-rules-b-trace-resolved",
+            "value": "Organizar publicação da equipe e registrar decisões."
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-5",
+            "pointer": "/backlog/0/acceptance_criteria/0",
+            "project_id": "dev-rules-b-trace-resolved",
+            "value": "O autor pode liberar publicação da equipe sem aprovação de terceiros."
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-6",
+            "pointer": "/domain",
+            "project_id": "dev-rules-b-trace-resolved",
+            "value": "workspace-management"
+          }
+        ],
+        "schema_version": "UnderstandingRequest/v1"
+      },
+      "schema_version": "GroundingExtraction/v1",
+      "semantic_status": "not-established"
+    },
+    "proposal": {
+      "context_findings": [
+        {
+          "context_indices": [
+            0,
+            11
+          ],
+          "note": "Finalidade declarada na concepção e no backlog.",
+          "subject": "purpose",
+          "text": "Organizar publicações da equipe e suas fontes, além de registrar decisões."
+        },
+        {
+          "context_indices": [
+            1
+          ],
+          "note": "Público explicitamente declarado.",
+          "subject": "audience",
+          "text": "Autores."
+        },
+        {
+          "context_indices": [
+            2,
+            3,
+            7,
+            13
+          ],
+          "note": "Princípios declarados; não estabelecem aprovação de terceiros.",
+          "subject": "positioning",
+          "text": "Rastreabilidade e controle humano."
+        },
+        {
+          "context_indices": [
+            12
+          ],
+          "note": "Domínio declarado como workspace-management.",
+          "subject": "domain",
+          "text": "Gestão de workspace."
+        },
+        {
+          "context_indices": [
+            0,
+            11,
+            13
+          ],
+          "note": "Capacidades sustentadas pela concepção, pelo backlog e pelo critério.",
+          "subject": "capability",
+          "text": "Organização de publicações e fontes, liberação de publicações e registro de decisões."
+        },
+        {
+          "context_indices": [
+            6,
+            8
+          ],
+          "note": "Não implica equivalência com proprietário do conteúdo, aprovador ou responsável de negócio. Outros papéis de negócio só são registrados quando declarados pelo projeto, separadamente.",
+          "subject": "entity",
+          "text": "O responsável operacional é o executor autenticado da ação."
+        },
+        {
+          "context_indices": [
+            10
+          ],
+          "note": "Limite informado nos dados do projeto.",
+          "subject": "constraint",
+          "text": "O custo máximo de construção declarado é US$ 0,00."
+        }
+      ],
+      "criteria": [
+        {
+          "condition": {
+            "source_atom_ids": [
+              "atom-13"
+            ],
+            "text": "O autor pretende liberar uma publicação da equipe."
+          },
+          "exceptions": [],
+          "kind": "business-rule",
+          "note": "A identificação do executor não altera essa autorização. As restrições de rastreabilidade são representadas separadamente como guards.",
+          "outcome": {
+            "source_atom_ids": [
+              "atom-13"
+            ],
+            "text": "O autor pode liberar a publicação sem aprovação de terceiros."
+          },
+          "question": null,
+          "source_atom_id": "atom-13",
+          "uncertainties": []
+        }
+      ],
+      "guards": [
+        {
+          "condition": {
+            "source_atom_ids": [
+              "atom-6"
+            ],
+            "text": "Uma publicação é liberada ou uma decisão é registrada de forma persistida."
+          },
+          "effect": {
+            "source_atom_ids": [
+              "atom-5",
+              "atom-7"
+            ],
+            "text": "Registrar a identidade autenticada de quem executou a ação como responsável operacional."
+          },
+          "id": "rastreabilidade-operacional",
+          "note": "Abrange liberações de publicação e registros de decisões persistidas.",
+          "target_criterion_atom_ids": [],
+          "target_scope": "project"
+        },
+        {
+          "condition": {
+            "source_atom_ids": [
+              "atom-6",
+              "atom-10"
+            ],
+            "text": "Em uma liberação de publicação ou registro de decisão persistida, a identidade operacional não pode ser verificada ou seu registro obrigatório não pode ser garantido."
+          },
+          "effect": {
+            "source_atom_ids": [
+              "atom-10"
+            ],
+            "text": "Impedir a execução da ação."
+          },
+          "id": "bloqueio-sem-rastreabilidade",
+          "note": "Restringe a execução sem exigir aprovação de terceiros nem substituir a autorização do autor.",
+          "target_criterion_atom_ids": [],
+          "target_scope": "project"
+        }
+      ],
+      "issues": [],
+      "schema_version": "SemanticAnalysisProposal/v3"
+    },
+    "schema_version": "SemanticAnalysis/v3"
+  },
+  "authority": "model-advisory",
+  "compilation_eligibility": "not-authorized",
+  "model_qualification": "not-established",
+  "program_sha256": "06e6f88819b86686f02a461a3fffa0ccc9bf1a23cb2530e8ea6a84cd30896459",
+  "proposal": {
+    "analysis_sha256": "f235bfd6131e0278237689ebf878f5652af5d7034a559de732ed890663b4c3e1",
+    "component_judgments": [
+      {
+        "component_index": null,
+        "component_name": "condition",
+        "finding_id": "criterion-1",
+        "note": "A permissão refere-se ao autor e à liberação de publicação da equipe.",
+        "source_atom_ids": [
+          "atom-13"
+        ],
+        "support": "supports"
+      },
+      {
+        "component_index": null,
+        "component_name": "outcome",
+        "finding_id": "criterion-1",
+        "note": "A liberação sem aprovação de terceiros está expressamente permitida.",
+        "source_atom_ids": [
+          "atom-13"
+        ],
+        "support": "supports"
+      },
+      {
+        "component_index": null,
+        "component_name": "condition",
+        "finding_id": "rastreabilidade-operacional",
+        "note": "A cobertura inclui cada liberação de publicação e cada registro de decisão persistida.",
+        "source_atom_ids": [
+          "atom-6"
+        ],
+        "support": "supports"
+      },
+      {
+        "component_index": null,
+        "component_name": "outcome",
+        "finding_id": "rastreabilidade-operacional",
+        "note": "O registro da identidade é obrigatório, e responsável operacional significa executor autenticado.",
+        "source_atom_ids": [
+          "atom-5",
+          "atom-7"
+        ],
+        "support": "supports"
+      },
+      {
+        "component_index": null,
+        "component_name": "condition",
+        "finding_id": "bloqueio-sem-rastreabilidade",
+        "note": "As fontes definem as ações cobertas e as duas falhas alternativas que impedem execução.",
+        "source_atom_ids": [
+          "atom-6",
+          "atom-10"
+        ],
+        "support": "supports"
+      },
+      {
+        "component_index": null,
+        "component_name": "outcome",
+        "finding_id": "bloqueio-sem-rastreabilidade",
+        "note": "A fonte proíbe executar a ação nessas condições.",
+        "source_atom_ids": [
+          "atom-10"
+        ],
+        "support": "supports"
+      }
+    ],
+    "findings": [
+      {
+        "finding_id": "criterion-1",
+        "finding_sha256": "642096ec7edb55c48d037522511c3be3eb8038b1ba502fa7c06ec437ba241a11",
+        "materiality": "not-applicable",
+        "note": "O critério autoriza expressamente o autor a liberar publicação da equipe sem aprovação de terceiros.",
+        "source_atom_ids": [
+          "atom-13"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "rastreabilidade-operacional",
+        "finding_sha256": "5bb398a3ff29489e4518584bd3fa9c8d3533dcdc472ee4f58b2ac582b09706ee",
+        "materiality": "not-applicable",
+        "note": "As fontes estabelecem o âmbito da rastreabilidade, o registro obrigatório e a definição do executor autenticado como responsável operacional.",
+        "source_atom_ids": [
+          "atom-6",
+          "atom-5",
+          "atom-7"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "bloqueio-sem-rastreabilidade",
+        "finding_sha256": "43563a910481cfecb3195876484517f62c97c71e5e2a1e0e449fb154b9979c4c",
+        "materiality": "not-applicable",
+        "note": "O bloqueio aplica-se às ações cobertas quando a verificação da identidade ou a garantia do registro falha; permanece separado da autorização.",
+        "source_atom_ids": [
+          "atom-6",
+          "atom-10"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "context-1",
+        "finding_sha256": "c51ba1bfa5e4ecc128d11db531b497134e2f47c11085930eddc147f75c756b54",
+        "materiality": "not-applicable",
+        "note": "Concepção e backlog declaram organização de publicações e fontes e registro de decisões.",
+        "source_atom_ids": [
+          "atom-1",
+          "atom-12"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "context-2",
+        "finding_sha256": "21dc6c05c2a088cab8529fa0e078ade2a529107573d3220261170e6468056dd9",
+        "materiality": "not-applicable",
+        "note": "O público declarado é autores.",
+        "source_atom_ids": [
+          "atom-2"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "context-3",
+        "finding_sha256": "5bfa081bd981a59dd8746e05ffbecb4cee5dc59a322017c4dc04d0c3a765b470",
+        "materiality": "not-applicable",
+        "note": "Os princípios são explícitos; as fontes de autorização não exigem aprovação de terceiros.",
+        "source_atom_ids": [
+          "atom-3",
+          "atom-4",
+          "atom-8",
+          "atom-13"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "context-4",
+        "finding_sha256": "c04e4a6bd29485e0be99a748ca5421f0a9ae94a59e2fc99746687cd6ab9467ef",
+        "materiality": "not-applicable",
+        "note": "Gestão de workspace corresponde ao domínio declarado.",
+        "source_atom_ids": [
+          "atom-14"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "context-5",
+        "finding_sha256": "5af7509794c989b5127f2b80f8b1f2c46d54c735a8c619b1bea78b5a20b6408d",
+        "materiality": "not-applicable",
+        "note": "As três fontes sustentam as capacidades enumeradas.",
+        "source_atom_ids": [
+          "atom-1",
+          "atom-12",
+          "atom-13"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "context-6",
+        "finding_sha256": "d9b737a9031bcac803e798b2b82ba61b7142a4814c6cd76d518ade1b9bf6a1c8",
+        "materiality": "not-applicable",
+        "note": "O executor autenticado define o responsável operacional, sem equivalência inferida com outros papéis; a justificativa também registra a condição para esses papéis.",
+        "source_atom_ids": [
+          "atom-7",
+          "atom-9"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "context-7",
+        "finding_sha256": "76be506bf58fec27aa1fc1069fa3c7e7f7f30197a93d66389d88780b5df05110",
+        "materiality": "not-applicable",
+        "note": "O campo de custo máximo de construção declara 0.0 USD.",
+        "source_atom_ids": [
+          "atom-11"
+        ],
+        "support": "supports"
+      }
+    ],
+    "omissions": [],
+    "schema_version": "SemanticVerifierProposal/v4",
+    "source_coverage": [
+      {
+        "atom_id": "atom-1",
+        "disposition": "represented",
+        "finding_ids": [
+          "context-1",
+          "context-5"
+        ],
+        "note": "Concepção representada na finalidade e nas capacidades.",
+        "omission_ids": [],
+        "quote_sha256": "88b9866f0e0b53ae15c7d6439e0c540ac09134f17f179c297c4dde265f0c01eb"
+      },
+      {
+        "atom_id": "atom-2",
+        "disposition": "represented",
+        "finding_ids": [
+          "context-2"
+        ],
+        "note": "Público representado.",
+        "omission_ids": [],
+        "quote_sha256": "75f26d13ebd8877644c57a369ce71b82b639903217ed12ebe61beeffd8c11586"
+      },
+      {
+        "atom_id": "atom-3",
+        "disposition": "represented",
+        "finding_ids": [
+          "context-3"
+        ],
+        "note": "Princípio de rastreabilidade representado.",
+        "omission_ids": [],
+        "quote_sha256": "e8a964e534bd9189a4c1ee68dc1e80429c5b14930ce7df548075257a8a8dccc7"
+      },
+      {
+        "atom_id": "atom-4",
+        "disposition": "represented",
+        "finding_ids": [
+          "context-3"
+        ],
+        "note": "Princípio de controle humano representado.",
+        "omission_ids": [],
+        "quote_sha256": "a6e3b461d6bc6975496196edb2b7d4ea96130a66c49e4e058c4d66078d23422f"
+      },
+      {
+        "atom_id": "atom-5",
+        "disposition": "represented",
+        "finding_ids": [
+          "rastreabilidade-operacional"
+        ],
+        "note": "Obrigação de registrar identidade representada.",
+        "omission_ids": [],
+        "quote_sha256": "22accd7ad33a45ad61811a4737a68f2c8dfd45b650550aec3cdae8de95fc1a0e"
+      },
+      {
+        "atom_id": "atom-6",
+        "disposition": "represented",
+        "finding_ids": [
+          "rastreabilidade-operacional",
+          "bloqueio-sem-rastreabilidade"
+        ],
+        "note": "Âmbito dos dois guards representado.",
+        "omission_ids": [],
+        "quote_sha256": "1741cf7931cc2ba244c77c9f1ea77837a77baa5ed4c749808740491d887684c9"
+      },
+      {
+        "atom_id": "atom-7",
+        "disposition": "represented",
+        "finding_ids": [
+          "rastreabilidade-operacional",
+          "context-6"
+        ],
+        "note": "Identidade operacional e distinção dos papéis representadas.",
+        "omission_ids": [],
+        "quote_sha256": "2d2589423b10a1cf8f7eff9c76f1e0ff422d3a2afa691dab95457d259c50070a"
+      },
+      {
+        "atom_id": "atom-8",
+        "disposition": "represented",
+        "finding_ids": [
+          "context-3"
+        ],
+        "note": "A preservação da autorização também está explicitada na justificativa de criterion-1; sua citação existente é context-3.",
+        "omission_ids": [],
+        "quote_sha256": "535c60e65d61267b53a8fd029cc774213e21d0fe25f65b8322ae4a8d98b138d6"
+      },
+      {
+        "atom_id": "atom-9",
+        "disposition": "represented",
+        "finding_ids": [
+          "context-6"
+        ],
+        "note": "A justificativa representa o registro separado, condicionado à declaração do projeto e sem equivalência inferida.",
+        "omission_ids": [],
+        "quote_sha256": "588668612df686bd351f57f61132a1a2465cf817f9443f01dd587e1d7916acf9"
+      },
+      {
+        "atom_id": "atom-10",
+        "disposition": "represented",
+        "finding_ids": [
+          "bloqueio-sem-rastreabilidade"
+        ],
+        "note": "Proibição condicional de execução representada.",
+        "omission_ids": [],
+        "quote_sha256": "ad6eff99aa8cb5b848beb223d61ff7d9fa219efcc20cca7450d8271b5a4ad0d3"
+      },
+      {
+        "atom_id": "atom-11",
+        "disposition": "represented",
+        "finding_ids": [
+          "context-7"
+        ],
+        "note": "Limite de custo representado.",
+        "omission_ids": [],
+        "quote_sha256": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7"
+      },
+      {
+        "atom_id": "atom-12",
+        "disposition": "represented",
+        "finding_ids": [
+          "context-1",
+          "context-5"
+        ],
+        "note": "Organização de publicações e registro de decisões representados.",
+        "omission_ids": [],
+        "quote_sha256": "5f77f5215732224df6e88a779d30470fdd1c968ff4e40c54ff9fa444e009e034"
+      },
+      {
+        "atom_id": "atom-14",
+        "disposition": "represented",
+        "finding_ids": [
+          "context-4"
+        ],
+        "note": "Domínio representado.",
+        "omission_ids": [],
+        "quote_sha256": "d8ec0dfaccceaea0a5f8ccf5a95f094560df5ea36683833d84877c601223e217"
+      },
+      {
+        "atom_id": "atom-13",
+        "disposition": "represented",
+        "finding_ids": [
+          "criterion-1",
+          "context-3",
+          "context-5"
+        ],
+        "note": "Permissão do autor representada separadamente dos guards.",
+        "omission_ids": [],
+        "quote_sha256": "66d4ab88ea3d6f5d267015ed9c60dbb7fcc14ebdb910f90b34b27579c499e240"
+      }
+    ]
+  },
+  "requested_model": "gpt-6.1-sol",
+  "schema_version": "SemanticVerifierReport/v4",
+  "semantic_status": "not-established"
+}

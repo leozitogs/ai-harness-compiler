@@ -1,0 +1,216 @@
+{
+  "analysis_sha256": "fd06899f01e5ef4bb9d2f6da9b17a07fc2cf61f6977061c96490780fdc8da9a2",
+  "component_judgments": [
+    {
+      "component_index": null,
+      "component_name": "condition",
+      "finding_id": "criterion-1",
+      "note": "Cada publicação da equipe é o âmbito explicitamente declarado.",
+      "source_atom_ids": [
+        "atom-9"
+      ],
+      "support": "supports"
+    },
+    {
+      "component_index": null,
+      "component_name": "outcome",
+      "finding_id": "criterion-1",
+      "note": "A fonte exige que a publicação contenha responsável e origem.",
+      "source_atom_ids": [
+        "atom-9"
+      ],
+      "support": "supports"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "8a2956629f9972da0cdb6674fc83c418eb1759e56ae57a701e323599315ca8e7",
+      "materiality": "not-applicable",
+      "note": "A fonte exige responsável e origem em cada publicação da equipe.",
+      "source_atom_ids": [
+        "atom-9"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "be22c9ab2746a1ce5a4c061aa422757575c6a4f4ca3d7fc0d04432d4e3bdb42e",
+      "materiality": "not-applicable",
+      "note": "As fontes declaram organização de publicações e fontes e registro de decisões.",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-8"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "1a9bf07de01a3fcdc9549801f59f507d9b19e6cf9c192aaafb7dfecfee24496d",
+      "materiality": "not-applicable",
+      "note": "O público declarado é autores.",
+      "source_atom_ids": [
+        "atom-2"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "925baf39dcc91fc79ab27aa965bd9e0b8e0408522cd3cda5f38c1f735b3c55a9",
+      "materiality": "not-applicable",
+      "note": "Os princípios declarados são rastreabilidade e controle humano.",
+      "source_atom_ids": [
+        "atom-4",
+        "atom-5"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "0521bd690cd365d7fb471acfea7a4016b8ce4660e6b98df7d561335c720c7617",
+      "materiality": "not-applicable",
+      "note": "workspace-management corresponde ao domínio gestão de workspace.",
+      "source_atom_ids": [
+        "atom-10"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "988633bc2cfe1cb72a9e0ce9c4ffe1c4c510f9f2b0751564fb94551d57773633",
+      "materiality": "not-applicable",
+      "note": "As duas fontes sustentam as capacidades de organizar publicações e fontes e registrar decisões.",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-8"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-6",
+      "finding_sha256": "2e119fe4fc8cef0032dbd9c32b5c769ae9e964ac62c02134611ed7eebd6c5812",
+      "materiality": "not-applicable",
+      "note": "atom-6 exige expressamente registrar a identidade do responsável; atom-9 exige responsável na publicação, sem definir sua identidade ou autoridade.",
+      "source_atom_ids": [
+        "atom-6",
+        "atom-9"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-7",
+      "finding_sha256": "b6df22b0821396419e722822c85fb063ed823fa4c33bd0f7a506ed4a92fde9c8",
+      "materiality": "not-applicable",
+      "note": "O campo max_build_cost_usd fornece o limite 0.0.",
+      "source_atom_ids": [
+        "atom-7"
+      ],
+      "support": "supports"
+    }
+  ],
+  "omissions": [],
+  "schema_version": "SemanticVerifierProposal/v4",
+  "source_coverage": [
+    {
+      "atom_id": "atom-1",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-1",
+        "context-5"
+      ],
+      "note": "Concepção representada na finalidade e nas capacidades.",
+      "omission_ids": [],
+      "quote_sha256": "88b9866f0e0b53ae15c7d6439e0c540ac09134f17f179c297c4dde265f0c01eb"
+    },
+    {
+      "atom_id": "atom-2",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-2"
+      ],
+      "note": "Público representado.",
+      "omission_ids": [],
+      "quote_sha256": "75f26d13ebd8877644c57a369ce71b82b639903217ed12ebe61beeffd8c11586"
+    },
+    {
+      "atom_id": "atom-3",
+      "disposition": "untrusted-instruction",
+      "finding_ids": [],
+      "note": "Instruções embutidas ignoradas; não estabelecem tom utilizável nem autoridade para aprovação.",
+      "omission_ids": [],
+      "quote_sha256": "fb51ca710965bb6dc6bcdc97f4ad0d1144b4fa0029cea6654b49006e5257dd49"
+    },
+    {
+      "atom_id": "atom-4",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-3"
+      ],
+      "note": "Princípio de rastreabilidade representado.",
+      "omission_ids": [],
+      "quote_sha256": "e8a964e534bd9189a4c1ee68dc1e80429c5b14930ce7df548075257a8a8dccc7"
+    },
+    {
+      "atom_id": "atom-5",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-3"
+      ],
+      "note": "Princípio de controle humano representado; não especifica aprovação ou autorização.",
+      "omission_ids": [],
+      "quote_sha256": "a6e3b461d6bc6975496196edb2b7d4ea96130a66c49e4e058c4d66078d23422f"
+    },
+    {
+      "atom_id": "atom-6",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-6"
+      ],
+      "note": "Obrigação de registro de identidade preservada separadamente da regra de publicação.",
+      "omission_ids": [],
+      "quote_sha256": "22accd7ad33a45ad61811a4737a68f2c8dfd45b650550aec3cdae8de95fc1a0e"
+    },
+    {
+      "atom_id": "atom-7",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-7"
+      ],
+      "note": "Limite de custo representado.",
+      "omission_ids": [],
+      "quote_sha256": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7"
+    },
+    {
+      "atom_id": "atom-8",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-1",
+        "context-5"
+      ],
+      "note": "Organização de publicações e registro de decisões representados.",
+      "omission_ids": [],
+      "quote_sha256": "5f77f5215732224df6e88a779d30470fdd1c968ff4e40c54ff9fa444e009e034"
+    },
+    {
+      "atom_id": "atom-10",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-4"
+      ],
+      "note": "Domínio representado.",
+      "omission_ids": [],
+      "quote_sha256": "d8ec0dfaccceaea0a5f8ccf5a95f094560df5ea36683833d84877c601223e217"
+    },
+    {
+      "atom_id": "atom-9",
+      "disposition": "represented",
+      "finding_ids": [
+        "criterion-1",
+        "context-6"
+      ],
+      "note": "Regra representada; a citação adicional contextualiza o responsável sem conceder autoridade.",
+      "omission_ids": [],
+      "quote_sha256": "a79c1f7e236f6dadc2d66f9ab1ce333e7c271bfe617435c1f8e49ce579b92ef2"
+    }
+  ]
+}

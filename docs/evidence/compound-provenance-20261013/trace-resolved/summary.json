@@ -1,0 +1,16 @@
+{
+  "component_counts": {
+    "contradicts": 0,
+    "insufficient-evidence": 0,
+    "supports": 6
+  },
+  "disposition": "ready",
+  "generation": "valid",
+  "guards": 2,
+  "human_review": "absent",
+  "job": "trace-resolved",
+  "omissions": [],
+  "program": "semantic-composition/v3",
+  "qualification": "not-established",
+  "verification": "valid"
+}

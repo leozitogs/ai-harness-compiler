@@ -1,0 +1,93 @@
+{
+  "executed_on": "2026-10-13",
+  "files": [
+    {
+      "path": "dev-adversarial/advice.json",
+      "sha256": "203c626585ec444f7a5ce01a26a30d40fa582ea6e2cefb11cdd0597940f0d2e5"
+    },
+    {
+      "path": "dev-adversarial/analysis.json",
+      "sha256": "ae36408453da01747ef020364a11fa64417aeea026de36fbc8a4e63f71685387"
+    },
+    {
+      "path": "dev-adversarial/proposal-generation.json",
+      "sha256": "50eea79f1ac4309cf9f6ae02292f0a7e650aed4225c0b18fa87e529f65fc3e4b"
+    },
+    {
+      "path": "dev-adversarial/proposal-verification.json",
+      "sha256": "9ceefd533739cb79c54490e522a9d990710d4942d7742cd0ed96a653bcacdf9d"
+    },
+    {
+      "path": "dev-adversarial/summary.json",
+      "sha256": "d6e7eecbad5dada06914b689407342cef23728efeb2cd22372632de78d6dcabc"
+    },
+    {
+      "path": "dev-ambiguous/advice.json",
+      "sha256": "2c6cc20741801b9d9d8fcba683aa548201af07338407c615f38d12c6c6b9fedb"
+    },
+    {
+      "path": "dev-ambiguous/analysis.json",
+      "sha256": "05801926f36a6f0c57481021944267157f9787bbb0e4e9d4972912af64c48132"
+    },
+    {
+      "path": "dev-ambiguous/proposal-generation.json",
+      "sha256": "192e586eca7fc5d534009c3b030697bfa7723c896153ee2270b12313c1099572"
+    },
+    {
+      "path": "dev-ambiguous/proposal-verification.json",
+      "sha256": "9a5a66a50b0d4c9d3cdaa97eb35bc4d94d5840c607580975e0b427436640190c"
+    },
+    {
+      "path": "dev-ambiguous/summary.json",
+      "sha256": "d37a22ea884651a6b80f2658977b2e89a66d3d9d73fc9e89e46828ec64531e02"
+    },
+    {
+      "path": "negative-compound-reproduction/advice.json",
+      "sha256": "4e9a4fb99c147b35662fbc38ea34ff6fd13e3a5b47e5483acb95fbbe4b1c8010"
+    },
+    {
+      "path": "negative-compound-reproduction/analysis.json",
+      "sha256": "cf9b8ad5ef83931949e41651f31719f8833b8a8ea1f256d21c37581e6d121ff6"
+    },
+    {
+      "path": "negative-compound-reproduction/proposal-verification.json",
+      "sha256": "1b459f334419c078c820fa71236b528d99f20f0f83cd00b570da70a338abe181"
+    },
+    {
+      "path": "negative-compound-reproduction/summary.json",
+      "sha256": "b9a8e57e33c97202c286364431b7ded2675f4475f454bc63773cfd56d4a81e44"
+    },
+    {
+      "path": "summary.json",
+      "sha256": "d44b6b4ec914e7e895f65b3e8cd9bdff32d51e2863e59a6df414d6e32ed73596"
+    },
+    {
+      "path": "trace-resolved/advice.json",
+      "sha256": "b5a1e7a1bf8012c594993ffe6d866ae7f89c4cb8c1439971ae0a35b2081d5375"
+    },
+    {
+      "path": "trace-resolved/analysis.json",
+      "sha256": "170599af2004d3c2f82347b4e3f6aca4366921e5ed093af6245012f13e13ca18"
+    },
+    {
+      "path": "trace-resolved/proposal-generation.json",
+      "sha256": "733c46e485850a9de59147cf81c9d7480d06bc774e18025901c8ab69eb40e2d8"
+    },
+    {
+      "path": "trace-resolved/proposal-verification.json",
+      "sha256": "011969c17146e7af934411673382e8f6a371851b416454c711404b3e68cc1872"
+    },
+    {
+      "path": "trace-resolved/summary.json",
+      "sha256": "9f403ee22974902b6e69edfc0cd9baad9b57c7bcbec4fff14a24622079f2b482"
+    }
+  ],
+  "holdout": "not-read",
+  "human_review": "absent",
+  "max_concurrency": 2,
+  "model_calls": 7,
+  "negative_control": "Constructed historical failure; analysis not generated in a new model call.",
+  "published_on": "2026-10-19",
+  "qualification": "not-established",
+  "split": "development"
+}

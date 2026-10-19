@@ -41,7 +41,7 @@
   ],
   "goal": "Qualificar entendimento semântico e modelo/perfil local por grounding, cobertura de regras, evidência e desempenho controlado.",
   "id": "sprint-2-5",
-  "implementation_increment": "Amendment 1 implements source-complete advisory v3 and analysis program v2.2. Development recovered adversarial handling and missing-question detection; rule-B scope question remains for PO review. No qualification/story completion.",
+  "implementation_increment": "DE-0008 resolved trace scope under PO delegation. SemanticAnalysis/v3 and advisory v4 now preserve component provenance and separate guards; development negative control detects INC-0016. Next: version human review/assessment before qualification. No story completion or holdout.",
   "implementation_owner": "code-collaborator-supported-by-codex",
   "planning_date": "2026-10-07",
   "product_owner": "leozitogs",

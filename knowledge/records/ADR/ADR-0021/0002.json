@@ -1,0 +1,68 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "INC-0016 combined permission with trace guards while citing only permission.",
+  "created_at": "2026-10-19T19:50:51.627109+00:00",
+  "decision": "Add opt-in typed contracts and commands; preserve old versions, separate applicability from evidence and retain advisory authority.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Versioned component contracts and observed development; no human semantic approval or holdout qualification.",
+      "outcome": "observed",
+      "sha256": "7788b22b7ee0eadfc055458836f982704f9a756f9f300582f62ef3799379441a",
+      "source": "docs/adr/0021-component-provenance-and-guards.md"
+    },
+    {
+      "command": null,
+      "note": "Versioned component contracts and observed development; no human semantic approval or holdout qualification.",
+      "outcome": "observed",
+      "sha256": "97ae214bdcd5c8277395f388281a50ddd7bcfada2e320c96510eaafaa203542b",
+      "source": "src/ai_harness_compiler/models/semantic_analysis_v3.py"
+    },
+    {
+      "command": null,
+      "note": "Versioned component contracts and observed development; no human semantic approval or holdout qualification.",
+      "outcome": "observed",
+      "sha256": "f8887a2e180b831e25cb47cf8f4e2b09a43e7c77256ba151a5ba2966fd83a23f",
+      "source": "src/ai_harness_compiler/models/semantic_verification_v4.py"
+    },
+    {
+      "command": null,
+      "note": "Versioned component contracts and observed development; no human semantic approval or holdout qualification.",
+      "outcome": "observed",
+      "sha256": "02584e0c17b897250896671d2f39715a81a74203c7348cf7ed9fa3480dd33774",
+      "source": "tests/test_semantic_verification_v4.py"
+    }
+  ],
+  "id": "ADR-0021",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "Semantic support still needs human review",
+    "Guards are proposed specifications, not runtime enforcement",
+    "Human review v2 cannot qualify these new versions"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "INC-0016",
+    "DE-0008",
+    "ADR-0020"
+  ],
+  "resolution": null,
+  "review_note": "Contract regressions and independent review preserve component identity, explicit guards and authority boundaries.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Analysis v3 binds each component to its own evidence; advisory v4 rejects missing or inconsistent judgments and negative-component aggregate support.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Proveniência por componente e guards separados",
+  "updated_at": "2026-10-19T19:50:52.664316+00:00"
+}
