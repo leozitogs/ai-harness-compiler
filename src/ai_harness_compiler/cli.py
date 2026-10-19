@@ -40,6 +40,7 @@ from ai_harness_compiler.models.model_session import (
 )
 from ai_harness_compiler.models.repair import RepairPlan, RepairReport
 from ai_harness_compiler.models.semantic_analysis import AnalysisProposal, SemanticAnalysis
+from ai_harness_compiler.models.semantic_analysis_v3 import AnalysisProposalV3, SemanticAnalysisV3
 from ai_harness_compiler.models.semantic_assessment import (
     AssessmentCase,
     SemanticAssessment,
@@ -60,6 +61,10 @@ from ai_harness_compiler.models.semantic_verification import (
 from ai_harness_compiler.models.semantic_verification_v3 import (
     SemanticVerifierReportV3,
     VerifierProposalV3,
+)
+from ai_harness_compiler.models.semantic_verification_v4 import (
+    SemanticVerifierReportV4,
+    VerifierProposalV4,
 )
 from ai_harness_compiler.models.task import TaskGraph
 from ai_harness_compiler.models.team import AgentReport, Persona, TeamConfig
@@ -122,6 +127,10 @@ MODELS: dict[str, type[Contract]] = {
     "semantic-verifier-report-v2": SemanticVerifierReport,
     "semantic-verifier-proposal-v3": VerifierProposalV3,
     "semantic-verifier-report-v3": SemanticVerifierReportV3,
+    "semantic-analysis-proposal-v3": AnalysisProposalV3,
+    "semantic-analysis-v3": SemanticAnalysisV3,
+    "semantic-verifier-proposal-v4": VerifierProposalV4,
+    "semantic-verifier-report-v4": SemanticVerifierReportV4,
 }
 
 
@@ -286,8 +295,14 @@ def main(argv: list[str] | None = None) -> int:
     comparison_validation.add_argument("--corpus", type=Path, required=True)
     schema_command = commands.add_parser("schema", help="Print a JSON Schema to stdout")
     schema_command.add_argument("model", choices=MODELS)
-    for name in ("analyze-project-v2", "verify-analysis-v2", "verify-analysis-v3"):
-        semantic_command = commands.add_parser(name, help="Opt-in v2 semantic model call")
+    for name in (
+        "analyze-project-v2",
+        "verify-analysis-v2",
+        "verify-analysis-v3",
+        "analyze-project-v3",
+        "verify-analysis-v4",
+    ):
+        semantic_command = commands.add_parser(name, help="Opt-in versioned semantic model call")
         semantic_command.add_argument("input", type=Path)
         semantic_command.add_argument("--output", type=Path, required=True)
         semantic_command.add_argument("--model-policy", type=Path)
@@ -305,6 +320,8 @@ def main(argv: list[str] | None = None) -> int:
             "analyze-project-v2",
             "verify-analysis-v2",
             "verify-analysis-v3",
+            "analyze-project-v3",
+            "verify-analysis-v4",
             "assess-analysis-v2",
         }:
             from ai_harness_compiler.semantic_cli import execute as execute_semantic

@@ -87,6 +87,7 @@ estruturado. Consulte o [exemplo](examples/project-definition/project.yaml) e o
 - Interpretação compacta com citações montadas deterministicamente e regras mantidas como hipóteses; [modo compacto](docs/engineering/compact-understanding.md). Qualidade semântica permanece em avaliação.
 - Análise e verificação semântica v2 com fontes exatas e perguntas materiais; [operação](docs/engineering/semantic-verification-v2.md). Parecer do modelo separado da revisão humana; compilação permanece não autorizada.
 - Auditoria v3 com cobertura por fonte e omissões de regras/perguntas materiais; [operação](docs/engineering/semantic-verification-v3.md). Diagnóstico sem reparo automático ou qualificação.
+- Regras e guards separados com proveniência por condição/resultado/exceção; [composição v3 e auditoria v4](docs/engineering/semantic-composition.md). Suporte agregado exige suporte de todos os componentes, sem aprovação automática.
 - Evidence Pack com fontes, digest canônico, revisão declarada e escopos; [contrato e migração](docs/engineering/evidence-pack.md).
 - Validação de IDs, dependências, ciclos, referências e cobertura de critérios de aceitação.
 - Geração reproduzível de `AGENTS.md`, contexto, políticas, ADRs, plano de trabalho,
