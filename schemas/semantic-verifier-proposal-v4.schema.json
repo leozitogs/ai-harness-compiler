@@ -1,0 +1,310 @@
+{
+  "$defs": {
+    "ComponentJudgment": {
+      "additionalProperties": false,
+      "properties": {
+        "component_index": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Component Index"
+        },
+        "component_name": {
+          "enum": [
+            "condition",
+            "outcome",
+            "exception"
+          ],
+          "title": "Component Name",
+          "type": "string"
+        },
+        "finding_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Finding Id",
+          "type": "string"
+        },
+        "note": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        },
+        "source_atom_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Source Atom Ids",
+          "type": "array"
+        },
+        "support": {
+          "enum": [
+            "supports",
+            "contradicts",
+            "insufficient-evidence"
+          ],
+          "title": "Support",
+          "type": "string"
+        }
+      },
+      "required": [
+        "finding_id",
+        "component_name",
+        "source_atom_ids",
+        "support",
+        "note"
+      ],
+      "title": "ComponentJudgment",
+      "type": "object"
+    },
+    "MissingFinding": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "impact": {
+          "anyOf": [
+            {
+              "enum": [
+                "rule",
+                "authorization",
+                "outcome",
+                "precedence"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Impact"
+        },
+        "kind": {
+          "enum": [
+            "rule",
+            "question",
+            "conflict"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "rationale": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "source_atom_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Source Atom Ids",
+          "type": "array"
+        },
+        "text": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "text",
+        "rationale",
+        "source_atom_ids"
+      ],
+      "title": "MissingFinding",
+      "type": "object"
+    },
+    "SourceCoverage": {
+      "additionalProperties": false,
+      "properties": {
+        "atom_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Atom Id",
+          "type": "string"
+        },
+        "disposition": {
+          "enum": [
+            "represented",
+            "missing",
+            "not-applicable",
+            "untrusted-instruction"
+          ],
+          "title": "Disposition",
+          "type": "string"
+        },
+        "finding_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 512,
+          "title": "Finding Ids",
+          "type": "array"
+        },
+        "note": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        },
+        "omission_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 128,
+          "title": "Omission Ids",
+          "type": "array"
+        },
+        "quote_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Quote Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "atom_id",
+        "quote_sha256",
+        "disposition",
+        "note"
+      ],
+      "title": "SourceCoverage",
+      "type": "object"
+    },
+    "VerificationFindingV4": {
+      "additionalProperties": false,
+      "description": "Union of component sources can exceed the v2 single-finding source budget.",
+      "properties": {
+        "finding_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Finding Id",
+          "type": "string"
+        },
+        "finding_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Finding Sha256",
+          "type": "string"
+        },
+        "materiality": {
+          "enum": [
+            "appropriate",
+            "inappropriate",
+            "not-applicable"
+          ],
+          "title": "Materiality",
+          "type": "string"
+        },
+        "note": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        },
+        "source_atom_ids": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+            "type": "string"
+          },
+          "maxItems": 512,
+          "minItems": 1,
+          "title": "Source Atom Ids",
+          "type": "array"
+        },
+        "support": {
+          "enum": [
+            "supports",
+            "contradicts",
+            "insufficient-evidence"
+          ],
+          "title": "Support",
+          "type": "string"
+        }
+      },
+      "required": [
+        "finding_id",
+        "finding_sha256",
+        "source_atom_ids",
+        "support",
+        "materiality",
+        "note"
+      ],
+      "title": "VerificationFindingV4",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "analysis_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Analysis Sha256",
+      "type": "string"
+    },
+    "component_judgments": {
+      "items": {
+        "$ref": "#/$defs/ComponentJudgment"
+      },
+      "maxItems": 5120,
+      "title": "Component Judgments",
+      "type": "array"
+    },
+    "findings": {
+      "items": {
+        "$ref": "#/$defs/VerificationFindingV4"
+      },
+      "maxItems": 512,
+      "minItems": 1,
+      "title": "Findings",
+      "type": "array"
+    },
+    "omissions": {
+      "items": {
+        "$ref": "#/$defs/MissingFinding"
+      },
+      "maxItems": 128,
+      "title": "Omissions",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "SemanticVerifierProposal/v4",
+      "default": "SemanticVerifierProposal/v4",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "source_coverage": {
+      "items": {
+        "$ref": "#/$defs/SourceCoverage"
+      },
+      "maxItems": 512,
+      "minItems": 1,
+      "title": "Source Coverage",
+      "type": "array"
+    }
+  },
+  "required": [
+    "analysis_sha256",
+    "findings",
+    "source_coverage"
+  ],
+  "title": "VerifierProposalV4",
+  "type": "object"
+}

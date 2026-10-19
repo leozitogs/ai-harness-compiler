@@ -1,0 +1,131 @@
+{
+  "context_findings": [
+    {
+      "context_indices": [
+        0,
+        11
+      ],
+      "note": "Finalidade declarada na concepção e no backlog.",
+      "subject": "purpose",
+      "text": "Organizar publicações da equipe e suas fontes, além de registrar decisões."
+    },
+    {
+      "context_indices": [
+        1
+      ],
+      "note": "Público explicitamente declarado.",
+      "subject": "audience",
+      "text": "Autores."
+    },
+    {
+      "context_indices": [
+        2,
+        3,
+        7,
+        13
+      ],
+      "note": "Princípios declarados; não estabelecem aprovação de terceiros.",
+      "subject": "positioning",
+      "text": "Rastreabilidade e controle humano."
+    },
+    {
+      "context_indices": [
+        12
+      ],
+      "note": "Domínio declarado como workspace-management.",
+      "subject": "domain",
+      "text": "Gestão de workspace."
+    },
+    {
+      "context_indices": [
+        0,
+        11,
+        13
+      ],
+      "note": "Capacidades sustentadas pela concepção, pelo backlog e pelo critério.",
+      "subject": "capability",
+      "text": "Organização de publicações e fontes, liberação de publicações e registro de decisões."
+    },
+    {
+      "context_indices": [
+        6,
+        8
+      ],
+      "note": "Não implica equivalência com proprietário do conteúdo, aprovador ou responsável de negócio. Outros papéis de negócio só são registrados quando declarados pelo projeto, separadamente.",
+      "subject": "entity",
+      "text": "O responsável operacional é o executor autenticado da ação."
+    },
+    {
+      "context_indices": [
+        10
+      ],
+      "note": "Limite informado nos dados do projeto.",
+      "subject": "constraint",
+      "text": "O custo máximo de construção declarado é US$ 0,00."
+    }
+  ],
+  "criteria": [
+    {
+      "condition": {
+        "source_atom_ids": [
+          "atom-13"
+        ],
+        "text": "O autor pretende liberar uma publicação da equipe."
+      },
+      "exceptions": [],
+      "kind": "business-rule",
+      "note": "A identificação do executor não altera essa autorização. As restrições de rastreabilidade são representadas separadamente como guards.",
+      "outcome": {
+        "source_atom_ids": [
+          "atom-13"
+        ],
+        "text": "O autor pode liberar a publicação sem aprovação de terceiros."
+      },
+      "question": null,
+      "source_atom_id": "atom-13",
+      "uncertainties": []
+    }
+  ],
+  "guards": [
+    {
+      "condition": {
+        "source_atom_ids": [
+          "atom-6"
+        ],
+        "text": "Uma publicação é liberada ou uma decisão é registrada de forma persistida."
+      },
+      "effect": {
+        "source_atom_ids": [
+          "atom-5",
+          "atom-7"
+        ],
+        "text": "Registrar a identidade autenticada de quem executou a ação como responsável operacional."
+      },
+      "id": "rastreabilidade-operacional",
+      "note": "Abrange liberações de publicação e registros de decisões persistidas.",
+      "target_criterion_atom_ids": [],
+      "target_scope": "project"
+    },
+    {
+      "condition": {
+        "source_atom_ids": [
+          "atom-6",
+          "atom-10"
+        ],
+        "text": "Em uma liberação de publicação ou registro de decisão persistida, a identidade operacional não pode ser verificada ou seu registro obrigatório não pode ser garantido."
+      },
+      "effect": {
+        "source_atom_ids": [
+          "atom-10"
+        ],
+        "text": "Impedir a execução da ação."
+      },
+      "id": "bloqueio-sem-rastreabilidade",
+      "note": "Restringe a execução sem exigir aprovação de terceiros nem substituir a autorização do autor.",
+      "target_criterion_atom_ids": [],
+      "target_scope": "project"
+    }
+  ],
+  "issues": [],
+  "schema_version": "SemanticAnalysisProposal/v3"
+}

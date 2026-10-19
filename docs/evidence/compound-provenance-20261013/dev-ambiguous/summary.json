@@ -1,0 +1,16 @@
+{
+  "component_counts": {
+    "contradicts": 0,
+    "insufficient-evidence": 0,
+    "supports": 2
+  },
+  "disposition": "blocked",
+  "generation": "valid",
+  "guards": 0,
+  "human_review": "absent",
+  "job": "dev-ambiguous",
+  "omissions": [],
+  "program": "semantic-composition/v3",
+  "qualification": "not-established",
+  "verification": "valid"
+}

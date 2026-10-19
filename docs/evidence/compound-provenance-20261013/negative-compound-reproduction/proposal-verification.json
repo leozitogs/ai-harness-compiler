@@ -1,0 +1,312 @@
+{
+  "analysis_sha256": "0f15a7e333451e0d979a21dc5ba1f6b85f1ce36ea7409e8a756352f9b21b4801",
+  "component_judgments": [
+    {
+      "component_index": null,
+      "component_name": "condition",
+      "finding_id": "criterion-1",
+      "note": "A autorização não declara solicitação, verificação de identidade ou garantia de registro.",
+      "source_atom_ids": [
+        "atom-13"
+      ],
+      "support": "insufficient-evidence"
+    },
+    {
+      "component_index": null,
+      "component_name": "outcome",
+      "finding_id": "criterion-1",
+      "note": "A liberação sem aprovação é sustentada; o registro da identidade autenticada não consta desta fonte.",
+      "source_atom_ids": [
+        "atom-13"
+      ],
+      "support": "insufficient-evidence"
+    },
+    {
+      "component_index": 0,
+      "component_name": "exception",
+      "finding_id": "criterion-1",
+      "note": "Esta fonte não estabelece impedimento por identidade não verificável ou registro não garantido.",
+      "source_atom_ids": [
+        "atom-13"
+      ],
+      "support": "insufficient-evidence"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "9c4bb6a7707a4388f75f7a5354379d807630804698b80aa13825932ca8e38f2d",
+      "materiality": "not-applicable",
+      "note": "A fonte autoriza a liberação pelo autor sem aprovação de terceiros, mas não sustenta os requisitos de identidade e registro acrescentados aos componentes.",
+      "source_atom_ids": [
+        "atom-13"
+      ],
+      "support": "insufficient-evidence"
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "7b677b938611558375c93dd9029143442536f6dda04477d01db88a24324eaf7e",
+      "materiality": "not-applicable",
+      "note": "As fontes declaram organização de publicações e fontes e registro de decisões.",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-12"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "67969932e00e1bc51ef0f094024bfab7df49b97bf05a5ae842e2dcb87f672940",
+      "materiality": "not-applicable",
+      "note": "Autores são o público declarado e o ator expressamente autorizado a liberar publicações.",
+      "source_atom_ids": [
+        "atom-2",
+        "atom-13"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "384c10dd88a3c93f780298a6f706e9ce5248d4cef258944855522312cbd3d6b2",
+      "materiality": "not-applicable",
+      "note": "Rastreabilidade e controle humano são princípios declarados; a identificação não altera a autorização sem aprovação de terceiros.",
+      "source_atom_ids": [
+        "atom-3",
+        "atom-4",
+        "atom-8",
+        "atom-13"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "ece3fc6d60013744af4a45507663ae596d85a30a7ca5551043b9f9714c7bb6aa",
+      "materiality": "not-applicable",
+      "note": "O domínio declarado é workspace-management, contextualizado por publicações, fontes e decisões.",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-12",
+        "atom-14"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "3e588dc3269e73c223d5cd5d755397e90d3dac189896feac5d3699638a0cb782",
+      "materiality": "not-applicable",
+      "note": "As três fontes sustentam as capacidades enumeradas.",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-12",
+        "atom-13"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-6",
+      "finding_sha256": "26ea2808188a9d835f8f7b5e013cedb68b6ae5aca12ca2ef944cc51246e73b69",
+      "materiality": "not-applicable",
+      "note": "As fontes definem o executor autenticado, as ações cobertas e a obrigatoriedade do registro; a justificativa também descreve o impedimento.",
+      "source_atom_ids": [
+        "atom-5",
+        "atom-6",
+        "atom-7",
+        "atom-10"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-7",
+      "finding_sha256": "466f0d2d0b34622da8266d86926f401b2abfabc214034ec4c3d7ca59408e4637",
+      "materiality": "not-applicable",
+      "note": "As fontes distinguem executor e papéis de negócio, exigem declaração separada e preservam a autorização do autor.",
+      "source_atom_ids": [
+        "atom-7",
+        "atom-8",
+        "atom-9",
+        "atom-13"
+      ],
+      "support": "supports"
+    },
+    {
+      "finding_id": "context-8",
+      "finding_sha256": "84c13bbedd399988e48414aab4c9ca7a5e00ce85ba651fd66522ceba2b947ef0",
+      "materiality": "not-applicable",
+      "note": "O campo de custo máximo de construção em USD contém 0.0.",
+      "source_atom_ids": [
+        "atom-11"
+      ],
+      "support": "supports"
+    }
+  ],
+  "omissions": [
+    {
+      "id": "omission-1",
+      "impact": null,
+      "kind": "rule",
+      "rationale": "O impedimento precisa de um achado de guarda separado da permissão. Aparece na justificativa de context-6, mas não como guarda separada; a exceção de criterion-1 cita somente a fonte de autorização.",
+      "source_atom_ids": [
+        "atom-6",
+        "atom-10"
+      ],
+      "text": "Cada liberação de publicação e cada registro de decisão persistida fica impedido se a identidade operacional não puder ser verificada ou seu registro obrigatório não puder ser garantido."
+    }
+  ],
+  "schema_version": "SemanticVerifierProposal/v4",
+  "source_coverage": [
+    {
+      "atom_id": "atom-1",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-1",
+        "context-4",
+        "context-5"
+      ],
+      "note": "Concepção representada.",
+      "omission_ids": [],
+      "quote_sha256": "88b9866f0e0b53ae15c7d6439e0c540ac09134f17f179c297c4dde265f0c01eb"
+    },
+    {
+      "atom_id": "atom-2",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-2"
+      ],
+      "note": "Público representado.",
+      "omission_ids": [],
+      "quote_sha256": "75f26d13ebd8877644c57a369ce71b82b639903217ed12ebe61beeffd8c11586"
+    },
+    {
+      "atom_id": "atom-3",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-3"
+      ],
+      "note": "Princípio de rastreabilidade representado.",
+      "omission_ids": [],
+      "quote_sha256": "e8a964e534bd9189a4c1ee68dc1e80429c5b14930ce7df548075257a8a8dccc7"
+    },
+    {
+      "atom_id": "atom-4",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-3"
+      ],
+      "note": "Controle humano representado sem inferir aprovação adicional.",
+      "omission_ids": [],
+      "quote_sha256": "a6e3b461d6bc6975496196edb2b7d4ea96130a66c49e4e058c4d66078d23422f"
+    },
+    {
+      "atom_id": "atom-5",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-6"
+      ],
+      "note": "Registro do responsável representado com a definição operacional fornecida.",
+      "omission_ids": [],
+      "quote_sha256": "22accd7ad33a45ad61811a4737a68f2c8dfd45b650550aec3cdae8de95fc1a0e"
+    },
+    {
+      "atom_id": "atom-6",
+      "disposition": "missing",
+      "finding_ids": [
+        "context-6"
+      ],
+      "note": "Escopo representado, mas falta guarda separada para todas as ações cobertas.",
+      "omission_ids": [
+        "omission-1"
+      ],
+      "quote_sha256": "1741cf7931cc2ba244c77c9f1ea77837a77baa5ed4c749808740491d887684c9"
+    },
+    {
+      "atom_id": "atom-7",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-6",
+        "context-7"
+      ],
+      "note": "Executor autenticado e distinção de papéis representados.",
+      "omission_ids": [],
+      "quote_sha256": "2d2589423b10a1cf8f7eff9c76f1e0ff422d3a2afa691dab95457d259c50070a"
+    },
+    {
+      "atom_id": "atom-8",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-3",
+        "context-7"
+      ],
+      "note": "Preservação da autorização representada.",
+      "omission_ids": [],
+      "quote_sha256": "535c60e65d61267b53a8fd029cc774213e21d0fe25f65b8322ae4a8d98b138d6"
+    },
+    {
+      "atom_id": "atom-9",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-7"
+      ],
+      "note": "Declaração separada dos papéis de negócio representada.",
+      "omission_ids": [],
+      "quote_sha256": "588668612df686bd351f57f61132a1a2465cf817f9443f01dd587e1d7916acf9"
+    },
+    {
+      "atom_id": "atom-10",
+      "disposition": "missing",
+      "finding_ids": [
+        "context-6"
+      ],
+      "note": "Impedimento descrito na justificativa, mas ausente como guarda separada.",
+      "omission_ids": [
+        "omission-1"
+      ],
+      "quote_sha256": "ad6eff99aa8cb5b848beb223d61ff7d9fa219efcc20cca7450d8271b5a4ad0d3"
+    },
+    {
+      "atom_id": "atom-11",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-8"
+      ],
+      "note": "Limite de custo representado.",
+      "omission_ids": [],
+      "quote_sha256": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7"
+    },
+    {
+      "atom_id": "atom-12",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-1",
+        "context-4",
+        "context-5"
+      ],
+      "note": "Organização de publicações e registro de decisões representados.",
+      "omission_ids": [],
+      "quote_sha256": "5f77f5215732224df6e88a779d30470fdd1c968ff4e40c54ff9fa444e009e034"
+    },
+    {
+      "atom_id": "atom-14",
+      "disposition": "represented",
+      "finding_ids": [
+        "context-4"
+      ],
+      "note": "Domínio representado.",
+      "omission_ids": [],
+      "quote_sha256": "d8ec0dfaccceaea0a5f8ccf5a95f094560df5ea36683833d84877c601223e217"
+    },
+    {
+      "atom_id": "atom-13",
+      "disposition": "represented",
+      "finding_ids": [
+        "criterion-1",
+        "context-2",
+        "context-3",
+        "context-5",
+        "context-7"
+      ],
+      "note": "Permissão representada; os acréscimos sem suporte em criterion-1 estão apontados nos julgamentos.",
+      "omission_ids": [],
+      "quote_sha256": "66d4ab88ea3d6f5d267015ed9c60dbb7fcc14ebdb910f90b34b27579c499e240"
+    }
+  ]
+}

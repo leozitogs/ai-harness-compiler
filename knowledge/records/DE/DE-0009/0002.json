@@ -1,0 +1,56 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO authorized reviewing and merging convenient dependency PRs while continuing Sprint2.5.",
+  "created_at": "2026-10-19T19:54:14.883194+00:00",
+  "decision": "Accept compatible Pydantic, LangGraph/checkpoint, Ruff and setup-uv updates without expanding permissions or framework scope.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Five PR CI matrices passed; 742 offline tests with final lock passed October 19.",
+      "outcome": "observed",
+      "sha256": "0c7153b7951f79a015bbc7869b15c2ae3af8af49efccb608c8a4cdb320c76240",
+      "source": "docs/engineering/dependency-review-20261019.md"
+    },
+    {
+      "command": null,
+      "note": "Five PR CI matrices passed; 742 offline tests with final lock passed October 19.",
+      "outcome": "observed",
+      "sha256": "acd086272dac30ec410079d006c9126ce20ae7fd50b10e81945d1ebbcc1c5e48",
+      "source": "uv.lock"
+    },
+    {
+      "command": null,
+      "note": "Five PR CI matrices passed; 742 offline tests with final lock passed October 19.",
+      "outcome": "observed",
+      "sha256": "ab3390b1b8c36b13df8d81b7044ee70788fd6dd4946c3ce923a2fa03bd8f75da",
+      "source": ".github/workflows/ci.yml"
+    }
+  ],
+  "id": "DE-0009",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "Deterministic tests do not qualify model semantics",
+    "No complete legal or dependency security audit claimed"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [],
+  "resolution": null,
+  "review_note": "Reviewed diffs, primary release notes, head CI and final local dependency integration; no bypass of protections.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Merged five dependency PRs after fresh-base CI and release/diff review; final local increment suite passed 742 tests with all extras.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Atualizações de dependências com CI por head atualizado",
+  "updated_at": "2026-10-19T19:54:14.979673+00:00"
+}

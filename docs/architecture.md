@@ -46,6 +46,11 @@ A emenda da Sprint 2.5 adiciona [auditoria v3](engineering/semantic-verification
 com inventário de fontes e omissões explícitas (ADR-0020). Um ledger preenchido
 continua diagnóstico: validação de vínculos não certifica completude semântica.
 
+A [composição com proveniência](engineering/semantic-composition.md) mantém guards
+separados e fontes por componente da análise v3, auditadas no protocolo v4
+(ADR-0021). Condição, resultado e exceções são verificados individualmente; nenhum
+guard é executado e nenhuma revisão anterior é migrada automaticamente.
+
 `planning.py` transforma CapabilityGraph em TaskGraph/v1. O comando `tasks` permite
 selecionar capacidades para uma sprint, com gates e critérios preservados. O plano
 é estrutural e determinístico, sem executor ou decomposição semântica via LLM.

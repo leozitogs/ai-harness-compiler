@@ -1,0 +1,89 @@
+{
+  "context_findings": [
+    {
+      "context_indices": [
+        0,
+        7
+      ],
+      "note": "Finalidade declarada na concepção e na descrição do backlog.",
+      "subject": "purpose",
+      "text": "Organizar as publicações da equipe, suas fontes e o registro de decisões."
+    },
+    {
+      "context_indices": [
+        1
+      ],
+      "note": "Público declarado.",
+      "subject": "audience",
+      "text": "Autores."
+    },
+    {
+      "context_indices": [
+        3,
+        4
+      ],
+      "note": "Princípios declarados para orientar o projeto.",
+      "subject": "positioning",
+      "text": "Rastreabilidade e controle humano."
+    },
+    {
+      "context_indices": [
+        8
+      ],
+      "note": "Domínio declarado como workspace-management.",
+      "subject": "domain",
+      "text": "Gestão de workspace."
+    },
+    {
+      "context_indices": [
+        0,
+        7
+      ],
+      "note": "Capacidades de apoio suficientemente claras sem exigir definição de formatos de armazenamento.",
+      "subject": "capability",
+      "text": "Organizar publicações e fontes e registrar decisões."
+    },
+    {
+      "context_indices": [
+        5,
+        9
+      ],
+      "note": "Obrigação declarada que complementa a identificação do responsável nas publicações.",
+      "subject": "constraint",
+      "text": "Registrar a identidade do responsável."
+    },
+    {
+      "context_indices": [
+        6
+      ],
+      "note": "Limite declarado no campo max_build_cost_usd.",
+      "subject": "constraint",
+      "text": "O custo máximo de construção é US$ 0,00."
+    }
+  ],
+  "criteria": [
+    {
+      "condition": {
+        "source_atom_ids": [
+          "atom-9"
+        ],
+        "text": "Para cada publicação da equipe."
+      },
+      "exceptions": [],
+      "kind": "business-rule",
+      "note": "A regra aplica-se a todas as publicações da equipe.",
+      "outcome": {
+        "source_atom_ids": [
+          "atom-9"
+        ],
+        "text": "A publicação deve conter responsável e origem."
+      },
+      "question": null,
+      "source_atom_id": "atom-9",
+      "uncertainties": []
+    }
+  ],
+  "guards": [],
+  "issues": [],
+  "schema_version": "SemanticAnalysisProposal/v3"
+}
