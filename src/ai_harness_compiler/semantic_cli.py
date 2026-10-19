@@ -9,10 +9,15 @@ from ai_harness_compiler.intake import load_project
 from ai_harness_compiler.model_policy import load_model_policy
 from ai_harness_compiler.models.base import Contract
 from ai_harness_compiler.models.semantic_analysis import SemanticAnalysis
+from ai_harness_compiler.models.semantic_analysis_v3 import SemanticAnalysisV3
 from ai_harness_compiler.models.semantic_assessment import (
     AssessmentCase,
     SemanticHumanReview,
     assess,
+)
+from ai_harness_compiler.models.semantic_assessment_v3 import (
+    SemanticHumanReviewV3,
+    assess_v3,
 )
 from ai_harness_compiler.models.semantic_eval import UnderstandingRubric
 
@@ -29,7 +34,16 @@ def execute(args: argparse.Namespace) -> int:
     if args.output.exists():
         raise FileExistsError("SEMANTIC_EXISTS: Choose a new output file")
     artifact: Contract
-    if args.command == "assess-analysis-v2":
+    if args.command == "assess-analysis-v3":
+        assessment_v3 = assess_v3(
+            read_contract(args.case, AssessmentCase),
+            read_contract(args.rubric, UnderstandingRubric),
+            read_contract(args.input, SemanticAnalysisV3),
+            read_contract(args.review, SemanticHumanReviewV3) if args.review else None,
+        )
+        artifact = assessment_v3
+        exit_code = 0 if assessment_v3.status == "pass" else 1
+    elif args.command == "assess-analysis-v2":
         assessment = assess(
             read_contract(args.case, AssessmentCase),
             read_contract(args.rubric, UnderstandingRubric),
@@ -40,7 +54,6 @@ def execute(args: argparse.Namespace) -> int:
         exit_code = 0 if assessment.status == "pass" else 1
     else:
         from ai_harness_compiler.adapters.codex_cli import CodexCLISettings, CodexCompactModel
-        from ai_harness_compiler.models.semantic_analysis_v3 import SemanticAnalysisV3
         from ai_harness_compiler.semantic_composition import analyze_composition, audit_composition
         from ai_harness_compiler.semantic_verification import analyze, verify, verify_complete
 

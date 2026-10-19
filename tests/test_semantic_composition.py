@@ -31,6 +31,29 @@ def test_generation_sources_and_explicit_guard_preserved(project):
     Draft202012Validator(schema).validate(analysis.proposal.model_dump())
 
 
+@pytest.mark.parametrize("kind", ["business-rule", "requirement", "needs-clarification"])
+def test_generation_schema_enforces_rule_component_shape(project, kind):
+    analysis = fixture_analysis(project)
+    data = analysis.proposal.model_dump()
+    criterion = data["criteria"][0]
+    criterion["kind"] = kind
+    if kind != "business-rule":
+        criterion["condition"] = criterion["outcome"] = None
+    if kind == "needs-clarification":
+        criterion["question"] = {
+            "text": "Which business actor?",
+            "impact": "authorization",
+            "rationale": "Changes permission to act",
+        }
+    validator = Draft202012Validator(composition_response_schema(analysis.extraction))
+    validator.validate(data)
+    if kind == "business-rule":
+        criterion["condition"] = None
+    else:
+        criterion["outcome"] = {"text": "Unexpected rule outcome", "source_atom_ids": ["atom-1"]}
+    assert list(validator.iter_errors(data))
+
+
 def test_atomic_audit_receives_exact_components_without_case_gold(project):
     analysis = fixture_analysis(project)
     generator = FakeGenerator(advice(analysis))

@@ -1,0 +1,85 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Inspected generated condition/exception and criterion atom quote",
+    "Compared guard declarations in derived constraints",
+    "Preserved v3 supports as advisory, not semantic proof",
+    "Added component-level EvidenceText and separate guards in v3",
+    "Added exact component judgments and inverse source ledger in advisory v4",
+    "Three development generations kept permission separate from guards",
+    "Constructed historical failure: audit rejected support for three components and identified omitted guard"
+  ],
+  "author": "codex:engineering",
+  "challenge": "Ensure conditions composed from multiple project declarations cite every supporting source without silently adding or removing guards.",
+  "consequences": [],
+  "context": "Public development candidate from DE-0008; scope decision itself remains explicit and valid as a delegated engineering choice.",
+  "created_at": "2026-10-13T20:12:55.937722+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Versioned component contracts and observed development; no human semantic approval or holdout qualification.",
+      "outcome": "observed",
+      "sha256": "256e9751bd9712532c7aebc47b0360cb7926152866c31806b4b699ec67957342",
+      "source": "tests/test_semantic_analysis_v3.py"
+    },
+    {
+      "command": null,
+      "note": "Versioned component contracts and observed development; no human semantic approval or holdout qualification.",
+      "outcome": "observed",
+      "sha256": "02584e0c17b897250896671d2f39715a81a74203c7348cf7ed9fa3480dd33774",
+      "source": "tests/test_semantic_verification_v4.py"
+    },
+    {
+      "command": null,
+      "note": "Versioned component contracts and observed development; no human semantic approval or holdout qualification.",
+      "outcome": "observed",
+      "sha256": "7ffd0c9198bdc7962afc89f8deebb9887c9bc4335da0541b5a9d52c54410c7f8",
+      "source": "tests/test_semantic_composition.py"
+    },
+    {
+      "command": null,
+      "note": "Versioned component contracts and observed development; no human semantic approval or holdout qualification.",
+      "outcome": "observed",
+      "sha256": "5a95357b21191c51d2d9b65c5d886f64a9083535471d2ea9094c982a490c5edc",
+      "source": "docs/delivery/ahc-022-component-provenance-increment.md"
+    },
+    {
+      "command": null,
+      "note": "Versioned component contracts and observed development; no human semantic approval or holdout qualification.",
+      "outcome": "observed",
+      "sha256": "4e9a4fb99c147b35662fbc38ea34ff6fd13e3a5b47e5483acb95fbbe4b1c8010",
+      "source": "docs/evidence/compound-provenance-20261013/negative-compound-reproduction/advice.json"
+    }
+  ],
+  "id": "INC-0016",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Not a change to original project rules",
+    "No diagnosis of private model reasoning",
+    "No model qualification or runtime testing",
+    "Observed development is not a population performance estimate",
+    "Same requested model generated and audited; no human semantic approval"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0008",
+    "ADR-0020",
+    "DOC-0019"
+  ],
+  "resolution": "Narrow development recovery: provenance is explicitly represented and enforced structurally; observed negative control exposes unsupported components. Semantic qualification and runtime guards remain unimplemented gates.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 4,
+  "root_cause": "Criterion projection binds interpretation to its original criterion atom, while model may compose condition/exception using other context constraints; composed provenance not represented by that single edge.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Derived trace resolution analysis combined permission with new trace guards, while criterion binding cites only original permission. Auditor returned supports despite incomplete combined provenance.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Regra composta cita apenas o critério original",
+  "updated_at": "2026-10-19T20:12:13.827775+00:00"
+}

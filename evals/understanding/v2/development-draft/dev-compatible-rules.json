@@ -1,6 +1,10 @@
 {
   "conflict_source_pointers": [],
-  "expectations_approval": null,
+  "expectations_approval": {
+    "authority": "human-declared-not-authenticated",
+    "note": "PO explicitly approved the seven development expectations described in the async question on 2026-10-19; does not approve model outputs or qualification.",
+    "reviewer": "leozitogs:po-declared"
+  },
   "expected_behavior": "ready",
   "id": "dev-compatible-rules",
   "obligations": [

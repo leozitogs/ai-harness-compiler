@@ -1,0 +1,30 @@
+{
+  "adapter_program": "codex-structured-cli/v5",
+  "audit": "not-run",
+  "case": "dev-compatible-rules",
+  "case_input_sha256": "b3d0db0980c20a068cbddf89bf26afef915368d5e487a9e1748cf782a9ba9225",
+  "error_type": "ValidationError",
+  "errors": [
+    {
+      "loc": [
+        "criteria",
+        0
+      ],
+      "msg": "Value error, Non-rule cannot claim rule components",
+      "type": "value_error"
+    },
+    {
+      "loc": [
+        "criteria",
+        2
+      ],
+      "msg": "Value error, Non-rule cannot claim rule components",
+      "type": "value_error"
+    }
+  ],
+  "generation": "error",
+  "human_review": "absent",
+  "observed_model": null,
+  "qualification": "not-established",
+  "requested_model": "gpt-6.1-sol"
+}

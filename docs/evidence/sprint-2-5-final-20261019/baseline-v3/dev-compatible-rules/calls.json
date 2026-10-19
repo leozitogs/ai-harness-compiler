@@ -1,0 +1,9 @@
+[
+  {
+    "elapsed_seconds": 26.154515,
+    "prompt_sha256": "d4c6e440f5ed8d19166944a7a06a47fab0004d063d927cdc3e53e2dd21e0c58a",
+    "schema_sha256": "9b9a6c6b064eb6a3873984ded074089fae58e895d71bb0d055955be2f259959e",
+    "stage": "generation",
+    "status": "returned"
+  }
+]

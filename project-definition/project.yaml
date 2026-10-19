@@ -284,3 +284,33 @@ backlog:
     data_owner: proprietário do ambiente
     risk: high
     implementation: deterministic
+  - id: ahc-024
+    title: Perfis de inferência versionados por provider
+    description: Como operador, quero configurar parâmetros compatíveis e rastrear o perfil completo sem reinterpretar execuções históricas.
+    acceptance_criteria:
+      - Contrato versionado registra modelo, provider, parâmetros solicitados, observados ou desconhecidos e fingerprint completo; versões anteriores mantêm semântica e hashes.
+      - Adapter rejeita opções incompatíveis, limita contexto, saída, timeout e orçamento; configuração pessoal não altera silenciosamente experimentos.
+      - Testes offline cobrem validação, fingerprint alterado por parâmetro e preservação de ferramentas e gates; chamadas reais ficam fora da suíte padrão.
+    depends_on: [ahc-021, ahc-022]
+    risk: high
+    implementation: deterministic
+  - id: ahc-025
+    title: Experimentos controlados de otimização de inferência
+    description: Como PO, quero comparar parâmetros e contexto com métricas semânticas antes de decidir por treinamento.
+    acceptance_criteria:
+      - Baseline e candidatos executam desenvolvimento revisado com repetições e orçamentos; parâmetros, ambiente e todas as tentativas ficam registrados.
+      - Comparação separa cobertura e suporte semântico de validade estrutural, mede estabilidade, truncamento, recursos e tempos cold e warm sem inferir causalidade de variáveis não controladas.
+      - Candidato é congelado antes da avaliação separada; resultado pode rejeitar todos os perfis e nunca usa holdout para tuning ou autoaprovação do candidato.
+    depends_on: [ahc-024]
+    risk: high
+    implementation: llm
+  - id: ahc-026
+    title: Viabilidade e piloto condicionado de fine-tuning
+    description: Como AI engineer, quero decidir por evidência se LoRA ou QLoRA melhora um comportamento generalista e cabe no ambiente autorizado.
+    acceptance_criteria:
+      - Decisão go ou no-go identifica erro aprendível, baseline sem treino, orçamento, licenças e viabilidade medida; piloto só executa após satisfazer gates de dados e recursos.
+      - Dataset revisado preserva origem e consentimento, separa projetos e famílias e exclui holdout, autoaprovações, credenciais e raciocínio privado; regras específicas permanecem no input do projeto.
+      - Se houver piloto, modelo base e adapter são comparados após exportação e quantização sob avaliação separada com regressões de generalização; sem ganho demonstrado não há promoção.
+    depends_on: [ahc-025]
+    risk: high
+    implementation: undecided

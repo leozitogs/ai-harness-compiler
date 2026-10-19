@@ -616,6 +616,73 @@
         "risk": "high",
         "side_effects": [],
         "title": "Qualificação do modelo e perfil de execução local"
+      },
+      {
+        "acceptance_criteria": [
+          "Contrato versionado registra modelo, provider, parâmetros solicitados, observados ou desconhecidos e fingerprint completo; versões anteriores mantêm semântica e hashes.",
+          "Adapter rejeita opções incompatíveis, limita contexto, saída, timeout e orçamento; configuração pessoal não altera silenciosamente experimentos.",
+          "Testes offline cobrem validação, fingerprint alterado por parâmetro e preservação de ferramentas e gates; chamadas reais ficam fora da suíte padrão."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-021",
+          "ahc-022"
+        ],
+        "description": "Como operador, quero configurar parâmetros compatíveis e rastrear o perfil completo sem reinterpretar execuções históricas.",
+        "evidence_ids": [
+          "backlog-24"
+        ],
+        "id": "ahc-024",
+        "implementation": "deterministic",
+        "inputs": [],
+        "outputs": [],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Perfis de inferência versionados por provider"
+      },
+      {
+        "acceptance_criteria": [
+          "Baseline e candidatos executam desenvolvimento revisado com repetições e orçamentos; parâmetros, ambiente e todas as tentativas ficam registrados.",
+          "Comparação separa cobertura e suporte semântico de validade estrutural, mede estabilidade, truncamento, recursos e tempos cold e warm sem inferir causalidade de variáveis não controladas.",
+          "Candidato é congelado antes da avaliação separada; resultado pode rejeitar todos os perfis e nunca usa holdout para tuning ou autoaprovação do candidato."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-024"
+        ],
+        "description": "Como PO, quero comparar parâmetros e contexto com métricas semânticas antes de decidir por treinamento.",
+        "evidence_ids": [
+          "backlog-25"
+        ],
+        "id": "ahc-025",
+        "implementation": "llm",
+        "inputs": [],
+        "outputs": [],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Experimentos controlados de otimização de inferência"
+      },
+      {
+        "acceptance_criteria": [
+          "Decisão go ou no-go identifica erro aprendível, baseline sem treino, orçamento, licenças e viabilidade medida; piloto só executa após satisfazer gates de dados e recursos.",
+          "Dataset revisado preserva origem e consentimento, separa projetos e famílias e exclui holdout, autoaprovações, credenciais e raciocínio privado; regras específicas permanecem no input do projeto.",
+          "Se houver piloto, modelo base e adapter são comparados após exportação e quantização sob avaliação separada com regressões de generalização; sem ganho demonstrado não há promoção."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-025"
+        ],
+        "description": "Como AI engineer, quero decidir por evidência se LoRA ou QLoRA melhora um comportamento generalista e cabe no ambiente autorizado.",
+        "evidence_ids": [
+          "backlog-26"
+        ],
+        "id": "ahc-026",
+        "implementation": "undecided",
+        "inputs": [],
+        "outputs": [],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Viabilidade e piloto condicionado de fine-tuning"
       }
     ],
     "project_id": "ai-harness-compiler",

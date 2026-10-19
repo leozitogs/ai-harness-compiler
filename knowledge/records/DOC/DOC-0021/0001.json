@@ -1,0 +1,68 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO requested finalization; scope closure must not manufacture human semantic review, qualification or story Done.",
+  "created_at": "2026-10-19T20:11:59.012261+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "764 offline tests passed; actual model-output human review absent. Sprint closure is partial; no model qualification or holdout.",
+      "outcome": "observed",
+      "sha256": "410c0a70caae5228fd7a7330e7d51c9f0a9cff6c906df61fc858fff555001cb1",
+      "source": "docs/delivery/sprint-2-5-review.md"
+    },
+    {
+      "command": null,
+      "note": "764 offline tests passed; actual model-output human review absent. Sprint closure is partial; no model qualification or holdout.",
+      "outcome": "observed",
+      "sha256": "9fcb4fd5c0fc85d0461ffdbdc7926193c6ca4a7472cfffdebbadee88eb73a40d",
+      "source": "docs/evidence/sprint-2-5-final-20261019/inventory.json"
+    },
+    {
+      "command": null,
+      "note": "764 offline tests passed; actual model-output human review absent. Sprint closure is partial; no model qualification or holdout.",
+      "outcome": "observed",
+      "sha256": "e7af7a3f74b017db4d8d8ef79dac38d533d74ee93a7329217ddd77577a5895e6",
+      "source": "evals/understanding/v2/development-approved-manifest.json"
+    },
+    {
+      "command": null,
+      "note": "764 offline tests passed; actual model-output human review absent. Sprint closure is partial; no model qualification or holdout.",
+      "outcome": "observed",
+      "sha256": "0005a6449be6d723b66482e215b978b1d74350fc0ab43e494ed6ef6d06a94d11",
+      "source": "planning/sprint-2-5.json"
+    }
+  ],
+  "id": "DOC-0021",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Seven initial valid generations are not seven semantic passes",
+    "Advisory omissions can be false positives",
+    "No complete v3.1 matrix or reserved evaluation",
+    "No synchronous Scrum ceremony claimed"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0020",
+    "ADR-0022"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Eight development expectations approved; 15 initial calls plus two targeted recovery calls. No qualified profile; 021/022/023 remain incomplete and carried over.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Fechamento parcial da Sprint 2.5 e rodada final",
+  "updated_at": "2026-10-19T20:11:59.012261+00:00"
+}

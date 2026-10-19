@@ -1,0 +1,58 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO requested finishing Sprint2.5; old human review cannot safely discard component provenance.",
+  "created_at": "2026-10-19T20:11:58.458444+00:00",
+  "decision": "Add separate versioned offline contracts and CLI; no advisory-to-human conversion.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "764 offline tests passed; actual model-output human review absent. Sprint closure is partial; no model qualification or holdout.",
+      "outcome": "observed",
+      "sha256": "c5bd456372b29af9cc291f63bb98a75dc7ee670064a1311ad20593fed78a4b75",
+      "source": "docs/adr/0022-component-human-assessment.md"
+    },
+    {
+      "command": null,
+      "note": "764 offline tests passed; actual model-output human review absent. Sprint closure is partial; no model qualification or holdout.",
+      "outcome": "observed",
+      "sha256": "4896c7fde63ab3a8bbcebd0eb4c7489b53b8cd6f19f343ce3862abdc30e5c11d",
+      "source": "src/ai_harness_compiler/models/semantic_assessment_v3.py"
+    },
+    {
+      "command": null,
+      "note": "764 offline tests passed; actual model-output human review absent. Sprint closure is partial; no model qualification or holdout.",
+      "outcome": "observed",
+      "sha256": "0896983dcba4a23e9ffd8a6585fc5152806a7048a0e57aa50f3b9020698696b5",
+      "source": "tests/test_semantic_assessment_v3.py"
+    }
+  ],
+  "id": "ADR-0022",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "Human declarations are not authenticated",
+    "Tests contain synthetic declarations only"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0021"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Human review/assessment v3 binds each component and finding to exact snapshots, preserving guard applicability and negative-support gates.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Revisão humana de proveniência por componente",
+  "updated_at": "2026-10-19T20:11:58.458444+00:00"
+}

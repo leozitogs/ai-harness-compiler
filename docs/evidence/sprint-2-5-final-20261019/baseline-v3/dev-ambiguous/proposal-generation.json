@@ -1,0 +1,134 @@
+{
+  "context_findings": [
+    {
+      "context_indices": [
+        0,
+        6
+      ],
+      "note": "O processo ainda carece de definições operacionais.",
+      "subject": "purpose",
+      "text": "Melhorar a organização da publicação da equipe e registrar decisões."
+    },
+    {
+      "context_indices": [
+        1
+      ],
+      "note": "Público explicitamente declarado.",
+      "subject": "audience",
+      "text": "Autores."
+    },
+    {
+      "context_indices": [
+        2,
+        3
+      ],
+      "note": "Princípios declarados.",
+      "subject": "positioning",
+      "text": "Rastreabilidade e controle humano orientam o projeto."
+    },
+    {
+      "context_indices": [
+        6,
+        7
+      ],
+      "note": "Não há indicação do tipo de conteúdo publicado.",
+      "subject": "domain",
+      "text": "Processo de publicação em equipe."
+    },
+    {
+      "context_indices": [
+        6
+      ],
+      "note": "Capacidades de apoio declaradas em termos amplos.",
+      "subject": "capability",
+      "text": "Organizar publicações da equipe e registrar decisões."
+    },
+    {
+      "context_indices": [
+        5
+      ],
+      "note": "Limite financeiro informado.",
+      "subject": "constraint",
+      "text": "O custo máximo de construção é US$ 0,00."
+    }
+  ],
+  "criteria": [
+    {
+      "condition": {
+        "source_atom_ids": [
+          "atom-8"
+        ],
+        "text": "Antes de concluir a publicação da equipe."
+      },
+      "exceptions": [],
+      "kind": "business-rule",
+      "note": "A confirmação é uma condição necessária para concluir; as demais condições de conclusão não estão definidas.",
+      "outcome": {
+        "source_atom_ids": [
+          "atom-8"
+        ],
+        "text": "O operador deve confirmar a publicação da equipe."
+      },
+      "question": null,
+      "source_atom_id": "atom-8",
+      "uncertainties": []
+    }
+  ],
+  "guards": [
+    {
+      "condition": {
+        "source_atom_ids": [
+          "atom-7"
+        ],
+        "text": "Ao registrar decisões no processo de publicação da equipe."
+      },
+      "effect": {
+        "source_atom_ids": [
+          "atom-5"
+        ],
+        "text": "Registrar a identidade do responsável."
+      },
+      "id": "guard-1",
+      "note": "Exigência de rastreabilidade; não concede autorização para publicar ou concluir.",
+      "target_criterion_atom_ids": [],
+      "target_scope": "project"
+    }
+  ],
+  "issues": [
+    {
+      "context_indices": [
+        0,
+        7
+      ],
+      "impact": "outcome",
+      "kind": "question",
+      "rationale": "As condições de conclusão estão explicitamente indefinidas. A confirmação conhecida permanece obrigatória, mas não estabelece sozinha quando a conclusão é válida.",
+      "rejection_reason": null,
+      "text": "Além da confirmação do operador, quais condições determinam que o processo de publicação da equipe pode ser concluído?"
+    },
+    {
+      "context_indices": [
+        0,
+        6
+      ],
+      "impact": "rule",
+      "kind": "question",
+      "rationale": "As etapas estão explicitamente indefinidas; é necessário esclarecer quais atividades fazem parte do processo que deve ser organizado.",
+      "rejection_reason": null,
+      "text": "Quais etapas compõem o processo de publicação da equipe?"
+    },
+    {
+      "context_indices": [
+        0,
+        3,
+        7
+      ],
+      "impact": "authorization",
+      "kind": "question",
+      "rationale": "Os papéis estão explicitamente indefinidos. A menção ao operador estabelece sua obrigação de confirmar, mas não determina quem pode exercer esse papel ou autorizar a conclusão.",
+      "rejection_reason": null,
+      "text": "Como se distribuem os papéis e as responsabilidades no processo, incluindo quem pode atuar como operador e concluir a publicação?"
+    }
+  ],
+  "schema_version": "SemanticAnalysisProposal/v3"
+}

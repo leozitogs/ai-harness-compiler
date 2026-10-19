@@ -1,0 +1,215 @@
+{
+  "context_findings": [
+    {
+      "context_indices": [
+        0
+      ],
+      "note": "Propósito declarado.",
+      "subject": "purpose",
+      "text": "Ajudar educadores a organizar materiais e preparar aulas baseadas em fontes, com revisão humana antes da publicação."
+    },
+    {
+      "context_indices": [
+        1,
+        2
+      ],
+      "note": "Público declarado; não estabelece permissões adicionais.",
+      "subject": "audience",
+      "text": "Educadores e coordenadores pedagógicos."
+    },
+    {
+      "context_indices": [
+        3,
+        4,
+        5
+      ],
+      "note": "Tom declarado.",
+      "subject": "tone",
+      "text": "Comunicação clara, acolhedora e precisa."
+    },
+    {
+      "context_indices": [
+        6,
+        7
+      ],
+      "note": "Princípios declarados.",
+      "subject": "positioning",
+      "text": "Valorizar fontes verificáveis e controle do educador."
+    },
+    {
+      "context_indices": [
+        8
+      ],
+      "note": "Restrição visual declarada.",
+      "subject": "constraint",
+      "text": "A interface deve ser acessível."
+    },
+    {
+      "context_indices": [
+        9,
+        10
+      ],
+      "note": "Restrições técnicas declaradas.",
+      "subject": "constraint",
+      "text": "Utilizar Python 3.12 ou superior e contratos versionados."
+    },
+    {
+      "context_indices": [
+        11,
+        12
+      ],
+      "note": "Restrições representadas também como guardas de projeto.",
+      "subject": "constraint",
+      "text": "Não expor dados pessoais em traces e exigir revisão humana antes da publicação."
+    },
+    {
+      "context_indices": [
+        13
+      ],
+      "note": "Limite explícito em max_build_cost_usd.",
+      "subject": "constraint",
+      "text": "O custo máximo de construção informado é US$ 0,00."
+    },
+    {
+      "context_indices": [
+        14,
+        15
+      ],
+      "note": "Capacidades declaradas no backlog.",
+      "subject": "capability",
+      "text": "Catalogar materiais e suas fontes e preparar rascunhos de aula usando materiais selecionados."
+    },
+    {
+      "context_indices": [
+        16
+      ],
+      "note": "Domínio explicitamente declarado.",
+      "subject": "domain",
+      "text": "Educação."
+    }
+  ],
+  "criteria": [
+    {
+      "condition": {
+        "source_atom_ids": [
+          "atom-16"
+        ],
+        "text": "Para cada material catalogado."
+      },
+      "exceptions": [],
+      "kind": "requirement",
+      "note": "Campos obrigatórios explicitamente definidos.",
+      "outcome": {
+        "source_atom_ids": [
+          "atom-16"
+        ],
+        "text": "O material contém título, autor e referência de origem."
+      },
+      "question": null,
+      "source_atom_id": "atom-16",
+      "uncertainties": []
+    },
+    {
+      "condition": {
+        "source_atom_ids": [
+          "atom-17"
+        ],
+        "text": "Quando houver acesso à visualização de um material."
+      },
+      "exceptions": [],
+      "kind": "business-rule",
+      "note": "A presença de coordenadores pedagógicos no público não concede acesso aos materiais.",
+      "outcome": {
+        "source_atom_ids": [
+          "atom-17"
+        ],
+        "text": "A visibilidade é restrita ao educador responsável pelo material."
+      },
+      "question": null,
+      "source_atom_id": "atom-17",
+      "uncertainties": []
+    },
+    {
+      "condition": {
+        "source_atom_ids": [
+          "atom-19"
+        ],
+        "text": "Para as afirmações presentes no rascunho de aula."
+      },
+      "exceptions": [],
+      "kind": "requirement",
+      "note": "Exige rastreabilidade das afirmações aos materiais utilizados.",
+      "outcome": {
+        "source_atom_ids": [
+          "atom-19"
+        ],
+        "text": "As afirmações referenciam os materiais utilizados."
+      },
+      "question": null,
+      "source_atom_id": "atom-19",
+      "uncertainties": []
+    },
+    {
+      "condition": {
+        "source_atom_ids": [
+          "atom-20"
+        ],
+        "text": "Para publicar a aula."
+      },
+      "exceptions": [],
+      "kind": "business-rule",
+      "note": "Revisão e aprovação são condições necessárias; o critério não define publicação automática após seu cumprimento.",
+      "outcome": {
+        "source_atom_ids": [
+          "atom-20"
+        ],
+        "text": "A publicação exige revisão e aprovação do educador."
+      },
+      "question": null,
+      "source_atom_id": "atom-20",
+      "uncertainties": []
+    }
+  ],
+  "guards": [
+    {
+      "condition": {
+        "source_atom_ids": [
+          "atom-1",
+          "atom-13"
+        ],
+        "text": "Antes de qualquer publicação na plataforma."
+      },
+      "effect": {
+        "source_atom_ids": [
+          "atom-1",
+          "atom-13"
+        ],
+        "text": "Exigir revisão humana prévia."
+      },
+      "id": "guard-human-review",
+      "note": "Restrição geral de publicação, compatível com a exigência específica de aprovação do educador.",
+      "target_criterion_atom_ids": [],
+      "target_scope": "project"
+    },
+    {
+      "condition": {
+        "source_atom_ids": [
+          "atom-12"
+        ],
+        "text": "Quando forem produzidos traces."
+      },
+      "effect": {
+        "source_atom_ids": [
+          "atom-12"
+        ],
+        "text": "Não expor dados pessoais nos traces."
+      },
+      "id": "guard-trace-privacy",
+      "note": "Restrição de segurança aplicável à observabilidade da plataforma.",
+      "target_criterion_atom_ids": [],
+      "target_scope": "project"
+    }
+  ],
+  "issues": [],
+  "schema_version": "SemanticAnalysisProposal/v3"
+}

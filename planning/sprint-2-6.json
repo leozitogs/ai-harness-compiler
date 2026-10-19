@@ -1,0 +1,59 @@
+{
+  "authorization": "PO approved registering inference optimization and conditional fine-tuning in the queue on 2026-10-19; Sprint2.5 has priority.",
+  "capacity_confirmed": false,
+  "declared_completed_capabilities": [
+    "ahc-001",
+    "ahc-002",
+    "ahc-003",
+    "ahc-004"
+  ],
+  "display_name": "Sprint 2.6",
+  "entry_gates": [
+    "Sprint2.5 review and carryover decision recorded",
+    "Human-reviewable baseline and error taxonomy",
+    "Budgets and data permissions defined before experiments"
+  ],
+  "execution_guide": "docs/delivery/sprint-2-6.md",
+  "execution_started": false,
+  "exit_gates": [
+    "Compatible versioned profiles and complete fingerprints",
+    "Controlled development comparison preserving failures",
+    "Fine-tuning go/no-go justified; pilot conditional",
+    "Frozen separate evaluation before promotion",
+    "CI, docs, memory and review current"
+  ],
+  "goal": "Comparar perfis por qualidade e recursos e decidir se fine-tuning generalista se justifica.",
+  "id": "sprint-2-6",
+  "planning_date": "2026-10-19",
+  "prerequisite_work_items": [
+    {
+      "capability_id": "ahc-021",
+      "source": "planning/sprint-2-5.json",
+      "status": "carried-over-not-done"
+    },
+    {
+      "capability_id": "ahc-022",
+      "source": "planning/sprint-2-5.json",
+      "status": "carried-over-not-done"
+    },
+    {
+      "capability_id": "ahc-023",
+      "source": "planning/sprint-2-5.json",
+      "status": "carried-over-not-done"
+    }
+  ],
+  "product_owner": "leozitogs",
+  "relationship": {
+    "policy": "Queued focus, no parallel sprint or new training execution authorized by registration.",
+    "predecessor": "sprint-2-5"
+  },
+  "selected_capabilities": [
+    "ahc-024",
+    "ahc-025",
+    "ahc-026"
+  ],
+  "status": "planned",
+  "task_graph_note": "Do not generate a runnable graph until AHC-021/022 gates are actually met or scope is explicitly replanned; never declare them completed to satisfy planning.",
+  "task_graph_status": "deferred-unmet-prerequisites",
+  "timebox_status": "not-committed"
+}

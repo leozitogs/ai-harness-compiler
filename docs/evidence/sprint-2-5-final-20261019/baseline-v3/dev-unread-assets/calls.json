@@ -1,0 +1,16 @@
+[
+  {
+    "elapsed_seconds": 12.456218,
+    "prompt_sha256": "ccb0e1203776dec1d2e0494be8e444f06f4d9b88e42a548c49e31ccabb14a997",
+    "schema_sha256": "11dcd9b66695889c3fd5f847e90b977dc213c8497749fb49b7cca256291b103c",
+    "stage": "generation",
+    "status": "returned"
+  },
+  {
+    "elapsed_seconds": 27.309133,
+    "prompt_sha256": "28b32e59c2796d621d8ef8a3bbed4cb7ca33e44ee32500043c8494af54f91cdc",
+    "schema_sha256": "46fefee1c88c6838883d69b4c50fd5d88489981f2eaf750e33d37d6193d24456",
+    "stage": "audit",
+    "status": "returned"
+  }
+]

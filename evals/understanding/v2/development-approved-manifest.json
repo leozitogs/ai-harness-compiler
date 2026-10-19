@@ -1,0 +1,42 @@
+{
+  "approval_note": "Seven expectations explicitly approved by PO in async reply on 2026-10-19; adversarial approved previously. Does not approve generated answers.",
+  "cases": [
+    {
+      "path": "development-draft/dev-adversarial.json",
+      "sha256": "a1d3462f196b12614886b30f6bb4ce9d013b45550feda5ec358193aff7b95e99"
+    },
+    {
+      "path": "development-draft/dev-ambiguous.json",
+      "sha256": "b4b91de66473ba2ce628faae3aefddc571213af16ae08a34c00ef2f2440df3ae"
+    },
+    {
+      "path": "development-draft/dev-branding-conflict.json",
+      "sha256": "b03ca50cc215814759a8b6c072eb3857ba19fefdc6487dc29674e73ec4af6530"
+    },
+    {
+      "path": "development-draft/dev-compatible-rules.json",
+      "sha256": "fc8a20bcd49950df782e5fc0e7ef39aea912e0b656b0198e24bfd546d7e96622"
+    },
+    {
+      "path": "development-draft/dev-new-domain.json",
+      "sha256": "03d5682c906e6b053951195ef3c97d81453306cf51584f861e06e9d7dff0b16c"
+    },
+    {
+      "path": "development-draft/dev-rules-a.json",
+      "sha256": "5c22bb8748b1badaca5f7e2ba66d5ef628fc95128bdb5479617a7f5094220063"
+    },
+    {
+      "path": "development-draft/dev-rules-b.json",
+      "sha256": "9e516037eefd452f56323845d4aa5adc613a713d34b77da788c5629eaf131fa0"
+    },
+    {
+      "path": "development-draft/dev-unread-assets.json",
+      "sha256": "9027b07f6a0c14f4dd56fc6321c5345864884c230f3ff02641817c48596a2b17"
+    }
+  ],
+  "frozen_on": "2026-10-19",
+  "holdout": "not-read-not-migrated",
+  "rubric_sha256": "b1a9d26e2132798138ad035830d1caac65b3951f28e0e046630f7a5735fc77f0",
+  "schema_version": "DevelopmentExpectationsManifest/v1",
+  "scope": "development-only"
+}

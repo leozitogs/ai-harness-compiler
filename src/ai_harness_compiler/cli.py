@@ -46,6 +46,10 @@ from ai_harness_compiler.models.semantic_assessment import (
     SemanticAssessment,
     SemanticHumanReview,
 )
+from ai_harness_compiler.models.semantic_assessment_v3 import (
+    SemanticAssessmentV3,
+    SemanticHumanReviewV3,
+)
 from ai_harness_compiler.models.semantic_eval import (
     FrozenUnderstandingCorpus,
     SemanticReview,
@@ -129,6 +133,8 @@ MODELS: dict[str, type[Contract]] = {
     "semantic-verifier-report-v3": SemanticVerifierReportV3,
     "semantic-analysis-proposal-v3": AnalysisProposalV3,
     "semantic-analysis-v3": SemanticAnalysisV3,
+    "semantic-human-review-v3": SemanticHumanReviewV3,
+    "semantic-assessment-v3": SemanticAssessmentV3,
     "semantic-verifier-proposal-v4": VerifierProposalV4,
     "semantic-verifier-report-v4": SemanticVerifierReportV4,
 }
@@ -308,12 +314,13 @@ def main(argv: list[str] | None = None) -> int:
         semantic_command.add_argument("--model-policy", type=Path)
         semantic_command.add_argument("--model")
         semantic_command.add_argument("--timeout-seconds", type=int, default=180)
-    assessment_command = commands.add_parser("assess-analysis-v2", help="Offline human assessment")
-    assessment_command.add_argument("input", type=Path)
-    assessment_command.add_argument("--case", type=Path, required=True)
-    assessment_command.add_argument("--rubric", type=Path, required=True)
-    assessment_command.add_argument("--review", type=Path)
-    assessment_command.add_argument("--output", type=Path, required=True)
+    for name in ("assess-analysis-v2", "assess-analysis-v3"):
+        assessment_command = commands.add_parser(name, help="Offline human assessment")
+        assessment_command.add_argument("input", type=Path)
+        assessment_command.add_argument("--case", type=Path, required=True)
+        assessment_command.add_argument("--rubric", type=Path, required=True)
+        assessment_command.add_argument("--review", type=Path)
+        assessment_command.add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
     try:
         if args.command in {
@@ -323,6 +330,7 @@ def main(argv: list[str] | None = None) -> int:
             "analyze-project-v3",
             "verify-analysis-v4",
             "assess-analysis-v2",
+            "assess-analysis-v3",
         }:
             from ai_harness_compiler.semantic_cli import execute as execute_semantic
 

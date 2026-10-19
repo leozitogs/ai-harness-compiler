@@ -1,5 +1,5 @@
 {
-  "acceptance_threshold_status": "po-approved-criteria-case-expectations-pending",
+  "acceptance_threshold_status": "po-approved-criteria-and-development-expectations-output-reviews-pending",
   "amendments": [
     "planning/sprint-2-5.amendment-1.json"
   ],
@@ -7,9 +7,25 @@
   "capability_status": {
     "ahc-021": "in_progress",
     "ahc-022": "in_progress",
-    "ahc-023": "planned"
+    "ahc-023": "in_progress"
   },
   "capacity_confirmed": false,
+  "closed_on": "2026-10-19",
+  "closure": {
+    "authorization": "PO requested finalization on 2026-10-19",
+    "carryover": [
+      "ahc-021",
+      "ahc-022",
+      "ahc-023"
+    ],
+    "ceremonies": "No synchronous Scrum event claimed",
+    "goal_achieved": false,
+    "holdout": "not-read",
+    "next_focus": "Resolve carryover before model promotion or Sprint2.6 experiments",
+    "qualification": "not-established",
+    "review_document": "docs/delivery/sprint-2-5-review.md",
+    "story_completion_claimed": false
+  },
   "completion_evidence": {
     "ahc-001": "PR #6",
     "ahc-002": "PR #8",
@@ -41,7 +57,7 @@
   ],
   "goal": "Qualificar entendimento semântico e modelo/perfil local por grounding, cobertura de regras, evidência e desempenho controlado.",
   "id": "sprint-2-5",
-  "implementation_increment": "DE-0008 resolved trace scope under PO delegation. SemanticAnalysis/v3 and advisory v4 now preserve component provenance and separate guards; development negative control detects INC-0016. Next: version human review/assessment before qualification. No story completion or holdout.",
+  "implementation_increment": "Human review/assessment v3 implemented; eight development expectations explicitly approved and frozen. Final round and targeted schema v3.1 recovery preserved. No model qualified; semantic review and reserved evaluation carried over.",
   "implementation_owner": "code-collaborator-supported-by-codex",
   "planning_date": "2026-10-07",
   "product_owner": "leozitogs",
@@ -57,7 +73,7 @@
     "ahc-023"
   ],
   "start_date": "2026-10-07",
-  "status": "in_progress",
+  "status": "closed_with_carryover",
   "timebox_status": "proposed-no-deadline-commitment",
   "tracking": {
     "issues": {
