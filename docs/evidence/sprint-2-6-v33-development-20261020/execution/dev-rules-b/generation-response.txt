@@ -1,0 +1,61 @@
+{
+  "schema_version": "SemanticAnalysisProposal/v3",
+  "criteria": [
+    {
+      "source_atom_id": "atom-8",
+      "kind": "business-rule",
+      "condition": {
+        "text": "O autor deseja liberar uma publicação da equipe.",
+        "source_atom_ids": ["atom-8"]
+      },
+      "outcome": {
+        "text": "O autor pode liberar a publicação sem aprovação de terceiros.",
+        "source_atom_ids": ["atom-8"]
+      },
+      "exceptions": [],
+      "note": "A autorização não exige aprovação adicional.",
+      "question": null,
+      "uncertainties": []
+    }
+  ],
+  "guards": [],
+  "context_findings": [
+    {
+      "subject": "purpose",
+      "text": "Organizar publicações da equipe, suas fontes e o registro de decisões.",
+      "note": "Propósito declarado na concepção e na descrição do backlog.",
+      "context_indices": [0, 6]
+    },
+    {
+      "subject": "audience",
+      "text": "Autores.",
+      "note": "Público explicitamente declarado.",
+      "context_indices": [1]
+    },
+    {
+      "subject": "positioning",
+      "text": "Rastreabilidade e controle humano.",
+      "note": "Princípios declarados; não estabelecem aprovação de terceiros.",
+      "context_indices": [2, 3]
+    },
+    {
+      "subject": "domain",
+      "text": "Gestão de espaço de trabalho para organização editorial da equipe.",
+      "note": "Interpretação da declaração de domínio à luz da concepção.",
+      "context_indices": [0, 7]
+    },
+    {
+      "subject": "constraint",
+      "text": "É obrigatório registrar a identidade do responsável.",
+      "note": "A aplicabilidade da obrigação não foi especificada. Ela é preservada como restrição normativa, sem estabelecer uma política executável de aplicabilidade ou condicionar a autorização de publicação.",
+      "context_indices": [4]
+    },
+    {
+      "subject": "constraint",
+      "text": "O custo máximo de construção é US$ 0,00.",
+      "note": "Limite declarado em max_build_cost_usd.",
+      "context_indices": [5]
+    }
+  ],
+  "issues": []
+}

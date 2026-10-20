@@ -1,0 +1,65 @@
+{
+  "alternatives": [
+    "Automatically add global context sources: rejected because existence is not semantic support.",
+    "Rewrite old human reviews after moving sources: rejected; changed analyses require fresh review.",
+    "Change shared v3 contract in place: unnecessary and would reinterpret history."
+  ],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "INC-0023 exposed a cross-source question inheriting only its criterion atom. Existing issue contract already supports several sources, avoiding an incompatible IR migration.",
+  "created_at": "2026-10-20T19:06:24.277693+00:00",
+  "decision": "Use opt-in recipe constraints and host checks, preserving known rules and independent issue evidence. Primary local clarification remains restricted to its own criterion. Program hash is not a full execution fingerprint or semantic certificate.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Observed bounded round: 16 serial calls, eight valid generations and audits. Exact sources/programs/receipts validated offline; eight changed snapshots initially not-run with no human acceptance transferred.",
+      "outcome": "observed",
+      "sha256": "c9acc81b4712c206ae0dd80a6be624ea7e3eee082bc75b85c1145d85b8ec6e59",
+      "source": "src/ai_harness_compiler/semantic_composition.py"
+    },
+    {
+      "command": null,
+      "note": "Observed bounded round: 16 serial calls, eight valid generations and audits. Exact sources/programs/receipts validated offline; eight changed snapshots initially not-run with no human acceptance transferred.",
+      "outcome": "observed",
+      "sha256": "5311e6ef950919dc1e7336b99e19e221902a59ad260998dd062672f6ffa39059",
+      "source": "tests/test_multisource_composition.py"
+    },
+    {
+      "command": null,
+      "note": "Observed bounded round: 16 serial calls, eight valid generations and audits. Exact sources/programs/receipts validated offline; eight changed snapshots initially not-run with no human acceptance transferred.",
+      "outcome": "observed",
+      "sha256": "0e4e8a7b9b189792b345a5e1da12d5b268470660347f4a69c29d2219e0ca41b6",
+      "source": "docs/delivery/sprint-2-6-multisource-candidate.md"
+    }
+  ],
+  "id": "DE-0015",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "Index/source existence does not establish that every cited declaration supports a question.",
+    "Prompt cannot guarantee materiality or prevent every false blocking question.",
+    "Default is unchanged; optional recipe is not model qualification or runtime guard enforcement."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "INC-0023",
+    "DE-0014",
+    "ADR-0022"
+  ],
+  "resolution": null,
+  "review_note": "Reviewed provider-independent additive implementation, preserved historical recipe digests, schema/host negative tests and stale-review rejection. Actual outputs still need human judgments.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Explicit v3.3 recipe routes secondary questions to source-bound issues. Schema restricts indices and empties local uncertainties; host rejects the old route without rewriting output. v3.1/v3.2 fingerprints and default remain unchanged.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Perguntas secundárias em issues com inventário próprio de fontes",
+  "updated_at": "2026-10-20T19:06:24.893488+00:00"
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": "SemanticAnalysisProposal/v3",
+  "criteria": [
+    {
+      "source_atom_id": "atom-8",
+      "kind": "business-rule",
+      "condition": {
+        "text": "Para liberar uma publicação da equipe.",
+        "source_atom_ids": ["atom-8"]
+      },
+      "outcome": {
+        "text": "É obrigatória a aprovação do responsável designado.",
+        "source_atom_ids": ["atom-8"]
+      },
+      "exceptions": [],
+      "note": "A aprovação é uma condição necessária; o texto não declara que ela seja suficiente para liberar a publicação.",
+      "question": null,
+      "uncertainties": []
+    }
+  ],
+  "guards": [],
+  "context_findings": [
+    {
+      "subject": "purpose",
+      "text": "Apoiar uma equipe na organização de publicações e suas fontes e no registro de decisões.",
+      "note": "Finalidade declarada na concepção e na descrição do backlog.",
+      "context_indices": [0, 6]
+    },
+    {
+      "subject": "audience",
+      "text": "Autores.",
+      "note": "Público declarado.",
+      "context_indices": [1]
+    },
+    {
+      "subject": "positioning",
+      "text": "Rastreabilidade e controle humano são princípios do projeto.",
+      "note": "Esses princípios não especificam procedimentos adicionais de aprovação.",
+      "context_indices": [2, 3]
+    },
+    {
+      "subject": "domain",
+      "text": "Gestão de espaços de trabalho, com organização de publicações, fontes e decisões da equipe.",
+      "note": "Combina o domínio declarado com o escopo descrito.",
+      "context_indices": [0, 6, 7]
+    },
+    {
+      "subject": "constraint",
+      "text": "É obrigatório registrar a identidade do responsável.",
+      "note": "A aplicabilidade dessa obrigação não foi especificada. Ela é preservada como obrigação normativa, sem fornecer uma política executável de aplicabilidade nem presumir que esse responsável seja o responsável designado para aprovar publicações.",
+      "context_indices": [4]
+    },
+    {
+      "subject": "constraint",
+      "text": "O custo máximo de construção é de US$ 0,00.",
+      "note": "Limite declarado em max_build_cost_usd.",
+      "context_indices": [5]
+    }
+  ],
+  "issues": []
+}

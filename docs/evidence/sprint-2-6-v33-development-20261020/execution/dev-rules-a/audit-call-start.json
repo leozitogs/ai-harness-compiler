@@ -1,0 +1,9 @@
+{
+  "effective_schema_sha256": "e7f91a0da3674084c2347ad34403b786c5a7befa0809bceaa05de422a029341f",
+  "number": 12,
+  "prompt_sha256": "2613af6afa0200f76b978e2f25a182a1fba184dff4c10567e9b098cb1023ade4",
+  "response_schema_sha256": "46fefee1c88c6838883d69b4c50fd5d88489981f2eaf750e33d37d6193d24456",
+  "stage": "audit",
+  "status": "started",
+  "timeout_seconds": 180
+}

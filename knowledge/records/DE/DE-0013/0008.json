@@ -1,0 +1,68 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:delivery",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO explicitly instructed: pode fechar a sprint 2.5.5 e seguir para a sprint 2.6, on 2026-10-19.",
+  "created_at": "2026-10-19T23:26:46.136290+00:00",
+  "decision": "Record explicit timebox closure with carryover, keep individual acceptance/specific QA resolution pending, and start Sprint2.6 prerequisite-review phase without declaring dependencies complete or running experiments.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Explicit PO closure/start. Entry audit verified eight approved development cases and 62 historical artifacts; eight human output reviews remain not-run. No holdout read, model calls or training in this transition.",
+      "outcome": "observed",
+      "sha256": "e06c7f91146585d178de4be264124260047b23bc82ebfd5382069289bc742d26",
+      "source": "planning/sprint-2-5-5.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit PO closure/start. Entry audit verified eight approved development cases and 62 historical artifacts; eight human output reviews remain not-run. No holdout read, model calls or training in this transition.",
+      "outcome": "observed",
+      "sha256": "9d61d4136af0e17e349b09a03974e80c4647123b3cf617f2f983dd780007fa30",
+      "source": "planning/sprint-2-6.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit PO closure/start. Entry audit verified eight approved development cases and 62 historical artifacts; eight human output reviews remain not-run. No holdout read, model calls or training in this transition.",
+      "outcome": "observed",
+      "sha256": "4b872ad60a6463f2c7a59be70d137bdbfa3f749206924a761d43ebad53ee9959",
+      "source": "docs/delivery/sprint-2-5-5-review.md"
+    },
+    {
+      "command": null,
+      "note": "Explicit PO closure/start. Entry audit verified eight approved development cases and 62 historical artifacts; eight human output reviews remain not-run. No holdout read, model calls or training in this transition.",
+      "outcome": "observed",
+      "sha256": "629f04ea2d22a0bdecce159252192851473b5763942ea3efadc07b1b815ba90a",
+      "source": "docs/delivery/sprint-2-6-kickoff.md"
+    }
+  ],
+  "id": "DE-0013",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "Timebox closure does not certify every story criterion or the specific QA resolution.",
+    "No model qualification, reserved-corpus access, paid service purchase or training inferred.",
+    "Task graph represents precedence, not execution or parallel capacity."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0010",
+    "DE-0011",
+    "DE-0012"
+  ],
+  "resolution": null,
+  "review_note": "Refresh exact evidence after fresh PO judgment. Scoped prior defects repaired; new uncertainty failures remain and no recipe/model promotion or story completion inferred.",
+  "reviewed_by": "codex:evidence-review",
+  "revision": 8,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "PO closed Sprint2.5.5 and started Sprint2.6. Include unfinished AHC021/022/023 in the next selection so AHC024 dependencies remain enforced; begin with offline baseline audit and human-review preparation.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Fechar Sprint2.5.5 e iniciar 2.6 com pré-requisitos explícitos",
+  "updated_at": "2026-10-20T19:12:03.882669+00:00"
+}

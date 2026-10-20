@@ -1,0 +1,107 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "After full historical matrix judgment, PO requested continued sprint work. Implemented multi-source question route and fixed concrete corrective-verification budget before execution, without opening AHC024/025/026 or declaring prerequisites complete.",
+  "created_at": "2026-10-20T19:06:25.474566+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Observed bounded round: 16 serial calls, eight valid generations and audits. Exact sources/programs/receipts validated offline; eight changed snapshots initially not-run with no human acceptance transferred.",
+      "outcome": "observed",
+      "sha256": "0e4e8a7b9b189792b345a5e1da12d5b268470660347f4a69c29d2219e0ca41b6",
+      "source": "docs/delivery/sprint-2-6-multisource-candidate.md"
+    },
+    {
+      "command": null,
+      "note": "Observed bounded round: 16 serial calls, eight valid generations and audits. Exact sources/programs/receipts validated offline; eight changed snapshots initially not-run with no human acceptance transferred.",
+      "outcome": "observed",
+      "sha256": "dc1940636d6370647045babe335d4fa94a3d76a8fcc1ccfdc99acdd94ef8da61",
+      "source": "docs/evidence/sprint-2-6-v33-development-20261020/protocol-v2.json"
+    },
+    {
+      "command": null,
+      "note": "Observed bounded round: 16 serial calls, eight valid generations and audits. Exact sources/programs/receipts validated offline; eight changed snapshots initially not-run with no human acceptance transferred.",
+      "outcome": "observed",
+      "sha256": "fa78f093e0c1ba2be07c55d7d71a835dda54d4e7920d5e031067f6d32b9d1b29",
+      "source": "docs/evidence/sprint-2-6-v33-development-20261020/protocol-selection.json"
+    },
+    {
+      "command": null,
+      "note": "Observed bounded round: 16 serial calls, eight valid generations and audits. Exact sources/programs/receipts validated offline; eight changed snapshots initially not-run with no human acceptance transferred.",
+      "outcome": "observed",
+      "sha256": "cd9a7ec8a23ef36b901a20a1db677671c0865f6e48c4e1fd0ac10fd57b443393",
+      "source": "docs/evidence/sprint-2-6-v33-development-20261020/comparison.json"
+    },
+    {
+      "command": null,
+      "note": "Observed bounded round: 16 serial calls, eight valid generations and audits. Exact sources/programs/receipts validated offline; eight changed snapshots initially not-run with no human acceptance transferred.",
+      "outcome": "observed",
+      "sha256": "bb199e423ca90569cee2c4b55ef8f5f0e1ea1f5a88b10cde17ee476e8d7017ea",
+      "source": "docs/evidence/sprint-2-6-v33-development-20261020/execution/summary.json"
+    },
+    {
+      "command": null,
+      "note": "Observed bounded round: 16 serial calls, eight valid generations and audits. Exact sources/programs/receipts validated offline; eight changed snapshots initially not-run with no human acceptance transferred.",
+      "outcome": "observed",
+      "sha256": "a00cdd8f035fd698c46f96bce8b62744157dff386f7f8226843382eb2a17005e",
+      "source": "docs/evidence/sprint-2-6-v33-development-20261020/artifact-inventory.json"
+    },
+    {
+      "command": null,
+      "note": "Observed bounded round: 16 serial calls, eight valid generations and audits. Exact sources/programs/receipts validated offline; eight changed snapshots initially not-run with no human acceptance transferred.",
+      "outcome": "observed",
+      "sha256": "c9acc81b4712c206ae0dd80a6be624ea7e3eee082bc75b85c1145d85b8ec6e59",
+      "source": "src/ai_harness_compiler/semantic_composition.py"
+    },
+    {
+      "command": null,
+      "note": "Observed bounded round: 16 serial calls, eight valid generations and audits. Exact sources/programs/receipts validated offline; eight changed snapshots initially not-run with no human acceptance transferred.",
+      "outcome": "observed",
+      "sha256": "5311e6ef950919dc1e7336b99e19e221902a59ad260998dd062672f6ffa39059",
+      "source": "tests/test_multisource_composition.py"
+    },
+    {
+      "command": null,
+      "note": "Observed bounded round: 16 serial calls, eight valid generations and audits. Exact sources/programs/receipts validated offline; eight changed snapshots initially not-run with no human acceptance transferred.",
+      "outcome": "observed",
+      "sha256": "f1e8cd6615b111ca7846ae18582be73c2bdaf1e36117d1502e03dab2159e7fe0",
+      "source": "tests/test_v33_development_evidence.py"
+    }
+  ],
+  "id": "DOC-0035",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Numeric limits were fixed by operator under existing authorization; no new PO numeric-budget declaration was invented.",
+    "Single round against mixed-attempt history cannot establish causal gain, stability, cold/warm latency, cost or production performance.",
+    "Requested model alias is known; observed immutable model/sampler/cost and hardware resource telemetry are unknown.",
+    "Additional materiality questions in blocked cases need fresh human judgment; no historical approvals transferred.",
+    "No model promotion, paid API service, fallback, training or story completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0015",
+    "DE-0014",
+    "DOC-0034",
+    "INC-0022",
+    "INC-0023"
+  ],
+  "resolution": null,
+  "review_note": "Checked protocol selection, inventory and typed artifacts with preserved raw final responses and receipts. Initial semantic not-run states retained; model auditor is advisory only.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Frozen protocol and executed one development-only round under existing PO continuation/subscription authorization with operator-fixed limits: 16 serial calls, eight valid generations and audits, no retries, repair or holdout. 74 findings/24 components and nine advisory omissions; no negative advisory components. All eight output snapshots changed and initial assessments are not-run. Two objective PO questions remain pending.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Rodada corretiva v3.3 com orçamento fixado e revisão independente por snapshot",
+  "updated_at": "2026-10-20T19:06:26.174461+00:00"
+}

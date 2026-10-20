@@ -1,0 +1,284 @@
+{
+  "extraction": {
+    "asset_contents": "not-read",
+    "atoms": [
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-1",
+        "kind": "conception",
+        "pointer": "/conception",
+        "quote": "Precisamos melhorar o processo; etapas, papéis e condições de conclusão não foram definidos.",
+        "source_ref": "input-1"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-2",
+        "kind": "branding",
+        "pointer": "/branding/audience/0",
+        "quote": "autores",
+        "source_ref": "input-2"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-3",
+        "kind": "branding",
+        "pointer": "/branding/principles/0",
+        "quote": "rastreabilidade",
+        "source_ref": "input-2"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-4",
+        "kind": "branding",
+        "pointer": "/branding/principles/1",
+        "quote": "controle humano",
+        "source_ref": "input-2"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-5",
+        "kind": "constraint",
+        "pointer": "/constraints/business/0",
+        "quote": "Registrar a identidade do responsável.",
+        "source_ref": "input-3"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-6",
+        "kind": "constraint",
+        "pointer": "/constraints/max_build_cost_usd",
+        "quote": "0.0",
+        "source_ref": "input-3"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-7",
+        "kind": "backlog-description",
+        "pointer": "/backlog/0/description",
+        "quote": "Organizar publicação da equipe e registrar decisões.",
+        "source_ref": "input-4"
+      },
+      {
+        "content_trust": "untrusted-data",
+        "id": "atom-8",
+        "kind": "acceptance-criterion",
+        "pointer": "/backlog/0/acceptance_criteria/0",
+        "quote": "O operador confirma publicação da equipe antes de concluir.",
+        "source_ref": "input-5"
+      }
+    ],
+    "excluded_references": [],
+    "request": {
+      "original_input": {
+        "assets": [],
+        "backlog": [
+          {
+            "acceptance_criteria": [
+              "O operador confirma publicação da equipe antes de concluir."
+            ],
+            "data_owner": null,
+            "depends_on": [],
+            "description": "Organizar publicação da equipe e registrar decisões.",
+            "id": "register",
+            "implementation": "undecided",
+            "inputs": [],
+            "outputs": [],
+            "risk": "unknown",
+            "side_effects": [],
+            "title": "Registrar e liberar"
+          }
+        ],
+        "branding": {
+          "audience": [
+            "autores"
+          ],
+          "principles": [
+            "rastreabilidade",
+            "controle humano"
+          ],
+          "tone": [],
+          "visual_constraints": []
+        },
+        "conception": "Precisamos melhorar o processo; etapas, papéis e condições de conclusão não foram definidos.",
+        "constraints": {
+          "business": [
+            "Registrar a identidade do responsável."
+          ],
+          "max_build_cost_usd": 0.0,
+          "security": [],
+          "technical": []
+        },
+        "domain": null,
+        "domain_profile": null,
+        "evidence_pack": null,
+        "id": "dev-ambiguous",
+        "name": "Fixture dev ambiguous",
+        "schema_version": "ProjectInput/v1"
+      },
+      "original_sha256": "70e1e4e7503fc348f7a26224386c90c55e49129ef321a8e2c6ff000c9ff38436",
+      "references": [
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-1",
+          "pointer": "/conception",
+          "project_id": "dev-ambiguous",
+          "value": "Precisamos melhorar o processo; etapas, papéis e condições de conclusão não foram definidos."
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-2",
+          "pointer": "/branding",
+          "project_id": "dev-ambiguous",
+          "value": "{\"audience\":[\"autores\"],\"principles\":[\"rastreabilidade\",\"controle humano\"],\"tone\":[],\"visual_constraints\":[]}"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-3",
+          "pointer": "/constraints",
+          "project_id": "dev-ambiguous",
+          "value": "{\"business\":[\"Registrar a identidade do responsável.\"],\"max_build_cost_usd\":0.0,\"security\":[],\"technical\":[]}"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-4",
+          "pointer": "/backlog/0/description",
+          "project_id": "dev-ambiguous",
+          "value": "Organizar publicação da equipe e registrar decisões."
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "input-5",
+          "pointer": "/backlog/0/acceptance_criteria/0",
+          "project_id": "dev-ambiguous",
+          "value": "O operador confirma publicação da equipe antes de concluir."
+        }
+      ],
+      "schema_version": "UnderstandingRequest/v1"
+    },
+    "schema_version": "GroundingExtraction/v1",
+    "semantic_status": "not-established"
+  },
+  "proposal": {
+    "context_findings": [
+      {
+        "context_indices": [
+          0,
+          6
+        ],
+        "note": "Finalidade inferida da concepção e da descrição do backlog.",
+        "subject": "purpose",
+        "text": "Melhorar o processo de publicação da equipe e registrar decisões."
+      },
+      {
+        "context_indices": [
+          1
+        ],
+        "note": "Público declarado.",
+        "subject": "audience",
+        "text": "Autores."
+      },
+      {
+        "context_indices": [
+          2,
+          3
+        ],
+        "note": "Princípios declarados para orientar o projeto.",
+        "subject": "positioning",
+        "text": "Rastreabilidade e controle humano."
+      },
+      {
+        "context_indices": [
+          6
+        ],
+        "note": "Não há indicação do tipo de conteúdo publicado.",
+        "subject": "domain",
+        "text": "Organização da publicação da equipe."
+      },
+      {
+        "context_indices": [
+          6
+        ],
+        "note": "Capacidade explícita; o formato do registro não foi especificado.",
+        "subject": "capability",
+        "text": "Registrar decisões."
+      },
+      {
+        "context_indices": [
+          4
+        ],
+        "note": "A aplicabilidade da obrigação não foi especificada. Esta representação preserva a obrigação, mas não fornece uma política executável de aplicabilidade.",
+        "subject": "constraint",
+        "text": "É obrigatório registrar a identidade do responsável."
+      },
+      {
+        "context_indices": [
+          5
+        ],
+        "note": "Limite declarado pelo campo max_build_cost_usd.",
+        "subject": "constraint",
+        "text": "O custo máximo de construção é USD 0,00."
+      }
+    ],
+    "criteria": [
+      {
+        "condition": {
+          "source_atom_ids": [
+            "atom-8"
+          ],
+          "text": "Antes de concluir."
+        },
+        "exceptions": [],
+        "kind": "business-rule",
+        "note": "A confirmação é obrigatória antes da conclusão, mas não estabelece, por si só, todas as condições de conclusão.",
+        "outcome": {
+          "source_atom_ids": [
+            "atom-8"
+          ],
+          "text": "O operador deve confirmar a publicação da equipe."
+        },
+        "question": null,
+        "source_atom_id": "atom-8",
+        "uncertainties": []
+      }
+    ],
+    "guards": [],
+    "issues": [
+      {
+        "context_indices": [
+          0,
+          6,
+          7
+        ],
+        "impact": "outcome",
+        "kind": "question",
+        "rationale": "A concepção declara etapas e condições de conclusão indefinidas. O critério estabelece uma confirmação prévia obrigatória, mas não permite determinar quando o processo pode ser considerado concluído.",
+        "rejection_reason": null,
+        "text": "Quais etapas e condições determinam a conclusão do processo de publicação da equipe, além da confirmação obrigatória pelo operador?"
+      },
+      {
+        "context_indices": [
+          0,
+          6,
+          7
+        ],
+        "impact": "authorization",
+        "kind": "question",
+        "rationale": "Os papéis estão explicitamente indefinidos. A atribuição da confirmação ao operador não define a autoridade sobre as demais etapas do processo.",
+        "rejection_reason": null,
+        "text": "Como se distribuem os papéis e as autorizações no processo de publicação, considerando que a confirmação cabe ao operador?"
+      },
+      {
+        "context_indices": [
+          4
+        ],
+        "impact": "rule",
+        "kind": "question",
+        "rationale": "A obrigação é explícita, mas não identifica sua aplicabilidade nem o vínculo de responsabilidade. Essas definições alteram quando o registro é exigido e o que satisfaz a obrigação.",
+        "rejection_reason": null,
+        "text": "Em quais situações deve ser registrada a identidade do responsável, e por qual atividade essa pessoa responde?"
+      }
+    ],
+    "schema_version": "SemanticAnalysisProposal/v3"
+  },
+  "schema_version": "SemanticAnalysis/v3"
+}

@@ -1,0 +1,78 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Inspected all selected findings against exact atoms, not only negative auditor alerts.",
+    "PO explicitly confirmed citation-support fail and pass for the five other criteria.",
+    "Executed frozen v3.3 development round with 16 serial calls; new outputs require fresh human judgments.",
+    "Fresh PO accepted coverage and citation support in the recorded v3.3 snapshots; rejected a separate uncertainty issue in two cases."
+  ],
+  "author": "codex:engineering",
+  "challenge": "Global context and a separately correct conflict do not repair a question whose own citation inventory lacks one side.",
+  "consequences": [],
+  "context": "Full human development review; the advisory omission count did not expose this question-level provenance gap.",
+  "created_at": "2026-10-20T18:28:48.068959+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "All eight saved assessments revalidate exact case, rubric, analysis, finding and component bindings. PO declarations produce five pass and three fail; no model generation or qualification.",
+      "outcome": "observed",
+      "sha256": "f4d149024049f08e08fe0ce7cccaa8441793e99aea97db5ec62a5a0e6c66afe8",
+      "source": "docs/evidence/sprint-2-6-development-assessment-20261020/dev-branding-conflict-assessment.json"
+    },
+    {
+      "command": null,
+      "note": "All eight saved assessments revalidate exact case, rubric, analysis, finding and component bindings. PO declarations produce five pass and three fail; no model generation or qualification.",
+      "outcome": "observed",
+      "sha256": "47115bd7e1c073f0cc1d9998c3338f500f16c68e6a90e7d27cca3217a85e1afe",
+      "source": "docs/delivery/sprint-2-6-development-assessment.md"
+    },
+    {
+      "command": null,
+      "note": "New snapshot observed; no human pass/fail yet and no historical review migrated.",
+      "outcome": "observed",
+      "sha256": "01fd3679abdc44bac71dc72b9fce82525b58989486ac7065369429410ff98811",
+      "source": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-branding-conflict/analysis.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit fresh PO judgments and offline typed replay: six pass and two uncertainty fail; source support/coverage pass in recorded corrected outputs. No qualification or promotion.",
+      "outcome": "observed",
+      "sha256": "6ab01fddfedc6965156e7cfae9e0d9114a3ca89462946fd1bc8660b912e2d3b1",
+      "source": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-branding-conflict-assessment.json"
+    }
+  ],
+  "id": "INC-0023",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Verification is limited to the recorded v3.3 development snapshots; no universal completeness or model-performance claim.",
+    "One bounded round does not establish a causal source of model behavior or a stable optimization gain.",
+    "Separate INC-0024 uncertainty failures prevent overall candidate qualification/promotion.",
+    "Original rejected outputs and all earlier judgments remain unchanged."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0034",
+    "ADR-0022",
+    "INC-0016",
+    "DOC-0035",
+    "DE-0015",
+    "DOC-0036",
+    "INC-0024"
+  ],
+  "resolution": "Verified scoped repair in recorded v3.3 output: precedence question uses issue route and cites both original declarations.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 3,
+  "root_cause": "Observed local question inventory inherited only the criterion atom while its text/rationale compared two original declarations. No evidence that all local questions have this defect.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "PO rejected citation support of uncertainty-1-1 in dev-branding-conflict: question names both alternatives but its source inventory contains only the backlog requirement. Separate conflict finding correctly preserves both sources.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Pergunta de precedência cita apenas um lado do conflito",
+  "updated_at": "2026-10-20T19:12:13.675058+00:00"
+}

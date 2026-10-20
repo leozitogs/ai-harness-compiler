@@ -1,0 +1,164 @@
+{
+  "schema_version": "SemanticVerifierProposal/v4",
+  "analysis_sha256": "0322100803ba35de424ff2d70921a770eddbe317b66c61c86f10a6efbd2bbc34",
+  "findings": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "2113c05cf869d630d2ee86b2ab5920f73c4c189cf000a0a95dc8fc575be5eca4",
+      "source_atom_ids": ["atom-8"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "A fonte exige aprovação do responsável designado para liberar a publicação, sem afirmar suficiência."
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "8fba25e995733a041708025f345706c134021b33ebab8d78c0bad1671bc295db",
+      "source_atom_ids": ["atom-1", "atom-7"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "As fontes descrevem organização de publicações e fontes e registro de decisões."
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "1a9bf07de01a3fcdc9549801f59f507d9b19e6cf9c192aaafb7dfecfee24496d",
+      "source_atom_ids": ["atom-2"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "O público declarado é autores."
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "1aa63a86b9bd2861508f9618aa798aec93bcb4b59b2fc30b575eece919146312",
+      "source_atom_ids": ["atom-3", "atom-4"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "Os dois princípios são explicitamente declarados."
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "586465635cdf333c5997db726d07679002e5c3b31664dc4fe1f85fe208424f5a",
+      "source_atom_ids": ["atom-1", "atom-7", "atom-9"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "O domínio declarado e as atividades descritas sustentam a síntese."
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "edeb1a6bd93d3fb407e4f40872b0fbc81a933f98fcfe6d15fe53f5538a9d41db",
+      "source_atom_ids": ["atom-5"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "A restrição exige registrar a identidade do responsável; não define aplicabilidade nem concede autorização."
+    },
+    {
+      "finding_id": "context-6",
+      "finding_sha256": "7c74b8abaf3b3816f12c4c57e5c15bc1b81fe414e5cfdf0b2c769e9e73fb242c",
+      "source_atom_ids": ["atom-6"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "O campo max_build_cost_usd declara limite de 0.0."
+    }
+  ],
+  "component_judgments": [
+    {
+      "finding_id": "criterion-1",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": ["atom-8"],
+      "support": "supports",
+      "note": "A fonte situa a exigência na liberação de publicação da equipe."
+    },
+    {
+      "finding_id": "criterion-1",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": ["atom-8"],
+      "support": "supports",
+      "note": "A fonte exige expressamente aprovação do responsável designado."
+    }
+  ],
+  "omissions": [
+    {
+      "id": "omission-1",
+      "kind": "question",
+      "text": "Em quais situações é obrigatório registrar a identidade e qual papel define o responsável nesse registro?",
+      "rationale": "A obrigação está preservada, mas seu alcance e sujeito permanecem indefinidos; esclarecê-los altera a aplicação da regra de registro.",
+      "source_atom_ids": ["atom-5"],
+      "impact": "rule"
+    }
+  ],
+  "source_coverage": [
+    {
+      "atom_id": "atom-1",
+      "quote_sha256": "88b9866f0e0b53ae15c7d6439e0c540ac09134f17f179c297c4dde265f0c01eb",
+      "disposition": "represented",
+      "finding_ids": ["context-1", "context-4"],
+      "omission_ids": [],
+      "note": "Concepção representada."
+    },
+    {
+      "atom_id": "atom-2",
+      "quote_sha256": "75f26d13ebd8877644c57a369ce71b82b639903217ed12ebe61beeffd8c11586",
+      "disposition": "represented",
+      "finding_ids": ["context-2"],
+      "omission_ids": [],
+      "note": "Público representado."
+    },
+    {
+      "atom_id": "atom-3",
+      "quote_sha256": "e8a964e534bd9189a4c1ee68dc1e80429c5b14930ce7df548075257a8a8dccc7",
+      "disposition": "represented",
+      "finding_ids": ["context-3"],
+      "omission_ids": [],
+      "note": "Princípio representado."
+    },
+    {
+      "atom_id": "atom-4",
+      "quote_sha256": "a6e3b461d6bc6975496196edb2b7d4ea96130a66c49e4e058c4d66078d23422f",
+      "disposition": "represented",
+      "finding_ids": ["context-3"],
+      "omission_ids": [],
+      "note": "Princípio representado sem inferir procedimentos."
+    },
+    {
+      "atom_id": "atom-5",
+      "quote_sha256": "22accd7ad33a45ad61811a4737a68f2c8dfd45b650550aec3cdae8de95fc1a0e",
+      "disposition": "missing",
+      "finding_ids": ["context-5"],
+      "omission_ids": ["omission-1"],
+      "note": "Obrigação representada; falta questão material sobre alcance e sujeito."
+    },
+    {
+      "atom_id": "atom-6",
+      "quote_sha256": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+      "disposition": "represented",
+      "finding_ids": ["context-6"],
+      "omission_ids": [],
+      "note": "Limite financeiro representado."
+    },
+    {
+      "atom_id": "atom-7",
+      "quote_sha256": "5f77f5215732224df6e88a779d30470fdd1c968ff4e40c54ff9fa444e009e034",
+      "disposition": "represented",
+      "finding_ids": ["context-1", "context-4"],
+      "omission_ids": [],
+      "note": "Atividades descritas representadas."
+    },
+    {
+      "atom_id": "atom-9",
+      "quote_sha256": "d8ec0dfaccceaea0a5f8ccf5a95f094560df5ea36683833d84877c601223e217",
+      "disposition": "represented",
+      "finding_ids": ["context-4"],
+      "omission_ids": [],
+      "note": "Domínio representado."
+    },
+    {
+      "atom_id": "atom-8",
+      "quote_sha256": "1d64d3523733ce851e3da43cce5b1d659b91e31ad337dd6cd2d26f46483a4650",
+      "disposition": "represented",
+      "finding_ids": ["criterion-1"],
+      "omission_ids": [],
+      "note": "Exigência de aprovação representada; não vincula o aprovador ao responsável pelo registro."
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Preserved unconditional obligation as normative context rather than an invented guard.",
+    "Routed secondary questions through independent issues with exact sources.",
+    "PO confirmed source/coverage pass and uncertainty fail in two recorded outputs."
+  ],
+  "author": "codex:engineering",
+  "challenge": "Case disposition and citation support are correct, yet an extra question is classified as a blocking rule decision.",
+  "consequences": [],
+  "context": "Frozen one-round v3.3 development, 16 calls. Model auditor had no negative components; full human review identified the business materiality failure.",
+  "created_at": "2026-10-20T19:11:25.416186+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Explicit fresh PO judgments and offline typed replay: six pass and two uncertainty fail; source support/coverage pass in recorded corrected outputs. No qualification or promotion.",
+      "outcome": "observed",
+      "sha256": "d0f56bf7aaef5d16b128dd96c9f6a40a1efdab7fee31ce9a807e34a222bb2c55",
+      "source": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-ambiguous-assessment.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit fresh PO judgments and offline typed replay: six pass and two uncertainty fail; source support/coverage pass in recorded corrected outputs. No qualification or promotion.",
+      "outcome": "observed",
+      "sha256": "6ab01fddfedc6965156e7cfae9e0d9114a3ca89462946fd1bc8660b912e2d3b1",
+      "source": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-branding-conflict-assessment.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit fresh PO judgments and offline typed replay: six pass and two uncertainty fail; source support/coverage pass in recorded corrected outputs. No qualification or promotion.",
+      "outcome": "observed",
+      "sha256": "15c53ff8020420536f6eb67351c6e55cc306acc056d53ecd8e4b7e96633d53a5",
+      "source": "docs/delivery/sprint-2-6-multisource-candidate.md"
+    }
+  ],
+  "id": "INC-0024",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "No overall disposition mismatch: legitimate original blockers remain.",
+    "Only two recorded snapshots; no claim of a universal model tendency or measured optimization benefit."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0036",
+    "DOC-0035",
+    "DE-0015"
+  ],
+  "resolution": "Pending a generalist materiality correction and a separately budgeted future round. Do not rewrite outputs or weaken the frozen rubric.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": "Observed classification of identity-applicability question as impact=rule. The recipe emphasizes unknown applicability; its causal influence is not established by this single bundled-change round.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "PO rejected uncertainty in v3.3 dev-ambiguous and dev-branding-conflict because issue-3 treats identity-applicability clarification as blocking, though normative obligation can remain in intent analysis. Both cases are already correctly blocked for legitimate reasons.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Pergunta de aplicabilidade vira impedimento sem decisão material necessária",
+  "updated_at": "2026-10-20T19:11:25.416186+00:00"
+}

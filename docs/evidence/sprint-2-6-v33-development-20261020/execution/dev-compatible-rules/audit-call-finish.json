@@ -1,0 +1,10 @@
+{
+  "effective_schema_sha256": "ba5485bd3c3f4cb6209b7c5f8f6e6e22b82e76c7ca24defa70f8c5cc5af18c09",
+  "elapsed_seconds": 71.427456,
+  "number": 8,
+  "prompt_sha256": "3a50bb8418b4170c9f588e024f92d093229810cd72670022463ed879302b907c",
+  "response_schema_sha256": "2eb03a4f4d5406f2476c300907450c97b2eca54e384d8dbda93b70f5ae18c1a1",
+  "stage": "audit",
+  "status": "returned",
+  "timeout_seconds": 180
+}
