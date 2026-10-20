@@ -2,9 +2,10 @@
 
 import json
 from copy import deepcopy
-from typing import Any
+from typing import Any, Literal
 
 from ai_harness_compiler.models.compact_analysis import compact_context, compact_input
+from ai_harness_compiler.models.evidence import canonical_project_digest
 from ai_harness_compiler.models.grounding import GroundingExtraction
 from ai_harness_compiler.models.semantic_analysis_v3 import AnalysisProposalV3, SemanticAnalysisV3
 from ai_harness_compiler.models.semantic_verification_v4 import (
@@ -20,6 +21,8 @@ from ai_harness_compiler.semantic_verification import (
 )
 
 COMPOSITION_PROGRAM_VERSION = "semantic-composition/v3.1"
+CANDIDATE_COMPOSITION_PROGRAM_VERSION = "semantic-composition/v3.2"
+CompositionProgramVersion = Literal["semantic-composition/v3.1", "semantic-composition/v3.2"]
 COMPOSITION_PROMPT = (
     ANALYSIS_PROMPT.replace("SemanticAnalysisProposal/v2", "SemanticAnalysisProposal/v3")
     + """
@@ -36,6 +39,47 @@ If a criterion itself contains an intrinsic qualification, keep it with the rele
 Do not invent guards or condition exceptions; every addition requires exact supporting atoms.
 """
 )
+
+# Candidate only: the operational default and the historical prompt stay unchanged.
+CANDIDATE_COMPOSITION_PROMPT = (
+    COMPOSITION_PROMPT
+    + """
+Preserve the normative force of every explicit obligation, including constraints outside
+acceptance criteria. A declaration without a stated trigger must not acquire a trigger
+from a nearby description, permission, role, or operation. The v3 guard contract requires
+a condition: when no condition is supported, do not force the obligation into a guard.
+Preserve it as an explicit normative context finding with subject=constraint, citing its
+own original context indices, and state that its applicability was not specified.
+Do not claim that this representation supplies an executable applicability policy.
+Use guards only when their conditions AND effects are independently supported. A target
+link alone does not establish that a condition applies to the obligation.
+Do not equate roles or invent extra approval. Missing implementation details such as
+assigning a named person do not block a clear rule unless they change its business meaning.
+"""
+)
+
+
+def composition_prompt(program_version: CompositionProgramVersion) -> str:
+    """Select an explicit recipe without promoting the unqualified candidate."""
+    if program_version == COMPOSITION_PROGRAM_VERSION:
+        return COMPOSITION_PROMPT
+    if program_version == CANDIDATE_COMPOSITION_PROGRAM_VERSION:
+        return CANDIDATE_COMPOSITION_PROMPT
+    raise ValueError("Unknown composition program version")
+
+
+def composition_program_digest(
+    extraction: GroundingExtraction,
+    program_version: CompositionProgramVersion = "semantic-composition/v3.1",
+) -> str:
+    """Bind the selected prompt and dynamic response schema for future comparisons."""
+    return canonical_project_digest(
+        {
+            "program_version": program_version,
+            "prompt": composition_prompt(program_version),
+            "response_schema": composition_response_schema(extraction),
+        }
+    )
 
 
 def composition_response_schema(extraction: GroundingExtraction) -> dict[str, Any]:
@@ -85,8 +129,12 @@ def composition_response_schema(extraction: GroundingExtraction) -> dict[str, An
 
 
 def analyze_composition(
-    extraction: GroundingExtraction, generator: JSONGenerator
+    extraction: GroundingExtraction,
+    generator: JSONGenerator,
+    *,
+    program_version: CompositionProgramVersion = "semantic-composition/v3.1",
 ) -> SemanticAnalysisV3:
+    prompt = composition_prompt(program_version)
     packet = compact_input(extraction).model_dump()
     packet["criterion_atom_ids"] = [
         a.id for a in extraction.atoms if a.kind == "acceptance-criterion"
@@ -94,7 +142,7 @@ def analyze_composition(
     packet["context_atom_ids"] = [a.id for a in compact_context(extraction)]
     proposal = AnalysisProposalV3.model_validate_json(
         generator.generate_json(
-            COMPOSITION_PROMPT + "\nINPUT DATA:\n" + json.dumps(packet, ensure_ascii=False),
+            prompt + "\nINPUT DATA:\n" + json.dumps(packet, ensure_ascii=False),
             composition_response_schema(extraction),
         )
     )

@@ -49,10 +49,11 @@
         "docs/delivery/sprint-2-6-kickoff.md",
         "docs/evidence/sprint-2-6-entry-20261019/audit.json",
         "docs/delivery/sprint-2-6-development-review.md",
-        "docs/delivery/sprint-2-6-adjudication.md"
+        "docs/delivery/sprint-2-6-adjudication.md",
+        "docs/delivery/sprint-2-6-human-judgments.md"
       ],
       "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.",
-      "progress_note": "Nexo favorable; eight-case packet prepared. Technical adjudication of six advisory omissions and one component completed as recommendations; two scoped PO judgments pending. No human pass/fail or story completion inferred."
+      "progress_note": "PO confirmed two scoped judgments. Saved exact negative component review: one fail, seven not-run, 47 criterion judgments pending. Compatible-role diagnostic is nonblocking but not a whole-criterion pass."
     },
     {
       "id": "s26-21-review",
@@ -98,9 +99,11 @@
       "responsible": "code-collaborator-supported-by-codex",
       "evidence_sources": [
         "docs/delivery/sprint-2-6-kickoff.md",
-        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json",
+        "docs/delivery/sprint-2-6-human-judgments.md"
       ],
-      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.",
+      "progress_note": "Prepared explicit v3.2 corrective prompt candidate for unsupported guard applicability; v3.1 default preserved. No real candidate generation, comparison or story completion."
     },
     {
       "id": "s26-22-verify",

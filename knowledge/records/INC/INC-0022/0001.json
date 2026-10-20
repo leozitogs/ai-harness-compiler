@@ -1,0 +1,57 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Technical adjudication tied the component to atom-7.",
+    "PO explicitly confirmed rejecting condition support while preserving identity obligation.",
+    "Prepared generalist v3.2 prompt candidate; no actual generation or efficacy demonstrated."
+  ],
+  "author": "codex:engineering",
+  "challenge": "Structurally valid guard links an identity obligation to an unsupported operation condition.",
+  "consequences": [],
+  "context": "Historical development output structurally valid; current scoped human judgment rejects one semantic component.",
+  "created_at": "2026-10-20T18:16:26.193307+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "992 offline tests passed; human-scoped negative assessment reproduced through CLI. Candidate v3.2 not generated or qualified; legacy prompt bytes preserved.",
+      "outcome": "observed",
+      "sha256": "12f5950797a8be9b9e39c4b4ed7d9fa73fa633b3ac00bfb8d1ffcca6c145f60b",
+      "source": "docs/evidence/sprint-2-6-human-judgments-20261020/dev-ambiguous-assessment.json"
+    },
+    {
+      "command": null,
+      "note": "992 offline tests passed; human-scoped negative assessment reproduced through CLI. Candidate v3.2 not generated or qualified; legacy prompt bytes preserved.",
+      "outcome": "observed",
+      "sha256": "ff5a236aa472b91979caf9538e304f3a4b81c72572791cf5fdad0d1b886a902d",
+      "source": "docs/delivery/sprint-2-6-human-judgments.md"
+    }
+  ],
+  "id": "INC-0022",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Unresolved semantic incident; do not treat as verified successful remediation.",
+    "No global case acceptance or failure attribution to other unjudged criteria."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0033",
+    "DE-0014",
+    "INC-0016"
+  ],
+  "resolution": "Pending reviewed candidate generation and regression comparison; historical output remains rejected and is not rewritten.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": "Observed mismatch between guard condition and its exact cited source. Requiring guard.condition may pressure representation, but its causal contribution is untested.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "PO confirmed insufficient support for guard-1 condition in dev-ambiguous; source only describes organizing publications and recording decisions. Original obligation remains valid.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Condição de identificação não sustentada pela fonte citada",
+  "updated_at": "2026-10-20T18:16:26.193307+00:00"
+}

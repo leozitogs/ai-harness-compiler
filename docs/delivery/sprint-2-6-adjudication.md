@@ -94,3 +94,10 @@ não é importado como revisão humana”. As duas perguntas pendentes pedem dec
 sobre fontes/componentes, não permissão para trabalhar. Sem esses julgamentos,
 continua válida apenas esta análise técnica consultiva. AHC-024 e os experimentos
 permanecem dependentes dos gates AHC-021/022.
+
+## Atualização — julgamentos específicos recebidos em 2026-10-20
+
+As duas decisões específicas foram confirmadas pelo PO após este snapshot.
+O estado atual é 1 caso fail e 7 not-run, sem aprovação integral de casos.
+Ver [registro humano e candidato corretivo](sprint-2-6-human-judgments.md).
+As pendências descritas acima representam o momento da preparação original.

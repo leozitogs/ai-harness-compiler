@@ -1,0 +1,41 @@
+{
+  "schema_version": "ScopedSemanticDecisions/v1",
+  "recorded_on": "2026-10-20",
+  "reviewer": "leozitogs:po-declared",
+  "authority": "human-declared-not-authenticated",
+  "confirmation": "Confirmo os dois julgamentos recomendados",
+  "question_scope": [
+    "Reprovar o suporte da condição de guard-1 em dev-ambiguous, preservando a obrigação de registrar identidade.",
+    "Tratar a definição de responsáveis em dev-compatible-rules como detalhe não bloqueante sem presumir identidade entre os papéis."
+  ],
+  "decisions": [
+    {
+      "case": "dev-ambiguous",
+      "case_sha256": "96d9954a55ca4bf3aa2ad1d8156c160c4692b97b3d1cdcd51c2f84adbf8ccd48",
+      "analysis_sha256": "44f9c5bbb4d4461109433ede9bddcbb99b27131c08af8714d6fd314fd86adc54",
+      "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+      "target": "guard-1:condition",
+      "source_atom_ids": [
+        "atom-7"
+      ],
+      "outcome": "fail",
+      "review": "dev-ambiguous-review.json",
+      "assessment": "dev-ambiguous-assessment.json"
+    },
+    {
+      "case": "dev-compatible-rules",
+      "case_sha256": "f338181b253045093d1101f966cf863f3c7c51d94831becb88e0be60c8ad91ba",
+      "analysis_sha256": "09f6148f4cf0303325d2c3380e32f2735a13f543797df23da3b0ca9b4e956581",
+      "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+      "target": "omission-1",
+      "outcome": "nonblocking-implementation-detail",
+      "note": "Preservar visibilidade restrita ao responsável e aprovação do educador sem presumir que sejam a mesma pessoa. Não aprova o critério uncertainty nem os demais.",
+      "review": null,
+      "assessment_status": "not-run"
+    }
+  ],
+  "new_model_calls": 0,
+  "holdout_read": false,
+  "stories_completed": [],
+  "model_qualification": "not-established"
+}

@@ -1,0 +1,71 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Preserved invalid compatible-rules proposal and validation diagnostics",
+    "Added per-kind provider schema variants and three JSON Schema regressions",
+    "Targeted v3.1 generation/audit returned valid ready analysis; advisory omission persists"
+  ],
+  "author": "codex:engineering",
+  "challenge": "Prevent schema-valid provider output from violating internal kind-dependent component rules.",
+  "consequences": [],
+  "context": "Final development round before Sprint2.5 closure; not a holdout run.",
+  "created_at": "2026-10-19T20:12:10.935845+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Observed structural failure and recovery; semantic diagnosis remains pending.",
+      "outcome": "observed",
+      "sha256": "0c91fa8109c8db857a6086f9670c20a1cd552fe50770f527741da1c6d9794b04",
+      "source": "src/ai_harness_compiler/semantic_composition.py"
+    },
+    {
+      "command": null,
+      "note": "Observed structural failure and recovery; semantic diagnosis remains pending.",
+      "outcome": "observed",
+      "sha256": "544defc82a793462eb73085650235f1b0aa681f1025b85dcca2fa56417e6e649",
+      "source": "tests/test_semantic_composition.py"
+    },
+    {
+      "command": null,
+      "note": "Observed structural failure and recovery; semantic diagnosis remains pending.",
+      "outcome": "observed",
+      "sha256": "3737a3464ba48cc7c2710a45d6a240f6a2a6c08c3f9efb5924c5d64281a44158",
+      "source": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-compatible-rules/summary.json"
+    },
+    {
+      "command": null,
+      "note": "Observed structural failure and recovery; semantic diagnosis remains pending.",
+      "outcome": "observed",
+      "sha256": "e675c32971b98e04e886367ba9083c7110e95190e617d11ae20c73d210f87359",
+      "source": "docs/evidence/sprint-2-5-final-20261019/schema-v31-recovery/dev-compatible-rules/summary.json"
+    }
+  ],
+  "id": "INC-0018",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Single recovery observation",
+    "Same-model advisory audit",
+    "No diagnosis of private model reasoning"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "INC-0014",
+    "ADR-0021"
+  ],
+  "resolution": "Structural mismatch recovery observed on the targeted development case; all internal validators retained. No semantic qualification or full v3.1 matrix claimed.",
+  "review_note": "Refresh changed source digest after additive candidate and scoped human follow-up; historical observations retained. New v3.2 has no semantic efficacy evidence.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 4,
+  "root_cause": "Provider-facing JSON schema represented optional fields independently while Python validator enforced kind-dependent shape.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "verified",
+  "summary": "One of eight final development generations violated CriterionV3 non-rule component invariants; invalid output retained.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Provedor preenche componentes de regra em requisito",
+  "updated_at": "2026-10-20T18:16:30.800166+00:00"
+}
