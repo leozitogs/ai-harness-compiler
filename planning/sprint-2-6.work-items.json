@@ -48,10 +48,11 @@
       "evidence_sources": [
         "docs/delivery/sprint-2-6-kickoff.md",
         "docs/evidence/sprint-2-6-entry-20261019/audit.json",
-        "docs/delivery/sprint-2-6-development-review.md"
+        "docs/delivery/sprint-2-6-development-review.md",
+        "docs/delivery/sprint-2-6-adjudication.md"
       ],
       "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.",
-      "progress_note": "Nexo favorable to offline preparation; eight-case human review packet with 70 findings and 30 components prepared. Human judgments remain absent; no pass or story completion inferred."
+      "progress_note": "Nexo favorable; eight-case packet prepared. Technical adjudication of six advisory omissions and one component completed as recommendations; two scoped PO judgments pending. No human pass/fail or story completion inferred."
     },
     {
       "id": "s26-21-review",

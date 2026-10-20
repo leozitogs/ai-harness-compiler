@@ -1,0 +1,63 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO requested continuing Sprint2.6 after preparing the human-review packet. Existing quality gate requires human output judgments before approval or promotion.",
+  "created_at": "2026-10-20T04:38:11.288376+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Verified exact analysis/advice/source bindings for six original omissions and one component; original eight assessments remain not-run.",
+      "outcome": "observed",
+      "sha256": "fad9526e24fa90a4c4c0c402b1ff651a320e209b9490a105b3291ea85cdc9217",
+      "source": "docs/delivery/sprint-2-6-adjudication.md"
+    },
+    {
+      "command": null,
+      "note": "Verified exact analysis/advice/source bindings for six original omissions and one component; original eight assessments remain not-run.",
+      "outcome": "observed",
+      "sha256": "ddee90ac18d1e36589db3d88898e1f4a14e9876c8288504a851f5ce552dca027",
+      "source": "docs/evidence/sprint-2-6-adjudication-20261020/draft.json"
+    },
+    {
+      "command": null,
+      "note": "Verified exact analysis/advice/source bindings for six original omissions and one component; original eight assessments remain not-run.",
+      "outcome": "observed",
+      "sha256": "de738429a57899a5fd82f78ec6ced42f28ae22b44a225fdaa5ca75fa9051a8e5",
+      "source": "planning/sprint-2-6.work-items.json"
+    }
+  ],
+  "id": "DOC-0032",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "All recommendations are advisory, not human pass/fail.",
+    "Questions about ambiguous guard condition and compatible-rule materiality remain pending.",
+    "Literal presence does not establish normative completeness or correct guard applicability.",
+    "No causal experiment, reserved corpus access, profile change, training or model qualification."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0031",
+    "DOC-0030",
+    "ADR-0022",
+    "INC-0016"
+  ],
+  "resolution": null,
+  "review_note": "Verified recommendation scope against archived sources and approved criteria, with no fabricated reviewer or case approval. Await concrete human judgments before consuming them as such.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Examined six advisory omissions and one negative component across eight selected development outputs. Prepared evidence-bound recommendations and two scoped PO questions; no human judgments received or created, no model calls or tuning.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Adjudicação técnica consultiva dos diagnósticos de desenvolvimento",
+  "updated_at": "2026-10-20T04:38:11.704435+00:00"
+}
