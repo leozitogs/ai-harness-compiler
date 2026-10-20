@@ -23,9 +23,20 @@ resulta em **fail** para suporte de citações, com cinco critérios `not-run`.
 O diagnóstico não bloqueante do segundo caso não contém inventário completo
 de julgamentos e, portanto, não é convertido em aprovação do critério de incerteza.
 
-Situação atual: **1 caso fail, 7 not-run; 1 de 48 julgamentos por critério
-registrado, 47 pendentes; nenhum pass**. O
-[progresso](../evidence/sprint-2-6-human-judgments-20261020/status.json)
+O primeiro registro produziu 1 caso fail e 7 not-run, com 47 critérios pendentes;
+[esse snapshot](../evidence/sprint-2-6-human-judgments-20261020/status.json) permanece intacto.
+
+Na sequência, o PO respondeu “Aprovo os seis critérios desta resposta recuperada”
+à revisão objetiva de `dev-compatible-rules`, identificando as quatro obrigações,
+privacidade, limites de assets, público sem permissões implícitas e papéis distintos.
+O [recibo específico](../evidence/sprint-2-6-human-judgments-20261020/compatible-acceptance.json)
+e o [assessment pass](../evidence/sprint-2-6-human-judgments-20261020/dev-compatible-rules-assessment.json)
+vinculam o aceite aos inventários completos por achado/componente da recuperação
+v3.1. A tentativa original continua error; não é reclassificada como pass.
+
+Situação atual: **1 caso pass, 1 fail e 6 not-run; 7 de 48 julgamentos por critério
+registrados, 41 pendentes**. O
+[progresso atualizado](../evidence/sprint-2-6-human-judgments-20261020/progress-after-compatible.json)
 complementa os relatórios anteriores, preservados como snapshots históricos.
 
 ## Problema e alternativa corretiva
@@ -75,8 +86,9 @@ Nenhuma geração real, holdout, ajuste de temperatura ou treino foi executado n
 
 Testes offline verificam preservação exata do prompt v3.1, seleção explícita,
 fingerprints distintos e rejeição de versão desconhecida antes de chamar o modelo.
-A regressão real reproduz o julgamento do PO pela CLI, mantendo cinco critérios
-pendentes e compilação não autorizada. Respostas injetadas nos testes não provam
+As regressões reais reproduzem ambos os julgamentos pela CLI: a reprovação
+parcial mantém cinco critérios pendentes, e o aceite da recuperação exige o
+inventário completo. Ambos preservam compilação não autorizada e qualificação pendente. Respostas injetadas nos testes não provam
 que v3.2 melhorou o entendimento do modelo.
 
 Próximas etapas: concluir julgamentos restantes da matriz de desenvolvimento;

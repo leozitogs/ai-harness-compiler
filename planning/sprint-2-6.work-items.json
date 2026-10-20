@@ -53,7 +53,7 @@
         "docs/delivery/sprint-2-6-human-judgments.md"
       ],
       "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.",
-      "progress_note": "PO confirmed two scoped judgments. Saved exact negative component review: one fail, seven not-run, 47 criterion judgments pending. Compatible-role diagnostic is nonblocking but not a whole-criterion pass."
+      "progress_note": "PO confirmed two scoped judgments and subsequently approved all six criteria of the compatible-rule recovered response. Exact bound assessments: one pass (recovery only), one partial fail, six not-run; 41 criterion judgments pending. Original failed generation remains error. No model qualification or story completion."
     },
     {
       "id": "s26-21-review",

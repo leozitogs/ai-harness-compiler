@@ -98,6 +98,7 @@ permanecem dependentes dos gates AHC-021/022.
 ## Atualização — julgamentos específicos recebidos em 2026-10-20
 
 As duas decisões específicas foram confirmadas pelo PO após este snapshot.
-O estado atual é 1 caso fail e 7 not-run, sem aprovação integral de casos.
+O primeiro registro produziu 1 caso fail e 7 not-run; depois, o PO aprovou os seis
+critérios da recuperação de regras compatíveis: 1 pass, 1 fail e 6 not-run.
 Ver [registro humano e candidato corretivo](sprint-2-6-human-judgments.md).
 As pendências descritas acima representam o momento da preparação original.

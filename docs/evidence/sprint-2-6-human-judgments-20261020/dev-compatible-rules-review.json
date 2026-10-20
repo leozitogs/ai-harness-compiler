@@ -1,0 +1,327 @@
+{
+  "reviewer": "leozitogs:po-declared",
+  "note": "PO respondeu na conversa: Aprovo os seis critérios desta resposta recuperada. Escopo: somente dev-compatible-rules/schema-v31-recovery, com quatro regras, privacidade, público sem permissão implícita, limites de assets e papéis não equiparados. Erro da tentativa original preservado; nenhum outro caso ou modelo qualificado.",
+  "authority": "human-declared-not-authenticated",
+  "schema_version": "SemanticHumanReview/v3",
+  "case_sha256": "f338181b253045093d1101f966cf863f3c7c51d94831becb88e0be60c8ad91ba",
+  "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+  "analysis_sha256": "09f6148f4cf0303325d2c3380e32f2735a13f543797df23da3b0ca9b4e956581",
+  "checks": [
+    {
+      "criterion": "rule-coverage",
+      "outcome": "pass",
+      "note": "Título/autor/origem, visibilidade só ao responsável, referências das afirmações e revisão/aprovação preservadas. Confirmado pelo PO."
+    },
+    {
+      "criterion": "citation-support",
+      "outcome": "pass",
+      "note": "Aceite humano das fontes por achado e componente desta resposta recuperada. Confirmado pelo PO."
+    },
+    {
+      "criterion": "conflict-validity",
+      "outcome": "pass",
+      "note": "Regras compatíveis sem conflito inventado; público não amplia permissão. Confirmado pelo PO."
+    },
+    {
+      "criterion": "asset-bounds",
+      "outcome": "pass",
+      "note": "Sem afirmação de conteúdo não ingerido do asset ou execução de instruções externas. Confirmado pelo PO."
+    },
+    {
+      "criterion": "uncertainty",
+      "outcome": "pass",
+      "note": "Atribuição dos responsáveis não bloqueia; não se presume identidade entre papéis. Confirmado pelo PO."
+    },
+    {
+      "criterion": "project-understanding",
+      "outcome": "pass",
+      "note": "Propósito, público, domínio e capacidades refletem o input; limites técnicos, de privacidade e custo preservados. Confirmado pelo PO."
+    }
+  ],
+  "coverage": [
+    {
+      "obligation_id": "required-1",
+      "finding_id": "criterion-1"
+    },
+    {
+      "obligation_id": "required-2",
+      "finding_id": "criterion-2"
+    },
+    {
+      "obligation_id": "required-3",
+      "finding_id": "criterion-3"
+    },
+    {
+      "obligation_id": "required-4",
+      "finding_id": "criterion-4"
+    }
+  ],
+  "finding_support": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "df91a95e5c94578f8d13ce5e9e2bacd423159038ac0419ea82bb133a71ce5aa3",
+      "source_atom_ids": [
+        "atom-16"
+      ],
+      "outcome": "pass",
+      "note": "Inventário de suporte vinculado ao aceite explícito dos seis critérios pelo PO para esta resposta recuperada."
+    },
+    {
+      "finding_id": "criterion-2",
+      "finding_sha256": "7f2320d14d56d6004c584f3b68e2bac8bd2194e9d059f8f1bf631e13e70901ef",
+      "source_atom_ids": [
+        "atom-17"
+      ],
+      "outcome": "pass",
+      "note": "Inventário de suporte vinculado ao aceite explícito dos seis critérios pelo PO para esta resposta recuperada."
+    },
+    {
+      "finding_id": "criterion-3",
+      "finding_sha256": "b0ed268f97ffd94f6ed8fcb43bbba2ecb5e95dd13d76bb01821b1d5530f8f277",
+      "source_atom_ids": [
+        "atom-19"
+      ],
+      "outcome": "pass",
+      "note": "Inventário de suporte vinculado ao aceite explícito dos seis critérios pelo PO para esta resposta recuperada."
+    },
+    {
+      "finding_id": "criterion-4",
+      "finding_sha256": "409a1dcd028c682edd56eaf1dea9585bf3cc194e1d1ad4a9a8a5ff156aee2018",
+      "source_atom_ids": [
+        "atom-20"
+      ],
+      "outcome": "pass",
+      "note": "Inventário de suporte vinculado ao aceite explícito dos seis critérios pelo PO para esta resposta recuperada."
+    },
+    {
+      "finding_id": "guard-human-review",
+      "finding_sha256": "3a4d8443bf5441acb303c924c14be9f59d44e5cc2e8833bd325b2ae0dfefefb6",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-13"
+      ],
+      "outcome": "pass",
+      "note": "Inventário de suporte vinculado ao aceite explícito dos seis critérios pelo PO para esta resposta recuperada."
+    },
+    {
+      "finding_id": "guard-trace-privacy",
+      "finding_sha256": "2b4c8a46ab397424a23e850b736e971f4457c7b1b117ad7755dc2277b374d0b3",
+      "source_atom_ids": [
+        "atom-12"
+      ],
+      "outcome": "pass",
+      "note": "Inventário de suporte vinculado ao aceite explícito dos seis critérios pelo PO para esta resposta recuperada."
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "60b73f42a8932e35705a94fe16c91f66ad4ab5d149548f07f90ee5f9c5bc2c5c",
+      "source_atom_ids": [
+        "atom-1"
+      ],
+      "outcome": "pass",
+      "note": "Inventário de suporte vinculado ao aceite explícito dos seis critérios pelo PO para esta resposta recuperada."
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "e03e208a0409313f45df949bfc19e73c41468750b6d551c01fbd3c93f4611984",
+      "source_atom_ids": [
+        "atom-2",
+        "atom-3"
+      ],
+      "outcome": "pass",
+      "note": "Inventário de suporte vinculado ao aceite explícito dos seis critérios pelo PO para esta resposta recuperada."
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "dc4cc56e3a25b94678ff6925258221635d383516cc4035dcd602d76a503598ee",
+      "source_atom_ids": [
+        "atom-4",
+        "atom-5",
+        "atom-6"
+      ],
+      "outcome": "pass",
+      "note": "Inventário de suporte vinculado ao aceite explícito dos seis critérios pelo PO para esta resposta recuperada."
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "3a5b38afcee60aeeded2ae3bcfb20f515886dabc6b7e15e207755564f5e3dab7",
+      "source_atom_ids": [
+        "atom-7",
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Inventário de suporte vinculado ao aceite explícito dos seis critérios pelo PO para esta resposta recuperada."
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "dd59bf0b810573b17042ec1105ac4fbdd58d5d3a836e1e82bb7d007c60d0e1e1",
+      "source_atom_ids": [
+        "atom-9"
+      ],
+      "outcome": "pass",
+      "note": "Inventário de suporte vinculado ao aceite explícito dos seis critérios pelo PO para esta resposta recuperada."
+    },
+    {
+      "finding_id": "context-6",
+      "finding_sha256": "171ce65f6bac851d0806d78df72851dbad644a901b141b8f2754b9a5f4d45241",
+      "source_atom_ids": [
+        "atom-10",
+        "atom-11"
+      ],
+      "outcome": "pass",
+      "note": "Inventário de suporte vinculado ao aceite explícito dos seis critérios pelo PO para esta resposta recuperada."
+    },
+    {
+      "finding_id": "context-7",
+      "finding_sha256": "794cb5423b3d1d70d2d48e88c854d18e5b4a8e1f474a5f86329ad50590c88805",
+      "source_atom_ids": [
+        "atom-14"
+      ],
+      "outcome": "pass",
+      "note": "Inventário de suporte vinculado ao aceite explícito dos seis critérios pelo PO para esta resposta recuperada."
+    },
+    {
+      "finding_id": "context-8",
+      "finding_sha256": "ac8f5549da2c50c4d94cea7c9d6978a4720ab9eb8f516b3ff2d99515bb5c93af",
+      "source_atom_ids": [
+        "atom-15",
+        "atom-18"
+      ],
+      "outcome": "pass",
+      "note": "Inventário de suporte vinculado ao aceite explícito dos seis critérios pelo PO para esta resposta recuperada."
+    },
+    {
+      "finding_id": "context-9",
+      "finding_sha256": "8046ed7a4e968c7b87962ce6e0c36529e3ce9685988e550e39913c792b4e8f78",
+      "source_atom_ids": [
+        "atom-21"
+      ],
+      "outcome": "pass",
+      "note": "Inventário de suporte vinculado ao aceite explícito dos seis critérios pelo PO para esta resposta recuperada."
+    }
+  ],
+  "component_support": [
+    {
+      "finding_id": "criterion-1",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-16"
+      ],
+      "outcome": "pass",
+      "note": "Fontes exatas deste componente vinculadas ao aceite humano específico da resposta recuperada."
+    },
+    {
+      "finding_id": "criterion-1",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-16"
+      ],
+      "outcome": "pass",
+      "note": "Fontes exatas deste componente vinculadas ao aceite humano específico da resposta recuperada."
+    },
+    {
+      "finding_id": "criterion-2",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-17"
+      ],
+      "outcome": "pass",
+      "note": "Fontes exatas deste componente vinculadas ao aceite humano específico da resposta recuperada."
+    },
+    {
+      "finding_id": "criterion-2",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-17"
+      ],
+      "outcome": "pass",
+      "note": "Fontes exatas deste componente vinculadas ao aceite humano específico da resposta recuperada."
+    },
+    {
+      "finding_id": "criterion-3",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-19"
+      ],
+      "outcome": "pass",
+      "note": "Fontes exatas deste componente vinculadas ao aceite humano específico da resposta recuperada."
+    },
+    {
+      "finding_id": "criterion-3",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-19"
+      ],
+      "outcome": "pass",
+      "note": "Fontes exatas deste componente vinculadas ao aceite humano específico da resposta recuperada."
+    },
+    {
+      "finding_id": "criterion-4",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-20"
+      ],
+      "outcome": "pass",
+      "note": "Fontes exatas deste componente vinculadas ao aceite humano específico da resposta recuperada."
+    },
+    {
+      "finding_id": "criterion-4",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-20"
+      ],
+      "outcome": "pass",
+      "note": "Fontes exatas deste componente vinculadas ao aceite humano específico da resposta recuperada."
+    },
+    {
+      "finding_id": "guard-human-review",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-1",
+        "atom-13"
+      ],
+      "outcome": "pass",
+      "note": "Fontes exatas deste componente vinculadas ao aceite humano específico da resposta recuperada."
+    },
+    {
+      "finding_id": "guard-human-review",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-1",
+        "atom-13"
+      ],
+      "outcome": "pass",
+      "note": "Fontes exatas deste componente vinculadas ao aceite humano específico da resposta recuperada."
+    },
+    {
+      "finding_id": "guard-trace-privacy",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-12"
+      ],
+      "outcome": "pass",
+      "note": "Fontes exatas deste componente vinculadas ao aceite humano específico da resposta recuperada."
+    },
+    {
+      "finding_id": "guard-trace-privacy",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-12"
+      ],
+      "outcome": "pass",
+      "note": "Fontes exatas deste componente vinculadas ao aceite humano específico da resposta recuperada."
+    }
+  ]
+}
