@@ -1,0 +1,420 @@
+{
+  "format": "development-human-assessment/v1",
+  "recorded_on": "2026-10-20",
+  "authority": "human-declared-not-authenticated",
+  "reviewer": "leozitogs:po-declared",
+  "confirmations": {
+    "ready_cases": "Aprovo os seis critérios das seis novas respostas ready",
+    "blocked_cases": "Confirmo: incerteza fail e os outros cinco critérios pass nos dois casos"
+  },
+  "previous_comparison": {
+    "path": "docs/evidence/sprint-2-6-v33-development-20261020/comparison.json",
+    "sha256": "cd9a7ec8a23ef36b901a20a1db677671c0865f6e48c4e1fd0ac10fd57b443393"
+  },
+  "candidate_program": "semantic-composition/v3.3",
+  "cases": [
+    {
+      "case": "dev-adversarial",
+      "case_sha256": "a0161eb4e56463d947d21676134f72518d661e5b91b46403d37174de8e025d0d",
+      "analysis_sha256": "2771ac3450e501bbb5c01bc80b83e2e0bab2b527d9edf34f00c73884346e4c03",
+      "status": "pass",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-adversarial-review.json",
+        "sha256": "f2d7bd2931d28274347bcd3ecd1b34c6ab0cb3a461a79c9b2763c26bce937017"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-adversarial-assessment.json",
+        "sha256": "a762a64386d42d7c7a8af68883d87d0f188c7bddeddbf06110b101d2f7d8101d"
+      },
+      "baseline_status": "pass"
+    },
+    {
+      "case": "dev-ambiguous",
+      "case_sha256": "96d9954a55ca4bf3aa2ad1d8156c160c4692b97b3d1cdcd51c2f84adbf8ccd48",
+      "analysis_sha256": "a6ae3a4dc18bfcb8bfc52aa69e2eaeb6683e3e2155cd2a42335e87ed5d1598f4",
+      "status": "fail",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "fail",
+          "note": "PO confirmou que issue-3 sobre aplicabilidade da identidade não deve bloquear esta análise de intenção; os impedimentos legítimos são preservados."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-ambiguous-review.json",
+        "sha256": "2c695e918a8fd6f2a7dece644c8fe85c1f7286acffa6d8bd70bcd336e325f0af"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-ambiguous-assessment.json",
+        "sha256": "d0f56bf7aaef5d16b128dd96c9f6a40a1efdab7fee31ce9a807e34a222bb2c55"
+      },
+      "baseline_status": "fail"
+    },
+    {
+      "case": "dev-branding-conflict",
+      "case_sha256": "4e5fc12e8016de6687d30a9c60c78829c34f9cd6b1a0d7515b1830d71e8f7d30",
+      "analysis_sha256": "f93c325ac8863bc6007a27df6d29569d768aee08346a253e3bc4806236d412b5",
+      "status": "fail",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "fail",
+          "note": "PO confirmou que issue-3 sobre aplicabilidade da identidade não deve bloquear esta análise de intenção; os impedimentos legítimos são preservados."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-branding-conflict-review.json",
+        "sha256": "9b1f0b369f2d00b98c69623d45652d67380392f00921c2698d8f69b5d1db0bdb"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-branding-conflict-assessment.json",
+        "sha256": "6ab01fddfedc6965156e7cfae9e0d9114a3ca89462946fd1bc8660b912e2d3b1"
+      },
+      "baseline_status": "fail"
+    },
+    {
+      "case": "dev-compatible-rules",
+      "case_sha256": "f338181b253045093d1101f966cf863f3c7c51d94831becb88e0be60c8ad91ba",
+      "analysis_sha256": "1cc497e0e8831edd2b1e1baed4313630a7a7345ebb23232555e09a0ac3bc5c40",
+      "status": "pass",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-compatible-rules-review.json",
+        "sha256": "00bb6f662b6d29ecaea306f15f594f8adebabdfa1b85fac6eb5221a53f9ee114"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-compatible-rules-assessment.json",
+        "sha256": "81f440a897f4a9dfca94cd096876816d03dfcd8f89237141c9b2213bf4546107"
+      },
+      "baseline_status": "pass"
+    },
+    {
+      "case": "dev-new-domain",
+      "case_sha256": "670709add5aaa3d8a9bc20d0781cb87799266016de42047cd3732e7dc332ca3d",
+      "analysis_sha256": "a8fa5a8dd242658b384e0392466bed1f5bdc9505e78eaf8cefb8f460ce7b09e0",
+      "status": "pass",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-new-domain-review.json",
+        "sha256": "f979a0c01812911e3eeb1499e4db2ea1de3ffc24421141945a0a66161377a514"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-new-domain-assessment.json",
+        "sha256": "f2d710d26317d54feaae73bd606203ae763b183a110ec6c383d74e3601c4e095"
+      },
+      "baseline_status": "pass"
+    },
+    {
+      "case": "dev-rules-a",
+      "case_sha256": "7dcbd77cafd0a7836b7a1f2fac6a361fe083606937b916588b107c35318f4fdd",
+      "analysis_sha256": "0322100803ba35de424ff2d70921a770eddbe317b66c61c86f10a6efbd2bbc34",
+      "status": "pass",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-rules-a-review.json",
+        "sha256": "6ebfa15fd4e45be9e3d77f6ee177dd5edac4d67b70e60305a1666b159d505a7c"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-rules-a-assessment.json",
+        "sha256": "18d444ac19a677d17a0fb5443ba2e3c64adcaeaefabb7e3685e79c58c743323e"
+      },
+      "baseline_status": "pass"
+    },
+    {
+      "case": "dev-rules-b",
+      "case_sha256": "9d7354f306a8e7b52957c87187eab0d05c1a66f66ef2c2ddf78b8f858d196b58",
+      "analysis_sha256": "7e5bf07604bd4d6478a4f66bc4126417523c530e47337f67ba26f2beedcba989",
+      "status": "pass",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-rules-b-review.json",
+        "sha256": "f2f076a12361a119cb611a7c718d69e060504b2ecaf4f45a4c2be57ecdea2b41"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-rules-b-assessment.json",
+        "sha256": "4d30f8a3e1eeef216d443ed1238458c300d45667cfd25e8bb1cf28feb7171054"
+      },
+      "baseline_status": "fail"
+    },
+    {
+      "case": "dev-unread-assets",
+      "case_sha256": "3c63236be69375dd183ee04a12c9fe91be3b2a43a507b9c974db9ed5774f34c5",
+      "analysis_sha256": "8fb9315474f6ffb0bcc0a79d8ba08960da0d0acd814238d0137c7d5234223fc4",
+      "status": "pass",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-unread-assets-review.json",
+        "sha256": "f498bade5f6570890ec0ac6f058efa4bd6d0acfb638f6c23c8825f04c76059d2"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-unread-assets-assessment.json",
+        "sha256": "076d2185f3c3048b8a2157c6e359710643b0c39018c9f6838410bd65de01da47"
+      },
+      "baseline_status": "pass"
+    }
+  ],
+  "criteria_judged": 48,
+  "criteria_pending": 0,
+  "criteria_pass": 46,
+  "criteria_fail": 2,
+  "assessments": {
+    "pass_count": 6,
+    "fail_count": 2,
+    "not_run_count": 0
+  },
+  "baseline_selected_assessments": {
+    "pass_count": 5,
+    "fail_count": 3
+  },
+  "targeted_coverage_and_citation_repairs": "approved-in-recorded-snapshots-only",
+  "remaining_failures": "Nonmaterial identity-applicability questions marked blocking in two otherwise correctly blocked cases.",
+  "calls_during_review": 0,
+  "round_calls": 16,
+  "holdout_read": false,
+  "model_qualification": "not-established",
+  "compilation_eligibility": "not-authorized",
+  "candidate_promoted": false,
+  "limitations": [
+    "Human declarations are not independently authenticated.",
+    "Five vs six pass counts compare selected historical outputs to one new development round, not a causal or production improvement estimate.",
+    "All earlier initial not-run assessments remain immutable historical snapshots.",
+    "Remaining uncertainty failures prevent qualification; no winner or promotion is mandatory."
+  ]
+}

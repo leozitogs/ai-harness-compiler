@@ -1,0 +1,224 @@
+import argparse
+import hashlib
+import json
+from pathlib import Path
+from time import monotonic
+
+from ai_harness_compiler.adapters.codex_cli import (
+    OVERRIDES,
+    POLICY_VERSION,
+    CodexCLISettings,
+    CodexCompactModel,
+    strict_schema,
+)
+from ai_harness_compiler.compiler import json_text
+from ai_harness_compiler.grounding import extract_grounding
+from ai_harness_compiler.models.evidence import canonical_project_digest
+from ai_harness_compiler.models.semantic_assessment import AssessmentCase
+from ai_harness_compiler.models.semantic_assessment_v3 import SemanticAssessmentV3, assess_v3
+from ai_harness_compiler.semantic_composition import (
+    MULTISOURCE_COMPOSITION_PROGRAM_VERSION,
+    analyze_composition,
+    audit_composition,
+    composition_program_digest,
+)
+
+root = Path.cwd()
+folder = root / "docs/evidence/sprint-2-6-v33-development-20261020"
+parser = argparse.ArgumentParser()
+parser.add_argument("--prepare", action="store_true")
+parser.add_argument("--execute", action="store_true")
+parser.add_argument("--protocol-sha256")
+args = parser.parse_args()
+assert args.prepare != args.execute
+
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+
+def read(path):
+    resolved = (root / path).resolve()
+    assert resolved.is_relative_to(root.resolve())
+    return resolved.read_bytes()
+
+
+def write(path, data):
+    with path.open("x", encoding="utf-8", newline="\n") as stream:
+        stream.write(json_text(data))
+
+
+frozen_path = "evals/understanding/v2/development-approved-manifest.json"
+reviewed_path = "docs/evidence/sprint-2-6-development-assessment-20261020/manifest.json"
+frozen = json.loads(read(frozen_path))
+reviewed = json.loads(read(reviewed_path))
+assert frozen["scope"] == "development-only"
+assert reviewed["criteria_judged"] == 48 and reviewed["criteria_pending"] == 0
+cases = []
+for item in frozen["cases"]:
+    path = "evals/understanding/v2/" + item["path"]
+    assert (root / path).resolve().parent == (
+        root / "evals/understanding/v2/development-draft"
+    ).resolve()
+    raw = read(path)
+    assert sha(raw) == item["sha256"]
+    case = AssessmentCase.model_validate_json(raw)
+    row = next(r for r in reviewed["cases"] if r["case"] == case.id)
+    saved = SemanticAssessmentV3.model_validate_json(read(row["assessment"]["path"]))
+    assert sha(read(row["assessment"]["path"])) == row["assessment"]["sha256"]
+    assert saved == assess_v3(saved.case, saved.rubric, saved.analysis, saved.review)
+    assert saved.case == case and all(c.outcome != "not-run" for c in saved.checks)
+    cases.append(case)
+assert len(cases) == 8
+rows = [
+    dict(
+        case=c.id,
+        case_sha256=c.snapshot_sha256,
+        project_sha256=canonical_project_digest(c.project.model_dump()),
+        program_sha256=composition_program_digest(
+            extract_grounding(c.project), MULTISOURCE_COMPOSITION_PROGRAM_VERSION
+        ),
+    )
+    for c in cases
+]
+protocol = dict(
+    format="bounded-development-protocol/v1",
+    recorded_on="2026-10-20",
+    scope="development-only",
+    authorization="Existing PO authorization to continue Sprint2.6 and use the established subscription adapter; numeric budget fixed by operator, not a new PO declaration.",
+    program_version=MULTISOURCE_COMPOSITION_PROGRAM_VERSION,
+    requested_model="gpt-6.1-sol",
+    observed_model=None,
+    provider="codex-cli-chatgpt-subscription",
+    adapter_version=POLICY_VERSION,
+    overrides_sha256=canonical_project_digest(list(OVERRIDES)),
+    baseline_manifest=dict(path=reviewed_path, sha256=sha(read(reviewed_path))),
+    development_manifest=dict(path=frozen_path, sha256=sha(read(frozen_path))),
+    runner_sha256=sha(Path(__file__).read_bytes()),
+    cases=rows,
+    budget=dict(
+        max_cases=8,
+        max_calls=16,
+        max_concurrency=1,
+        max_call_seconds=180,
+        max_session_seconds=3600,
+        repetitions=1,
+        retries=0,
+        repair_attempts=0,
+        holdout_calls=0,
+    ),
+    constraints=dict(
+        read_assets=False,
+        tools_allowed=False,
+        paid_api_allowed=False,
+        training_allowed=False,
+        fallback_allowed=False,
+    ),
+    sampling_parameters="not-requested-through-adapter; observed values unknown",
+    cost_observed=None,
+    semantic_review="required-for-new-outputs",
+    comparison_limits="Historical mixed-attempt reference vs one new round; no causal, stability, cold/warm, cost or production performance claim.",
+)
+if args.prepare:
+    folder.mkdir(exist_ok=False)
+    write(folder / "protocol.json", protocol)
+    (folder / "runner-source.txt").write_bytes(Path(__file__).read_bytes())
+    print("Prepared offline protocol SHA256:", sha((folder / "protocol.json").read_bytes()))
+    raise SystemExit(0)
+raw_protocol = (folder / "protocol.json").read_bytes()
+assert args.protocol_sha256 == sha(raw_protocol)
+assert json.loads(raw_protocol) == protocol
+execution = folder / "execution"
+execution.mkdir(exist_ok=False)
+started = monotonic()
+used = 0
+summaries = []
+for case in cases:
+    job = execution / case.id
+    job.mkdir()
+    stage = "generation"
+    summary = dict(
+        case=case.id,
+        generation="not-run",
+        audit="not-run",
+        semantic_status="not-run",
+        model_qualification="not-established",
+        compilation_eligibility="not-authorized",
+        calls_used=0,
+    )
+
+    class Capture:
+        def generate_json(self, prompt, schema):
+            global used
+            remaining = int(protocol["budget"]["max_session_seconds"] - (monotonic() - started))
+            if used >= 16 or remaining < 1:
+                raise TimeoutError("DEVELOPMENT_BUDGET_EXHAUSTED")
+            used += 1
+            summary["calls_used"] += 1
+            call = dict(
+                number=used,
+                stage=stage,
+                prompt_sha256=sha(prompt.encode()),
+                response_schema_sha256=canonical_project_digest(schema),
+                effective_schema_sha256=canonical_project_digest(strict_schema(schema)),
+                timeout_seconds=min(180, remaining),
+                status="started",
+            )
+            write(job / (stage + "-call-start.json"), call)
+            begin = monotonic()
+            try:
+                raw = CodexCompactModel(
+                    CodexCLISettings(protocol["requested_model"], call["timeout_seconds"])
+                ).generate_json(prompt, schema)
+                with (job / (stage + "-response.txt")).open(
+                    "x", encoding="utf-8", newline="\n"
+                ) as stream:
+                    stream.write(raw)
+                call["status"] = "returned"
+                return raw
+            except Exception:
+                call["status"] = "error"
+                raise
+            finally:
+                call["elapsed_seconds"] = round(monotonic() - begin, 6)
+                write(job / (stage + "-call-finish.json"), call)
+
+    try:
+        analysis = analyze_composition(
+            extract_grounding(case.project),
+            Capture(),
+            program_version=MULTISOURCE_COMPOSITION_PROGRAM_VERSION,
+        )
+        write(job / "analysis.json", analysis.model_dump())
+        summary.update(generation="valid", disposition=analysis.disposition)
+        stage = "audit"
+        advice = audit_composition(analysis, Capture(), protocol["requested_model"])
+        write(job / "advice.json", advice.model_dump())
+        summary.update(
+            audit="valid",
+            advisory_omissions=len(advice.proposal.omissions),
+            advisory_negative_components=sum(
+                c.support != "supports" for c in advice.proposal.component_judgments
+            ),
+        )
+    except Exception as exc:
+        summary[stage] = "error"
+        summary["error_type"] = type(exc).__name__
+        # Never copy exception strings, raw provider logs or private intermediate events.
+    write(job / "summary.json", summary)
+    summaries.append(summary)
+    print(json.dumps(summary, ensure_ascii=True), flush=True)
+write(
+    execution / "summary.json",
+    dict(
+        protocol_sha256=sha(raw_protocol),
+        cases=summaries,
+        calls_used=used,
+        max_calls=16,
+        elapsed_seconds=round(monotonic() - started, 6),
+        holdout_read=False,
+        semantic_status="not-run",
+        model_qualification="not-established",
+        compilation_eligibility="not-authorized",
+    ),
+)

@@ -1,0 +1,146 @@
+{
+  "reviewer": "leozitogs:po-declared",
+  "note": "PO na conversa: Aprovo os seis critérios das seis novas respostas ready. Escopo: novo snapshot v3.3 de dev-unread-assets. Nenhum aceite histórico transferido, qualificação de modelo ou autorização de compilação.",
+  "authority": "human-declared-not-authenticated",
+  "schema_version": "SemanticHumanReview/v3",
+  "case_sha256": "3c63236be69375dd183ee04a12c9fe91be3b2a43a507b9c974db9ed5774f34c5",
+  "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+  "analysis_sha256": "8fb9315474f6ffb0bcc0a79d8ba08960da0d0acd814238d0137c7d5234223fc4",
+  "checks": [
+    {
+      "criterion": "rule-coverage",
+      "outcome": "pass",
+      "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+    },
+    {
+      "criterion": "citation-support",
+      "outcome": "pass",
+      "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+    },
+    {
+      "criterion": "conflict-validity",
+      "outcome": "pass",
+      "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+    },
+    {
+      "criterion": "asset-bounds",
+      "outcome": "pass",
+      "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+    },
+    {
+      "criterion": "uncertainty",
+      "outcome": "pass",
+      "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+    },
+    {
+      "criterion": "project-understanding",
+      "outcome": "pass",
+      "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+    }
+  ],
+  "coverage": [
+    {
+      "obligation_id": "required-1",
+      "finding_id": "criterion-1"
+    }
+  ],
+  "finding_support": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "1728a0b4cf3c5ca19eee52621a3856b27c0a86c132771a4c9c0df48e8ef200c0",
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "cbe4519ca2534ece1520836dc280173fcea033c4b9d00efaedf0783cdf441b90",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-7"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "21dc6c05c2a088cab8529fa0e078ade2a529107573d3220261170e6468056dd9",
+      "source_atom_ids": [
+        "atom-2"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "b291995146062a63900c5c2fa37b1f8dd7a73e2d8068fe1aff1f67d125e8f6eb",
+      "source_atom_ids": [
+        "atom-3",
+        "atom-4"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "b5ea9435fa14fc73ba11c14e8db33b2b2054ba6757cea2cdec5f10713030e6a8",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-9"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "bf5af818cffd8c8a3fde5c0e1afa32aff779aa257e4cceee60d3e684c1952e2e",
+      "source_atom_ids": [
+        "atom-7"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-6",
+      "finding_sha256": "99a549948f1d1bd83dbec67c79c1250f81934a5ba1a9e4937c56105d52fbb29c",
+      "source_atom_ids": [
+        "atom-5"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-7",
+      "finding_sha256": "e34d269ee55f859b1ea602aaf69c5f761fe9c791fac4224ddfd579c8e980c5e6",
+      "source_atom_ids": [
+        "atom-6"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    }
+  ],
+  "component_support": [
+    {
+      "finding_id": "criterion-1",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+    },
+    {
+      "finding_id": "criterion-1",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+    }
+  ]
+}

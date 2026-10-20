@@ -103,10 +103,11 @@
       "evidence_sources": [
         "docs/delivery/sprint-2-6-kickoff.md",
         "docs/evidence/sprint-2-6-entry-20261019/audit.json",
-        "docs/delivery/sprint-2-6-human-judgments.md"
+        "docs/delivery/sprint-2-6-human-judgments.md",
+        "docs/delivery/sprint-2-6-multisource-candidate.md"
       ],
       "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.",
-      "progress_note": "Prepared explicit v3.2 corrective prompt candidate for unsupported guard applicability; v3.1 default preserved. No real candidate generation, comparison or story completion. Full human matrix confirms unsupported applicability in two cases and missing question-side source in conflict case. Multi-source question correction and controlled comparison remain."
+      "progress_note": "Implemented explicit v3.3 issue routing and executed frozen 16-call serial development round. PO judged all 48 new criteria: six responses pass, two fail only uncertainty due additional nonmaterial identity questions. Prior coverage/citation defects approved as repaired in these snapshots; no old approval transferred, no recipe promotion or story completion. Budget exhausted/closed; materiality correction remains."
     },
     {
       "id": "s26-22-verify",

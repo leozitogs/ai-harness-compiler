@@ -1,0 +1,180 @@
+{
+  "schema_version": "SemanticVerifierProposal/v4",
+  "analysis_sha256": "f93c325ac8863bc6007a27df6d29569d768aee08346a253e3bc4806236d412b5",
+  "findings": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "83927f49eaf90ec557c92fb8de3c44b191d4a318e121c7076a971bc8e3c82938",
+      "source_atom_ids": ["atom-7"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "O critério exige expressamente aprovação humana explícita para liberar publicação da equipe; isso não resolve a precedência."
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "a8729c31d0316a67f00942ee655e6981dc7ca14b58e4e5415472dd39bda6b3b6",
+      "source_atom_ids": ["atom-1", "atom-6"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "A concepção inclui publicações e fontes; o backlog acrescenta registrar decisões."
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "1a9bf07de01a3fcdc9549801f59f507d9b19e6cf9c192aaafb7dfecfee24496d",
+      "source_atom_ids": ["atom-2"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "O público declarado é autores."
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "fe2d770b86460b84c003624ee2d6d8bf8c55d1132333b1bc658104cb5eb564c5",
+      "source_atom_ids": ["atom-1", "atom-8"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "O domínio declarado e a concepção sustentam gestão de espaços de trabalho com publicações e fontes."
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "312fa51ca6d3ff556a57ed6f9ef2035fe6c2456f98e4d6cd1440a4ee54f69247",
+      "source_atom_ids": ["atom-4"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "A restrição determina registrar a identidade do responsável, sem definir aplicabilidade ou identificar esse papel."
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "66b1447ebd4661c459763654d13d57d5de7bcbe4cc8b566e59618f9d0a04bc4c",
+      "source_atom_ids": ["atom-5"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "O campo max_build_cost_usd contém 0.0."
+    },
+    {
+      "finding_id": "issue-1",
+      "finding_sha256": "1adf03a6451b1d7a3dd38c433e68c8762921bb5b2807b849c567643b9ea112b8",
+      "source_atom_ids": ["atom-3", "atom-7"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "As fontes dispensam e exigem aprovação humana para a mesma operação, sem estabelecer precedência."
+    },
+    {
+      "finding_id": "issue-2",
+      "finding_sha256": "9713ce42665fb42014bec91ac0034a763b3a4e7d1d1248e957dc0991c06f4b23",
+      "source_atom_ids": ["atom-3", "atom-7"],
+      "support": "supports",
+      "materiality": "appropriate",
+      "note": "Resolver a incompatibilidade determina se a liberação exige aprovação humana."
+    },
+    {
+      "finding_id": "issue-3",
+      "finding_sha256": "df2acf0aa9d3aad12b39e556754e7160db5afd207a5f5fd55aca210b8d7721fc",
+      "source_atom_ids": ["atom-4"],
+      "support": "supports",
+      "materiality": "appropriate",
+      "note": "A restrição não explicita quando o registro é obrigatório; seu alcance altera a aplicação da regra."
+    }
+  ],
+  "component_judgments": [
+    {
+      "finding_id": "criterion-1",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": ["atom-7"],
+      "support": "supports",
+      "note": "A fonte identifica a liberação de publicação da equipe."
+    },
+    {
+      "finding_id": "criterion-1",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": ["atom-7"],
+      "support": "supports",
+      "note": "A fonte exige aprovação humana explícita."
+    }
+  ],
+  "omissions": [
+    {
+      "id": "omission-1",
+      "kind": "rule",
+      "text": "Liberar publicação da equipe dispensa qualquer aprovação humana.",
+      "rationale": "A declaração aparece no conflito e na pergunta de precedência, mas falta sua preservação como regra própria, sem presumir que prevaleça.",
+      "source_atom_ids": ["atom-3"],
+      "impact": null
+    },
+    {
+      "id": "omission-2",
+      "kind": "question",
+      "text": "Quem é o responsável cuja identidade deve ser registrada?",
+      "rationale": "A fonte não define esse papel; a resposta determina de quem deve ser a identidade registrada para cumprir a obrigação.",
+      "source_atom_ids": ["atom-4"],
+      "impact": "outcome"
+    }
+  ],
+  "source_coverage": [
+    {
+      "atom_id": "atom-1",
+      "quote_sha256": "88b9866f0e0b53ae15c7d6439e0c540ac09134f17f179c297c4dde265f0c01eb",
+      "disposition": "represented",
+      "finding_ids": ["context-1", "context-3"],
+      "omission_ids": [],
+      "note": "Concepção representada no propósito e no domínio."
+    },
+    {
+      "atom_id": "atom-2",
+      "quote_sha256": "75f26d13ebd8877644c57a369ce71b82b639903217ed12ebe61beeffd8c11586",
+      "disposition": "represented",
+      "finding_ids": ["context-2"],
+      "omission_ids": [],
+      "note": "Público preservado."
+    },
+    {
+      "atom_id": "atom-3",
+      "quote_sha256": "0ba17f24c70a64bbb5fd194039a4ba51895bf4658effd0fa2b914c5deea3a9e3",
+      "disposition": "missing",
+      "finding_ids": ["issue-1", "issue-2"],
+      "omission_ids": ["omission-1"],
+      "note": "Conflito e precedência representados; falta a regra autônoma de dispensa."
+    },
+    {
+      "atom_id": "atom-4",
+      "quote_sha256": "22accd7ad33a45ad61811a4737a68f2c8dfd45b650550aec3cdae8de95fc1a0e",
+      "disposition": "missing",
+      "finding_ids": ["context-4", "issue-3"],
+      "omission_ids": ["omission-2"],
+      "note": "Obrigação e dúvida de aplicabilidade preservadas; falta esclarecer a identidade exigida."
+    },
+    {
+      "atom_id": "atom-5",
+      "quote_sha256": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+      "disposition": "represented",
+      "finding_ids": ["context-5"],
+      "omission_ids": [],
+      "note": "Limite de custo preservado."
+    },
+    {
+      "atom_id": "atom-6",
+      "quote_sha256": "5f77f5215732224df6e88a779d30470fdd1c968ff4e40c54ff9fa444e009e034",
+      "disposition": "represented",
+      "finding_ids": ["context-1"],
+      "omission_ids": [],
+      "note": "Organização e registro de decisões preservados."
+    },
+    {
+      "atom_id": "atom-8",
+      "quote_sha256": "d8ec0dfaccceaea0a5f8ccf5a95f094560df5ea36683833d84877c601223e217",
+      "disposition": "represented",
+      "finding_ids": ["context-3"],
+      "omission_ids": [],
+      "note": "Domínio preservado."
+    },
+    {
+      "atom_id": "atom-7",
+      "quote_sha256": "61b8ffef4cf839d5f9ae757a387e5b7fbd53d3468c647d8cd23bf258c29e55d3",
+      "disposition": "represented",
+      "finding_ids": ["criterion-1", "issue-1", "issue-2"],
+      "omission_ids": [],
+      "note": "Exigência, conflito e dúvida de precedência preservados."
+    }
+  ]
+}

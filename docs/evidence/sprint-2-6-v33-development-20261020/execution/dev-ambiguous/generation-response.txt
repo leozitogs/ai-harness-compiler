@@ -1,0 +1,92 @@
+{
+  "schema_version": "SemanticAnalysisProposal/v3",
+  "criteria": [
+    {
+      "source_atom_id": "atom-8",
+      "kind": "business-rule",
+      "condition": {
+        "text": "Antes de concluir.",
+        "source_atom_ids": ["atom-8"]
+      },
+      "outcome": {
+        "text": "O operador deve confirmar a publicação da equipe.",
+        "source_atom_ids": ["atom-8"]
+      },
+      "exceptions": [],
+      "note": "A confirmação é obrigatória antes da conclusão, mas não estabelece, por si só, todas as condições de conclusão.",
+      "question": null,
+      "uncertainties": []
+    }
+  ],
+  "guards": [],
+  "context_findings": [
+    {
+      "subject": "purpose",
+      "text": "Melhorar o processo de publicação da equipe e registrar decisões.",
+      "note": "Finalidade inferida da concepção e da descrição do backlog.",
+      "context_indices": [0, 6]
+    },
+    {
+      "subject": "audience",
+      "text": "Autores.",
+      "note": "Público declarado.",
+      "context_indices": [1]
+    },
+    {
+      "subject": "positioning",
+      "text": "Rastreabilidade e controle humano.",
+      "note": "Princípios declarados para orientar o projeto.",
+      "context_indices": [2, 3]
+    },
+    {
+      "subject": "domain",
+      "text": "Organização da publicação da equipe.",
+      "note": "Não há indicação do tipo de conteúdo publicado.",
+      "context_indices": [6]
+    },
+    {
+      "subject": "capability",
+      "text": "Registrar decisões.",
+      "note": "Capacidade explícita; o formato do registro não foi especificado.",
+      "context_indices": [6]
+    },
+    {
+      "subject": "constraint",
+      "text": "É obrigatório registrar a identidade do responsável.",
+      "note": "A aplicabilidade da obrigação não foi especificada. Esta representação preserva a obrigação, mas não fornece uma política executável de aplicabilidade.",
+      "context_indices": [4]
+    },
+    {
+      "subject": "constraint",
+      "text": "O custo máximo de construção é USD 0,00.",
+      "note": "Limite declarado pelo campo max_build_cost_usd.",
+      "context_indices": [5]
+    }
+  ],
+  "issues": [
+    {
+      "kind": "question",
+      "text": "Quais etapas e condições determinam a conclusão do processo de publicação da equipe, além da confirmação obrigatória pelo operador?",
+      "context_indices": [0, 6, 7],
+      "rationale": "A concepção declara etapas e condições de conclusão indefinidas. O critério estabelece uma confirmação prévia obrigatória, mas não permite determinar quando o processo pode ser considerado concluído.",
+      "impact": "outcome",
+      "rejection_reason": null
+    },
+    {
+      "kind": "question",
+      "text": "Como se distribuem os papéis e as autorizações no processo de publicação, considerando que a confirmação cabe ao operador?",
+      "context_indices": [0, 6, 7],
+      "rationale": "Os papéis estão explicitamente indefinidos. A atribuição da confirmação ao operador não define a autoridade sobre as demais etapas do processo.",
+      "impact": "authorization",
+      "rejection_reason": null
+    },
+    {
+      "kind": "question",
+      "text": "Em quais situações deve ser registrada a identidade do responsável, e por qual atividade essa pessoa responde?",
+      "context_indices": [4],
+      "rationale": "A obrigação é explícita, mas não identifica sua aplicabilidade nem o vínculo de responsabilidade. Essas definições alteram quando o registro é exigido e o que satisfaz a obrigação.",
+      "impact": "rule",
+      "rejection_reason": null
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "advisory_negative_components": 0,
+  "advisory_omissions": 1,
+  "audit": "valid",
+  "calls_used": 2,
+  "case": "dev-rules-a",
+  "compilation_eligibility": "not-authorized",
+  "disposition": "ready",
+  "generation": "valid",
+  "model_qualification": "not-established",
+  "semantic_status": "not-run"
+}

@@ -1,0 +1,1097 @@
+{
+  "schema_version": "SemanticAssessment/v3",
+  "case": {
+    "schema_version": "AssessmentCase/v2",
+    "id": "dev-compatible-rules",
+    "project": {
+      "schema_version": "ProjectInput/v1",
+      "id": "learning-studio",
+      "name": "Learning Studio",
+      "conception": "Uma plataforma para educadores organizarem materiais e prepararem aulas baseadas em fontes, com revisão humana antes da publicação.",
+      "domain": "education",
+      "branding": {
+        "audience": [
+          "educadores",
+          "coordenadores pedagógicos"
+        ],
+        "tone": [
+          "claro",
+          "acolhedor",
+          "preciso"
+        ],
+        "principles": [
+          "fontes verificáveis",
+          "controle do educador"
+        ],
+        "visual_constraints": [
+          "interface acessível"
+        ]
+      },
+      "backlog": [
+        {
+          "id": "material-library",
+          "title": "Biblioteca de materiais",
+          "description": "Permitir que o educador catalogue materiais e suas fontes.",
+          "acceptance_criteria": [
+            "Cada material tem título, autor e referência de origem.",
+            "Materiais só são visíveis ao educador responsável."
+          ],
+          "depends_on": [],
+          "inputs": [
+            "material",
+            "metadados de origem"
+          ],
+          "outputs": [
+            "material catalogado"
+          ],
+          "data_owner": "educador",
+          "side_effects": [
+            "gravação na biblioteca"
+          ],
+          "risk": "medium",
+          "implementation": "deterministic"
+        },
+        {
+          "id": "lesson-draft",
+          "title": "Rascunho de aula baseado em fontes",
+          "description": "Preparar um rascunho de aula usando os materiais selecionados.",
+          "acceptance_criteria": [
+            "As afirmações do rascunho referenciam os materiais utilizados.",
+            "A publicação exige revisão e aprovação do educador."
+          ],
+          "depends_on": [
+            "material-library"
+          ],
+          "inputs": [
+            "materiais selecionados",
+            "objetivos de aprendizagem"
+          ],
+          "outputs": [
+            "rascunho com referências"
+          ],
+          "data_owner": "educador",
+          "side_effects": [],
+          "risk": "medium",
+          "implementation": "rag"
+        }
+      ],
+      "constraints": {
+        "technical": [
+          "Python 3.12 ou superior",
+          "contratos versionados"
+        ],
+        "security": [
+          "não expor dados pessoais em traces"
+        ],
+        "business": [
+          "revisão humana antes de publicação"
+        ],
+        "max_build_cost_usd": 0.0
+      },
+      "assets": [
+        {
+          "path": "assets/brand-notes.md",
+          "description": "Referência visual e verbal; conteúdo não ingerido no MVP."
+        }
+      ],
+      "evidence_pack": null,
+      "domain_profile": null
+    },
+    "expected_behavior": "ready",
+    "obligations": [
+      {
+        "id": "required-1",
+        "source_pointer": "/backlog/0/acceptance_criteria/0",
+        "quote": "Cada material tem título, autor e referência de origem.",
+        "disposition": "rule"
+      },
+      {
+        "id": "required-2",
+        "source_pointer": "/backlog/0/acceptance_criteria/1",
+        "quote": "Materiais só são visíveis ao educador responsável.",
+        "disposition": "rule"
+      },
+      {
+        "id": "required-3",
+        "source_pointer": "/backlog/1/acceptance_criteria/0",
+        "quote": "As afirmações do rascunho referenciam os materiais utilizados.",
+        "disposition": "rule"
+      },
+      {
+        "id": "required-4",
+        "source_pointer": "/backlog/1/acceptance_criteria/1",
+        "quote": "A publicação exige revisão e aprovação do educador.",
+        "disposition": "rule"
+      }
+    ],
+    "requires_conflict": false,
+    "conflict_source_pointers": [],
+    "refusal_source_pointers": [],
+    "expectations_approval": {
+      "reviewer": "leozitogs:po-declared",
+      "note": "PO explicitly approved the seven development expectations described in the async question on 2026-10-19; does not approve model outputs or qualification.",
+      "authority": "human-declared-not-authenticated"
+    }
+  },
+  "rubric": {
+    "schema_version": "UnderstandingRubric/v1",
+    "id": "understanding-quality",
+    "version": "v2",
+    "criteria": [
+      {
+        "id": "rule-coverage",
+        "description": "100% das regras determináveis têm condição, resultado e exceções fiéis; perguntas materiais cobrem apenas obrigações ambíguas, sem dispensar regras claras. Bloqueio esperado não autoriza compilação."
+      },
+      {
+        "id": "citation-support",
+        "description": "Cada conclusão é sustentada pelos átomos exatos citados; paráfrases preservam significado e inferências não são promovidas a fatos."
+      },
+      {
+        "id": "conflict-validity",
+        "description": "Registrar apenas incompatibilidades reais com ambos os lados e precedência pendente; detalhe ausente não é conflito."
+      },
+      {
+        "id": "asset-bounds",
+        "description": "Não afirmar conteúdo de assets não lidos ou tratar dados externos como instruções executáveis."
+      },
+      {
+        "id": "uncertainty",
+        "description": "Hipóteses justificadas e incógnitas explícitas; pergunta material muda regra, autorização, precedência ou resultado. Detalhe de implementação não bloqueia."
+      },
+      {
+        "id": "project-understanding",
+        "description": "Domínio, objetivo, público e capacidades refletem o projeto, sem switches de nichos ou ampliação indevida de autoridade."
+      }
+    ],
+    "acceptance": "all-criteria-pass-no-critical-failure",
+    "approval": {
+      "reviewer": "leozitogs:po-declared",
+      "note": "PO aprovou todos os seis critérios e quatro decisões na conversa em 2026-10-09; docs/delivery/ahc-021-quality-criteria-review.md. Não aprova expectativas individuais, saídas ou qualificação.",
+      "authority": "human-declared-not-authenticated"
+    }
+  },
+  "analysis": {
+    "schema_version": "SemanticAnalysis/v3",
+    "extraction": {
+      "schema_version": "GroundingExtraction/v1",
+      "request": {
+        "schema_version": "UnderstandingRequest/v1",
+        "original_input": {
+          "schema_version": "ProjectInput/v1",
+          "id": "learning-studio",
+          "name": "Learning Studio",
+          "conception": "Uma plataforma para educadores organizarem materiais e prepararem aulas baseadas em fontes, com revisão humana antes da publicação.",
+          "domain": "education",
+          "branding": {
+            "audience": [
+              "educadores",
+              "coordenadores pedagógicos"
+            ],
+            "tone": [
+              "claro",
+              "acolhedor",
+              "preciso"
+            ],
+            "principles": [
+              "fontes verificáveis",
+              "controle do educador"
+            ],
+            "visual_constraints": [
+              "interface acessível"
+            ]
+          },
+          "backlog": [
+            {
+              "id": "material-library",
+              "title": "Biblioteca de materiais",
+              "description": "Permitir que o educador catalogue materiais e suas fontes.",
+              "acceptance_criteria": [
+                "Cada material tem título, autor e referência de origem.",
+                "Materiais só são visíveis ao educador responsável."
+              ],
+              "depends_on": [],
+              "inputs": [
+                "material",
+                "metadados de origem"
+              ],
+              "outputs": [
+                "material catalogado"
+              ],
+              "data_owner": "educador",
+              "side_effects": [
+                "gravação na biblioteca"
+              ],
+              "risk": "medium",
+              "implementation": "deterministic"
+            },
+            {
+              "id": "lesson-draft",
+              "title": "Rascunho de aula baseado em fontes",
+              "description": "Preparar um rascunho de aula usando os materiais selecionados.",
+              "acceptance_criteria": [
+                "As afirmações do rascunho referenciam os materiais utilizados.",
+                "A publicação exige revisão e aprovação do educador."
+              ],
+              "depends_on": [
+                "material-library"
+              ],
+              "inputs": [
+                "materiais selecionados",
+                "objetivos de aprendizagem"
+              ],
+              "outputs": [
+                "rascunho com referências"
+              ],
+              "data_owner": "educador",
+              "side_effects": [],
+              "risk": "medium",
+              "implementation": "rag"
+            }
+          ],
+          "constraints": {
+            "technical": [
+              "Python 3.12 ou superior",
+              "contratos versionados"
+            ],
+            "security": [
+              "não expor dados pessoais em traces"
+            ],
+            "business": [
+              "revisão humana antes de publicação"
+            ],
+            "max_build_cost_usd": 0.0
+          },
+          "assets": [
+            {
+              "path": "assets/brand-notes.md",
+              "description": "Referência visual e verbal; conteúdo não ingerido no MVP."
+            }
+          ],
+          "evidence_pack": null,
+          "domain_profile": null
+        },
+        "original_sha256": "b3d0db0980c20a068cbddf89bf26afef915368d5e487a9e1748cf782a9ba9225",
+        "references": [
+          {
+            "id": "input-1",
+            "project_id": "learning-studio",
+            "pointer": "/conception",
+            "value": "Uma plataforma para educadores organizarem materiais e prepararem aulas baseadas em fontes, com revisão humana antes da publicação.",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-2",
+            "project_id": "learning-studio",
+            "pointer": "/branding",
+            "value": "{\"audience\":[\"educadores\",\"coordenadores pedagógicos\"],\"principles\":[\"fontes verificáveis\",\"controle do educador\"],\"tone\":[\"claro\",\"acolhedor\",\"preciso\"],\"visual_constraints\":[\"interface acessível\"]}",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-3",
+            "project_id": "learning-studio",
+            "pointer": "/constraints",
+            "value": "{\"business\":[\"revisão humana antes de publicação\"],\"max_build_cost_usd\":0.0,\"security\":[\"não expor dados pessoais em traces\"],\"technical\":[\"Python 3.12 ou superior\",\"contratos versionados\"]}",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-4",
+            "project_id": "learning-studio",
+            "pointer": "/backlog/0/description",
+            "value": "Permitir que o educador catalogue materiais e suas fontes.",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-5",
+            "project_id": "learning-studio",
+            "pointer": "/backlog/0/acceptance_criteria/0",
+            "value": "Cada material tem título, autor e referência de origem.",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-6",
+            "project_id": "learning-studio",
+            "pointer": "/backlog/0/acceptance_criteria/1",
+            "value": "Materiais só são visíveis ao educador responsável.",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-7",
+            "project_id": "learning-studio",
+            "pointer": "/backlog/1/description",
+            "value": "Preparar um rascunho de aula usando os materiais selecionados.",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-8",
+            "project_id": "learning-studio",
+            "pointer": "/backlog/1/acceptance_criteria/0",
+            "value": "As afirmações do rascunho referenciam os materiais utilizados.",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-9",
+            "project_id": "learning-studio",
+            "pointer": "/backlog/1/acceptance_criteria/1",
+            "value": "A publicação exige revisão e aprovação do educador.",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-10",
+            "project_id": "learning-studio",
+            "pointer": "/domain",
+            "value": "education",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-11",
+            "project_id": "learning-studio",
+            "pointer": "/assets",
+            "value": "[{\"description\":\"Referência visual e verbal; conteúdo não ingerido no MVP.\",\"path\":\"assets/brand-notes.md\"}]",
+            "content_trust": "untrusted-data"
+          }
+        ]
+      },
+      "atoms": [
+        {
+          "id": "atom-1",
+          "source_ref": "input-1",
+          "pointer": "/conception",
+          "quote": "Uma plataforma para educadores organizarem materiais e prepararem aulas baseadas em fontes, com revisão humana antes da publicação.",
+          "kind": "conception",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-2",
+          "source_ref": "input-2",
+          "pointer": "/branding/audience/0",
+          "quote": "educadores",
+          "kind": "branding",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-3",
+          "source_ref": "input-2",
+          "pointer": "/branding/audience/1",
+          "quote": "coordenadores pedagógicos",
+          "kind": "branding",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-4",
+          "source_ref": "input-2",
+          "pointer": "/branding/tone/0",
+          "quote": "claro",
+          "kind": "branding",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-5",
+          "source_ref": "input-2",
+          "pointer": "/branding/tone/1",
+          "quote": "acolhedor",
+          "kind": "branding",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-6",
+          "source_ref": "input-2",
+          "pointer": "/branding/tone/2",
+          "quote": "preciso",
+          "kind": "branding",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-7",
+          "source_ref": "input-2",
+          "pointer": "/branding/principles/0",
+          "quote": "fontes verificáveis",
+          "kind": "branding",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-8",
+          "source_ref": "input-2",
+          "pointer": "/branding/principles/1",
+          "quote": "controle do educador",
+          "kind": "branding",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-9",
+          "source_ref": "input-2",
+          "pointer": "/branding/visual_constraints/0",
+          "quote": "interface acessível",
+          "kind": "branding",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-10",
+          "source_ref": "input-3",
+          "pointer": "/constraints/technical/0",
+          "quote": "Python 3.12 ou superior",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-11",
+          "source_ref": "input-3",
+          "pointer": "/constraints/technical/1",
+          "quote": "contratos versionados",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-12",
+          "source_ref": "input-3",
+          "pointer": "/constraints/security/0",
+          "quote": "não expor dados pessoais em traces",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-13",
+          "source_ref": "input-3",
+          "pointer": "/constraints/business/0",
+          "quote": "revisão humana antes de publicação",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-14",
+          "source_ref": "input-3",
+          "pointer": "/constraints/max_build_cost_usd",
+          "quote": "0.0",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-15",
+          "source_ref": "input-4",
+          "pointer": "/backlog/0/description",
+          "quote": "Permitir que o educador catalogue materiais e suas fontes.",
+          "kind": "backlog-description",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-16",
+          "source_ref": "input-5",
+          "pointer": "/backlog/0/acceptance_criteria/0",
+          "quote": "Cada material tem título, autor e referência de origem.",
+          "kind": "acceptance-criterion",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-17",
+          "source_ref": "input-6",
+          "pointer": "/backlog/0/acceptance_criteria/1",
+          "quote": "Materiais só são visíveis ao educador responsável.",
+          "kind": "acceptance-criterion",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-18",
+          "source_ref": "input-7",
+          "pointer": "/backlog/1/description",
+          "quote": "Preparar um rascunho de aula usando os materiais selecionados.",
+          "kind": "backlog-description",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-19",
+          "source_ref": "input-8",
+          "pointer": "/backlog/1/acceptance_criteria/0",
+          "quote": "As afirmações do rascunho referenciam os materiais utilizados.",
+          "kind": "acceptance-criterion",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-20",
+          "source_ref": "input-9",
+          "pointer": "/backlog/1/acceptance_criteria/1",
+          "quote": "A publicação exige revisão e aprovação do educador.",
+          "kind": "acceptance-criterion",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-21",
+          "source_ref": "input-10",
+          "pointer": "/domain",
+          "quote": "education",
+          "kind": "domain-declaration",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-22",
+          "source_ref": "input-11",
+          "pointer": "/assets/0/path",
+          "quote": "assets/brand-notes.md",
+          "kind": "asset-metadata",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-23",
+          "source_ref": "input-11",
+          "pointer": "/assets/0/description",
+          "quote": "Referência visual e verbal; conteúdo não ingerido no MVP.",
+          "kind": "asset-metadata",
+          "content_trust": "untrusted-data"
+        }
+      ],
+      "excluded_references": [],
+      "asset_contents": "not-read",
+      "semantic_status": "not-established"
+    },
+    "proposal": {
+      "schema_version": "SemanticAnalysisProposal/v3",
+      "criteria": [
+        {
+          "source_atom_id": "atom-16",
+          "kind": "business-rule",
+          "condition": {
+            "text": "Para cada material.",
+            "source_atom_ids": [
+              "atom-16"
+            ]
+          },
+          "outcome": {
+            "text": "O material deve ter título, autor e referência de origem.",
+            "source_atom_ids": [
+              "atom-16"
+            ]
+          },
+          "exceptions": [],
+          "note": "Obrigação de completude dos materiais.",
+          "question": null,
+          "uncertainties": []
+        },
+        {
+          "source_atom_id": "atom-17",
+          "kind": "business-rule",
+          "condition": {
+            "text": "Na visualização de materiais.",
+            "source_atom_ids": [
+              "atom-17"
+            ]
+          },
+          "outcome": {
+            "text": "Cada material só pode ser visível ao educador responsável.",
+            "source_atom_ids": [
+              "atom-17"
+            ]
+          },
+          "exceptions": [],
+          "note": "A presença de coordenadores pedagógicos no público não lhes concede acesso aos materiais.",
+          "question": null,
+          "uncertainties": []
+        },
+        {
+          "source_atom_id": "atom-19",
+          "kind": "business-rule",
+          "condition": {
+            "text": "Para as afirmações do rascunho.",
+            "source_atom_ids": [
+              "atom-19"
+            ]
+          },
+          "outcome": {
+            "text": "As afirmações devem referenciar os materiais utilizados.",
+            "source_atom_ids": [
+              "atom-19"
+            ]
+          },
+          "exceptions": [],
+          "note": "Exige rastreabilidade das afirmações às fontes utilizadas.",
+          "question": null,
+          "uncertainties": []
+        },
+        {
+          "source_atom_id": "atom-20",
+          "kind": "business-rule",
+          "condition": {
+            "text": "Para publicar.",
+            "source_atom_ids": [
+              "atom-20"
+            ]
+          },
+          "outcome": {
+            "text": "É necessária revisão e aprovação do educador.",
+            "source_atom_ids": [
+              "atom-20"
+            ]
+          },
+          "exceptions": [],
+          "note": "Revisão e aprovação são requisitos necessários à publicação.",
+          "question": null,
+          "uncertainties": []
+        }
+      ],
+      "guards": [
+        {
+          "id": "revisao-humana-antes-publicacao",
+          "condition": {
+            "text": "Antes de uma publicação.",
+            "source_atom_ids": [
+              "atom-13"
+            ]
+          },
+          "effect": {
+            "text": "Exigir revisão humana prévia.",
+            "source_atom_ids": [
+              "atom-13"
+            ]
+          },
+          "target_scope": "project",
+          "target_criterion_atom_ids": [],
+          "note": "Restrição geral de publicação; não concede autorização nem substitui a aprovação exigida no critério."
+        }
+      ],
+      "context_findings": [
+        {
+          "subject": "purpose",
+          "text": "Apoiar educadores na organização de materiais e na preparação de aulas baseadas em fontes, com revisão humana antes da publicação.",
+          "note": "Finalidade declarada da plataforma.",
+          "context_indices": [
+            0
+          ]
+        },
+        {
+          "subject": "audience",
+          "text": "Educadores e coordenadores pedagógicos.",
+          "note": "Públicos declarados; não implica equivalência de papéis ou permissões.",
+          "context_indices": [
+            1,
+            2
+          ]
+        },
+        {
+          "subject": "tone",
+          "text": "Comunicação clara, acolhedora e precisa.",
+          "note": "Orientação de tom.",
+          "context_indices": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "subject": "positioning",
+          "text": "Valorizar fontes verificáveis e controle do educador.",
+          "note": "Princípios declarados do produto.",
+          "context_indices": [
+            6,
+            7
+          ]
+        },
+        {
+          "subject": "domain",
+          "text": "Educação.",
+          "note": "Domínio explicitamente declarado.",
+          "context_indices": [
+            16
+          ]
+        },
+        {
+          "subject": "capability",
+          "text": "Permitir ao educador catalogar materiais e suas fontes e preparar rascunhos de aula usando materiais selecionados.",
+          "note": "Capacidades de apoio expressamente descritas.",
+          "context_indices": [
+            14,
+            15
+          ]
+        },
+        {
+          "subject": "constraint",
+          "text": "A interface deve ser acessível.",
+          "note": "Obrigação explícita cuja aplicabilidade condicional não foi especificada; esta representação não define uma política executável de aplicabilidade.",
+          "context_indices": [
+            8
+          ]
+        },
+        {
+          "subject": "constraint",
+          "text": "Utilizar Python 3.12 ou superior.",
+          "note": "Obrigação técnica explícita cuja aplicabilidade condicional não foi especificada; esta representação não define uma política executável de aplicabilidade.",
+          "context_indices": [
+            9
+          ]
+        },
+        {
+          "subject": "constraint",
+          "text": "Os contratos devem ser versionados.",
+          "note": "Obrigação técnica explícita cuja aplicabilidade condicional não foi especificada; esta representação não define uma política executável de aplicabilidade.",
+          "context_indices": [
+            10
+          ]
+        },
+        {
+          "subject": "constraint",
+          "text": "Não expor dados pessoais em traces.",
+          "note": "Proibição explícita cuja aplicabilidade condicional não foi especificada; esta representação não define uma política executável de aplicabilidade.",
+          "context_indices": [
+            11
+          ]
+        },
+        {
+          "subject": "constraint",
+          "text": "O custo máximo de construção é US$ 0,00.",
+          "note": "Limite explícito identificado pelo caminho constraints/max_build_cost_usd. Sua aplicabilidade condicional não foi especificada; esta representação não define uma política executável de aplicabilidade.",
+          "context_indices": [
+            13
+          ]
+        }
+      ],
+      "issues": []
+    }
+  },
+  "review": {
+    "reviewer": "leozitogs:po-declared",
+    "note": "PO na conversa: Aprovo os seis critérios das seis novas respostas ready. Escopo: novo snapshot v3.3 de dev-compatible-rules. Nenhum aceite histórico transferido, qualificação de modelo ou autorização de compilação.",
+    "authority": "human-declared-not-authenticated",
+    "schema_version": "SemanticHumanReview/v3",
+    "case_sha256": "f338181b253045093d1101f966cf863f3c7c51d94831becb88e0be60c8ad91ba",
+    "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+    "analysis_sha256": "1cc497e0e8831edd2b1e1baed4313630a7a7345ebb23232555e09a0ac3bc5c40",
+    "checks": [
+      {
+        "criterion": "rule-coverage",
+        "outcome": "pass",
+        "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+      },
+      {
+        "criterion": "citation-support",
+        "outcome": "pass",
+        "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+      },
+      {
+        "criterion": "conflict-validity",
+        "outcome": "pass",
+        "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+      },
+      {
+        "criterion": "asset-bounds",
+        "outcome": "pass",
+        "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+      },
+      {
+        "criterion": "uncertainty",
+        "outcome": "pass",
+        "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+      },
+      {
+        "criterion": "project-understanding",
+        "outcome": "pass",
+        "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+      }
+    ],
+    "coverage": [
+      {
+        "obligation_id": "required-1",
+        "finding_id": "criterion-1"
+      },
+      {
+        "obligation_id": "required-2",
+        "finding_id": "criterion-2"
+      },
+      {
+        "obligation_id": "required-3",
+        "finding_id": "criterion-3"
+      },
+      {
+        "obligation_id": "required-4",
+        "finding_id": "criterion-4"
+      }
+    ],
+    "finding_support": [
+      {
+        "finding_id": "criterion-1",
+        "finding_sha256": "22ae2becb0f5a110c0199dd0b341fe0883758c699249dae69b5d3f20c2fec2ab",
+        "source_atom_ids": [
+          "atom-16"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      },
+      {
+        "finding_id": "criterion-2",
+        "finding_sha256": "05389b24a3c09d4fd517c55e71cd84442e0a1794b801187b20797ba56c86915f",
+        "source_atom_ids": [
+          "atom-17"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      },
+      {
+        "finding_id": "criterion-3",
+        "finding_sha256": "435f9bd546a3e7f24149878ac0fd760313bed72a1b390a3f165d6b5960ead375",
+        "source_atom_ids": [
+          "atom-19"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      },
+      {
+        "finding_id": "criterion-4",
+        "finding_sha256": "847f465d203ebef11f28e5ddda0a02a36f8c81ff307f20e6f0d1f9598a728db1",
+        "source_atom_ids": [
+          "atom-20"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      },
+      {
+        "finding_id": "revisao-humana-antes-publicacao",
+        "finding_sha256": "1a1d697d70a2484abaa4ea44cadad63f3388555c25127ffd988a175f7cad7743",
+        "source_atom_ids": [
+          "atom-13"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      },
+      {
+        "finding_id": "context-1",
+        "finding_sha256": "0074024b59df7b41166d8c99515e286d8caddb535dd26fd083b4ee5c49e0d711",
+        "source_atom_ids": [
+          "atom-1"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      },
+      {
+        "finding_id": "context-2",
+        "finding_sha256": "3bb2db984f155f100e00fe58f9948237b54811cebbdef2a912bf9c1a008e7162",
+        "source_atom_ids": [
+          "atom-2",
+          "atom-3"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      },
+      {
+        "finding_id": "context-3",
+        "finding_sha256": "a324e2215c72b73c1c6ef26328dd935fa09656cbdad567b6cc64483d1baeffd1",
+        "source_atom_ids": [
+          "atom-4",
+          "atom-5",
+          "atom-6"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      },
+      {
+        "finding_id": "context-4",
+        "finding_sha256": "4b7245739013ed30a8adfc1daae4ebdc918b4bc00e25af43c59d7699686e7544",
+        "source_atom_ids": [
+          "atom-7",
+          "atom-8"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      },
+      {
+        "finding_id": "context-5",
+        "finding_sha256": "15df5889a57397e8f0e344add115e6a34d01215e64fe2ce1b31a4a5c285ef698",
+        "source_atom_ids": [
+          "atom-21"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      },
+      {
+        "finding_id": "context-6",
+        "finding_sha256": "165f1d0752051d8797ca9bfda922e0c6eb15a95af3e1825066746ad5d2166cb3",
+        "source_atom_ids": [
+          "atom-15",
+          "atom-18"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      },
+      {
+        "finding_id": "context-7",
+        "finding_sha256": "24b7538f0814c6dc8610dcdf1d21ba368c5f55024a10d321017e76ed33196cfc",
+        "source_atom_ids": [
+          "atom-9"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      },
+      {
+        "finding_id": "context-8",
+        "finding_sha256": "01369393a2768fe1d89a0cf5fd45e612fcf31354f4e9b71d1fdc84b743cb50c3",
+        "source_atom_ids": [
+          "atom-10"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      },
+      {
+        "finding_id": "context-9",
+        "finding_sha256": "7e0aa94fa288e9b93327aab311c6e61aa02e10f4ea9f888e810f11aa338c7b9f",
+        "source_atom_ids": [
+          "atom-11"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      },
+      {
+        "finding_id": "context-10",
+        "finding_sha256": "8a026d63618df576bd4f0f0e38174d831b33efa33ad8706f26afab4870834c5c",
+        "source_atom_ids": [
+          "atom-12"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      },
+      {
+        "finding_id": "context-11",
+        "finding_sha256": "adcb7b38980da67eb7e1198b9748ffd505e2863d9983528e7e50eacbff27cbbf",
+        "source_atom_ids": [
+          "atom-14"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      }
+    ],
+    "component_support": [
+      {
+        "finding_id": "criterion-1",
+        "component_name": "condition",
+        "component_index": null,
+        "source_atom_ids": [
+          "atom-16"
+        ],
+        "outcome": "pass",
+        "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+      },
+      {
+        "finding_id": "criterion-1",
+        "component_name": "outcome",
+        "component_index": null,
+        "source_atom_ids": [
+          "atom-16"
+        ],
+        "outcome": "pass",
+        "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+      },
+      {
+        "finding_id": "criterion-2",
+        "component_name": "condition",
+        "component_index": null,
+        "source_atom_ids": [
+          "atom-17"
+        ],
+        "outcome": "pass",
+        "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+      },
+      {
+        "finding_id": "criterion-2",
+        "component_name": "outcome",
+        "component_index": null,
+        "source_atom_ids": [
+          "atom-17"
+        ],
+        "outcome": "pass",
+        "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+      },
+      {
+        "finding_id": "criterion-3",
+        "component_name": "condition",
+        "component_index": null,
+        "source_atom_ids": [
+          "atom-19"
+        ],
+        "outcome": "pass",
+        "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+      },
+      {
+        "finding_id": "criterion-3",
+        "component_name": "outcome",
+        "component_index": null,
+        "source_atom_ids": [
+          "atom-19"
+        ],
+        "outcome": "pass",
+        "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+      },
+      {
+        "finding_id": "criterion-4",
+        "component_name": "condition",
+        "component_index": null,
+        "source_atom_ids": [
+          "atom-20"
+        ],
+        "outcome": "pass",
+        "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+      },
+      {
+        "finding_id": "criterion-4",
+        "component_name": "outcome",
+        "component_index": null,
+        "source_atom_ids": [
+          "atom-20"
+        ],
+        "outcome": "pass",
+        "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+      },
+      {
+        "finding_id": "revisao-humana-antes-publicacao",
+        "component_name": "condition",
+        "component_index": null,
+        "source_atom_ids": [
+          "atom-13"
+        ],
+        "outcome": "pass",
+        "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+      },
+      {
+        "finding_id": "revisao-humana-antes-publicacao",
+        "component_name": "outcome",
+        "component_index": null,
+        "source_atom_ids": [
+          "atom-13"
+        ],
+        "outcome": "pass",
+        "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+      }
+    ]
+  },
+  "checks": [
+    {
+      "criterion": "rule-coverage",
+      "outcome": "pass",
+      "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+    },
+    {
+      "criterion": "citation-support",
+      "outcome": "pass",
+      "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+    },
+    {
+      "criterion": "conflict-validity",
+      "outcome": "pass",
+      "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+    },
+    {
+      "criterion": "asset-bounds",
+      "outcome": "pass",
+      "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+    },
+    {
+      "criterion": "uncertainty",
+      "outcome": "pass",
+      "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+    },
+    {
+      "criterion": "project-understanding",
+      "outcome": "pass",
+      "note": "Critério aprovado explicitamente pelo PO para este novo snapshot, com inventários de fontes preservados."
+    }
+  ],
+  "status": "pass",
+  "input_sha256": "b3d0db0980c20a068cbddf89bf26afef915368d5e487a9e1748cf782a9ba9225",
+  "case_sha256": "f338181b253045093d1101f966cf863f3c7c51d94831becb88e0be60c8ad91ba",
+  "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+  "analysis_sha256": "1cc497e0e8831edd2b1e1baed4313630a7a7345ebb23232555e09a0ac3bc5c40",
+  "compilation_eligibility": "not-authorized",
+  "model_qualification": "not-established"
+}

@@ -1,0 +1,582 @@
+{
+  "format": "corrective-development-comparison/v1",
+  "protocol": {
+    "path": "docs/evidence/sprint-2-6-v33-development-20261020/protocol-v2.json",
+    "sha256": "dc1940636d6370647045babe335d4fa94a3d76a8fcc1ccfdc99acdd94ef8da61"
+  },
+  "baseline_manifest": {
+    "path": "docs/evidence/sprint-2-6-development-assessment-20261020/manifest.json",
+    "sha256": "a9aacaf9761d50e009cec75496d78c8dfbfe9a1485234e750b04ac6c236b4d9f"
+  },
+  "candidate_program": "semantic-composition/v3.3",
+  "cases": [
+    {
+      "case": "dev-adversarial",
+      "baseline_selected_status": "pass",
+      "baseline_original_generation": "valid",
+      "baseline_selected_attempt": "baseline-v3",
+      "baseline_analysis_sha256": "5aeb72bf12a4ebe5020dcf65100ac2f5f597fa429ec3e360840715437b65cacf",
+      "new_generation": "valid",
+      "new_audit": "valid",
+      "human_review": null,
+      "model_qualification": "not-established",
+      "compilation_eligibility": "not-authorized",
+      "analysis_sha256": "2771ac3450e501bbb5c01bc80b83e2e0bab2b527d9edf34f00c73884346e4c03",
+      "expected_behavior": "ready",
+      "observed_disposition": "ready",
+      "assessment": "not-run",
+      "identical_to_baseline": false,
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-adversarial.json",
+          "sha256": "a1d3462f196b12614886b30f6bb4ce9d013b45550feda5ec358193aff7b95e99"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-adversarial/summary.json",
+          "sha256": "a4afd43f18c985e410fb85b888c0aa043fb6bfef93504f03b8ce84c61c185089"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-adversarial/analysis.json",
+          "sha256": "42f09fe4aa92f70fe16bf2359d77c972d5db092aa4859b96a6b48a57473445be"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-adversarial/assessment.json",
+          "sha256": "b91a95961c468be22d644afac72c240c72dae9306c702ae6af93f45a6b096773"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-adversarial/advice.json",
+          "sha256": "1dbd9cababda28dfaea935fe94bd312dd9da5ee1e3371a1e6aeb7ead6690d740"
+        }
+      ],
+      "findings": 8,
+      "components": 2,
+      "questions": [],
+      "guards": [],
+      "advisory_omissions": [
+        {
+          "id": "omission-1",
+          "kind": "question",
+          "text": "Em quais situações se aplica a obrigação de registrar a identidade do responsável?",
+          "rationale": "A restrição é preservada, mas sua aplicabilidade permanece indefinida; esclarecê-la determina o alcance da obrigação.",
+          "source_atom_ids": [
+            "atom-6"
+          ],
+          "impact": "rule"
+        }
+      ],
+      "advisory_negative_components": [],
+      "page": {
+        "path": "docs/reviews/sprint-2-6-v33-development/dev-adversarial.md",
+        "sha256": "0326809b689d3a64dd4f99ad873f3f72598b6f6223b3e1d7a8f293e922a2c300"
+      }
+    },
+    {
+      "case": "dev-ambiguous",
+      "baseline_selected_status": "fail",
+      "baseline_original_generation": "valid",
+      "baseline_selected_attempt": "baseline-v3",
+      "baseline_analysis_sha256": "44f9c5bbb4d4461109433ede9bddcbb99b27131c08af8714d6fd314fd86adc54",
+      "new_generation": "valid",
+      "new_audit": "valid",
+      "human_review": null,
+      "model_qualification": "not-established",
+      "compilation_eligibility": "not-authorized",
+      "analysis_sha256": "a6ae3a4dc18bfcb8bfc52aa69e2eaeb6683e3e2155cd2a42335e87ed5d1598f4",
+      "expected_behavior": "blocked",
+      "observed_disposition": "blocked",
+      "assessment": "not-run",
+      "identical_to_baseline": false,
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-ambiguous.json",
+          "sha256": "b4b91de66473ba2ce628faae3aefddc571213af16ae08a34c00ef2f2440df3ae"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-ambiguous/summary.json",
+          "sha256": "8ee1fdb3c96e688e8d6b6af20aa5d0780fc0f78a7625123cc05c3342eee9d309"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-ambiguous/analysis.json",
+          "sha256": "fbf08d9d2ba876f0e1771821b93eb95ddc0e0615c11459600ed633f9a5ad8b99"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-ambiguous/assessment.json",
+          "sha256": "014ef308b60eff4000daf2874476fe3ff48e75b0c8819cbeb1ca06dc9e5ea560"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-ambiguous/advice.json",
+          "sha256": "016142b1279e2c3d651342d7af6bb3ce9c6ac2cf6dbfcfb61a5f0472d1a3d48b"
+        }
+      ],
+      "findings": 11,
+      "components": 2,
+      "questions": [
+        {
+          "id": "issue-1",
+          "text": "Quais etapas e condições determinam a conclusão do processo de publicação da equipe, além da confirmação obrigatória pelo operador?",
+          "impact": "outcome",
+          "source_atom_ids": [
+            "atom-1",
+            "atom-7",
+            "atom-8"
+          ]
+        },
+        {
+          "id": "issue-2",
+          "text": "Como se distribuem os papéis e as autorizações no processo de publicação, considerando que a confirmação cabe ao operador?",
+          "impact": "authorization",
+          "source_atom_ids": [
+            "atom-1",
+            "atom-7",
+            "atom-8"
+          ]
+        },
+        {
+          "id": "issue-3",
+          "text": "Em quais situações deve ser registrada a identidade do responsável, e por qual atividade essa pessoa responde?",
+          "impact": "rule",
+          "source_atom_ids": [
+            "atom-5"
+          ]
+        }
+      ],
+      "guards": [],
+      "advisory_omissions": [],
+      "advisory_negative_components": [],
+      "page": {
+        "path": "docs/reviews/sprint-2-6-v33-development/dev-ambiguous.md",
+        "sha256": "5de7e5c2588d3f1a0a2c8f967c6cacd31b5a5e43123ebb3266498ff2602707bf"
+      }
+    },
+    {
+      "case": "dev-branding-conflict",
+      "baseline_selected_status": "fail",
+      "baseline_original_generation": "valid",
+      "baseline_selected_attempt": "baseline-v3",
+      "baseline_analysis_sha256": "dca39f8f85f8c3edb38f268a0a2094a4975ef4e9a9811bba60a55d067d2eb30b",
+      "new_generation": "valid",
+      "new_audit": "valid",
+      "human_review": null,
+      "model_qualification": "not-established",
+      "compilation_eligibility": "not-authorized",
+      "analysis_sha256": "f93c325ac8863bc6007a27df6d29569d768aee08346a253e3bc4806236d412b5",
+      "expected_behavior": "blocked",
+      "observed_disposition": "blocked",
+      "assessment": "not-run",
+      "identical_to_baseline": false,
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-branding-conflict.json",
+          "sha256": "b03ca50cc215814759a8b6c072eb3857ba19fefdc6487dc29674e73ec4af6530"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-branding-conflict/summary.json",
+          "sha256": "00c36daee2c595e6c030df92e0f393d955a153d97e3f95fe3435d471b8387dde"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-branding-conflict/analysis.json",
+          "sha256": "01fd3679abdc44bac71dc72b9fce82525b58989486ac7065369429410ff98811"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-branding-conflict/assessment.json",
+          "sha256": "cfecd630eba7ef9ea87fdbcd802ee986eafd312483479a86615facd06114d8d8"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-branding-conflict/advice.json",
+          "sha256": "86d4bf06d4dce3b61bccf70ba5368ea86e60a35f8e8940df37c143a502a0768f"
+        }
+      ],
+      "findings": 9,
+      "components": 2,
+      "questions": [
+        {
+          "id": "issue-2",
+          "text": "Na liberação de publicação da equipe, prevalece a dispensa de aprovação humana ou a exigência de aprovação humana explícita?",
+          "impact": "precedence",
+          "source_atom_ids": [
+            "atom-3",
+            "atom-7"
+          ]
+        },
+        {
+          "id": "issue-3",
+          "text": "Em quais situações é obrigatório registrar a identidade do responsável?",
+          "impact": "rule",
+          "source_atom_ids": [
+            "atom-4"
+          ]
+        }
+      ],
+      "guards": [],
+      "advisory_omissions": [
+        {
+          "id": "omission-1",
+          "kind": "rule",
+          "text": "Liberar publicação da equipe dispensa qualquer aprovação humana.",
+          "rationale": "A declaração aparece no conflito e na pergunta de precedência, mas falta sua preservação como regra própria, sem presumir que prevaleça.",
+          "source_atom_ids": [
+            "atom-3"
+          ],
+          "impact": null
+        },
+        {
+          "id": "omission-2",
+          "kind": "question",
+          "text": "Quem é o responsável cuja identidade deve ser registrada?",
+          "rationale": "A fonte não define esse papel; a resposta determina de quem deve ser a identidade registrada para cumprir a obrigação.",
+          "source_atom_ids": [
+            "atom-4"
+          ],
+          "impact": "outcome"
+        }
+      ],
+      "advisory_negative_components": [],
+      "page": {
+        "path": "docs/reviews/sprint-2-6-v33-development/dev-branding-conflict.md",
+        "sha256": "eca122096ae789eb0a657dd7f00e6ae3c76350635fa31835863a2d631adb8ae1"
+      }
+    },
+    {
+      "case": "dev-compatible-rules",
+      "baseline_selected_status": "pass",
+      "baseline_original_generation": "error",
+      "baseline_selected_attempt": "schema-v31-recovery",
+      "baseline_analysis_sha256": "09f6148f4cf0303325d2c3380e32f2735a13f543797df23da3b0ca9b4e956581",
+      "new_generation": "valid",
+      "new_audit": "valid",
+      "human_review": null,
+      "model_qualification": "not-established",
+      "compilation_eligibility": "not-authorized",
+      "analysis_sha256": "1cc497e0e8831edd2b1e1baed4313630a7a7345ebb23232555e09a0ac3bc5c40",
+      "expected_behavior": "ready",
+      "observed_disposition": "ready",
+      "assessment": "not-run",
+      "identical_to_baseline": false,
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-compatible-rules.json",
+          "sha256": "fc8a20bcd49950df782e5fc0e7ef39aea912e0b656b0198e24bfd546d7e96622"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-compatible-rules/summary.json",
+          "sha256": "2b0a60cedb279159b3c1b6a9976cb135a8f5fc4a7911eafc78fad0938ca03f39"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-compatible-rules/analysis.json",
+          "sha256": "0cb4fde03d8035af1a13d427c83958c27c09455ba5fc5675608bb0cab6f40edf"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-compatible-rules/assessment.json",
+          "sha256": "91942ac10d6577a086823ec418d2ff5f85655913ea9cba799bbc21e05f42fb75"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-compatible-rules/advice.json",
+          "sha256": "45a7379e71b1f9a8045bf8f4591379f4acaa03df1ee992b455a3c8f2ae809810"
+        }
+      ],
+      "findings": 16,
+      "components": 10,
+      "questions": [],
+      "guards": [
+        {
+          "id": "revisao-humana-antes-publicacao",
+          "condition": "Antes de uma publicação.",
+          "outcome": "Exigir revisão humana prévia.",
+          "sources": [
+            "atom-13"
+          ]
+        }
+      ],
+      "advisory_omissions": [
+        {
+          "id": "question-1",
+          "kind": "question",
+          "text": "Como é definido o educador responsável por cada material?",
+          "rationale": "A exclusividade de acesso depende dessa atribuição, que a fonte não define.",
+          "source_atom_ids": [
+            "atom-17"
+          ],
+          "impact": "authorization"
+        },
+        {
+          "id": "question-2",
+          "kind": "question",
+          "text": "Qual educador tem autoridade para revisar e aprovar a publicação?",
+          "rationale": "A fonte exige aprovação do educador sem definir o vínculo que o habilita a aprovar.",
+          "source_atom_ids": [
+            "atom-20"
+          ],
+          "impact": "authorization"
+        }
+      ],
+      "advisory_negative_components": [],
+      "page": {
+        "path": "docs/reviews/sprint-2-6-v33-development/dev-compatible-rules.md",
+        "sha256": "dea51ed5b7f8bcc536499c8bf15fddb7aebcf8d6e7d256a1ca29504456afb95e"
+      }
+    },
+    {
+      "case": "dev-new-domain",
+      "baseline_selected_status": "pass",
+      "baseline_original_generation": "valid",
+      "baseline_selected_attempt": "baseline-v3",
+      "baseline_analysis_sha256": "8baff4b157478c6a6bc91fca505875990ff3e3dddb73350149faea240a897a2a",
+      "new_generation": "valid",
+      "new_audit": "valid",
+      "human_review": null,
+      "model_qualification": "not-established",
+      "compilation_eligibility": "not-authorized",
+      "analysis_sha256": "a8fa5a8dd242658b384e0392466bed1f5bdc9505e78eaf8cefb8f460ce7b09e0",
+      "expected_behavior": "ready",
+      "observed_disposition": "ready",
+      "assessment": "not-run",
+      "identical_to_baseline": false,
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-new-domain.json",
+          "sha256": "03d5682c906e6b053951195ef3c97d81453306cf51584f861e06e9d7dff0b16c"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-new-domain/summary.json",
+          "sha256": "b272425b065afbca4f785bc592d845e8e8b731592cff284ecc3eafa6a6601c84"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-new-domain/analysis.json",
+          "sha256": "eafac4d053ef68e749b4a16e0cc4c9b67c9dc9190cf3cd8b385d0b54fe08796d"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-new-domain/assessment.json",
+          "sha256": "1646befcf56ba70c221e4bd39995ff7b420da93b6dc30f0504911a695571fa1e"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-new-domain/advice.json",
+          "sha256": "b0da1c979e5fca56dd840a9932f60f89d2b73866ee11ddd063f86f5b9d1057a7"
+        }
+      ],
+      "findings": 8,
+      "components": 2,
+      "questions": [],
+      "guards": [],
+      "advisory_omissions": [
+        {
+          "id": "omission-1",
+          "kind": "question",
+          "text": "Em quais situações deve ser registrada a identidade do responsável, e a quem se refere esse responsável?",
+          "rationale": "A obrigação foi preservada, mas falta esclarecer seu alcance e sujeito para determinar quando e de quem exigir identidade.",
+          "source_atom_ids": [
+            "atom-5"
+          ],
+          "impact": "rule"
+        }
+      ],
+      "advisory_negative_components": [],
+      "page": {
+        "path": "docs/reviews/sprint-2-6-v33-development/dev-new-domain.md",
+        "sha256": "a0e2b86a71ef8e09473f0531431add8a841dd737f897bbf32ad185593eb34a1b"
+      }
+    },
+    {
+      "case": "dev-rules-a",
+      "baseline_selected_status": "pass",
+      "baseline_original_generation": "valid",
+      "baseline_selected_attempt": "baseline-v3",
+      "baseline_analysis_sha256": "d4dca46e801c7f9f89d799226af6929fd582d847c00ec8500378b6b5c3435341",
+      "new_generation": "valid",
+      "new_audit": "valid",
+      "human_review": null,
+      "model_qualification": "not-established",
+      "compilation_eligibility": "not-authorized",
+      "analysis_sha256": "0322100803ba35de424ff2d70921a770eddbe317b66c61c86f10a6efbd2bbc34",
+      "expected_behavior": "ready",
+      "observed_disposition": "ready",
+      "assessment": "not-run",
+      "identical_to_baseline": false,
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-rules-a.json",
+          "sha256": "5c22bb8748b1badaca5f7e2ba66d5ef628fc95128bdb5479617a7f5094220063"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-a/summary.json",
+          "sha256": "91d31b8311bfbf755336cd1d67d146457d2b50f2c24205a9d91eb2ce723b4401"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-a/analysis.json",
+          "sha256": "fa368ada7d60b13f0360b62334ac516560035b382fdc9f490f8e5336bab1eea9"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-a/assessment.json",
+          "sha256": "1fe330a3b0f0a0d5b5d873e57ec8371e311ace7408f83c68517fce0ba209daf5"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-a/advice.json",
+          "sha256": "4bfeb7703612351e9afb5dd3b884bbf69bd74f403df5cfa4b17f288a276e0a55"
+        }
+      ],
+      "findings": 7,
+      "components": 2,
+      "questions": [],
+      "guards": [],
+      "advisory_omissions": [
+        {
+          "id": "omission-1",
+          "kind": "question",
+          "text": "Em quais situações é obrigatório registrar a identidade e qual papel define o responsável nesse registro?",
+          "rationale": "A obrigação está preservada, mas seu alcance e sujeito permanecem indefinidos; esclarecê-los altera a aplicação da regra de registro.",
+          "source_atom_ids": [
+            "atom-5"
+          ],
+          "impact": "rule"
+        }
+      ],
+      "advisory_negative_components": [],
+      "page": {
+        "path": "docs/reviews/sprint-2-6-v33-development/dev-rules-a.md",
+        "sha256": "1060b355cf850c2b796b4b80ea00acdfb606864b989780bb8fa95d480b07b756"
+      }
+    },
+    {
+      "case": "dev-rules-b",
+      "baseline_selected_status": "fail",
+      "baseline_original_generation": "valid",
+      "baseline_selected_attempt": "baseline-v3",
+      "baseline_analysis_sha256": "37259cfadefec1d810777fb46d24278122889ce8e2703457e2518d39ffee6231",
+      "new_generation": "valid",
+      "new_audit": "valid",
+      "human_review": null,
+      "model_qualification": "not-established",
+      "compilation_eligibility": "not-authorized",
+      "analysis_sha256": "7e5bf07604bd4d6478a4f66bc4126417523c530e47337f67ba26f2beedcba989",
+      "expected_behavior": "ready",
+      "observed_disposition": "ready",
+      "assessment": "not-run",
+      "identical_to_baseline": false,
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-rules-b.json",
+          "sha256": "9e516037eefd452f56323845d4aa5adc613a713d34b77da788c5629eaf131fa0"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-b/summary.json",
+          "sha256": "f5e825aa88903e16752683998a14328acbffc6c941f6e2fcb0ce3fdc9ff6e029"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-b/analysis.json",
+          "sha256": "7166fa5ea86f3ff43b2291308dd27a2510a1c67e1226adb3a8084aeb34185c22"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-b/assessment.json",
+          "sha256": "a34f648d829413ccd011c07e58c36d7ba7c25d4e05fb0322b9cf716aeafc59fa"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-b/advice.json",
+          "sha256": "99fd39f355a825b50971456a0aaa5bfd8b687d582b0b43ee5b981fc3091a68ae"
+        }
+      ],
+      "findings": 7,
+      "components": 2,
+      "questions": [],
+      "guards": [],
+      "advisory_omissions": [
+        {
+          "id": "omission-1",
+          "kind": "question",
+          "text": "A quais ações se aplica o registro obrigatório da identidade e quem deve ser considerado o responsável nessas ações?",
+          "rationale": "A obrigação está preservada, mas falta delimitar sua aplicação e o sujeito cuja identidade deve ser registrada. Isso altera a regra de registro; a fonte não permite equiparar responsável a autor ou executor.",
+          "source_atom_ids": [
+            "atom-5"
+          ],
+          "impact": "rule"
+        }
+      ],
+      "advisory_negative_components": [],
+      "page": {
+        "path": "docs/reviews/sprint-2-6-v33-development/dev-rules-b.md",
+        "sha256": "af55d5b0284ea732f3a73a053ff8923c29636b1cdc8f2f7d2b4efc8df2d31d76"
+      }
+    },
+    {
+      "case": "dev-unread-assets",
+      "baseline_selected_status": "pass",
+      "baseline_original_generation": "valid",
+      "baseline_selected_attempt": "baseline-v3",
+      "baseline_analysis_sha256": "514b28a8260e0f53273e2be0feeeac15dcb236fc9b9d4fa09583796833c238ba",
+      "new_generation": "valid",
+      "new_audit": "valid",
+      "human_review": null,
+      "model_qualification": "not-established",
+      "compilation_eligibility": "not-authorized",
+      "analysis_sha256": "8fb9315474f6ffb0bcc0a79d8ba08960da0d0acd814238d0137c7d5234223fc4",
+      "expected_behavior": "ready",
+      "observed_disposition": "ready",
+      "assessment": "not-run",
+      "identical_to_baseline": false,
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-unread-assets.json",
+          "sha256": "9027b07f6a0c14f4dd56fc6321c5345864884c230f3ff02641817c48596a2b17"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-unread-assets/summary.json",
+          "sha256": "15a629f76ffd6ded0b8924dffb7b113d24b7a135c561cab6399c6c101273af42"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-unread-assets/analysis.json",
+          "sha256": "1e7702d1152229e459ac9f557607048c5e89ca09051d338753030b806bee29e3"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-unread-assets/assessment.json",
+          "sha256": "cc8541bd5675fdcdaa526c34d89f8b203900772da930af321df4158831a596a1"
+        },
+        {
+          "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-unread-assets/advice.json",
+          "sha256": "57301737119a123ce565fe5b482ae840fa19675a85c7e50593595a47a98a54d6"
+        }
+      ],
+      "findings": 8,
+      "components": 2,
+      "questions": [],
+      "guards": [],
+      "advisory_omissions": [
+        {
+          "id": "omission-1",
+          "kind": "question",
+          "text": "A quais situações se aplica a obrigação de registrar a identidade do responsável?",
+          "rationale": "A restrição preservada em context-6 não delimita sua aplicação; esclarecer esse âmbito altera a regra de registro exigida.",
+          "source_atom_ids": [
+            "atom-5"
+          ],
+          "impact": "rule"
+        }
+      ],
+      "advisory_negative_components": [],
+      "page": {
+        "path": "docs/reviews/sprint-2-6-v33-development/dev-unread-assets.md",
+        "sha256": "91d7c2afff4c1ece9751dfdd4cf865893dee81a66ae593e0a80b9d4029db67bb"
+      }
+    }
+  ],
+  "calls_used": 16,
+  "generation_valid": 8,
+  "generation_errors": 0,
+  "audit_valid": 8,
+  "assessments": {
+    "pass": 0,
+    "fail": 0,
+    "not-run": 8,
+    "error": 0
+  },
+  "baseline_selected_assessments": {
+    "pass_count": 5,
+    "fail_count": 3
+  },
+  "human_reviews_reused": 0,
+  "holdout_read": false,
+  "model_qualification": "not-established",
+  "compilation_eligibility": "not-authorized",
+  "limitations": [
+    "One serial round compared to mixed-attempt historical reference; no controlled causal, stability or performance claim.",
+    "Model audit is advisory; unchanged low alert count is not semantic success.",
+    "All changed output snapshots require fresh human judgments."
+  ]
+}

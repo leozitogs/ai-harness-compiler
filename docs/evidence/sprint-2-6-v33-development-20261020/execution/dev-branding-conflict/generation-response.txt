@@ -1,0 +1,80 @@
+{
+  "schema_version": "SemanticAnalysisProposal/v3",
+  "criteria": [
+    {
+      "source_atom_id": "atom-7",
+      "kind": "business-rule",
+      "condition": {
+        "text": "Na liberação de publicação da equipe.",
+        "source_atom_ids": ["atom-7"]
+      },
+      "outcome": {
+        "text": "É exigida aprovação humana explícita.",
+        "source_atom_ids": ["atom-7"]
+      },
+      "exceptions": [],
+      "note": "Regra preservada; existe uma declaração incompatível cuja precedência precisa ser definida.",
+      "question": null,
+      "uncertainties": []
+    }
+  ],
+  "guards": [],
+  "context_findings": [
+    {
+      "subject": "purpose",
+      "text": "Organizar publicações da equipe, suas fontes e registrar decisões.",
+      "note": "Propósito declarado na concepção e na descrição do backlog.",
+      "context_indices": [0, 5]
+    },
+    {
+      "subject": "audience",
+      "text": "Autores.",
+      "note": "Público declarado.",
+      "context_indices": [1]
+    },
+    {
+      "subject": "domain",
+      "text": "Gestão de espaços de trabalho, com organização de publicações e fontes.",
+      "note": "Domínio declarado e contextualizado pela concepção.",
+      "context_indices": [0, 6]
+    },
+    {
+      "subject": "constraint",
+      "text": "É obrigatório registrar a identidade do responsável.",
+      "note": "A aplicabilidade da obrigação não foi especificada. Esta representação preserva sua força normativa, mas não fornece uma política executável de aplicabilidade.",
+      "context_indices": [3]
+    },
+    {
+      "subject": "constraint",
+      "text": "O custo máximo de construção é US$ 0,00.",
+      "note": "Limite declarado em max_build_cost_usd.",
+      "context_indices": [4]
+    }
+  ],
+  "issues": [
+    {
+      "kind": "conflict",
+      "text": "Uma declaração dispensa qualquer aprovação humana para liberar publicação da equipe, enquanto o critério exige aprovação humana explícita para a mesma operação.",
+      "context_indices": [2, 7],
+      "rationale": "As duas declarações estabelecem exigências incompatíveis para a liberação, sem precedência definida.",
+      "impact": null,
+      "rejection_reason": null
+    },
+    {
+      "kind": "question",
+      "text": "Na liberação de publicação da equipe, prevalece a dispensa de aprovação humana ou a exigência de aprovação humana explícita?",
+      "context_indices": [2, 7],
+      "rationale": "A decisão determina se a publicação pode ser liberada sem aprovação humana.",
+      "impact": "precedence",
+      "rejection_reason": null
+    },
+    {
+      "kind": "question",
+      "text": "Em quais situações é obrigatório registrar a identidade do responsável?",
+      "context_indices": [3],
+      "rationale": "A obrigação foi declarada sem aplicabilidade; definir seu alcance determina quando a ausência do registro constitui descumprimento.",
+      "impact": "rule",
+      "rejection_reason": null
+    }
+  ]
+}

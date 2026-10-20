@@ -1,0 +1,466 @@
+{
+  "analysis": {
+    "extraction": {
+      "asset_contents": "not-read",
+      "atoms": [
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-1",
+          "kind": "conception",
+          "pointer": "/conception",
+          "quote": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita.",
+          "source_ref": "input-1"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-2",
+          "kind": "branding",
+          "pointer": "/branding/audience/0",
+          "quote": "autores",
+          "source_ref": "input-2"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-3",
+          "kind": "branding",
+          "pointer": "/branding/principles/0",
+          "quote": "rastreabilidade",
+          "source_ref": "input-2"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-4",
+          "kind": "branding",
+          "pointer": "/branding/principles/1",
+          "quote": "controle humano",
+          "source_ref": "input-2"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-5",
+          "kind": "constraint",
+          "pointer": "/constraints/business/0",
+          "quote": "Registrar a identidade do responsável.",
+          "source_ref": "input-3"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-6",
+          "kind": "constraint",
+          "pointer": "/constraints/max_build_cost_usd",
+          "quote": "0.0",
+          "source_ref": "input-3"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-7",
+          "kind": "backlog-description",
+          "pointer": "/backlog/0/description",
+          "quote": "Organizar publicação da equipe e registrar decisões.",
+          "source_ref": "input-4"
+        },
+        {
+          "content_trust": "untrusted-data",
+          "id": "atom-8",
+          "kind": "acceptance-criterion",
+          "pointer": "/backlog/0/acceptance_criteria/0",
+          "quote": "Cada publicação da equipe deve conter responsável e origem.",
+          "source_ref": "input-5"
+        }
+      ],
+      "excluded_references": [],
+      "request": {
+        "original_input": {
+          "assets": [],
+          "backlog": [
+            {
+              "acceptance_criteria": [
+                "Cada publicação da equipe deve conter responsável e origem."
+              ],
+              "data_owner": null,
+              "depends_on": [],
+              "description": "Organizar publicação da equipe e registrar decisões.",
+              "id": "register",
+              "implementation": "undecided",
+              "inputs": [],
+              "outputs": [],
+              "risk": "unknown",
+              "side_effects": [],
+              "title": "Registrar e liberar"
+            }
+          ],
+          "branding": {
+            "audience": [
+              "autores"
+            ],
+            "principles": [
+              "rastreabilidade",
+              "controle humano"
+            ],
+            "tone": [],
+            "visual_constraints": []
+          },
+          "conception": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita.",
+          "constraints": {
+            "business": [
+              "Registrar a identidade do responsável."
+            ],
+            "max_build_cost_usd": 0.0,
+            "security": [],
+            "technical": []
+          },
+          "domain": null,
+          "domain_profile": null,
+          "evidence_pack": null,
+          "id": "dev-new-domain",
+          "name": "Fixture dev new-domain",
+          "schema_version": "ProjectInput/v1"
+        },
+        "original_sha256": "6d792a55af0f4e0af1c2c1f1e36ff0d31f7fb9894b7091efd3f67338141dc492",
+        "references": [
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-1",
+            "pointer": "/conception",
+            "project_id": "dev-new-domain",
+            "value": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita."
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-2",
+            "pointer": "/branding",
+            "project_id": "dev-new-domain",
+            "value": "{\"audience\":[\"autores\"],\"principles\":[\"rastreabilidade\",\"controle humano\"],\"tone\":[],\"visual_constraints\":[]}"
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-3",
+            "pointer": "/constraints",
+            "project_id": "dev-new-domain",
+            "value": "{\"business\":[\"Registrar a identidade do responsável.\"],\"max_build_cost_usd\":0.0,\"security\":[],\"technical\":[]}"
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-4",
+            "pointer": "/backlog/0/description",
+            "project_id": "dev-new-domain",
+            "value": "Organizar publicação da equipe e registrar decisões."
+          },
+          {
+            "content_trust": "untrusted-data",
+            "id": "input-5",
+            "pointer": "/backlog/0/acceptance_criteria/0",
+            "project_id": "dev-new-domain",
+            "value": "Cada publicação da equipe deve conter responsável e origem."
+          }
+        ],
+        "schema_version": "UnderstandingRequest/v1"
+      },
+      "schema_version": "GroundingExtraction/v1",
+      "semantic_status": "not-established"
+    },
+    "proposal": {
+      "context_findings": [
+        {
+          "context_indices": [
+            0
+          ],
+          "note": "Propósito declarado do projeto.",
+          "subject": "purpose",
+          "text": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita."
+        },
+        {
+          "context_indices": [
+            1
+          ],
+          "note": "Público declarado.",
+          "subject": "audience",
+          "text": "Autores."
+        },
+        {
+          "context_indices": [
+            2,
+            3
+          ],
+          "note": "Os princípios orientam o projeto sem definir procedimentos adicionais de aprovação.",
+          "subject": "positioning",
+          "text": "Rastreabilidade e controle humano são princípios do projeto."
+        },
+        {
+          "context_indices": [
+            0,
+            6
+          ],
+          "note": "Domínio inferido do propósito e da descrição do trabalho.",
+          "subject": "domain",
+          "text": "Experiências coletivas com lanternas sensoriais e organização de publicações da equipe."
+        },
+        {
+          "context_indices": [
+            6
+          ],
+          "note": "Capacidades declaradas; não foram especificados formatos de registro.",
+          "subject": "capability",
+          "text": "Organizar a publicação da equipe e registrar decisões."
+        },
+        {
+          "context_indices": [
+            4
+          ],
+          "note": "A aplicabilidade desta obrigação não foi especificada. Sua preservação como restrição normativa não fornece uma política executável de aplicabilidade.",
+          "subject": "constraint",
+          "text": "É obrigatório registrar a identidade do responsável."
+        },
+        {
+          "context_indices": [
+            5
+          ],
+          "note": "Limite declarado pelo campo max_build_cost_usd.",
+          "subject": "constraint",
+          "text": "O custo máximo de construção é US$ 0,00."
+        }
+      ],
+      "criteria": [
+        {
+          "condition": {
+            "source_atom_ids": [
+              "atom-8"
+            ],
+            "text": "Para cada publicação da equipe."
+          },
+          "exceptions": [],
+          "kind": "business-rule",
+          "note": "Obrigação aplicável a cada publicação da equipe.",
+          "outcome": {
+            "source_atom_ids": [
+              "atom-8"
+            ],
+            "text": "A publicação deve conter responsável e origem."
+          },
+          "question": null,
+          "source_atom_id": "atom-8",
+          "uncertainties": []
+        }
+      ],
+      "guards": [],
+      "issues": [],
+      "schema_version": "SemanticAnalysisProposal/v3"
+    },
+    "schema_version": "SemanticAnalysis/v3"
+  },
+  "authority": "model-advisory",
+  "compilation_eligibility": "not-authorized",
+  "model_qualification": "not-established",
+  "program_sha256": "06e6f88819b86686f02a461a3fffa0ccc9bf1a23cb2530e8ea6a84cd30896459",
+  "proposal": {
+    "analysis_sha256": "a8fa5a8dd242658b384e0392466bed1f5bdc9505e78eaf8cefb8f460ce7b09e0",
+    "component_judgments": [
+      {
+        "component_index": null,
+        "component_name": "condition",
+        "finding_id": "criterion-1",
+        "note": "“Cada publicação da equipe” estabelece o alcance da condição.",
+        "source_atom_ids": [
+          "atom-8"
+        ],
+        "support": "supports"
+      },
+      {
+        "component_index": null,
+        "component_name": "outcome",
+        "finding_id": "criterion-1",
+        "note": "“Deve conter responsável e origem” estabelece a obrigação.",
+        "source_atom_ids": [
+          "atom-8"
+        ],
+        "support": "supports"
+      }
+    ],
+    "findings": [
+      {
+        "finding_id": "criterion-1",
+        "finding_sha256": "c79233c9c2342298205e15e5773ad28c4acc3876d5105130e9bf9334c6896ada",
+        "materiality": "not-applicable",
+        "note": "A fonte exige responsável e origem em cada publicação da equipe.",
+        "source_atom_ids": [
+          "atom-8"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "context-1",
+        "finding_sha256": "9eb70dfb695f39ef53048c4b77f488f67e98d5b5b71012f26c2ee081b3d94717",
+        "materiality": "not-applicable",
+        "note": "Reproduz o propósito declarado na concepção.",
+        "source_atom_ids": [
+          "atom-1"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "context-2",
+        "finding_sha256": "1a9bf07de01a3fcdc9549801f59f507d9b19e6cf9c192aaafb7dfecfee24496d",
+        "materiality": "not-applicable",
+        "note": "O campo de público declara autores.",
+        "source_atom_ids": [
+          "atom-2"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "context-3",
+        "finding_sha256": "f302dfaa88c917d2345766ba858fb41902783d7456445ef7becb71b4765302b6",
+        "materiality": "not-applicable",
+        "note": "Os campos de princípios declaram rastreabilidade e controle humano; não especificam aprovação.",
+        "source_atom_ids": [
+          "atom-3",
+          "atom-4"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "context-4",
+        "finding_sha256": "c6b8dfe54b9b77a2f1800e0a7f3099b58d7301a5bac4aa7290d911ead78c8b3d",
+        "materiality": "not-applicable",
+        "note": "A concepção e a descrição sustentam os dois aspectos do domínio.",
+        "source_atom_ids": [
+          "atom-1",
+          "atom-7"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "context-5",
+        "finding_sha256": "49c2b29ad12ec44daa4941d5c76c847a342b94d8c75a4416098f7582e6406a79",
+        "materiality": "not-applicable",
+        "note": "A descrição declara organizar publicação e registrar decisões.",
+        "source_atom_ids": [
+          "atom-7"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "context-6",
+        "finding_sha256": "2ad45e0ead3ebaeb80f426a21e78b14f47fec1b6c413ede253c674a5c31e950b",
+        "materiality": "not-applicable",
+        "note": "A restrição exige registrar a identidade do responsável, sem definir sua aplicabilidade ou identificar quem é responsável.",
+        "source_atom_ids": [
+          "atom-5"
+        ],
+        "support": "supports"
+      },
+      {
+        "finding_id": "context-7",
+        "finding_sha256": "0bdeb5f562dac3e671ecb75e10394e4772be624855720a315fbba9082f8a78a4",
+        "materiality": "not-applicable",
+        "note": "O campo max_build_cost_usd fixa o limite em zero.",
+        "source_atom_ids": [
+          "atom-6"
+        ],
+        "support": "supports"
+      }
+    ],
+    "omissions": [
+      {
+        "id": "omission-1",
+        "impact": "rule",
+        "kind": "question",
+        "rationale": "A obrigação foi preservada, mas falta esclarecer seu alcance e sujeito para determinar quando e de quem exigir identidade.",
+        "source_atom_ids": [
+          "atom-5"
+        ],
+        "text": "Em quais situações deve ser registrada a identidade do responsável, e a quem se refere esse responsável?"
+      }
+    ],
+    "schema_version": "SemanticVerifierProposal/v4",
+    "source_coverage": [
+      {
+        "atom_id": "atom-1",
+        "disposition": "represented",
+        "finding_ids": [
+          "context-1",
+          "context-4"
+        ],
+        "note": "Concepção representada como propósito e domínio.",
+        "omission_ids": [],
+        "quote_sha256": "6a4cc099f7c4beb8d98900b9d05f869383bb403a8803126d3f55c73886e0e7ce"
+      },
+      {
+        "atom_id": "atom-2",
+        "disposition": "represented",
+        "finding_ids": [
+          "context-2"
+        ],
+        "note": "Público representado.",
+        "omission_ids": [],
+        "quote_sha256": "75f26d13ebd8877644c57a369ce71b82b639903217ed12ebe61beeffd8c11586"
+      },
+      {
+        "atom_id": "atom-3",
+        "disposition": "represented",
+        "finding_ids": [
+          "context-3"
+        ],
+        "note": "Princípio de rastreabilidade representado.",
+        "omission_ids": [],
+        "quote_sha256": "e8a964e534bd9189a4c1ee68dc1e80429c5b14930ce7df548075257a8a8dccc7"
+      },
+      {
+        "atom_id": "atom-4",
+        "disposition": "represented",
+        "finding_ids": [
+          "context-3"
+        ],
+        "note": "Controle humano representado sem inferir autoridade de aprovação.",
+        "omission_ids": [],
+        "quote_sha256": "a6e3b461d6bc6975496196edb2b7d4ea96130a66c49e4e058c4d66078d23422f"
+      },
+      {
+        "atom_id": "atom-5",
+        "disposition": "missing",
+        "finding_ids": [
+          "context-6"
+        ],
+        "note": "Restrição preservada separadamente; falta a pergunta material sobre alcance e sujeito.",
+        "omission_ids": [
+          "omission-1"
+        ],
+        "quote_sha256": "22accd7ad33a45ad61811a4737a68f2c8dfd45b650550aec3cdae8de95fc1a0e"
+      },
+      {
+        "atom_id": "atom-6",
+        "disposition": "represented",
+        "finding_ids": [
+          "context-7"
+        ],
+        "note": "Limite de custo representado.",
+        "omission_ids": [],
+        "quote_sha256": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7"
+      },
+      {
+        "atom_id": "atom-7",
+        "disposition": "represented",
+        "finding_ids": [
+          "context-4",
+          "context-5"
+        ],
+        "note": "Organização de publicação e registro de decisões representados.",
+        "omission_ids": [],
+        "quote_sha256": "5f77f5215732224df6e88a779d30470fdd1c968ff4e40c54ff9fa444e009e034"
+      },
+      {
+        "atom_id": "atom-8",
+        "disposition": "represented",
+        "finding_ids": [
+          "criterion-1"
+        ],
+        "note": "Obrigação por publicação representada integralmente.",
+        "omission_ids": [],
+        "quote_sha256": "a79c1f7e236f6dadc2d66f9ab1ce333e7c271bfe617435c1f8e49ce579b92ef2"
+      }
+    ]
+  },
+  "requested_model": "gpt-6.1-sol",
+  "schema_version": "SemanticVerifierReport/v4",
+  "semantic_status": "not-established"
+}

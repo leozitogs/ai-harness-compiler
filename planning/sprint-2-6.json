@@ -116,7 +116,24 @@
     "preparatory_phase": "offline-only-zero-model-calls",
     "experiments": "not-authorized-until-concrete-budget-and-data-gates",
     "external_paid_services": "not-authorized",
-    "training": "conditional-not-started"
+    "training": "conditional-not-started",
+    "corrective_development_v33": {
+      "scope": "AHC-022 corrective verification only; not inference-parameter experiments or prerequisite completion",
+      "document": "docs/delivery/sprint-2-6-multisource-candidate.md",
+      "protocol": "docs/evidence/sprint-2-6-v33-development-20261020/protocol-v2.json",
+      "max_calls": 16,
+      "max_concurrency": 1,
+      "max_call_seconds": 180,
+      "max_session_seconds": 3600,
+      "repetitions": 1,
+      "retries": 0,
+      "repair_attempts": 0,
+      "holdout_calls": 0,
+      "source": "Operator-fixed concrete limits under existing PO continuation and subscription usage authorization; not a new PO numeric-budget declaration",
+      "status": "exhausted-and-closed",
+      "used_calls": 16,
+      "human_assessment": "6 pass, 2 fail on uncertainty; candidate not promoted"
+    }
   },
   "task_plan_file": "planning/sprint-2-6.tasks.json",
   "kickoff_review": {

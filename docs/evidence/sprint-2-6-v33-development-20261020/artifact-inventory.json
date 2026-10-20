@@ -1,0 +1,386 @@
+{
+  "format": "artifact-inventory/v1",
+  "scope": "Frozen protocol, executed round, raw final responses, receipts, initial assessments and initial review packet; no private intermediate events.",
+  "artifacts": [
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/comparison.json",
+      "sha256": "cd9a7ec8a23ef36b901a20a1db677671c0865f6e48c4e1fd0ac10fd57b443393"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-adversarial/advice.json",
+      "sha256": "1dbd9cababda28dfaea935fe94bd312dd9da5ee1e3371a1e6aeb7ead6690d740"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-adversarial/analysis.json",
+      "sha256": "42f09fe4aa92f70fe16bf2359d77c972d5db092aa4859b96a6b48a57473445be"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-adversarial/assessment.json",
+      "sha256": "b91a95961c468be22d644afac72c240c72dae9306c702ae6af93f45a6b096773"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-adversarial/audit-call-finish.json",
+      "sha256": "88da578df87bd2e4248ee800efbe2d85ec2c0e5be4e4569fd4c0e1471f777a88"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-adversarial/audit-call-start.json",
+      "sha256": "468db9f7d9b5e93b4ca93276743a567a21d468d8ab85f94164e2a2d6d41dc095"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-adversarial/audit-response.txt",
+      "sha256": "dbdc8e3011dc78e35b703aa9803c7e2e93f30756b25cc0f190d868d6a51589c7"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-adversarial/generation-call-finish.json",
+      "sha256": "ab60073c115abea906c41743045c6cfeb0302e1354880d07316209a4cc3e1b19"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-adversarial/generation-call-start.json",
+      "sha256": "61448b2bf5cb304a42cffd210fd259859687ad8e37d85544757981dede5e2fb4"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-adversarial/generation-response.txt",
+      "sha256": "0deb6e0869b5fdf9c8ddd1f319342e3b12ab0cd61adaa0b4f430c02da89653f1"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-adversarial/summary.json",
+      "sha256": "a4afd43f18c985e410fb85b888c0aa043fb6bfef93504f03b8ce84c61c185089"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-ambiguous/advice.json",
+      "sha256": "016142b1279e2c3d651342d7af6bb3ce9c6ac2cf6dbfcfb61a5f0472d1a3d48b"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-ambiguous/analysis.json",
+      "sha256": "fbf08d9d2ba876f0e1771821b93eb95ddc0e0615c11459600ed633f9a5ad8b99"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-ambiguous/assessment.json",
+      "sha256": "014ef308b60eff4000daf2874476fe3ff48e75b0c8819cbeb1ca06dc9e5ea560"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-ambiguous/audit-call-finish.json",
+      "sha256": "fbca918bff24983e6a74739e345cd1455eaed931cc05016a4a52a4f0586727ce"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-ambiguous/audit-call-start.json",
+      "sha256": "0e0f01b34d2a2b516a3f9475d7cb2563ba8d18cfdd5fd362c332c3c9d5b22d5c"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-ambiguous/audit-response.txt",
+      "sha256": "924bb2795db63c672f001cba058856888b184f5d5ff4e1777e86eae168cdc44b"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-ambiguous/generation-call-finish.json",
+      "sha256": "0502d8d73da8810faca371ead3168e1e9cb127736c6ef98c8db05f69ee03d29d"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-ambiguous/generation-call-start.json",
+      "sha256": "2e3c119dccbd9d211fc28c08b90eaf4d885f08c6f0523e3c8c58c44f88dba08a"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-ambiguous/generation-response.txt",
+      "sha256": "ec4b60d78a1dd77a4c6746c36698e6e813ba387e7ac811530060615cd96d499a"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-ambiguous/summary.json",
+      "sha256": "8ee1fdb3c96e688e8d6b6af20aa5d0780fc0f78a7625123cc05c3342eee9d309"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-branding-conflict/advice.json",
+      "sha256": "86d4bf06d4dce3b61bccf70ba5368ea86e60a35f8e8940df37c143a502a0768f"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-branding-conflict/analysis.json",
+      "sha256": "01fd3679abdc44bac71dc72b9fce82525b58989486ac7065369429410ff98811"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-branding-conflict/assessment.json",
+      "sha256": "cfecd630eba7ef9ea87fdbcd802ee986eafd312483479a86615facd06114d8d8"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-branding-conflict/audit-call-finish.json",
+      "sha256": "bea8f24ddfab5c030fe2d21c57a05cc868320a20c00c7ac2c76bc691c09c2b76"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-branding-conflict/audit-call-start.json",
+      "sha256": "a9fe40a527eac44dc6e4ce90453a61d671d2a971d9e0412c67a36f5ed91936bc"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-branding-conflict/audit-response.txt",
+      "sha256": "a468e03d6a2962f528e6e128ff5abbf1eba3a9e3ba62e11a78cc145a794fa3f9"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-branding-conflict/generation-call-finish.json",
+      "sha256": "fc88026ab976d334ebebd91510e9ee0aa766ecf67426cf1f04a05789e76f8ce9"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-branding-conflict/generation-call-start.json",
+      "sha256": "25325b29ef04e44c304fc07fbf659fe0675618bc26d72d9325beafe9a1458ef3"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-branding-conflict/generation-response.txt",
+      "sha256": "9fa06fd240a0fe082e580f6bebb736e578e5155754a4d83423d17c443c31b252"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-branding-conflict/summary.json",
+      "sha256": "00c36daee2c595e6c030df92e0f393d955a153d97e3f95fe3435d471b8387dde"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-compatible-rules/advice.json",
+      "sha256": "45a7379e71b1f9a8045bf8f4591379f4acaa03df1ee992b455a3c8f2ae809810"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-compatible-rules/analysis.json",
+      "sha256": "0cb4fde03d8035af1a13d427c83958c27c09455ba5fc5675608bb0cab6f40edf"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-compatible-rules/assessment.json",
+      "sha256": "91942ac10d6577a086823ec418d2ff5f85655913ea9cba799bbc21e05f42fb75"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-compatible-rules/audit-call-finish.json",
+      "sha256": "5c6a081c66f8998547302fb3d3efad87371d089c2c7ac534d835b2423d2fbf38"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-compatible-rules/audit-call-start.json",
+      "sha256": "0f23e76532be1d070ce3fabe7fe53c97d794c1f5589fa3a507f8329a54026929"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-compatible-rules/audit-response.txt",
+      "sha256": "a042396a4ad579ed9d40ba54bf40a8dd399fed2b5921258c4fe2f56bebb874cf"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-compatible-rules/generation-call-finish.json",
+      "sha256": "843a935d955e423f763d7da381950894d54d213d1cc255c9a76099191dbcab1b"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-compatible-rules/generation-call-start.json",
+      "sha256": "42068ac235913825d5198d795991922db837819464dcced328e4077109457b7d"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-compatible-rules/generation-response.txt",
+      "sha256": "de799ef9f1feaf5b5268bc56a8eb40b805587bf98900d9ff2ee63eaa0a3fe4a0"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-compatible-rules/summary.json",
+      "sha256": "2b0a60cedb279159b3c1b6a9976cb135a8f5fc4a7911eafc78fad0938ca03f39"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-new-domain/advice.json",
+      "sha256": "b0da1c979e5fca56dd840a9932f60f89d2b73866ee11ddd063f86f5b9d1057a7"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-new-domain/analysis.json",
+      "sha256": "eafac4d053ef68e749b4a16e0cc4c9b67c9dc9190cf3cd8b385d0b54fe08796d"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-new-domain/assessment.json",
+      "sha256": "1646befcf56ba70c221e4bd39995ff7b420da93b6dc30f0504911a695571fa1e"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-new-domain/audit-call-finish.json",
+      "sha256": "b2832f0468b1fb4d08617da35adee14150ed25aa1de760b58465663bfafdd4c6"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-new-domain/audit-call-start.json",
+      "sha256": "ae421ebcf1ed7b48ac2b711fb870a1591aeae924403366eee305eead34b8ab33"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-new-domain/audit-response.txt",
+      "sha256": "3b4e2abf903501daa047a685d9cde5e6731117aeef42d76e838210314da1159f"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-new-domain/generation-call-finish.json",
+      "sha256": "5c5dce2f1fd3f460210cb514d0476a070b47466056b310a124dfb2a40eedfcf6"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-new-domain/generation-call-start.json",
+      "sha256": "faed037ef84587e412586d964bc19ff0163cdd51baf26f2e0057de5d84dc7385"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-new-domain/generation-response.txt",
+      "sha256": "ee5cac2be746c2138bc018c9e6c5702d3eee845dd990cc45cca9ee8d79cd75e6"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-new-domain/summary.json",
+      "sha256": "b272425b065afbca4f785bc592d845e8e8b731592cff284ecc3eafa6a6601c84"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-a/advice.json",
+      "sha256": "4bfeb7703612351e9afb5dd3b884bbf69bd74f403df5cfa4b17f288a276e0a55"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-a/analysis.json",
+      "sha256": "fa368ada7d60b13f0360b62334ac516560035b382fdc9f490f8e5336bab1eea9"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-a/assessment.json",
+      "sha256": "1fe330a3b0f0a0d5b5d873e57ec8371e311ace7408f83c68517fce0ba209daf5"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-a/audit-call-finish.json",
+      "sha256": "7a3fc23e01d4ff78c0c70b13184dfd901a350c05ff2bd3facd96b5b276e281c0"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-a/audit-call-start.json",
+      "sha256": "a346687618a87b4412147d1ec550669ad5037ce25ddcd62095f326157b36ef5a"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-a/audit-response.txt",
+      "sha256": "69cd76a83ee02c43c4cd60161d6cdf8ba00ce6ddd135cb6a4a1caeb88fe6c0d4"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-a/generation-call-finish.json",
+      "sha256": "e9e4edb139ed4a48d6c962e2d80a0aaca8b5cf705a152e70df3613ff75ed7334"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-a/generation-call-start.json",
+      "sha256": "1d1a165545bc34d7d2028bde3065a61160784713410f3d2fe53b31002d1bf21f"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-a/generation-response.txt",
+      "sha256": "215aedbfd03e1d65298f7a60d49cc1d2d8e48816263511d51229649022a186a7"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-a/summary.json",
+      "sha256": "91d31b8311bfbf755336cd1d67d146457d2b50f2c24205a9d91eb2ce723b4401"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-b/advice.json",
+      "sha256": "99fd39f355a825b50971456a0aaa5bfd8b687d582b0b43ee5b981fc3091a68ae"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-b/analysis.json",
+      "sha256": "7166fa5ea86f3ff43b2291308dd27a2510a1c67e1226adb3a8084aeb34185c22"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-b/assessment.json",
+      "sha256": "a34f648d829413ccd011c07e58c36d7ba7c25d4e05fb0322b9cf716aeafc59fa"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-b/audit-call-finish.json",
+      "sha256": "cd4b40818e3028bc1075398ff68229436833798a52beabd384cc598977708d21"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-b/audit-call-start.json",
+      "sha256": "0b533f530a173b6dbeb4caf9d11b671e1c4e112afb96c51b550c78cf83313ffc"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-b/audit-response.txt",
+      "sha256": "302f1d7276e823c44b3c8356bc2282a7a439dbb74049e5eb26bcc94582308d37"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-b/generation-call-finish.json",
+      "sha256": "56cfff37baddb880b06e73b5649db75ea10d71e69706ce4d65a81b9ed2e1175d"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-b/generation-call-start.json",
+      "sha256": "885faf399400074f5275097acd1ba09a3e9620dcee4471152241d4f56be65580"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-b/generation-response.txt",
+      "sha256": "f6a63100cc01fd4b01e63f2cafa4e3509c25b9dbcfa912edc0b1bb5bacdd4baf"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-rules-b/summary.json",
+      "sha256": "f5e825aa88903e16752683998a14328acbffc6c941f6e2fcb0ce3fdc9ff6e029"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-unread-assets/advice.json",
+      "sha256": "57301737119a123ce565fe5b482ae840fa19675a85c7e50593595a47a98a54d6"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-unread-assets/analysis.json",
+      "sha256": "1e7702d1152229e459ac9f557607048c5e89ca09051d338753030b806bee29e3"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-unread-assets/assessment.json",
+      "sha256": "cc8541bd5675fdcdaa526c34d89f8b203900772da930af321df4158831a596a1"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-unread-assets/audit-call-finish.json",
+      "sha256": "80d7a93eb92f38c22f0d8041f88f5bb0eaa637640b5b57c8dd925d66fa7c9c07"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-unread-assets/audit-call-start.json",
+      "sha256": "abbd899a94817d9811d1e672bcfda89f21f71df955b0f7920fea7cc4a8dd8482"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-unread-assets/audit-response.txt",
+      "sha256": "f163a392597a6354643e646d7992bd009f574616a98e55ef92a6c75c4ab7ad94"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-unread-assets/generation-call-finish.json",
+      "sha256": "ee4ed8f995394a92f5ab956d727250b21bc913871ba61ec1ef79b355e008748d"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-unread-assets/generation-call-start.json",
+      "sha256": "be29f420cbeee0058c9d251e2b855bfd0f7a417ce2615045869fd43beea45ccb"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-unread-assets/generation-response.txt",
+      "sha256": "0130364d5e35594a297b66cac0a93eac095b939feeddb90b173060f6c880b89c"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-unread-assets/summary.json",
+      "sha256": "15a629f76ffd6ded0b8924dffb7b113d24b7a135c561cab6399c6c101273af42"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/execution/summary.json",
+      "sha256": "bb199e423ca90569cee2c4b55ef8f5f0e1ea1f5a88b10cde17ee476e8d7017ea"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/protocol-selection.json",
+      "sha256": "fa78f093e0c1ba2be07c55d7d71a835dda54d4e7920d5e031067f6d32b9d1b29"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/protocol-v2.json",
+      "sha256": "dc1940636d6370647045babe335d4fa94a3d76a8fcc1ccfdc99acdd94ef8da61"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/protocol.json",
+      "sha256": "ae9430773b2e1b7d8e25fdc8828ab57853887ed1be7e0a23d8c241766ad2c3c4"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/runner-source-v2.txt",
+      "sha256": "cc0d79bef0a0f88fda60b6c073e02560058404039ecd2cb33df867a1d1ddff01"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-v33-development-20261020/runner-source.txt",
+      "sha256": "202c1c7c71d9548bd1d68301f1f8ad19f318322239b4e9fd5d3f7748137757cb"
+    },
+    {
+      "path": "docs/reviews/sprint-2-6-v33-development/dev-adversarial.md",
+      "sha256": "0326809b689d3a64dd4f99ad873f3f72598b6f6223b3e1d7a8f293e922a2c300"
+    },
+    {
+      "path": "docs/reviews/sprint-2-6-v33-development/dev-ambiguous.md",
+      "sha256": "5de7e5c2588d3f1a0a2c8f967c6cacd31b5a5e43123ebb3266498ff2602707bf"
+    },
+    {
+      "path": "docs/reviews/sprint-2-6-v33-development/dev-branding-conflict.md",
+      "sha256": "eca122096ae789eb0a657dd7f00e6ae3c76350635fa31835863a2d631adb8ae1"
+    },
+    {
+      "path": "docs/reviews/sprint-2-6-v33-development/dev-compatible-rules.md",
+      "sha256": "dea51ed5b7f8bcc536499c8bf15fddb7aebcf8d6e7d256a1ca29504456afb95e"
+    },
+    {
+      "path": "docs/reviews/sprint-2-6-v33-development/dev-new-domain.md",
+      "sha256": "a0e2b86a71ef8e09473f0531431add8a841dd737f897bbf32ad185593eb34a1b"
+    },
+    {
+      "path": "docs/reviews/sprint-2-6-v33-development/dev-rules-a.md",
+      "sha256": "1060b355cf850c2b796b4b80ea00acdfb606864b989780bb8fa95d480b07b756"
+    },
+    {
+      "path": "docs/reviews/sprint-2-6-v33-development/dev-rules-b.md",
+      "sha256": "af55d5b0284ea732f3a73a053ff8923c29636b1cdc8f2f7d2b4efc8df2d31d76"
+    },
+    {
+      "path": "docs/reviews/sprint-2-6-v33-development/dev-unread-assets.md",
+      "sha256": "91d7c2afff4c1ece9751dfdd4cf865893dee81a66ae593e0a80b9d4029db67bb"
+    }
+  ]
+}

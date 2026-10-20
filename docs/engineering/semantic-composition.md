@@ -61,3 +61,10 @@ dinâmico. Input, provider, parâmetros e ambiente precisam de registro separado
 esse digest não certifica uma execução ou qualidade semântica. A versão antiga
 permanece idêntica e versões desconhecidas são rejeitadas antes da chamada.
 Ver [decisão e limites do candidato](../delivery/sprint-2-6-human-judgments.md).
+
+`semantic-composition/v3.3` acrescenta uma rota explícita de perguntas secundárias
+em `issues`, com inventário próprio de fontes. Seu schema proíbe `uncertainties`
+locais e restringe os índices; o host também rejeita a rota antiga, sem reescrever
+a resposta. Perguntas primárias locais continuam limitadas ao próprio critério.
+As versões anteriores, seus fingerprints e o default são preservados.
+Ver [implementação e protocolo de desenvolvimento](../delivery/sprint-2-6-multisource-candidate.md).

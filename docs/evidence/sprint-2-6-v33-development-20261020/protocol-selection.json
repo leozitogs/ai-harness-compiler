@@ -1,0 +1,8 @@
+{
+  "active": "protocol-v2.json",
+  "active_sha256": "dc1940636d6370647045babe335d4fa94a3d76a8fcc1ccfdc99acdd94ef8da61",
+  "superseded": "protocol.json",
+  "superseded_sha256": "ae9430773b2e1b7d8e25fdc8828ab57853887ed1be7e0a23d8c241766ad2c3c4",
+  "superseded_executed": false,
+  "reason": "Provider schema preparation: uniqueness remains a host invariant, no remote rejection observed. Frozen before any real calls."
+}

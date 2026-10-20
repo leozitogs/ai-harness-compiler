@@ -1,0 +1,87 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Technical adjudication tied the component to atom-7.",
+    "PO explicitly confirmed rejecting condition support while preserving identity obligation.",
+    "Prepared generalist v3.2 prompt candidate; no actual generation or efficacy demonstrated.",
+    "Executed frozen v3.3 development round with 16 serial calls; new outputs require fresh human judgments.",
+    "Fresh PO accepted coverage and citation support in the recorded v3.3 snapshots; rejected a separate uncertainty issue in two cases."
+  ],
+  "author": "codex:engineering",
+  "challenge": "Structurally valid guard links an identity obligation to an unsupported operation condition.",
+  "consequences": [],
+  "context": "Historical development output structurally valid; current scoped human judgment rejects one semantic component.",
+  "created_at": "2026-10-20T18:16:26.193307+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "992 offline tests passed; human-scoped negative assessment reproduced through CLI. Candidate v3.2 not generated or qualified; legacy prompt bytes preserved.",
+      "outcome": "observed",
+      "sha256": "12f5950797a8be9b9e39c4b4ed7d9fa73fa633b3ac00bfb8d1ffcca6c145f60b",
+      "source": "docs/evidence/sprint-2-6-human-judgments-20261020/dev-ambiguous-assessment.json"
+    },
+    {
+      "command": null,
+      "note": "992 offline tests passed; human-scoped negative assessment reproduced through CLI. Candidate v3.2 not generated or qualified; legacy prompt bytes preserved.",
+      "outcome": "observed",
+      "sha256": "c35b6855008291f96fc0bf88c63d6e92f12cbc33c0cb97c7047d468b7e8ff0a7",
+      "source": "docs/delivery/sprint-2-6-human-judgments.md"
+    },
+    {
+      "command": null,
+      "note": "New snapshot observed; no human pass/fail yet and no historical review migrated.",
+      "outcome": "observed",
+      "sha256": "fbf08d9d2ba876f0e1771821b93eb95ddc0e0615c11459600ed633f9a5ad8b99",
+      "source": "docs/evidence/sprint-2-6-v33-development-20261020/execution/dev-ambiguous/analysis.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit fresh PO judgments and offline typed replay: six pass and two uncertainty fail; source support/coverage pass in recorded corrected outputs. No qualification or promotion.",
+      "outcome": "observed",
+      "sha256": "d0f56bf7aaef5d16b128dd96c9f6a40a1efdab7fee31ce9a807e34a222bb2c55",
+      "source": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-ambiguous-assessment.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit fresh PO judgments and offline typed replay: six pass and two uncertainty fail; source support/coverage pass in recorded corrected outputs. No qualification or promotion.",
+      "outcome": "observed",
+      "sha256": "4d30f8a3e1eeef216d443ed1238458c300d45667cfd25e8bb1cf28feb7171054",
+      "source": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-rules-b-assessment.json"
+    }
+  ],
+  "id": "INC-0022",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Verification is limited to the recorded v3.3 development snapshots; no universal completeness or model-performance claim.",
+    "One bounded round does not establish a causal source of model behavior or a stable optimization gain.",
+    "Separate INC-0024 uncertainty failures prevent overall candidate qualification/promotion.",
+    "Original rejected outputs and all earlier judgments remain unchanged."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0033",
+    "DE-0014",
+    "INC-0016",
+    "DOC-0034",
+    "DOC-0035",
+    "DE-0015",
+    "DOC-0036",
+    "INC-0024"
+  ],
+  "resolution": "Verified scoped repair in recorded v3.3 outputs: normative obligation preserved without invented conditional guard.",
+  "review_note": "Refresh exact evidence after fresh PO judgment. Scoped prior defects repaired; new uncertainty failures remain and no recipe/model promotion or story completion inferred.",
+  "reviewed_by": "codex:evidence-review",
+  "revision": 6,
+  "root_cause": "Observed mismatch between guard condition and its exact cited source. Requiring guard.condition may pressure representation, but its causal contribution is untested.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "verified",
+  "summary": "PO confirmed unsupported obligation applicability in guard-1 of dev-ambiguous and dev-rules-b. Coverage and citation support fail in both; original obligation remains valid.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Condição de identificação não sustentada pela fonte citada",
+  "updated_at": "2026-10-20T19:12:12.989300+00:00"
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": "SemanticAnalysisProposal/v3",
+  "criteria": [
+    {
+      "source_atom_id": "atom-8",
+      "kind": "business-rule",
+      "condition": {
+        "text": "Para cada publicação da equipe.",
+        "source_atom_ids": ["atom-8"]
+      },
+      "outcome": {
+        "text": "A publicação deve conter responsável e origem.",
+        "source_atom_ids": ["atom-8"]
+      },
+      "exceptions": [],
+      "note": "A declaração não estabelece exceções.",
+      "question": null,
+      "uncertainties": []
+    }
+  ],
+  "guards": [],
+  "context_findings": [
+    {
+      "subject": "purpose",
+      "text": "Organizar as publicações da equipe, suas fontes e o registro de decisões.",
+      "note": "Propósito extraído da concepção e da descrição do backlog.",
+      "context_indices": [0, 6]
+    },
+    {
+      "subject": "audience",
+      "text": "Autores.",
+      "note": "Público explicitamente declarado.",
+      "context_indices": [1]
+    },
+    {
+      "subject": "positioning",
+      "text": "Rastreabilidade e controle humano são princípios do projeto.",
+      "note": "Esses princípios não definem etapas de aprovação ou permissões específicas.",
+      "context_indices": [2, 3]
+    },
+    {
+      "subject": "domain",
+      "text": "Gestão de espaço de trabalho para organização de publicações de uma equipe.",
+      "note": "Interpretação da declaração de domínio em conjunto com a concepção.",
+      "context_indices": [0, 7]
+    },
+    {
+      "subject": "capability",
+      "text": "Registrar decisões relacionadas à organização das publicações.",
+      "note": "Capacidade declarada em termos amplos, sem exigir um formato específico.",
+      "context_indices": [6]
+    },
+    {
+      "subject": "constraint",
+      "text": "Deve ser registrada a identidade do responsável.",
+      "note": "Obrigação explícita cuja aplicabilidade não foi especificada. Sua preservação como restrição normativa não fornece uma política executável de aplicabilidade.",
+      "context_indices": [4]
+    },
+    {
+      "subject": "constraint",
+      "text": "O custo máximo de construção é de US$ 0,00.",
+      "note": "Limite informado pelo campo max_build_cost_usd.",
+      "context_indices": [5]
+    }
+  ],
+  "issues": []
+}
