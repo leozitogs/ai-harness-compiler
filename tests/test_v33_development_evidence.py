@@ -5,7 +5,10 @@ import json
 from pathlib import Path
 
 from ai_harness_compiler.models.semantic_analysis_v3 import AnalysisProposalV3
-from ai_harness_compiler.models.semantic_assessment_v3 import SemanticAssessmentV3
+from ai_harness_compiler.models.semantic_assessment_v3 import (
+    SemanticAssessmentV3,
+    SemanticHumanReviewV3,
+)
 from ai_harness_compiler.models.semantic_verification_v4 import (
     SemanticVerifierReportV4,
     VerifierProposalV4,
@@ -96,9 +99,13 @@ def test_fresh_po_judgments_keep_materiality_separate_from_source_support():
     assert manifest["criteria_judged"] == 48 and manifest["criteria_pending"] == 0
     assert manifest["candidate_promoted"] is False
     for row in manifest["cases"]:
+        review_source = row["review"]
+        review_bytes = (ROOT / review_source["path"]).read_bytes()
+        assert hashlib.sha256(review_bytes).hexdigest() == review_source["sha256"]
         source = row["assessment"]
         assert hashlib.sha256((ROOT / source["path"]).read_bytes()).hexdigest() == source["sha256"]
         assessment = SemanticAssessmentV3.model_validate_json((ROOT / source["path"]).read_bytes())
+        assert assessment.review == SemanticHumanReviewV3.model_validate_json(review_bytes)
         assert assessment.status == row["status"]
         assert assessment.analysis.disposition == assessment.case.expected_behavior
         checks = {c.criterion: c.outcome for c in assessment.checks}

@@ -78,8 +78,8 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0032 — Adjudicação técnica consultiva dos diagnósticos de desenvolvimento](records/DOC/DOC-0032/0012.json) · active · revision 12
 - [DOC-0033 — Julgamentos específicos do PO e candidato corretivo de composição](records/DOC/DOC-0033/0010.json) · active · revision 10
 - [DOC-0034 — Matriz humana completa de desenvolvimento com cinco aceites e três falhas](records/DOC/DOC-0034/0006.json) · active · revision 6
-- [DOC-0035 — Rodada corretiva v3.3 com orçamento fixado e revisão independente por snapshot](records/DOC/DOC-0035/0004.json) · active · revision 4
-- [DOC-0036 — Revisão humana v3.3: seis passes e duas falhas de materialidade](records/DOC/DOC-0036/0002.json) · active · revision 2
+- [DOC-0035 — Rodada corretiva v3.3 com orçamento fixado e revisão independente por snapshot](records/DOC/DOC-0035/0006.json) · active · revision 6
+- [DOC-0036 — Revisão humana v3.3: seis passes e duas falhas de materialidade](records/DOC/DOC-0036/0004.json) · active · revision 4
 - [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2
 - [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1
 - [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1
@@ -110,5 +110,5 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [LES-0003 — Usar IDs curtos para parametrizações com payloads grandes](records/LES/LES-0003/0002.json) · verified · revision 2
 - [LES-0004 — Declarar UTF-8 nos leitores de artefatos JSON](records/LES/LES-0004/0004.json) · verified · revision 4
 - [LES-0005 — Validar snapshots e relatórios também na desserialização](records/LES/LES-0005/0002.json) · verified · revision 2
-- [LES-0006 — Disposição correta e citações sustentadas não certificam materialidade](records/LES/LES-0006/0002.json) · verified · revision 2
+- [LES-0006 — Disposição correta e citações sustentadas não certificam materialidade](records/LES/LES-0006/0004.json) · verified · revision 4
 - [RUN-0001 — Registrar e reutilizar uma experiência](records/RUN/RUN-0001/0001.json) · draft · revision 1

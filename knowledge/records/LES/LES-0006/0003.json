@@ -1,0 +1,56 @@
+{
+  "alternatives": [],
+  "applicability": [
+    "Semantic understanding evaluations with material blocking questions",
+    "Review and promotion gates that could otherwise collapse distinct quality criteria"
+  ],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Two actual output snapshots judged by human PO after a frozen bounded generation round; replayed with independent semantic criteria.",
+  "created_at": "2026-10-20T19:12:00.105861+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Explicit fresh PO judgments and offline typed replay: six pass and two uncertainty fail; source support/coverage pass in recorded corrected outputs. No qualification or promotion.",
+      "outcome": "observed",
+      "sha256": "a3013fadf1990e59e4314fae271081eb3ef4bc69dcf7c7b9c0f4f76fd8efdcfd",
+      "source": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/manifest.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit fresh PO judgments and offline typed replay: six pass and two uncertainty fail; source support/coverage pass in recorded corrected outputs. No qualification or promotion.",
+      "outcome": "observed",
+      "sha256": "9ed8bbd9d5eae1b078c38c78564d1ab7dff9701052788a7e549e85dd6f56c030",
+      "source": "tests/test_v33_development_evidence.py"
+    }
+  ],
+  "id": "LES-0006",
+  "kind": "LES",
+  "lesson": "Evaluate question materiality independently of source support and aggregate disposition. Preserve per-criterion failure and do not promote a candidate solely from ready/blocked agreement or positive model audit.",
+  "limitations": [
+    "Counterexample establishes insufficiency of the shortcut, not a frequency estimate or universal failure of any model.",
+    "Applies to the recorded intent-analysis scope; different target requirements may make a similar question material."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "INC-0024",
+    "DOC-0036",
+    "ADR-0022"
+  ],
+  "resolution": "Stored full criterion-specific human judgments and replayed them offline, retaining uncertainty failure despite matching case disposition and positive citation support.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 3,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Recorded counterexamples: eight v3.3 dispositions match expectations, but PO rejects uncertainty in two. Supported questions can still be inappropriate blockers.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Disposição correta e citações sustentadas não certificam materialidade",
+  "updated_at": "2026-10-20T19:58:48.988238+00:00"
+}
