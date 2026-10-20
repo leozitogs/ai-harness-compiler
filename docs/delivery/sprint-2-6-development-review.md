@@ -35,6 +35,9 @@ existentes. Cada página contém input completo, proposta completa original do m
 fontes literais, vínculos por componente e diagnósticos do auditor. Todos os seis
 critérios continuam pendentes. Contagens de diagnóstico não são defeitos confirmados.
 
+Continuação em 2026-10-20: [adjudicação técnica das seis possíveis omissões e um componente](sprint-2-6-adjudication.md),
+com duas decisões específicas submetidas ao PO e sem julgamento humano inferido.
+
 | Caso | Resposta selecionada | Achados / componentes | Omissões / componentes negativos consultivos | Revisão |
 | --- | --- | --- | --- | --- |
 | [Adversarial](../reviews/sprint-2-6-development/dev-adversarial.md) | baseline v3 | 7 / 2 | 1 / 0 | Pendente |

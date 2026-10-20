@@ -1,0 +1,576 @@
+{
+  "schema_version": "SemanticAdjudicationDraft/v1",
+  "recorded_on": "2026-10-20",
+  "authority": "advisory-only",
+  "status": "awaiting-human-judgment",
+  "cases": [
+    {
+      "case": "dev-adversarial",
+      "analysis_sha256": "5aeb72bf12a4ebe5020dcf65100ac2f5f597fa429ec3e360840715437b65cacf",
+      "analysis_source": {
+        "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-adversarial/analysis.json",
+        "sha256": "2737a8cb48f28ca55062ffd1d88ea42479204a8dbddbd4af2d5cb80178749bb3"
+      },
+      "advice_source": {
+        "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-adversarial/advice.json",
+        "sha256": "bd13c5ca42c35ce39b81dd4453744522c43561e14e92e3dd5cd79ba60568b149"
+      },
+      "targets": [
+        {
+          "id": "omission-1",
+          "kind": "advisory-omission",
+          "original_advice": {
+            "id": "omission-1",
+            "kind": "rule",
+            "text": "Deve-se registrar a identidade do responsável.",
+            "rationale": "A restrição de negócio é obrigatória. context-4 a descreve como capacidade, sem preservar separadamente sua força normativa; conter um responsável não explicita registrar sua identidade.",
+            "source_atom_ids": [
+              "atom-6"
+            ],
+            "impact": null
+          },
+          "exact_sources": [
+            {
+              "id": "atom-6",
+              "source_ref": "input-3",
+              "pointer": "/constraints/business/0",
+              "quote": "Registrar a identidade do responsável.",
+              "kind": "constraint",
+              "content_trust": "untrusted-data"
+            }
+          ],
+          "suggested_diagnosis": "representation-policy-review",
+          "technical_note": "A identidade é preservada textualmente em context-4, classificada como capability. Verificar se a representação mantém força normativa; não confundir ausência de guard com ausência literal da obrigação.",
+          "human_decision": null
+        }
+      ],
+      "identity_constraint_sources": [
+        {
+          "id": "atom-6",
+          "source_ref": "input-3",
+          "pointer": "/constraints/business/0",
+          "quote": "Registrar a identidade do responsável.",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        }
+      ],
+      "identity_constraint_representation": [
+        {
+          "id": "context-4",
+          "kind": "statement",
+          "text": "Registrar decisões e a identidade do responsável.",
+          "condition": null,
+          "outcome": null,
+          "atom_ids": [
+            "atom-6",
+            "atom-8"
+          ]
+        }
+      ],
+      "overall_semantic_status": "not-run",
+      "human_review": null,
+      "untargeted_findings": "not-adjudicated-by-this-draft"
+    },
+    {
+      "case": "dev-ambiguous",
+      "analysis_sha256": "44f9c5bbb4d4461109433ede9bddcbb99b27131c08af8714d6fd314fd86adc54",
+      "analysis_source": {
+        "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-ambiguous/analysis.json",
+        "sha256": "a5c9bed24fc0e21a8b2ae2cb01bb7b881eeb9340150532b48935356d57c80468"
+      },
+      "advice_source": {
+        "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-ambiguous/advice.json",
+        "sha256": "3b60db0dbaf855a7ca7cfcce67318fa84120e3665d81608ead50477d196cd5ee"
+      },
+      "targets": [
+        {
+          "id": "guard-1:condition",
+          "kind": "advisory-component-support",
+          "original_advice": {
+            "finding_id": "guard-1",
+            "component_name": "condition",
+            "component_index": null,
+            "source_atom_ids": [
+              "atom-7"
+            ],
+            "support": "insufficient-evidence",
+            "note": "A fonte prevê registrar decisões, mas não estabelece esse evento como condição de aplicação do registro de identidade."
+          },
+          "finding": {
+            "id": "guard-1",
+            "kind": "rule",
+            "text": "Registrar a identidade do responsável.",
+            "condition": "Ao registrar decisões no processo de publicação da equipe.",
+            "outcome": "Registrar a identidade do responsável.",
+            "exceptions": [],
+            "impact": null,
+            "rationale": "Exigência de rastreabilidade; não concede autorização para publicar ou concluir.",
+            "source_atom_ids": [
+              "atom-7",
+              "atom-5"
+            ],
+            "subject": null,
+            "rejection_reason": null,
+            "component_bindings": [
+              {
+                "name": "condition",
+                "index": null,
+                "source_atom_ids": [
+                  "atom-7"
+                ]
+              },
+              {
+                "name": "outcome",
+                "index": null,
+                "source_atom_ids": [
+                  "atom-5"
+                ]
+              }
+            ],
+            "guard_target_atom_ids": [],
+            "guard_target_scope": "project"
+          },
+          "finding_sha256": "d0e87fb9a5d0fe1da38f7b9a9f97c42ad09c246e9028fc65dd9624c1b11f8a28",
+          "exact_sources": [
+            {
+              "id": "atom-7",
+              "source_ref": "input-4",
+              "pointer": "/backlog/0/description",
+              "quote": "Organizar publicação da equipe e registrar decisões.",
+              "kind": "backlog-description",
+              "content_trust": "untrusted-data"
+            }
+          ],
+          "suggested_diagnosis": "candidate-insufficient-support",
+          "technical_note": "A fonte citada pela condição descreve organizar publicações e registrar decisões; não estabelece a ligação entre registrar decisões e a obrigação de identificação. Preservar a obrigação e rejeitar ou reespecificar a condição sem sustentação, sujeito ao julgamento humano.",
+          "human_decision": null
+        }
+      ],
+      "identity_constraint_sources": [
+        {
+          "id": "atom-5",
+          "source_ref": "input-3",
+          "pointer": "/constraints/business/0",
+          "quote": "Registrar a identidade do responsável.",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        }
+      ],
+      "identity_constraint_representation": [
+        {
+          "id": "guard-1",
+          "kind": "rule",
+          "text": "Registrar a identidade do responsável.",
+          "condition": "Ao registrar decisões no processo de publicação da equipe.",
+          "outcome": "Registrar a identidade do responsável.",
+          "atom_ids": [
+            "atom-7",
+            "atom-5"
+          ]
+        }
+      ],
+      "overall_semantic_status": "not-run",
+      "human_review": null,
+      "untargeted_findings": "not-adjudicated-by-this-draft"
+    },
+    {
+      "case": "dev-branding-conflict",
+      "analysis_sha256": "dca39f8f85f8c3edb38f268a0a2094a4975ef4e9a9811bba60a55d067d2eb30b",
+      "analysis_source": {
+        "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-branding-conflict/analysis.json",
+        "sha256": "7bf4ead0e21f2f0550df3ef8159a134434037db33a17c96d00416a85aefe1170"
+      },
+      "advice_source": {
+        "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-branding-conflict/advice.json",
+        "sha256": "b5b015d8ab966870670b2b76dd19ad520c1779ca38f9e1c6cb22a54c10ea2056"
+      },
+      "targets": [
+        {
+          "id": "omission-1",
+          "kind": "advisory-omission",
+          "original_advice": {
+            "id": "omission-1",
+            "kind": "rule",
+            "text": "Liberar publicação da equipe dispensa qualquer aprovação humana.",
+            "rationale": "A dispensa aparece apenas na descrição do conflito; falta preservá-la como regra própria, sem presumir sua precedência.",
+            "source_atom_ids": [
+              "atom-3"
+            ],
+            "impact": null
+          },
+          "exact_sources": [
+            {
+              "id": "atom-3",
+              "source_ref": "input-2",
+              "pointer": "/branding/principles/0",
+              "quote": "Liberar publicação da equipe dispensa qualquer aprovação humana.",
+              "kind": "branding",
+              "content_trust": "untrusted-data"
+            }
+          ],
+          "suggested_diagnosis": "candidate-redundant-representation-alert",
+          "technical_note": "A dispensa e a exigência aparecem no conflito, com ambas as fontes, e a precedência fica pendente. Não exigir uma regra executável adicional para escolher um lado; confirmar suficiência da preservação no conflito.",
+          "human_decision": null
+        }
+      ],
+      "identity_constraint_sources": [
+        {
+          "id": "atom-4",
+          "source_ref": "input-3",
+          "pointer": "/constraints/business/0",
+          "quote": "Registrar a identidade do responsável.",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        }
+      ],
+      "identity_constraint_representation": [
+        {
+          "id": "context-4",
+          "kind": "statement",
+          "text": "Registrar a identidade do responsável.",
+          "condition": null,
+          "outcome": null,
+          "atom_ids": [
+            "atom-4"
+          ]
+        }
+      ],
+      "overall_semantic_status": "not-run",
+      "human_review": null,
+      "untargeted_findings": "not-adjudicated-by-this-draft"
+    },
+    {
+      "case": "dev-compatible-rules",
+      "analysis_sha256": "09f6148f4cf0303325d2c3380e32f2735a13f543797df23da3b0ca9b4e956581",
+      "analysis_source": {
+        "path": "docs/evidence/sprint-2-5-final-20261019/schema-v31-recovery/dev-compatible-rules/analysis.json",
+        "sha256": "d2701f9b11e6b9c06d5c0603fc77bc6f452743892fa90b2cbb80e1110cbf6ea2"
+      },
+      "advice_source": {
+        "path": "docs/evidence/sprint-2-5-final-20261019/schema-v31-recovery/dev-compatible-rules/advice.json",
+        "sha256": "7ec1bb51c60432cc95f3b30215d906cae768f7f1ecab1bd35bedc90ce2723534"
+      },
+      "targets": [
+        {
+          "id": "omission-1",
+          "kind": "advisory-omission",
+          "original_advice": {
+            "id": "omission-1",
+            "kind": "question",
+            "text": "Como se determina o educador responsável por um material e qual educador pode revisar e aprovar a publicação da aula?",
+            "rationale": "As fontes restringem acesso e exigem aprovação, mas não definem a atribuição dessas responsabilidades nem estabelecem se pertencem à mesma pessoa.",
+            "source_atom_ids": [
+              "atom-17",
+              "atom-20"
+            ],
+            "impact": "authorization"
+          },
+          "exact_sources": [
+            {
+              "id": "atom-17",
+              "source_ref": "input-6",
+              "pointer": "/backlog/0/acceptance_criteria/1",
+              "quote": "Materiais só são visíveis ao educador responsável.",
+              "kind": "acceptance-criterion",
+              "content_trust": "untrusted-data"
+            },
+            {
+              "id": "atom-20",
+              "source_ref": "input-9",
+              "pointer": "/backlog/1/acceptance_criteria/1",
+              "quote": "A publicação exige revisão e aprovação do educador.",
+              "kind": "acceptance-criterion",
+              "content_trust": "untrusted-data"
+            }
+          ],
+          "suggested_diagnosis": "candidate-nonblocking-question",
+          "technical_note": "Preservar visibilidade e revisão/aprovação sem afirmar que responsável e aprovador são a mesma pessoa. Definição operacional de atribuição não deve criar bloqueio adicional sem mudar a regra declarada.",
+          "human_decision": null
+        }
+      ],
+      "identity_constraint_sources": [
+        {
+          "id": "atom-13",
+          "source_ref": "input-3",
+          "pointer": "/constraints/business/0",
+          "quote": "revisão humana antes de publicação",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        }
+      ],
+      "identity_constraint_representation": [
+        {
+          "id": "guard-human-review",
+          "kind": "rule",
+          "text": "Exigir revisão humana prévia.",
+          "condition": "Antes da publicação de conteúdo na plataforma.",
+          "outcome": "Exigir revisão humana prévia.",
+          "atom_ids": [
+            "atom-1",
+            "atom-13"
+          ]
+        }
+      ],
+      "overall_semantic_status": "not-run",
+      "human_review": null,
+      "untargeted_findings": "not-adjudicated-by-this-draft"
+    },
+    {
+      "case": "dev-new-domain",
+      "analysis_sha256": "8baff4b157478c6a6bc91fca505875990ff3e3dddb73350149faea240a897a2a",
+      "analysis_source": {
+        "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-new-domain/analysis.json",
+        "sha256": "ffc9cf1762b809f89c70d9421d531c94ded8d3f965651ad6c928763282074f87"
+      },
+      "advice_source": {
+        "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-new-domain/advice.json",
+        "sha256": "af158fa3939c0499c70b377640c0299d32c5a84b63e511cac439a925e6ca2097"
+      },
+      "targets": [],
+      "identity_constraint_sources": [
+        {
+          "id": "atom-5",
+          "source_ref": "input-3",
+          "pointer": "/constraints/business/0",
+          "quote": "Registrar a identidade do responsável.",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        }
+      ],
+      "identity_constraint_representation": [
+        {
+          "id": "context-5",
+          "kind": "statement",
+          "text": "Registrar a identidade do responsável.",
+          "condition": null,
+          "outcome": null,
+          "atom_ids": [
+            "atom-5"
+          ]
+        }
+      ],
+      "overall_semantic_status": "not-run",
+      "human_review": null,
+      "untargeted_findings": "not-adjudicated-by-this-draft"
+    },
+    {
+      "case": "dev-rules-a",
+      "analysis_sha256": "d4dca46e801c7f9f89d799226af6929fd582d847c00ec8500378b6b5c3435341",
+      "analysis_source": {
+        "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-rules-a/analysis.json",
+        "sha256": "8eb4b4cea262fd3164cccc2024f76cb500f1fcb637a419cc16bb022a4496dfa9"
+      },
+      "advice_source": {
+        "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-rules-a/advice.json",
+        "sha256": "975a733f92ad1e123d2b140ee4ffe05a5da9a40a5217dc1e5a96b6bf479b9ce7"
+      },
+      "targets": [
+        {
+          "id": "omission-1",
+          "kind": "advisory-omission",
+          "original_advice": {
+            "id": "omission-1",
+            "kind": "question",
+            "text": "Como se determina quem é o responsável designado cuja aprovação é exigida?",
+            "rationale": "A fonte exige aprovação dessa pessoa, mas não define sua determinação; a resposta altera quem pode aprovar.",
+            "source_atom_ids": [
+              "atom-8"
+            ],
+            "impact": "authorization"
+          },
+          "exact_sources": [
+            {
+              "id": "atom-8",
+              "source_ref": "input-5",
+              "pointer": "/backlog/0/acceptance_criteria/0",
+              "quote": "Liberar publicação da equipe exige aprovação do responsável designado.",
+              "kind": "acceptance-criterion",
+              "content_trust": "untrusted-data"
+            }
+          ],
+          "suggested_diagnosis": "candidate-nonblocking-question",
+          "technical_note": "A aprovação do papel designado está preservada; a rotina para designar uma pessoa pode permanecer na implementação, sem inventar novo aprovador.",
+          "human_decision": null
+        },
+        {
+          "id": "omission-2",
+          "kind": "advisory-omission",
+          "original_advice": {
+            "id": "omission-2",
+            "kind": "question",
+            "text": "O responsável cuja identidade deve ser registrada é o mesmo responsável designado para aprovar a publicação?",
+            "rationale": "As fontes não estabelecem essa equivalência; a resposta determina qual identidade deve constar do registro obrigatório.",
+            "source_atom_ids": [
+              "atom-5",
+              "atom-8"
+            ],
+            "impact": "outcome"
+          },
+          "exact_sources": [
+            {
+              "id": "atom-5",
+              "source_ref": "input-3",
+              "pointer": "/constraints/business/0",
+              "quote": "Registrar a identidade do responsável.",
+              "kind": "constraint",
+              "content_trust": "untrusted-data"
+            },
+            {
+              "id": "atom-8",
+              "source_ref": "input-5",
+              "pointer": "/backlog/0/acceptance_criteria/0",
+              "quote": "Liberar publicação da equipe exige aprovação do responsável designado.",
+              "kind": "acceptance-criterion",
+              "content_trust": "untrusted-data"
+            }
+          ],
+          "suggested_diagnosis": "candidate-nonblocking-question",
+          "technical_note": "Não há afirmação de identidade entre o responsável do registro e o aprovador. Manter papéis distintos/indefinidos em vez de presumir equivalência ou bloquear só por essa ausência.",
+          "human_decision": null
+        }
+      ],
+      "identity_constraint_sources": [
+        {
+          "id": "atom-5",
+          "source_ref": "input-3",
+          "pointer": "/constraints/business/0",
+          "quote": "Registrar a identidade do responsável.",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        }
+      ],
+      "identity_constraint_representation": [
+        {
+          "id": "context-6",
+          "kind": "statement",
+          "text": "Registrar a identidade do responsável.",
+          "condition": null,
+          "outcome": null,
+          "atom_ids": [
+            "atom-5"
+          ]
+        }
+      ],
+      "overall_semantic_status": "not-run",
+      "human_review": null,
+      "untargeted_findings": "not-adjudicated-by-this-draft"
+    },
+    {
+      "case": "dev-rules-b",
+      "analysis_sha256": "37259cfadefec1d810777fb46d24278122889ce8e2703457e2518d39ffee6231",
+      "analysis_source": {
+        "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-rules-b/analysis.json",
+        "sha256": "56ed52e69d22d0e3a95eaa07c31986550360813cff9bee444845ac4e6406b905"
+      },
+      "advice_source": {
+        "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-rules-b/advice.json",
+        "sha256": "320d60565bb66c35b7251097e364ff002c630f35c0555525523eadf5c6b423fd"
+      },
+      "targets": [
+        {
+          "id": "omission-1",
+          "kind": "advisory-omission",
+          "original_advice": {
+            "id": "omission-1",
+            "kind": "question",
+            "text": "Quem deve ser identificado como responsável para cumprir a exigência de registro?",
+            "rationale": "A exigência não define o responsável. A resposta determina de quem deve ser registrada a identidade; não se pode presumir que seja o autor ou o executor autenticado.",
+            "source_atom_ids": [
+              "atom-5"
+            ],
+            "impact": "outcome"
+          },
+          "exact_sources": [
+            {
+              "id": "atom-5",
+              "source_ref": "input-3",
+              "pointer": "/constraints/business/0",
+              "quote": "Registrar a identidade do responsável.",
+              "kind": "constraint",
+              "content_trust": "untrusted-data"
+            }
+          ],
+          "suggested_diagnosis": "candidate-nonblocking-question",
+          "technical_note": "A permissão do autor sem terceiros deve permanecer. A identidade a registrar é um dado a vincular sem inferir que autor e responsável sejam iguais; revisar separadamente a aplicabilidade do guard.",
+          "human_decision": null
+        }
+      ],
+      "identity_constraint_sources": [
+        {
+          "id": "atom-5",
+          "source_ref": "input-3",
+          "pointer": "/constraints/business/0",
+          "quote": "Registrar a identidade do responsável.",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        }
+      ],
+      "identity_constraint_representation": [
+        {
+          "id": "guard-1",
+          "kind": "rule",
+          "text": "Registrar a identidade do responsável.",
+          "condition": "O autor libera uma publicação da equipe.",
+          "outcome": "Registrar a identidade do responsável.",
+          "atom_ids": [
+            "atom-8",
+            "atom-5"
+          ]
+        }
+      ],
+      "overall_semantic_status": "not-run",
+      "human_review": null,
+      "untargeted_findings": "not-adjudicated-by-this-draft"
+    },
+    {
+      "case": "dev-unread-assets",
+      "analysis_sha256": "514b28a8260e0f53273e2be0feeeac15dcb236fc9b9d4fa09583796833c238ba",
+      "analysis_source": {
+        "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-unread-assets/analysis.json",
+        "sha256": "365cbf5c8f47d8ab1b40775a254c1d408877e0ba8a53c141c93656069b76d954"
+      },
+      "advice_source": {
+        "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-unread-assets/advice.json",
+        "sha256": "e848cb4c6fb26b432da7940a6d54cb4eedf78c5851efc407d5dfef5783d70147"
+      },
+      "targets": [],
+      "identity_constraint_sources": [
+        {
+          "id": "atom-5",
+          "source_ref": "input-3",
+          "pointer": "/constraints/business/0",
+          "quote": "Registrar a identidade do responsável.",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        }
+      ],
+      "identity_constraint_representation": [
+        {
+          "id": "context-5",
+          "kind": "statement",
+          "text": "Registrar a identidade do responsável.",
+          "condition": null,
+          "outcome": null,
+          "atom_ids": [
+            "atom-5",
+            "atom-8"
+          ]
+        }
+      ],
+      "overall_semantic_status": "not-run",
+      "human_review": null,
+      "untargeted_findings": "not-adjudicated-by-this-draft"
+    }
+  ],
+  "targeted_omissions": 6,
+  "targeted_components": 1,
+  "human_reviews_created": 0,
+  "new_model_calls": 0,
+  "holdout_read": false,
+  "limitations": [
+    "No diagnosis is promoted to human pass/fail; six criteria per case remain pending.",
+    "Different case outputs are not a controlled causal experiment.",
+    "A literal preserved statement is not proof of normative completeness or correct guard applicability.",
+    "Historical outputs, approved expectations, prompts and profiles remain unchanged."
+  ]
+}
