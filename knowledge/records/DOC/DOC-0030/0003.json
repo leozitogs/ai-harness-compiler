@@ -1,0 +1,76 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:delivery",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO explicitly instructed: pode fechar a sprint 2.5.5 e seguir para a sprint 2.6, on 2026-10-19.",
+  "created_at": "2026-10-19T23:26:46.950490+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Explicit PO closure/start. Entry audit verified eight approved development cases and 62 historical artifacts; eight human output reviews remain not-run. No holdout read, model calls or training in this transition.",
+      "outcome": "observed",
+      "sha256": "629f04ea2d22a0bdecce159252192851473b5763942ea3efadc07b1b815ba90a",
+      "source": "docs/delivery/sprint-2-6-kickoff.md"
+    },
+    {
+      "command": null,
+      "note": "Explicit PO closure/start. Entry audit verified eight approved development cases and 62 historical artifacts; eight human output reviews remain not-run. No holdout read, model calls or training in this transition.",
+      "outcome": "observed",
+      "sha256": "689030ea1c7c670373f430b0898148e4a052b6febb384932d3c7ab92e64af5db",
+      "source": "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit PO closure/start. Entry audit verified eight approved development cases and 62 historical artifacts; eight human output reviews remain not-run. No holdout read, model calls or training in this transition.",
+      "outcome": "observed",
+      "sha256": "5ed4bdce9a6f7f6c3fafcce7f17bf221824df798758e790f4a0298c8867ac84c",
+      "source": "planning/sprint-2-6.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit PO closure/start. Entry audit verified eight approved development cases and 62 historical artifacts; eight human output reviews remain not-run. No holdout read, model calls or training in this transition.",
+      "outcome": "observed",
+      "sha256": "7bf8dc4f46e90acf9ed935e5cb0ea90c4842ce3c584caa5914f6f80dd93f6c15",
+      "source": "planning/sprint-2-6.tasks.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit PO closure/start. Entry audit verified eight approved development cases and 62 historical artifacts; eight human output reviews remain not-run. No holdout read, model calls or training in this transition.",
+      "outcome": "observed",
+      "sha256": "03fb331edfb10093defcb9c0a3d6af41085f8dba8ef090080eaaafcfd074d089",
+      "source": "planning/sprint-2-6.work-items.json"
+    }
+  ],
+  "id": "DOC-0030",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Timebox closure does not certify every story criterion or the specific QA resolution.",
+    "No model qualification, reserved-corpus access, paid service purchase or training inferred.",
+    "Task graph represents precedence, not execution or parallel capacity."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0013",
+    "DOC-0029",
+    "DOC-0021",
+    "DOC-0031"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 3,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Sprint2.6 prerequisite phase active. Initial audit verified eight frozen cases and 62 historical artifacts; later Nexo favored offline review preparation and eight-case matrix prepared (DOC-0031). Human semantic outputs and AHC024 gates remain pending.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Kickoff Sprint2.6 e auditoria offline da baseline",
+  "updated_at": "2026-10-19T23:48:57.582627+00:00"
+}

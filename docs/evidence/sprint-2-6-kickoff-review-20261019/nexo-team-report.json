@@ -1,0 +1,1141 @@
+{
+  "approval": null,
+  "ml_evaluation": {
+    "accuracy": 1.0,
+    "details": [
+      {
+        "expected": "analyst",
+        "predicted": "analyst",
+        "request": "Inspecione requisitos ambíguos e critérios das histórias"
+      },
+      {
+        "expected": "analyst",
+        "predicted": "analyst",
+        "request": "Review user needs and acceptance criteria"
+      },
+      {
+        "expected": "architect",
+        "predicted": "architect",
+        "request": "Avalie fronteiras arquiteturais e compatibilidade dos schemas"
+      },
+      {
+        "expected": "architect",
+        "predicted": "architect",
+        "request": "Design modular architecture and interfaces"
+      },
+      {
+        "expected": "engineer",
+        "predicted": "engineer",
+        "request": "Decomponha implementação em tarefas e arquivos de código"
+      },
+      {
+        "expected": "engineer",
+        "predicted": "engineer",
+        "request": "Plan coding steps and implementation dependencies"
+      },
+      {
+        "expected": "quality",
+        "predicted": "quality",
+        "request": "Confira testes de regressão e evidências dos evals"
+      },
+      {
+        "expected": "quality",
+        "predicted": "quality",
+        "request": "Prepare quality assurance testing matrix"
+      },
+      {
+        "expected": "security",
+        "predicted": "security",
+        "request": "Examine ameaças de vazamento de segredos e permissões"
+      },
+      {
+        "expected": "security",
+        "predicted": "security",
+        "request": "Review security risks and private data protection"
+      },
+      {
+        "expected": "delivery",
+        "predicted": "delivery",
+        "request": "Organize kickoff e planejamento Scrum da sprint"
+      },
+      {
+        "expected": "delivery",
+        "predicted": "delivery",
+        "request": "Coordinate delivery impediments and sprint goal"
+      }
+    ],
+    "holdout_samples": 12,
+    "limitations": "Small curated bilingual holdout; not a production generalization claim. Scores are uncalibrated.",
+    "model": "TF-IDF word ngrams + LogisticRegression",
+    "sklearn_version": "1.9.1",
+    "train_samples": 36
+  },
+  "reports": [
+    {
+      "agent_id": "delivery",
+      "engine": "codex-cli",
+      "model_summary_is_advisory": true,
+      "observations": [
+        {
+          "data": {
+            "content_trust": "untrusted-data",
+            "matches": [
+              {
+                "relevance": 0.1474855719647772,
+                "source": "docs/product/backlog.md",
+                "text": " especialização | P1 | 005, 007, 009, 015 | A refinar |\n| AHC-018 | E5 / Aprendizagem por experiências do projeto | P2 | 008, 010, 016, 017 | A refinar |\n| AHC-019 | E1 / Entendimento generalista e regras de negócio | P0 | 002, 003 | In progress — contratos/adapter integrados; qualificação semântica pendente |\n| AHC-020 | E2 / Blueprint e packs opcionais | P0 | 019 | Sprint 2 aprovada; depende da entrega 019 |\n| AHC-021 | E1 / Rubrica e evals semânticos do entendimento | P0 | 002, 003, 004 | Sprint 2.6 — carryover; auditoria de entrada executada, revisão humana pendente |\n| AHC-022 | E1 / Grounding e cobertura de regras | P0 | 021 | Sprint 2.6 — carryover; comparação completa e revisão pendentes |\n| AHC-023 | E1 / Qualificação do modelo e perfil local | P0 | 022 | Sprint 2.6 — carryover; nenhum modelo qualificado |\n| AHC-024 | E1 / Perfis de inferência por provider | P1 | 021, 022 | Sprint 2.6 — bloqueada pelos pré-requisitos |\n| AHC-025 | E1 / Experimentos controlados | P1 | 024 | Sprint 2.6 — bloqueada; orçamento antes das chamadas |\n| AHC-026 | E1 / Viabilidade de fine-tuning | P2 | 025 | Sprint 2.6 — condicional; treino não iniciado |\n\nO [pipeline por projeto](project-generation-pipeline.md)\ndefine o caminho dos novos itens e as diferenças entre capacidade interna e produto gerado.\n\n## Incremento já existente\n\nA fundação de contratos, compilador, CLI, políticas de repositório e TaskGraph\nestá implementada antes da Sprint 1. Não contabilizar essa fundação novamente\ncomo conclusão de AHC-001 a AHC-004: os critérios dessas histórias ampliam o comportamento atual.\n\n## Regras de refinamento\n\nUma história deve descrever resultado observável, dados e restrições, critérios\ntestáveis, dependências e riscos. Dividir histórias grandes em fatias verticais\nantes da seleção; os quatro estágios técnicos do TaskGraph não substituem esse refinamento.\nPrioridade não libera dependências: um P0 bloqueado exige resolver seu pré-requisito.\n\nUsar estados Proposed → Ready → In progress"
+              },
+              {
+                "relevance": 0.11734975357622418,
+                "source": "README.md",
+                "text": "# AI Harness Compiler\n\n**Compile project intent into typed, verifiable, project-specific AI engineering harnesses.**\n\nUm meta-pipeline de AI Engineering cujo produto é a estrutura de engenharia de IA\nde um novo projeto: arquitetura, contexto, políticas, prompts, skills, ferramentas,\nworkflows, avaliações e critérios de evolução.\n\nO projeto parte de **branding + backlog + concepção + assets + restrições** e usa\nrepresentações intermediárias verificáveis antes de gerar qualquer artefato.\nO compilador é generalista: nicho e regras são estudados por projeto; exemplos de\neducação/comércio são fixtures, e packs opcionais não limitam os domínios atendidos.\n\n**Status: fundação v0.1.** O repositório contém um compilador local determinístico\nde um harness de desenvolvimento. O pipeline completo de IA está no roadmap.\n\n[Sprint 2.5 encerrada com resultado parcial](docs/delivery/sprint-2-5-review.md):\ncontratos/evals entregues, nenhum modelo qualificado e revisão semântica pendente.\n[Sprint 2.5.5 encerrada por decisão do PO](docs/delivery/sprint-2-5-5-review.md), com pendências preservadas.\n[Sprint 2.6 iniciada](docs/delivery/sprint-2-6-kickoff.md) pela auditoria da baseline e revisão dos pré-requisitos;\nos gates remanescentes continuam exigidos antes de promoção, holdout ou treinamento.\n\n**Principal das tarefas com LLM: Codex CLI / `gpt-6.1-sol`, via assinatura ChatGPT.**\nOs seis especialistas herdam a mesma preferência central. Qwen3 4B Instruct é a\nalternativa local explícita; falhas não trocam de modelo automaticamente.\n[Seleção e evidências](docs/delivery/ahc-023-primary-selection.md).\nÉ preferência operacional de desenvolvimento, com qualificação semântica pendente.\n\nAHC-027 adiciona um [observador Scrum somente leitura](docs/engineering/scrum-observer.md),\ncom fontes limitadas, diagnóstico rastreável e nenhuma autoridade de aceite.\nAHC-028 integra [propostas Scrum ao Nexo](docs/engineering/nexo-scrum-planning.md),\ncom critérios preservados, capacidade desconhecida e revis"
+              },
+              {
+                "relevance": 0.09967047649407307,
+                "source": "docs/delivery/sprint-1.md",
+                "text": "te do incremento e uma melhoria do processo registrada |\n\nEssa sequência é uma previsão por dependências. Se a capacidade real não comportar\no conjunto, renegociar escopo com o PO; não deixar a verificação para o último dia.\nPreparação de fixtures e design de domínio podem ocorrer antes, mas o benchmark\nfinal e a demonstração usam os contratos integrados.\n\n## Responsabilidades\n\n| Participante | Responsabilidade na sprint |\n|---|---|\n| Leonardo — PO | Prioridade, exemplos/limites de domínio, decisões de escopo e aceite de valor |\n| Colaborador de código/Codex | Implementação, regressões, atualização de schemas/docs e PRs |\n| Clara | Apoio ao refinamento e identificação de lacunas nos requisitos |\n| Atlas | Apoio a contratos, fronteiras e compatibilidade |\n| Ícaro | Apoio à decomposição e ordem das mudanças |\n| Vera | Apoio à matriz de aceitação e evidências de qualidade |\n| Sentinela | Apoio à análise de input, dados, permissões e efeitos |\n| Nexo | Apoio à consolidação de progresso, dependências e impedimentos |\n\nOs agentes atuais produzem análises e planos; a implementação de código é uma\natividade do colaborador de código. Seus relatórios não substituem execução de\ntestes, revisão técnica ou accountability humana. Um segundo revisor independente\ncontinua uma decisão de formação da equipe.\n\n## Tarefas e controle de progresso\n\n`planning/sprint-1.json` define o escopo. `planning/sprint-1.tasks.json` mantém\n16 estágios técnicos com oito ondas de precedência. O novo\n`planning/sprint-1.work-items.json` detalha ações, entregáveis e papéis por estágio,\nincluindo coordenação adicional entre evidências, domínio e benchmark.\n\n```sh\nuv run factory tasks project-definition --select ahc-001 ahc-002 ahc-003 ahc-004\nuv run python scripts/generate_sprint_plan.py --check\nuv run --extra team factory team run project-definition --request \"Apoiar Planning da Sprint 1\" --output output/sprint-1-planning\n```\n\nFluxo: Planned → In progress → In review → Done; Blocked registra causa e ação\n"
+              }
+            ]
+          },
+          "findings": [],
+          "summary": "Retrieved 3 bounded repository excerpts.",
+          "tool": "retrieve_context"
+        },
+        {
+          "data": {
+            "automatic_weight_training": false,
+            "matches": [
+              {
+                "bm25": -11.544188459630291,
+                "record": {
+                  "alternatives": [],
+                  "applicability": [],
+                  "attempts": [],
+                  "author": "codex:engineering",
+                  "challenge": null,
+                  "consequences": [],
+                  "context": "PO explicitly authorized implementing the reviewer before the Sprint2.5.5 review on 2026-10-19.",
+                  "created_at": "2026-10-19T22:45:56.735393+00:00",
+                  "decision": "Separate observed check execution from model hypotheses and human acceptance. Preserve pending findings across comparisons, currentness guards and the persistent PO gate.",
+                  "evidence": [
+                    {
+                      "command": null,
+                      "note": "970 offline tests passed; real QA runner and LangGraph gate demonstrated. Model results/limitations are explicit in the immutable demo inventory.",
+                      "outcome": "observed",
+                      "sha256": "0f7d92a3a2b504c6193b7157b0c0824483697ca943b5ab8034f6f8ec6cbb07b9",
+                      "source": "docs/adr/0026-vera-evidence-bound-review.md"
+                    },
+                    {
+                      "command": null,
+                      "note": "970 offline tests passed; real QA runner and LangGraph gate demonstrated. Model results/limitations are explicit in the immutable demo inventory.",
+                      "outcome": "observed",
+                      "sha256": "51eec625be571baa23fe396d7b5c460e356098321de4215f7abd89e889af6597",
+                      "source": "src/ai_harness_compiler/models/qa.py"
+                    },
+                    {
+                      "command": null,
+                      "note": "970 offline tests passed; real QA runner and LangGraph gate demonstrated. Model results/limitations are explicit in the immutable demo inventory.",
+                      "outcome": "observed",
+                      "sha256": "e667859dda224de78b026cf07d0760b5efa1141ee9d55ecb014ac7500eae926e",
+                      "source": "src/ai_harness_compiler/qa.py"
+                    },
+                    {
+                      "command": null,
+                      "note": "970 offline tests passed; real QA runner and LangGraph gate demonstrated. Model results/limitations are explicit in the immutable demo inventory.",
+                      "outcome": "observed",
+                      "sha256": "16ee612f0ea361b95f2edfad70adc6caf40f62d2ee495f1fa489adc1563990e6",
+                      "source": "src/ai_harness_compiler/qa_collection.py"
+                    },
+                    {
+                      "command": null,
+                      "note": "970 offline tests passed; real QA runner and LangGraph gate demonstrated. Model results/limitations are explicit in the immutable demo inventory.",
+                      "outcome": "observed",
+                      "sha256": "e4632a119a8697d8e559793bfd7dee15bbeb30f3e13adf0f83d36ad3e1f1f69e",
+                      "source": "src/ai_harness_compiler/qa_runner.py"
+                    },
+                    {
+                      "command": null,
+                      "note": "970 offline tests passed; real QA runner and LangGraph gate demonstrated. Model results/limitations are explicit in the immutable demo inventory.",
+                      "outcome": "observed",
+                      "sha256": "a85d6669eb4ae4959780f29ece0df2ea279df3ef720f34bce3a9b07fde8693ad",
+                      "source": "tests/test_qa.py"
+                    },
+                    {
+                      "command": null,
+                      "note": "970 offline tests passed; real QA runner and LangGraph gate demonstrated. Model results/limitations are explicit in the immutable demo inventory.",
+                      "outcome": "observed",
+                      "sha256": "ac38ef26b2e7e73bf834f25aaccf57d2c42c7571b6d2c3ceb34e0ce82459a58d",
+                      "source": "tests/test_qa_runtime.py"
+                    }
+                  ],
+                  "id": "ADR-0026",
+                  "kind": "ADR",
+                  "lesson": null,
+                  "limitations": [
+                    "No human criterion acceptance, sprint closure or model qualification inferred.",
+                    "Model inspection is advisory; literal citations do not establish semantic correctness.",
+                    "Historical demo is not a reusable current approval; head/source/memory changes require a new capture.",
+                    "Trusted fixed checks execute repository code; the runner is not an isolation sandbox."
+                  ],
+                  "procedure": [],
+                  "project_id": "ai-harness-compiler",
+                  "related": [
+                    "DE-0012",
+                    "DOC-0026",
+                    "ADR-0024",
+                    "ADR-0025",
+                    "ADR-0027",
+                    "DOC-0028"
+                  ],
+                  "resolution": null,
+                  "review_note": "Refresh current source digests after AHC030 followups; historical demos remain historical, actual confirmation and global acceptance remain pending.",
+                  "reviewed_by": "codex:engineering-review",
+                  "revision": 6,
+                  "root_cause": null,
+                  "schema_version": "EngineeringMemory/v1",
+                  "status": "active",
+                  "summary": "Typed QA contracts bind sources, diff, fixed checks, criterion matrix and advisory inspection to an exact Git revision. Nexo consumes evidence without accepting criteria or closing sprints.",
+                  "supersedes": null,
+                  "tags": [],
+                  "title": "Vera com evidência vinculada à revisão e parecer do Nexo",
+                  "updated_at": "2026-10-19T23:14:40.728719+00:00"
+                },
+                "reusable": true
+              }
+            ],
+            "trust": "reference-data-not-instructions"
+          },
+          "findings": [],
+          "summary": "Retrieved 1 reviewed engineering records.",
+          "tool": "retrieve_memory"
+        },
+        {
+          "data": {
+            "cache_hit": false,
+            "cache_scope": "validated-observation-within-session",
+            "scrum_planning": {
+              "authority": "proposal-only",
+              "backlog_modified": false,
+              "proposals": [
+                {
+                  "acceptance": "not-established",
+                  "acceptance_criteria": [
+                    "Dataset versionado separa desenvolvimento e holdout com inputs e expectativas congelados antes da otimização; inclui domínio novo, regras divergentes na mesma categoria, ambiguidade, contradição real, regras compatíveis, asset não lido e conteúdo adversarial.",
+                    "Runner específico de entendimento registra not-run, pass, fail e error, modelo/digest, input/prompt/rubrica, tentativas e evidências; revisão semântica pendente ou campos ausentes nunca são interpretados como aprovação.",
+                    "Verificadores e revisão humana avaliam cobertura de regras, suporte de cada citação, conflitos falsos e dados não lidos; o modelo candidato não aprova sua própria saída, e chamadas reais permanecem fora dos testes padrão."
+                  ],
+                  "alternatives": [
+                    "Refine before selecting scope.",
+                    "Defer explicitly and retain the original criteria."
+                  ],
+                  "capacity": "unknown",
+                  "decision_recipient": "human-product-owner",
+                  "dependencies": [
+                    "ahc-002",
+                    "ahc-003",
+                    "ahc-004"
+                  ],
+                  "diagnostic_ids": [
+                    "observation-1"
+                  ],
+                  "evidence_ids": [
+                    "source-1",
+                    "source-2",
+                    "source-9"
+                  ],
+                  "execution": "not-authorized",
+                  "goal": "Comparar perfis por qualidade e recursos e decidir se fine-tuning generalista se justifica.",
+                  "id": "refine-1",
+                  "kind": "refinement",
+                  "recommendation": "Review source criteria, unresolved dependencies and acceptance evidence with the PO.",
+                  "schema_version": "ScrumActionProposal/v1",
+                  "story_ids": [
+                    "ahc-021"
+                  ]
+                },
+                {
+                  "acceptance": "not-established",
+                  "acceptance_criteria": [
+                    "Extração tipada e análise separam declarações, hipóteses, regras, perguntas e conflitos; não inferem que revisão humana exige revisor externo nem afirmam conteúdo de asset não ingerido.",
+                    "Prompts e estratégia de decomposição são versionados e ajustados somente no conjunto de desenvolvimento; validação de suporte, cobertura e revisão impede promoção silenciosa de hipóteses.",
+                    "Baseline e candidato são comparados com a rubrica congelada; regressões do INC-0007 são reproduzidas, tentativas limitadas são registradas e falhas permanecem explícitas sem reparo ilimitado ou aprovação automática."
+                  ],
+                  "alternatives": [
+                    "Refine before selecting scope.",
+                    "Defer explicitly and retain the original criteria."
+                  ],
+                  "capacity": "unknown",
+                  "decision_recipient": "human-product-owner",
+                  "dependencies": [
+                    "ahc-021"
+                  ],
+                  "diagnostic_ids": [
+                    "observation-2"
+                  ],
+                  "evidence_ids": [
+                    "source-1",
+                    "source-2",
+                    "source-10"
+                  ],
+                  "execution": "not-authorized",
+                  "goal": "Comparar perfis por qualidade e recursos e decidir se fine-tuning generalista se justifica.",
+                  "id": "refine-2",
+                  "kind": "refinement",
+                  "recommendation": "Review source criteria, unresolved dependencies and acceptance evidence with the PO.",
+                  "schema_version": "ScrumActionProposal/v1",
+                  "story_ids": [
+                    "ahc-022"
+                  ]
+                },
+                {
+                  "acceptance": "not-established",
+                  "acceptance_criteria": [
+                    "Comparação registra modelo/digest, quantização, contexto, prompt, parâmetros, energia, ambiente, uso de GPU/RAM e tempos de carga e geração; cold e warm são separados e o plano prevê repetições e limites de execução.",
+                    "Modelo é selecionado pela rubrica semântica antes de latência; holdout não é usado para tuning, e falha crítica, julgamento pendente, truncamento ou omissão de regras obrigatórias bloqueiam qualificação.",
+                    "Perfil recomendado possui comandos reproduzíveis, orçamento e fallback explícitos; nenhum vencedor é obrigatório quando todos falham, e nova configuração não altera energia do sistema nem habilita cloud ou concorrência sem autorização."
+                  ],
+                  "alternatives": [
+                    "Refine before selecting scope.",
+                    "Defer explicitly and retain the original criteria."
+                  ],
+                  "capacity": "unknown",
+                  "decision_recipient": "human-product-owner",
+                  "dependencies": [
+                    "ahc-022"
+                  ],
+                  "diagnostic_ids": [
+                    "observation-3"
+                  ],
+                  "evidence_ids": [
+                    "source-1",
+                    "source-2",
+                    "source-11"
+                  ],
+                  "execution": "not-authorized",
+                  "goal": "Comparar perfis por qualidade e recursos e decidir se fine-tuning generalista se justifica.",
+                  "id": "refine-3",
+                  "kind": "refinement",
+                  "recommendation": "Review source criteria, unresolved dependencies and acceptance evidence with the PO.",
+                  "schema_version": "ScrumActionProposal/v1",
+                  "story_ids": [
+                    "ahc-023"
+                  ]
+                },
+                {
+                  "acceptance": "not-established",
+                  "acceptance_criteria": [
+                    "Contrato versionado registra modelo, provider, parâmetros solicitados, observados ou desconhecidos e fingerprint completo; versões anteriores mantêm semântica e hashes.",
+                    "Adapter rejeita opções incompatíveis, limita contexto, saída, timeout e orçamento; configuração pessoal não altera silenciosamente experimentos.",
+                    "Testes offline cobrem validação, fingerprint alterado por parâmetro e preservação de ferramentas e gates; chamadas reais ficam fora da suíte padrão."
+                  ],
+                  "alternatives": [
+                    "Refine before selecting scope.",
+                    "Defer explicitly and retain the original criteria."
+                  ],
+                  "capacity": "unknown",
+                  "decision_recipient": "human-product-owner",
+                  "dependencies": [
+                    "ahc-021",
+                    "ahc-022"
+                  ],
+                  "diagnostic_ids": [
+                    "observation-4"
+                  ],
+                  "evidence_ids": [
+                    "source-1",
+                    "source-2",
+                    "source-6"
+                  ],
+                  "execution": "not-authorized",
+                  "goal": "Comparar perfis por qualidade e recursos e decidir se fine-tuning generalista se justifica.",
+                  "id": "refine-4",
+                  "kind": "refinement",
+                  "recommendation": "Review source criteria, unresolved dependencies and acceptance evidence with the PO.",
+                  "schema_version": "ScrumActionProposal/v1",
+                  "story_ids": [
+                    "ahc-024"
+                  ]
+                },
+                {
+                  "acceptance": "not-established",
+                  "acceptance_criteria": [
+                    "Baseline e candidatos executam desenvolvimento revisado com repetições e orçamentos; parâmetros, ambiente e todas as tentativas ficam registrados.",
+                    "Comparação separa cobertura e suporte semântico de validade estrutural, mede estabilidade, truncamento, recursos e tempos cold e warm sem inferir causalidade de variáveis não controladas.",
+                    "Candidato é congelado antes da avaliação separada; resultado pode rejeitar todos os perfis e nunca usa holdout para tuning ou autoaprovação do candidato."
+                  ],
+                  "alternatives": [
+                    "Refine before selecting scope.",
+                    "Defer explicitly and retain the original criteria."
+                  ],
+                  "capacity": "unknown",
+                  "decision_recipient": "human-product-owner",
+                  "dependencies": [
+                    "ahc-024"
+                  ],
+                  "diagnostic_ids": [
+                    "observation-5"
+                  ],
+                  "evidence_ids": [
+                    "source-1",
+                    "source-2",
+                    "source-7"
+                  ],
+                  "execution": "not-authorized",
+                  "goal": "Comparar perfis por qualidade e recursos e decidir se fine-tuning generalista se justifica.",
+                  "id": "refine-5",
+                  "kind": "refinement",
+                  "recommendation": "Review source criteria, unresolved dependencies and acceptance evidence with the PO.",
+                  "schema_version": "ScrumActionProposal/v1",
+                  "story_ids": [
+                    "ahc-025"
+                  ]
+                },
+                {
+                  "acceptance": "not-established",
+                  "acceptance_criteria": [
+                    "Decisão go ou no-go identifica erro aprendível, baseline sem treino, orçamento, licenças e viabilidade medida; piloto só executa após satisfazer gates de dados e recursos.",
+                    "Dataset revisado preserva origem e consentimento, separa projetos e famílias e exclui holdout, autoaprovações, credenciais e raciocínio privado; regras específicas permanecem no input do projeto.",
+                    "Se houver piloto, modelo base e adapter são comparados após exportação e quantização sob avaliação separada com regressões de generalização; sem ganho demonstrado não há promoção."
+                  ],
+                  "alternatives": [
+                    "Refine before selecting scope.",
+                    "Defer explicitly and retain the original criteria."
+                  ],
+                  "capacity": "unknown",
+                  "decision_recipient": "human-product-owner",
+                  "dependencies": [
+                    "ahc-025"
+                  ],
+                  "diagnostic_ids": [
+                    "observation-6"
+                  ],
+                  "evidence_ids": [
+                    "source-1",
+                    "source-2",
+                    "source-8"
+                  ],
+                  "execution": "not-authorized",
+                  "goal": "Comparar perfis por qualidade e recursos e decidir se fine-tuning generalista se justifica.",
+                  "id": "refine-6",
+                  "kind": "refinement",
+                  "recommendation": "Review source criteria, unresolved dependencies and acceptance evidence with the PO.",
+                  "schema_version": "ScrumActionProposal/v1",
+                  "story_ids": [
+                    "ahc-026"
+                  ]
+                },
+                {
+                  "acceptance": "not-established",
+                  "acceptance_criteria": [],
+                  "alternatives": [
+                    "Confirm capacity and discuss feasible scope with the PO.",
+                    "Keep planning pending while missing information is collected."
+                  ],
+                  "capacity": "unknown",
+                  "decision_recipient": "developers",
+                  "dependencies": [],
+                  "diagnostic_ids": [
+                    "observation-1",
+                    "observation-2",
+                    "observation-3",
+                    "observation-4",
+                    "observation-5",
+                    "observation-6"
+                  ],
+                  "evidence_ids": [
+                    "source-1",
+                    "source-2",
+                    "source-3",
+                    "source-4",
+                    "source-5",
+                    "source-6",
+                    "source-7",
+                    "source-8",
+                    "source-9",
+                    "source-10",
+                    "source-11"
+                  ],
+                  "execution": "not-authorized",
+                  "goal": "Comparar perfis por qualidade e recursos e decidir se fine-tuning generalista se justifica.",
+                  "id": "planning-capacity",
+                  "kind": "planning",
+                  "recommendation": "Ask Developers for available capacity and dependency feasibility before proposing a Sprint Backlog; no forecast is established.",
+                  "schema_version": "ScrumActionProposal/v1",
+                  "story_ids": [
+                    "ahc-021",
+                    "ahc-022",
+                    "ahc-023",
+                    "ahc-024",
+                    "ahc-025",
+                    "ahc-026"
+                  ]
+                },
+                {
+                  "acceptance": "not-established",
+                  "acceptance_criteria": [],
+                  "alternatives": [
+                    "Inspect evidence and record a separate human decision.",
+                    "Request missing evidence and retain unresolved work as carryover."
+                  ],
+                  "capacity": "unknown",
+                  "decision_recipient": "human-product-owner",
+                  "dependencies": [],
+                  "diagnostic_ids": [
+                    "observation-1",
+                    "observation-2",
+                    "observation-3",
+                    "observation-4",
+                    "observation-5",
+                    "observation-6"
+                  ],
+                  "evidence_ids": [
+                    "source-1",
+                    "source-2",
+                    "source-3",
+                    "source-4",
+                    "source-5",
+                    "source-6",
+                    "source-7",
+                    "source-8",
+                    "source-9",
+                    "source-10",
+                    "source-11"
+                  ],
+                  "execution": "not-authorized",
+                  "goal": "Comparar perfis por qualidade e recursos e decidir se fine-tuning generalista se justifica.",
+                  "id": "review-evidence",
+                  "kind": "review",
+                  "recommendation": "Review declared outcome (unknown) and carryover; CI and merged PRs do not establish criterion acceptance.",
+                  "schema_version": "ScrumActionProposal/v1",
+                  "story_ids": [
+                    "ahc-021",
+                    "ahc-022",
+                    "ahc-023",
+                    "ahc-024",
+                    "ahc-025",
+                    "ahc-026"
+                  ]
+                }
+              ],
+              "schema_version": "ScrumPlanningReport/v1",
+              "snapshot": {
+                "authority": "read-only-diagnostic",
+                "completion_authority": "none",
+                "declared_goal_outcome": "unknown",
+                "declared_state": "in_progress",
+                "impediments": [
+                  {
+                    "code": "dependency-acceptance-unverified",
+                    "evidence_ids": [
+                      "source-1",
+                      "source-2"
+                    ],
+                    "id": "observation-1",
+                    "message": "Dependencies are declared complete; their acceptance is not certified.",
+                    "schema_version": "Impediment/v1",
+                    "severity": "info",
+                    "story_id": "ahc-021"
+                  },
+                  {
+                    "code": "dependency-unresolved",
+                    "evidence_ids": [
+                      "source-1",
+                      "source-2",
+                      "source-9"
+                    ],
+                    "id": "observation-2",
+                    "message": "Dependencies not declared complete or observed open: ahc-021",
+                    "schema_version": "Impediment/v1",
+                    "severity": "warning",
+                    "story_id": "ahc-022"
+                  },
+                  {
+                    "code": "dependency-unresolved",
+                    "evidence_ids": [
+                      "source-1",
+                      "source-2",
+                      "source-10"
+                    ],
+                    "id": "observation-3",
+                    "message": "Dependencies not declared complete or observed open: ahc-022",
+                    "schema_version": "Impediment/v1",
+                    "severity": "warning",
+                    "story_id": "ahc-023"
+                  },
+                  {
+                    "code": "dependency-unresolved",
+                    "evidence_ids": [
+                      "source-1",
+                      "source-2",
+                      "source-9",
+                      "source-10"
+                    ],
+                    "id": "observation-4",
+                    "message": "Dependencies not declared complete or observed open: ahc-021, ahc-022",
+                    "schema_version": "Impediment/v1",
+                    "severity": "warning",
+                    "story_id": "ahc-024"
+                  },
+                  {
+                    "code": "dependency-unresolved",
+                    "evidence_ids": [
+                      "source-1",
+                      "source-2",
+                      "source-6"
+                    ],
+                    "id": "observation-5",
+                    "message": "Dependencies not declared complete or observed open: ahc-024",
+                    "schema_version": "Impediment/v1",
+                    "severity": "warning",
+                    "story_id": "ahc-025"
+                  },
+                  {
+                    "code": "dependency-unresolved",
+                    "evidence_ids": [
+                      "source-1",
+                      "source-2",
+                      "source-7"
+                    ],
+                    "id": "observation-6",
+                    "message": "Dependencies not declared complete or observed open: ahc-025",
+                    "schema_version": "Impediment/v1",
+                    "severity": "warning",
+                    "story_id": "ahc-026"
+                  }
+                ],
+                "observation": {
+                  "max_age_seconds": 3600,
+                  "observed_at": "2026-10-19T23:44:38.975385+00:00",
+                  "project_id": "ai-harness-compiler",
+                  "pull_request_links": [],
+                  "repository": "leozitogs/ai-harness-compiler",
+                  "schema_version": "ScrumObservation/v1",
+                  "sources": [
+                    {
+                      "content": "{\"schema_version\":\"ProjectInput/v1\",\"id\":\"ai-harness-compiler\",\"name\":\"AI Harness Compiler\",\"conception\":\"Compilar a intenção de novos projetos em harnesses de engenharia de IA específicos, tipados, rastreáveis, verificáveis e evolutivos. O produto inclui arquitetura, contexto, políticas, skills, prompts, ferramentas e planos de avaliação; agentes entram somente quando sua complexidade é justificada por evidências. Para cada projeto alvo, compilar também documentação permanente, memória de engenharia, captura de incidentes e lições verificadas, além de especialistas de domínio com ferramentas, competências, contexto e avaliações próprios. O compilador é generalista: estuda proposta, branding e regras de negócio por projeto, com packs opcionais extensíveis e sem nichos fixos no core.\",\"domain\":\"developer-tools\",\"branding\":{\"audience\":[\"AI engineers\",\"tech leads\",\"equipes de produto\"],\"tone\":[\"técnico\",\"claro\",\"verificável\"],\"principles\":[\"evidência antes de autonomia\",\"contratos antes de geração\",\"core independente\"],\"visual_constraints\":[\"priorizar CLI e documentação acessível na primeira fase\"]},\"backlog\":[{\"id\":\"ahc-001\",\"title\":\"Intake canônico e limites de entrada\",\"description\":\"Como AI engineer, quero carregar definições confiáveis e diagnosticar entradas inválidas antes de planejar o harness.\",\"acceptance_criteria\":[\"Chaves YAML duplicadas, manifesto acima do limite configurado e versões desconhecidas falham com diagnóstico estável.\",\"UTF-8 e referências locais válidas são aceitas sem executar conteúdo ou acessar a rede.\",\"Os casos válidos e inválidos são verificados em Linux e Windows.\"],\"depends_on\":[],\"inputs\":[\"project.yaml\"],\"outputs\":[\"ProjectInput validado\",\"diagnósticos\"],\"data_owner\":\"proprietário do projeto\",\"side_effects\":[],\"risk\":\"medium\",\"implementation\":\"deterministic\"},{\"id\":\"ahc-002\",\"title\":\"Perfil multidimensional de domínio\",\"description\":\"Como arquiteto, quero distinguir domínio declarado, hipóteses e incógnitas para evitar decisões baseadas em certeza inventada.\",\"acceptance_criteria\":[\"O contrato representa domínio, arquétipo, dados, risco e origem da classificação.\",\"Declaração, hipótese e DOMAIN_UNCERTAIN possuem invariantes testadas e não fabricam confiança numérica.\",\"A mudança de contrato tem política de compatibilidade e exemplo de migração documentados.\"],\"depends_on\":[\"ahc-001\"],\"inputs\":[],\"outputs\":[],\"data_owner\":null,\"side_effects\":[],\"risk\":\"medium\",\"implementation\":\"deterministic\"},{\"id\":\"ahc-003\",\"title\":\"Evidence Pack com proveniência\",\"description\":\"Como revisor, quero rastrear decisões a fontes e conhecer suas limitações de confiança e atualidade.\",\"acceptance_criteria\":[\"Fontes possuem ID, origem, digest opcional, estado de verificação e instante de coleta quando aplicável.\",\"Referências ausentes, duplicadas ou incompatíveis com a decisão são rejeitadas.\",\"Declaração de usuário e pesquisa externa são distinguíveis sem disparar pesquisa automática.\"],\"depends_on\":[\"ahc-001\"],\"inputs\":[],\"outputs\":[],\"data_owner\":null,\"side_effects\":[],\"risk\":\"medium\",\"implementation\":\"deterministic\"},{\"id\":\"ahc-004\",\"title\":\"Confiabilidade e benchmark offline do compilador\",\"description\":\"Como mantenedor, quero demonstrar reprodutibilidade e medir o compilador com fixtures de diferentes domínios.\",\"acceptance_criteria\":[\"Educação, comércio e ferramentas de desenvolvimento possuem fixtures com critérios rastreáveis.\",\"Falhas de escrita produzem diagnóstico e não alteram um projeto existente.\",\"Um benchmark offline registra duração, tamanho e versão sem declarar SLO sem medição.\"],\"depends_on\":[\"ahc-001\"],\"inputs\":[],\"outputs\":[],\"data_owner\":null,\"side_effects\":[],\"risk\":\"medium\",\"implementation\":\"deterministic\"},{\"id\":\"ahc-005\",\"title\":\"PromptSpec e SkillSpec compiláveis\",\"description\":\"Como AI engineer, quero procedimentos e prompts tipados, com ativação, contexto e verificadores explícitos.\",\"acceptance_criteria\":[\"Contratos incluem entradas, saídas, versão, restrições, ferramentas e avaliação.\",\"Projetos contrastantes e projetos do mesmo domínio com regras diferentes geram procedimentos ligados aos requisitos, sem ramificações fixas de nicho no core.\",\"Referências inválidas falham antes da emissão e skills suportam carregamento progressivo.\"],\"depends_on\":[\"ahc-002\",\"ahc-003\",\"ahc-019\",\"ahc-020\"],\"inputs\":[],\"outputs\":[],\"data_owner\":null,\"side_effects\":[],\"risk\":\"medium\",\"implementation\":\"deterministic\"},{\"id\":\"ahc-006\",\"title\":\"Context Engine com orçamento e proveniência\",\"description\":\"Como runtime, quero selecionar contexto relevante dentro de um orçamento e informar exclusões e conflitos.\",\"acceptance_criteria\":[\"Seleção respeita orçamento e registra fontes selecionadas, omitidas e conflitantes.\",\"Dados de projetos diferentes não compartilham contexto implicitamente.\",\"Fixtures medem relevância e comportamento com fontes desatualizadas.\"],\"depends_on\":[\"ahc-003\",\"ahc-005\"],\"inputs\":[],\"outputs\":[],\"data_owner\":null,\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"undecided\"},{\"id\":\"ahc-007\",\"title\":\"Tools e Policy Engine independente\",\"description\":\"Como operador, quero validar permissões, budgets e aprovações antes de efeitos colaterais.\",\"acceptance_criteria\":[\"ToolSpec define escopo, I/O, efeitos, idempotência e limites de execução.\",\"Escritas externas sem aprovação falham antes da chamada e geram evento auditável.\",\"Negação por política é testada sem depender de decisão de modelo.\"],\"depends_on\":[\"ahc-005\"],\"inputs\":[],\"outputs\":[],\"data_owner\":null,\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"deterministic\"},{\"id\":\"ahc-008\",\"title\":\"Eval runner e Simulation Lab\",\"description\":\"Como revisor, quero executar tarefas isoladas e avaliar resultado, trajetória e regressões.\",\"acceptance_criteria\":[\"Evals distinguem not-run, pass, fail e error com evidências persistidas.\",\"Sandbox e timeout limitam execução; falhas não são interpretadas como aprovação.\",\"Gates verificam saída e uso de ferramentas com datasets de teste reservados.\"],\"depends_on\":[\"ahc-004\",\"ahc-005\"],\"inputs\":[],\"outputs\":[],\"data_owner\":null,\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"deterministic\"},{\"id\":\"ahc-009\",\"title\":\"Adapter de LLM e pesquisa controlada\",\"description\":\"Como projetista, quero usar provedores substituíveis para hipóteses e pesquisa com limites e proveniência.\",\"acceptance_criteria\":[\"Adapter possui fake offline e contrato testado de timeout, retry e orçamento.\",\"Saídas do modelo são validadas por schema e política antes de qualquer ação.\",\"Pesquisa preserva citações e separa fontes verificadas de declarações não verificadas.\"],\"depends_on\":[\"ahc-003\",\"ahc-007\"],\"inputs\":[],\"outputs\":[],\"data_owner\":null,\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"llm\"},{\"id\":\"ahc-010\",\"title\":\"Execução durável e observabilidade\",\"description\":\"Como operador, quero retomar jobs e aprovações após falhas sem duplicar efeitos.\",\"acceptance_criteria\":[\"Workflow retoma após interrupção com idempotência e limites de tentativas.\",\"Spans e métricas correlacionam projeto, build, versão e etapa sem segredos.\",\"Cancelamento e expiração de aprovação são exercitados em testes de integração.\"],\"depends_on\":[\"ahc-008\",\"ahc-009\"],\"inputs\":[],\"outputs\":[],\"data_owner\":null,\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"deterministic\"},{\"id\":\"ahc-011\",\"title\":\"Busca e comparação de arquiteturas\",\"description\":\"Como arquiteto, quero comparar candidatos sob qualidade, custo, latência e complexidade.\",\"acceptance_criteria\":[\"Candidatos executam o mesmo benchmark e incluem baseline sem agentes.\",\"Busca possui orçamento e condição de parada aplicados pelo control plane.\",\"Ranking registra evidências e trade-offs e não usa o conjunto de teste para otimização.\"],\"depends_on\":[\"ahc-006\",\"ahc-010\"],\"inputs\":[],\"outputs\":[],\"data_owner\":null,\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"undecided\"},{\"id\":\"ahc-012\",\"title\":\"Instalação revisável e rollback\",\"description\":\"Como mantenedor de um projeto, quero adotar um harness após revisar diff e restaurar a versão anterior.\",\"acceptance_criteria\":[\"Dry-run informa arquivos novos, alterados e conflitos sem escrever no alvo.\",\"Instalação exige gates de avaliação e aprovação e detecta alterações concorrentes.\",\"Falha parcial tem recuperação testada e rollback preserva conteúdo do usuário.\"],\"depends_on\":[\"ahc-004\",\"ahc-008\"],\"inputs\":[],\"outputs\":[],\"data_owner\":null,\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"deterministic\"},{\"id\":\"ahc-013\",\"title\":\"Evolução e Experience Store\",\"description\":\"Como equipe, quero propor melhorias a partir de falhas sem permitir autoalteração irrestrita.\",\"acceptance_criteria\":[\"Proposta liga falha, evidência, versão anterior e mudança candidata.\",\"Regressão e aprovação bloqueiam promoção insegura.\",\"Experiências e skills reutilizadas têm versão, proveniência e isolamento entre projetos.\"],\"depends_on\":[\"ahc-010\",\"ahc-011\",\"ahc-012\",\"ahc-018\"],\"inputs\":[],\"outputs\":[],\"data_owner\":null,\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"undecided\"},{\"id\":\"ahc-014\",\"title\":\"API e operação multi-projeto\",\"description\":\"Como organização, quero processar múltiplos projetos com limites, isolamento e acompanhamento de jobs.\",\"acceptance_criteria\":[\"API autentica chamadas, aplica autorização por projeto e idempotência por solicitação.\",\"Jobs possuem quotas, backpressure, paginação e consulta de estado.\",\"Teste de carga mede throughput e latência e teste de isolamento impede acesso cruzado.\"],\"depends_on\":[\"ahc-010\",\"ahc-012\"],\"inputs\":[],\"outputs\":[],\"data_owner\":null,\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"deterministic\"},{\"id\":\"ahc-015\",\"title\":\"DocumentationLearningSpec por projeto\",\"description\":\"Como PO de um projeto alvo, quero especificar sua documentação e memória de aprendizado conforme domínio, requisitos e restrições.\",\"acceptance_criteria\":[\"A IR versionada define taxonomia DE/DOC/ADR/INC/LES/RUN/EXP, ownership, revisão, retenção, proveniência e escopo do projeto.\",\"Contexto e política de aprendizado derivam de ProjectDNA e Evidence Pack, com incógnitas explícitas e rastreabilidade de cada regra.\",\"Projetos com regras distintas, incluindo domínio não pré-cadastrado, demonstram configurações diferentes sem copiar memória privada entre projetos.\"],\"depends_on\":[\"ahc-003\",\"ahc-005\"],\"inputs\":[\"ProjectDNA\",\"Evidence Pack\",\"requisitos de documentação e aprendizado\"],\"outputs\":[\"DocumentationLearningSpec validada\"],\"data_owner\":\"proprietário do projeto alvo\",\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"deterministic\"},{\"id\":\"ahc-016\",\"title\":\"Compilador de documentação e memória específicas\",\"description\":\"Como equipe de um projeto alvo, quero receber um sistema funcional de registros, busca e aprendizado integrado ao harness gerado.\",\"acceptance_criteria\":[\"O build gera contratos, registros iniciais rastreáveis, templates de domínio, índice, CLI/adapters, políticas e instruções para colaboradores e agentes.\",\"A biblioteca gerada preserva revisões, isolamento, validade das evidências e conflitos de atualização; exemplos fictícios não são promovidos a soluções verificadas.\",\"Dois projetos recebem bundles distintos e reprodutíveis, com testes da memória e atribuições de componentes incorporados.\"],\"depends_on\":[\"ahc-004\",\"ahc-015\"],\"inputs\":[\"DocumentationLearningSpec\",\"HarnessSpec\"],\"outputs\":[\"sistema de documentação e memória compilado para o projeto\"],\"data_owner\":\"proprietário do projeto alvo\",\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"deterministic\"},{\"id\":\"ahc-017\",\"title\":\"Agent Factory com especialização de domínio\",\"description\":\"Como PO de um projeto alvo, quero especialistas aprofundados que conheçam o domínio, usem ferramentas adequadas e respondam a critérios mensuráveis.\",\"acceptance_criteria\":[\"AgentSpec representa persona, competências, objetivo, fronteiras, I/O, skills, tools/MCP, memória, modelo, orçamento, parada, delegação e responsável humano.\",\"O runtime compilado executa ferramentas específicas em tarefas do domínio e consulta a memória vigente; prompts genéricos com nomes novos não satisfazem a especialização.\",\"Fixtures comparam especialistas a uma baseline nas mesmas tarefas e medem resultado, trajetória, uso de ferramentas, custo e latência com datasets reservados.\",\"O projeto pode receber zero agentes quando código ou workflows atendem aos critérios; adaptações LangGraph/LLM/ML ficam atrás de contratos próprios.\"],\"depends_on\":[\"ahc-005\",\"ahc-007\",\"ahc-009\",\"ahc-015\"],\"inputs\":[\"ProjectDNA\",\"CapabilityGraph\",\"Evidence Pack\",\"DocumentationLearningSpec\"],\"outputs\":[\"AgentSpec e runtime de especialistas específicos do projeto\"],\"data_owner\":\"proprietário do projeto alvo\",\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"undecided\"},{\"id\":\"ahc-018\",\"title\":\"Pipeline de aprendizagem por experiências do projeto\",\"description\":\"Como equipe de um projeto alvo, quero registrar desafios e reutilizar soluções verificadas entre sessões de chat e execuções de agentes.\",\"acceptance_criteria\":[\"Falha relevante pode produzir INC draft com reprodução e origem; diagnóstico, tentativas e solução permanecem separados de hipóteses não verificadas.\",\"Regressão, evidência, aplicabilidade, limitações e revisão são exigidas para promover LES e recuperar a solução em tarefas futuras.\",\"Colaboradores via chat e agentes locais/providers compartilham o protocolo, com orçamento de contexto, detecção de evidência alterada e trilha de revisão.\",\"Transferência de experiências entre projetos exige autorização, anonimização, compatibilidade e revisão; treinamento de modelos ocorre apenas em EXP separado e avaliado.\"],\"depends_on\":[\"ahc-008\",\"ahc-010\",\"ahc-016\",\"ahc-017\"],\"inputs\":[\"traces\",\"falhas\",\"desafios\",\"correções propostas\",\"evidências de regressão\"],\"outputs\":[\"incidentes\",\"lições verificadas\",\"procedimentos e propostas de evolução\"],\"data_owner\":\"proprietário do projeto alvo\",\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"undecided\"},{\"id\":\"ahc-019\",\"title\":\"Entendimento generalista da proposta e regras de negócio\",\"description\":\"Como PO, quero que o compilador estude proposta, branding, backlog e restrições para propor entendimento do projeto sem exigir um nicho pré-programado.\",\"acceptance_criteria\":[\"ProjectUnderstandingSpec preserva input original, fontes, declarações, hipóteses de domínio, público, objetivos, entidades, regras de negócio, conflitos e perguntas pendentes com referências válidas.\",\"Um adapter de modelo substituível produz propostas estruturadas; fake é restrito a testes, respostas reais são validadas e uma execução controlada com modelo real é demonstrada sem promover hipóteses ou scores inventados a fatos.\",\"Avaliação reservada cobre domínio não cadastrado, mesmo domínio com regras diferentes, branding em conflito com backlog e proposta ambígua; nenhum enum ou switch de nichos é necessário para processar input novo.\"],\"depends_on\":[\"ahc-002\",\"ahc-003\"],\"inputs\":[\"proposta\",\"branding\",\"backlog\",\"restrições\",\"fontes locais autorizadas\"],\"outputs\":[\"ProjectUnderstandingSpec proposta\",\"regras de negócio rastreáveis\",\"perguntas pendentes\"],\"data_owner\":\"proprietário do projeto alvo\",\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"llm\"},{\"id\":\"ahc-020\",\"title\":\"Plano de harness generalista e packs opcionais\",\"description\":\"Como AI engineer, quero derivar o plano do harness do entendimento e selecionar frameworks/templates extensíveis quando aplicáveis, sem depender de uma lista fixa de nichos.\",\"acceptance_criteria\":[\"HarnessBlueprintSpec mapeia regras e capacidades a necessidades de contexto, skills, ferramentas, workflows, documentação e evals, e alimenta a compilação da baseline atual após revisão; módulos ainda não implementados permanecem gaps explícitos.\",\"PatternPackSpec versionado define aplicabilidade, evidências, parâmetros, exclusões, conflitos e compatibilidade; o projeto funciona sem pack e novos packs são registrados sem editar o core, com regras específicas do projeto prevalecendo.\",\"O mesmo domínio com regras diferentes gera planos diferentes; domínio novo sem pack tem baseline válida ou perguntas pendentes, e seleção incompatível, revisão inválida ou regras sem origem são rejeitadas antes de exportar a proposta.\"],\"depends_on\":[\"ahc-019\"],\"inputs\":[\"ProjectUnderstandingSpec\",\"CapabilityGraph\",\"Evidence Pack\",\"catálogo opcional de packs\"],\"outputs\":[\"HarnessBlueprintSpec revisável\",\"decisões de seleção de packs e gaps\"],\"data_owner\":\"proprietário do projeto alvo\",\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"undecided\"},{\"id\":\"ahc-021\",\"title\":\"Rubrica e evals semânticos do entendimento\",\"description\":\"Como PO, quero medir cobertura de regras, suporte das citações e qualidade de conflitos para impedir que JSON válido seja confundido com entendimento correto.\",\"acceptance_criteria\":[\"Dataset versionado separa desenvolvimento e holdout com inputs e expectativas congelados antes da otimização; inclui domínio novo, regras divergentes na mesma categoria, ambiguidade, contradição real, regras compatíveis, asset não lido e conteúdo adversarial.\",\"Runner específico de entendimento registra not-run, pass, fail e error, modelo/digest, input/prompt/rubrica, tentativas e evidências; revisão semântica pendente ou campos ausentes nunca são interpretados como aprovação.\",\"Verificadores e revisão humana avaliam cobertura de regras, suporte de cada citação, conflitos falsos e dados não lidos; o modelo candidato não aprova sua própria saída, e chamadas reais permanecem fora dos testes padrão.\"],\"depends_on\":[\"ahc-002\",\"ahc-003\",\"ahc-004\"],\"inputs\":[\"ProjectUnderstandingSpec\",\"corpus de desenvolvimento\",\"holdout\",\"rubrica\"],\"outputs\":[\"relatórios semânticos rastreáveis\",\"falhas de cobertura e suporte\"],\"data_owner\":\"proprietário do projeto e PO\",\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"deterministic\"},{\"id\":\"ahc-022\",\"title\":\"Pipeline de entendimento com grounding e cobertura\",\"description\":\"Como AI engineer, quero que o estudo extraia regras completas e conclusões sustentadas pelas fontes, preservando incógnitas e bloqueando inventar conteúdo de assets.\",\"acceptance_criteria\":[\"Extração tipada e análise separam declarações, hipóteses, regras, perguntas e conflitos; não inferem que revisão humana exige revisor externo nem afirmam conteúdo de asset não ingerido.\",\"Prompts e estratégia de decomposição são versionados e ajustados somente no conjunto de desenvolvimento; validação de suporte, cobertura e revisão impede promoção silenciosa de hipóteses.\",\"Baseline e candidato são comparados com a rubrica congelada; regressões do INC-0007 são reproduzidas, tentativas limitadas são registradas e falhas permanecem explícitas sem reparo ilimitado ou aprovação automática.\"],\"depends_on\":[\"ahc-021\"],\"inputs\":[\"UnderstandingRequest\",\"fontes autorizadas\",\"rubrica e findings\"],\"outputs\":[\"propostas fundamentadas\",\"prompts versionados\",\"regressões semânticas\"],\"data_owner\":\"proprietário do projeto alvo\",\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"llm\"},{\"id\":\"ahc-023\",\"title\":\"Qualificação do modelo e perfil de execução local\",\"description\":\"Como operador, quero escolher modelo e perfil pelo equilíbrio entre qualidade, latência e memória no hardware disponível, com alimentação e ambiente registrados.\",\"acceptance_criteria\":[\"Comparação registra modelo/digest, quantização, contexto, prompt, parâmetros, energia, ambiente, uso de GPU/RAM e tempos de carga e geração; cold e warm são separados e o plano prevê repetições e limites de execução.\",\"Modelo é selecionado pela rubrica semântica antes de latência; holdout não é usado para tuning, e falha crítica, julgamento pendente, truncamento ou omissão de regras obrigatórias bloqueiam qualificação.\",\"Perfil recomendado possui comandos reproduzíveis, orçamento e fallback explícitos; nenhum vencedor é obrigatório quando todos falham, e nova configuração não altera energia do sistema nem habilita cloud ou concorrência sem autorização.\"],\"depends_on\":[\"ahc-022\"],\"inputs\":[\"candidatos locais\",\"rubrica\",\"holdout\",\"telemetria e resultados\"],\"outputs\":[\"relatório de qualificação\",\"perfil recomendado ou rejeição justificada\"],\"data_owner\":\"proprietário do ambiente\",\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"deterministic\"},{\"id\":\"ahc-024\",\"title\":\"Perfis de inferência versionados por provider\",\"description\":\"Como operador, quero configurar parâmetros compatíveis e rastrear o perfil completo sem reinterpretar execuções históricas.\",\"acceptance_criteria\":[\"Contrato versionado registra modelo, provider, parâmetros solicitados, observados ou desconhecidos e fingerprint completo; versões anteriores mantêm semântica e hashes.\",\"Adapter rejeita opções incompatíveis, limita contexto, saída, timeout e orçamento; configuração pessoal não altera silenciosamente experimentos.\",\"Testes offline cobrem validação, fingerprint alterado por parâmetro e preservação de ferramentas e gates; chamadas reais ficam fora da suíte padrão.\"],\"depends_on\":[\"ahc-021\",\"ahc-022\"],\"inputs\":[],\"outputs\":[],\"data_owner\":null,\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"deterministic\"},{\"id\":\"ahc-025\",\"title\":\"Experimentos controlados de otimização de inferência\",\"description\":\"Como PO, quero comparar parâmetros e contexto com métricas semânticas antes de decidir por treinamento.\",\"acceptance_criteria\":[\"Baseline e candidatos executam desenvolvimento revisado com repetições e orçamentos; parâmetros, ambiente e todas as tentativas ficam registrados.\",\"Comparação separa cobertura e suporte semântico de validade estrutural, mede estabilidade, truncamento, recursos e tempos cold e warm sem inferir causalidade de variáveis não controladas.\",\"Candidato é congelado antes da avaliação separada; resultado pode rejeitar todos os perfis e nunca usa holdout para tuning ou autoaprovação do candidato.\"],\"depends_on\":[\"ahc-024\"],\"inputs\":[],\"outputs\":[],\"data_owner\":null,\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"llm\"},{\"id\":\"ahc-026\",\"title\":\"Viabilidade e piloto condicionado de fine-tuning\",\"description\":\"Como AI engineer, quero decidir por evidência se LoRA ou QLoRA melhora um comportamento generalista e cabe no ambiente autorizado.\",\"acceptance_criteria\":[\"Decisão go ou no-go identifica erro aprendível, baseline sem treino, orçamento, licenças e viabilidade medida; piloto só executa após satisfazer gates de dados e recursos.\",\"Dataset revisado preserva origem e consentimento, separa projetos e famílias e exclui holdout, autoaprovações, credenciais e raciocínio privado; regras específicas permanecem no input do projeto.\",\"Se houver piloto, modelo base e adapter são comparados após exportação e quantização sob avaliação separada com regressões de generalização; sem ganho demonstrado não há promoção.\"],\"depends_on\":[\"ahc-025\"],\"inputs\":[],\"outputs\":[],\"data_owner\":null,\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"undecided\"},{\"id\":\"ahc-027\",\"title\":\"Nexo observador com estado e evidências de Scrum\",\"description\":\"Como PO, quero um retrato verificável de backlog, sprints, PRs, CI e impedimentos para detectar divergências sem inventar entregas.\",\"acceptance_criteria\":[\"Contratos versionados de snapshot, evidência e impedimento preservam origem, instante de observação, hashes ou revisões e estado desconhecido; regras de gestão ficam independentes de LangGraph e do provider.\",\"Coletores somente leitura reconciliam planejamento local e GitHub com precedência explícita por campo; dado indisponível, stale ou divergente nunca é convertido em conclusão ou aceite.\",\"Regressões incluem PR integrado com critério pendente, dependência aberta, CI sem julgamento semântico e fechamento parcial da Sprint 2.5; nenhum teste padrão chama serviço externo.\"],\"depends_on\":[\"ahc-003\",\"ahc-004\"],\"inputs\":[\"backlog\",\"planos\",\"documentação\",\"issues\",\"PRs\",\"CI\",\"revisões\"],\"outputs\":[\"SprintSnapshot\",\"DeliveryEvidence\",\"Impediment\",\"diagnóstico rastreável\"],\"data_owner\":null,\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"deterministic\"},{\"id\":\"ahc-028\",\"title\":\"Nexo planejador e facilitador Scrum\",\"description\":\"Como PO, quero propostas de refinamento, planning, acompanhamento e review fundamentadas no estado observado e nas decisões humanas.\",\"acceptance_criteria\":[\"Propostas tipadas vinculam Sprint Goal, histórias, dependências, critérios e evidências; capacidade ausente gera incógnita, sem velocity, prazo ou estimativa inventados.\",\"Nexo usa ferramentas permitidas, contexto incremental e memória revisada; regra determinística cobre status e DoD, LLM opcional interpreta ambiguidades sob budgets, sem converter relatório em início ou conclusão de sprint.\",\"Demo offline prepara diagnóstico e review da Sprint 2.5 com carryover explícito; testes rejeitam injeção, fonte alterada, aceitação inexistente e confusão entre proposta, execução e aceite humano.\"],\"depends_on\":[\"ahc-027\"],\"inputs\":[\"SprintSnapshot\",\"política Scrum\",\"objetivos\",\"capacidade declarada\",\"memória\"],\"outputs\":[\"ScrumActionProposal\",\"propostas de refinamento e cerimônias\"],\"data_owner\":null,\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"llm\"},{\"id\":\"ahc-029\",\"title\":\"Nexo operador com autorização e retomada segura\",\"description\":\"Como PO, quero aplicar propostas autorizadas sem duplicar operações, sobrescrever alterações concorrentes ou dar autoridade irrestrita ao agente.\",\"acceptance_criteria\":[\"Escritas limitadas a operações tipadas e autorizadas, com alvo, diff e revisão esperada; mudanças de escopo, ordem, status e marcos respeitam decisões humanas e a DoD, sem shell arbitrário.\",\"Journal persistente e recibos registram proposta, autorização, tentativa e estado remoto observado; replay, timeout após escrita e concorrência não repetem efeitos silenciosamente, exigindo reconciliação quando o resultado é incerto.\",\"Testes com adapter fake exercitam idempotência, autorização stale, revisão remota alterada, cancelamento e falha parcial; integração real depende de autorização por ação e não declara reunião, aceite ou tarefa executada sem evidência.\"],\"depends_on\":[\"ahc-028\"],\"inputs\":[\"ScrumActionProposal revisada\",\"autorização\",\"snapshot do alvo\"],\"outputs\":[\"ActionReceipt\",\"journal e estado reconciliado\"],\"data_owner\":null,\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"deterministic\"},{\"id\":\"ahc-030\",\"title\":\"Vera revisora de QA aprofundado e apoio ao encerramento\",\"description\":\"Como PO, quero um agente revisor funcional que investigue falhas técnicas e de regras de negócio e forneça ao Nexo evidências para a review e a decisão de encerramento da sprint.\",\"acceptance_criteria\":[\"A Vera existente evolui com modo revisor executável no adapter team, contratos tipados de entrada, achados e parecer, contexto limitado, memória revisada, ferramentas permitidas e budgets; uma persona em Markdown ou matriz sem execução não constitui entrega.\",\"Cada achado identifica severidade P0 a P3, revisão e escopo inspecionados, regra ou critério afetado, evidência, reprodução quando verificável, impacto e recomendação; linhas, testes, benchmarks, falhas e sucessos nunca são inventados e cobertura ausente fica inconclusiva.\",\"A revisão cobre código, contratos, referências, proveniência, regras de negócio, regressões, segurança e integridade dos artefatos; checks determinísticos e julgamento semântico permanecem separados, e uma chamada de LLM ou CI verde não estabelece correção de negócio.\",\"O fluxo distingue autoria, revisão e aceite, revalida hashes e revisões antes de reutilizar pareceres, resiste a prompt injection e não permite autoaprovação; modelo opcional é consultivo, sem chamadas pagas ou de rede na suíte padrão e sem shell arbitrário ou escrita remota pelo revisor.\",\"Nexo consome o parecer vinculado ao snapshot e commit corretos para preparar review, matriz de critérios, pendências, riscos e carryover; P0 e P1 abertos bloqueiam recomendação de entrega plena, critérios não verificados não viram Done e fechamento parcial permanece explícito para decisão humana.\",\"Testes e demo exercitam falso sucesso, falha de negócio com CI verde, evidência stale ou ausente, reprodução inválida, achado resolvido em nova revisão e fechamento parcial; falhas reais alimentam INC e lições somente com evidência revisada, sem criar aprovação, cerimônia ou encerramento fictício.\"],\"depends_on\":[\"ahc-029\"],\"inputs\":[\"SprintSnapshot\",\"código e diff por revisão\",\"critérios de aceitação\",\"política de qualidade\",\"evidências de checks\",\"memória revisada\"],\"outputs\":[\"QAReviewRequest/v1\",\"QAReviewReport/v1\",\"SprintClosureAssessment/v1\",\"QAReviewComparison/v1\",\"candidatos de incidente\"],\"data_owner\":null,\"side_effects\":[],\"risk\":\"high\",\"implementation\":\"llm\"}],\"constraints\":{\"technical\":[\"Python 3.12+\",\"core puro sem SDKs de agentes\",\"IR versionada\",\"Linux e Windows\"],\"security\":[\"inputs não confiáveis\",\"aprovação para efeitos externos\",\"isolamento entre projetos\"],\"business\":[\"Apache-2.0\",\"baseline offline\",\"custo de serviços explicitamente autorizado\"],\"max_build_cost_usd\":0.0},\"assets\":[],\"evidence_pack\":null,\"domain_profile\":null}",
+                      "content_sha256": "bebd5ae5849f06fbf41841adc3d8941eff95e22125ebaaf74586bc880c9355f5",
+                      "content_trust": "untrusted-reference-data",
+                      "id": "source-1",
+                      "kind": "project",
+                      "locator": "project-definition/project.yaml",
+                      "number": null,
+                      "observed_at": "2026-10-19T23:44:35.534378+00:00",
+                      "project_id": "ai-harness-compiler",
+                      "reason": null,
+                      "repository": "leozitogs/ai-harness-compiler",
+                      "revision": "c5f6a4e98dceb7518d4af9d791b32ce085e49f55d31047ce36d82b0707542071",
+                      "schema_version": "DeliveryEvidence/v1",
+                      "status": "observed"
+                    },
+                    {
+                      "content": "{\n  \"authorization\": \"PO approved registering inference optimization and conditional fine-tuning in the queue on 2026-10-19; Sprint2.5 has priority.\",\n  \"capacity_confirmed\": false,\n  \"declared_completed_capabilities\": [\n    \"ahc-001\",\n    \"ahc-002\",\n    \"ahc-003\",\n    \"ahc-004\"\n  ],\n  \"display_name\": \"Sprint 2.6\",\n  \"entry_gates\": [\n    \"Explicit PO start and Sprint2.5.5 closure recorded\",\n    \"Carryover selected explicitly instead of falsely declaring prerequisites completed\",\n    \"Frozen development and historical baseline integrity audited; human semantic reviews remain work in progress\",\n    \"Budgets and data permissions required before experiments\"\n  ],\n  \"execution_guide\": \"docs/delivery/sprint-2-6.md\",\n  \"execution_started\": true,\n  \"exit_gates\": [\n    \"Compatible versioned profiles and complete fingerprints\",\n    \"Controlled development comparison preserving failures\",\n    \"Fine-tuning go/no-go justified; pilot conditional\",\n    \"Frozen separate evaluation before promotion\",\n    \"CI, docs, memory and review current\"\n  ],\n  \"goal\": \"Comparar perfis por qualidade e recursos e decidir se fine-tuning generalista se justifica.\",\n  \"id\": \"sprint-2-6\",\n  \"planning_date\": \"2026-10-19\",\n  \"prerequisite_work_items\": [\n    {\n      \"capability_id\": \"ahc-021\",\n      \"source\": \"planning/sprint-2-5.json\",\n      \"status\": \"carried-over-not-done\"\n    },\n    {\n      \"capability_id\": \"ahc-022\",\n      \"source\": \"planning/sprint-2-5.json\",\n      \"status\": \"carried-over-not-done\"\n    },\n    {\n      \"capability_id\": \"ahc-023\",\n      \"source\": \"planning/sprint-2-5.json\",\n      \"status\": \"carried-over-not-done\"\n    }\n  ],\n  \"product_owner\": \"leozitogs\",\n  \"relationship\": {\n    \"carryover_origin\": \"sprint-2-5\",\n    \"policy\": \"Single active sprint. Resolve prerequisite work before optimization; no fabricated completion, parallel capacity, reserved-corpus access or training.\",\n    \"predecessor\": \"sprint-2-5-5\"\n  },\n  \"selected_capabilities\": [\n    \"ahc-021\",\n    \"ahc-022\",\n    \"ahc-023\",\n    \"ahc-024\",\n    \"ahc-025\",\n    \"ahc-026\"\n  ],\n  \"status\": \"in_progress\",\n  \"task_graph_note\": \"Replanned by including unmet AHC021/022/023 in selection; none declared complete. Generated stages are not execution or semantic approval.\",\n  \"task_graph_status\": \"generated-with-explicit-prerequisite-work\",\n  \"timebox_status\": \"not-committed\",\n  \"tracking\": {\n    \"issues\": {\n      \"ahc-024\": {\n        \"number\": 41,\n        \"url\": \"https://github.com/leozitogs/ai-harness-compiler/issues/41\"\n      },\n      \"ahc-025\": {\n        \"number\": 42,\n        \"url\": \"https://github.com/leozitogs/ai-harness-compiler/issues/42\"\n      },\n      \"ahc-026\": {\n        \"number\": 43,\n        \"url\": \"https://github.com/leozitogs/ai-harness-compiler/issues/43\"\n      },\n      \"ahc-021\": {\n        \"number\": 15,\n        \"url\": \"https://github.com/leozitogs/ai-harness-compiler/issues/15\"\n      },\n      \"ahc-022\": {\n        \"number\": 16,\n        \"url\": \"https://github.com/leozitogs/ai-harness-compiler/issues/16\"\n      },\n      \"ahc-023\": {\n        \"number\": 17,\n        \"url\": \"https://github.com/leozitogs/ai-harness-compiler/issues/17\"\n      }\n    },\n    \"milestone_number\": 3,\n    \"milestone_url\": \"https://github.com/leozitogs/ai-harness-compiler/milestone/3\"\n  },\n  \"started_on\": \"2026-10-19\",\n  \"execution_authorization\": \"PO: pode fechar a sprint 2.5.5 e seguir para a sprint 2.6\",\n  \"active_phase\": \"prerequisite-review-and-baseline-audit\",\n  \"capability_status\": {\n    \"ahc-021\": \"in_progress\",\n    \"ahc-022\": \"blocked\",\n    \"ahc-023\": \"blocked\",\n    \"ahc-024\": \"blocked\",\n    \"ahc-025\": \"blocked\",\n    \"ahc-026\": \"blocked\"\n  },\n  \"work_items_file\": \"planning/sprint-2-6.work-items.json\",\n  \"initial_execution\": {\n    \"id\": \"s26-entry-audit\",\n    \"status\": \"performed-review-pending\",\n    \"document\": \"docs/delivery/sprint-2-6-kickoff.md\",\n    \"evidence\": \"docs/evidence/sprint-2-6-entry-20261019/audit.json\",\n    \"model_calls\": 0,\n    \"holdout_read\": false\n  },\n  \"budgets\": {\n    \"preparatory_phase\": \"offline-only-zero-model-calls\",\n    \"experiments\": \"not-authorized-until-concrete-budget-and-data-gates\",\n    \"external_paid_services\": \"not-authorized\",\n    \"training\": \"conditional-not-started\"\n  },\n  \"task_plan_file\": \"planning/sprint-2-6.tasks.json\"\n}\n",
+                      "content_sha256": "f34e06172287a18fc1ff49c98b473ec7093ff31aa7a2da11b13a16cfae2077ce",
+                      "content_trust": "untrusted-reference-data",
+                      "id": "source-2",
+                      "kind": "plan",
+                      "locator": "planning/sprint-2-6.json",
+                      "number": null,
+                      "observed_at": "2026-10-19T23:44:35.535028+00:00",
+                      "project_id": "ai-harness-compiler",
+                      "reason": null,
+                      "repository": "leozitogs/ai-harness-compiler",
+                      "revision": "f34e06172287a18fc1ff49c98b473ec7093ff31aa7a2da11b13a16cfae2077ce",
+                      "schema_version": "DeliveryEvidence/v1",
+                      "status": "observed"
+                    },
+                    {
+                      "content": "{\n  \"format\": \"sprint-work-items/v1\",\n  \"sprint_id\": \"sprint-2-6\",\n  \"status\": \"in_progress\",\n  \"execution_started\": true,\n  \"active_phase\": \"prerequisite-review-and-baseline-audit\",\n  \"work_items\": [\n    {\n      \"id\": \"s26-21-design\",\n      \"capability_id\": \"ahc-021\",\n      \"stage\": \"design\",\n      \"task_graph_id\": \"task-21-design\",\n      \"status\": \"in_review\",\n      \"depends_on\": [],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-21-implement\",\n      \"capability_id\": \"ahc-021\",\n      \"stage\": \"implement\",\n      \"task_graph_id\": \"task-21-implement\",\n      \"status\": \"in_review\",\n      \"depends_on\": [\n        \"s26-21-design\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-21-verify\",\n      \"capability_id\": \"ahc-021\",\n      \"stage\": \"verify\",\n      \"task_graph_id\": \"task-21-verify\",\n      \"status\": \"in_progress\",\n      \"depends_on\": [\n        \"s26-21-implement\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-21-review\",\n      \"capability_id\": \"ahc-021\",\n      \"stage\": \"review\",\n      \"task_graph_id\": \"task-21-review\",\n      \"status\": \"planned\",\n      \"depends_on\": [\n        \"s26-21-verify\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-22-design\",\n      \"capability_id\": \"ahc-022\",\n      \"stage\": \"design\",\n      \"task_graph_id\": \"task-22-design\",\n      \"status\": \"in_review\",\n      \"depends_on\": [\n        \"s26-21-review\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-22-implement\",\n      \"capability_id\": \"ahc-022\",\n      \"stage\": \"implement\",\n      \"task_graph_id\": \"task-22-implement\",\n      \"status\": \"in_review\",\n      \"depends_on\": [\n        \"s26-22-design\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-22-verify\",\n      \"capability_id\": \"ahc-022\",\n      \"stage\": \"verify\",\n      \"task_graph_id\": \"task-22-verify\",\n      \"status\": \"planned\",\n      \"depends_on\": [\n        \"s26-22-implement\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-22-review\",\n      \"capability_id\": \"ahc-022\",\n      \"stage\": \"review\",\n      \"task_graph_id\": \"task-22-review\",\n      \"status\": \"planned\",\n      \"depends_on\": [\n        \"s26-22-verify\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-23-design\",\n      \"capability_id\": \"ahc-023\",\n      \"stage\": \"design\",\n      \"task_graph_id\": \"task-23-design\",\n      \"status\": \"in_review\",\n      \"depends_on\": [\n        \"s26-22-review\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-23-implement\",\n      \"capability_id\": \"ahc-023\",\n      \"stage\": \"implement\",\n      \"task_graph_id\": \"task-23-implement\",\n      \"status\": \"in_review\",\n      \"depends_on\": [\n        \"s26-23-design\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-23-verify\",\n      \"capability_id\": \"ahc-023\",\n      \"stage\": \"verify\",\n      \"task_graph_id\": \"task-23-verify\",\n      \"status\": \"planned\",\n      \"depends_on\": [\n        \"s26-23-implement\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-23-review\",\n      \"capability_id\": \"ahc-023\",\n      \"stage\": \"review\",\n      \"task_graph_id\": \"task-23-review\",\n      \"status\": \"planned\",\n      \"depends_on\": [\n        \"s26-23-verify\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-24-design\",\n      \"capability_id\": \"ahc-024\",\n      \"stage\": \"design\",\n      \"task_graph_id\": \"task-24-design\",\n      \"status\": \"blocked\",\n      \"depends_on\": [\n        \"s26-21-review\",\n        \"s26-22-review\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-24-implement\",\n      \"capability_id\": \"ahc-024\",\n      \"stage\": \"implement\",\n      \"task_graph_id\": \"task-24-implement\",\n      \"status\": \"blocked\",\n      \"depends_on\": [\n        \"s26-24-design\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-24-verify\",\n      \"capability_id\": \"ahc-024\",\n      \"stage\": \"verify\",\n      \"task_graph_id\": \"task-24-verify\",\n      \"status\": \"blocked\",\n      \"depends_on\": [\n        \"s26-24-implement\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-24-review\",\n      \"capability_id\": \"ahc-024\",\n      \"stage\": \"review\",\n      \"task_graph_id\": \"task-24-review\",\n      \"status\": \"blocked\",\n      \"depends_on\": [\n        \"s26-24-verify\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-25-design\",\n      \"capability_id\": \"ahc-025\",\n      \"stage\": \"design\",\n      \"task_graph_id\": \"task-25-design\",\n      \"status\": \"blocked\",\n      \"depends_on\": [\n        \"s26-24-review\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-25-implement\",\n      \"capability_id\": \"ahc-025\",\n      \"stage\": \"implement\",\n      \"task_graph_id\": \"task-25-implement\",\n      \"status\": \"blocked\",\n      \"depends_on\": [\n        \"s26-25-design\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-25-verify\",\n      \"capability_id\": \"ahc-025\",\n      \"stage\": \"verify\",\n      \"task_graph_id\": \"task-25-verify\",\n      \"status\": \"blocked\",\n      \"depends_on\": [\n        \"s26-25-implement\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-25-review\",\n      \"capability_id\": \"ahc-025\",\n      \"stage\": \"review\",\n      \"task_graph_id\": \"task-25-review\",\n      \"status\": \"blocked\",\n      \"depends_on\": [\n        \"s26-25-verify\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-26-design\",\n      \"capability_id\": \"ahc-026\",\n      \"stage\": \"design\",\n      \"task_graph_id\": \"task-26-design\",\n      \"status\": \"blocked\",\n      \"depends_on\": [\n        \"s26-25-review\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-26-implement\",\n      \"capability_id\": \"ahc-026\",\n      \"stage\": \"implement\",\n      \"task_graph_id\": \"task-26-implement\",\n      \"status\": \"blocked\",\n      \"depends_on\": [\n        \"s26-26-design\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-26-verify\",\n      \"capability_id\": \"ahc-026\",\n      \"stage\": \"verify\",\n      \"task_graph_id\": \"task-26-verify\",\n      \"status\": \"blocked\",\n      \"depends_on\": [\n        \"s26-26-implement\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    },\n    {\n      \"id\": \"s26-26-review\",\n      \"capability_id\": \"ahc-026\",\n      \"stage\": \"review\",\n      \"task_graph_id\": \"task-26-review\",\n      \"status\": \"blocked\",\n      \"depends_on\": [\n        \"s26-26-verify\"\n      ],\n      \"responsible\": \"code-collaborator-supported-by-codex\",\n      \"evidence_sources\": [\n        \"docs/delivery/sprint-2-6-kickoff.md\",\n        \"docs/evidence/sprint-2-6-entry-20261019/audit.json\"\n      ],\n      \"completion_rule\": \"Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.\"\n    }\n  ]\n}\n",
+                      "content_sha256": "14807223d450389a3cf499561694718ea53921c9ab76c081d07d0c0da7ab514a",
+                      "content_trust": "untrusted-reference-data",
+                      "id": "source-3",
+                      "kind": "work-items",
+                      "locator": "planning/sprint-2-6.work-items.json",
+                      "number": null,
+                      "observed_at": "2026-10-19T23:44:35.535290+00:00",
+                      "project_id": "ai-harness-compiler",
+                      "reason": null,
+                      "repository": "leozitogs/ai-harness-compiler",
+                      "revision": "14807223d450389a3cf499561694718ea53921c9ab76c081d07d0c0da7ab514a",
+                      "schema_version": "DeliveryEvidence/v1",
+                      "status": "observed"
+                    },
+                    {
+                      "content": "# Acordo de trabalho inspirado no Scrum\n\nO [Scrum Guide](https://scrumguides.org/scrum-guide.html) é a referência do framework.\nScrum envolve Product Owner, Scrum Master e Developers, com Product Backlog,\nSprint Backlog e Increment. Product Goal, Sprint Goal e Definition of Done dão\ncompromisso a esses artefatos. A equipe precisa confirmar as responsabilidades.\n\n## Adaptação inicial deste projeto\n\nPropomos sprints de dez dias úteis. Planning seleciona um objetivo viável,\nDaily inspeciona avanço e impedimentos, Review coleta feedback sobre o incremento,\ne Retrospective escolhe uma melhoria do processo. Refinamento ocorre ao longo da sprint.\nDatas e duração das reuniões serão acordadas no kickoff; não há eventos agendados.\n\nConvenções locais: Planning de até 90 minutos, Daily de até 15 minutos, Review\nde 45 minutos e Retrospective de 30 minutos para a equipe inicial. Esses tempos\nsão uma proposta operacional, não limites obrigatórios universais do Scrum.\n\n## Definition of Ready — convenção local\n\nObjetivo compreendido; critérios testáveis; dependências conhecidas; riscos e\ndados identificados; história cabe na capacidade prevista; estratégia de verificação\ndiscutida. Ready é uma prática local e não um artefato obrigatório do Scrum.\n\n## Definition of Done\n\n1. Critérios de aceitação atendidos com evidência identificável.\n2. Testes relevantes e todos os checks obrigatórios da CI aprovados.\n3. Revisão concluída, comentários resolvidos e branch integrada pelo fluxo definido.\n4. Schemas, documentação, plano e ADRs atualizados quando afetados.\n5. Compatibilidade, segurança, licenças e falhas relevantes avaliadas.\n6. Nenhuma declaração fictícia de eval aprovado ou funcionalidade executada.\n\nUm plano gerado, código em branch ou PR aberto não é um Increment Done. Trabalho\nincompleto retorna à ordenação do backlog, sem manipular pontos para parecer entregue.\n\n## Capacidade, WIP e mudanças\n\nComeçar com uma história ativa por developer e até uma aguardando review como\nlimite experimental. Pontos são estimativas relativas, opcionais e calibradas pela\nequipe; sem velocity histórica, não prever produtividade. Medir lead time,\nretrabalho, bloqueios, defeitos e alcance do Sprint Goal antes de automatizar métricas.\n\nO plano pode ser adaptado conforme aprendizado, preservando o Sprint Goal e a\nqualidade. Escopo adicional exige renegociação, não inclusão silenciosa de trabalho.\nTaskGraph indica precedência técnica; não agenda pessoas nem promete paralelismo real.\n",
+                      "content_sha256": "cb33af71f26cfe7a9f2f5fc2ad17749cea3daf292bfe121f4fb9fd8d47d4b2d2",
+                      "content_trust": "untrusted-reference-data",
+                      "id": "source-4",
+                      "kind": "policy",
+                      "locator": "docs/delivery/scrum.md",
+                      "number": null,
+                      "observed_at": "2026-10-19T23:44:35.535940+00:00",
+                      "project_id": "ai-harness-compiler",
+                      "reason": null,
+                      "repository": "leozitogs/ai-harness-compiler",
+                      "revision": "cb33af71f26cfe7a9f2f5fc2ad17749cea3daf292bfe121f4fb9fd8d47d4b2d2",
+                      "schema_version": "DeliveryEvidence/v1",
+                      "status": "observed"
+                    },
+                    {
+                      "content": "# Engineering memory index\n\nGenerated from immutable JSON revisions. Do not hand-edit.\n\nDrafts are proposals; reusable records still require scope and evidence checks.\n\n- [ADR-0001 — Contratos antes de agentes](records/ADR/ADR-0001/0002.json) · active · revision 2\n- [ADR-0002 — Geração revisável e instalação separada](records/ADR/ADR-0002/0002.json) · active · revision 2\n- [ADR-0003 — Governança e planos observáveis](records/ADR/ADR-0003/0002.json) · active · revision 2\n- [ADR-0006 — Proveniência explícita e IR v2](records/ADR/ADR-0006/0002.json) · active · revision 2\n- [ADR-0007 — Perfil multidimensional fornecido e sem scores inventados](records/ADR/ADR-0007/0002.json) · active · revision 2\n- [ADR-0008 — Falha explícita e medições offline do compilador](records/ADR/ADR-0008/0002.json) · active · revision 2\n- [ADR-0009 — Entendimento ancorado no snapshot e revisão separada](records/ADR/ADR-0009/0002.json) · active · revision 2\n- [ADR-0010 — Estudo local por interface substituível e resposta limitada](records/ADR/ADR-0010/0006.json) · active · revision 6\n- [ADR-0011 — Julgamento semântico separado de integridade](records/ADR/ADR-0011/0006.json) · active · revision 6\n- [ADR-0012 — Geração supervisionada separada de julgamento semântico](records/ADR/ADR-0012/0012.json) · active · revision 12\n- [ADR-0013 — Evidência literal separada da análise e do suporte semântico](records/ADR/ADR-0013/0004.json) · active · revision 4\n- [ADR-0014 — Análise com disposições tipadas e supervisão do modelo](records/ADR/ADR-0014/0008.json) · active · revision 8\n- [ADR-0015 — Repair com feedback escopado e tentativas cobradas](records/ADR/ADR-0015/0002.json) · active · revision 2\n- [ADR-0016 — Interpretação compacta e citações sob responsabilidade do compilador](records/ADR/ADR-0016/0004.json) · active · revision 4\n- [ADR-0017 — Comparação independente de provedores e contexto citável completo](records/ADR/ADR-0017/0008.json) · active · revision 8\n- [ADR-0018 — Principal operacional compartilhado para tarefas com LLM](records/ADR/ADR-0018/0006.json) · active · revision 6\n- [ADR-0019 — Análise e verificação v2 sem promoção de autoridade](records/ADR/ADR-0019/0002.json) · active · revision 2\n- [ADR-0020 — Auditoria consultiva de fontes e omissões](records/ADR/ADR-0020/0002.json) · active · revision 2\n- [ADR-0021 — Proveniência por componente e guards separados](records/ADR/ADR-0021/0002.json) · active · revision 2\n- [ADR-0022 — Revisão humana de proveniência por componente](records/ADR/ADR-0022/0002.json) · active · revision 2\n- [ADR-0023 — Observação Scrum separada de aceite e operação](records/ADR/ADR-0023/0006.json) · active · revision 6\n- [ADR-0024 — Propostas Scrum fundamentadas e gate persistente do Nexo](records/ADR/ADR-0024/0008.json) · active · revision 8\n- [ADR-0025 — Operador Scrum aditivo com autorização e journal](records/ADR/ADR-0025/0002.json) · active · revision 2\n- [ADR-0026 — Vera com evidência vinculada à revisão e parecer do Nexo](records/ADR/ADR-0026/0006.json) · active · revision 6\n- [ADR-0027 — Resolução de achados por evidência e decisão humana](records/ADR/ADR-0027/0002.json) · active · revision 2\n- [DE-0001 — Memória de engenharia versionada](records/DE/DE-0001/0001.json) · draft · revision 1\n- [DE-0002 — Gerar memória e especialistas para cada projeto](records/DE/DE-0002/0002.json) · active · revision 2\n- [DE-0003 — Intake limitado e YAML explícito](records/DE/DE-0003/0004.json) · active · revision 4\n- [DE-0004 — Compilador generalista antes da especialização](records/DE/DE-0004/0010.json) · active · revision 10\n- [DE-0005 — Modelo local provisório escolhido por hardware e ensaio](records/DE/DE-0005/0006.json) · active · revision 6\n- [DE-0006 — Qualidade e qualificação antes do blueprint](records/DE/DE-0006/0034.json) · active · revision 34\n- [DE-0007 — Critérios aprovados e resultado do eval separado da compilação](records/DE/DE-0007/0002.json) · active · revision 2\n- [DE-0008 — Rastreabilidade operacional em liberações e decisões persistidas](records/DE/DE-0008/0002.json) · active · revision 2\n- [DE-0009 — Atualizações de dependências com CI por head atualizado](records/DE/DE-0009/0006.json) · active · revision 6\n- [DE-0010 — Otimização de inferência antes de fine-tuning condicionado](records/DE/DE-0010/0012.json) · active · revision 12\n- [DE-0011 — Nexo em Sprint 2.5.5 antes da otimização](records/DE/DE-0011/0014.json) · active · revision 14\n- [DE-0012 — Emenda da Sprint2.5.5 para Vera revisora de QA](records/DE/DE-0012/0006.json) · active · revision 6\n- [DE-0013 — Fechar Sprint2.5.5 e iniciar 2.6 com pré-requisitos explícitos](records/DE/DE-0013/0002.json) · active · revision 2\n- [DOC-0001 — Concepção do AI Harness Compiler](records/DOC/DOC-0001/0006.json) · active · revision 6\n- [DOC-0002 — Planejamento detalhado da Sprint 1](records/DOC/DOC-0002/0006.json) · draft · revision 6\n- [DOC-0003 — Planejamento da Sprint 2](records/DOC/DOC-0003/0012.json) · active · revision 12\n- [DOC-0004 — Estudo e evidências dos modelos locais](records/DOC/DOC-0004/0006.json) · active · revision 6\n- [DOC-0005 — Sprint 2.5 e piloto de alimentação CA](records/DOC/DOC-0005/0034.json) · active · revision 34\n- [DOC-0006 — Corpus v1 e protocolo offline de entendimento](records/DOC/DOC-0006/0006.json) · active · revision 6\n- [DOC-0007 — Operação e evidências de sessão local limitada](records/DOC/DOC-0007/0004.json) · active · revision 4\n- [DOC-0008 — Preparação e operação do grounding literal](records/DOC/DOC-0008/0004.json) · active · revision 4\n- [DOC-0009 — Modo grounded e dois smokes rejeitados](records/DOC/DOC-0009/0004.json) · active · revision 4\n- [DOC-0010 — Operação e evidências de repair limitado](records/DOC/DOC-0010/0002.json) · active · revision 2\n- [DOC-0011 — Protocolo compacto e comparação inicial de development](records/DOC/DOC-0011/0004.json) · active · revision 4\n- [DOC-0012 — Estudos primários e desenvolvimento comparativo independente](records/DOC/DOC-0012/0004.json) · active · revision 4\n- [DOC-0013 — Seleção do principal e verificação de integração](records/DOC/DOC-0013/0008.json) · active · revision 8\n- [DOC-0014 — Critérios objetivos de entendimento para validação do PO](records/DOC/DOC-0014/0003.json) · active · revision 3\n- [DOC-0015 — Revisão independente de regras de negócio e reproduções](records/DOC/DOC-0015/0002.json) · active · revision 2\n- [DOC-0016 — Incremento semântico v2 e smoke público](records/DOC/DOC-0016/0004.json) · active · revision 4\n- [DOC-0017 — Expectativas e rodada de desenvolvimento v2](records/DOC/DOC-0017/0006.json) · active · revision 6\n- [DOC-0018 — Emenda 1 da Sprint 2.5 e evidências de recuperação](records/DOC/DOC-0018/0002.json) · active · revision 2\n- [DOC-0019 — Estudo e ensaio da resolução delegada de identidade](records/DOC/DOC-0019/0002.json) · active · revision 2\n- [DOC-0020 — Incremento de proveniência e controle negativo de desenvolvimento](records/DOC/DOC-0020/0004.json) · active · revision 4\n- [DOC-0021 — Fechamento parcial da Sprint 2.5 e rodada final](records/DOC/DOC-0021/0002.json) · active · revision 2\n- [DOC-0022 — Plano e esteira da Sprint 2.5.5](records/DOC/DOC-0022/0014.json) · active · revision 14\n- [DOC-0023 — Incremento e demo real do observador AHC-027](records/DOC/DOC-0023/0014.json) · active · revision 14\n- [DOC-0024 — Incremento AHC-028 e demo do Nexo](records/DOC/DOC-0024/0010.json) · active · revision 10\n- [DOC-0025 — Incremento AHC-029 e demonstração de recuperação](records/DOC/DOC-0025/0008.json) · active · revision 8\n- [DOC-0026 — Escopo e tarefas do agente revisor AHC-030](records/DOC/DOC-0026/0006.json) · active · revision 6\n- [DOC-0027 — Incremento funcional AHC-030 e demonstração Vera/Nexo](records/DOC/DOC-0027/0008.json) · active · revision 8\n- [DOC-0028 — Correções da review e demonstração de resolução AHC-030](records/DOC/DOC-0028/0004.json) · active · revision 4\n- [DOC-0029 — Review e encerramento da Sprint2.5.5 pelo PO](records/DOC/DOC-0029/0002.json) · active · revision 2\n- [DOC-0030 — Kickoff Sprint2.6 e auditoria offline da baseline](records/DOC/DOC-0030/0002.json) · active · revision 2\n- [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2\n- [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1\n- [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1\n- [INC-0003 — Payload grande no ID de teste excede variável de ambiente](records/INC/INC-0003/0002.json) · verified · revision 2\n- [INC-0004 — Leitura de JSON UTF-8 sem encoding explícito no teste](records/INC/INC-0004/0004.json) · verified · revision 4\n- [INC-0005 — Snapshot externo divergia da evidência fornecida](records/INC/INC-0005/0002.json) · verified · revision 2\n- [INC-0006 — Relatório de benchmark aceitava medidas contraditórias](records/INC/INC-0006/0002.json) · verified · revision 2\n- [INC-0007 — Saídas estruturais válidas com conteúdo semântico inadequado](records/INC/INC-0007/0010.json) · draft · revision 10\n- [INC-0008 — Fixture de duração dependia do relógio real](records/INC/INC-0008/0003.json) · verified · revision 3\n- [INC-0009 — Ollama inativo interrompeu preflight do smoke](records/INC/INC-0009/0004.json) · verified · revision 4\n- [INC-0010 — Índices válidos ainda citam fontes sem suporte ao achado](records/INC/INC-0010/0001.json) · draft · revision 1\n- [INC-0011 — Primeira decisão Codex do especialista rejeitada pelo protocolo](records/INC/INC-0011/0001.json) · draft · revision 1\n- [INC-0012 — Hashes físicos CRLF divergiam dos bytes LF publicados](records/INC/INC-0012/0002.json) · verified · revision 2\n- [INC-0013 — Contratos v1 não representam todos os critérios de qualidade aprovados](records/INC/INC-0013/0005.json) · verified · revision 5\n- [INC-0014 — Schema do provedor não expressava invariantes de issue](records/INC/INC-0014/0004.json) · verified · revision 4\n- [INC-0015 — Verificação local de suporte não comprova completude](records/INC/INC-0015/0003.json) · verified · revision 3\n- [INC-0016 — Regra composta cita apenas o critério original](records/INC/INC-0016/0005.json) · verified · revision 5\n- [INC-0017 — Fixture de wall time dependia do tempo real arredondado](records/INC/INC-0017/0002.json) · verified · revision 2\n- [INC-0018 — Provedor preenche componentes de regra em requisito](records/INC/INC-0018/0002.json) · verified · revision 2\n- [INC-0019 — Constante Windows causava falha de tipagem Linux no runner QA](records/INC/INC-0019/0004.json) · verified · revision 4\n- [INC-0020 — Captura importada ocultava arquivos excluídos da inspeção](records/INC/INC-0020/0002.json) · verified · revision 2\n- [INC-0021 — Nexo omitiria bloqueios históricos pendentes na comparação](records/INC/INC-0021/0002.json) · verified · revision 2\n- [LES-0001 — Tipos estáticos podem falhar em runtime](records/LES/LES-0001/0004.json) · verified · revision 4\n- [LES-0002 — Referências válidas não garantem precedência consistente](records/LES/LES-0002/0002.json) · verified · revision 2\n- [LES-0003 — Usar IDs curtos para parametrizações com payloads grandes](records/LES/LES-0003/0002.json) · verified · revision 2\n- [LES-0004 — Declarar UTF-8 nos leitores de artefatos JSON](records/LES/LES-0004/0004.json) · verified · revision 4\n- [LES-0005 — Validar snapshots e relatórios também na desserialização](records/LES/LES-0005/0002.json) · verified · revision 2\n- [RUN-0001 — Registrar e reutilizar uma experiência](records/RUN/RUN-0001/0001.json) · draft · revision 1\n",
+                      "content_sha256": "549c36804427a00b163ceec68c9622d61ee67054cc961059a757d0d85d497122",
+                      "content_trust": "untrusted-reference-data",
+                      "id": "source-5",
+                      "kind": "memory-index",
+                      "locator": "knowledge/INDEX.md",
+                      "number": null,
+                      "observed_at": "2026-10-19T23:44:35.544211+00:00",
+                      "project_id": "ai-harness-compiler",
+                      "reason": null,
+                      "repository": "leozitogs/ai-harness-compiler",
+                      "revision": "549c36804427a00b163ceec68c9622d61ee67054cc961059a757d0d85d497122",
+                      "schema_version": "DeliveryEvidence/v1",
+                      "status": "observed"
+                    },
+                    {
+                      "content": "{\"number\":41,\"state\":\"OPEN\",\"updatedAt\":\"2026-10-19T23:31:41Z\",\"url\":\"https://github.com/leozitogs/ai-harness-compiler/issues/41\"}\n",
+                      "content_sha256": "d0e5bbe4ecea80c77c56178e54eaf6b97889d248fdeb96483f23d91ecf296650",
+                      "content_trust": "untrusted-reference-data",
+                      "id": "source-6",
+                      "kind": "issue",
+                      "locator": "https://github.com/leozitogs/ai-harness-compiler/issues/41",
+                      "number": 41,
+                      "observed_at": "2026-10-19T23:44:36.116531+00:00",
+                      "project_id": "ai-harness-compiler",
+                      "reason": null,
+                      "repository": "leozitogs/ai-harness-compiler",
+                      "revision": null,
+                      "schema_version": "DeliveryEvidence/v1",
+                      "status": "observed"
+                    },
+                    {
+                      "content": "{\"number\":42,\"state\":\"OPEN\",\"updatedAt\":\"2026-10-19T23:31:42Z\",\"url\":\"https://github.com/leozitogs/ai-harness-compiler/issues/42\"}\n",
+                      "content_sha256": "d12e94be2fe4ce32b2513c4dda19cb22df2622349763485858156c5a23708bae",
+                      "content_trust": "untrusted-reference-data",
+                      "id": "source-7",
+                      "kind": "issue",
+                      "locator": "https://github.com/leozitogs/ai-harness-compiler/issues/42",
+                      "number": 42,
+                      "observed_at": "2026-10-19T23:44:36.705604+00:00",
+                      "project_id": "ai-harness-compiler",
+                      "reason": null,
+                      "repository": "leozitogs/ai-harness-compiler",
+                      "revision": null,
+                      "schema_version": "DeliveryEvidence/v1",
+                      "status": "observed"
+                    },
+                    {
+                      "content": "{\"number\":43,\"state\":\"OPEN\",\"updatedAt\":\"2026-10-19T23:31:44Z\",\"url\":\"https://github.com/leozitogs/ai-harness-compiler/issues/43\"}\n",
+                      "content_sha256": "c95bb75bf2c99ca9e3d928b17b6d62fef6f5e8bb440de47fd2306b93a292b26f",
+                      "content_trust": "untrusted-reference-data",
+                      "id": "source-8",
+                      "kind": "issue",
+                      "locator": "https://github.com/leozitogs/ai-harness-compiler/issues/43",
+                      "number": 43,
+                      "observed_at": "2026-10-19T23:44:37.269197+00:00",
+                      "project_id": "ai-harness-compiler",
+                      "reason": null,
+                      "repository": "leozitogs/ai-harness-compiler",
+                      "revision": null,
+                      "schema_version": "DeliveryEvidence/v1",
+                      "status": "observed"
+                    },
+                    {
+                      "content": "{\"number\":15,\"state\":\"OPEN\",\"updatedAt\":\"2026-10-19T23:31:35Z\",\"url\":\"https://github.com/leozitogs/ai-harness-compiler/issues/15\"}\n",
+                      "content_sha256": "e613235c901083b70d49726d8f436c0e52d3811c2bdf3fd7024324c0b66133b5",
+                      "content_trust": "untrusted-reference-data",
+                      "id": "source-9",
+                      "kind": "issue",
+                      "locator": "https://github.com/leozitogs/ai-harness-compiler/issues/15",
+                      "number": 15,
+                      "observed_at": "2026-10-19T23:44:37.849328+00:00",
+                      "project_id": "ai-harness-compiler",
+                      "reason": null,
+                      "repository": "leozitogs/ai-harness-compiler",
+                      "revision": null,
+                      "schema_version": "DeliveryEvidence/v1",
+                      "status": "observed"
+                    },
+                    {
+                      "content": "{\"number\":16,\"state\":\"OPEN\",\"updatedAt\":\"2026-10-19T23:31:37Z\",\"url\":\"https://github.com/leozitogs/ai-harness-compiler/issues/16\"}\n",
+                      "content_sha256": "76da83fdde1c94cd63f9b3267c09e4b1c1d852f97a3c81f2a88805f8dbc7586d",
+                      "content_trust": "untrusted-reference-data",
+                      "id": "source-10",
+                      "kind": "issue",
+                      "locator": "https://github.com/leozitogs/ai-harness-compiler/issues/16",
+                      "number": 16,
+                      "observed_at": "2026-10-19T23:44:38.398198+00:00",
+                      "project_id": "ai-harness-compiler",
+                      "reason": null,
+                      "repository": "leozitogs/ai-harness-compiler",
+                      "revision": null,
+                      "schema_version": "DeliveryEvidence/v1",
+                      "status": "observed"
+                    },
+                    {
+                      "content": "{\"number\":17,\"state\":\"OPEN\",\"updatedAt\":\"2026-10-19T23:31:39Z\",\"url\":\"https://github.com/leozitogs/ai-harness-compiler/issues/17\"}\n",
+                      "content_sha256": "b57583a3d6a4eefccc64ed66ce2c30617b3db1d589d4f06682ff96e3456dfc89",
+                      "content_trust": "untrusted-reference-data",
+                      "id": "source-11",
+                      "kind": "issue",
+                      "locator": "https://github.com/leozitogs/ai-harness-compiler/issues/17",
+                      "number": 17,
+                      "observed_at": "2026-10-19T23:44:38.975322+00:00",
+                      "project_id": "ai-harness-compiler",
+                      "reason": null,
+                      "repository": "leozitogs/ai-harness-compiler",
+                      "revision": null,
+                      "schema_version": "DeliveryEvidence/v1",
+                      "status": "observed"
+                    }
+                  ],
+                  "sprint_id": "sprint-2-6"
+                },
+                "observation_sha256": "abfd8cc0f31702ae3af30c9fa25325912bf697a79f0fcec2d789f072b6bfadf7",
+                "schema_version": "SprintSnapshot/v1",
+                "stories": [
+                  {
+                    "acceptance": "not-established",
+                    "declared_status": "in_progress",
+                    "dependencies": [
+                      "ahc-002",
+                      "ahc-003",
+                      "ahc-004"
+                    ],
+                    "evidence_ids": [
+                      "source-1",
+                      "source-2",
+                      "source-9"
+                    ],
+                    "id": "ahc-021",
+                    "issue_state": "OPEN",
+                    "pull_requests": []
+                  },
+                  {
+                    "acceptance": "not-established",
+                    "declared_status": "blocked",
+                    "dependencies": [
+                      "ahc-021"
+                    ],
+                    "evidence_ids": [
+                      "source-1",
+                      "source-2",
+                      "source-10"
+                    ],
+                    "id": "ahc-022",
+                    "issue_state": "OPEN",
+                    "pull_requests": []
+                  },
+                  {
+                    "acceptance": "not-established",
+                    "declared_status": "blocked",
+                    "dependencies": [
+                      "ahc-022"
+                    ],
+                    "evidence_ids": [
+                      "source-1",
+                      "source-2",
+                      "source-11"
+                    ],
+                    "id": "ahc-023",
+                    "issue_state": "OPEN",
+                    "pull_requests": []
+                  },
+                  {
+                    "acceptance": "not-established",
+                    "declared_status": "blocked",
+                    "dependencies": [
+                      "ahc-021",
+                      "ahc-022"
+                    ],
+                    "evidence_ids": [
+                      "source-1",
+                      "source-2",
+                      "source-6"
+                    ],
+                    "id": "ahc-024",
+                    "issue_state": "OPEN",
+                    "pull_requests": []
+                  },
+                  {
+                    "acceptance": "not-established",
+                    "declared_status": "blocked",
+                    "dependencies": [
+                      "ahc-024"
+                    ],
+                    "evidence_ids": [
+                      "source-1",
+                      "source-2",
+                      "source-7"
+                    ],
+                    "id": "ahc-025",
+                    "issue_state": "OPEN",
+                    "pull_requests": []
+                  },
+                  {
+                    "acceptance": "not-established",
+                    "declared_status": "blocked",
+                    "dependencies": [
+                      "ahc-025"
+                    ],
+                    "evidence_ids": [
+                      "source-1",
+                      "source-2",
+                      "source-8"
+                    ],
+                    "id": "ahc-026",
+                    "issue_state": "OPEN",
+                    "pull_requests": []
+                  }
+                ]
+              },
+              "sprint_started": false
+            }
+          },
+          "findings": [],
+          "summary": "Nexo prepared grounded Scrum proposals for human review.",
+          "tool": "delivery_plan"
+        }
+      ],
+      "status": "completed",
+      "summary": "Parecer favorável à próxima tarefa offline: preparar as oito respostas completas para revisão humana pelos seis critérios aprovados, com julgamento e aceite do PO. Impedimentos: oito assessments permanecem not-run; erro estrutural e recuperação exigem adjudicação; possíveis omissões e suporte insuficiente são hipóteses consultivas. AHC-021/022 seguem pendentes e bloqueiam AHC-024; orçamento concreto antecede experimentos. Próximo passo: submeter a matriz por resposta e critério ao PO, destacando esses casos, e registrar suas decisões antes de congelar programa/perfil para nova comparação. ADR-0026 aplica-se à separação entre evidência, hipótese e aceite; seus testes históricos não comprovam aprovação atual. Nenhuma história ou modelo é declarado aceito ou qualificado."
+    }
+  ],
+  "repository_modified_by_agents": false,
+  "routing": {
+    "abstained": true,
+    "fallback": "delivery",
+    "predicted_role": "security",
+    "scores_uncalibrated": {
+      "analyst": 0.17048823871766253,
+      "architect": 0.12169077060715887,
+      "delivery": 0.10500509156372785,
+      "engineer": 0.20853844189521753,
+      "quality": 0.1432787180632841,
+      "security": 0.2509987391529492
+    },
+    "scrum_scope_override": true,
+    "selected_role": "delivery",
+    "threshold": 0.4
+  },
+  "source_digests": {
+    ".github/workflows/ci.yml": "5d4fc093c26bddf9de3c30489f073ea11203de6ef4acaf810641d5dc6f15dc69",
+    "README.md": "9bb45b937a22f18159894d45b32b742275ecad00b1b2e511ed24b724e9294326",
+    "SECURITY.md": "5fbbb112e87a1858f2427a26108bc519616de27b1b0acafb1994ab122cc6cf03",
+    "docs/architecture.md": "7f55f9fb17b903e95f12a12a4ddecc9e63b128df66321baeb977c8b38a1f5982",
+    "docs/contracts.md": "5e0ebc5aa8c198e5a3422689e6c575f5053d0faa29fd25b067a8b48586d2b79d",
+    "docs/delivery/sprint-1.md": "c7780aeaa95e0e4f74f6830ebfcaff5e0773363f75b42db396c660a7fd96c3f5",
+    "docs/engineering/standards.md": "0791f94aafcb88269e6c1ab3be6c9dd3a9ff7d217386ebdf797068c1f716d7b1",
+    "docs/engineering/workflow.md": "f5b51b506a21fd3653b637f2f195a51e4f7c990a98ff9de51aa65bc76dd0b51b",
+    "docs/product/backlog.md": "1fa284de71ff3562da9746bca2f83d92bede1a274c23bf845a0b9592698dbd87",
+    "docs/product/conception.md": "4ef327e2239d19a44b3a69795e1e1e5be9d3a0557995af5307cafdda6d648802",
+    "knowledge/records/ADR/ADR-0001/0002.json": "35a4a0a6c6eee9f25eee6087d7d91bc1caa14dc2d12ecf915ff98c21eb9a4ebf",
+    "knowledge/records/ADR/ADR-0001/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0002/0002.json": "c64f7ce9dc6897880a8580e6708be10e9f819c53f2d7cbd251e2b8e3e86cca3f",
+    "knowledge/records/ADR/ADR-0002/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0003/0002.json": "38458799197963a60b965b841a131044af9d8c157dee1f63b703f9afe21bd4d9",
+    "knowledge/records/ADR/ADR-0003/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0006/0002.json": "cbf6435de9dc6cb49b8cfd53b07e1a79a26676c8eedbe452985d309a938599bc",
+    "knowledge/records/ADR/ADR-0006/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0007/0002.json": "d5ab861d3faefd45f3d0f96b788c0fbe45b050673df46b203113246db048e6cb",
+    "knowledge/records/ADR/ADR-0007/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0008/0002.json": "7af533cea017d43d71fdc82f4f10c4a83d7a328affac2489e11b7dbe97494271",
+    "knowledge/records/ADR/ADR-0008/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0009/0002.json": "f5627cfceb8e6d3c1a99bef6ee0bc4573d7721f7bc7247757297dab0bb3baabd",
+    "knowledge/records/ADR/ADR-0009/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0010/0006.json": "6caaa3fa0d1ea13268503b9d86d2e6ebddb383159ee4a173530c16e22eddc88a",
+    "knowledge/records/ADR/ADR-0010/0006.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0011/0006.json": "eb96d29af552e2c5f5070b4a301c3e08688d2cccd4379e1cd754b3a67e8d162b",
+    "knowledge/records/ADR/ADR-0011/0006.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0012/0012.json": "a197603ce05f07c0ceb436d346355bb36d8cfe2157f4791be7dbba83c7f88919",
+    "knowledge/records/ADR/ADR-0012/0012.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0013/0004.json": "8d6ffa7e3e0dd20865baf7047bf10cf7b70529166317825dad33fd0ef11a8c64",
+    "knowledge/records/ADR/ADR-0013/0004.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0014/0008.json": "06fd1eb80254983e7c4940df30cd6524ee289aa680d78f8424372821874a01d3",
+    "knowledge/records/ADR/ADR-0014/0008.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0015/0002.json": "2c5d2bc2f28ab00c0bb899d7586c0370d90813a39f41bf0235ff291da41d9e6b",
+    "knowledge/records/ADR/ADR-0015/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0016/0004.json": "71cd0a4599aff74e3423709d9349ea91a4836298b2d652c02a75822b62bba0e8",
+    "knowledge/records/ADR/ADR-0016/0004.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0017/0008.json": "7c2a1e97355f80757bc52a889d4cea60fa04ed91f34b0ab71dd8b1a4aa955c74",
+    "knowledge/records/ADR/ADR-0017/0008.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0018/0006.json": "4cc08a9a81da35b5ed85acdfbc701ba59b911dc8e141860cc0900aebe9a9e023",
+    "knowledge/records/ADR/ADR-0018/0006.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0019/0002.json": "8ea1405de416ce170d83d5f17a6134678b6ca089a9c27eeb2c4d03d8487c4d26",
+    "knowledge/records/ADR/ADR-0019/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0020/0002.json": "14113a1d548db25dd4a079a65e00158d1177d43ad2e0e9185c1515e5f248bd85",
+    "knowledge/records/ADR/ADR-0020/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0021/0002.json": "c4d92099d4f1953ee7d3eada9e46b71880c52ee6caa0cb27e64cdda9076405fe",
+    "knowledge/records/ADR/ADR-0021/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0022/0002.json": "1fda2e6c6fe57059feda33d58ff8a6a8fab2c6c37298dbd117e723c9a696e432",
+    "knowledge/records/ADR/ADR-0022/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0023/0006.json": "169dbef8ba0d8cb10262f18394e47a5f2c8298c12da1e4a135a3fac729678125",
+    "knowledge/records/ADR/ADR-0023/0006.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0024/0008.json": "bcffeae53499db4e8976e3f28c29665c9764c2631e9263c10980f74ef93f229b",
+    "knowledge/records/ADR/ADR-0024/0008.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0025/0002.json": "0c87259ada9d83f1166ffff68ee4d15900558ea09a418daead507a1c3ce9dbfe",
+    "knowledge/records/ADR/ADR-0025/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0026/0006.json": "d3a7d8b66292946f3ff4c44f825d02327e28dd97308c6d51271a8a073cc451da",
+    "knowledge/records/ADR/ADR-0026/0006.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/ADR/ADR-0027/0002.json": "96a75234692b8d909b2a474344d06bfee8ec8b783b26b87be82010f2324436bb",
+    "knowledge/records/ADR/ADR-0027/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DE/DE-0001/0001.json": "3c5dd8009ea8b7a11732890c1b253e9c88947a6c056d71bdb23d1890840af0f8",
+    "knowledge/records/DE/DE-0001/0001.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DE/DE-0002/0002.json": "4ca6822ac82a0972947332d0d3760fbce0392a336358254222a1f46fbf12bec0",
+    "knowledge/records/DE/DE-0002/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DE/DE-0003/0004.json": "96f6566842d3f60f0587e310a9fbe7b02e48cd4b17028f78f662c0a8c839b6a9",
+    "knowledge/records/DE/DE-0003/0004.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DE/DE-0004/0010.json": "96e23435b4016eb164162890e5bfd72f40f3dbe11f85e065737001debe2ba46f",
+    "knowledge/records/DE/DE-0004/0010.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DE/DE-0005/0006.json": "a0bb989c0a3a4dd233f38f3fed0efd5ace9a427930730dfcc6bb65d5b8774de7",
+    "knowledge/records/DE/DE-0005/0006.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DE/DE-0006/0034.json": "f8decbba7d8246118d487485a84743aea4da648a0209b3360bee6c7f1766724d",
+    "knowledge/records/DE/DE-0006/0034.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DE/DE-0007/0002.json": "262f57ff40bc47c31604fc6f41c91fe6b02d988c7c39a804905e556d3ec14925",
+    "knowledge/records/DE/DE-0007/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DE/DE-0008/0002.json": "2b052e117e5358894f1507cfaa12ca09c30327e138845a07b1ca76c0c4236a23",
+    "knowledge/records/DE/DE-0008/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DE/DE-0009/0006.json": "5fbe5336413fbf51bb34e365379c2078bf5910a51dcfd2b6894b9e1aea26b1f6",
+    "knowledge/records/DE/DE-0009/0006.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DE/DE-0010/0012.json": "a096fe86bcafe8d1093b71b3031edf3a77eb1ab67872b7e57604bfae2d81a597",
+    "knowledge/records/DE/DE-0010/0012.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DE/DE-0011/0014.json": "b738bfc2e5c80afc1664a7604add6156252109aa001d40de0c70ba0f688f1f0a",
+    "knowledge/records/DE/DE-0011/0014.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DE/DE-0012/0006.json": "226a5b3ca8cced37eb158df34090b87572bf91edc051923776c22f67756ab61f",
+    "knowledge/records/DE/DE-0012/0006.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DE/DE-0013/0002.json": "e7b25ced2eca8e3acaeacb7bb7911faf0acc20fea619042ea0a48d128faf85b3",
+    "knowledge/records/DE/DE-0013/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0001/0006.json": "180d2ace5425058a206c4a5571f98e8eaeb23763a18907a5765874b876ab8b96",
+    "knowledge/records/DOC/DOC-0001/0006.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0002/0006.json": "3b0862a6919e7101ca0da2e45e893af468abee504cd74f5db51a68aa25fc1508",
+    "knowledge/records/DOC/DOC-0002/0006.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0003/0012.json": "80c848d020e90b780c2693fff6066aa76d59d77c70602ae870c28042c0bf1d76",
+    "knowledge/records/DOC/DOC-0003/0012.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0004/0006.json": "902ed34dfbaedf509de090274f9b2448fc0c263b996d58dd6e874399dfdb4f25",
+    "knowledge/records/DOC/DOC-0004/0006.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0005/0034.json": "57641840178facefd03d1accd1e756f68ea2c8b60440cb28a768df760417f244",
+    "knowledge/records/DOC/DOC-0005/0034.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0006/0006.json": "398e1b08daaa9356b18d1dcc8ce22ad119866ff43b5584cad5e0b0a9a3a3055d",
+    "knowledge/records/DOC/DOC-0006/0006.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0007/0004.json": "11da0dab4626e0d4041c131b0c3a44c6e3b60c2b930e4bd53ec4755f569bb69e",
+    "knowledge/records/DOC/DOC-0007/0004.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0008/0004.json": "2fdb5bfaf1b9553573738bdc8700816aa1776ce72628665c681a67911b6cac7c",
+    "knowledge/records/DOC/DOC-0008/0004.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0009/0004.json": "a8c0e71b12d7f5d85d928ec52c31fcdd9a170554331e8760af8e91797b2f4048",
+    "knowledge/records/DOC/DOC-0009/0004.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0010/0002.json": "4d565b3c7fb0f950e4cb54493b69f89fc7062717221f97462cc20a2af4839822",
+    "knowledge/records/DOC/DOC-0010/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0011/0004.json": "14aa7b2a4496b494e3ae3af12f12d4778ade7bbd91c67f2a629beb00cd80523c",
+    "knowledge/records/DOC/DOC-0011/0004.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0012/0004.json": "d2fe237ffa2c1c131858402db4071a548e90f19647337a8bc14fe2a31dc7d6e7",
+    "knowledge/records/DOC/DOC-0012/0004.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0013/0008.json": "a061a094b603bca60d955e87c8caa5741b970a51126180cf3a4ed9f5e0cbc32b",
+    "knowledge/records/DOC/DOC-0013/0008.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0014/0003.json": "bc5cf20462ad989504fa16d39f7d67da4e8ae677c35931c431e729297ceeffb3",
+    "knowledge/records/DOC/DOC-0014/0003.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0015/0002.json": "d113de6ce3711149ade4b40fa54a17c368327732391d794a57d001f0510f0bde",
+    "knowledge/records/DOC/DOC-0015/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0016/0004.json": "8cc15a0874e20cf5d2a9489da7dbd1afd4c92bdf3ece26059b429ff18b0aa861",
+    "knowledge/records/DOC/DOC-0016/0004.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0017/0006.json": "62999a8b051d3707468dea77d8d55f8fbeef8c4aeda4e61e6e8523219055f6a8",
+    "knowledge/records/DOC/DOC-0017/0006.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0018/0002.json": "804e9a29df6fe2b055ad99bc4a635badb8f066cc93ed2351d83bd1c8adc186e9",
+    "knowledge/records/DOC/DOC-0018/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0019/0002.json": "234a42a44f1b1f25593d226c0d3de405ba20f6afbc9a031d35d805fe58e08dcf",
+    "knowledge/records/DOC/DOC-0019/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0020/0004.json": "335f895ecee31453483e295f06156f582dc193c5372e5c99a189e5664762012e",
+    "knowledge/records/DOC/DOC-0020/0004.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0021/0002.json": "1a5e3474d9e9de1188975a42c8da747b87f0c5dcdc07052098044329cc84d070",
+    "knowledge/records/DOC/DOC-0021/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0022/0014.json": "4be57acbcf3b2cd4774e5c3e27396b3653f1f0c4dec6cdc2030e836400b04cdf",
+    "knowledge/records/DOC/DOC-0022/0014.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0023/0014.json": "092e85d74b6db3682f4d0cae8ba606149a85b21b7e4287bf3cdc9d3e01f2ec4f",
+    "knowledge/records/DOC/DOC-0023/0014.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0024/0010.json": "697285358ee1f95f7750988bf0a8a9ecdbe3571d17b9e54dc0faa717aa41f516",
+    "knowledge/records/DOC/DOC-0024/0010.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0025/0008.json": "fad61c331fd02a6d3bcdb0664396b7cc0a68c477288c9ccc7b47c415c4f0d990",
+    "knowledge/records/DOC/DOC-0025/0008.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0026/0006.json": "579ea39a288d4fd6ee8a759a0dfb9a9b59487ab8548265003eaf66367e76c59f",
+    "knowledge/records/DOC/DOC-0026/0006.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0027/0008.json": "f04fa44391d3f3716c6ef565456a92a4accbd1a8ad9281e9079c6c85da88cec1",
+    "knowledge/records/DOC/DOC-0027/0008.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0028/0004.json": "7a8ec3431e943177fd3727532b6f73aab75b409358761b22ed85ee613a8f350a",
+    "knowledge/records/DOC/DOC-0028/0004.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0029/0002.json": "788ed8a1a951c25ed89a11eab7b1e0c8409f47b14fc8c4cd8e8d5bcc192f96cb",
+    "knowledge/records/DOC/DOC-0029/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/DOC/DOC-0030/0002.json": "8d93affcda2464aef84b979806b7b40421c5174038b95a473bfdb8782d5465a1",
+    "knowledge/records/DOC/DOC-0030/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/EXP/EXP-0001/0002.json": "2577d2071dd2c30d3c41d8dc17bcfa106bfd99f2cc30b433079bb1162971714d",
+    "knowledge/records/EXP/EXP-0001/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/INC/INC-0001/0001.json": "33c93a9578c2a65ff830b0ac791b9d71a7c552b66b2e397801b51a2c5699a92c",
+    "knowledge/records/INC/INC-0001/0001.json#evidence-current": "60a33e6cf5151f2d52eddae9685cfa270426aa89d8dbc7dfb854606f1d1a40fe",
+    "knowledge/records/INC/INC-0002/0001.json": "2d5b0a2147f5a64b2689619e7aaa432e4ebfcdc8942b180b5350ea5fb2263e8e",
+    "knowledge/records/INC/INC-0002/0001.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/INC/INC-0003/0002.json": "25d5799b3bcbb246e0035ce708452708bcbff0141c7c24ab451b543cc3523745",
+    "knowledge/records/INC/INC-0003/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/INC/INC-0004/0004.json": "274ba46ba71f9f9491894e6335408685c3928746457429b87c1f4c363451ba54",
+    "knowledge/records/INC/INC-0004/0004.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/INC/INC-0005/0002.json": "e091979aee21b36292a4b4ea3e2f180808c66caba7c8aea6d076878d98d4fb3a",
+    "knowledge/records/INC/INC-0005/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/INC/INC-0006/0002.json": "db46025522af5726e73adcd659679cf104be46834e92997983a6814c5d2c61d1",
+    "knowledge/records/INC/INC-0006/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/INC/INC-0007/0010.json": "13b28e3770ade2ea330b952529e8c2e5e6f3aa701f0665029093aed63c04e0cc",
+    "knowledge/records/INC/INC-0007/0010.json#evidence-current": "60a33e6cf5151f2d52eddae9685cfa270426aa89d8dbc7dfb854606f1d1a40fe",
+    "knowledge/records/INC/INC-0008/0003.json": "feeb86a985ba903347e9fcad642454a7e23359d1623cf1bbb9e2b29083ee6a3b",
+    "knowledge/records/INC/INC-0008/0003.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/INC/INC-0009/0004.json": "cb3276a68bc5d95c214bf5bcd4d2e2f5731d310392b41ea9fc76a5a7559bc42c",
+    "knowledge/records/INC/INC-0009/0004.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/INC/INC-0010/0001.json": "7b0b5132a166c13e36698194ab39b50b7b72412e40230c2d5464b2a864ef5d90",
+    "knowledge/records/INC/INC-0010/0001.json#evidence-current": "60a33e6cf5151f2d52eddae9685cfa270426aa89d8dbc7dfb854606f1d1a40fe",
+    "knowledge/records/INC/INC-0011/0001.json": "ff095cf719496e92f61219cc03aab41d6b550dc7582492086f8587c8c28aeff6",
+    "knowledge/records/INC/INC-0011/0001.json#evidence-current": "60a33e6cf5151f2d52eddae9685cfa270426aa89d8dbc7dfb854606f1d1a40fe",
+    "knowledge/records/INC/INC-0012/0002.json": "de608c28ae5f0b4322684f97263fdb0b642b5a18120fbc66672a2964086a7c98",
+    "knowledge/records/INC/INC-0012/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/INC/INC-0013/0005.json": "4c04111c402ab5b5d9d0b9a2a5c4b9cfdcdd689a11cf326191fbf399a35658cd",
+    "knowledge/records/INC/INC-0013/0005.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/INC/INC-0014/0004.json": "5918751dbc5b87b16fd3bb8f51625ab7f6b6023af5ab38c7b5ef44d8ba26ef6f",
+    "knowledge/records/INC/INC-0014/0004.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/INC/INC-0015/0003.json": "360afe6501b3dffcdbeffa39410ed55d1cced46f881ae1c60a31fb2a9eb19072",
+    "knowledge/records/INC/INC-0015/0003.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/INC/INC-0016/0005.json": "bea89547cc6569b1ee198b4cf50f032b31d6735a733af8ce1887f53169f3e2ab",
+    "knowledge/records/INC/INC-0016/0005.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/INC/INC-0017/0002.json": "1b8457bc63939f2cf7f7c0fd15f617f7148a5f526451f3e871dc2961fcbcd114",
+    "knowledge/records/INC/INC-0017/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/INC/INC-0018/0002.json": "2d2ba62d037467d49be5b907826636a32835b680d1dcd245a3c6085d6fe72bbe",
+    "knowledge/records/INC/INC-0018/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/INC/INC-0019/0004.json": "0d38b93858698e0cb1afd84bae4807489948115432210dc0494b64ec0331b589",
+    "knowledge/records/INC/INC-0019/0004.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/INC/INC-0020/0002.json": "f4b1a83df68cbd621b3658ffa212d7f0fed5af1d0e68ab4a2754c8880492efd1",
+    "knowledge/records/INC/INC-0020/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/INC/INC-0021/0002.json": "610baf6dd93d09e9acca96933b44639b0e925c26a8957ea1ed7d9f9f6f97f035",
+    "knowledge/records/INC/INC-0021/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/LES/LES-0001/0004.json": "a8f4b06717f7454c6c445f97bb93c27b0887d0863c3d4632253d771e5b655666",
+    "knowledge/records/LES/LES-0001/0004.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/LES/LES-0002/0002.json": "a23e2e8807108299a3cfc0ac7d93c514e5f9c750642c17318e46bacb29d8780f",
+    "knowledge/records/LES/LES-0002/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/LES/LES-0003/0002.json": "e0aba6eb712f5fe7ad29804f7e56e3784a58737fcad2e20a98263f8f4df12a72",
+    "knowledge/records/LES/LES-0003/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/LES/LES-0004/0004.json": "4b53b54a34b2ba09e89ad41b4bc0ce87bbb615e7f4cf264c7c50fb13531a1426",
+    "knowledge/records/LES/LES-0004/0004.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/LES/LES-0005/0002.json": "9f815171f36bf133796ccae94f6b7a09d14a6498c15440dd27a827f5ef0ef396",
+    "knowledge/records/LES/LES-0005/0002.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "knowledge/records/RUN/RUN-0001/0001.json": "8b3a7b889e26c968e89b58477781c0f9bf7022e258096b57366bd838dcad8044",
+    "knowledge/records/RUN/RUN-0001/0001.json#evidence-current": "3cbc87c7681f34db4617feaa2c8801931bc5e42d8d0f560e756dd4cd92885f18",
+    "planning/sprint-1.json": "cae10cccd0eb199e1847ab4acfd97e5399149e6e14a6bd51d2b39d261518d857",
+    "project-definition/project.yaml": "c5f6a4e98dceb7518d4af9d791b32ce085e49f55d31047ce36d82b0707542071",
+    "pyproject.toml": "bdb7d2fa9b68c1e44e1e7457de6aa71ab36fcee6f24166895b26fe8971a0a50d",
+    "scrum-observation": "abfd8cc0f31702ae3af30c9fa25325912bf697a79f0fcec2d789f072b6bfadf7",
+    "src/ai_harness_compiler/compiler.py": "9a05664e5db186b4db3730cbc81878892a208543090b665bd94ca9f4e9626047",
+    "src/ai_harness_compiler/intake.py": "07bd5e3689dbceae03fa0bd4ad1e1fe39c3db4aabb4b7b358ba7d7a7c16960e9",
+    "src/ai_harness_compiler/models/base.py": "b63aaf5d396484448dc50480a870568d02bee7faa9cdb27788d4914b0540887d",
+    "src/ai_harness_compiler/models/harness.py": "9e0565c7f69551f5aeb533e2b04af807aa34b2f371a561bd60b84dd15c8cb7c2",
+    "src/ai_harness_compiler/models/project.py": "057bcfaa4d52bcee0c1a6476781b1fd60bbda8bab62bcfa3dca8e354a83f81c4",
+    "src/ai_harness_compiler/pipeline.py": "4daf262b1848cf53f5915aa10f6815e9eeb2c9cfb9872de16f7b956c50987c49",
+    "src/ai_harness_compiler/planning.py": "0cf3080e5315f588319429007a71b04d8569dba968bbb60bf928e5b6e6e8bc73",
+    "tests/test_cli.py": "ff76134497743b62eaebda3618966feac05533267efed82fb8686ed63a5d53a0",
+    "tests/test_compiler.py": "52a30e8994aadbf550480bc618728593f157957fd6b52c7eaa56104d15a9b67f",
+    "tests/test_pipeline.py": "16a437831d61e25e24eafc4d238f0cecb42caec6922fb64e296afa06ad8b4cec",
+    "tests/test_planning.py": "b3e44bddb4b5365b23341472dfa903a321ae3c836df1370fda78c487f3262019"
+  },
+  "sprint_started": false,
+  "status": "awaiting_po"
+}

@@ -1,0 +1,586 @@
+{
+  "schema_version": "DevelopmentHumanReviewPacket/v1",
+  "status": "awaiting-human-review",
+  "authority": "preparation-only",
+  "human_acceptance": false,
+  "model_qualification": "not-established",
+  "holdout_read": false,
+  "additional_generation_calls": 0,
+  "cases": [
+    {
+      "case": "dev-adversarial",
+      "expected_behavior": "ready",
+      "observed_disposition": "ready",
+      "baseline_generation": "valid",
+      "selected_attempt": "baseline-v3",
+      "physical_case_sha256": "a1d3462f196b12614886b30f6bb4ce9d013b45550feda5ec358193aff7b95e99",
+      "case_sha256": "a0161eb4e56463d947d21676134f72518d661e5b91b46403d37174de8e025d0d",
+      "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+      "analysis_sha256": "5aeb72bf12a4ebe5020dcf65100ac2f5f597fa429ec3e360840715437b65cacf",
+      "assessment": "not-run",
+      "human_review": null,
+      "model_qualification": "not-established",
+      "findings": 7,
+      "components": 2,
+      "advisory_omissions": 1,
+      "advisory_negative_components": 0,
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-adversarial.json",
+          "sha256": "a1d3462f196b12614886b30f6bb4ce9d013b45550feda5ec358193aff7b95e99"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-adversarial/analysis.json",
+          "sha256": "2737a8cb48f28ca55062ffd1d88ea42479204a8dbddbd4af2d5cb80178749bb3"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-adversarial/advice.json",
+          "sha256": "bd13c5ca42c35ce39b81dd4453744522c43561e14e92e3dd5cd79ba60568b149"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-adversarial/summary.json",
+          "sha256": "4ad68631d0bf1c99060bd15fc61f9becfc7777d48d0bac7e29d5b45d3531b6bd"
+        }
+      ],
+      "required_decisions": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        }
+      ],
+      "page": "docs/reviews/sprint-2-6-development/dev-adversarial.md",
+      "page_sha256": "62f20c9a6c127c5043a0b1a9039b29b09ee0bc0268eda27f8e0eb96d34882935"
+    },
+    {
+      "case": "dev-ambiguous",
+      "expected_behavior": "blocked",
+      "observed_disposition": "blocked",
+      "baseline_generation": "valid",
+      "selected_attempt": "baseline-v3",
+      "physical_case_sha256": "b4b91de66473ba2ce628faae3aefddc571213af16ae08a34c00ef2f2440df3ae",
+      "case_sha256": "96d9954a55ca4bf3aa2ad1d8156c160c4692b97b3d1cdcd51c2f84adbf8ccd48",
+      "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+      "analysis_sha256": "44f9c5bbb4d4461109433ede9bddcbb99b27131c08af8714d6fd314fd86adc54",
+      "assessment": "not-run",
+      "human_review": null,
+      "model_qualification": "not-established",
+      "findings": 11,
+      "components": 4,
+      "advisory_omissions": 0,
+      "advisory_negative_components": 1,
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-ambiguous.json",
+          "sha256": "b4b91de66473ba2ce628faae3aefddc571213af16ae08a34c00ef2f2440df3ae"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-ambiguous/analysis.json",
+          "sha256": "a5c9bed24fc0e21a8b2ae2cb01bb7b881eeb9340150532b48935356d57c80468"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-ambiguous/advice.json",
+          "sha256": "3b60db0dbaf855a7ca7cfcce67318fa84120e3665d81608ead50477d196cd5ee"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-ambiguous/summary.json",
+          "sha256": "2610e1c8452ea781335ff8d1ffae21ea44934ad68170f4607d986b37caf2ed18"
+        }
+      ],
+      "required_decisions": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        }
+      ],
+      "page": "docs/reviews/sprint-2-6-development/dev-ambiguous.md",
+      "page_sha256": "7d51c319579fcdbde478c1a4c7ad8f2536192fa45c982854cc938da057c2f6de"
+    },
+    {
+      "case": "dev-branding-conflict",
+      "expected_behavior": "blocked",
+      "observed_disposition": "blocked",
+      "baseline_generation": "valid",
+      "selected_attempt": "baseline-v3",
+      "physical_case_sha256": "b03ca50cc215814759a8b6c072eb3857ba19fefdc6487dc29674e73ec4af6530",
+      "case_sha256": "4e5fc12e8016de6687d30a9c60c78829c34f9cd6b1a0d7515b1830d71e8f7d30",
+      "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+      "analysis_sha256": "dca39f8f85f8c3edb38f268a0a2094a4975ef4e9a9811bba60a55d067d2eb30b",
+      "assessment": "not-run",
+      "human_review": null,
+      "model_qualification": "not-established",
+      "findings": 8,
+      "components": 2,
+      "advisory_omissions": 1,
+      "advisory_negative_components": 0,
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-branding-conflict.json",
+          "sha256": "b03ca50cc215814759a8b6c072eb3857ba19fefdc6487dc29674e73ec4af6530"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-branding-conflict/analysis.json",
+          "sha256": "7bf4ead0e21f2f0550df3ef8159a134434037db33a17c96d00416a85aefe1170"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-branding-conflict/advice.json",
+          "sha256": "b5b015d8ab966870670b2b76dd19ad520c1779ca38f9e1c6cb22a54c10ea2056"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-branding-conflict/summary.json",
+          "sha256": "76ad22518b993f19b19424cb6027fd074edd45ff1f23b1cc9b4a3bd311805653"
+        }
+      ],
+      "required_decisions": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        }
+      ],
+      "page": "docs/reviews/sprint-2-6-development/dev-branding-conflict.md",
+      "page_sha256": "0ad5665a01ca0edce6782ceeed86b9519053c99f367463893a16a60b51b60c72"
+    },
+    {
+      "case": "dev-compatible-rules",
+      "expected_behavior": "ready",
+      "observed_disposition": "ready",
+      "baseline_generation": "error",
+      "selected_attempt": "schema-v31-recovery",
+      "physical_case_sha256": "fc8a20bcd49950df782e5fc0e7ef39aea912e0b656b0198e24bfd546d7e96622",
+      "case_sha256": "f338181b253045093d1101f966cf863f3c7c51d94831becb88e0be60c8ad91ba",
+      "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+      "analysis_sha256": "09f6148f4cf0303325d2c3380e32f2735a13f543797df23da3b0ca9b4e956581",
+      "assessment": "not-run",
+      "human_review": null,
+      "model_qualification": "not-established",
+      "findings": 15,
+      "components": 12,
+      "advisory_omissions": 1,
+      "advisory_negative_components": 0,
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-compatible-rules.json",
+          "sha256": "fc8a20bcd49950df782e5fc0e7ef39aea912e0b656b0198e24bfd546d7e96622"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/schema-v31-recovery/dev-compatible-rules/analysis.json",
+          "sha256": "d2701f9b11e6b9c06d5c0603fc77bc6f452743892fa90b2cbb80e1110cbf6ea2"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/schema-v31-recovery/dev-compatible-rules/advice.json",
+          "sha256": "7ec1bb51c60432cc95f3b30215d906cae768f7f1ecab1bd35bedc90ce2723534"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-compatible-rules/summary.json",
+          "sha256": "3737a3464ba48cc7c2710a45d6a240f6a2a6c08c3f9efb5924c5d64281a44158"
+        }
+      ],
+      "required_decisions": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        }
+      ],
+      "page": "docs/reviews/sprint-2-6-development/dev-compatible-rules.md",
+      "page_sha256": "a9da9cef6a82c56eaecc7857d751a6630ac27b8581497ad043b0c99ccfa91528"
+    },
+    {
+      "case": "dev-new-domain",
+      "expected_behavior": "ready",
+      "observed_disposition": "ready",
+      "baseline_generation": "valid",
+      "selected_attempt": "baseline-v3",
+      "physical_case_sha256": "03d5682c906e6b053951195ef3c97d81453306cf51584f861e06e9d7dff0b16c",
+      "case_sha256": "670709add5aaa3d8a9bc20d0781cb87799266016de42047cd3732e7dc332ca3d",
+      "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+      "analysis_sha256": "8baff4b157478c6a6bc91fca505875990ff3e3dddb73350149faea240a897a2a",
+      "assessment": "not-run",
+      "human_review": null,
+      "model_qualification": "not-established",
+      "findings": 7,
+      "components": 2,
+      "advisory_omissions": 0,
+      "advisory_negative_components": 0,
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-new-domain.json",
+          "sha256": "03d5682c906e6b053951195ef3c97d81453306cf51584f861e06e9d7dff0b16c"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-new-domain/analysis.json",
+          "sha256": "ffc9cf1762b809f89c70d9421d531c94ded8d3f965651ad6c928763282074f87"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-new-domain/advice.json",
+          "sha256": "af158fa3939c0499c70b377640c0299d32c5a84b63e511cac439a925e6ca2097"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-new-domain/summary.json",
+          "sha256": "9267bd79347f958d76e967007334c62e689b3a1f5a6c90267ad06f3da5bada64"
+        }
+      ],
+      "required_decisions": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        }
+      ],
+      "page": "docs/reviews/sprint-2-6-development/dev-new-domain.md",
+      "page_sha256": "fd829ffb1164ea09d24c71f1dae6759252881e99baba080fcdc874d0af5578c1"
+    },
+    {
+      "case": "dev-rules-a",
+      "expected_behavior": "ready",
+      "observed_disposition": "ready",
+      "baseline_generation": "valid",
+      "selected_attempt": "baseline-v3",
+      "physical_case_sha256": "5c22bb8748b1badaca5f7e2ba66d5ef628fc95128bdb5479617a7f5094220063",
+      "case_sha256": "7dcbd77cafd0a7836b7a1f2fac6a361fe083606937b916588b107c35318f4fdd",
+      "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+      "analysis_sha256": "d4dca46e801c7f9f89d799226af6929fd582d847c00ec8500378b6b5c3435341",
+      "assessment": "not-run",
+      "human_review": null,
+      "model_qualification": "not-established",
+      "findings": 8,
+      "components": 2,
+      "advisory_omissions": 2,
+      "advisory_negative_components": 0,
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-rules-a.json",
+          "sha256": "5c22bb8748b1badaca5f7e2ba66d5ef628fc95128bdb5479617a7f5094220063"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-rules-a/analysis.json",
+          "sha256": "8eb4b4cea262fd3164cccc2024f76cb500f1fcb637a419cc16bb022a4496dfa9"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-rules-a/advice.json",
+          "sha256": "975a733f92ad1e123d2b140ee4ffe05a5da9a40a5217dc1e5a96b6bf479b9ce7"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-rules-a/summary.json",
+          "sha256": "c9730154bd376cec9d4ff86fab0f960af45f994870cd3c664c03975c9b015219"
+        }
+      ],
+      "required_decisions": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        }
+      ],
+      "page": "docs/reviews/sprint-2-6-development/dev-rules-a.md",
+      "page_sha256": "1bdd2443b4963042cf3429d8c01b6ea5dff4b037ec5b297b0f43901e06a6d3de"
+    },
+    {
+      "case": "dev-rules-b",
+      "expected_behavior": "ready",
+      "observed_disposition": "ready",
+      "baseline_generation": "valid",
+      "selected_attempt": "baseline-v3",
+      "physical_case_sha256": "9e516037eefd452f56323845d4aa5adc613a713d34b77da788c5629eaf131fa0",
+      "case_sha256": "9d7354f306a8e7b52957c87187eab0d05c1a66f66ef2c2ddf78b8f858d196b58",
+      "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+      "analysis_sha256": "37259cfadefec1d810777fb46d24278122889ce8e2703457e2518d39ffee6231",
+      "assessment": "not-run",
+      "human_review": null,
+      "model_qualification": "not-established",
+      "findings": 7,
+      "components": 4,
+      "advisory_omissions": 1,
+      "advisory_negative_components": 0,
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-rules-b.json",
+          "sha256": "9e516037eefd452f56323845d4aa5adc613a713d34b77da788c5629eaf131fa0"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-rules-b/analysis.json",
+          "sha256": "56ed52e69d22d0e3a95eaa07c31986550360813cff9bee444845ac4e6406b905"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-rules-b/advice.json",
+          "sha256": "320d60565bb66c35b7251097e364ff002c630f35c0555525523eadf5c6b423fd"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-rules-b/summary.json",
+          "sha256": "0c6802f79372271a788a427c76d3f97ca1edc5b60a4413eb930a2dc0fc3a79f0"
+        }
+      ],
+      "required_decisions": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        }
+      ],
+      "page": "docs/reviews/sprint-2-6-development/dev-rules-b.md",
+      "page_sha256": "f3561b497f2e91ace099d4832e6f97ed21d9e7b9e8545abfbe29f0346e26cccd"
+    },
+    {
+      "case": "dev-unread-assets",
+      "expected_behavior": "ready",
+      "observed_disposition": "ready",
+      "baseline_generation": "valid",
+      "selected_attempt": "baseline-v3",
+      "physical_case_sha256": "9027b07f6a0c14f4dd56fc6321c5345864884c230f3ff02641817c48596a2b17",
+      "case_sha256": "3c63236be69375dd183ee04a12c9fe91be3b2a43a507b9c974db9ed5774f34c5",
+      "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+      "analysis_sha256": "514b28a8260e0f53273e2be0feeeac15dcb236fc9b9d4fa09583796833c238ba",
+      "assessment": "not-run",
+      "human_review": null,
+      "model_qualification": "not-established",
+      "findings": 7,
+      "components": 2,
+      "advisory_omissions": 0,
+      "advisory_negative_components": 0,
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-unread-assets.json",
+          "sha256": "9027b07f6a0c14f4dd56fc6321c5345864884c230f3ff02641817c48596a2b17"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-unread-assets/analysis.json",
+          "sha256": "365cbf5c8f47d8ab1b40775a254c1d408877e0ba8a53c141c93656069b76d954"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-unread-assets/advice.json",
+          "sha256": "e848cb4c6fb26b432da7940a6d54cb4eedf78c5851efc407d5dfef5783d70147"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-unread-assets/summary.json",
+          "sha256": "62c6d614feaf96bd39e92f71c46fbd65e69630ec50223b3ba86cbb045f0e0b9d"
+        }
+      ],
+      "required_decisions": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "not-run",
+          "note": "Julgamento humano pendente"
+        }
+      ],
+      "page": "docs/reviews/sprint-2-6-development/dev-unread-assets.md",
+      "page_sha256": "401c4b51d6fe3c056caff330c9687ef9c554bd44ef02989f9a81c04f9e00f5af"
+    }
+  ],
+  "limitations": [
+    "Existing public development outputs only; no new candidate generation or holdout access.",
+    "Original failure retained alongside targeted recovery; not a complete v3.1 round.",
+    "Nexo favorable advice permits preparation under user instruction; no PO acceptance or model qualification."
+  ],
+  "sources": [
+    {
+      "path": "evals/understanding/v2/development-approved-manifest.json",
+      "sha256": "e7af7a3f74b017db4d8d8ef79dac38d533d74ee93a7329217ddd77577a5895e6"
+    },
+    {
+      "path": "evals/understanding/v2/rubric.json",
+      "sha256": "b1a9d26e2132798138ad035830d1caac65b3951f28e0e046630f7a5735fc77f0"
+    }
+  ]
+}

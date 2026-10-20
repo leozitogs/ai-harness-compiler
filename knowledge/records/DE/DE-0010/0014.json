@@ -1,0 +1,61 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO approved analysis and requested recording/queueing on 2026-10-19; no new training or paid resources executed.",
+  "created_at": "2026-10-19T20:11:59.539961+00:00",
+  "decision": "Prioritize 021/022/023 carryover; version complete fingerprints before parameter search, require reviewed data and resource feasibility before training.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "764 offline tests passed; actual model-output human review absent. Sprint closure is partial; no model qualification or holdout.",
+      "outcome": "observed",
+      "sha256": "a4a19dfa53911e3577170c97acbdb2067a74b5eb32d0932337c30be03924288b",
+      "source": "docs/delivery/sprint-2-6.md"
+    },
+    {
+      "command": null,
+      "note": "764 offline tests passed; actual model-output human review absent. Sprint closure is partial; no model qualification or holdout.",
+      "outcome": "observed",
+      "sha256": "5ed4bdce9a6f7f6c3fafcce7f17bf221824df798758e790f4a0298c8867ac84c",
+      "source": "planning/sprint-2-6.json"
+    },
+    {
+      "command": null,
+      "note": "764 offline tests passed; actual model-output human review absent. Sprint closure is partial; no model qualification or holdout.",
+      "outcome": "observed",
+      "sha256": "c5f6a4e98dceb7518d4af9d791b32ce085e49f55d31047ce36d82b0707542071",
+      "source": "project-definition/project.yaml"
+    }
+  ],
+  "id": "DE-0010",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "Hardware feasibility not measured for training",
+    "No improvement claimed from recommended sampling values",
+    "Model/provider capabilities must be rechecked before execution"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0006",
+    "DOC-0021",
+    "DE-0013"
+  ],
+  "resolution": null,
+  "review_note": "Refresh current sprint metadata after favorable Nexo advice and offline packet preparation; preserve historical captures and pending human/qualification gates.",
+  "reviewed_by": "codex:delivery-review",
+  "revision": 14,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Sprint2.6 initially queued for profiles, controlled optimization and conditional fine-tuning. PO now explicitly started it after closing Sprint2.5.5; first phase includes AHC021/022/023 prerequisite review and offline baseline audit. No training or promotion started.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Otimização de inferência antes de fine-tuning condicionado",
+  "updated_at": "2026-10-19T23:48:56.319581+00:00"
+}

@@ -4,6 +4,8 @@
 Estado: `in_progress`, fase `prerequisite-review-and-baseline-audit`.
 Sem prazo/capacidade prometidos e sem treinamento iniciado.
 
+Verificação posterior: [Nexo favorável à preparação offline e matriz preparada](sprint-2-6-development-review.md).
+
 ## Objetivo e escopo adaptado
 
 Comparar perfis por qualidade e recursos e decidir por evidência se fine-tuning
