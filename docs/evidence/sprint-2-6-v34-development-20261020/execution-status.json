@@ -1,0 +1,16 @@
+{
+  "calls_used": 0,
+  "compilation_eligibility": "not-authorized",
+  "executor_started": false,
+  "format": "development-execution-status/v1",
+  "frozen_commit": "2094624",
+  "holdout_read": false,
+  "model_qualification": "not-established",
+  "program_version": "semantic-composition/v3.4",
+  "protocol_sha256": "1d2870f7875c42c96d2b3d742513e38b7a44b853d9f999b1e549713d4f515479",
+  "reason": "Automatic permission review rejected the requested execution because specific new budget, payload and external destination were not clearly authorized after the prior round budget closed.",
+  "recorded_on": "2026-10-20",
+  "requested_approval": "Up to 16 serial calls to existing Codex CLI ChatGPT subscription / gpt-6.1-sol, sending only the eight public frozen development fixtures and derived analysis to generation/audit; 180s per call, 3600s/session, no paid API, tools, holdout, retries, repair or training.",
+  "scope_note": "This event records rejection before process creation, not a model attempt or execution error. Protocol authorization wording describes operator interpretation, not accepted approval; this event supersedes that interpretation for execution permission.",
+  "status": "authorization-blocked"
+}

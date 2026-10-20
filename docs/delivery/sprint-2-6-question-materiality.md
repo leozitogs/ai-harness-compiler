@@ -67,3 +67,27 @@ também registra o hash do código-fonte; não substitui os perfis completos AHC
 O incidente permanece aberto até evidência adequada; este incremento não encerra
 a história nem a sprint. Fine-tuning, qualificação e promoção não estão autorizados
 por um teste offline ou um resultado estruturalmente válido.
+
+## Execução bloqueada antes de iniciar
+
+Código e protocolo foram congelados no commit `2094624`. A revisão automática de
+permissões rejeitou a solicitação de execução antes da criação do processo:
+considerou insuficiente a autorização específica do novo orçamento, conteúdo
+enviado e destino externo, após o encerramento da rodada anterior.
+
+O [registro de estado](../evidence/sprint-2-6-v34-development-20261020/execution-status.json)
+declara `authorization-blocked`, zero chamadas e nenhum output novo. A redação
+de autorização no protocolo congelado expressa a interpretação inicial do operador;
+não constitui aprovação aceita. Este registro preserva a rejeição sem alterar
+o snapshot ou contornar o bloqueio por outro provider/processo.
+
+A proposta concreta para autorização é enviar apenas os oito inputs públicos
+congelados em `evals/understanding/v2/development-draft/` e as análises derivadas
+ao adapter existente Codex CLI/assinatura ChatGPT, modelo solicitado `gpt-6.1-sol`,
+nos limites acima. Não inclui arquivos privados do projeto nem assets. A execução
+real e o julgamento das respostas continuam pendentes; INC-0024 segue aberto.
+
+Validação local após restaurar dependências fixadas: 1.020 testes passaram sem
+skips, Ruff e tipagem aprovados. A primeira tentativa no sandbox falhou por
+permissão em temporários do Windows; a repetição completa offline com diretório
+temporário autorizado passou. Isso não é evidência de eficácia da nova receita.

@@ -1,5 +1,6 @@
 """Synthetic replay checks contract behavior, not model efficacy or human approval."""
 
+import hashlib
 import json
 from pathlib import Path
 
@@ -90,3 +91,28 @@ def test_unrecognized_recipe_fails_before_provider_call():
     with pytest.raises(ValueError, match="Unknown composition program"):
         analyze_composition(original.extraction, generator, program_version="invalid")
     assert generator.calls == []
+
+
+def test_v34_frozen_protocol_and_preexecution_rejection_are_not_a_model_result():
+    folder = ROOT / "docs/evidence/sprint-2-6-v34-development-20261020"
+    raw = (folder / "protocol.json").read_bytes()
+    protocol = json.loads(raw)
+    event = json.loads((folder / "execution-status.json").read_bytes())
+    assert event["protocol_sha256"] == hashlib.sha256(raw).hexdigest()
+    assert event["status"] == "authorization-blocked"
+    assert event["executor_started"] is False and event["calls_used"] == 0
+    assert event["model_qualification"] == "not-established"
+    assert event["compilation_eligibility"] == "not-authorized"
+    assert protocol["program_version"] == VERSION
+    assert protocol["budget"]["max_calls"] == 16
+    assert protocol["budget"]["max_concurrency"] == 1
+    assert protocol["budget"]["retries"] == protocol["budget"]["holdout_calls"] == 0
+    assert (
+        hashlib.sha256((folder / "runner-source.txt").read_bytes()).hexdigest()
+        == (protocol["runner_sha256"])
+    )
+    for row in protocol["cases"]:
+        assert (
+            composition_program_digest(saved(row["case"]).extraction, VERSION)
+            == (row["program_sha256"])
+        )

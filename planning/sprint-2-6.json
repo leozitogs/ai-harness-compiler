@@ -133,6 +133,23 @@
       "status": "exhausted-and-closed",
       "used_calls": 16,
       "human_assessment": "6 pass, 2 fail on uncertainty; candidate not promoted"
+    },
+    "corrective_development_v34": {
+      "document": "docs/delivery/sprint-2-6-question-materiality.md",
+      "holdout_calls": 0,
+      "human_assessment": "No new output and no semantic judgment; v3.3 failures unchanged.",
+      "max_call_seconds": 180,
+      "max_calls": 16,
+      "max_concurrency": 1,
+      "max_session_seconds": 3600,
+      "protocol": "docs/evidence/sprint-2-6-v34-development-20261020/protocol.json",
+      "repair_attempts": 0,
+      "repetitions": 1,
+      "retries": 0,
+      "semantic_status": "not-run",
+      "source": "Operator-proposed new standalone budget; automatic permission review rejected execution pending explicit PO approval of budget, payload and external destination.",
+      "status": "authorization-blocked",
+      "used_calls": 0
     }
   },
   "task_plan_file": "planning/sprint-2-6.tasks.json",
