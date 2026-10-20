@@ -1,0 +1,147 @@
+{
+  "reviewer": "leozitogs:po-declared",
+  "note": "PO na conversa: Aprovo os seis critérios das duas respostas. Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Não qualifica modelo ou autoriza compilação.",
+  "authority": "human-declared-not-authenticated",
+  "schema_version": "SemanticHumanReview/v3",
+  "case_sha256": "7dcbd77cafd0a7836b7a1f2fac6a361fe083606937b916588b107c35318f4fdd",
+  "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+  "analysis_sha256": "d4dca46e801c7f9f89d799226af6929fd582d847c00ec8500378b6b5c3435341",
+  "checks": [
+    {
+      "criterion": "rule-coverage",
+      "outcome": "pass",
+      "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "citation-support",
+      "outcome": "pass",
+      "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "conflict-validity",
+      "outcome": "pass",
+      "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "asset-bounds",
+      "outcome": "pass",
+      "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "uncertainty",
+      "outcome": "pass",
+      "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "project-understanding",
+      "outcome": "pass",
+      "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+    }
+  ],
+  "coverage": [
+    {
+      "obligation_id": "required-1",
+      "finding_id": "criterion-1"
+    }
+  ],
+  "finding_support": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "277dae746f71bbf3ae39eadd675ee455d3cae92e4cc2a5138aa3341fdb851be0",
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "d29c85f1f971d9b96d73abf7dffca9d90c2afe749eb80751977fde71ec7663f3",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-7"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "1a9bf07de01a3fcdc9549801f59f507d9b19e6cf9c192aaafb7dfecfee24496d",
+      "source_atom_ids": [
+        "atom-2"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "2994c0193c13156ce67d4338a710d63061c8373519baba21c0f06155d958bea2",
+      "source_atom_ids": [
+        "atom-3",
+        "atom-4"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "ff14792264221686fc516403e24ae55692f405c0b863cb1e45094e8d9cbd084d",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-9"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "7887317643fb543d305b30111b6e3479ab39c4bc4b918b188a4052460999c1ea",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-7"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-6",
+      "finding_sha256": "4300efff967c9b8117d273846c23b6893871b15870f0ac9f4847b25b780473ee",
+      "source_atom_ids": [
+        "atom-5"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-7",
+      "finding_sha256": "55b69276b5980a84f416389f6d8f87c33eeb7c31a4b4911b91bbc6a29d143ddb",
+      "source_atom_ids": [
+        "atom-6"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    }
+  ],
+  "component_support": [
+    {
+      "finding_id": "criterion-1",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+    },
+    {
+      "finding_id": "criterion-1",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+    }
+  ]
+}

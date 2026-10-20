@@ -1,7 +1,10 @@
 """Replay scoped PO judgments without qualifying the model or changing history."""
 
+import hashlib
 import json
 from pathlib import Path
+
+import pytest
 
 from ai_harness_compiler.cli import main
 from ai_harness_compiler.models.semantic_assessment_v3 import SemanticAssessmentV3, assess_v3
@@ -83,3 +86,45 @@ def test_recovered_response_acceptance_requires_its_complete_bound_review(tmp_pa
     assert assessment.compilation_eligibility == "not-authorized"
     assert assessment.model_qualification == "not-established"
     assert assess_v3(assessment.case, assessment.rubric, assessment.analysis).status == "not-run"
+
+
+@pytest.mark.parametrize(
+    ("case_id", "status"),
+    [
+        ("dev-adversarial", "pass"),
+        ("dev-ambiguous", "fail"),
+        ("dev-branding-conflict", "fail"),
+        ("dev-compatible-rules", "pass"),
+        ("dev-new-domain", "pass"),
+        ("dev-rules-a", "pass"),
+        ("dev-rules-b", "fail"),
+        ("dev-unread-assets", "pass"),
+    ],
+)
+def test_complete_development_judgments_bind_original_sources(case_id, status):
+    root = Path(__file__).resolve().parents[1]
+    manifest = json.loads(
+        (root / "docs/evidence/sprint-2-6-development-assessment-20261020/manifest.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    row = next(r for r in manifest["cases"] if r["case"] == case_id)
+    for source in [*row["sources"], row["review"], row["assessment"]]:
+        assert hashlib.sha256((root / source["path"]).read_bytes()).hexdigest() == source["sha256"]
+    assessment = SemanticAssessmentV3.model_validate_json(
+        (root / row["assessment"]["path"]).read_bytes()
+    )
+    assert assessment.status == row["status"] == status
+    assert assessment == assess_v3(
+        assessment.case, assessment.rubric, assessment.analysis, assessment.review
+    )
+    assert all(c.outcome != "not-run" for c in assessment.checks)
+    assert assessment.analysis_sha256 == row["analysis_sha256"]
+    assert assessment.compilation_eligibility == "not-authorized"
+    assert assessment.model_qualification == "not-established"
+    assert manifest["criteria_judged"] == 48
+    assert manifest["criteria_pending"] == 0
+    assert manifest["criteria_pass"] == 43
+    assert manifest["criteria_fail"] == 5
+    assert manifest["case_passes"] == 5
+    assert manifest["case_failures"] == 3

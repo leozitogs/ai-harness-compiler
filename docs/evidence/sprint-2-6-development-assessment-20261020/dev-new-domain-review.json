@@ -1,0 +1,135 @@
+{
+  "reviewer": "leozitogs:po-declared",
+  "note": "PO na conversa: Aprovo os seis critérios das duas respostas. Propósito de lanternas sensoriais, público, responsável/origem e identidade preservados, sem nicho ou aprovação extra inventados. Não qualifica modelo ou autoriza compilação.",
+  "authority": "human-declared-not-authenticated",
+  "schema_version": "SemanticHumanReview/v3",
+  "case_sha256": "670709add5aaa3d8a9bc20d0781cb87799266016de42047cd3732e7dc332ca3d",
+  "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+  "analysis_sha256": "8baff4b157478c6a6bc91fca505875990ff3e3dddb73350149faea240a897a2a",
+  "checks": [
+    {
+      "criterion": "rule-coverage",
+      "outcome": "pass",
+      "note": "Propósito de lanternas sensoriais, público, responsável/origem e identidade preservados, sem nicho ou aprovação extra inventados. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "citation-support",
+      "outcome": "pass",
+      "note": "Propósito de lanternas sensoriais, público, responsável/origem e identidade preservados, sem nicho ou aprovação extra inventados. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "conflict-validity",
+      "outcome": "pass",
+      "note": "Propósito de lanternas sensoriais, público, responsável/origem e identidade preservados, sem nicho ou aprovação extra inventados. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "asset-bounds",
+      "outcome": "pass",
+      "note": "Propósito de lanternas sensoriais, público, responsável/origem e identidade preservados, sem nicho ou aprovação extra inventados. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "uncertainty",
+      "outcome": "pass",
+      "note": "Propósito de lanternas sensoriais, público, responsável/origem e identidade preservados, sem nicho ou aprovação extra inventados. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "project-understanding",
+      "outcome": "pass",
+      "note": "Propósito de lanternas sensoriais, público, responsável/origem e identidade preservados, sem nicho ou aprovação extra inventados. Matriz específica confirmada pelo PO."
+    }
+  ],
+  "coverage": [
+    {
+      "obligation_id": "publication-origin",
+      "finding_id": "criterion-1"
+    }
+  ],
+  "finding_support": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "d3490912739dc7a6411f3286f8aabc4c791e6724bfa8a8b5fe549b71e3e4441e",
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "df071651be13dfaa0bd4289d20fdf446de9535324aad414780c4f3fb68bf0440",
+      "source_atom_ids": [
+        "atom-1"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "1a9bf07de01a3fcdc9549801f59f507d9b19e6cf9c192aaafb7dfecfee24496d",
+      "source_atom_ids": [
+        "atom-2"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "c14ec4453e2915655fc98dead495a3ab39c143d65c7151ea51d378cf27377ae6",
+      "source_atom_ids": [
+        "atom-3",
+        "atom-4"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "ff1d2dbefc7df36cf60f536d822048992443e86d49c189066ced1433312702a5",
+      "source_atom_ids": [
+        "atom-7"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "1b288c2a8a6bb932a257cda3bb62e897a6e58319f48fe5f78c57718acf4220a9",
+      "source_atom_ids": [
+        "atom-5"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-6",
+      "finding_sha256": "fcca810a9f36bf26cdffb58f3f02de27eff428f8141560061e383623b01a65ae",
+      "source_atom_ids": [
+        "atom-6"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    }
+  ],
+  "component_support": [
+    {
+      "finding_id": "criterion-1",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+    },
+    {
+      "finding_id": "criterion-1",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+    }
+  ]
+}

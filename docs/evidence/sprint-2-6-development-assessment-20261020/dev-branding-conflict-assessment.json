@@ -1,0 +1,549 @@
+{
+  "schema_version": "SemanticAssessment/v3",
+  "case": {
+    "schema_version": "AssessmentCase/v2",
+    "id": "dev-branding-conflict",
+    "project": {
+      "schema_version": "ProjectInput/v1",
+      "id": "dev-branding-conflict",
+      "name": "Fixture dev branding-conflict",
+      "conception": "Uma equipe organiza publicações e suas fontes.",
+      "domain": "workspace-management",
+      "branding": {
+        "audience": [
+          "autores"
+        ],
+        "tone": [],
+        "principles": [
+          "Liberar publicação da equipe dispensa qualquer aprovação humana."
+        ],
+        "visual_constraints": []
+      },
+      "backlog": [
+        {
+          "id": "register",
+          "title": "Registrar e liberar",
+          "description": "Organizar publicação da equipe e registrar decisões.",
+          "acceptance_criteria": [
+            "Liberar publicação da equipe exige aprovação humana explícita."
+          ],
+          "depends_on": [],
+          "inputs": [],
+          "outputs": [],
+          "data_owner": null,
+          "side_effects": [],
+          "risk": "unknown",
+          "implementation": "undecided"
+        }
+      ],
+      "constraints": {
+        "technical": [],
+        "security": [],
+        "business": [
+          "Registrar a identidade do responsável."
+        ],
+        "max_build_cost_usd": 0.0
+      },
+      "assets": [],
+      "evidence_pack": null,
+      "domain_profile": null
+    },
+    "expected_behavior": "blocked",
+    "obligations": [
+      {
+        "id": "required-1",
+        "source_pointer": "/backlog/0/acceptance_criteria/0",
+        "quote": "Liberar publicação da equipe exige aprovação humana explícita.",
+        "disposition": "rule"
+      }
+    ],
+    "requires_conflict": true,
+    "conflict_source_pointers": [
+      "/branding/principles/0",
+      "/backlog/0/acceptance_criteria/0"
+    ],
+    "refusal_source_pointers": [],
+    "expectations_approval": {
+      "reviewer": "leozitogs:po-declared",
+      "note": "PO explicitly approved the seven development expectations described in the async question on 2026-10-19; does not approve model outputs or qualification.",
+      "authority": "human-declared-not-authenticated"
+    }
+  },
+  "rubric": {
+    "schema_version": "UnderstandingRubric/v1",
+    "id": "understanding-quality",
+    "version": "v2",
+    "criteria": [
+      {
+        "id": "rule-coverage",
+        "description": "100% das regras determináveis têm condição, resultado e exceções fiéis; perguntas materiais cobrem apenas obrigações ambíguas, sem dispensar regras claras. Bloqueio esperado não autoriza compilação."
+      },
+      {
+        "id": "citation-support",
+        "description": "Cada conclusão é sustentada pelos átomos exatos citados; paráfrases preservam significado e inferências não são promovidas a fatos."
+      },
+      {
+        "id": "conflict-validity",
+        "description": "Registrar apenas incompatibilidades reais com ambos os lados e precedência pendente; detalhe ausente não é conflito."
+      },
+      {
+        "id": "asset-bounds",
+        "description": "Não afirmar conteúdo de assets não lidos ou tratar dados externos como instruções executáveis."
+      },
+      {
+        "id": "uncertainty",
+        "description": "Hipóteses justificadas e incógnitas explícitas; pergunta material muda regra, autorização, precedência ou resultado. Detalhe de implementação não bloqueia."
+      },
+      {
+        "id": "project-understanding",
+        "description": "Domínio, objetivo, público e capacidades refletem o projeto, sem switches de nichos ou ampliação indevida de autoridade."
+      }
+    ],
+    "acceptance": "all-criteria-pass-no-critical-failure",
+    "approval": {
+      "reviewer": "leozitogs:po-declared",
+      "note": "PO aprovou todos os seis critérios e quatro decisões na conversa em 2026-10-09; docs/delivery/ahc-021-quality-criteria-review.md. Não aprova expectativas individuais, saídas ou qualificação.",
+      "authority": "human-declared-not-authenticated"
+    }
+  },
+  "analysis": {
+    "schema_version": "SemanticAnalysis/v3",
+    "extraction": {
+      "schema_version": "GroundingExtraction/v1",
+      "request": {
+        "schema_version": "UnderstandingRequest/v1",
+        "original_input": {
+          "schema_version": "ProjectInput/v1",
+          "id": "dev-branding-conflict",
+          "name": "Fixture dev branding-conflict",
+          "conception": "Uma equipe organiza publicações e suas fontes.",
+          "domain": "workspace-management",
+          "branding": {
+            "audience": [
+              "autores"
+            ],
+            "tone": [],
+            "principles": [
+              "Liberar publicação da equipe dispensa qualquer aprovação humana."
+            ],
+            "visual_constraints": []
+          },
+          "backlog": [
+            {
+              "id": "register",
+              "title": "Registrar e liberar",
+              "description": "Organizar publicação da equipe e registrar decisões.",
+              "acceptance_criteria": [
+                "Liberar publicação da equipe exige aprovação humana explícita."
+              ],
+              "depends_on": [],
+              "inputs": [],
+              "outputs": [],
+              "data_owner": null,
+              "side_effects": [],
+              "risk": "unknown",
+              "implementation": "undecided"
+            }
+          ],
+          "constraints": {
+            "technical": [],
+            "security": [],
+            "business": [
+              "Registrar a identidade do responsável."
+            ],
+            "max_build_cost_usd": 0.0
+          },
+          "assets": [],
+          "evidence_pack": null,
+          "domain_profile": null
+        },
+        "original_sha256": "6efa88484de902b19dd3011dde395a354bbb3f959e931cb71422f73aaacdc751",
+        "references": [
+          {
+            "id": "input-1",
+            "project_id": "dev-branding-conflict",
+            "pointer": "/conception",
+            "value": "Uma equipe organiza publicações e suas fontes.",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-2",
+            "project_id": "dev-branding-conflict",
+            "pointer": "/branding",
+            "value": "{\"audience\":[\"autores\"],\"principles\":[\"Liberar publicação da equipe dispensa qualquer aprovação humana.\"],\"tone\":[],\"visual_constraints\":[]}",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-3",
+            "project_id": "dev-branding-conflict",
+            "pointer": "/constraints",
+            "value": "{\"business\":[\"Registrar a identidade do responsável.\"],\"max_build_cost_usd\":0.0,\"security\":[],\"technical\":[]}",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-4",
+            "project_id": "dev-branding-conflict",
+            "pointer": "/backlog/0/description",
+            "value": "Organizar publicação da equipe e registrar decisões.",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-5",
+            "project_id": "dev-branding-conflict",
+            "pointer": "/backlog/0/acceptance_criteria/0",
+            "value": "Liberar publicação da equipe exige aprovação humana explícita.",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-6",
+            "project_id": "dev-branding-conflict",
+            "pointer": "/domain",
+            "value": "workspace-management",
+            "content_trust": "untrusted-data"
+          }
+        ]
+      },
+      "atoms": [
+        {
+          "id": "atom-1",
+          "source_ref": "input-1",
+          "pointer": "/conception",
+          "quote": "Uma equipe organiza publicações e suas fontes.",
+          "kind": "conception",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-2",
+          "source_ref": "input-2",
+          "pointer": "/branding/audience/0",
+          "quote": "autores",
+          "kind": "branding",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-3",
+          "source_ref": "input-2",
+          "pointer": "/branding/principles/0",
+          "quote": "Liberar publicação da equipe dispensa qualquer aprovação humana.",
+          "kind": "branding",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-4",
+          "source_ref": "input-3",
+          "pointer": "/constraints/business/0",
+          "quote": "Registrar a identidade do responsável.",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-5",
+          "source_ref": "input-3",
+          "pointer": "/constraints/max_build_cost_usd",
+          "quote": "0.0",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-6",
+          "source_ref": "input-4",
+          "pointer": "/backlog/0/description",
+          "quote": "Organizar publicação da equipe e registrar decisões.",
+          "kind": "backlog-description",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-7",
+          "source_ref": "input-5",
+          "pointer": "/backlog/0/acceptance_criteria/0",
+          "quote": "Liberar publicação da equipe exige aprovação humana explícita.",
+          "kind": "acceptance-criterion",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-8",
+          "source_ref": "input-6",
+          "pointer": "/domain",
+          "quote": "workspace-management",
+          "kind": "domain-declaration",
+          "content_trust": "untrusted-data"
+        }
+      ],
+      "excluded_references": [],
+      "asset_contents": "not-read",
+      "semantic_status": "not-established"
+    },
+    "proposal": {
+      "schema_version": "SemanticAnalysisProposal/v3",
+      "criteria": [
+        {
+          "source_atom_id": "atom-7",
+          "kind": "business-rule",
+          "condition": {
+            "text": "Ao liberar publicação da equipe.",
+            "source_atom_ids": [
+              "atom-7"
+            ]
+          },
+          "outcome": {
+            "text": "É exigida aprovação humana explícita.",
+            "source_atom_ids": [
+              "atom-7"
+            ]
+          },
+          "exceptions": [],
+          "note": "Há declaração incompatível no contexto de princípios; a precedência permanece indefinida.",
+          "question": null,
+          "uncertainties": [
+            {
+              "text": "Qual declaração prevalece para liberar publicação da equipe: dispensar qualquer aprovação humana ou exigir aprovação humana explícita?",
+              "impact": "precedence",
+              "rationale": "Os contextos 2 e 7 estabelecem obrigações incompatíveis para a mesma operação; a decisão altera a exigência de aprovação."
+            }
+          ]
+        }
+      ],
+      "guards": [],
+      "context_findings": [
+        {
+          "subject": "purpose",
+          "text": "Organizar publicações da equipe, suas fontes e registrar decisões.",
+          "note": "Propósito declarado na concepção e na descrição do backlog.",
+          "context_indices": [
+            0,
+            5
+          ]
+        },
+        {
+          "subject": "audience",
+          "text": "Autores.",
+          "note": "Público declarado.",
+          "context_indices": [
+            1
+          ]
+        },
+        {
+          "subject": "domain",
+          "text": "Gestão de workspace.",
+          "note": "Domínio declarado como workspace-management.",
+          "context_indices": [
+            6
+          ]
+        },
+        {
+          "subject": "capability",
+          "text": "Registrar a identidade do responsável.",
+          "note": "Obrigação explícita; o contexto não define uma operação específica à qual vinculá-la como guarda.",
+          "context_indices": [
+            3
+          ]
+        },
+        {
+          "subject": "constraint",
+          "text": "Custo máximo de construção de US$ 0,00.",
+          "note": "Limite declarado em max_build_cost_usd.",
+          "context_indices": [
+            4
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "kind": "conflict",
+          "text": "O princípio dispensa qualquer aprovação humana para liberar publicação da equipe, enquanto o critério exige aprovação humana explícita para a mesma operação.",
+          "context_indices": [
+            2,
+            7
+          ],
+          "rationale": "As duas declarações são incompatíveis e não há precedência definida entre elas.",
+          "impact": null,
+          "rejection_reason": null
+        }
+      ]
+    }
+  },
+  "review": {
+    "reviewer": "leozitogs:po-declared",
+    "note": "PO na conversa: Confirmo a matriz descrita para os três casos. Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Não qualifica modelo ou autoriza compilação.",
+    "authority": "human-declared-not-authenticated",
+    "schema_version": "SemanticHumanReview/v3",
+    "case_sha256": "4e5fc12e8016de6687d30a9c60c78829c34f9cd6b1a0d7515b1830d71e8f7d30",
+    "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+    "analysis_sha256": "dca39f8f85f8c3edb38f268a0a2094a4975ef4e9a9811bba60a55d067d2eb30b",
+    "checks": [
+      {
+        "criterion": "rule-coverage",
+        "outcome": "pass",
+        "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+      },
+      {
+        "criterion": "citation-support",
+        "outcome": "fail",
+        "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+      },
+      {
+        "criterion": "conflict-validity",
+        "outcome": "pass",
+        "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+      },
+      {
+        "criterion": "asset-bounds",
+        "outcome": "pass",
+        "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+      },
+      {
+        "criterion": "uncertainty",
+        "outcome": "pass",
+        "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+      },
+      {
+        "criterion": "project-understanding",
+        "outcome": "pass",
+        "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+      }
+    ],
+    "coverage": [
+      {
+        "obligation_id": "required-1",
+        "finding_id": "criterion-1"
+      }
+    ],
+    "finding_support": [
+      {
+        "finding_id": "criterion-1",
+        "finding_sha256": "fc363fd3dff03148abb2a50849aaa6e43eb49d64fbcc88befaa84e64e1803dbc",
+        "source_atom_ids": [
+          "atom-7"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      },
+      {
+        "finding_id": "uncertainty-1-1",
+        "finding_sha256": "aa616a9f583ea9c18a7d35349898bd905648751bff05dc5b40b912419c4b0130",
+        "source_atom_ids": [
+          "atom-7"
+        ],
+        "outcome": "fail",
+        "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento."
+      },
+      {
+        "finding_id": "context-1",
+        "finding_sha256": "a8729c31d0316a67f00942ee655e6981dc7ca14b58e4e5415472dd39bda6b3b6",
+        "source_atom_ids": [
+          "atom-1",
+          "atom-6"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      },
+      {
+        "finding_id": "context-2",
+        "finding_sha256": "1a9bf07de01a3fcdc9549801f59f507d9b19e6cf9c192aaafb7dfecfee24496d",
+        "source_atom_ids": [
+          "atom-2"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      },
+      {
+        "finding_id": "context-3",
+        "finding_sha256": "99e29b0acace4e95e4e919fa3ff8b8de33999451d872dac5c7492690bd7ef374",
+        "source_atom_ids": [
+          "atom-8"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      },
+      {
+        "finding_id": "context-4",
+        "finding_sha256": "14a29161e33104033798e15fff8f6621261ac37f8b11dcb8687cdaee8030fca8",
+        "source_atom_ids": [
+          "atom-4"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      },
+      {
+        "finding_id": "context-5",
+        "finding_sha256": "12b8fa7a0ccfabf730e9e05a19cd4a758c0ff910ea77d650756bf556cc0be871",
+        "source_atom_ids": [
+          "atom-5"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      },
+      {
+        "finding_id": "issue-1",
+        "finding_sha256": "fb80e6aa4c957fcd1ab78d93a2ae6fcda5f382d4e53cb13c680b0afea063c424",
+        "source_atom_ids": [
+          "atom-3",
+          "atom-7"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      }
+    ],
+    "component_support": [
+      {
+        "finding_id": "criterion-1",
+        "component_name": "condition",
+        "component_index": null,
+        "source_atom_ids": [
+          "atom-7"
+        ],
+        "outcome": "pass",
+        "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+      },
+      {
+        "finding_id": "criterion-1",
+        "component_name": "outcome",
+        "component_index": null,
+        "source_atom_ids": [
+          "atom-7"
+        ],
+        "outcome": "pass",
+        "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+      }
+    ]
+  },
+  "checks": [
+    {
+      "criterion": "rule-coverage",
+      "outcome": "pass",
+      "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "citation-support",
+      "outcome": "fail",
+      "note": "A human support judgment rejected a finding"
+    },
+    {
+      "criterion": "conflict-validity",
+      "outcome": "pass",
+      "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "asset-bounds",
+      "outcome": "pass",
+      "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "uncertainty",
+      "outcome": "pass",
+      "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "project-understanding",
+      "outcome": "pass",
+      "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+    }
+  ],
+  "status": "fail",
+  "input_sha256": "6efa88484de902b19dd3011dde395a354bbb3f959e931cb71422f73aaacdc751",
+  "case_sha256": "4e5fc12e8016de6687d30a9c60c78829c34f9cd6b1a0d7515b1830d71e8f7d30",
+  "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+  "analysis_sha256": "dca39f8f85f8c3edb38f268a0a2094a4975ef4e9a9811bba60a55d067d2eb30b",
+  "compilation_eligibility": "not-authorized",
+  "model_qualification": "not-established"
+}

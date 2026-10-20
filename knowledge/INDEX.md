@@ -72,10 +72,11 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0027 — Incremento funcional AHC-030 e demonstração Vera/Nexo](records/DOC/DOC-0027/0008.json) · active · revision 8
 - [DOC-0028 — Correções da review e demonstração de resolução AHC-030](records/DOC/DOC-0028/0004.json) · active · revision 4
 - [DOC-0029 — Review e encerramento da Sprint2.5.5 pelo PO](records/DOC/DOC-0029/0002.json) · active · revision 2
-- [DOC-0030 — Kickoff Sprint2.6 e auditoria offline da baseline](records/DOC/DOC-0030/0010.json) · active · revision 10
-- [DOC-0031 — Parecer Nexo sobre kickoff e pacote de revisão humana](records/DOC/DOC-0031/0008.json) · active · revision 8
-- [DOC-0032 — Adjudicação técnica consultiva dos diagnósticos de desenvolvimento](records/DOC/DOC-0032/0006.json) · active · revision 6
-- [DOC-0033 — Julgamentos específicos do PO e candidato corretivo de composição](records/DOC/DOC-0033/0006.json) · active · revision 6
+- [DOC-0030 — Kickoff Sprint2.6 e auditoria offline da baseline](records/DOC/DOC-0030/0012.json) · active · revision 12
+- [DOC-0031 — Parecer Nexo sobre kickoff e pacote de revisão humana](records/DOC/DOC-0031/0010.json) · active · revision 10
+- [DOC-0032 — Adjudicação técnica consultiva dos diagnósticos de desenvolvimento](records/DOC/DOC-0032/0008.json) · active · revision 8
+- [DOC-0033 — Julgamentos específicos do PO e candidato corretivo de composição](records/DOC/DOC-0033/0008.json) · active · revision 8
+- [DOC-0034 — Matriz humana completa de desenvolvimento com cinco aceites e três falhas](records/DOC/DOC-0034/0002.json) · active · revision 2
 - [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2
 - [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1
 - [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1
@@ -98,7 +99,8 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [INC-0019 — Constante Windows causava falha de tipagem Linux no runner QA](records/INC/INC-0019/0004.json) · verified · revision 4
 - [INC-0020 — Captura importada ocultava arquivos excluídos da inspeção](records/INC/INC-0020/0002.json) · verified · revision 2
 - [INC-0021 — Nexo omitiria bloqueios históricos pendentes na comparação](records/INC/INC-0021/0002.json) · verified · revision 2
-- [INC-0022 — Condição de identificação não sustentada pela fonte citada](records/INC/INC-0022/0002.json) · draft · revision 2
+- [INC-0022 — Condição de identificação não sustentada pela fonte citada](records/INC/INC-0022/0003.json) · draft · revision 3
+- [INC-0023 — Pergunta de precedência cita apenas um lado do conflito](records/INC/INC-0023/0001.json) · draft · revision 1
 - [LES-0001 — Tipos estáticos podem falhar em runtime](records/LES/LES-0001/0004.json) · verified · revision 4
 - [LES-0002 — Referências válidas não garantem precedência consistente](records/LES/LES-0002/0002.json) · verified · revision 2
 - [LES-0003 — Usar IDs curtos para parametrizações com payloads grandes](records/LES/LES-0003/0002.json) · verified · revision 2

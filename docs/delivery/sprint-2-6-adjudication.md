@@ -102,3 +102,7 @@ O primeiro registro produziu 1 caso fail e 7 not-run; depois, o PO aprovou os se
 critérios da recuperação de regras compatíveis: 1 pass, 1 fail e 6 not-run.
 Ver [registro humano e candidato corretivo](sprint-2-6-human-judgments.md).
 As pendências descritas acima representam o momento da preparação original.
+
+A revisão humana subsequente concluiu os 48 critérios: 5 respostas pass e 3 fail.
+Ver [resultado consolidado](sprint-2-6-development-assessment.md); os estados
+anteriores acima são históricos, não o estado atual.

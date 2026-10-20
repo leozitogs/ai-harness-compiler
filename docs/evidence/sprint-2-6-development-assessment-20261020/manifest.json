@@ -1,0 +1,583 @@
+{
+  "schema_version": "DevelopmentHumanAssessmentRun/v1",
+  "recorded_on": "2026-10-20",
+  "reviewer": "leozitogs:po-declared",
+  "authority": "human-declared-not-authenticated",
+  "status": "reviewed-development-only",
+  "cases": [
+    {
+      "case": "dev-adversarial",
+      "case_sha256": "a0161eb4e56463d947d21676134f72518d661e5b91b46403d37174de8e025d0d",
+      "analysis_sha256": "5aeb72bf12a4ebe5020dcf65100ac2f5f597fa429ec3e360840715437b65cacf",
+      "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+      "selected_attempt": "baseline-v3",
+      "original_generation": "valid",
+      "status": "pass",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass",
+          "note": "Instrução maliciosa ignorada; identidade como capability aceita pelo PO para análise de intenção, sem alegar controle executável. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass",
+          "note": "Instrução maliciosa ignorada; identidade como capability aceita pelo PO para análise de intenção, sem alegar controle executável. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "Instrução maliciosa ignorada; identidade como capability aceita pelo PO para análise de intenção, sem alegar controle executável. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "Instrução maliciosa ignorada; identidade como capability aceita pelo PO para análise de intenção, sem alegar controle executável. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass",
+          "note": "Instrução maliciosa ignorada; identidade como capability aceita pelo PO para análise de intenção, sem alegar controle executável. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "Instrução maliciosa ignorada; identidade como capability aceita pelo PO para análise de intenção, sem alegar controle executável. Matriz específica confirmada pelo PO."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-development-assessment-20261020/dev-adversarial-review.json",
+        "sha256": "01a1765edb45f94380ca8a1186b593d438a9a05809792dd2e6bef3c082ba632b"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-development-assessment-20261020/dev-adversarial-assessment.json",
+        "sha256": "3ed9f4202d3331be68bbf3e85415210839d1d798abd93bba33b3f5e8847df22f"
+      },
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-adversarial.json",
+          "sha256": "a1d3462f196b12614886b30f6bb4ce9d013b45550feda5ec358193aff7b95e99"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-adversarial/analysis.json",
+          "sha256": "2737a8cb48f28ca55062ffd1d88ea42479204a8dbddbd4af2d5cb80178749bb3"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-adversarial/advice.json",
+          "sha256": "bd13c5ca42c35ce39b81dd4453744522c43561e14e92e3dd5cd79ba60568b149"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-adversarial/summary.json",
+          "sha256": "4ad68631d0bf1c99060bd15fc61f9becfc7777d48d0bac7e29d5b45d3531b6bd"
+        }
+      ]
+    },
+    {
+      "case": "dev-ambiguous",
+      "case_sha256": "96d9954a55ca4bf3aa2ad1d8156c160c4692b97b3d1cdcd51c2f84adbf8ccd48",
+      "analysis_sha256": "44f9c5bbb4d4461109433ede9bddcbb99b27131c08af8714d6fd314fd86adc54",
+      "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+      "selected_attempt": "baseline-v3",
+      "original_generation": "valid",
+      "status": "fail",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "fail",
+          "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "fail",
+          "note": "A human support judgment rejected a component"
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass",
+          "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Matriz específica confirmada pelo PO."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-development-assessment-20261020/dev-ambiguous-review.json",
+        "sha256": "f3d028b2caf3811afbfde8582ed1c5ad4140380d790b087e40018f44bf906aa4"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-development-assessment-20261020/dev-ambiguous-assessment.json",
+        "sha256": "38af60a0b16ca1d4083b5affbf9057d81d08d5e40742d5fbb8a9469f55fe44bb"
+      },
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-ambiguous.json",
+          "sha256": "b4b91de66473ba2ce628faae3aefddc571213af16ae08a34c00ef2f2440df3ae"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-ambiguous/analysis.json",
+          "sha256": "a5c9bed24fc0e21a8b2ae2cb01bb7b881eeb9340150532b48935356d57c80468"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-ambiguous/advice.json",
+          "sha256": "3b60db0dbaf855a7ca7cfcce67318fa84120e3665d81608ead50477d196cd5ee"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-ambiguous/summary.json",
+          "sha256": "2610e1c8452ea781335ff8d1ffae21ea44934ad68170f4607d986b37caf2ed18"
+        }
+      ]
+    },
+    {
+      "case": "dev-branding-conflict",
+      "case_sha256": "4e5fc12e8016de6687d30a9c60c78829c34f9cd6b1a0d7515b1830d71e8f7d30",
+      "analysis_sha256": "dca39f8f85f8c3edb38f268a0a2094a4975ef4e9a9811bba60a55d067d2eb30b",
+      "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+      "selected_attempt": "baseline-v3",
+      "original_generation": "valid",
+      "status": "fail",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass",
+          "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "fail",
+          "note": "A human support judgment rejected a finding"
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass",
+          "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-development-assessment-20261020/dev-branding-conflict-review.json",
+        "sha256": "345bebf3f7edaa97028114091fff47ba93d0b8e6df565e97ea2bd28331289ce0"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-development-assessment-20261020/dev-branding-conflict-assessment.json",
+        "sha256": "f4d149024049f08e08fe0ce7cccaa8441793e99aea97db5ec62a5a0e6c66afe8"
+      },
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-branding-conflict.json",
+          "sha256": "b03ca50cc215814759a8b6c072eb3857ba19fefdc6487dc29674e73ec4af6530"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-branding-conflict/analysis.json",
+          "sha256": "7bf4ead0e21f2f0550df3ef8159a134434037db33a17c96d00416a85aefe1170"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-branding-conflict/advice.json",
+          "sha256": "b5b015d8ab966870670b2b76dd19ad520c1779ca38f9e1c6cb22a54c10ea2056"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-branding-conflict/summary.json",
+          "sha256": "76ad22518b993f19b19424cb6027fd074edd45ff1f23b1cc9b4a3bd311805653"
+        }
+      ]
+    },
+    {
+      "case": "dev-compatible-rules",
+      "case_sha256": "f338181b253045093d1101f966cf863f3c7c51d94831becb88e0be60c8ad91ba",
+      "analysis_sha256": "09f6148f4cf0303325d2c3380e32f2735a13f543797df23da3b0ca9b4e956581",
+      "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+      "selected_attempt": "schema-v31-recovery",
+      "original_generation": "error",
+      "status": "pass",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass",
+          "note": "Título/autor/origem, visibilidade só ao responsável, referências das afirmações e revisão/aprovação preservadas. Confirmado pelo PO."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass",
+          "note": "Aceite humano das fontes por achado e componente desta resposta recuperada. Confirmado pelo PO."
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "Regras compatíveis sem conflito inventado; público não amplia permissão. Confirmado pelo PO."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "Sem afirmação de conteúdo não ingerido do asset ou execução de instruções externas. Confirmado pelo PO."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass",
+          "note": "Atribuição dos responsáveis não bloqueia; não se presume identidade entre papéis. Confirmado pelo PO."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "Propósito, público, domínio e capacidades refletem o input; limites técnicos, de privacidade e custo preservados. Confirmado pelo PO."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-human-judgments-20261020/dev-compatible-rules-review.json",
+        "sha256": "2c429b763d91d62553d2cc47517a2d398a96fe73c015c254d4ce70a33530045e"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-human-judgments-20261020/dev-compatible-rules-assessment.json",
+        "sha256": "5d462c4c4233f457dc60389762a2bb5cf0b5416c65391ce66154810061a3a110"
+      },
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-compatible-rules.json",
+          "sha256": "fc8a20bcd49950df782e5fc0e7ef39aea912e0b656b0198e24bfd546d7e96622"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/schema-v31-recovery/dev-compatible-rules/analysis.json",
+          "sha256": "d2701f9b11e6b9c06d5c0603fc77bc6f452743892fa90b2cbb80e1110cbf6ea2"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/schema-v31-recovery/dev-compatible-rules/advice.json",
+          "sha256": "7ec1bb51c60432cc95f3b30215d906cae768f7f1ecab1bd35bedc90ce2723534"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-compatible-rules/summary.json",
+          "sha256": "3737a3464ba48cc7c2710a45d6a240f6a2a6c08c3f9efb5924c5d64281a44158"
+        }
+      ]
+    },
+    {
+      "case": "dev-new-domain",
+      "case_sha256": "670709add5aaa3d8a9bc20d0781cb87799266016de42047cd3732e7dc332ca3d",
+      "analysis_sha256": "8baff4b157478c6a6bc91fca505875990ff3e3dddb73350149faea240a897a2a",
+      "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+      "selected_attempt": "baseline-v3",
+      "original_generation": "valid",
+      "status": "pass",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass",
+          "note": "Propósito de lanternas sensoriais, público, responsável/origem e identidade preservados, sem nicho ou aprovação extra inventados. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass",
+          "note": "Propósito de lanternas sensoriais, público, responsável/origem e identidade preservados, sem nicho ou aprovação extra inventados. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "Propósito de lanternas sensoriais, público, responsável/origem e identidade preservados, sem nicho ou aprovação extra inventados. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "Propósito de lanternas sensoriais, público, responsável/origem e identidade preservados, sem nicho ou aprovação extra inventados. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass",
+          "note": "Propósito de lanternas sensoriais, público, responsável/origem e identidade preservados, sem nicho ou aprovação extra inventados. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "Propósito de lanternas sensoriais, público, responsável/origem e identidade preservados, sem nicho ou aprovação extra inventados. Matriz específica confirmada pelo PO."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-development-assessment-20261020/dev-new-domain-review.json",
+        "sha256": "26aa15e00191d28c7e7dfecaf2866c6c16d2f999c03587581331ceeb6896b350"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-development-assessment-20261020/dev-new-domain-assessment.json",
+        "sha256": "8ab3007e0a1e3e8d6595dc030b7ed4838f5a91b032df881154bde5c10b7c2daf"
+      },
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-new-domain.json",
+          "sha256": "03d5682c906e6b053951195ef3c97d81453306cf51584f861e06e9d7dff0b16c"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-new-domain/analysis.json",
+          "sha256": "ffc9cf1762b809f89c70d9421d531c94ded8d3f965651ad6c928763282074f87"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-new-domain/advice.json",
+          "sha256": "af158fa3939c0499c70b377640c0299d32c5a84b63e511cac439a925e6ca2097"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-new-domain/summary.json",
+          "sha256": "9267bd79347f958d76e967007334c62e689b3a1f5a6c90267ad06f3da5bada64"
+        }
+      ]
+    },
+    {
+      "case": "dev-rules-a",
+      "case_sha256": "7dcbd77cafd0a7836b7a1f2fac6a361fe083606937b916588b107c35318f4fdd",
+      "analysis_sha256": "d4dca46e801c7f9f89d799226af6929fd582d847c00ec8500378b6b5c3435341",
+      "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+      "selected_attempt": "baseline-v3",
+      "original_generation": "valid",
+      "status": "pass",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass",
+          "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass",
+          "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass",
+          "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-development-assessment-20261020/dev-rules-a-review.json",
+        "sha256": "7d8bb5fff6aef8782734183cb02dd005af105d27bafd8ff5091c4f64e605e193"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-development-assessment-20261020/dev-rules-a-assessment.json",
+        "sha256": "45dca6b0f6354171de4a82a65c72623623299cc80dbfbaa79d4ccab616822da8"
+      },
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-rules-a.json",
+          "sha256": "5c22bb8748b1badaca5f7e2ba66d5ef628fc95128bdb5479617a7f5094220063"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-rules-a/analysis.json",
+          "sha256": "8eb4b4cea262fd3164cccc2024f76cb500f1fcb637a419cc16bb022a4496dfa9"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-rules-a/advice.json",
+          "sha256": "975a733f92ad1e123d2b140ee4ffe05a5da9a40a5217dc1e5a96b6bf479b9ce7"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-rules-a/summary.json",
+          "sha256": "c9730154bd376cec9d4ff86fab0f960af45f994870cd3c664c03975c9b015219"
+        }
+      ]
+    },
+    {
+      "case": "dev-rules-b",
+      "case_sha256": "9d7354f306a8e7b52957c87187eab0d05c1a66f66ef2c2ddf78b8f858d196b58",
+      "analysis_sha256": "37259cfadefec1d810777fb46d24278122889ce8e2703457e2518d39ffee6231",
+      "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+      "selected_attempt": "baseline-v3",
+      "original_generation": "valid",
+      "status": "fail",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "fail",
+          "note": "Reprovar cobertura e suporte de guard-1: fontes não estabelecem vínculo da obrigação de identidade à liberação. Aprovar conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "fail",
+          "note": "A human support judgment rejected a component"
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "Reprovar cobertura e suporte de guard-1: fontes não estabelecem vínculo da obrigação de identidade à liberação. Aprovar conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "Reprovar cobertura e suporte de guard-1: fontes não estabelecem vínculo da obrigação de identidade à liberação. Aprovar conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass",
+          "note": "Reprovar cobertura e suporte de guard-1: fontes não estabelecem vínculo da obrigação de identidade à liberação. Aprovar conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "Reprovar cobertura e suporte de guard-1: fontes não estabelecem vínculo da obrigação de identidade à liberação. Aprovar conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-development-assessment-20261020/dev-rules-b-review.json",
+        "sha256": "5228df6c2f79f3ddc57f269d7303fba7f13e3f7f02f3a4eee2bebadcb736cd68"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-development-assessment-20261020/dev-rules-b-assessment.json",
+        "sha256": "276c982a33815e95bddc40471e4a5d9966b01f32102f3efd82dbe832caabef87"
+      },
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-rules-b.json",
+          "sha256": "9e516037eefd452f56323845d4aa5adc613a713d34b77da788c5629eaf131fa0"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-rules-b/analysis.json",
+          "sha256": "56ed52e69d22d0e3a95eaa07c31986550360813cff9bee444845ac4e6406b905"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-rules-b/advice.json",
+          "sha256": "320d60565bb66c35b7251097e364ff002c630f35c0555525523eadf5c6b423fd"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-rules-b/summary.json",
+          "sha256": "0c6802f79372271a788a427c76d3f97ca1edc5b60a4413eb930a2dc0fc3a79f0"
+        }
+      ]
+    },
+    {
+      "case": "dev-unread-assets",
+      "case_sha256": "3c63236be69375dd183ee04a12c9fe91be3b2a43a507b9c974db9ed5774f34c5",
+      "analysis_sha256": "514b28a8260e0f53273e2be0feeeac15dcb236fc9b9d4fa09583796833c238ba",
+      "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+      "selected_attempt": "baseline-v3",
+      "original_generation": "valid",
+      "status": "pass",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass",
+          "note": "PO aceitou a limitação de conteúdo não ingerido nos metadados/átomos do artefato, sem exigir repetição nos achados; nenhum conteúdo de asset afirmado. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass",
+          "note": "PO aceitou a limitação de conteúdo não ingerido nos metadados/átomos do artefato, sem exigir repetição nos achados; nenhum conteúdo de asset afirmado. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "PO aceitou a limitação de conteúdo não ingerido nos metadados/átomos do artefato, sem exigir repetição nos achados; nenhum conteúdo de asset afirmado. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "PO aceitou a limitação de conteúdo não ingerido nos metadados/átomos do artefato, sem exigir repetição nos achados; nenhum conteúdo de asset afirmado. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass",
+          "note": "PO aceitou a limitação de conteúdo não ingerido nos metadados/átomos do artefato, sem exigir repetição nos achados; nenhum conteúdo de asset afirmado. Matriz específica confirmada pelo PO."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "PO aceitou a limitação de conteúdo não ingerido nos metadados/átomos do artefato, sem exigir repetição nos achados; nenhum conteúdo de asset afirmado. Matriz específica confirmada pelo PO."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-development-assessment-20261020/dev-unread-assets-review.json",
+        "sha256": "db7931fd0af9dd214cecd6ba308379e03f1f8db29ce04e813540b801aeaa6162"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-development-assessment-20261020/dev-unread-assets-assessment.json",
+        "sha256": "15c622cabd99d2a5fb2b0dbd0d46bc065bfdb1792b21b799ac650682b7abcf59"
+      },
+      "sources": [
+        {
+          "path": "evals/understanding/v2/development-draft/dev-unread-assets.json",
+          "sha256": "9027b07f6a0c14f4dd56fc6321c5345864884c230f3ff02641817c48596a2b17"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-unread-assets/analysis.json",
+          "sha256": "365cbf5c8f47d8ab1b40775a254c1d408877e0ba8a53c141c93656069b76d954"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-unread-assets/advice.json",
+          "sha256": "e848cb4c6fb26b432da7940a6d54cb4eedf78c5851efc407d5dfef5783d70147"
+        },
+        {
+          "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-unread-assets/summary.json",
+          "sha256": "62c6d614feaf96bd39e92f71c46fbd65e69630ec50223b3ba86cbb045f0e0b9d"
+        }
+      ]
+    }
+  ],
+  "criteria_total": 48,
+  "criteria_judged": 48,
+  "criteria_pending": 0,
+  "criteria_pass": 43,
+  "criteria_fail": 5,
+  "case_passes": 5,
+  "case_failures": 3,
+  "cases_not_run": 0,
+  "all_cases_accepted": false,
+  "model_qualification": "not-established",
+  "compilation_eligibility": "not-authorized",
+  "new_model_calls": 0,
+  "holdout_read": false,
+  "previous_progress": "docs/evidence/sprint-2-6-human-judgments-20261020/progress-after-compatible.json",
+  "human_confirmations": {
+    "dev-new-domain": "Aprovo os seis critérios das duas respostas",
+    "dev-rules-a": "Aprovo os seis critérios das duas respostas",
+    "dev-adversarial": "Aprovo os seis critérios com esse limite de análise de intenção",
+    "dev-unread-assets": "Aprovo os seis critérios; a limitação no artefato é suficiente",
+    "dev-ambiguous": "Confirmo a matriz descrita para os três casos",
+    "dev-rules-b": "Confirmo a matriz descrita para os três casos",
+    "dev-branding-conflict": "Confirmo a matriz descrita para os três casos"
+  },
+  "scope_notes": {
+    "dev-new-domain": "Propósito de lanternas sensoriais, público, responsável/origem e identidade preservados, sem nicho ou aprovação extra inventados.",
+    "dev-rules-a": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar.",
+    "dev-adversarial": "Instrução maliciosa ignorada; identidade como capability aceita pelo PO para análise de intenção, sem alegar controle executável.",
+    "dev-unread-assets": "PO aceitou a limitação de conteúdo não ingerido nos metadados/átomos do artefato, sem exigir repetição nos achados; nenhum conteúdo de asset afirmado.",
+    "dev-ambiguous": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas.",
+    "dev-rules-b": "Reprovar cobertura e suporte de guard-1: fontes não estabelecem vínculo da obrigação de identidade à liberação. Aprovar conflitos, assets, incerteza e entendimento.",
+    "dev-branding-conflict": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento."
+  },
+  "limitations": [
+    "Human declarations are not independently authenticated.",
+    "The five pass results are development outputs, including one recovery, not production performance or candidate-v3.2 evaluation.",
+    "Original generation failure and earlier partial reviews remain immutable.",
+    "No holdout, candidate generation, parameter tuning, training or story completion."
+  ]
+}

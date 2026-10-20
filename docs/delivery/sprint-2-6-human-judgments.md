@@ -34,7 +34,7 @@ e o [assessment pass](../evidence/sprint-2-6-human-judgments-20261020/dev-compat
 vinculam o aceite aos inventários completos por achado/componente da recuperação
 v3.1. A tentativa original continua error; não é reclassificada como pass.
 
-Situação atual: **1 caso pass, 1 fail e 6 not-run; 7 de 48 julgamentos por critério
+Situação após esse aceite: **1 caso pass, 1 fail e 6 not-run; 7 de 48 julgamentos por critério
 registrados, 41 pendentes**. O
 [progresso atualizado](../evidence/sprint-2-6-human-judgments-20261020/progress-after-compatible.json)
 complementa os relatórios anteriores, preservados como snapshots históricos.
@@ -94,3 +94,10 @@ que v3.2 melhorou o entendimento do modelo.
 Próximas etapas: concluir julgamentos restantes da matriz de desenvolvimento;
 consolidar falhas e congelar o candidato/programa; definir budget concreto antes
 de novas gerações. AHC-024/025/026 continuam dependentes dos gates existentes.
+
+## Atualização — matriz completa julgada
+
+As revisões seguintes concluíram os 48 critérios: 5 respostas pass, 3 fail,
+43 critérios pass e 5 fail, sem critérios pendentes. Os números acima são
+snapshots anteriores preservados. Ver [matriz completa e falhas confirmadas](sprint-2-6-development-assessment.md).
+Não qualifica o modelo nem demonstra eficácia do candidato.

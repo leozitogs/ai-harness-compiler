@@ -1,0 +1,138 @@
+{
+  "reviewer": "leozitogs:po-declared",
+  "note": "PO na conversa: Aprovo os seis critérios; a limitação no artefato é suficiente. PO aceitou a limitação de conteúdo não ingerido nos metadados/átomos do artefato, sem exigir repetição nos achados; nenhum conteúdo de asset afirmado. Não qualifica modelo ou autoriza compilação.",
+  "authority": "human-declared-not-authenticated",
+  "schema_version": "SemanticHumanReview/v3",
+  "case_sha256": "3c63236be69375dd183ee04a12c9fe91be3b2a43a507b9c974db9ed5774f34c5",
+  "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+  "analysis_sha256": "514b28a8260e0f53273e2be0feeeac15dcb236fc9b9d4fa09583796833c238ba",
+  "checks": [
+    {
+      "criterion": "rule-coverage",
+      "outcome": "pass",
+      "note": "PO aceitou a limitação de conteúdo não ingerido nos metadados/átomos do artefato, sem exigir repetição nos achados; nenhum conteúdo de asset afirmado. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "citation-support",
+      "outcome": "pass",
+      "note": "PO aceitou a limitação de conteúdo não ingerido nos metadados/átomos do artefato, sem exigir repetição nos achados; nenhum conteúdo de asset afirmado. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "conflict-validity",
+      "outcome": "pass",
+      "note": "PO aceitou a limitação de conteúdo não ingerido nos metadados/átomos do artefato, sem exigir repetição nos achados; nenhum conteúdo de asset afirmado. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "asset-bounds",
+      "outcome": "pass",
+      "note": "PO aceitou a limitação de conteúdo não ingerido nos metadados/átomos do artefato, sem exigir repetição nos achados; nenhum conteúdo de asset afirmado. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "uncertainty",
+      "outcome": "pass",
+      "note": "PO aceitou a limitação de conteúdo não ingerido nos metadados/átomos do artefato, sem exigir repetição nos achados; nenhum conteúdo de asset afirmado. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "project-understanding",
+      "outcome": "pass",
+      "note": "PO aceitou a limitação de conteúdo não ingerido nos metadados/átomos do artefato, sem exigir repetição nos achados; nenhum conteúdo de asset afirmado. Matriz específica confirmada pelo PO."
+    }
+  ],
+  "coverage": [
+    {
+      "obligation_id": "required-1",
+      "finding_id": "criterion-1"
+    }
+  ],
+  "finding_support": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "4ea1d7249e7a2be4d6c9cd80a76e52b626e7354463928148c3bc1b132547bd82",
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "271e1b80eac6a986d15032888e12c44fb3eb2698ef104afd05c31fd7b7249d75",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-7"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "1a9bf07de01a3fcdc9549801f59f507d9b19e6cf9c192aaafb7dfecfee24496d",
+      "source_atom_ids": [
+        "atom-2"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "2a67a7c3cf82c4b9859d0531ce27334194e5ed91f0a36db6deb4a9179448d057",
+      "source_atom_ids": [
+        "atom-3",
+        "atom-4"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "61370b2b73be87e707b72b236fb08e95db913d030e430e780b14cf88639e2082",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-9"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "4084935072d4172f67d744be65bb2acfd3e579950f583a98f32e2c62d0534f24",
+      "source_atom_ids": [
+        "atom-5",
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-6",
+      "finding_sha256": "3a9258b46d53ffaf05ac70dba3fd5debb4d2f51defcbd3bcc546cf13c6b06d13",
+      "source_atom_ids": [
+        "atom-6"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    }
+  ],
+  "component_support": [
+    {
+      "finding_id": "criterion-1",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+    },
+    {
+      "finding_id": "criterion-1",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+    }
+  ]
+}

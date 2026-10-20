@@ -1,0 +1,158 @@
+{
+  "reviewer": "leozitogs:po-declared",
+  "note": "PO na conversa: Confirmo a matriz descrita para os três casos. Reprovar cobertura e suporte de guard-1: fontes não estabelecem vínculo da obrigação de identidade à liberação. Aprovar conflitos, assets, incerteza e entendimento. Não qualifica modelo ou autoriza compilação.",
+  "authority": "human-declared-not-authenticated",
+  "schema_version": "SemanticHumanReview/v3",
+  "case_sha256": "9d7354f306a8e7b52957c87187eab0d05c1a66f66ef2c2ddf78b8f858d196b58",
+  "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+  "analysis_sha256": "37259cfadefec1d810777fb46d24278122889ce8e2703457e2518d39ffee6231",
+  "checks": [
+    {
+      "criterion": "rule-coverage",
+      "outcome": "fail",
+      "note": "Reprovar cobertura e suporte de guard-1: fontes não estabelecem vínculo da obrigação de identidade à liberação. Aprovar conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "citation-support",
+      "outcome": "fail",
+      "note": "Reprovar cobertura e suporte de guard-1: fontes não estabelecem vínculo da obrigação de identidade à liberação. Aprovar conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "conflict-validity",
+      "outcome": "pass",
+      "note": "Reprovar cobertura e suporte de guard-1: fontes não estabelecem vínculo da obrigação de identidade à liberação. Aprovar conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "asset-bounds",
+      "outcome": "pass",
+      "note": "Reprovar cobertura e suporte de guard-1: fontes não estabelecem vínculo da obrigação de identidade à liberação. Aprovar conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "uncertainty",
+      "outcome": "pass",
+      "note": "Reprovar cobertura e suporte de guard-1: fontes não estabelecem vínculo da obrigação de identidade à liberação. Aprovar conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "project-understanding",
+      "outcome": "pass",
+      "note": "Reprovar cobertura e suporte de guard-1: fontes não estabelecem vínculo da obrigação de identidade à liberação. Aprovar conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+    }
+  ],
+  "coverage": [
+    {
+      "obligation_id": "required-1",
+      "finding_id": "criterion-1"
+    }
+  ],
+  "finding_support": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "0f2d267cdb549ec08cef5f6935430207b66f1b6928ebd8ced9973b6021ce530b",
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "guard-1",
+      "finding_sha256": "a853ea90ae31cf7416b075486072fd99db7c6679ca89bde0882b105db90b74cd",
+      "source_atom_ids": [
+        "atom-8",
+        "atom-5"
+      ],
+      "outcome": "fail",
+      "note": "Reprovar cobertura e suporte de guard-1: fontes não estabelecem vínculo da obrigação de identidade à liberação. Aprovar conflitos, assets, incerteza e entendimento."
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "08e91a55aae4a17ce9282c98a1e5334729ee9eb4d7c978cf98c794df2d60900d",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-7"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "1a9bf07de01a3fcdc9549801f59f507d9b19e6cf9c192aaafb7dfecfee24496d",
+      "source_atom_ids": [
+        "atom-2"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "8a15dd59cbc86afbc2bb79a0e64a1b0a5f7a51e1704ccacce8e682998117c95a",
+      "source_atom_ids": [
+        "atom-3",
+        "atom-4"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "be9f664fe999dee7e7774748e40fefe51f97bb11b5efaa227661fba7d933561f",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-9"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "f32deeeb187eed27af4de7189d53994a520a442e0aa1bc807fbc837848cb0e2e",
+      "source_atom_ids": [
+        "atom-6"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    }
+  ],
+  "component_support": [
+    {
+      "finding_id": "criterion-1",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+    },
+    {
+      "finding_id": "criterion-1",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+    },
+    {
+      "finding_id": "guard-1",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "outcome": "fail",
+      "note": "Reprovar cobertura e suporte de guard-1: fontes não estabelecem vínculo da obrigação de identidade à liberação. Aprovar conflitos, assets, incerteza e entendimento."
+    },
+    {
+      "finding_id": "guard-1",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-5"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+    }
+  ]
+}
