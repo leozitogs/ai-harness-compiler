@@ -22,7 +22,10 @@ from ai_harness_compiler.semantic_verification import (
 
 COMPOSITION_PROGRAM_VERSION = "semantic-composition/v3.1"
 CANDIDATE_COMPOSITION_PROGRAM_VERSION = "semantic-composition/v3.2"
-CompositionProgramVersion = Literal["semantic-composition/v3.1", "semantic-composition/v3.2"]
+MULTISOURCE_COMPOSITION_PROGRAM_VERSION = "semantic-composition/v3.3"
+CompositionProgramVersion = Literal[
+    "semantic-composition/v3.1", "semantic-composition/v3.2", "semantic-composition/v3.3"
+]
 COMPOSITION_PROMPT = (
     ANALYSIS_PROMPT.replace("SemanticAnalysisProposal/v2", "SemanticAnalysisProposal/v3")
     + """
@@ -58,6 +61,23 @@ assigning a named person do not block a clear rule unless they change its busine
 """
 )
 
+MULTISOURCE_COMPOSITION_PROMPT = (
+    CANDIDATE_COMPOSITION_PROMPT
+    + """
+In this program all secondary questions belong in issues with kind=question and exact
+context_indices for every declaration needed by that question. Criterion uncertainties
+must be empty: that local field inherits only the criterion atom and cannot cite other
+sources. Keep a determinable business rule even when a separate issue asks for precedence.
+A question comparing declarations must itself cite both sides; a separate well-sourced
+conflict or globally visible context cannot repair the question's own missing citation.
+Do not add all context indices indiscriminately. Cite only the original declarations
+supporting this question and its stated material impact. Preserve ambiguity without
+choosing precedence. A primary needs-clarification question may remain on a criterion
+only when its text and rationale are supported by that criterion alone; otherwise retain
+the known criterion content and express the cross-source question as an issue.
+"""
+)
+
 
 def composition_prompt(program_version: CompositionProgramVersion) -> str:
     """Select an explicit recipe without promoting the unqualified candidate."""
@@ -65,6 +85,8 @@ def composition_prompt(program_version: CompositionProgramVersion) -> str:
         return COMPOSITION_PROMPT
     if program_version == CANDIDATE_COMPOSITION_PROGRAM_VERSION:
         return CANDIDATE_COMPOSITION_PROMPT
+    if program_version == MULTISOURCE_COMPOSITION_PROGRAM_VERSION:
+        return MULTISOURCE_COMPOSITION_PROMPT
     raise ValueError("Unknown composition program version")
 
 
@@ -77,12 +99,19 @@ def composition_program_digest(
         {
             "program_version": program_version,
             "prompt": composition_prompt(program_version),
-            "response_schema": composition_response_schema(extraction),
+            "response_schema": composition_response_schema(
+                extraction, program_version=program_version
+            ),
         }
     )
 
 
-def composition_response_schema(extraction: GroundingExtraction) -> dict[str, Any]:
+def composition_response_schema(
+    extraction: GroundingExtraction,
+    *,
+    program_version: CompositionProgramVersion = "semantic-composition/v3.1",
+) -> dict[str, Any]:
+    composition_prompt(program_version)
     extraction = GroundingExtraction.model_validate(extraction.model_dump())
     schema = AnalysisProposalV3.model_json_schema()
     criteria = [a.id for a in extraction.atoms if a.kind == "acceptance-criterion"]
@@ -95,6 +124,14 @@ def composition_response_schema(extraction: GroundingExtraction) -> dict[str, An
         "enum": [a.id for a in compact_context(extraction)],
     }
     criterion = schema["$defs"]["CriterionV3"]
+    if program_version == MULTISOURCE_COMPOSITION_PROGRAM_VERSION:
+        criterion["properties"]["uncertainties"]["maxItems"] = 0
+        for variant in schema["$defs"]["AnalysisIssue"]["anyOf"]:
+            indices = variant["properties"]["context_indices"]
+            indices["items"] = {
+                "type": "integer",
+                "enum": list(range(len(compact_context(extraction)))),
+            }
     criterion_variants = []
     for kind in ("business-rule", "requirement", "needs-clarification"):
         variant = deepcopy(criterion)
@@ -143,9 +180,15 @@ def analyze_composition(
     proposal = AnalysisProposalV3.model_validate_json(
         generator.generate_json(
             prompt + "\nINPUT DATA:\n" + json.dumps(packet, ensure_ascii=False),
-            composition_response_schema(extraction),
+            composition_response_schema(extraction, program_version=program_version),
         )
     )
+    if program_version == MULTISOURCE_COMPOSITION_PROGRAM_VERSION and any(
+        criterion.uncertainties for criterion in proposal.criteria
+    ):
+        raise ValueError(
+            "COMPOSITION_QUESTION_ROUTE: Secondary questions must use source-bound issues"
+        )
     return SemanticAnalysisV3(extraction=extraction, proposal=proposal)
 
 

@@ -1,0 +1,93 @@
+{
+  "adapter_version": "codex-structured-cli/v5",
+  "authorization": "Existing PO authorization to continue Sprint2.6 and use the established subscription adapter; numeric budget fixed by operator, not a new PO declaration.",
+  "baseline_manifest": {
+    "path": "docs/evidence/sprint-2-6-development-assessment-20261020/manifest.json",
+    "sha256": "a9aacaf9761d50e009cec75496d78c8dfbfe9a1485234e750b04ac6c236b4d9f"
+  },
+  "budget": {
+    "holdout_calls": 0,
+    "max_call_seconds": 180,
+    "max_calls": 16,
+    "max_cases": 8,
+    "max_concurrency": 1,
+    "max_session_seconds": 3600,
+    "repair_attempts": 0,
+    "repetitions": 1,
+    "retries": 0
+  },
+  "cases": [
+    {
+      "case": "dev-adversarial",
+      "case_sha256": "a0161eb4e56463d947d21676134f72518d661e5b91b46403d37174de8e025d0d",
+      "program_sha256": "78c292c615af2bdc99891b6219756d3c659030d49cd9f220f7b70e1936d00c6a",
+      "project_sha256": "90af98c2b77c32226ded9b7c5ffc5d87e4e2773695c3daa88f196523afbfd006"
+    },
+    {
+      "case": "dev-ambiguous",
+      "case_sha256": "96d9954a55ca4bf3aa2ad1d8156c160c4692b97b3d1cdcd51c2f84adbf8ccd48",
+      "program_sha256": "3f37761c39f8719f8dfe7247e6b09103b998b75e2094979dd9c8b6bcc82204f8",
+      "project_sha256": "70e1e4e7503fc348f7a26224386c90c55e49129ef321a8e2c6ff000c9ff38436"
+    },
+    {
+      "case": "dev-branding-conflict",
+      "case_sha256": "4e5fc12e8016de6687d30a9c60c78829c34f9cd6b1a0d7515b1830d71e8f7d30",
+      "program_sha256": "1433731426fc49b5bc65ff908e0d1b5acd7d88b5335f4264dd0b56d4ed016593",
+      "project_sha256": "6efa88484de902b19dd3011dde395a354bbb3f959e931cb71422f73aaacdc751"
+    },
+    {
+      "case": "dev-compatible-rules",
+      "case_sha256": "f338181b253045093d1101f966cf863f3c7c51d94831becb88e0be60c8ad91ba",
+      "program_sha256": "41bcc4902296c850f8bef6bfa18cdec1818aa38a900ad1fd092532e3aa056b4a",
+      "project_sha256": "b3d0db0980c20a068cbddf89bf26afef915368d5e487a9e1748cf782a9ba9225"
+    },
+    {
+      "case": "dev-new-domain",
+      "case_sha256": "670709add5aaa3d8a9bc20d0781cb87799266016de42047cd3732e7dc332ca3d",
+      "program_sha256": "3f37761c39f8719f8dfe7247e6b09103b998b75e2094979dd9c8b6bcc82204f8",
+      "project_sha256": "6d792a55af0f4e0af1c2c1f1e36ff0d31f7fb9894b7091efd3f67338141dc492"
+    },
+    {
+      "case": "dev-rules-a",
+      "case_sha256": "7dcbd77cafd0a7836b7a1f2fac6a361fe083606937b916588b107c35318f4fdd",
+      "program_sha256": "ff9c0fa7a7320840138b3f5a321bb659087cb24350155a1bbc92523985eb464b",
+      "project_sha256": "a44c3b367950cab7b68c92bcf8f7062a732d7bc6f034d105df6a0e3a3b28d9ad"
+    },
+    {
+      "case": "dev-rules-b",
+      "case_sha256": "9d7354f306a8e7b52957c87187eab0d05c1a66f66ef2c2ddf78b8f858d196b58",
+      "program_sha256": "ff9c0fa7a7320840138b3f5a321bb659087cb24350155a1bbc92523985eb464b",
+      "project_sha256": "b3f1743dc0c1b25e7e7d659acb7d3d2db5d57664467af2e6ee9ed65488b5382c"
+    },
+    {
+      "case": "dev-unread-assets",
+      "case_sha256": "3c63236be69375dd183ee04a12c9fe91be3b2a43a507b9c974db9ed5774f34c5",
+      "program_sha256": "ff9c0fa7a7320840138b3f5a321bb659087cb24350155a1bbc92523985eb464b",
+      "project_sha256": "015d3fe7ce3367ff202c52b58d00331418776a18b0b20bf09cc2dd07f26d24f2"
+    }
+  ],
+  "comparison_limits": "Historical mixed-attempt reference vs one new round; no causal, stability, cold/warm, cost or production performance claim.",
+  "constraints": {
+    "fallback_allowed": false,
+    "paid_api_allowed": false,
+    "read_assets": false,
+    "tools_allowed": false,
+    "training_allowed": false
+  },
+  "cost_observed": null,
+  "development_manifest": {
+    "path": "evals/understanding/v2/development-approved-manifest.json",
+    "sha256": "e7af7a3f74b017db4d8d8ef79dac38d533d74ee93a7329217ddd77577a5895e6"
+  },
+  "format": "bounded-development-protocol/v1",
+  "observed_model": null,
+  "overrides_sha256": "b02e971740fe107b0b3c88018b8007ad5d648bbb41390bf85d4b8da529b7d51d",
+  "program_version": "semantic-composition/v3.3",
+  "provider": "codex-cli-chatgpt-subscription",
+  "recorded_on": "2026-10-20",
+  "requested_model": "gpt-6.1-sol",
+  "runner_sha256": "cc0d79bef0a0f88fda60b6c073e02560058404039ecd2cb33df867a1d1ddff01",
+  "sampling_parameters": "not-requested-through-adapter; observed values unknown",
+  "scope": "development-only",
+  "semantic_review": "required-for-new-outputs"
+}
