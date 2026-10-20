@@ -82,3 +82,15 @@ um vencedor. Não modificar expectativas para tornar uma resposta aprovada.
 Próximo gate: obter julgamento humano específico das respostas e registrar os
 vínculos exigidos por `SemanticHumanReview/v3`. Depois adjudicar/corrigir os defeitos
 confirmados e preparar a comparação controlada. AHC-024/025/026 continuam bloqueadas.
+
+## Atualização — julgamentos específicos recebidos em 2026-10-20
+
+As duas decisões específicas foram confirmadas pelo PO após este snapshot.
+O primeiro registro produziu 1 caso fail e 7 not-run; depois, o PO aprovou os seis
+critérios da recuperação de regras compatíveis: 1 pass, 1 fail e 6 not-run.
+Ver [registro humano e candidato corretivo](sprint-2-6-human-judgments.md).
+As pendências descritas acima representam o momento da preparação original.
+
+A revisão humana subsequente concluiu os 48 critérios: 5 respostas pass e 3 fail.
+Ver [resultado consolidado](sprint-2-6-development-assessment.md); os estados
+anteriores acima são históricos, não o estado atual.

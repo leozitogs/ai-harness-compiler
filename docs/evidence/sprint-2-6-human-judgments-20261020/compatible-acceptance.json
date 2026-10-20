@@ -1,0 +1,43 @@
+{
+  "schema_version": "ScopedSemanticAcceptance/v1",
+  "recorded_on": "2026-10-20",
+  "reviewer": "leozitogs:po-declared",
+  "authority": "human-declared-not-authenticated",
+  "confirmation": "Aprovo os seis critérios desta resposta recuperada",
+  "case": "dev-compatible-rules",
+  "case_sha256": "f338181b253045093d1101f966cf863f3c7c51d94831becb88e0be60c8ad91ba",
+  "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+  "analysis_sha256": "09f6148f4cf0303325d2c3380e32f2735a13f543797df23da3b0ca9b4e956581",
+  "selected_attempt": "schema-v31-recovery",
+  "original_generation": "error",
+  "approved_criteria": [
+    "rule-coverage",
+    "citation-support",
+    "conflict-validity",
+    "asset-bounds",
+    "uncertainty",
+    "project-understanding"
+  ],
+  "sources": [
+    {
+      "path": "evals/understanding/v2/development-draft/dev-compatible-rules.json",
+      "sha256": "fc8a20bcd49950df782e5fc0e7ef39aea912e0b656b0198e24bfd546d7e96622"
+    },
+    {
+      "path": "docs/evidence/sprint-2-5-final-20261019/schema-v31-recovery/dev-compatible-rules/analysis.json",
+      "sha256": "d2701f9b11e6b9c06d5c0603fc77bc6f452743892fa90b2cbb80e1110cbf6ea2"
+    },
+    {
+      "path": "docs/evidence/sprint-2-5-final-20261019/schema-v31-recovery/dev-compatible-rules/advice.json",
+      "sha256": "7ec1bb51c60432cc95f3b30215d906cae768f7f1ecab1bd35bedc90ce2723534"
+    },
+    {
+      "path": "docs/evidence/sprint-2-5-final-20261019/baseline-v3/dev-compatible-rules/summary.json",
+      "sha256": "3737a3464ba48cc7c2710a45d6a240f6a2a6c08c3f9efb5924c5d64281a44158"
+    }
+  ],
+  "review": "dev-compatible-rules-review.json",
+  "assessment": "dev-compatible-rules-assessment.json",
+  "model_qualification": "not-established",
+  "compilation_eligibility": "not-authorized"
+}

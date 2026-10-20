@@ -1,0 +1,60 @@
+{
+  "schema_version": "DevelopmentAssessmentProgress/v1",
+  "historical_packet": "docs/evidence/sprint-2-6-kickoff-review-20261019/packet.json",
+  "cases": [
+    {
+      "case": "dev-adversarial",
+      "analysis_sha256": "5aeb72bf12a4ebe5020dcf65100ac2f5f597fa429ec3e360840715437b65cacf",
+      "status": "not-run",
+      "human_criteria_judged": 0
+    },
+    {
+      "case": "dev-ambiguous",
+      "analysis_sha256": "44f9c5bbb4d4461109433ede9bddcbb99b27131c08af8714d6fd314fd86adc54",
+      "status": "fail",
+      "human_criteria_judged": 1
+    },
+    {
+      "case": "dev-branding-conflict",
+      "analysis_sha256": "dca39f8f85f8c3edb38f268a0a2094a4975ef4e9a9811bba60a55d067d2eb30b",
+      "status": "not-run",
+      "human_criteria_judged": 0
+    },
+    {
+      "case": "dev-compatible-rules",
+      "analysis_sha256": "09f6148f4cf0303325d2c3380e32f2735a13f543797df23da3b0ca9b4e956581",
+      "status": "not-run",
+      "human_criteria_judged": 0
+    },
+    {
+      "case": "dev-new-domain",
+      "analysis_sha256": "8baff4b157478c6a6bc91fca505875990ff3e3dddb73350149faea240a897a2a",
+      "status": "not-run",
+      "human_criteria_judged": 0
+    },
+    {
+      "case": "dev-rules-a",
+      "analysis_sha256": "d4dca46e801c7f9f89d799226af6929fd582d847c00ec8500378b6b5c3435341",
+      "status": "not-run",
+      "human_criteria_judged": 0
+    },
+    {
+      "case": "dev-rules-b",
+      "analysis_sha256": "37259cfadefec1d810777fb46d24278122889ce8e2703457e2518d39ffee6231",
+      "status": "not-run",
+      "human_criteria_judged": 0
+    },
+    {
+      "case": "dev-unread-assets",
+      "analysis_sha256": "514b28a8260e0f53273e2be0feeeac15dcb236fc9b9d4fa09583796833c238ba",
+      "status": "not-run",
+      "human_criteria_judged": 0
+    }
+  ],
+  "criteria_total": 48,
+  "criteria_judged": 1,
+  "criteria_pending": 47,
+  "case_passes": 0,
+  "case_failures": 1,
+  "cases_not_run": 7
+}

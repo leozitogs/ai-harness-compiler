@@ -1,0 +1,145 @@
+{
+  "reviewer": "leozitogs:po-declared",
+  "note": "PO na conversa: Confirmo a matriz descrita para os três casos. Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Não qualifica modelo ou autoriza compilação.",
+  "authority": "human-declared-not-authenticated",
+  "schema_version": "SemanticHumanReview/v3",
+  "case_sha256": "4e5fc12e8016de6687d30a9c60c78829c34f9cd6b1a0d7515b1830d71e8f7d30",
+  "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+  "analysis_sha256": "dca39f8f85f8c3edb38f268a0a2094a4975ef4e9a9811bba60a55d067d2eb30b",
+  "checks": [
+    {
+      "criterion": "rule-coverage",
+      "outcome": "pass",
+      "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "citation-support",
+      "outcome": "fail",
+      "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "conflict-validity",
+      "outcome": "pass",
+      "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "asset-bounds",
+      "outcome": "pass",
+      "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "uncertainty",
+      "outcome": "pass",
+      "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "project-understanding",
+      "outcome": "pass",
+      "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento. Matriz específica confirmada pelo PO."
+    }
+  ],
+  "coverage": [
+    {
+      "obligation_id": "required-1",
+      "finding_id": "criterion-1"
+    }
+  ],
+  "finding_support": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "fc363fd3dff03148abb2a50849aaa6e43eb49d64fbcc88befaa84e64e1803dbc",
+      "source_atom_ids": [
+        "atom-7"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "uncertainty-1-1",
+      "finding_sha256": "aa616a9f583ea9c18a7d35349898bd905648751bff05dc5b40b912419c4b0130",
+      "source_atom_ids": [
+        "atom-7"
+      ],
+      "outcome": "fail",
+      "note": "Reprovar suporte de uncertainty-1-1: menciona os dois lados mas cita só o backlog. Aprovar cobertura, conflitos, assets, incerteza e entendimento."
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "a8729c31d0316a67f00942ee655e6981dc7ca14b58e4e5415472dd39bda6b3b6",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-6"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "1a9bf07de01a3fcdc9549801f59f507d9b19e6cf9c192aaafb7dfecfee24496d",
+      "source_atom_ids": [
+        "atom-2"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "99e29b0acace4e95e4e919fa3ff8b8de33999451d872dac5c7492690bd7ef374",
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "14a29161e33104033798e15fff8f6621261ac37f8b11dcb8687cdaee8030fca8",
+      "source_atom_ids": [
+        "atom-4"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "12b8fa7a0ccfabf730e9e05a19cd4a758c0ff910ea77d650756bf556cc0be871",
+      "source_atom_ids": [
+        "atom-5"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "issue-1",
+      "finding_sha256": "fb80e6aa4c957fcd1ab78d93a2ae6fcda5f382d4e53cb13c680b0afea063c424",
+      "source_atom_ids": [
+        "atom-3",
+        "atom-7"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    }
+  ],
+  "component_support": [
+    {
+      "finding_id": "criterion-1",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-7"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+    },
+    {
+      "finding_id": "criterion-1",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-7"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+    }
+  ]
+}

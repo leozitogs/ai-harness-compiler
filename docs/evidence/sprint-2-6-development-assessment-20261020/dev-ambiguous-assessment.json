@@ -1,0 +1,650 @@
+{
+  "schema_version": "SemanticAssessment/v3",
+  "case": {
+    "schema_version": "AssessmentCase/v2",
+    "id": "dev-ambiguous",
+    "project": {
+      "schema_version": "ProjectInput/v1",
+      "id": "dev-ambiguous",
+      "name": "Fixture dev ambiguous",
+      "conception": "Precisamos melhorar o processo; etapas, papéis e condições de conclusão não foram definidos.",
+      "domain": null,
+      "branding": {
+        "audience": [
+          "autores"
+        ],
+        "tone": [],
+        "principles": [
+          "rastreabilidade",
+          "controle humano"
+        ],
+        "visual_constraints": []
+      },
+      "backlog": [
+        {
+          "id": "register",
+          "title": "Registrar e liberar",
+          "description": "Organizar publicação da equipe e registrar decisões.",
+          "acceptance_criteria": [
+            "O operador confirma publicação da equipe antes de concluir."
+          ],
+          "depends_on": [],
+          "inputs": [],
+          "outputs": [],
+          "data_owner": null,
+          "side_effects": [],
+          "risk": "unknown",
+          "implementation": "undecided"
+        }
+      ],
+      "constraints": {
+        "technical": [],
+        "security": [],
+        "business": [
+          "Registrar a identidade do responsável."
+        ],
+        "max_build_cost_usd": 0.0
+      },
+      "assets": [],
+      "evidence_pack": null,
+      "domain_profile": null
+    },
+    "expected_behavior": "blocked",
+    "obligations": [
+      {
+        "id": "required-1",
+        "source_pointer": "/backlog/0/acceptance_criteria/0",
+        "quote": "O operador confirma publicação da equipe antes de concluir.",
+        "disposition": "rule"
+      },
+      {
+        "id": "completion-definition",
+        "source_pointer": "/conception",
+        "quote": "Precisamos melhorar o processo; etapas, papéis e condições de conclusão não foram definidos.",
+        "disposition": "required-question"
+      }
+    ],
+    "requires_conflict": false,
+    "conflict_source_pointers": [],
+    "refusal_source_pointers": [],
+    "expectations_approval": {
+      "reviewer": "leozitogs:po-declared",
+      "note": "PO explicitly approved the seven development expectations described in the async question on 2026-10-19; does not approve model outputs or qualification.",
+      "authority": "human-declared-not-authenticated"
+    }
+  },
+  "rubric": {
+    "schema_version": "UnderstandingRubric/v1",
+    "id": "understanding-quality",
+    "version": "v2",
+    "criteria": [
+      {
+        "id": "rule-coverage",
+        "description": "100% das regras determináveis têm condição, resultado e exceções fiéis; perguntas materiais cobrem apenas obrigações ambíguas, sem dispensar regras claras. Bloqueio esperado não autoriza compilação."
+      },
+      {
+        "id": "citation-support",
+        "description": "Cada conclusão é sustentada pelos átomos exatos citados; paráfrases preservam significado e inferências não são promovidas a fatos."
+      },
+      {
+        "id": "conflict-validity",
+        "description": "Registrar apenas incompatibilidades reais com ambos os lados e precedência pendente; detalhe ausente não é conflito."
+      },
+      {
+        "id": "asset-bounds",
+        "description": "Não afirmar conteúdo de assets não lidos ou tratar dados externos como instruções executáveis."
+      },
+      {
+        "id": "uncertainty",
+        "description": "Hipóteses justificadas e incógnitas explícitas; pergunta material muda regra, autorização, precedência ou resultado. Detalhe de implementação não bloqueia."
+      },
+      {
+        "id": "project-understanding",
+        "description": "Domínio, objetivo, público e capacidades refletem o projeto, sem switches de nichos ou ampliação indevida de autoridade."
+      }
+    ],
+    "acceptance": "all-criteria-pass-no-critical-failure",
+    "approval": {
+      "reviewer": "leozitogs:po-declared",
+      "note": "PO aprovou todos os seis critérios e quatro decisões na conversa em 2026-10-09; docs/delivery/ahc-021-quality-criteria-review.md. Não aprova expectativas individuais, saídas ou qualificação.",
+      "authority": "human-declared-not-authenticated"
+    }
+  },
+  "analysis": {
+    "schema_version": "SemanticAnalysis/v3",
+    "extraction": {
+      "schema_version": "GroundingExtraction/v1",
+      "request": {
+        "schema_version": "UnderstandingRequest/v1",
+        "original_input": {
+          "schema_version": "ProjectInput/v1",
+          "id": "dev-ambiguous",
+          "name": "Fixture dev ambiguous",
+          "conception": "Precisamos melhorar o processo; etapas, papéis e condições de conclusão não foram definidos.",
+          "domain": null,
+          "branding": {
+            "audience": [
+              "autores"
+            ],
+            "tone": [],
+            "principles": [
+              "rastreabilidade",
+              "controle humano"
+            ],
+            "visual_constraints": []
+          },
+          "backlog": [
+            {
+              "id": "register",
+              "title": "Registrar e liberar",
+              "description": "Organizar publicação da equipe e registrar decisões.",
+              "acceptance_criteria": [
+                "O operador confirma publicação da equipe antes de concluir."
+              ],
+              "depends_on": [],
+              "inputs": [],
+              "outputs": [],
+              "data_owner": null,
+              "side_effects": [],
+              "risk": "unknown",
+              "implementation": "undecided"
+            }
+          ],
+          "constraints": {
+            "technical": [],
+            "security": [],
+            "business": [
+              "Registrar a identidade do responsável."
+            ],
+            "max_build_cost_usd": 0.0
+          },
+          "assets": [],
+          "evidence_pack": null,
+          "domain_profile": null
+        },
+        "original_sha256": "70e1e4e7503fc348f7a26224386c90c55e49129ef321a8e2c6ff000c9ff38436",
+        "references": [
+          {
+            "id": "input-1",
+            "project_id": "dev-ambiguous",
+            "pointer": "/conception",
+            "value": "Precisamos melhorar o processo; etapas, papéis e condições de conclusão não foram definidos.",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-2",
+            "project_id": "dev-ambiguous",
+            "pointer": "/branding",
+            "value": "{\"audience\":[\"autores\"],\"principles\":[\"rastreabilidade\",\"controle humano\"],\"tone\":[],\"visual_constraints\":[]}",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-3",
+            "project_id": "dev-ambiguous",
+            "pointer": "/constraints",
+            "value": "{\"business\":[\"Registrar a identidade do responsável.\"],\"max_build_cost_usd\":0.0,\"security\":[],\"technical\":[]}",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-4",
+            "project_id": "dev-ambiguous",
+            "pointer": "/backlog/0/description",
+            "value": "Organizar publicação da equipe e registrar decisões.",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-5",
+            "project_id": "dev-ambiguous",
+            "pointer": "/backlog/0/acceptance_criteria/0",
+            "value": "O operador confirma publicação da equipe antes de concluir.",
+            "content_trust": "untrusted-data"
+          }
+        ]
+      },
+      "atoms": [
+        {
+          "id": "atom-1",
+          "source_ref": "input-1",
+          "pointer": "/conception",
+          "quote": "Precisamos melhorar o processo; etapas, papéis e condições de conclusão não foram definidos.",
+          "kind": "conception",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-2",
+          "source_ref": "input-2",
+          "pointer": "/branding/audience/0",
+          "quote": "autores",
+          "kind": "branding",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-3",
+          "source_ref": "input-2",
+          "pointer": "/branding/principles/0",
+          "quote": "rastreabilidade",
+          "kind": "branding",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-4",
+          "source_ref": "input-2",
+          "pointer": "/branding/principles/1",
+          "quote": "controle humano",
+          "kind": "branding",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-5",
+          "source_ref": "input-3",
+          "pointer": "/constraints/business/0",
+          "quote": "Registrar a identidade do responsável.",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-6",
+          "source_ref": "input-3",
+          "pointer": "/constraints/max_build_cost_usd",
+          "quote": "0.0",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-7",
+          "source_ref": "input-4",
+          "pointer": "/backlog/0/description",
+          "quote": "Organizar publicação da equipe e registrar decisões.",
+          "kind": "backlog-description",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-8",
+          "source_ref": "input-5",
+          "pointer": "/backlog/0/acceptance_criteria/0",
+          "quote": "O operador confirma publicação da equipe antes de concluir.",
+          "kind": "acceptance-criterion",
+          "content_trust": "untrusted-data"
+        }
+      ],
+      "excluded_references": [],
+      "asset_contents": "not-read",
+      "semantic_status": "not-established"
+    },
+    "proposal": {
+      "schema_version": "SemanticAnalysisProposal/v3",
+      "criteria": [
+        {
+          "source_atom_id": "atom-8",
+          "kind": "business-rule",
+          "condition": {
+            "text": "Antes de concluir a publicação da equipe.",
+            "source_atom_ids": [
+              "atom-8"
+            ]
+          },
+          "outcome": {
+            "text": "O operador deve confirmar a publicação da equipe.",
+            "source_atom_ids": [
+              "atom-8"
+            ]
+          },
+          "exceptions": [],
+          "note": "A confirmação é uma condição necessária para concluir; as demais condições de conclusão não estão definidas.",
+          "question": null,
+          "uncertainties": []
+        }
+      ],
+      "guards": [
+        {
+          "id": "guard-1",
+          "condition": {
+            "text": "Ao registrar decisões no processo de publicação da equipe.",
+            "source_atom_ids": [
+              "atom-7"
+            ]
+          },
+          "effect": {
+            "text": "Registrar a identidade do responsável.",
+            "source_atom_ids": [
+              "atom-5"
+            ]
+          },
+          "target_scope": "project",
+          "target_criterion_atom_ids": [],
+          "note": "Exigência de rastreabilidade; não concede autorização para publicar ou concluir."
+        }
+      ],
+      "context_findings": [
+        {
+          "subject": "purpose",
+          "text": "Melhorar a organização da publicação da equipe e registrar decisões.",
+          "note": "O processo ainda carece de definições operacionais.",
+          "context_indices": [
+            0,
+            6
+          ]
+        },
+        {
+          "subject": "audience",
+          "text": "Autores.",
+          "note": "Público explicitamente declarado.",
+          "context_indices": [
+            1
+          ]
+        },
+        {
+          "subject": "positioning",
+          "text": "Rastreabilidade e controle humano orientam o projeto.",
+          "note": "Princípios declarados.",
+          "context_indices": [
+            2,
+            3
+          ]
+        },
+        {
+          "subject": "domain",
+          "text": "Processo de publicação em equipe.",
+          "note": "Não há indicação do tipo de conteúdo publicado.",
+          "context_indices": [
+            6,
+            7
+          ]
+        },
+        {
+          "subject": "capability",
+          "text": "Organizar publicações da equipe e registrar decisões.",
+          "note": "Capacidades de apoio declaradas em termos amplos.",
+          "context_indices": [
+            6
+          ]
+        },
+        {
+          "subject": "constraint",
+          "text": "O custo máximo de construção é US$ 0,00.",
+          "note": "Limite financeiro informado.",
+          "context_indices": [
+            5
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "kind": "question",
+          "text": "Além da confirmação do operador, quais condições determinam que o processo de publicação da equipe pode ser concluído?",
+          "context_indices": [
+            0,
+            7
+          ],
+          "rationale": "As condições de conclusão estão explicitamente indefinidas. A confirmação conhecida permanece obrigatória, mas não estabelece sozinha quando a conclusão é válida.",
+          "impact": "outcome",
+          "rejection_reason": null
+        },
+        {
+          "kind": "question",
+          "text": "Quais etapas compõem o processo de publicação da equipe?",
+          "context_indices": [
+            0,
+            6
+          ],
+          "rationale": "As etapas estão explicitamente indefinidas; é necessário esclarecer quais atividades fazem parte do processo que deve ser organizado.",
+          "impact": "rule",
+          "rejection_reason": null
+        },
+        {
+          "kind": "question",
+          "text": "Como se distribuem os papéis e as responsabilidades no processo, incluindo quem pode atuar como operador e concluir a publicação?",
+          "context_indices": [
+            0,
+            3,
+            7
+          ],
+          "rationale": "Os papéis estão explicitamente indefinidos. A menção ao operador estabelece sua obrigação de confirmar, mas não determina quem pode exercer esse papel ou autorizar a conclusão.",
+          "impact": "authorization",
+          "rejection_reason": null
+        }
+      ]
+    }
+  },
+  "review": {
+    "reviewer": "leozitogs:po-declared",
+    "note": "PO na conversa: Confirmo a matriz descrita para os três casos. Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Não qualifica modelo ou autoriza compilação.",
+    "authority": "human-declared-not-authenticated",
+    "schema_version": "SemanticHumanReview/v3",
+    "case_sha256": "96d9954a55ca4bf3aa2ad1d8156c160c4692b97b3d1cdcd51c2f84adbf8ccd48",
+    "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+    "analysis_sha256": "44f9c5bbb4d4461109433ede9bddcbb99b27131c08af8714d6fd314fd86adc54",
+    "checks": [
+      {
+        "criterion": "rule-coverage",
+        "outcome": "fail",
+        "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Matriz específica confirmada pelo PO."
+      },
+      {
+        "criterion": "citation-support",
+        "outcome": "fail",
+        "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Matriz específica confirmada pelo PO."
+      },
+      {
+        "criterion": "conflict-validity",
+        "outcome": "pass",
+        "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Matriz específica confirmada pelo PO."
+      },
+      {
+        "criterion": "asset-bounds",
+        "outcome": "pass",
+        "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Matriz específica confirmada pelo PO."
+      },
+      {
+        "criterion": "uncertainty",
+        "outcome": "pass",
+        "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Matriz específica confirmada pelo PO."
+      },
+      {
+        "criterion": "project-understanding",
+        "outcome": "pass",
+        "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Matriz específica confirmada pelo PO."
+      }
+    ],
+    "coverage": [
+      {
+        "obligation_id": "required-1",
+        "finding_id": "criterion-1"
+      },
+      {
+        "obligation_id": "completion-definition",
+        "finding_id": "issue-1"
+      }
+    ],
+    "finding_support": [
+      {
+        "finding_id": "criterion-1",
+        "finding_sha256": "f86cdc3b676314c69e97c03d4ee26ca8a0970107962abcce857e5f73b977d2f4",
+        "source_atom_ids": [
+          "atom-8"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      },
+      {
+        "finding_id": "guard-1",
+        "finding_sha256": "d0e87fb9a5d0fe1da38f7b9a9f97c42ad09c246e9028fc65dd9624c1b11f8a28",
+        "source_atom_ids": [
+          "atom-7",
+          "atom-5"
+        ],
+        "outcome": "fail",
+        "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas."
+      },
+      {
+        "finding_id": "context-1",
+        "finding_sha256": "340c3255639a966f6d90d93ab2ef022dbc532e884a11ef5396e7d4242c98545d",
+        "source_atom_ids": [
+          "atom-1",
+          "atom-7"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      },
+      {
+        "finding_id": "context-2",
+        "finding_sha256": "21dc6c05c2a088cab8529fa0e078ade2a529107573d3220261170e6468056dd9",
+        "source_atom_ids": [
+          "atom-2"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      },
+      {
+        "finding_id": "context-3",
+        "finding_sha256": "4c735e89c28f60cf50d508514af746bce5517f89e3a98b253993483af277f1a2",
+        "source_atom_ids": [
+          "atom-3",
+          "atom-4"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      },
+      {
+        "finding_id": "context-4",
+        "finding_sha256": "4a435d02417a6e89c3d7f6a0d8bf68c1d3d8ab3d0bfb47e1cbd1ba3fd36a0b6d",
+        "source_atom_ids": [
+          "atom-7",
+          "atom-8"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      },
+      {
+        "finding_id": "context-5",
+        "finding_sha256": "fa9157944a8f7811ff1ea2d66703e5c2830c3e7971e4167481f658fcf7ef2f66",
+        "source_atom_ids": [
+          "atom-7"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      },
+      {
+        "finding_id": "context-6",
+        "finding_sha256": "979f0c11e0e076e9c133022e6952483189e1a3f4027ffa11b705c5193404db19",
+        "source_atom_ids": [
+          "atom-6"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      },
+      {
+        "finding_id": "issue-1",
+        "finding_sha256": "61044d20f272e0aed4b8859d39a0182288656ef5e4c7dfd6bf641593d9927b07",
+        "source_atom_ids": [
+          "atom-1",
+          "atom-8"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      },
+      {
+        "finding_id": "issue-2",
+        "finding_sha256": "bf66afaf7f0d8220a30496c9d08abe849f4a504c949e67039fb45e73bc5321e4",
+        "source_atom_ids": [
+          "atom-1",
+          "atom-7"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      },
+      {
+        "finding_id": "issue-3",
+        "finding_sha256": "ae659c0009a4acd480ad7cc5eb46aa6deb4854d608a3037b2867229d938a1403",
+        "source_atom_ids": [
+          "atom-1",
+          "atom-4",
+          "atom-8"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      }
+    ],
+    "component_support": [
+      {
+        "finding_id": "criterion-1",
+        "component_name": "condition",
+        "component_index": null,
+        "source_atom_ids": [
+          "atom-8"
+        ],
+        "outcome": "pass",
+        "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+      },
+      {
+        "finding_id": "criterion-1",
+        "component_name": "outcome",
+        "component_index": null,
+        "source_atom_ids": [
+          "atom-8"
+        ],
+        "outcome": "pass",
+        "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+      },
+      {
+        "finding_id": "guard-1",
+        "component_name": "condition",
+        "component_index": null,
+        "source_atom_ids": [
+          "atom-7"
+        ],
+        "outcome": "fail",
+        "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas."
+      },
+      {
+        "finding_id": "guard-1",
+        "component_name": "outcome",
+        "component_index": null,
+        "source_atom_ids": [
+          "atom-5"
+        ],
+        "outcome": "pass",
+        "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+      }
+    ]
+  },
+  "checks": [
+    {
+      "criterion": "rule-coverage",
+      "outcome": "fail",
+      "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "citation-support",
+      "outcome": "fail",
+      "note": "A human support judgment rejected a component"
+    },
+    {
+      "criterion": "conflict-validity",
+      "outcome": "pass",
+      "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "asset-bounds",
+      "outcome": "pass",
+      "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "uncertainty",
+      "outcome": "pass",
+      "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "project-understanding",
+      "outcome": "pass",
+      "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Matriz específica confirmada pelo PO."
+    }
+  ],
+  "status": "fail",
+  "input_sha256": "70e1e4e7503fc348f7a26224386c90c55e49129ef321a8e2c6ff000c9ff38436",
+  "case_sha256": "96d9954a55ca4bf3aa2ad1d8156c160c4692b97b3d1cdcd51c2f84adbf8ccd48",
+  "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+  "analysis_sha256": "44f9c5bbb4d4461109433ede9bddcbb99b27131c08af8714d6fd314fd86adc54",
+  "compilation_eligibility": "not-authorized",
+  "model_qualification": "not-established"
+}

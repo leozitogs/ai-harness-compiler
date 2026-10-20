@@ -47,3 +47,17 @@ IDs, hashes ou fontes stale são rejeitados; um guard alterado exige nova revis�
 Pass requer inventários positivos completos, caso e rubrica aprovados. O comando
 retorna 0 apenas para pass e recusa sobrescrever arquivos. Parecer v4 é consultivo
 e não é convertido para declaração humana v3. A compilação continua não autorizada.
+
+## Variante corretiva em desenvolvimento
+
+`semantic-composition/v3.2` está disponível somente por seleção explícita de
+`program_version` na API Python `analyze_composition`. Default e CLI continuam
+v3.1. O candidato preserva obrigações sem gatilho como contexto normativo, sem
+forçá-las a um guard com condição inventada, e distingue papéis não atribuídos
+de uma lacuna bloqueante de negócio. Isso não implementa enforcement de regras.
+
+`composition_program_digest(extraction, version)` vincula versão, prompt e schema
+dinâmico. Input, provider, parâmetros e ambiente precisam de registro separado;
+esse digest não certifica uma execução ou qualidade semântica. A versão antiga
+permanece idêntica e versões desconhecidas são rejeitadas antes da chamada.
+Ver [decisão e limites do candidato](../delivery/sprint-2-6-human-judgments.md).

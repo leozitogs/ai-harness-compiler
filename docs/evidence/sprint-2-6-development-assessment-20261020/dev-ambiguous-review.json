@@ -1,0 +1,202 @@
+{
+  "reviewer": "leozitogs:po-declared",
+  "note": "PO na conversa: Confirmo a matriz descrita para os três casos. Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Não qualifica modelo ou autoriza compilação.",
+  "authority": "human-declared-not-authenticated",
+  "schema_version": "SemanticHumanReview/v3",
+  "case_sha256": "96d9954a55ca4bf3aa2ad1d8156c160c4692b97b3d1cdcd51c2f84adbf8ccd48",
+  "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+  "analysis_sha256": "44f9c5bbb4d4461109433ede9bddcbb99b27131c08af8714d6fd314fd86adc54",
+  "checks": [
+    {
+      "criterion": "rule-coverage",
+      "outcome": "fail",
+      "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "citation-support",
+      "outcome": "fail",
+      "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "conflict-validity",
+      "outcome": "pass",
+      "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "asset-bounds",
+      "outcome": "pass",
+      "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "uncertainty",
+      "outcome": "pass",
+      "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "project-understanding",
+      "outcome": "pass",
+      "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas. Matriz específica confirmada pelo PO."
+    }
+  ],
+  "coverage": [
+    {
+      "obligation_id": "required-1",
+      "finding_id": "criterion-1"
+    },
+    {
+      "obligation_id": "completion-definition",
+      "finding_id": "issue-1"
+    }
+  ],
+  "finding_support": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "f86cdc3b676314c69e97c03d4ee26ca8a0970107962abcce857e5f73b977d2f4",
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "guard-1",
+      "finding_sha256": "d0e87fb9a5d0fe1da38f7b9a9f97c42ad09c246e9028fc65dd9624c1b11f8a28",
+      "source_atom_ids": [
+        "atom-7",
+        "atom-5"
+      ],
+      "outcome": "fail",
+      "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas."
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "340c3255639a966f6d90d93ab2ef022dbc532e884a11ef5396e7d4242c98545d",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-7"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "21dc6c05c2a088cab8529fa0e078ade2a529107573d3220261170e6468056dd9",
+      "source_atom_ids": [
+        "atom-2"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "4c735e89c28f60cf50d508514af746bce5517f89e3a98b253993483af277f1a2",
+      "source_atom_ids": [
+        "atom-3",
+        "atom-4"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "4a435d02417a6e89c3d7f6a0d8bf68c1d3d8ab3d0bfb47e1cbd1ba3fd36a0b6d",
+      "source_atom_ids": [
+        "atom-7",
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "fa9157944a8f7811ff1ea2d66703e5c2830c3e7971e4167481f658fcf7ef2f66",
+      "source_atom_ids": [
+        "atom-7"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-6",
+      "finding_sha256": "979f0c11e0e076e9c133022e6952483189e1a3f4027ffa11b705c5193404db19",
+      "source_atom_ids": [
+        "atom-6"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "issue-1",
+      "finding_sha256": "61044d20f272e0aed4b8859d39a0182288656ef5e4c7dfd6bf641593d9927b07",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "issue-2",
+      "finding_sha256": "bf66afaf7f0d8220a30496c9d08abe849f4a504c949e67039fb45e73bc5321e4",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-7"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "issue-3",
+      "finding_sha256": "ae659c0009a4acd480ad7cc5eb46aa6deb4854d608a3037b2867229d938a1403",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-4",
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    }
+  ],
+  "component_support": [
+    {
+      "finding_id": "criterion-1",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+    },
+    {
+      "finding_id": "criterion-1",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+    },
+    {
+      "finding_id": "guard-1",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-7"
+      ],
+      "outcome": "fail",
+      "note": "Reprovar cobertura e suporte da condição de guard-1; aprovar conflitos, assets, incerteza e entendimento. Confirmação do operador e pergunta de conclusão preservadas."
+    },
+    {
+      "finding_id": "guard-1",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-5"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+    }
+  ]
+}

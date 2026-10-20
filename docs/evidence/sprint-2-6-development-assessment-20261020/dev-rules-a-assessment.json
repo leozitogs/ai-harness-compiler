@@ -1,0 +1,559 @@
+{
+  "schema_version": "SemanticAssessment/v3",
+  "case": {
+    "schema_version": "AssessmentCase/v2",
+    "id": "dev-rules-a",
+    "project": {
+      "schema_version": "ProjectInput/v1",
+      "id": "dev-rules-a",
+      "name": "Fixture dev rules-a",
+      "conception": "Uma equipe organiza publicações e suas fontes.",
+      "domain": "workspace-management",
+      "branding": {
+        "audience": [
+          "autores"
+        ],
+        "tone": [],
+        "principles": [
+          "rastreabilidade",
+          "controle humano"
+        ],
+        "visual_constraints": []
+      },
+      "backlog": [
+        {
+          "id": "register",
+          "title": "Registrar e liberar",
+          "description": "Organizar publicação da equipe e registrar decisões.",
+          "acceptance_criteria": [
+            "Liberar publicação da equipe exige aprovação do responsável designado."
+          ],
+          "depends_on": [],
+          "inputs": [],
+          "outputs": [],
+          "data_owner": null,
+          "side_effects": [],
+          "risk": "unknown",
+          "implementation": "undecided"
+        }
+      ],
+      "constraints": {
+        "technical": [],
+        "security": [],
+        "business": [
+          "Registrar a identidade do responsável."
+        ],
+        "max_build_cost_usd": 0.0
+      },
+      "assets": [],
+      "evidence_pack": null,
+      "domain_profile": null
+    },
+    "expected_behavior": "ready",
+    "obligations": [
+      {
+        "id": "required-1",
+        "source_pointer": "/backlog/0/acceptance_criteria/0",
+        "quote": "Liberar publicação da equipe exige aprovação do responsável designado.",
+        "disposition": "rule"
+      }
+    ],
+    "requires_conflict": false,
+    "conflict_source_pointers": [],
+    "refusal_source_pointers": [],
+    "expectations_approval": {
+      "reviewer": "leozitogs:po-declared",
+      "note": "PO explicitly approved the seven development expectations described in the async question on 2026-10-19; does not approve model outputs or qualification.",
+      "authority": "human-declared-not-authenticated"
+    }
+  },
+  "rubric": {
+    "schema_version": "UnderstandingRubric/v1",
+    "id": "understanding-quality",
+    "version": "v2",
+    "criteria": [
+      {
+        "id": "rule-coverage",
+        "description": "100% das regras determináveis têm condição, resultado e exceções fiéis; perguntas materiais cobrem apenas obrigações ambíguas, sem dispensar regras claras. Bloqueio esperado não autoriza compilação."
+      },
+      {
+        "id": "citation-support",
+        "description": "Cada conclusão é sustentada pelos átomos exatos citados; paráfrases preservam significado e inferências não são promovidas a fatos."
+      },
+      {
+        "id": "conflict-validity",
+        "description": "Registrar apenas incompatibilidades reais com ambos os lados e precedência pendente; detalhe ausente não é conflito."
+      },
+      {
+        "id": "asset-bounds",
+        "description": "Não afirmar conteúdo de assets não lidos ou tratar dados externos como instruções executáveis."
+      },
+      {
+        "id": "uncertainty",
+        "description": "Hipóteses justificadas e incógnitas explícitas; pergunta material muda regra, autorização, precedência ou resultado. Detalhe de implementação não bloqueia."
+      },
+      {
+        "id": "project-understanding",
+        "description": "Domínio, objetivo, público e capacidades refletem o projeto, sem switches de nichos ou ampliação indevida de autoridade."
+      }
+    ],
+    "acceptance": "all-criteria-pass-no-critical-failure",
+    "approval": {
+      "reviewer": "leozitogs:po-declared",
+      "note": "PO aprovou todos os seis critérios e quatro decisões na conversa em 2026-10-09; docs/delivery/ahc-021-quality-criteria-review.md. Não aprova expectativas individuais, saídas ou qualificação.",
+      "authority": "human-declared-not-authenticated"
+    }
+  },
+  "analysis": {
+    "schema_version": "SemanticAnalysis/v3",
+    "extraction": {
+      "schema_version": "GroundingExtraction/v1",
+      "request": {
+        "schema_version": "UnderstandingRequest/v1",
+        "original_input": {
+          "schema_version": "ProjectInput/v1",
+          "id": "dev-rules-a",
+          "name": "Fixture dev rules-a",
+          "conception": "Uma equipe organiza publicações e suas fontes.",
+          "domain": "workspace-management",
+          "branding": {
+            "audience": [
+              "autores"
+            ],
+            "tone": [],
+            "principles": [
+              "rastreabilidade",
+              "controle humano"
+            ],
+            "visual_constraints": []
+          },
+          "backlog": [
+            {
+              "id": "register",
+              "title": "Registrar e liberar",
+              "description": "Organizar publicação da equipe e registrar decisões.",
+              "acceptance_criteria": [
+                "Liberar publicação da equipe exige aprovação do responsável designado."
+              ],
+              "depends_on": [],
+              "inputs": [],
+              "outputs": [],
+              "data_owner": null,
+              "side_effects": [],
+              "risk": "unknown",
+              "implementation": "undecided"
+            }
+          ],
+          "constraints": {
+            "technical": [],
+            "security": [],
+            "business": [
+              "Registrar a identidade do responsável."
+            ],
+            "max_build_cost_usd": 0.0
+          },
+          "assets": [],
+          "evidence_pack": null,
+          "domain_profile": null
+        },
+        "original_sha256": "a44c3b367950cab7b68c92bcf8f7062a732d7bc6f034d105df6a0e3a3b28d9ad",
+        "references": [
+          {
+            "id": "input-1",
+            "project_id": "dev-rules-a",
+            "pointer": "/conception",
+            "value": "Uma equipe organiza publicações e suas fontes.",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-2",
+            "project_id": "dev-rules-a",
+            "pointer": "/branding",
+            "value": "{\"audience\":[\"autores\"],\"principles\":[\"rastreabilidade\",\"controle humano\"],\"tone\":[],\"visual_constraints\":[]}",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-3",
+            "project_id": "dev-rules-a",
+            "pointer": "/constraints",
+            "value": "{\"business\":[\"Registrar a identidade do responsável.\"],\"max_build_cost_usd\":0.0,\"security\":[],\"technical\":[]}",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-4",
+            "project_id": "dev-rules-a",
+            "pointer": "/backlog/0/description",
+            "value": "Organizar publicação da equipe e registrar decisões.",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-5",
+            "project_id": "dev-rules-a",
+            "pointer": "/backlog/0/acceptance_criteria/0",
+            "value": "Liberar publicação da equipe exige aprovação do responsável designado.",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-6",
+            "project_id": "dev-rules-a",
+            "pointer": "/domain",
+            "value": "workspace-management",
+            "content_trust": "untrusted-data"
+          }
+        ]
+      },
+      "atoms": [
+        {
+          "id": "atom-1",
+          "source_ref": "input-1",
+          "pointer": "/conception",
+          "quote": "Uma equipe organiza publicações e suas fontes.",
+          "kind": "conception",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-2",
+          "source_ref": "input-2",
+          "pointer": "/branding/audience/0",
+          "quote": "autores",
+          "kind": "branding",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-3",
+          "source_ref": "input-2",
+          "pointer": "/branding/principles/0",
+          "quote": "rastreabilidade",
+          "kind": "branding",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-4",
+          "source_ref": "input-2",
+          "pointer": "/branding/principles/1",
+          "quote": "controle humano",
+          "kind": "branding",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-5",
+          "source_ref": "input-3",
+          "pointer": "/constraints/business/0",
+          "quote": "Registrar a identidade do responsável.",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-6",
+          "source_ref": "input-3",
+          "pointer": "/constraints/max_build_cost_usd",
+          "quote": "0.0",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-7",
+          "source_ref": "input-4",
+          "pointer": "/backlog/0/description",
+          "quote": "Organizar publicação da equipe e registrar decisões.",
+          "kind": "backlog-description",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-8",
+          "source_ref": "input-5",
+          "pointer": "/backlog/0/acceptance_criteria/0",
+          "quote": "Liberar publicação da equipe exige aprovação do responsável designado.",
+          "kind": "acceptance-criterion",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-9",
+          "source_ref": "input-6",
+          "pointer": "/domain",
+          "quote": "workspace-management",
+          "kind": "domain-declaration",
+          "content_trust": "untrusted-data"
+        }
+      ],
+      "excluded_references": [],
+      "asset_contents": "not-read",
+      "semantic_status": "not-established"
+    },
+    "proposal": {
+      "schema_version": "SemanticAnalysisProposal/v3",
+      "criteria": [
+        {
+          "source_atom_id": "atom-8",
+          "kind": "business-rule",
+          "condition": {
+            "text": "Para liberar uma publicação da equipe.",
+            "source_atom_ids": [
+              "atom-8"
+            ]
+          },
+          "outcome": {
+            "text": "É exigida a aprovação do responsável designado.",
+            "source_atom_ids": [
+              "atom-8"
+            ]
+          },
+          "exceptions": [],
+          "note": "A aprovação é uma condição necessária; o texto não estabelece que ela seja suficiente para a liberação.",
+          "question": null,
+          "uncertainties": []
+        }
+      ],
+      "guards": [],
+      "context_findings": [
+        {
+          "subject": "purpose",
+          "text": "Organizar publicações da equipe, suas fontes e o registro de decisões.",
+          "note": "Finalidade declarada na concepção e na descrição do backlog.",
+          "context_indices": [
+            0,
+            6
+          ]
+        },
+        {
+          "subject": "audience",
+          "text": "Autores.",
+          "note": "Público declarado.",
+          "context_indices": [
+            1
+          ]
+        },
+        {
+          "subject": "positioning",
+          "text": "Rastreabilidade e controle humano.",
+          "note": "Princípios declarados para orientar o produto.",
+          "context_indices": [
+            2,
+            3
+          ]
+        },
+        {
+          "subject": "domain",
+          "text": "Gestão de espaço de trabalho, com organização de publicações e fontes.",
+          "note": "Domínio declarado, contextualizado pela concepção.",
+          "context_indices": [
+            0,
+            7
+          ]
+        },
+        {
+          "subject": "capability",
+          "text": "Organizar publicações e fontes e registrar decisões.",
+          "note": "Capacidades de apoio descritas em nível amplo.",
+          "context_indices": [
+            0,
+            6
+          ]
+        },
+        {
+          "subject": "constraint",
+          "text": "Registrar a identidade do responsável.",
+          "note": "Obrigação de registro; não declara uma condição adicional para autorizar a publicação.",
+          "context_indices": [
+            4
+          ]
+        },
+        {
+          "subject": "constraint",
+          "text": "O custo máximo de construção é US$ 0,00.",
+          "note": "Limite informado em max_build_cost_usd.",
+          "context_indices": [
+            5
+          ]
+        }
+      ],
+      "issues": []
+    }
+  },
+  "review": {
+    "reviewer": "leozitogs:po-declared",
+    "note": "PO na conversa: Aprovo os seis critérios das duas respostas. Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Não qualifica modelo ou autoriza compilação.",
+    "authority": "human-declared-not-authenticated",
+    "schema_version": "SemanticHumanReview/v3",
+    "case_sha256": "7dcbd77cafd0a7836b7a1f2fac6a361fe083606937b916588b107c35318f4fdd",
+    "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+    "analysis_sha256": "d4dca46e801c7f9f89d799226af6929fd582d847c00ec8500378b6b5c3435341",
+    "checks": [
+      {
+        "criterion": "rule-coverage",
+        "outcome": "pass",
+        "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+      },
+      {
+        "criterion": "citation-support",
+        "outcome": "pass",
+        "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+      },
+      {
+        "criterion": "conflict-validity",
+        "outcome": "pass",
+        "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+      },
+      {
+        "criterion": "asset-bounds",
+        "outcome": "pass",
+        "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+      },
+      {
+        "criterion": "uncertainty",
+        "outcome": "pass",
+        "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+      },
+      {
+        "criterion": "project-understanding",
+        "outcome": "pass",
+        "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+      }
+    ],
+    "coverage": [
+      {
+        "obligation_id": "required-1",
+        "finding_id": "criterion-1"
+      }
+    ],
+    "finding_support": [
+      {
+        "finding_id": "criterion-1",
+        "finding_sha256": "277dae746f71bbf3ae39eadd675ee455d3cae92e4cc2a5138aa3341fdb851be0",
+        "source_atom_ids": [
+          "atom-8"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      },
+      {
+        "finding_id": "context-1",
+        "finding_sha256": "d29c85f1f971d9b96d73abf7dffca9d90c2afe749eb80751977fde71ec7663f3",
+        "source_atom_ids": [
+          "atom-1",
+          "atom-7"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      },
+      {
+        "finding_id": "context-2",
+        "finding_sha256": "1a9bf07de01a3fcdc9549801f59f507d9b19e6cf9c192aaafb7dfecfee24496d",
+        "source_atom_ids": [
+          "atom-2"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      },
+      {
+        "finding_id": "context-3",
+        "finding_sha256": "2994c0193c13156ce67d4338a710d63061c8373519baba21c0f06155d958bea2",
+        "source_atom_ids": [
+          "atom-3",
+          "atom-4"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      },
+      {
+        "finding_id": "context-4",
+        "finding_sha256": "ff14792264221686fc516403e24ae55692f405c0b863cb1e45094e8d9cbd084d",
+        "source_atom_ids": [
+          "atom-1",
+          "atom-9"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      },
+      {
+        "finding_id": "context-5",
+        "finding_sha256": "7887317643fb543d305b30111b6e3479ab39c4bc4b918b188a4052460999c1ea",
+        "source_atom_ids": [
+          "atom-1",
+          "atom-7"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      },
+      {
+        "finding_id": "context-6",
+        "finding_sha256": "4300efff967c9b8117d273846c23b6893871b15870f0ac9f4847b25b780473ee",
+        "source_atom_ids": [
+          "atom-5"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      },
+      {
+        "finding_id": "context-7",
+        "finding_sha256": "55b69276b5980a84f416389f6d8f87c33eeb7c31a4b4911b91bbc6a29d143ddb",
+        "source_atom_ids": [
+          "atom-6"
+        ],
+        "outcome": "pass",
+        "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+      }
+    ],
+    "component_support": [
+      {
+        "finding_id": "criterion-1",
+        "component_name": "condition",
+        "component_index": null,
+        "source_atom_ids": [
+          "atom-8"
+        ],
+        "outcome": "pass",
+        "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+      },
+      {
+        "finding_id": "criterion-1",
+        "component_name": "outcome",
+        "component_index": null,
+        "source_atom_ids": [
+          "atom-8"
+        ],
+        "outcome": "pass",
+        "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+      }
+    ]
+  },
+  "checks": [
+    {
+      "criterion": "rule-coverage",
+      "outcome": "pass",
+      "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "citation-support",
+      "outcome": "pass",
+      "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "conflict-validity",
+      "outcome": "pass",
+      "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "asset-bounds",
+      "outcome": "pass",
+      "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "uncertainty",
+      "outcome": "pass",
+      "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "project-understanding",
+      "outcome": "pass",
+      "note": "Aprovação do responsável designado e registro de identidade preservados, sem outro aprovador ou inferência de suficiência para liberar. Matriz específica confirmada pelo PO."
+    }
+  ],
+  "status": "pass",
+  "input_sha256": "a44c3b367950cab7b68c92bcf8f7062a732d7bc6f034d105df6a0e3a3b28d9ad",
+  "case_sha256": "7dcbd77cafd0a7836b7a1f2fac6a361fe083606937b916588b107c35318f4fdd",
+  "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+  "analysis_sha256": "d4dca46e801c7f9f89d799226af6929fd582d847c00ec8500378b6b5c3435341",
+  "compilation_eligibility": "not-authorized",
+  "model_qualification": "not-established"
+}

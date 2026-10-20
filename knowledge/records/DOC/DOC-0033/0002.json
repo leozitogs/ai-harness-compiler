@@ -1,0 +1,103 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO requested continuation and answered the objective scoped question with Confirmo os dois julgamentos recomendados. This is not blanket case acceptance.",
+  "created_at": "2026-10-20T18:16:12.314813+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "992 offline tests passed; human-scoped negative assessment reproduced through CLI. Candidate v3.2 not generated or qualified; legacy prompt bytes preserved.",
+      "outcome": "observed",
+      "sha256": "ff5a236aa472b91979caf9538e304f3a4b81c72572791cf5fdad0d1b886a902d",
+      "source": "docs/delivery/sprint-2-6-human-judgments.md"
+    },
+    {
+      "command": null,
+      "note": "992 offline tests passed; human-scoped negative assessment reproduced through CLI. Candidate v3.2 not generated or qualified; legacy prompt bytes preserved.",
+      "outcome": "observed",
+      "sha256": "782b87a23bd0f5bbc15d0ecd7ef47b56678c5893a44293e882ecf605f885d501",
+      "source": "docs/evidence/sprint-2-6-human-judgments-20261020/decisions.json"
+    },
+    {
+      "command": null,
+      "note": "992 offline tests passed; human-scoped negative assessment reproduced through CLI. Candidate v3.2 not generated or qualified; legacy prompt bytes preserved.",
+      "outcome": "observed",
+      "sha256": "68dfb1039172b3b7b1f68cf282a76da6023b317e67291a4e0ca5d8999fede2a8",
+      "source": "docs/evidence/sprint-2-6-human-judgments-20261020/dev-ambiguous-review.json"
+    },
+    {
+      "command": null,
+      "note": "992 offline tests passed; human-scoped negative assessment reproduced through CLI. Candidate v3.2 not generated or qualified; legacy prompt bytes preserved.",
+      "outcome": "observed",
+      "sha256": "12f5950797a8be9b9e39c4b4ed7d9fa73fa633b3ac00bfb8d1ffcca6c145f60b",
+      "source": "docs/evidence/sprint-2-6-human-judgments-20261020/dev-ambiguous-assessment.json"
+    },
+    {
+      "command": null,
+      "note": "992 offline tests passed; human-scoped negative assessment reproduced through CLI. Candidate v3.2 not generated or qualified; legacy prompt bytes preserved.",
+      "outcome": "observed",
+      "sha256": "2dbdffa573c720dd2fd7c6751efc84febc367f8db476b2153565d82f6a897927",
+      "source": "docs/evidence/sprint-2-6-human-judgments-20261020/status.json"
+    },
+    {
+      "command": null,
+      "note": "992 offline tests passed; human-scoped negative assessment reproduced through CLI. Candidate v3.2 not generated or qualified; legacy prompt bytes preserved.",
+      "outcome": "observed",
+      "sha256": "5e826bec548f8184277391f0d015c829f5b0a88040d99c0f7d52e91331a96639",
+      "source": "docs/evidence/sprint-2-6-human-judgments-20261020/candidate-preparation.json"
+    },
+    {
+      "command": null,
+      "note": "992 offline tests passed; human-scoped negative assessment reproduced through CLI. Candidate v3.2 not generated or qualified; legacy prompt bytes preserved.",
+      "outcome": "observed",
+      "sha256": "0c91fa8109c8db857a6086f9670c20a1cd552fe50770f527741da1c6d9794b04",
+      "source": "src/ai_harness_compiler/semantic_composition.py"
+    },
+    {
+      "command": null,
+      "note": "992 offline tests passed; human-scoped negative assessment reproduced through CLI. Candidate v3.2 not generated or qualified; legacy prompt bytes preserved.",
+      "outcome": "observed",
+      "sha256": "544defc82a793462eb73085650235f1b0aa681f1025b85dcca2fa56417e6e649",
+      "source": "tests/test_semantic_composition.py"
+    },
+    {
+      "command": null,
+      "note": "992 offline tests passed; human-scoped negative assessment reproduced through CLI. Candidate v3.2 not generated or qualified; legacy prompt bytes preserved.",
+      "outcome": "observed",
+      "sha256": "93fa61bd972f700721f0e5d101501d5a45cbb510257a3e87878823b0cc9f8ff4",
+      "source": "tests/test_scoped_semantic_review_regression.py"
+    }
+  ],
+  "id": "DOC-0033",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Human declaration is not externally authenticated.",
+    "One negative criterion does not approve or reject the five unjudged criteria.",
+    "Compatible-role diagnostic is not a complete uncertainty judgment.",
+    "No holdout, real generation, tuning, training, model qualification or story completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0032",
+    "ADR-0022"
+  ],
+  "resolution": null,
+  "review_note": "Verified exact scope of PO declaration and CLI replay; candidate remains explicit, unqualified and not executed.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "PO confirmed rejection of unsupported ambiguous guard condition and nonblocking compatible-role assignment detail. Persisted one partial human review and assessment: one case fail, seven not-run, 47 criterion judgments pending. Prepared explicit v3.2 recipe and program fingerprints without actual candidate generation.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Julgamentos específicos do PO e candidato corretivo de composição",
+  "updated_at": "2026-10-20T18:16:12.718665+00:00"
+}

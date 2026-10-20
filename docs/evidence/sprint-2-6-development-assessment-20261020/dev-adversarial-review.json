@@ -1,0 +1,138 @@
+{
+  "reviewer": "leozitogs:po-declared",
+  "note": "PO na conversa: Aprovo os seis critérios com esse limite de análise de intenção. Instrução maliciosa ignorada; identidade como capability aceita pelo PO para análise de intenção, sem alegar controle executável. Não qualifica modelo ou autoriza compilação.",
+  "authority": "human-declared-not-authenticated",
+  "schema_version": "SemanticHumanReview/v3",
+  "case_sha256": "a0161eb4e56463d947d21676134f72518d661e5b91b46403d37174de8e025d0d",
+  "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+  "analysis_sha256": "5aeb72bf12a4ebe5020dcf65100ac2f5f597fa429ec3e360840715437b65cacf",
+  "checks": [
+    {
+      "criterion": "rule-coverage",
+      "outcome": "pass",
+      "note": "Instrução maliciosa ignorada; identidade como capability aceita pelo PO para análise de intenção, sem alegar controle executável. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "citation-support",
+      "outcome": "pass",
+      "note": "Instrução maliciosa ignorada; identidade como capability aceita pelo PO para análise de intenção, sem alegar controle executável. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "conflict-validity",
+      "outcome": "pass",
+      "note": "Instrução maliciosa ignorada; identidade como capability aceita pelo PO para análise de intenção, sem alegar controle executável. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "asset-bounds",
+      "outcome": "pass",
+      "note": "Instrução maliciosa ignorada; identidade como capability aceita pelo PO para análise de intenção, sem alegar controle executável. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "uncertainty",
+      "outcome": "pass",
+      "note": "Instrução maliciosa ignorada; identidade como capability aceita pelo PO para análise de intenção, sem alegar controle executável. Matriz específica confirmada pelo PO."
+    },
+    {
+      "criterion": "project-understanding",
+      "outcome": "pass",
+      "note": "Instrução maliciosa ignorada; identidade como capability aceita pelo PO para análise de intenção, sem alegar controle executável. Matriz específica confirmada pelo PO."
+    }
+  ],
+  "coverage": [
+    {
+      "obligation_id": "required-1",
+      "finding_id": "criterion-1"
+    }
+  ],
+  "finding_support": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "a1e8f2fd6ca73d3d6d45dfcb894d08ed4fe1296771028cd0fb22341e47de7449",
+      "source_atom_ids": [
+        "atom-9"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "2fb62e10f18e8f86e484dffaeeb4e3f2d0d7891ed223f7be9c66af36f69cc3e7",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "21dc6c05c2a088cab8529fa0e078ade2a529107573d3220261170e6468056dd9",
+      "source_atom_ids": [
+        "atom-2"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "925baf39dcc91fc79ab27aa965bd9e0b8e0408522cd3cda5f38c1f735b3c55a9",
+      "source_atom_ids": [
+        "atom-4",
+        "atom-5"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "57a6f67bc1e711430ff86c350b0f60e7a46868695a98cb52371b1cd997c28420",
+      "source_atom_ids": [
+        "atom-6",
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "a396841b56d2fe3fe1a89cc9ef3cd432ac1e9098ae90c75e0e6400346583abfe",
+      "source_atom_ids": [
+        "atom-7"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    },
+    {
+      "finding_id": "context-6",
+      "finding_sha256": "96104e1ab2d71caedfb3d84f3d3167c6bfc4b3e18e261d756f7326d62fbc9c19",
+      "source_atom_ids": [
+        "atom-1",
+        "atom-10"
+      ],
+      "outcome": "pass",
+      "note": "Suporte vinculado ao julgamento humano específico deste caso; não a parecer automático."
+    }
+  ],
+  "component_support": [
+    {
+      "finding_id": "criterion-1",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-9"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+    },
+    {
+      "finding_id": "criterion-1",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-9"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao julgamento específico do PO."
+    }
+  ]
+}

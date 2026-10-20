@@ -1,0 +1,55 @@
+{
+  "reviewer": "leozitogs:po-declared",
+  "note": "PO confirmou na conversa: Confirmo os dois julgamentos recomendados. Escopo: reprovar somente o suporte da condição de guard-1, preservando a obrigação de registrar identidade; demais critérios não julgados.",
+  "authority": "human-declared-not-authenticated",
+  "schema_version": "SemanticHumanReview/v3",
+  "case_sha256": "96d9954a55ca4bf3aa2ad1d8156c160c4692b97b3d1cdcd51c2f84adbf8ccd48",
+  "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+  "analysis_sha256": "44f9c5bbb4d4461109433ede9bddcbb99b27131c08af8714d6fd314fd86adc54",
+  "checks": [
+    {
+      "criterion": "rule-coverage",
+      "outcome": "not-run",
+      "note": "Sem julgamento humano deste critério nesta decisão."
+    },
+    {
+      "criterion": "citation-support",
+      "outcome": "fail",
+      "note": "PO confirmou na conversa: Confirmo os dois julgamentos recomendados. Escopo: reprovar somente o suporte da condição de guard-1, preservando a obrigação de registrar identidade; demais critérios não julgados."
+    },
+    {
+      "criterion": "conflict-validity",
+      "outcome": "not-run",
+      "note": "Sem julgamento humano deste critério nesta decisão."
+    },
+    {
+      "criterion": "asset-bounds",
+      "outcome": "not-run",
+      "note": "Sem julgamento humano deste critério nesta decisão."
+    },
+    {
+      "criterion": "uncertainty",
+      "outcome": "not-run",
+      "note": "Sem julgamento humano deste critério nesta decisão."
+    },
+    {
+      "criterion": "project-understanding",
+      "outcome": "not-run",
+      "note": "Sem julgamento humano deste critério nesta decisão."
+    }
+  ],
+  "coverage": [],
+  "finding_support": [],
+  "component_support": [
+    {
+      "finding_id": "guard-1",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-7"
+      ],
+      "outcome": "fail",
+      "note": "A descrição de organizar publicações e registrar decisões não sustenta vincular a obrigação de identificação a essa operação. Julgamento específico confirmado pelo PO."
+    }
+  ]
+}
