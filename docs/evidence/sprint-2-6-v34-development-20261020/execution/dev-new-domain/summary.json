@@ -1,0 +1,11 @@
+{
+  "audit": "error",
+  "calls_used": 2,
+  "case": "dev-new-domain",
+  "compilation_eligibility": "not-authorized",
+  "disposition": "ready",
+  "error_type": "ValidationError",
+  "generation": "valid",
+  "model_qualification": "not-established",
+  "semantic_status": "not-run"
+}

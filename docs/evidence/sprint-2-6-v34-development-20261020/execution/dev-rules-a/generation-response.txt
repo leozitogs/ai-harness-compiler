@@ -1,0 +1,67 @@
+{
+  "schema_version": "SemanticAnalysisProposal/v3",
+  "criteria": [
+    {
+      "source_atom_id": "atom-8",
+      "kind": "business-rule",
+      "condition": {
+        "text": "Para liberar publicação da equipe.",
+        "source_atom_ids": ["atom-8"]
+      },
+      "outcome": {
+        "text": "É necessária a aprovação do responsável designado.",
+        "source_atom_ids": ["atom-8"]
+      },
+      "exceptions": [],
+      "note": "A aprovação é uma condição necessária; o texto não declara que ela, isoladamente, seja suficiente para liberar a publicação.",
+      "question": null,
+      "uncertainties": []
+    }
+  ],
+  "guards": [],
+  "context_findings": [
+    {
+      "subject": "purpose",
+      "text": "Organizar publicações da equipe e suas fontes, registrando decisões.",
+      "note": "Finalidade declarada na concepção e na descrição do backlog.",
+      "context_indices": [0, 6]
+    },
+    {
+      "subject": "audience",
+      "text": "Autores.",
+      "note": "Público explicitamente informado.",
+      "context_indices": [1]
+    },
+    {
+      "subject": "positioning",
+      "text": "Rastreabilidade e controle humano.",
+      "note": "Princípios declarados para orientar o projeto.",
+      "context_indices": [2, 3]
+    },
+    {
+      "subject": "domain",
+      "text": "Gestão de espaços de trabalho, com organização de publicações e fontes.",
+      "note": "Interpretação da declaração workspace-management à luz da concepção.",
+      "context_indices": [0, 7]
+    },
+    {
+      "subject": "capability",
+      "text": "Organizar publicações e fontes e registrar decisões da equipe.",
+      "note": "Capacidades amplas; os formatos dos registros não foram especificados.",
+      "context_indices": [0, 6]
+    },
+    {
+      "subject": "constraint",
+      "text": "É obrigatório registrar a identidade do responsável.",
+      "note": "A aplicabilidade não foi especificada. A obrigação permanece explícita, sem uma política executável de aplicabilidade e sem equiparar esse responsável ao responsável designado para aprovação.",
+      "context_indices": [4]
+    },
+    {
+      "subject": "constraint",
+      "text": "O custo máximo de construção é US$ 0,00.",
+      "note": "Limite declarado no campo max_build_cost_usd.",
+      "context_indices": [5]
+    }
+  ],
+  "issues": []
+}

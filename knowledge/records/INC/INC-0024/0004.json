@@ -1,0 +1,86 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Preserved unconditional obligation as normative context rather than an invented guard.",
+    "Routed secondary questions through independent issues with exact sources.",
+    "PO confirmed source/coverage pass and uncertainty fail in two recorded outputs.",
+    "Implemented explicit v3.4 intent materiality policy and offline invariant regressions. Froze new protocol at 2094624; automatic permission review rejected before process creation. Zero new model outputs; no claim of repaired semantic behavior.",
+    "After explicit approval, executed one frozen v3.4 round; PO approved all 48 criteria of eight new analyses, including previously failing materiality. One separate audit binding failure remains INC-0025."
+  ],
+  "author": "codex:engineering",
+  "challenge": "Case disposition and citation support are correct, yet an extra question is classified as a blocking rule decision.",
+  "consequences": [],
+  "context": "Frozen one-round v3.3 development, 16 calls. Model auditor had no negative components; full human review identified the business materiality failure.",
+  "created_at": "2026-10-20T19:11:25.416186+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Explicit fresh PO judgments and offline typed replay: six pass and two uncertainty fail; source support/coverage pass in recorded corrected outputs. No qualification or promotion.",
+      "outcome": "observed",
+      "sha256": "d0f56bf7aaef5d16b128dd96c9f6a40a1efdab7fee31ce9a807e34a222bb2c55",
+      "source": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-ambiguous-assessment.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit fresh PO judgments and offline typed replay: six pass and two uncertainty fail; source support/coverage pass in recorded corrected outputs. No qualification or promotion.",
+      "outcome": "observed",
+      "sha256": "6ab01fddfedc6965156e7cfae9e0d9114a3ca89462946fd1bc8660b912e2d3b1",
+      "source": "docs/evidence/sprint-2-6-v33-development-20261020/human-review/dev-branding-conflict-assessment.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit fresh PO judgments and offline typed replay: six pass and two uncertainty fail; source support/coverage pass in recorded corrected outputs. No qualification or promotion.",
+      "outcome": "observed",
+      "sha256": "15c53ff8020420536f6eb67351c6e55cc306acc056d53ecd8e4b7e96633d53a5",
+      "source": "docs/delivery/sprint-2-6-multisource-candidate.md"
+    },
+    {
+      "command": null,
+      "note": "Explicit fresh human PO approvals and passing offline replay validate scoped materiality resolution, not model self-report.",
+      "outcome": "observed",
+      "sha256": "96790059cd5f40b9ce526c09ac48b04c06b829da725ee43bd9e8f4c4442d37f0",
+      "source": "docs/evidence/sprint-2-6-v34-development-20261020/human-review/manifest.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit fresh human PO approvals and passing offline replay validate scoped materiality resolution, not model self-report.",
+      "outcome": "observed",
+      "sha256": "61420e50980c9c880e3900566c06514deda5b4d5464d97dc72e4d7b66c16d932",
+      "source": "tests/test_v34_development_evidence.py"
+    }
+  ],
+  "id": "INC-0024",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "No overall disposition mismatch: legitimate original blockers remain.",
+    "Only two recorded snapshots; no claim of a universal model tendency or measured optimization benefit.",
+    "Resolution applies only to recorded v3.4 analyses and fresh PO judgments; original v3.3 failures remain unchanged.",
+    "New standalone audit failure remains open in INC-0025."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0036",
+    "DOC-0035",
+    "DE-0015",
+    "DE-0016",
+    "DOC-0037",
+    "DOC-0038",
+    "INC-0025"
+  ],
+  "resolution": "Verified scoped resolution in the eight recorded v3.4 development analyses: no additional blocking identity-applicability question; obligation preserved normatively and legitimate business blockers retained. All six criteria approved freshly by human PO. No global completeness, causal gain, qualification, promotion or runtime enforcement claim.",
+  "review_note": "Verified narrow resolution using actual new snapshots and explicit human judgments. Preserves legitimate blockers, historical failures and separate open audit incident; not model qualification.",
+  "reviewed_by": "codex:evidence-review",
+  "revision": 4,
+  "root_cause": "Observed classification of identity-applicability question as impact=rule. The recipe emphasizes unknown applicability; its causal influence is not established by this single bundled-change round.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "verified",
+  "summary": "PO rejected uncertainty in v3.3 dev-ambiguous and dev-branding-conflict because issue-3 treats identity-applicability clarification as blocking, though normative obligation can remain in intent analysis. Both cases are already correctly blocked for legitimate reasons.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Pergunta de aplicabilidade vira impedimento sem decisão material necessária",
+  "updated_at": "2026-10-20T23:46:59.354755+00:00"
+}

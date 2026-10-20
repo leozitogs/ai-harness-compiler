@@ -1,0 +1,154 @@
+{
+  "reviewer": "leozitogs:po-declared",
+  "note": "PO na conversa: Aprovo os seis critérios de dev-branding-conflict v3.4. Escopo: novo snapshot v3.4 de dev-branding-conflict. Nenhum aceite histórico transferido, qualificação de modelo ou autorização de compilação.",
+  "authority": "human-declared-not-authenticated",
+  "schema_version": "SemanticHumanReview/v3",
+  "case_sha256": "4e5fc12e8016de6687d30a9c60c78829c34f9cd6b1a0d7515b1830d71e8f7d30",
+  "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+  "analysis_sha256": "1e31df44f4622121c3574bcc417e6e1050e90cf80ff4f5cf553ce207ef6aaefc",
+  "checks": [
+    {
+      "criterion": "rule-coverage",
+      "outcome": "pass",
+      "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+    },
+    {
+      "criterion": "citation-support",
+      "outcome": "pass",
+      "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+    },
+    {
+      "criterion": "conflict-validity",
+      "outcome": "pass",
+      "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+    },
+    {
+      "criterion": "asset-bounds",
+      "outcome": "pass",
+      "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+    },
+    {
+      "criterion": "uncertainty",
+      "outcome": "pass",
+      "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+    },
+    {
+      "criterion": "project-understanding",
+      "outcome": "pass",
+      "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+    }
+  ],
+  "coverage": [
+    {
+      "obligation_id": "required-1",
+      "finding_id": "criterion-1"
+    }
+  ],
+  "finding_support": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "a46154d7baaeda81be07bf850bdd4e161e617029b5b437c603eb3162ce8eb237",
+      "source_atom_ids": [
+        "atom-7"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "51c260baca8628898ac93bc9d5eda2c0266bd567b74de17d56a231af4f87687e",
+      "source_atom_ids": [
+        "atom-1"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "1a9bf07de01a3fcdc9549801f59f507d9b19e6cf9c192aaafb7dfecfee24496d",
+      "source_atom_ids": [
+        "atom-2"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "4cf342f2e69bd45e675f0858e47f8b3934b3299dc45697234f8501854acf3841",
+      "source_atom_ids": [
+        "atom-6"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "3bca78c822726896f2d0d5133d22f4d9bd541b38d08bfce5ef6d29e71d96c445",
+      "source_atom_ids": [
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "f82daf3c55e4d01b5fc21dc51a7a699256bb471a959eaef982ac8d3a3f2e790b",
+      "source_atom_ids": [
+        "atom-4"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-6",
+      "finding_sha256": "4b31ec63965dd859de82ad4a2036653cb25d5e383f7bf64ea13e88bd223072b1",
+      "source_atom_ids": [
+        "atom-5"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "issue-1",
+      "finding_sha256": "905b917303b75222e75dac853eef84523d989a60ff6e8787f193bd2e9b6364ca",
+      "source_atom_ids": [
+        "atom-3",
+        "atom-7"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "issue-2",
+      "finding_sha256": "6dee074d47d96848fc3b87f89906ba6e5f5ba90a950f76c37cfd98b080dbae25",
+      "source_atom_ids": [
+        "atom-3",
+        "atom-7"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    }
+  ],
+  "component_support": [
+    {
+      "finding_id": "criterion-1",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-7"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+    },
+    {
+      "finding_id": "criterion-1",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-7"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+    }
+  ]
+}

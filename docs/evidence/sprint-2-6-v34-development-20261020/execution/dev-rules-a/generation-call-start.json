@@ -1,0 +1,9 @@
+{
+  "effective_schema_sha256": "13e400eca010d70033bed5e42b8618626370e2154ecd1e5b1c5188caa80217ef",
+  "number": 11,
+  "prompt_sha256": "7ceedccec3e89503cda30e568436a9df02d702d14a4b76db7cf57f8661ccf426",
+  "response_schema_sha256": "877aa956d472795cee297a2e9b9aff4787d6514fe2c5b7bc9593bb4d9180e2f0",
+  "stage": "generation",
+  "status": "started",
+  "timeout_seconds": 180
+}

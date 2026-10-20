@@ -1,0 +1,12 @@
+{
+  "actor": "leozitogs:po-declared",
+  "authority": "human-declared-not-authenticated",
+  "confirmation": "autorizo, podes efetuar a rodada.",
+  "format": "development-execution-authorization/v1",
+  "previous_rejection_preserved": "execution-status.json",
+  "protocol_sha256": "1d2870f7875c42c96d2b3d742513e38b7a44b853d9f999b1e549713d4f515479",
+  "recorded_on": "2026-10-20",
+  "scope": "Explicit approval in reply to concrete request for up to 16 serial calls sending eight frozen public development fixtures and derived analyses to existing Codex CLI ChatGPT subscription / gpt-6.1-sol; 180s per call, 3600s session, no paid API, tools, holdout, retries, repair or training.",
+  "status": "authorized-not-started",
+  "supersedes_permission_state": "authorization-blocked"
+}

@@ -91,3 +91,13 @@ Validação local após restaurar dependências fixadas: 1.020 testes passaram s
 skips, Ruff e tipagem aprovados. A primeira tentativa no sandbox falhou por
 permissão em temporários do Windows; a repetição completa offline com diretório
 temporário autorizado passou. Isso não é evidência de eficácia da nova receita.
+
+## Autorização e execução posteriores
+
+O PO autorizou explicitamente a rodada depois do bloqueio. Foram executadas 16
+chamadas: oito gerações e sete auditorias válidas; uma auditoria teve hash rejeitado.
+O PO aprovou os 48 critérios das oito análises novas, sem aprovar o parecer inválido.
+Ver [execução, revisão humana e limites](sprint-2-6-v34-development.md). O estado
+`authorization-blocked` acima é histórico e foi preservado, não o estado atual.
+O orçamento foi consumido e encerrado; nenhuma chamada adicional foi autorizada
+por esses julgamentos. Default e qualificação continuam inalterados.

@@ -135,9 +135,9 @@
       "human_assessment": "6 pass, 2 fail on uncertainty; candidate not promoted"
     },
     "corrective_development_v34": {
-      "document": "docs/delivery/sprint-2-6-question-materiality.md",
+      "document": "docs/delivery/sprint-2-6-v34-development.md",
       "holdout_calls": 0,
-      "human_assessment": "No new output and no semantic judgment; v3.3 failures unchanged.",
+      "human_assessment": "8 analysis pass; 48 criteria pass, zero pending. One audit digest-binding error remains; no model qualification or promotion.",
       "max_call_seconds": 180,
       "max_calls": 16,
       "max_concurrency": 1,
@@ -146,10 +146,13 @@
       "repair_attempts": 0,
       "repetitions": 1,
       "retries": 0,
-      "semantic_status": "not-run",
-      "source": "Operator-proposed new standalone budget; automatic permission review rejected execution pending explicit PO approval of budget, payload and external destination.",
-      "status": "authorization-blocked",
-      "used_calls": 0
+      "semantic_status": "human-reviewed-development-only",
+      "source": "PO explicitly authorized the concrete 16-call serial public-fixture round via existing subscription after automatic rejection; declaration and protocol binding preserved in authorization.json.",
+      "status": "exhausted-and-closed",
+      "used_calls": 16,
+      "authorization": "docs/evidence/sprint-2-6-v34-development-20261020/authorization.json",
+      "execution": "docs/evidence/sprint-2-6-v34-development-20261020/execution/summary.json",
+      "human_review": "docs/evidence/sprint-2-6-v34-development-20261020/human-review/manifest.json"
     }
   },
   "task_plan_file": "planning/sprint-2-6.tasks.json",

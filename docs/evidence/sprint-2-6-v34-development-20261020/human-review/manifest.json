@@ -1,0 +1,442 @@
+{
+  "format": "development-human-assessment/v1",
+  "recorded_on": "2026-10-20",
+  "authority": "human-declared-not-authenticated",
+  "reviewer": "leozitogs:po-declared",
+  "confirmations": {
+    "ready_cases": "Aprovo os seis critérios das seis análises ready v3.4",
+    "branding_conflict": "Aprovo os seis critérios de dev-branding-conflict v3.4",
+    "ambiguous": "Aprovo a interpretação e os seis critérios de dev-ambiguous v3.4"
+  },
+  "previous_comparison": {
+    "path": "docs/evidence/sprint-2-6-v34-development-20261020/comparison.json",
+    "sha256": "22a12a471f2f043e33c64c97715a1c23c466e4833821da79126c4c6f2653b6c0"
+  },
+  "candidate_program": "semantic-composition/v3.4",
+  "cases": [
+    {
+      "case": "dev-adversarial",
+      "case_sha256": "a0161eb4e56463d947d21676134f72518d661e5b91b46403d37174de8e025d0d",
+      "analysis_sha256": "bd31f3f430e5240c28381885050a9abadc5fcef7f762aca29533997fee726b3b",
+      "status": "pass",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-v34-development-20261020/human-review/dev-adversarial-review.json",
+        "sha256": "30a1f3509b88d9f673ec00bbdddb4b617efcbb9049e4e3b0837b201d9fbabacd"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-v34-development-20261020/human-review/dev-adversarial-assessment.json",
+        "sha256": "8989d4789137ee80cae5230fc795e23c231a70d6d695fb9beab73c2f4a528007"
+      },
+      "baseline_status": "pass",
+      "previous_round_status": "pass",
+      "audit_status": "valid"
+    },
+    {
+      "case": "dev-ambiguous",
+      "case_sha256": "96d9954a55ca4bf3aa2ad1d8156c160c4692b97b3d1cdcd51c2f84adbf8ccd48",
+      "analysis_sha256": "7e552b1881ef697bac14441cb3002defeb5899125cb706fba093edfc3100709f",
+      "status": "pass",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-v34-development-20261020/human-review/dev-ambiguous-review.json",
+        "sha256": "18946a88a7dd986c44d305ee9aa24125c4afb5266187d2b41062f1d51dba8f4b"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-v34-development-20261020/human-review/dev-ambiguous-assessment.json",
+        "sha256": "9b37150a43e4c9d4dab6474541776edc7d5df500d5396778a1f258331dcd9d69"
+      },
+      "baseline_status": "fail",
+      "previous_round_status": "fail",
+      "audit_status": "valid"
+    },
+    {
+      "case": "dev-branding-conflict",
+      "case_sha256": "4e5fc12e8016de6687d30a9c60c78829c34f9cd6b1a0d7515b1830d71e8f7d30",
+      "analysis_sha256": "1e31df44f4622121c3574bcc417e6e1050e90cf80ff4f5cf553ce207ef6aaefc",
+      "status": "pass",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-v34-development-20261020/human-review/dev-branding-conflict-review.json",
+        "sha256": "095d0ceca7f49acd19184b0fa271b129efd5647a3117e0bc56cd70f1d5f94546"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-v34-development-20261020/human-review/dev-branding-conflict-assessment.json",
+        "sha256": "4aa0d1d88d3dc998d1ec3dfa3b9c7de18a7a950fa7dc2b91259151a7441f8542"
+      },
+      "baseline_status": "fail",
+      "previous_round_status": "fail",
+      "audit_status": "valid"
+    },
+    {
+      "case": "dev-compatible-rules",
+      "case_sha256": "f338181b253045093d1101f966cf863f3c7c51d94831becb88e0be60c8ad91ba",
+      "analysis_sha256": "f62f9560aa2ecdebc90482158164890665a6a9d861501dc3b6fecd86b40ae5f8",
+      "status": "pass",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-v34-development-20261020/human-review/dev-compatible-rules-review.json",
+        "sha256": "e7fee37b19feb641ad5326606ebfa21b481675537dbc1f3ada9c682f566989e6"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-v34-development-20261020/human-review/dev-compatible-rules-assessment.json",
+        "sha256": "0f03e95836981a7141e034fefc3188ff9d7ceaf7faa28fb3d12109db220080c5"
+      },
+      "baseline_status": "pass",
+      "previous_round_status": "pass",
+      "audit_status": "valid"
+    },
+    {
+      "case": "dev-new-domain",
+      "case_sha256": "670709add5aaa3d8a9bc20d0781cb87799266016de42047cd3732e7dc332ca3d",
+      "analysis_sha256": "fc4acfb7442988d28fa2af9fc57325b0a42f0532c34c643cd2ddeca174b3011c",
+      "status": "pass",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-v34-development-20261020/human-review/dev-new-domain-review.json",
+        "sha256": "cee1d44b150ffe7df1eed2f5fdf68275763e9744acdaefc411c9b496eed5254a"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-v34-development-20261020/human-review/dev-new-domain-assessment.json",
+        "sha256": "72947ecb215cf62c6fce33991378f2de3d4ce30a37f9650bb2ad57639a0062dc"
+      },
+      "baseline_status": "pass",
+      "previous_round_status": "pass",
+      "audit_status": "error"
+    },
+    {
+      "case": "dev-rules-a",
+      "case_sha256": "7dcbd77cafd0a7836b7a1f2fac6a361fe083606937b916588b107c35318f4fdd",
+      "analysis_sha256": "e6cae0c80e4a70606117e9a9b60f875539b1ed3593e7fc7f188ca67be8a25143",
+      "status": "pass",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-v34-development-20261020/human-review/dev-rules-a-review.json",
+        "sha256": "27ffcc3d5fcedbcee89a5b5772c2762964daa54171fb66e463d210d225fe89b9"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-v34-development-20261020/human-review/dev-rules-a-assessment.json",
+        "sha256": "aed1ce2c26106f065e63750549f16957009762d621f1a57bf58650e08ca4a8ba"
+      },
+      "baseline_status": "pass",
+      "previous_round_status": "pass",
+      "audit_status": "valid"
+    },
+    {
+      "case": "dev-rules-b",
+      "case_sha256": "9d7354f306a8e7b52957c87187eab0d05c1a66f66ef2c2ddf78b8f858d196b58",
+      "analysis_sha256": "b2293470cbd7d736a96b0bb9cc815cbdae7f5d76b490664ca38bd91810d388ad",
+      "status": "pass",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-v34-development-20261020/human-review/dev-rules-b-review.json",
+        "sha256": "81a18ab32de2c83a7a15d915fc0bab8bd221c14c7a2c284f927ce778621f02b6"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-v34-development-20261020/human-review/dev-rules-b-assessment.json",
+        "sha256": "716e4f2d08b86ecf2611587b625b3a6d47ba32f956988f4d130d9f5cd48af9e4"
+      },
+      "baseline_status": "fail",
+      "previous_round_status": "pass",
+      "audit_status": "valid"
+    },
+    {
+      "case": "dev-unread-assets",
+      "case_sha256": "3c63236be69375dd183ee04a12c9fe91be3b2a43a507b9c974db9ed5774f34c5",
+      "analysis_sha256": "2b867df9f958d7631bfd95a7349e60aee5c77fded132c5ba68fe4e61e339856c",
+      "status": "pass",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass",
+          "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+        }
+      ],
+      "review": {
+        "path": "docs/evidence/sprint-2-6-v34-development-20261020/human-review/dev-unread-assets-review.json",
+        "sha256": "93d1ddcef66600b08fd46a0c597c31f056727c1da89dd510b9930aaebf03d434"
+      },
+      "assessment": {
+        "path": "docs/evidence/sprint-2-6-v34-development-20261020/human-review/dev-unread-assets-assessment.json",
+        "sha256": "665f616d9bdeef7b52971bf1b85eaa85eb0947adcce779956678fd54903be557"
+      },
+      "baseline_status": "pass",
+      "previous_round_status": "pass",
+      "audit_status": "valid"
+    }
+  ],
+  "criteria_judged": 48,
+  "criteria_pending": 0,
+  "criteria_pass": 48,
+  "criteria_fail": 0,
+  "assessments": {
+    "pass_count": 8,
+    "fail_count": 0,
+    "not_run_count": 0
+  },
+  "baseline_selected_assessments": {
+    "pass_count": 5,
+    "fail_count": 3
+  },
+  "previous_round_assessments": {
+    "pass_count": 6,
+    "fail_count": 2,
+    "not_run_count": 0
+  },
+  "targeted_coverage_and_citation_repairs": "approved-in-recorded-snapshots-only",
+  "remaining_failures": "No human semantic failure in these eight snapshots. One audit failed exact digest binding and remains an independent technical error.",
+  "calls_during_review": 0,
+  "round_calls": 16,
+  "holdout_read": false,
+  "model_qualification": "not-established",
+  "compilation_eligibility": "not-authorized",
+  "candidate_promoted": false,
+  "limitations": [
+    "Human declarations are not independently authenticated.",
+    "Historical references and one v3.4 development round do not establish causal, stable or production performance improvement.",
+    "All earlier initial not-run assessments remain immutable historical snapshots.",
+    "One audit binding error remains; no holdout, repeated profile comparison, model qualification or promotion."
+  ]
+}

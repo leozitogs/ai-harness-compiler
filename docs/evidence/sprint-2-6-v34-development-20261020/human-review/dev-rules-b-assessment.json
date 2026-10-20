@@ -1,0 +1,540 @@
+{
+  "schema_version": "SemanticAssessment/v3",
+  "case": {
+    "schema_version": "AssessmentCase/v2",
+    "id": "dev-rules-b",
+    "project": {
+      "schema_version": "ProjectInput/v1",
+      "id": "dev-rules-b",
+      "name": "Fixture dev rules-b",
+      "conception": "Uma equipe organiza publicações e suas fontes.",
+      "domain": "workspace-management",
+      "branding": {
+        "audience": [
+          "autores"
+        ],
+        "tone": [],
+        "principles": [
+          "rastreabilidade",
+          "controle humano"
+        ],
+        "visual_constraints": []
+      },
+      "backlog": [
+        {
+          "id": "register",
+          "title": "Registrar e liberar",
+          "description": "Organizar publicação da equipe e registrar decisões.",
+          "acceptance_criteria": [
+            "O autor pode liberar publicação da equipe sem aprovação de terceiros."
+          ],
+          "depends_on": [],
+          "inputs": [],
+          "outputs": [],
+          "data_owner": null,
+          "side_effects": [],
+          "risk": "unknown",
+          "implementation": "undecided"
+        }
+      ],
+      "constraints": {
+        "technical": [],
+        "security": [],
+        "business": [
+          "Registrar a identidade do responsável."
+        ],
+        "max_build_cost_usd": 0.0
+      },
+      "assets": [],
+      "evidence_pack": null,
+      "domain_profile": null
+    },
+    "expected_behavior": "ready",
+    "obligations": [
+      {
+        "id": "required-1",
+        "source_pointer": "/backlog/0/acceptance_criteria/0",
+        "quote": "O autor pode liberar publicação da equipe sem aprovação de terceiros.",
+        "disposition": "rule"
+      }
+    ],
+    "requires_conflict": false,
+    "conflict_source_pointers": [],
+    "refusal_source_pointers": [],
+    "expectations_approval": {
+      "reviewer": "leozitogs:po-declared",
+      "note": "PO explicitly approved the seven development expectations described in the async question on 2026-10-19; does not approve model outputs or qualification.",
+      "authority": "human-declared-not-authenticated"
+    }
+  },
+  "rubric": {
+    "schema_version": "UnderstandingRubric/v1",
+    "id": "understanding-quality",
+    "version": "v2",
+    "criteria": [
+      {
+        "id": "rule-coverage",
+        "description": "100% das regras determináveis têm condição, resultado e exceções fiéis; perguntas materiais cobrem apenas obrigações ambíguas, sem dispensar regras claras. Bloqueio esperado não autoriza compilação."
+      },
+      {
+        "id": "citation-support",
+        "description": "Cada conclusão é sustentada pelos átomos exatos citados; paráfrases preservam significado e inferências não são promovidas a fatos."
+      },
+      {
+        "id": "conflict-validity",
+        "description": "Registrar apenas incompatibilidades reais com ambos os lados e precedência pendente; detalhe ausente não é conflito."
+      },
+      {
+        "id": "asset-bounds",
+        "description": "Não afirmar conteúdo de assets não lidos ou tratar dados externos como instruções executáveis."
+      },
+      {
+        "id": "uncertainty",
+        "description": "Hipóteses justificadas e incógnitas explícitas; pergunta material muda regra, autorização, precedência ou resultado. Detalhe de implementação não bloqueia."
+      },
+      {
+        "id": "project-understanding",
+        "description": "Domínio, objetivo, público e capacidades refletem o projeto, sem switches de nichos ou ampliação indevida de autoridade."
+      }
+    ],
+    "acceptance": "all-criteria-pass-no-critical-failure",
+    "approval": {
+      "reviewer": "leozitogs:po-declared",
+      "note": "PO aprovou todos os seis critérios e quatro decisões na conversa em 2026-10-09; docs/delivery/ahc-021-quality-criteria-review.md. Não aprova expectativas individuais, saídas ou qualificação.",
+      "authority": "human-declared-not-authenticated"
+    }
+  },
+  "analysis": {
+    "schema_version": "SemanticAnalysis/v3",
+    "extraction": {
+      "schema_version": "GroundingExtraction/v1",
+      "request": {
+        "schema_version": "UnderstandingRequest/v1",
+        "original_input": {
+          "schema_version": "ProjectInput/v1",
+          "id": "dev-rules-b",
+          "name": "Fixture dev rules-b",
+          "conception": "Uma equipe organiza publicações e suas fontes.",
+          "domain": "workspace-management",
+          "branding": {
+            "audience": [
+              "autores"
+            ],
+            "tone": [],
+            "principles": [
+              "rastreabilidade",
+              "controle humano"
+            ],
+            "visual_constraints": []
+          },
+          "backlog": [
+            {
+              "id": "register",
+              "title": "Registrar e liberar",
+              "description": "Organizar publicação da equipe e registrar decisões.",
+              "acceptance_criteria": [
+                "O autor pode liberar publicação da equipe sem aprovação de terceiros."
+              ],
+              "depends_on": [],
+              "inputs": [],
+              "outputs": [],
+              "data_owner": null,
+              "side_effects": [],
+              "risk": "unknown",
+              "implementation": "undecided"
+            }
+          ],
+          "constraints": {
+            "technical": [],
+            "security": [],
+            "business": [
+              "Registrar a identidade do responsável."
+            ],
+            "max_build_cost_usd": 0.0
+          },
+          "assets": [],
+          "evidence_pack": null,
+          "domain_profile": null
+        },
+        "original_sha256": "b3f1743dc0c1b25e7e7d659acb7d3d2db5d57664467af2e6ee9ed65488b5382c",
+        "references": [
+          {
+            "id": "input-1",
+            "project_id": "dev-rules-b",
+            "pointer": "/conception",
+            "value": "Uma equipe organiza publicações e suas fontes.",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-2",
+            "project_id": "dev-rules-b",
+            "pointer": "/branding",
+            "value": "{\"audience\":[\"autores\"],\"principles\":[\"rastreabilidade\",\"controle humano\"],\"tone\":[],\"visual_constraints\":[]}",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-3",
+            "project_id": "dev-rules-b",
+            "pointer": "/constraints",
+            "value": "{\"business\":[\"Registrar a identidade do responsável.\"],\"max_build_cost_usd\":0.0,\"security\":[],\"technical\":[]}",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-4",
+            "project_id": "dev-rules-b",
+            "pointer": "/backlog/0/description",
+            "value": "Organizar publicação da equipe e registrar decisões.",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-5",
+            "project_id": "dev-rules-b",
+            "pointer": "/backlog/0/acceptance_criteria/0",
+            "value": "O autor pode liberar publicação da equipe sem aprovação de terceiros.",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-6",
+            "project_id": "dev-rules-b",
+            "pointer": "/domain",
+            "value": "workspace-management",
+            "content_trust": "untrusted-data"
+          }
+        ]
+      },
+      "atoms": [
+        {
+          "id": "atom-1",
+          "source_ref": "input-1",
+          "pointer": "/conception",
+          "quote": "Uma equipe organiza publicações e suas fontes.",
+          "kind": "conception",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-2",
+          "source_ref": "input-2",
+          "pointer": "/branding/audience/0",
+          "quote": "autores",
+          "kind": "branding",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-3",
+          "source_ref": "input-2",
+          "pointer": "/branding/principles/0",
+          "quote": "rastreabilidade",
+          "kind": "branding",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-4",
+          "source_ref": "input-2",
+          "pointer": "/branding/principles/1",
+          "quote": "controle humano",
+          "kind": "branding",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-5",
+          "source_ref": "input-3",
+          "pointer": "/constraints/business/0",
+          "quote": "Registrar a identidade do responsável.",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-6",
+          "source_ref": "input-3",
+          "pointer": "/constraints/max_build_cost_usd",
+          "quote": "0.0",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-7",
+          "source_ref": "input-4",
+          "pointer": "/backlog/0/description",
+          "quote": "Organizar publicação da equipe e registrar decisões.",
+          "kind": "backlog-description",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-8",
+          "source_ref": "input-5",
+          "pointer": "/backlog/0/acceptance_criteria/0",
+          "quote": "O autor pode liberar publicação da equipe sem aprovação de terceiros.",
+          "kind": "acceptance-criterion",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-9",
+          "source_ref": "input-6",
+          "pointer": "/domain",
+          "quote": "workspace-management",
+          "kind": "domain-declaration",
+          "content_trust": "untrusted-data"
+        }
+      ],
+      "excluded_references": [],
+      "asset_contents": "not-read",
+      "semantic_status": "not-established"
+    },
+    "proposal": {
+      "schema_version": "SemanticAnalysisProposal/v3",
+      "criteria": [
+        {
+          "source_atom_id": "atom-8",
+          "kind": "business-rule",
+          "condition": {
+            "text": "O autor pretende liberar uma publicação da equipe.",
+            "source_atom_ids": [
+              "atom-8"
+            ]
+          },
+          "outcome": {
+            "text": "O autor pode liberar a publicação sem aprovação de terceiros.",
+            "source_atom_ids": [
+              "atom-8"
+            ]
+          },
+          "exceptions": [],
+          "note": "A autorização não depende de aprovação adicional.",
+          "question": null,
+          "uncertainties": []
+        }
+      ],
+      "guards": [],
+      "context_findings": [
+        {
+          "subject": "purpose",
+          "text": "Organizar publicações da equipe e suas fontes, registrando decisões.",
+          "note": "Finalidade declarada na concepção e na descrição do backlog.",
+          "context_indices": [
+            0,
+            6
+          ]
+        },
+        {
+          "subject": "audience",
+          "text": "Autores.",
+          "note": "Público explicitamente declarado.",
+          "context_indices": [
+            1
+          ]
+        },
+        {
+          "subject": "positioning",
+          "text": "Rastreabilidade e controle humano orientam o projeto.",
+          "note": "Esses princípios não estabelecem exigência de aprovação de terceiros.",
+          "context_indices": [
+            2,
+            3
+          ]
+        },
+        {
+          "subject": "domain",
+          "text": "Gestão de workspace para organização de publicações e fontes de uma equipe.",
+          "note": "Interpretação da declaração de domínio à luz da concepção.",
+          "context_indices": [
+            0,
+            7
+          ]
+        },
+        {
+          "subject": "constraint",
+          "text": "É obrigatório registrar a identidade do responsável.",
+          "note": "A aplicabilidade não foi especificada: a declaração não define operação ou condição para esse registro. A obrigação permanece explícita, sem fornecer uma política executável de aplicabilidade nem acrescentar aprovação à liberação de publicações.",
+          "context_indices": [
+            4
+          ]
+        },
+        {
+          "subject": "constraint",
+          "text": "O custo máximo de build é US$ 0,00.",
+          "note": "Limite declarado no campo max_build_cost_usd.",
+          "context_indices": [
+            5
+          ]
+        }
+      ],
+      "issues": []
+    }
+  },
+  "review": {
+    "reviewer": "leozitogs:po-declared",
+    "note": "PO na conversa: Aprovo os seis critérios das seis análises ready v3.4. Escopo: novo snapshot v3.4 de dev-rules-b. Nenhum aceite histórico transferido, qualificação de modelo ou autorização de compilação.",
+    "authority": "human-declared-not-authenticated",
+    "schema_version": "SemanticHumanReview/v3",
+    "case_sha256": "9d7354f306a8e7b52957c87187eab0d05c1a66f66ef2c2ddf78b8f858d196b58",
+    "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+    "analysis_sha256": "b2293470cbd7d736a96b0bb9cc815cbdae7f5d76b490664ca38bd91810d388ad",
+    "checks": [
+      {
+        "criterion": "rule-coverage",
+        "outcome": "pass",
+        "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+      },
+      {
+        "criterion": "citation-support",
+        "outcome": "pass",
+        "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+      },
+      {
+        "criterion": "conflict-validity",
+        "outcome": "pass",
+        "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+      },
+      {
+        "criterion": "asset-bounds",
+        "outcome": "pass",
+        "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+      },
+      {
+        "criterion": "uncertainty",
+        "outcome": "pass",
+        "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+      },
+      {
+        "criterion": "project-understanding",
+        "outcome": "pass",
+        "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+      }
+    ],
+    "coverage": [
+      {
+        "obligation_id": "required-1",
+        "finding_id": "criterion-1"
+      }
+    ],
+    "finding_support": [
+      {
+        "finding_id": "criterion-1",
+        "finding_sha256": "ad73cb487266c82f89325a9ef8e31de9ca4a8c760d15c10b1b881c4b9268fec7",
+        "source_atom_ids": [
+          "atom-8"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      },
+      {
+        "finding_id": "context-1",
+        "finding_sha256": "36ba56209547c89ade469f5f5f057e2d87c98f66a38b695bb8518b11e89edc97",
+        "source_atom_ids": [
+          "atom-1",
+          "atom-7"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      },
+      {
+        "finding_id": "context-2",
+        "finding_sha256": "21dc6c05c2a088cab8529fa0e078ade2a529107573d3220261170e6468056dd9",
+        "source_atom_ids": [
+          "atom-2"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      },
+      {
+        "finding_id": "context-3",
+        "finding_sha256": "ccf5162a54c23ace56e810a6cdb087028e7970fc64b623a950bb147b0d7c5b05",
+        "source_atom_ids": [
+          "atom-3",
+          "atom-4"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      },
+      {
+        "finding_id": "context-4",
+        "finding_sha256": "c21cbd018cbf8375f19b8fdb5bd66ab790b341f01d5e7a7e5a9d0b7e4105c3b4",
+        "source_atom_ids": [
+          "atom-1",
+          "atom-9"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      },
+      {
+        "finding_id": "context-5",
+        "finding_sha256": "208f61fa8b39ed14fc4c25d9a6bfe8630399c8ae7686c1ebcf5f58049041d466",
+        "source_atom_ids": [
+          "atom-5"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      },
+      {
+        "finding_id": "context-6",
+        "finding_sha256": "1777e0fab8c4a8cb9b37467b782e63b7fc29125f290662ee5b1375004038f5b2",
+        "source_atom_ids": [
+          "atom-6"
+        ],
+        "outcome": "pass",
+        "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+      }
+    ],
+    "component_support": [
+      {
+        "finding_id": "criterion-1",
+        "component_name": "condition",
+        "component_index": null,
+        "source_atom_ids": [
+          "atom-8"
+        ],
+        "outcome": "pass",
+        "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+      },
+      {
+        "finding_id": "criterion-1",
+        "component_name": "outcome",
+        "component_index": null,
+        "source_atom_ids": [
+          "atom-8"
+        ],
+        "outcome": "pass",
+        "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+      }
+    ]
+  },
+  "checks": [
+    {
+      "criterion": "rule-coverage",
+      "outcome": "pass",
+      "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+    },
+    {
+      "criterion": "citation-support",
+      "outcome": "pass",
+      "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+    },
+    {
+      "criterion": "conflict-validity",
+      "outcome": "pass",
+      "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+    },
+    {
+      "criterion": "asset-bounds",
+      "outcome": "pass",
+      "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+    },
+    {
+      "criterion": "uncertainty",
+      "outcome": "pass",
+      "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+    },
+    {
+      "criterion": "project-understanding",
+      "outcome": "pass",
+      "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+    }
+  ],
+  "status": "pass",
+  "input_sha256": "b3f1743dc0c1b25e7e7d659acb7d3d2db5d57664467af2e6ee9ed65488b5382c",
+  "case_sha256": "9d7354f306a8e7b52957c87187eab0d05c1a66f66ef2c2ddf78b8f858d196b58",
+  "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+  "analysis_sha256": "b2293470cbd7d736a96b0bb9cc815cbdae7f5d76b490664ca38bd91810d388ad",
+  "compilation_eligibility": "not-authorized",
+  "model_qualification": "not-established"
+}

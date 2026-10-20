@@ -1,0 +1,164 @@
+{
+  "schema_version": "SemanticVerifierProposal/v4",
+  "analysis_sha256": "b2293470cbd7d736a96b0bb9cc815cbdae7f5d76b490664ca38bd91810d388ad",
+  "findings": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "ad73cb487266c82f89325a9ef8e31de9ca4a8c760d15c10b1b881c4b9268fec7",
+      "source_atom_ids": ["atom-8"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "A fonte autoriza expressamente o autor a liberar publicação da equipe sem aprovação de terceiros."
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "36ba56209547c89ade469f5f5f057e2d87c98f66a38b695bb8518b11e89edc97",
+      "source_atom_ids": ["atom-1", "atom-7"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "As fontes declaram organização de publicações e fontes e registro de decisões."
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "21dc6c05c2a088cab8529fa0e078ade2a529107573d3220261170e6468056dd9",
+      "source_atom_ids": ["atom-2"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "O público declarado é autores."
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "ccf5162a54c23ace56e810a6cdb087028e7970fc64b623a950bb147b0d7c5b05",
+      "source_atom_ids": ["atom-3", "atom-4"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "Rastreabilidade e controle humano são princípios explícitos; não especificam aprovação de terceiros."
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "c21cbd018cbf8375f19b8fdb5bd66ab790b341f01d5e7a7e5a9d0b7e4105c3b4",
+      "source_atom_ids": ["atom-1", "atom-9"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "O domínio workspace-management é contextualizado pela organização de publicações e fontes da equipe."
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "208f61fa8b39ed14fc4c25d9a6bfe8630399c8ae7686c1ebcf5f58049041d466",
+      "source_atom_ids": ["atom-5"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "A restrição exige registrar a identidade do responsável, mas não define aplicabilidade nem identifica esse responsável. Permanece separada da permissão de publicação."
+    },
+    {
+      "finding_id": "context-6",
+      "finding_sha256": "1777e0fab8c4a8cb9b37467b782e63b7fc29125f290662ee5b1375004038f5b2",
+      "source_atom_ids": ["atom-6"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "O campo max_build_cost_usd contém 0.0, sustentando o limite declarado."
+    }
+  ],
+  "component_judgments": [
+    {
+      "finding_id": "criterion-1",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": ["atom-8"],
+      "support": "supports",
+      "note": "A permissão trata do autor que pretende liberar publicação da equipe."
+    },
+    {
+      "finding_id": "criterion-1",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": ["atom-8"],
+      "support": "supports",
+      "note": "A liberação sem aprovação de terceiros é expressamente permitida."
+    }
+  ],
+  "omissions": [
+    {
+      "id": "omission-1",
+      "kind": "question",
+      "text": "A quais operações se aplica o registro obrigatório de identidade e quem é o responsável cuja identidade deve ser registrada?",
+      "rationale": "A restrição não define seu alcance nem o papel responsável. A resposta altera a regra de registro; não se pode presumir que responsável seja autor ou executor autenticado.",
+      "source_atom_ids": ["atom-5"],
+      "impact": "rule"
+    }
+  ],
+  "source_coverage": [
+    {
+      "atom_id": "atom-1",
+      "quote_sha256": "88b9866f0e0b53ae15c7d6439e0c540ac09134f17f179c297c4dde265f0c01eb",
+      "disposition": "represented",
+      "finding_ids": ["context-1", "context-4"],
+      "omission_ids": [],
+      "note": "Concepção representada na finalidade e no domínio."
+    },
+    {
+      "atom_id": "atom-2",
+      "quote_sha256": "75f26d13ebd8877644c57a369ce71b82b639903217ed12ebe61beeffd8c11586",
+      "disposition": "represented",
+      "finding_ids": ["context-2"],
+      "omission_ids": [],
+      "note": "Público representado."
+    },
+    {
+      "atom_id": "atom-3",
+      "quote_sha256": "e8a964e534bd9189a4c1ee68dc1e80429c5b14930ce7df548075257a8a8dccc7",
+      "disposition": "represented",
+      "finding_ids": ["context-3"],
+      "omission_ids": [],
+      "note": "Princípio de rastreabilidade representado."
+    },
+    {
+      "atom_id": "atom-4",
+      "quote_sha256": "a6e3b461d6bc6975496196edb2b7d4ea96130a66c49e4e058c4d66078d23422f",
+      "disposition": "represented",
+      "finding_ids": ["context-3"],
+      "omission_ids": [],
+      "note": "Princípio de controle humano representado."
+    },
+    {
+      "atom_id": "atom-5",
+      "quote_sha256": "22accd7ad33a45ad61811a4737a68f2c8dfd45b650550aec3cdae8de95fc1a0e",
+      "disposition": "missing",
+      "finding_ids": ["context-5"],
+      "omission_ids": ["omission-1"],
+      "note": "Obrigação representada; falta a pergunta material sobre alcance e identidade responsável."
+    },
+    {
+      "atom_id": "atom-6",
+      "quote_sha256": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+      "disposition": "represented",
+      "finding_ids": ["context-6"],
+      "omission_ids": [],
+      "note": "Limite de custo representado."
+    },
+    {
+      "atom_id": "atom-7",
+      "quote_sha256": "5f77f5215732224df6e88a779d30470fdd1c968ff4e40c54ff9fa444e009e034",
+      "disposition": "represented",
+      "finding_ids": ["context-1"],
+      "omission_ids": [],
+      "note": "Organização e registro de decisões representados."
+    },
+    {
+      "atom_id": "atom-9",
+      "quote_sha256": "d8ec0dfaccceaea0a5f8ccf5a95f094560df5ea36683833d84877c601223e217",
+      "disposition": "represented",
+      "finding_ids": ["context-4"],
+      "omission_ids": [],
+      "note": "Domínio representado."
+    },
+    {
+      "atom_id": "atom-8",
+      "quote_sha256": "66d4ab88ea3d6f5d267015ed9c60dbb7fcc14ebdb910f90b34b27579c499e240",
+      "disposition": "represented",
+      "finding_ids": ["criterion-1"],
+      "omission_ids": [],
+      "note": "Permissão explícita representada; não conflita com a obrigação separada de registro."
+    }
+  ]
+}
