@@ -38,10 +38,10 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DE-0007 — Critérios aprovados e resultado do eval separado da compilação](records/DE/DE-0007/0002.json) · active · revision 2
 - [DE-0008 — Rastreabilidade operacional em liberações e decisões persistidas](records/DE/DE-0008/0002.json) · active · revision 2
 - [DE-0009 — Atualizações de dependências com CI por head atualizado](records/DE/DE-0009/0006.json) · active · revision 6
-- [DE-0010 — Otimização de inferência antes de fine-tuning condicionado](records/DE/DE-0010/0012.json) · active · revision 12
+- [DE-0010 — Otimização de inferência antes de fine-tuning condicionado](records/DE/DE-0010/0014.json) · active · revision 14
 - [DE-0011 — Nexo em Sprint 2.5.5 antes da otimização](records/DE/DE-0011/0014.json) · active · revision 14
 - [DE-0012 — Emenda da Sprint2.5.5 para Vera revisora de QA](records/DE/DE-0012/0006.json) · active · revision 6
-- [DE-0013 — Fechar Sprint2.5.5 e iniciar 2.6 com pré-requisitos explícitos](records/DE/DE-0013/0002.json) · active · revision 2
+- [DE-0013 — Fechar Sprint2.5.5 e iniciar 2.6 com pré-requisitos explícitos](records/DE/DE-0013/0004.json) · active · revision 4
 - [DOC-0001 — Concepção do AI Harness Compiler](records/DOC/DOC-0001/0006.json) · active · revision 6
 - [DOC-0002 — Planejamento detalhado da Sprint 1](records/DOC/DOC-0002/0006.json) · draft · revision 6
 - [DOC-0003 — Planejamento da Sprint 2](records/DOC/DOC-0003/0012.json) · active · revision 12
@@ -71,7 +71,8 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0027 — Incremento funcional AHC-030 e demonstração Vera/Nexo](records/DOC/DOC-0027/0008.json) · active · revision 8
 - [DOC-0028 — Correções da review e demonstração de resolução AHC-030](records/DOC/DOC-0028/0004.json) · active · revision 4
 - [DOC-0029 — Review e encerramento da Sprint2.5.5 pelo PO](records/DOC/DOC-0029/0002.json) · active · revision 2
-- [DOC-0030 — Kickoff Sprint2.6 e auditoria offline da baseline](records/DOC/DOC-0030/0002.json) · active · revision 2
+- [DOC-0030 — Kickoff Sprint2.6 e auditoria offline da baseline](records/DOC/DOC-0030/0004.json) · active · revision 4
+- [DOC-0031 — Parecer Nexo sobre kickoff e pacote de revisão humana](records/DOC/DOC-0031/0002.json) · active · revision 2
 - [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2
 - [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1
 - [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1

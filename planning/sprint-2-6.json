@@ -109,7 +109,8 @@
     "document": "docs/delivery/sprint-2-6-kickoff.md",
     "evidence": "docs/evidence/sprint-2-6-entry-20261019/audit.json",
     "model_calls": 0,
-    "holdout_read": false
+    "holdout_read": false,
+    "next_deliverable": "docs/delivery/sprint-2-6-development-review.md"
   },
   "budgets": {
     "preparatory_phase": "offline-only-zero-model-calls",
@@ -117,5 +118,15 @@
     "external_paid_services": "not-authorized",
     "training": "conditional-not-started"
   },
-  "task_plan_file": "planning/sprint-2-6.tasks.json"
+  "task_plan_file": "planning/sprint-2-6.tasks.json",
+  "kickoff_review": {
+    "agent": "Nexo",
+    "engine": "codex-cli",
+    "model": "gpt-6.1-sol",
+    "conclusion": "favorable-to-offline-review-preparation",
+    "scope": "substantive-kickoff-excerpt-and-current-snapshot",
+    "po_report_approval": "not-recorded",
+    "continuation_authorization": "PO explicitly authorized continuation if Nexo favorable",
+    "document": "docs/delivery/sprint-2-6-development-review.md"
+  }
 }
