@@ -23,8 +23,12 @@ from ai_harness_compiler.semantic_verification import (
 COMPOSITION_PROGRAM_VERSION = "semantic-composition/v3.1"
 CANDIDATE_COMPOSITION_PROGRAM_VERSION = "semantic-composition/v3.2"
 MULTISOURCE_COMPOSITION_PROGRAM_VERSION = "semantic-composition/v3.3"
+MATERIALITY_COMPOSITION_PROGRAM_VERSION = "semantic-composition/v3.4"
 CompositionProgramVersion = Literal[
-    "semantic-composition/v3.1", "semantic-composition/v3.2", "semantic-composition/v3.3"
+    "semantic-composition/v3.1",
+    "semantic-composition/v3.2",
+    "semantic-composition/v3.3",
+    "semantic-composition/v3.4",
 ]
 COMPOSITION_PROMPT = (
     ANALYSIS_PROMPT.replace("SemanticAnalysisProposal/v2", "SemanticAnalysisProposal/v3")
@@ -78,6 +82,28 @@ the known criterion content and express the cross-source question as an issue.
 """
 )
 
+MATERIALITY_COMPOSITION_PROMPT = (
+    MULTISOURCE_COMPOSITION_PROMPT
+    + """
+Assess each question independently at the scope of project-intent analysis, not runtime
+implementation. A question is blocking only when its unresolved answer is needed to
+determine a declared rule, authorization, outcome, or precedence. In its concise rationale,
+identify the specific source-bound business decision that cannot be determined. An already
+blocked project does not justify adding other blockers; source support alone does not
+establish materiality. Do not invent alternative rules to manufacture an ambiguity.
+Preserve an explicit unconditional obligation as normative context even if execution timing,
+implementation mechanism, or assignment of a person is absent. Such absence alone does not
+prevent understanding that obligation. Record the limitation in context_findings; if a useful
+follow-up question is retained, use impact=implementation-detail rather than impact=rule.
+This is not a blanket exemption: unresolved permission, conflicting declared obligations,
+missing business completion conditions, and genuinely indeterminate responsible roles may
+still require a blocking question when the cited declarations establish that dependency.
+Do not suppress these questions to obtain ready. Do not claim implementation-detail supplies
+runtime enforcement or authorization. Keep legitimate conflicts and blockers, preserve all
+known rules, and never treat a positive audit or ready/blocked match as human approval.
+"""
+)
+
 
 def composition_prompt(program_version: CompositionProgramVersion) -> str:
     """Select an explicit recipe without promoting the unqualified candidate."""
@@ -87,6 +113,8 @@ def composition_prompt(program_version: CompositionProgramVersion) -> str:
         return CANDIDATE_COMPOSITION_PROMPT
     if program_version == MULTISOURCE_COMPOSITION_PROGRAM_VERSION:
         return MULTISOURCE_COMPOSITION_PROMPT
+    if program_version == MATERIALITY_COMPOSITION_PROGRAM_VERSION:
+        return MATERIALITY_COMPOSITION_PROMPT
     raise ValueError("Unknown composition program version")
 
 
@@ -124,7 +152,10 @@ def composition_response_schema(
         "enum": [a.id for a in compact_context(extraction)],
     }
     criterion = schema["$defs"]["CriterionV3"]
-    if program_version == MULTISOURCE_COMPOSITION_PROGRAM_VERSION:
+    if program_version in (
+        MULTISOURCE_COMPOSITION_PROGRAM_VERSION,
+        MATERIALITY_COMPOSITION_PROGRAM_VERSION,
+    ):
         criterion["properties"]["uncertainties"]["maxItems"] = 0
         for variant in schema["$defs"]["AnalysisIssue"]["anyOf"]:
             indices = variant["properties"]["context_indices"]
@@ -183,9 +214,10 @@ def analyze_composition(
             composition_response_schema(extraction, program_version=program_version),
         )
     )
-    if program_version == MULTISOURCE_COMPOSITION_PROGRAM_VERSION and any(
-        criterion.uncertainties for criterion in proposal.criteria
-    ):
+    if program_version in (
+        MULTISOURCE_COMPOSITION_PROGRAM_VERSION,
+        MATERIALITY_COMPOSITION_PROGRAM_VERSION,
+    ) and any(criterion.uncertainties for criterion in proposal.criteria):
         raise ValueError(
             "COMPOSITION_QUESTION_ROUTE: Secondary questions must use source-bound issues"
         )
