@@ -55,6 +55,12 @@ from ai_harness_compiler.models.reserved_evaluation import (
     ReservedPreparationReport,
     prepare_reserved_evaluation,
 )
+from ai_harness_compiler.models.reserved_run import (
+    ReservedRunAuthorization,
+    ReservedRunReport,
+    ReservedRunRequest,
+    ReservedSemanticAssessment,
+)
 from ai_harness_compiler.models.scrum import (
     DeliveryEvidence,
     Impediment,
@@ -110,6 +116,10 @@ from ai_harness_compiler.pipeline import plan
 from ai_harness_compiler.planning import decompose
 
 MODELS: dict[str, type[Contract]] = {
+    "reserved-run-request": ReservedRunRequest,
+    "reserved-run-authorization": ReservedRunAuthorization,
+    "reserved-run-report": ReservedRunReport,
+    "reserved-semantic-assessment": ReservedSemanticAssessment,
     "reserved-evaluation-protocol": ReservedEvaluationProtocol,
     "reserved-preparation-report": ReservedPreparationReport,
     "qa-review-request": QAReviewRequest,
@@ -406,8 +416,20 @@ def main(argv: list[str] | None = None) -> int:
     from ai_harness_compiler.qa_cli import add_commands as add_qa_commands
 
     add_qa_commands(commands)
+    from ai_harness_compiler.reserved_cli import add_commands as add_reserved_commands
+
+    add_reserved_commands(commands)
     args = parser.parse_args(argv)
     try:
+        if args.command in {
+            "prepare-reserved-run",
+            "run-reserved-evaluation",
+            "validate-reserved-run",
+            "assess-reserved-analysis",
+        }:
+            from ai_harness_compiler.reserved_cli import execute as execute_reserved
+
+            return execute_reserved(args)
         if args.command == "prepare-reserved-evaluation":
             from ai_harness_compiler.semantic_eval import bounded_bytes
 
@@ -760,6 +782,10 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     except ModuleNotFoundError as exc:
         if args.command not in {
+            "prepare-reserved-run",
+            "run-reserved-evaluation",
+            "validate-reserved-run",
+            "assess-reserved-analysis",
             "qa",
             "team",
             "study",

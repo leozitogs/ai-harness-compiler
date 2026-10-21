@@ -1,0 +1,8 @@
+{
+  "execution_authorized": false,
+  "format": "reserved-run-preparation/v1",
+  "model_calls": 0,
+  "payload_validation": "not-performed",
+  "request_sha256": "a28e606595329ca1ed08bac8d036596f11226f3f9fe47251071baa42018f5872",
+  "state": "awaiting-explicit-human-execution-authorization"
+}
