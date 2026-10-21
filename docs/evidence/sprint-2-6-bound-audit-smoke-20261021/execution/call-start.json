@@ -1,0 +1,8 @@
+{
+  "effective_schema_sha256": "7a8060a59153a0b21f133356be845592cc50aa639aa02528e74dc0984e6c0930",
+  "number": 1,
+  "prompt_sha256": "c14612f5396d9527b237c01d2a7c7291fec0f438297dc40480698622c35283a2",
+  "response_schema_sha256": "bc283d7ce3fc1a3f56de8f1ab12e2b8c38c5c2556bd7212d110f9a897ddb7ef4",
+  "status": "started",
+  "timeout_seconds": 180
+}

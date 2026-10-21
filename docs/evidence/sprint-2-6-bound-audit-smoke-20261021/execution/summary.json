@@ -1,0 +1,11 @@
+{
+  "candidate_promoted": false,
+  "compilation_eligibility": "not-authorized",
+  "elapsed_seconds": 35.763719,
+  "holdout_read": false,
+  "model_calls": 1,
+  "model_qualification": "not-established",
+  "protocol_sha256": "8b3adf3a5e68ba7b417e398d6e03382e3de302724d9ea143c6a09b38bbd88799",
+  "semantic_status": "not-established",
+  "status": "valid-structural-report"
+}

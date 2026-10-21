@@ -66,3 +66,12 @@ repetir silenciosamente a chamada; alterar a receita v4.0 em lugar; exigir suppo
 no schema. Todas esconderiam erro, alterariam história ou enviesariam a revisão.
 
 Ver [consolidação AHC-021/022](sprint-2-6-prerequisites-review.md).
+
+## Verificação posterior autorizada
+
+Em 21/10/2026, uma autorização específica permitiu um único smoke com a análise
+pública `dev-new-domain`. O provider aceitou a receita v4.1 e devolveu relatório
+estruturalmente válido, sem retry/repair. Ver [execução e limites](sprint-2-6-bound-audit-smoke.md).
+A compatibilidade foi observada nesse snapshot; as limitações de estabilidade,
+semântica, outros tamanhos/providers e promoção continuam válidas. As pendências
+acima descrevem o estado anterior ao smoke, preservado como histórico.

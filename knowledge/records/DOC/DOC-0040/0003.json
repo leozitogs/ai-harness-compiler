@@ -1,0 +1,83 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "After PR61 offline candidate integration, PO approved the frozen concrete one-call request. Historical initial protocol wait state and separate authorization are preserved.",
+  "created_at": "2026-10-21T15:26:49.222326+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Exactly one explicitly authorized model call, structurally valid report and offline exact-binding replay. Compatibility observed on this public snapshot only; no semantic success or promotion inferred.",
+      "outcome": "observed",
+      "sha256": "3074118457e52cd198184586f76c3a243698fff915f652dd760d041b7bf85265",
+      "source": "docs/delivery/sprint-2-6-bound-audit-smoke.md"
+    },
+    {
+      "command": null,
+      "note": "Exactly one explicitly authorized model call, structurally valid report and offline exact-binding replay. Compatibility observed on this public snapshot only; no semantic success or promotion inferred.",
+      "outcome": "observed",
+      "sha256": "8b3adf3a5e68ba7b417e398d6e03382e3de302724d9ea143c6a09b38bbd88799",
+      "source": "docs/evidence/sprint-2-6-bound-audit-smoke-20261021/protocol.json"
+    },
+    {
+      "command": null,
+      "note": "Exactly one explicitly authorized model call, structurally valid report and offline exact-binding replay. Compatibility observed on this public snapshot only; no semantic success or promotion inferred.",
+      "outcome": "observed",
+      "sha256": "d7eab44e4ef51ca6fee2d1b53b8a324bea0e419921abe4d6c0a14f7a5e9e5ffc",
+      "source": "docs/evidence/sprint-2-6-bound-audit-smoke-20261021/authorization.json"
+    },
+    {
+      "command": null,
+      "note": "Exactly one explicitly authorized model call, structurally valid report and offline exact-binding replay. Compatibility observed on this public snapshot only; no semantic success or promotion inferred.",
+      "outcome": "observed",
+      "sha256": "80acb520cd3fe473508756a159d46852c88267b44a3d02eaf493f23182fd288a",
+      "source": "docs/evidence/sprint-2-6-bound-audit-smoke-20261021/execution/summary.json"
+    },
+    {
+      "command": null,
+      "note": "Exactly one explicitly authorized model call, structurally valid report and offline exact-binding replay. Compatibility observed on this public snapshot only; no semantic success or promotion inferred.",
+      "outcome": "observed",
+      "sha256": "098f2cfa0fdbe8ef7644237925a52cc39f1f20d2f3373d28736aa89a7e41fc53",
+      "source": "docs/evidence/sprint-2-6-bound-audit-smoke-20261021/execution/report.json"
+    },
+    {
+      "command": null,
+      "note": "Exactly one explicitly authorized model call, structurally valid report and offline exact-binding replay. Compatibility observed on this public snapshot only; no semantic success or promotion inferred.",
+      "outcome": "observed",
+      "sha256": "bdcd4e194ced7e8be48575e7c2e45487d2fafdb3dafd3304522802df463b0617",
+      "source": "tests/test_bound_audit_smoke_evidence.py"
+    }
+  ],
+  "id": "DOC-0040",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "One snapshot is not a causal gain, stable failure-rate estimate or guarantee for other providers/models/schema sizes.",
+    "Audit still suggests a materiality question; structural validation does not approve that business judgment or reverse prior human analysis approval.",
+    "Immutable observed model identity, actual sampler, cost and resource telemetry remain unknown.",
+    "No further calls, training, default change or story/sprint completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0017",
+    "DOC-0039",
+    "INC-0025"
+  ],
+  "resolution": null,
+  "review_note": "Final offline checks: 1044 tests passed without skips, lint/format/types/schemas/AGENTS/five sprint plans/memory/index/build passed. Exactly one authorized provider compatibility observation; authority remains advisory and verified incident scope is structural only. No additional calls, qualification or promotion.",
+  "reviewed_by": "codex:evidence-review",
+  "revision": 3,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "One explicit PO-authorized Codex subscription call exercised component-audit/v4.1 on saved public dev-new-domain analysis. Provider accepted the schema and report passed exact structural validation in 35.763719s. Budget consumed/closed; no retry, repair, holdout, semantic approval, default promotion or model qualification.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Smoke único autorizado da auditoria v4.1 com vínculos válidos",
+  "updated_at": "2026-10-21T19:27:28.365734+00:00"
+}

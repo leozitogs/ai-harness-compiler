@@ -1,0 +1,10 @@
+{
+  "actor": "leozitogs:po-declared",
+  "authority": "human-declared-not-authenticated",
+  "authorized": true,
+  "confirmation": "Autorizo a única chamada com esses limites",
+  "format": "bounded-audit-smoke-authorization/v1",
+  "protocol_sha256": "8b3adf3a5e68ba7b417e398d6e03382e3de302724d9ea143c6a09b38bbd88799",
+  "recorded_on": "2026-10-21",
+  "scope": "Exactly one audit via existing subscription, public saved analysis only; 180s call/240s session; no retry, repair, tools, paid API, assets, holdout, training or fallback."
+}
