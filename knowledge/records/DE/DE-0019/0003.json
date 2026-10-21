@@ -1,0 +1,75 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "INC-0027 identifies unrepresentable requirements and masked concurrent failure causes.",
+  "created_at": "2026-10-21T21:55:16.529452+00:00",
+  "decision": "Do not relabel statements or weaken checks. Enumerate structural matches, requirement-source representability and simultaneous disposition/refusal/conflict observations. Future contract/preflight requires separate versioned design and semantic review; no model call or automatic approval.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Bound offline structural diagnostics and synthetic-input regressions; no human semantic judgment, model call or change to historical assessments.",
+      "outcome": "observed",
+      "sha256": "1d42822f43b0ec198c549ca21091bfddccad5d5ebe053292f0f82fdeef356d3a",
+      "source": "docs/delivery/sprint-2-6-reserved-diagnosis.md"
+    },
+    {
+      "command": null,
+      "note": "Bound offline structural diagnostics and synthetic-input regressions; no human semantic judgment, model call or change to historical assessments.",
+      "outcome": "observed",
+      "sha256": "f3783a0e3f055f64c0a2e1ac054c65cf12615c434018371509c5762004e5f254",
+      "source": "docs/evidence/sprint-2-6-reserved-diagnosis-20261021/summary.json"
+    },
+    {
+      "command": null,
+      "note": "Bound offline structural diagnostics and synthetic-input regressions; no human semantic judgment, model call or change to historical assessments.",
+      "outcome": "observed",
+      "sha256": "5491b26605c9bdee61230353ecc77d9ac1457e4ca1eee4e7682ae94322ff27e6",
+      "source": "src/ai_harness_compiler/case_diagnostics.py"
+    },
+    {
+      "command": null,
+      "note": "Bound offline structural diagnostics and synthetic-input regressions; no human semantic judgment, model call or change to historical assessments.",
+      "outcome": "observed",
+      "sha256": "1ad8a1333e60e5a4e0a2c395e5c400581cb70b531eebca7be9fb34e39b0b0a5e",
+      "source": "tests/test_case_diagnostics.py"
+    },
+    {
+      "command": null,
+      "note": "Actual PO replies bound to exact two case/analysis snapshots. Only improper-blocker and missing-rejection-traceability interpretations confirmed; not six criteria or whole-response acceptance.",
+      "outcome": "observed",
+      "sha256": "0791da642ac7666b4c352908ded6d100e41bfc998a6d818c61bee5222f209d59",
+      "source": "docs/evidence/sprint-2-6-reserved-diagnosis-20261021/scoped-business-decisions.json"
+    }
+  ],
+  "id": "DE-0019",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "Immutable dataclasses are internal projections, not approval/wire contracts.",
+    "No semantic support, model efficacy or contract migration approved.",
+    "Subsequent PO replies confirm only the two presented interpretations, recorded in scoped-business-decisions.json. Historical expectation and analysis dispositions unchanged; complete semantic review remains pending."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "INC-0027",
+    "DOC-0044",
+    "ADR-0029"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 3,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Pure snapshot-bound diagnostic and opt-in new-file script preserve frozen candidate/runtime, expectations and statuses.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Diagnóstico estrutural sem alteração da avaliação histórica",
+  "updated_at": "2026-10-21T22:04:14.262474+00:00"
+}

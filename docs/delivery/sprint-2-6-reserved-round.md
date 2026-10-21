@@ -61,3 +61,13 @@ A qualificação não foi estabelecida, a compilação não foi autorizada e AHC
 AHC-022 e Sprint 2.6 não foram concluídos. AHC-024/025/026 continuam sob seus
 critérios próprios. Registro público contém somente metadados operacionais;
 casos, respostas, autorização completa e documentos de revisão ficam privados.
+
+## Retificação posterior da enumeração de causas
+
+O [diagnóstico estrutural posterior](sprint-2-6-reserved-diagnosis.md) encontrou
+duas divergências de disposição, em vez de uma: no mesmo critério, a mensagem
+de recusa substituía a de disposição. Também identificou 17 obrigações com
+representação requirement impossível na projeção v3. Resultados e expectativas
+históricos permanecem intactos; contagens originais descrevem a agregação
+limitada daquele assessment, não todas as causas nem oito falhas semânticas
+comprovadas do modelo. Nenhum FAIL foi convertido em PASS.
