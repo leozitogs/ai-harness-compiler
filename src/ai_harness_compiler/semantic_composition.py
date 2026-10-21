@@ -224,7 +224,17 @@ def analyze_composition(
     return SemanticAnalysisV3(extraction=extraction, proposal=proposal)
 
 
-def component_audit_schema(analysis: SemanticAnalysisV3) -> dict[str, Any]:
+ComponentAuditProgramVersion = Literal["component-audit/v4.0", "component-audit/v4.1"]
+BOUND_COMPONENT_AUDIT_PROGRAM_VERSION = "component-audit/v4.1"
+
+
+def component_audit_schema(
+    analysis: SemanticAnalysisV3,
+    *,
+    program_version: ComponentAuditProgramVersion = "component-audit/v4.0",
+) -> dict[str, Any]:
+    if program_version not in ("component-audit/v4.0", BOUND_COMPONENT_AUDIT_PROGRAM_VERSION):
+        raise ValueError("Unknown component audit program version")
     analysis = SemanticAnalysisV3.model_validate(analysis.model_dump())
     schema = VerifierProposalV4.model_json_schema()
     schema["properties"]["findings"].update(
@@ -274,13 +284,92 @@ def component_audit_schema(analysis: SemanticAnalysisV3) -> dict[str, Any]:
             variant["properties"]["source_atom_ids"]["minItems"] = 2
         variants.append(variant)
     schema["$defs"]["MissingFinding"] = {"anyOf": variants}
+    if program_version == BOUND_COMPONENT_AUDIT_PROGRAM_VERSION:
+        _bind_audit_inventory(schema, analysis, finding_key, base)
     return schema
 
 
+def _exact_array(values: list[str]) -> dict[str, Any]:
+    """Use an exact value without normalizing or repairing a model response."""
+    return {"type": "array", "const": values, "items": {"type": "string"}}
+
+
+def _bind_audit_inventory(
+    schema: dict[str, Any],
+    analysis: SemanticAnalysisV3,
+    finding_key: str,
+    base: dict[str, Any],
+) -> None:
+    schema["properties"]["analysis_sha256"] = {"type": "string", "const": analysis.snapshot_sha256}
+    variants = []
+    for finding in analysis.findings:
+        variant = deepcopy(base)
+        props = variant["properties"]
+        props["finding_id"] = {"type": "string", "const": finding.id}
+        props["finding_sha256"] = {"type": "string", "const": finding.sha256}
+        props["source_atom_ids"] = _exact_array(finding.source_atom_ids)
+        props["materiality"] = {
+            "type": "string",
+            "enum": ["appropriate", "inappropriate"]
+            if finding.kind == "question"
+            else ["not-applicable"],
+        }
+        variants.append(variant)
+    schema["$defs"][finding_key] = {"anyOf": variants}
+    component = VerifierProposalV4.model_json_schema()["$defs"]["ComponentJudgment"]
+    variants = []
+    for finding in analysis.findings:
+        for binding in finding.component_bindings:
+            variant = deepcopy(component)
+            props = variant["properties"]
+            props["finding_id"] = {"type": "string", "const": finding.id}
+            props["component_name"] = {"type": "string", "const": binding.name}
+            props["component_index"] = (
+                {"type": "null"}
+                if binding.index is None
+                else {"type": "integer", "const": binding.index}
+            )
+            props["source_atom_ids"] = _exact_array(binding.source_atom_ids)
+            variants.append(variant)
+    if variants:
+        schema["$defs"]["ComponentJudgment"] = {"anyOf": variants}
+    else:
+        schema["properties"]["component_judgments"]["maxItems"] = 0
+    coverage = VerifierProposalV4.model_json_schema()["$defs"]["SourceCoverage"]
+    variants = []
+    for source in analysis.sources:
+        variant = deepcopy(coverage)
+        props = variant["properties"]
+        props["atom_id"] = {"type": "string", "const": source.atom_id}
+        props["quote_sha256"] = {"type": "string", "const": source.quote_sha256}
+        variants.append(variant)
+    schema["$defs"]["SourceCoverage"] = {"anyOf": variants}
+
+
+def component_audit_program_digest(
+    analysis: SemanticAnalysisV3,
+    program_version: ComponentAuditProgramVersion = "component-audit/v4.0",
+) -> str:
+    """Recipe fingerprint is separate from the unchanged report's logical v4 program."""
+    return canonical_project_digest(
+        {
+            "program_version": program_version,
+            "logical_program_sha256": verification_v4_program_digest(),
+            "prompt": VERIFIER_PROMPT_V4,
+            "response_schema": component_audit_schema(analysis, program_version=program_version),
+        }
+    )
+
+
 def audit_composition(
-    analysis: SemanticAnalysisV3, generator: JSONGenerator, requested_model: str
+    analysis: SemanticAnalysisV3,
+    generator: JSONGenerator,
+    requested_model: str,
+    *,
+    program_version: ComponentAuditProgramVersion = "component-audit/v4.0",
 ) -> SemanticVerifierReportV4:
     analysis = SemanticAnalysisV3.model_validate(analysis.model_dump())
+    schema = component_audit_schema(analysis, program_version=program_version)
     payload = {
         "analysis_sha256": analysis.snapshot_sha256,
         "findings": [f.model_dump() | {"finding_sha256": f.sha256} for f in analysis.findings],
@@ -291,7 +380,7 @@ def audit_composition(
     proposal = VerifierProposalV4.model_validate_json(
         generator.generate_json(
             VERIFIER_PROMPT_V4 + "\nINPUT DATA:\n" + json.dumps(payload, ensure_ascii=False),
-            component_audit_schema(analysis),
+            schema,
         )
     )
     return SemanticVerifierReportV4(

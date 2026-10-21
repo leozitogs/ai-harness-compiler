@@ -1,0 +1,109 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "After full historical matrix judgment, PO requested continued sprint work. Implemented multi-source question route and fixed concrete corrective-verification budget before execution, without opening AHC024/025/026 or declaring prerequisites complete.",
+  "created_at": "2026-10-20T19:06:25.474566+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Observed bounded round: 16 serial calls, eight valid generations and audits. Exact sources/programs/receipts validated offline; eight changed snapshots initially not-run with no human acceptance transferred.",
+      "outcome": "observed",
+      "sha256": "15c53ff8020420536f6eb67351c6e55cc306acc056d53ecd8e4b7e96633d53a5",
+      "source": "docs/delivery/sprint-2-6-multisource-candidate.md"
+    },
+    {
+      "command": null,
+      "note": "Observed bounded round: 16 serial calls, eight valid generations and audits. Exact sources/programs/receipts validated offline; eight changed snapshots initially not-run with no human acceptance transferred.",
+      "outcome": "observed",
+      "sha256": "dc1940636d6370647045babe335d4fa94a3d76a8fcc1ccfdc99acdd94ef8da61",
+      "source": "docs/evidence/sprint-2-6-v33-development-20261020/protocol-v2.json"
+    },
+    {
+      "command": null,
+      "note": "Observed bounded round: 16 serial calls, eight valid generations and audits. Exact sources/programs/receipts validated offline; eight changed snapshots initially not-run with no human acceptance transferred.",
+      "outcome": "observed",
+      "sha256": "fa78f093e0c1ba2be07c55d7d71a835dda54d4e7920d5e031067f6d32b9d1b29",
+      "source": "docs/evidence/sprint-2-6-v33-development-20261020/protocol-selection.json"
+    },
+    {
+      "command": null,
+      "note": "Observed bounded round: 16 serial calls, eight valid generations and audits. Exact sources/programs/receipts validated offline; eight changed snapshots initially not-run with no human acceptance transferred.",
+      "outcome": "observed",
+      "sha256": "cd9a7ec8a23ef36b901a20a1db677671c0865f6e48c4e1fd0ac10fd57b443393",
+      "source": "docs/evidence/sprint-2-6-v33-development-20261020/comparison.json"
+    },
+    {
+      "command": null,
+      "note": "Observed bounded round: 16 serial calls, eight valid generations and audits. Exact sources/programs/receipts validated offline; eight changed snapshots initially not-run with no human acceptance transferred.",
+      "outcome": "observed",
+      "sha256": "bb199e423ca90569cee2c4b55ef8f5f0e1ea1f5a88b10cde17ee476e8d7017ea",
+      "source": "docs/evidence/sprint-2-6-v33-development-20261020/execution/summary.json"
+    },
+    {
+      "command": null,
+      "note": "Observed bounded round: 16 serial calls, eight valid generations and audits. Exact sources/programs/receipts validated offline; eight changed snapshots initially not-run with no human acceptance transferred.",
+      "outcome": "observed",
+      "sha256": "a00cdd8f035fd698c46f96bce8b62744157dff386f7f8226843382eb2a17005e",
+      "source": "docs/evidence/sprint-2-6-v33-development-20261020/artifact-inventory.json"
+    },
+    {
+      "command": null,
+      "note": "Reviewed current additive offline audit recipe or prerequisite review tracking; original composition versions and historical v4.0 schemas preserved. Prior conclusions remain scoped; no new calls, qualification or story completion. See DE-0017 and DOC-0039.",
+      "outcome": "observed",
+      "sha256": "2d0626602371e6803da520ce095aaa2eb368d4f469b3ea86cbe37f3458893240",
+      "source": "src/ai_harness_compiler/semantic_composition.py"
+    },
+    {
+      "command": null,
+      "note": "Observed bounded round: 16 serial calls, eight valid generations and audits. Exact sources/programs/receipts validated offline; eight changed snapshots initially not-run with no human acceptance transferred.",
+      "outcome": "observed",
+      "sha256": "5311e6ef950919dc1e7336b99e19e221902a59ad260998dd062672f6ffa39059",
+      "source": "tests/test_multisource_composition.py"
+    },
+    {
+      "command": null,
+      "note": "Observed bounded round: 16 serial calls, eight valid generations and audits. Exact sources/programs/receipts validated offline; eight changed snapshots initially not-run with no human acceptance transferred.",
+      "outcome": "observed",
+      "sha256": "9ed8bbd9d5eae1b078c38c78564d1ab7dff9701052788a7e549e85dd6f56c030",
+      "source": "tests/test_v33_development_evidence.py"
+    }
+  ],
+  "id": "DOC-0035",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Numeric limits were fixed by operator under existing authorization; no new PO numeric-budget declaration was invented.",
+    "Single round against mixed-attempt history cannot establish causal gain, stability, cold/warm latency, cost or production performance.",
+    "Requested model alias is known; observed immutable model/sampler/cost and hardware resource telemetry are unknown.",
+    "Fresh PO judged extra identity questions nonmaterial in two blocked cases; uncertainty failures persist, with no historical approvals transferred.",
+    "No model promotion, paid API service, fallback, training or story completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0015",
+    "DE-0014",
+    "DOC-0034",
+    "INC-0022",
+    "INC-0023",
+    "DOC-0036",
+    "INC-0024"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 9,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Executed one frozen v3.3 development round: 16 serial calls, eight valid generations/audits, no retries/repair/holdout. Initial assessments stayed not-run with zero migrated reviews. Subsequent fresh PO judgments in DOC-0036: six pass, two uncertainty fail, zero pending. Default unchanged and candidate not promoted.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Rodada corretiva v3.3 com orçamento fixado e revisão independente por snapshot",
+  "updated_at": "2026-10-21T00:08:57.460619+00:00"
+}

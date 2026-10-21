@@ -1,0 +1,101 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "One real audit call returned; typed report construction rejected its mismatching digest.",
+    "Offline replay reproduces ValueError using unchanged saved final response; no provider call, retry or host repair.",
+    "Implemented opt-in component-audit/v4.1 dynamic identity/digest constraints. Offline standard-schema replay rejects unchanged saved failure and accepts seven valid saved responses; eight old schema hashes preserved. No provider call or repair."
+  ],
+  "author": "codex:engineering",
+  "challenge": "Audit response can be schema-valid while corrupting exact finding identity; cannot be accepted as evidence or silently repaired.",
+  "consequences": [],
+  "context": "Frozen v3.4 dev-new-domain generation/audit pair; maximum 16 calls, no retries or repair.",
+  "created_at": "2026-10-20T23:46:57.395354+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Observed failed audit retained; offline replay verifies rejection, not successful remediation.",
+      "outcome": "observed",
+      "sha256": "bbedde59bfd4eb728f6b18e142427513e02f750a4c034ff2922f6d1384fa3da5",
+      "source": "docs/evidence/sprint-2-6-v34-development-20261020/execution/dev-new-domain/audit-response.txt"
+    },
+    {
+      "command": null,
+      "note": "Observed failed audit retained; offline replay verifies rejection, not successful remediation.",
+      "outcome": "observed",
+      "sha256": "6721306627b5aa6026775e988acc6985c31434df26f5e67c97d96d69c1d07b4d",
+      "source": "docs/evidence/sprint-2-6-v34-development-20261020/execution/dev-new-domain/audit-diagnostic.json"
+    },
+    {
+      "command": null,
+      "note": "Observed failed audit retained; offline replay verifies rejection, not successful remediation.",
+      "outcome": "observed",
+      "sha256": "7be38c924fbeff365bf290b206c92d885e74d398610c38d222dbf9136b7dd605",
+      "source": "docs/evidence/sprint-2-6-v34-development-20261020/execution/dev-new-domain/summary.json"
+    },
+    {
+      "command": null,
+      "note": "Observed failed audit retained; offline replay verifies rejection, not successful remediation.",
+      "outcome": "observed",
+      "sha256": "61420e50980c9c880e3900566c06514deda5b4d5464d97dc72e4d7b66c16d932",
+      "source": "tests/test_v34_development_evidence.py"
+    },
+    {
+      "command": null,
+      "note": "Explicit offline-only candidate; saved structural failure rejected and historical fingerprints preserved. No new model execution, provider compatibility or semantic efficacy claim.",
+      "outcome": "observed",
+      "sha256": "2d0626602371e6803da520ce095aaa2eb368d4f469b3ea86cbe37f3458893240",
+      "source": "src/ai_harness_compiler/semantic_composition.py"
+    },
+    {
+      "command": null,
+      "note": "Explicit offline-only candidate; saved structural failure rejected and historical fingerprints preserved. No new model execution, provider compatibility or semantic efficacy claim.",
+      "outcome": "observed",
+      "sha256": "b5a127da43599ac186ea39f10a5b737c130ac4a8a46a84e431f311d60cad84e9",
+      "source": "tests/test_bound_component_audit.py"
+    },
+    {
+      "command": null,
+      "note": "Explicit offline-only candidate; saved structural failure rejected and historical fingerprints preserved. No new model execution, provider compatibility or semantic efficacy claim.",
+      "outcome": "observed",
+      "sha256": "8d36a18eaf5ae0e4675815e7532407f3511cc1aea9c2779efcb6d30a31ea03a8",
+      "source": "docs/delivery/sprint-2-6-audit-bindings.md"
+    },
+    {
+      "command": null,
+      "note": "Explicit offline-only candidate; saved structural failure rejected and historical fingerprints preserved. No new model execution, provider compatibility or semantic efficacy claim.",
+      "outcome": "observed",
+      "sha256": "50817f4a67f0a2f476f16f2879be621275de06102e399632a70aa6b6d2605d9a",
+      "source": "docs/evidence/sprint-2-6-audit-bindings-20261020/offline-check.json"
+    }
+  ],
+  "id": "INC-0025",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "One observed error in one bounded round is not a stable failure-rate estimate.",
+    "New recipe is offline-only verified; provider compatibility/efficacy and rollout remain pending.",
+    "Host validation remains required even when schema constraints are requested."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0038",
+    "ADR-0021",
+    "DE-0017",
+    "DOC-0039"
+  ],
+  "resolution": "Open operationally: candidate structural schema fix validated offline. Provider acceptance, size limits and actual generation reliability not established; default stays v4.0. Do not edit the saved rejected response or spend the closed budget.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 2,
+  "root_cause": "Observed exact finding_sha256 copy mismatch in saved context-4 judgment. Source IDs match. Cause of the model copying error is not established; host exact-binding validator correctly rejects it.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "v3.4 call 10 returned a parseable audit proposal but context-4 finding_sha256 differs by one character. Validator rejected exact binding. Generation remains separately human-approved; failed audit is preserved without retry or rewriting.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Auditor devolve digest divergente de um achado",
+  "updated_at": "2026-10-21T00:08:46.776132+00:00"
+}

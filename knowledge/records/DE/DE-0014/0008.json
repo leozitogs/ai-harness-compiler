@@ -1,0 +1,67 @@
+{
+  "alternatives": [
+    "Invent a generic trigger: rejected because it changes the obligation.",
+    "Relax component source support: rejected because it hides unsupported applicability.",
+    "New contract for unconditional runtime policy: future extension, not needed to preserve source intent in development context."
+  ],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO rejected the specific guard condition. GuardSpec requires a condition; obligation source does not declare one. This representation pressure is a hypothesis, not a demonstrated causal explanation.",
+  "created_at": "2026-10-20T18:16:13.169747+00:00",
+  "decision": "Use existing v3 context representation for obligations without supported trigger, with exact source indices and explicit applicability limits. Keep v3.1 API/CLI default, add explicit Python candidate selection and program digest. Do not promote without reviewed comparison.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Reviewed current additive offline audit recipe or prerequisite review tracking; original composition versions and historical v4.0 schemas preserved. Prior conclusions remain scoped; no new calls, qualification or story completion. See DE-0017 and DOC-0039.",
+      "outcome": "observed",
+      "sha256": "2d0626602371e6803da520ce095aaa2eb368d4f469b3ea86cbe37f3458893240",
+      "source": "src/ai_harness_compiler/semantic_composition.py"
+    },
+    {
+      "command": null,
+      "note": "992 offline tests passed; human-scoped negative assessment reproduced through CLI. Candidate v3.2 not generated or qualified; legacy prompt bytes preserved.",
+      "outcome": "observed",
+      "sha256": "544defc82a793462eb73085650235f1b0aa681f1025b85dcca2fa56417e6e649",
+      "source": "tests/test_semantic_composition.py"
+    },
+    {
+      "command": null,
+      "note": "992 offline tests passed; human-scoped negative assessment reproduced through CLI. Candidate v3.2 not generated or qualified; legacy prompt bytes preserved.",
+      "outcome": "observed",
+      "sha256": "37138f80ebe7f59e5ccd777d2f22ca00e036ba1f4fa24c12e3ae45a6d1516b2b",
+      "source": "docs/engineering/semantic-composition.md"
+    }
+  ],
+  "id": "DE-0014",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "Prompt instruction is not enforcement or proof of semantic completeness.",
+    "Program digest includes version, prompt and dynamic schema only, not full runtime/model/input fingerprint.",
+    "No causal experiment or new model output."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0033",
+    "ADR-0021",
+    "ADR-0022",
+    "DOC-0035",
+    "DE-0015"
+  ],
+  "resolution": null,
+  "review_note": "Refresh exact current source after explicit opt-in audit schema addition and partial prerequisite review. Legacy receipts/fingerprints preserved by offline regressions; no new model execution or semantic success claim.",
+  "reviewed_by": "codex:evidence-review",
+  "revision": 8,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Prepare explicit composition v3.2 candidate while preserving v3.1 prompt and default. Unconditional source obligations remain normative constraint context, not fabricated conditional guards. Later opt-in v3.3 execution is documented in DOC-0035; old observations and reviews remain bound to original snapshots.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Não inventar gatilho para obrigação sem aplicabilidade declarada",
+  "updated_at": "2026-10-21T00:08:47.651960+00:00"
+}

@@ -1,0 +1,73 @@
+{
+  "alternatives": [
+    "Accept approximate hashes: rejected because exact provenance would be lost.",
+    "Rewrite returned digest: rejected because it would hide an observed failure.",
+    "Change default historical schema: rejected because old receipts/fingerprints must remain reproducible.",
+    "Require positive support in schema: rejected because this biases evaluation."
+  ],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "INC-0025 showed a schema-valid final audit with one changed digest character. Existing host correctly rejected it. Structural echo is not a semantic decision.",
+  "created_at": "2026-10-21T00:08:45.406986+00:00",
+  "decision": "Constrain structural echo values from validated input in an additive explicit recipe. Keep semantic judgments free and host cross-reference/completeness validation strict. Record full recipe digest separately from unchanged logical report fingerprint. Validate actual saved negative response offline; do not repair or retry it.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Explicit offline-only candidate; saved structural failure rejected and historical fingerprints preserved. No new model execution, provider compatibility or semantic efficacy claim.",
+      "outcome": "observed",
+      "sha256": "2d0626602371e6803da520ce095aaa2eb368d4f469b3ea86cbe37f3458893240",
+      "source": "src/ai_harness_compiler/semantic_composition.py"
+    },
+    {
+      "command": null,
+      "note": "Explicit offline-only candidate; saved structural failure rejected and historical fingerprints preserved. No new model execution, provider compatibility or semantic efficacy claim.",
+      "outcome": "observed",
+      "sha256": "b5a127da43599ac186ea39f10a5b737c130ac4a8a46a84e431f311d60cad84e9",
+      "source": "tests/test_bound_component_audit.py"
+    },
+    {
+      "command": null,
+      "note": "Explicit offline-only candidate; saved structural failure rejected and historical fingerprints preserved. No new model execution, provider compatibility or semantic efficacy claim.",
+      "outcome": "observed",
+      "sha256": "8d36a18eaf5ae0e4675815e7532407f3511cc1aea9c2779efcb6d30a31ea03a8",
+      "source": "docs/delivery/sprint-2-6-audit-bindings.md"
+    },
+    {
+      "command": null,
+      "note": "Explicit offline-only candidate; saved structural failure rejected and historical fingerprints preserved. No new model execution, provider compatibility or semantic efficacy claim.",
+      "outcome": "observed",
+      "sha256": "50817f4a67f0a2f476f16f2879be621275de06102e399632a70aa6b6d2605d9a",
+      "source": "docs/evidence/sprint-2-6-audit-bindings-20261020/offline-check.json"
+    }
+  ],
+  "id": "DE-0017",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "Standard JSON Schema validation does not establish provider acceptance or operational efficacy.",
+    "Identity uniqueness, completeness and semantic consistency still require host validation.",
+    "Recipe remains explicit, no CLI/default promotion, model calls or qualification."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "INC-0025",
+    "ADR-0021",
+    "DE-0016"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Opt-in component-audit/v4.1 binds snapshot, finding/component/source identities and digests through dynamic JSON Schema. Default v4.0, logical report v4 and original report validation remain unchanged.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Restringir identidades estruturais sem direcionar o parecer do auditor",
+  "updated_at": "2026-10-21T00:08:45.406986+00:00"
+}
