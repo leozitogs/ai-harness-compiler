@@ -1,0 +1,25 @@
+{
+  "scope": "offline-engineering-diagnostics-only",
+  "tests": {
+    "passed": 1135,
+    "skipped": 0,
+    "duration_seconds": 190.52
+  },
+  "new_synthetic_regressions": 13,
+  "ruff": "passed",
+  "format": "passed",
+  "mypy_source_files": 84,
+  "schemas": "current-no-wire-model-changes",
+  "repository_policy": "current",
+  "sprint_plans": "all-five-current",
+  "memory_records": 127,
+  "memory_reusable": 118,
+  "memory_index": "current",
+  "staged_evidence_digests_verified": 470,
+  "frozen_candidate_runner_sources": "unchanged",
+  "build": "sdist-and-wheel-passed",
+  "distribution_privacy": "passed",
+  "new_model_invocations": 0,
+  "human_output_review": "pending",
+  "qualification": "not-established"
+}

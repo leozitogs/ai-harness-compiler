@@ -1,0 +1,21 @@
+{
+  "candidate_modified": false,
+  "cases": 8,
+  "default_changed": false,
+  "disposition_mismatches": 2,
+  "format": "reserved-causal-diagnostic-summary/v1",
+  "historical_assessments_modified": false,
+  "human_output_review": "not-performed",
+  "missing_explicit_refusals": 1,
+  "new_model_invocations": 0,
+  "obligations": 41,
+  "other_unmatched_obligations": 1,
+  "qualification": "not-established",
+  "request_sha256": "f5e410f3831c90615f7e7fc60b92c339b95f619db99685da2d06d7e259194c55",
+  "required_conflicts_missing": 0,
+  "reserved_exposure": "post-execution-structural-and-selected-text-review; no tuning or training",
+  "same_pointer_candidate_present_for_unmatched": 18,
+  "semantic_support": "not-established",
+  "unmatched_obligations": 18,
+  "unrepresentable_requirement_sources": 17
+}

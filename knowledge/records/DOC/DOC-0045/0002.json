@@ -1,0 +1,68 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Post-execution structural/selected-text review exposed these reserved outputs to candidate author. Preserve raw evidence and no blind reevaluation/generalization claim on same corpus.",
+  "created_at": "2026-10-21T21:55:17.333832+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Bound offline structural diagnostics and synthetic-input regressions; no human semantic judgment, model call or change to historical assessments.",
+      "outcome": "observed",
+      "sha256": "d21f173f30e01442d58a487e44e59f1cb45b278d0b34c512f339bbb2dd824a18",
+      "source": "docs/delivery/sprint-2-6-reserved-diagnosis.md"
+    },
+    {
+      "command": null,
+      "note": "Bound offline structural diagnostics and synthetic-input regressions; no human semantic judgment, model call or change to historical assessments.",
+      "outcome": "observed",
+      "sha256": "f3783a0e3f055f64c0a2e1ac054c65cf12615c434018371509c5762004e5f254",
+      "source": "docs/evidence/sprint-2-6-reserved-diagnosis-20261021/summary.json"
+    },
+    {
+      "command": null,
+      "note": "Bound offline structural diagnostics and synthetic-input regressions; no human semantic judgment, model call or change to historical assessments.",
+      "outcome": "observed",
+      "sha256": "5491b26605c9bdee61230353ecc77d9ac1457e4ca1eee4e7682ae94322ff27e6",
+      "source": "src/ai_harness_compiler/case_diagnostics.py"
+    },
+    {
+      "command": null,
+      "note": "Bound offline structural diagnostics and synthetic-input regressions; no human semantic judgment, model call or change to historical assessments.",
+      "outcome": "observed",
+      "sha256": "1ad8a1333e60e5a4e0a2c395e5c400581cb70b531eebca7be9fb34e39b0b0a5e",
+      "source": "tests/test_case_diagnostics.py"
+    }
+  ],
+  "id": "DOC-0045",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "All eight original assessments remain fail; diagnostic incompatibility does not approve text.",
+    "Business recommendations are advisory; no six-criterion review or qualification.",
+    "No new model call, training, defaults, migration or sprint completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "INC-0027",
+    "DE-0019",
+    "DOC-0044"
+  ],
+  "resolution": null,
+  "review_note": "Inspected source projection, snapshot-bound diagnostic metadata and thirteen passing synthetic tests. PO questions remain pending, no output approvals fabricated.",
+  "reviewed_by": "codex:evidence-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Offline diagnosis: 41 obligations, 18 unmatched, 17 unrepresentable context requirements, two disposition mismatches and one missing refusal. Two specific business questions presented to PO; no answers or human judgments recorded.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Diagnóstico reservado e julgamentos pontuais pendentes",
+  "updated_at": "2026-10-21T21:55:17.742134+00:00"
+}
