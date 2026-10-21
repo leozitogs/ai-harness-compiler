@@ -1,0 +1,309 @@
+{
+  "candidate_code": {
+    "files": [
+      {
+        "path": "src/ai_harness_compiler/semantic_composition.py",
+        "sha256": "2d0626602371e6803da520ce095aaa2eb368d4f469b3ea86cbe37f3458893240"
+      },
+      {
+        "path": "src/ai_harness_compiler/grounding.py",
+        "sha256": "67d1bb2b91029c983d157bde7bc2f565d97a3e775706b536fee5dc1c9a1fc85d"
+      },
+      {
+        "path": "src/ai_harness_compiler/semantic_verification.py",
+        "sha256": "94c2f4081815204bbb10ec93d4d90fb2bb6009abf51d6e6018cfe427debd3450"
+      },
+      {
+        "path": "src/ai_harness_compiler/models/semantic_analysis_v3.py",
+        "sha256": "97ae214bdcd5c8277395f388281a50ddd7bcfada2e320c96510eaafaa203542b"
+      },
+      {
+        "path": "src/ai_harness_compiler/models/semantic_verification_v4.py",
+        "sha256": "f8887a2e180b831e25cb47cf8f4e2b09a43e7c77256ba151a5ba2966fd83a23f"
+      },
+      {
+        "path": "src/ai_harness_compiler/adapters/codex_cli.py",
+        "sha256": "ffceba1be4e50882e0b2c628aef276ff9d8d36277ecef264fde7583e0aff7d49"
+      }
+    ],
+    "scope": "Frozen selected analysis/audit and adapter sources at tracked base commit, before independent curation. Metadata preparation code is a separate increment.",
+    "source_commit": "1e8db614f864970cde229a947ce938ff9c13220f"
+  },
+  "cleanup_grace_seconds": 20,
+  "error_policy": "stop-on-first-error-no-resume",
+  "id": "reserved-v2-20261021-02",
+  "max_corpus_bytes": 33554432,
+  "max_prompt_bytes": 262144,
+  "max_response_bytes": 2097152,
+  "model_payload": "project-sources-only-never-expectations",
+  "output_path": ".factory/reserved-v2-executions/reserved-v2-20261021-02",
+  "profile": {
+    "adapter_version": "codex-structured-cli/v5",
+    "format": "reserved-requested-profile-freeze/v1",
+    "observed_immutable_model": null,
+    "observed_sampling_parameters": null,
+    "overrides": [
+      "forced_login_method=\"chatgpt\"",
+      "web_search=\"disabled\"",
+      "features.shell_tool=false",
+      "features.unified_exec=false",
+      "features.multi_agent=false",
+      "features.shell_snapshot=false",
+      "features.skill_mcp_dependency_install=false",
+      "hide_agent_reasoning=true",
+      "history.persistence=\"none\"",
+      "project_doc_max_bytes=0"
+    ],
+    "provider": "codex-cli-chatgpt-subscription",
+    "requested_model": "gpt-6.1-sol",
+    "scope": "Requested configuration freeze only; not completed AHC-024 profile or execution authorization.",
+    "timeout_seconds": 180
+  },
+  "protocol": {
+    "acceptance": "all-criteria-pass-no-critical-failure",
+    "budget": {
+      "concurrency": 1,
+      "max_call_seconds": 180,
+      "max_calls": 16,
+      "max_session_seconds": 3600,
+      "repairs": 0,
+      "repetitions": 1,
+      "retries": 0
+    },
+    "candidate": {
+      "audit_version": "component-audit/v4.1",
+      "code_sha256": "f2672af686c7a33bef5964d53400b8b29057e02b3dcddf75a3495b5e3484ad24",
+      "composition_version": "semantic-composition/v3.4",
+      "profile_sha256": "c95db2dba252c943f95c32ed78c3b6fcca9001f9d30f36878aa37acd8ac9fa37",
+      "source_commit": "1e8db614f864970cde229a947ce938ff9c13220f"
+    },
+    "candidate_designer": "codex:candidate-engineering",
+    "case_schema": "AssessmentCase/v2",
+    "corpus_candidate_sha256": "134acf0dc934e23913c8bc698e91e724fbdd13efdb825d4fcdcba854fe6bbeb2",
+    "curator": "isolated-agent:reserved-curator",
+    "curator_exposure": "blind-declared",
+    "development": [
+      {
+        "artifact_path": "evals/understanding/v2/development-draft/dev-adversarial.json",
+        "artifact_sha256": "a1d3462f196b12614886b30f6bb4ce9d013b45550feda5ec358193aff7b95e99",
+        "case_id": "dev-adversarial",
+        "case_sha256": "a0161eb4e56463d947d21676134f72518d661e5b91b46403d37174de8e025d0d",
+        "family_id": "development-workspace-family",
+        "input_sha256": "90af98c2b77c32226ded9b7c5ffc5d87e4e2773695c3daa88f196523afbfd006",
+        "project_id": "dev-adversarial",
+        "scenario": "untrusted-instruction",
+        "semantic_sha256": "4da41d54f7fd1fe3c1f3e68bbe49dee5b7f546dd7a7c35c49732e54e491a32a3"
+      },
+      {
+        "artifact_path": "evals/understanding/v2/development-draft/dev-ambiguous.json",
+        "artifact_sha256": "b4b91de66473ba2ce628faae3aefddc571213af16ae08a34c00ef2f2440df3ae",
+        "case_id": "dev-ambiguous",
+        "case_sha256": "96d9954a55ca4bf3aa2ad1d8156c160c4692b97b3d1cdcd51c2f84adbf8ccd48",
+        "family_id": "development-workspace-family",
+        "input_sha256": "70e1e4e7503fc348f7a26224386c90c55e49129ef321a8e2c6ff000c9ff38436",
+        "project_id": "dev-ambiguous",
+        "scenario": "ambiguous-process",
+        "semantic_sha256": "64e8a6f061be31410f3f91cc09d8e1423eb853453d238935ccd4dd15fcf27d31"
+      },
+      {
+        "artifact_path": "evals/understanding/v2/development-draft/dev-branding-conflict.json",
+        "artifact_sha256": "b03ca50cc215814759a8b6c072eb3857ba19fefdc6487dc29674e73ec4af6530",
+        "case_id": "dev-branding-conflict",
+        "case_sha256": "4e5fc12e8016de6687d30a9c60c78829c34f9cd6b1a0d7515b1830d71e8f7d30",
+        "family_id": "development-workspace-family",
+        "input_sha256": "6efa88484de902b19dd3011dde395a354bbb3f959e931cb71422f73aaacdc751",
+        "project_id": "dev-branding-conflict",
+        "scenario": "conflicting-sources",
+        "semantic_sha256": "01d4900a57c6691cc61fb801d2dd9c2bf67bc1d66f89e785d3ec04633d2edd74"
+      },
+      {
+        "artifact_path": "evals/understanding/v2/development-draft/dev-compatible-rules.json",
+        "artifact_sha256": "fc8a20bcd49950df782e5fc0e7ef39aea912e0b656b0198e24bfd546d7e96622",
+        "case_id": "dev-compatible-rules",
+        "case_sha256": "f338181b253045093d1101f966cf863f3c7c51d94831becb88e0be60c8ad91ba",
+        "family_id": "development-learning-family",
+        "input_sha256": "b3d0db0980c20a068cbddf89bf26afef915368d5e487a9e1748cf782a9ba9225",
+        "project_id": "learning-studio",
+        "scenario": "compatible-rules",
+        "semantic_sha256": "ffd52d6d804ce173f1f381e59c3451a62af6f1d6244cbce6c57afbd3ec7258a4"
+      },
+      {
+        "artifact_path": "evals/understanding/v2/development-draft/dev-new-domain.json",
+        "artifact_sha256": "03d5682c906e6b053951195ef3c97d81453306cf51584f861e06e9d7dff0b16c",
+        "case_id": "dev-new-domain",
+        "case_sha256": "670709add5aaa3d8a9bc20d0781cb87799266016de42047cd3732e7dc332ca3d",
+        "family_id": "development-workspace-family",
+        "input_sha256": "6d792a55af0f4e0af1c2c1f1e36ff0d31f7fb9894b7091efd3f67338141dc492",
+        "project_id": "dev-new-domain",
+        "scenario": "novel-intent",
+        "semantic_sha256": "436787ff921c4ecdab92ffbe568d88d4a3ce340a30360273981240cb6079ce87"
+      },
+      {
+        "artifact_path": "evals/understanding/v2/development-draft/dev-rules-a.json",
+        "artifact_sha256": "5c22bb8748b1badaca5f7e2ba66d5ef628fc95128bdb5479617a7f5094220063",
+        "case_id": "dev-rules-a",
+        "case_sha256": "7dcbd77cafd0a7836b7a1f2fac6a361fe083606937b916588b107c35318f4fdd",
+        "family_id": "development-workspace-family",
+        "input_sha256": "a44c3b367950cab7b68c92bcf8f7062a732d7bc6f034d105df6a0e3a3b28d9ad",
+        "project_id": "dev-rules-a",
+        "scenario": "contrasting-rules",
+        "semantic_sha256": "56d4e86a63fef2291bfff53cb234a86522cab1a3835be9a5a7ac5922d8355bd4"
+      },
+      {
+        "artifact_path": "evals/understanding/v2/development-draft/dev-rules-b.json",
+        "artifact_sha256": "9e516037eefd452f56323845d4aa5adc613a713d34b77da788c5629eaf131fa0",
+        "case_id": "dev-rules-b",
+        "case_sha256": "9d7354f306a8e7b52957c87187eab0d05c1a66f66ef2c2ddf78b8f858d196b58",
+        "family_id": "development-workspace-family",
+        "input_sha256": "b3f1743dc0c1b25e7e7d659acb7d3d2db5d57664467af2e6ee9ed65488b5382c",
+        "project_id": "dev-rules-b",
+        "scenario": "contrasting-rules",
+        "semantic_sha256": "10bf8b23229cee799ed35fb5f07d6dab6f30044bc33a1bfb01a40cdc44544fd5"
+      },
+      {
+        "artifact_path": "evals/understanding/v2/development-draft/dev-unread-assets.json",
+        "artifact_sha256": "9027b07f6a0c14f4dd56fc6321c5345864884c230f3ff02641817c48596a2b17",
+        "case_id": "dev-unread-assets",
+        "case_sha256": "3c63236be69375dd183ee04a12c9fe91be3b2a43a507b9c974db9ed5774f34c5",
+        "family_id": "development-workspace-family",
+        "input_sha256": "015d3fe7ce3367ff202c52b58d00331418776a18b0b20bf09cc2dd07f26d24f2",
+        "project_id": "dev-unread-assets",
+        "scenario": "unread-assets",
+        "semantic_sha256": "119db9741eb42878149371feff29fb968a255e7cd4057b01cc57428b9ba06938"
+      }
+    ],
+    "id": "reserved-v2-preparation-20261021",
+    "purpose": "separate-evaluation-no-tuning",
+    "reserved": [
+      {
+        "artifact_path": ".factory/reserved-v2-curation-20261021/cases/c-8c12bd47.json",
+        "artifact_sha256": "c60ad00464c088ad7e7433fce91dca11019b2c679bcbd525af5952698cbcf3f0",
+        "case_id": "c-8c12bd47",
+        "case_sha256": "b1f40b8c0dc06d98cccf31e47dd6b967bc437ba8f2794ffe87ec1408ab86c6ae",
+        "family_id": "f-b714ad65",
+        "input_sha256": "747c53fd8ca451a1b77f0af5605dff8add565045d0856b1d86f0c49cb4e96d81",
+        "project_id": "p-731caf25",
+        "scenario": "novel-intent",
+        "semantic_sha256": "7b184fdbd438a0666df59d0b1247ce6b0d159cd2999872fd9506e6640709f015"
+      },
+      {
+        "artifact_path": ".factory/reserved-v2-curation-20261021/cases/c-2a749ec1.json",
+        "artifact_sha256": "4a68048887310d5ce3d1e628d94475eff2e0f487a7e4aa9a12dc1b571f8aa89e",
+        "case_id": "c-2a749ec1",
+        "case_sha256": "e673203aa78f283a462c42840dfd8d157f5f7a5efe2279281fad9da3ab6db85e",
+        "family_id": "f-c064db17",
+        "input_sha256": "4d8f64b4599e67bd68b21ebc772dce257414c417d5b6a12af0fb77930ad3f4ee",
+        "project_id": "p-641d8b92",
+        "scenario": "contrasting-rules",
+        "semantic_sha256": "160edf24486ae4ccbc151ee26163870d3ad256da587e27fd9468aabea5e00ce7"
+      },
+      {
+        "artifact_path": ".factory/reserved-v2-curation-20261021/cases/c-d903f6a2.json",
+        "artifact_sha256": "2bffec854e5a4ff964eb9e57fcb32ef95567f4ccd1f4864fef458aab845f41eb",
+        "case_id": "c-d903f6a2",
+        "case_sha256": "7c67671ec1cb0520904747ee981efba9fe75aa7c09d10d46e95f0e255cb1ee20",
+        "family_id": "f-c064db17",
+        "input_sha256": "c2c69146dd7d698e7fe1d09dd1b9da394769482a85d03030818f1c666c5cc472",
+        "project_id": "p-17ab649e",
+        "scenario": "contrasting-rules",
+        "semantic_sha256": "adabcc10dc7e35a592730443577f7acb18a72ad852b68a6fbb6b778aef168706"
+      },
+      {
+        "artifact_path": ".factory/reserved-v2-curation-20261021/cases/c-b65e204f.json",
+        "artifact_sha256": "8d8bc7fa6b118fcd62e3dd27de2fd634a202fe8b97933acf0dee1c6be0038000",
+        "case_id": "c-b65e204f",
+        "case_sha256": "e8a90c4b5f3f6b203cf6473460b56bdffe19db2d116a4f3ffa9e9e09f6cd0870",
+        "family_id": "f-0c8a1d49",
+        "input_sha256": "2517fca331a75b64c4add2271b5dc04672bc54a7d9bdc14d84130313056aac26",
+        "project_id": "p-842d71ac",
+        "scenario": "ambiguous-process",
+        "semantic_sha256": "d0936868d35bf961ca2c1f2f2c5d90b03a4c5565440b8c512d694ba9e1bd840b"
+      },
+      {
+        "artifact_path": ".factory/reserved-v2-curation-20261021/cases/c-40f19b8d.json",
+        "artifact_sha256": "df64636091795a1009082742dafe8fedd20d5bd8a3b9c77e9210ff468a83053d",
+        "case_id": "c-40f19b8d",
+        "case_sha256": "ce794ca30a707324ee6abffb081b61fbfee93fac096f0b1dc9841df7b26c591b",
+        "family_id": "f-53d1608b",
+        "input_sha256": "9f0e5f3de705d3beabb7ac5a5ccb757cbfef0ceda190d106786d7523731f6c04",
+        "project_id": "p-3590ae62",
+        "scenario": "conflicting-sources",
+        "semantic_sha256": "39714ca122e4fec4eb9e769abe9fc1a1ccc47ff68511ba7ee7bb31511089136c"
+      },
+      {
+        "artifact_path": ".factory/reserved-v2-curation-20261021/cases/c-7e2094fa.json",
+        "artifact_sha256": "c451192d352e287e58c0fbba223c4ef4a0f711f58bb58be4204f57d694b081fe",
+        "case_id": "c-7e2094fa",
+        "case_sha256": "cdcff781c6c438b69934a43260b5a418ceff0f7d1818937748b2ffd640d775c2",
+        "family_id": "f-648acb30",
+        "input_sha256": "3aa217af43b15c793ca849161eea544f966ff1766b0e714503809595359adf50",
+        "project_id": "p-526f807b",
+        "scenario": "compatible-rules",
+        "semantic_sha256": "5ba2142249733e5290e1d0efaacc05737420a1e9c546242cb39720ec8a687a7d"
+      },
+      {
+        "artifact_path": ".factory/reserved-v2-curation-20261021/cases/c-a18d4c70.json",
+        "artifact_sha256": "5310cc8a66d0367c7d241aeb4aa7e4b3e968dcd0aadcbdf177f117b039857fb4",
+        "case_id": "c-a18d4c70",
+        "case_sha256": "fd73af366b8870c68506ccfdfcd3fbfa57c17c4b7b4cfc30793d7451e5c78759",
+        "family_id": "f-a8c49016",
+        "input_sha256": "a8957012f95a01039adccdf4c9544f9e0b407ca2f8ae6d2186b2c7f32dd5433a",
+        "project_id": "p-9e20d4b1",
+        "scenario": "unread-assets",
+        "semantic_sha256": "fc7d22eac9d5291e3fcae2c0b845101ff6164dc78b64bc41aff20154788d6478"
+      },
+      {
+        "artifact_path": ".factory/reserved-v2-curation-20261021/cases/c-f61b902c.json",
+        "artifact_sha256": "4fcc6273165bc18ace3ebeb2691ef2b05b91c3f5ad77ac1bdf4e29468b3747e3",
+        "case_id": "c-f61b902c",
+        "case_sha256": "6f053c779b838a4660f66cd72ce41721f72783fdb41466dad0591d781206039b",
+        "family_id": "f-406bd829",
+        "input_sha256": "93f4b226da0eceb219f2e0276d5d91bb6fc975203d05f286848730e9a31ad022",
+        "project_id": "p-a438c760",
+        "scenario": "untrusted-instruction",
+        "semantic_sha256": "723519c3371addfd8e6704a0e827e25fb773ef242a994d43f7897d755a7d92a8"
+      }
+    ],
+    "review": {
+      "authority": "human-declared-not-authenticated",
+      "corpus_sha256": "e5cd1829bd1a74401a8240a3d6562df2f1d60bc72b88e0aaf82acb45cd519917",
+      "note": "PO confirmed metadata correction proposal reserved-v2-correction-20261021 for unchanged raw cases and expectations; the actual confirmation is recorded separately upon materialization. This review is only effective after explicit confirmation of that proposal and its prospective execution request.",
+      "reviewer": "human-po:leozitogs"
+    },
+    "rubric_sha256": "b1a9d26e2132798138ad035830d1caac65b3951f28e0e046630f7a5735fc77f0",
+    "schema_version": "ReservedEvaluationProtocol/v1"
+  },
+  "rubric_path": "evals/understanding/v2/rubric.json",
+  "runner_sources": [
+    {
+      "path": "src/ai_harness_compiler/cli.py",
+      "sha256": "e80c01c63c36595a5cc82ed90e7417f2eb28b81dead2c4efe887760eacb55f62"
+    },
+    {
+      "path": "src/ai_harness_compiler/models/reserved_evaluation.py",
+      "sha256": "197fc75d3d47c22d45f288b272b0d4d37c94166b042be586e5cbf12947452427"
+    },
+    {
+      "path": "src/ai_harness_compiler/models/reserved_run.py",
+      "sha256": "3fdd9f187c281e0adcc5f7210df258c7936c85569afd870aceb2badaa7ac7c04"
+    },
+    {
+      "path": "src/ai_harness_compiler/models/semantic_assessment.py",
+      "sha256": "26fe4b00d30e740bd45e550d4bcb451378583ba099510004a2d639adab4c50fb"
+    },
+    {
+      "path": "src/ai_harness_compiler/models/semantic_assessment_v3.py",
+      "sha256": "4896c7fde63ab3a8bbcebd0eb4c7489b53b8cd6f19f343ce3862abdc30e5c11d"
+    },
+    {
+      "path": "src/ai_harness_compiler/reserved_cli.py",
+      "sha256": "5b3589fe349426fd5cdfb1e9681a45ad73c6f4c89168249148404c29662b6c4a"
+    },
+    {
+      "path": "src/ai_harness_compiler/reserved_runs.py",
+      "sha256": "c5a1dd1b4ed1f8980b93d029ee90996f6a5be3292d0714df2a012d27157a1417"
+    }
+  ],
+  "schema_version": "ReservedRunRequest/v1",
+  "semantic_status": "not-established"
+}

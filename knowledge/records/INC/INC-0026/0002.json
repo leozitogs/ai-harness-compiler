@@ -1,0 +1,95 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "One authorized run stopped at preflight with zero model invocations; no retry.",
+    "Read-only reconciliation checked all eight raw file hashes and schemas; restoring only the numeric-default representation recovers all three old fingerprints.",
+    "Added serialized-input freezing with stable hash roundtrip and an unsigned correction proposal; no runtime validator/default/hash function relaxed.",
+    "Fresh authorized corrected run completed: strict payload preflight and offline replay passed, no runtime/candidate modification and no retries; eight downstream coverage failures retained."
+  ],
+  "author": "codex:engineering",
+  "challenge": "Schema-valid serialized cases can contradict fingerprints calculated from pre-serialization Python objects.",
+  "consequences": [],
+  "context": "First authorized reserved v2 preflight, no provider constructed or invocation receipt. Case expectations and raw files remain untouched.",
+  "created_at": "2026-10-21T21:04:12.598609+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Authorized preflight failed before provider construction. Redacted metadata and synthetic regression only; raw private cases/evidence are not published, no new model result or authorization inferred.",
+      "outcome": "observed",
+      "sha256": "3f706b930752d4d912bec0bc09a32554f8e41410d11c345bf034da5b961e3781",
+      "source": "docs/delivery/sprint-2-6-reserved-preflight.md"
+    },
+    {
+      "command": null,
+      "note": "Authorized preflight failed before provider construction. Redacted metadata and synthetic regression only; raw private cases/evidence are not published, no new model result or authorization inferred.",
+      "outcome": "observed",
+      "sha256": "99eb523b5db02d78c78f5a8d815dcfa040f55a76c1d16b46c88798d76b030ba1",
+      "source": "docs/evidence/sprint-2-6-reserved-preflight-20261021/summary.json"
+    },
+    {
+      "command": null,
+      "note": "Authorized preflight failed before provider construction. Redacted metadata and synthetic regression only; raw private cases/evidence are not published, no new model result or authorization inferred.",
+      "outcome": "observed",
+      "sha256": "49c1fee6793a907cf1f81cac424c4cf7745fe9c3238db8b893c12bee37e2930c",
+      "source": "src/ai_harness_compiler/reserved_freeze.py"
+    },
+    {
+      "command": null,
+      "note": "Authorized preflight failed before provider construction. Redacted metadata and synthetic regression only; raw private cases/evidence are not published, no new model result or authorization inferred.",
+      "outcome": "observed",
+      "sha256": "100fe1917722619ce7495cf3ade52904bea23216c6c95992c959c5086c70b721",
+      "source": "tests/test_reserved_freeze.py"
+    },
+    {
+      "command": null,
+      "note": "Authorized preflight failed before provider construction. Redacted metadata and synthetic regression only; raw private cases/evidence are not published, no new model result or authorization inferred.",
+      "outcome": "observed",
+      "sha256": "a7d7c4f9217a2dde120467e0b540dac079f82fdc77ce16319242f8ccf3f7e204",
+      "source": "evals/understanding/v2/reserved-correction/proposal.json"
+    },
+    {
+      "command": null,
+      "note": "Redacted operational evidence only; 16 charged invocations completed and offline replay passed, but eight deterministic coverage failures remain. No human output review, semantic qualification or promotion.",
+      "outcome": "observed",
+      "sha256": "963d84a4771a41ea5c5927734401b3d8d709800c7136539a02cb0a0f1733d8c8",
+      "source": "docs/delivery/sprint-2-6-reserved-round.md"
+    },
+    {
+      "command": null,
+      "note": "Redacted operational evidence only; 16 charged invocations completed and offline replay passed, but eight deterministic coverage failures remain. No human output review, semantic qualification or promotion.",
+      "outcome": "observed",
+      "sha256": "abbf16764651f254f96e9f918d72a88c96f79f58fa01779711c66c122e210052",
+      "source": "docs/evidence/sprint-2-6-reserved-round-20261021/summary.json"
+    }
+  ],
+  "id": "INC-0026",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Full cases and operational evidence remain private; public metadata is redacted.",
+    "No candidate model saw these inputs through the runtime and no semantic output was generated.",
+    "Proposed review is null and cannot be interpreted as a fresh PO decision."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0029",
+    "ADR-0028",
+    "LES-0005",
+    "DOC-0044"
+  ],
+  "resolution": "After a fresh explicit PO confirmation bound to corrected corpus and request f5e410f3, preserved raw files passed strict preflight and completed 16 charged invocations; offline replay passed. Metadata-normalization incident resolved only. All eight deterministic rule-coverage failures remain separate, unresolved evaluation results; no model or sprint approval.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 2,
+  "root_cause": "Constraints.max_build_cost_usd is typed float with integer default 0. Hashing model_dump before serialization preserves int; validated JSON loading produces float. Canonical JSON hashes distinguish 0 and 0.0. Eight-case metadata diagnosis and synthetic reproduction establish this representation drift.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Authorized request a28e6065 consumed its claim and stopped with zero invocations. All eight raw case byte hashes match, but case/input/semantic digests differ after JSON loading. A single numeric-default representation restores all old digests. Correction remains proposed.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Hashes do reservado divergem após normalização de default numérico",
+  "updated_at": "2026-10-21T21:40:27.388684+00:00"
+}

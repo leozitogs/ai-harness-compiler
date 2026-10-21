@@ -1,0 +1,63 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Original a28 request stopped at preflight with zero invocations and remains consumed. Fresh explicit combined PO decision activated the metadata-only correction and authorized one new run. Runtime/candidate unchanged, no retry, repair or fallback.",
+  "created_at": "2026-10-21T21:40:26.226606+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Redacted operational evidence only; 16 charged invocations completed and offline replay passed, but eight deterministic coverage failures remain. No human output review, semantic qualification or promotion.",
+      "outcome": "observed",
+      "sha256": "963d84a4771a41ea5c5927734401b3d8d709800c7136539a02cb0a0f1733d8c8",
+      "source": "docs/delivery/sprint-2-6-reserved-round.md"
+    },
+    {
+      "command": null,
+      "note": "Redacted operational evidence only; 16 charged invocations completed and offline replay passed, but eight deterministic coverage failures remain. No human output review, semantic qualification or promotion.",
+      "outcome": "observed",
+      "sha256": "abbf16764651f254f96e9f918d72a88c96f79f58fa01779711c66c122e210052",
+      "source": "docs/evidence/sprint-2-6-reserved-round-20261021/summary.json"
+    },
+    {
+      "command": null,
+      "note": "Redacted operational evidence only; 16 charged invocations completed and offline replay passed, but eight deterministic coverage failures remain. No human output review, semantic qualification or promotion.",
+      "outcome": "observed",
+      "sha256": "8df3876fd9b45f6c3ecfebd407c0028a9a103d585b476c8b650ffe6280841db3",
+      "source": "evals/understanding/v2/reserved-execution-corrected/request.json"
+    }
+  ],
+  "id": "DOC-0044",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Charged invocations are not observed remote request counts. Immutable model identity, cost, sampler and resource telemetry unknown.",
+    "Deterministic absence checks do not diagnose whether the cause is omission, incompatible representation or another issue; specific review pending.",
+    "Reserved outputs remain private and must not become tuning/training inputs. New development reproduction and separate protocol required for future corrections.",
+    "Human output review not performed; no default promotion, compilation permission, new-call authorization or sprint/story completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0043",
+    "DE-0018",
+    "INC-0026",
+    "ADR-0029"
+  ],
+  "resolution": null,
+  "review_note": "Reviewed exact PO confirmation, private terminal report and successful offline replay. Eight deterministic failures preserved, no human semantic judgments invented.",
+  "reviewed_by": "codex:evidence-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "PO confirmed corrected metadata and exact new run f5e410f3. Eight analyses and eight audits completed in 476.681 seconds; replay passed. All eight no-human-review assessments fail deterministic rule coverage; one disposition mismatch and one missing refusal also observed. No semantic qualification or story completion.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Rodada reservada corrigida concluída com falhas determinísticas",
+  "updated_at": "2026-10-21T21:40:26.614362+00:00"
+}

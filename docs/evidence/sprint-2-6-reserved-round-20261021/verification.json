@@ -1,0 +1,18 @@
+{
+  "scope": "offline-verification-of-execution-records",
+  "actual_reserved_integrity_replay": "passed",
+  "targeted_offline_tests": {
+    "passed": 96,
+    "skipped": 0,
+    "duration_seconds": 67.82
+  },
+  "ruff": "passed",
+  "format": "passed",
+  "sprint_2_6_plan": "current",
+  "memory_records": 124,
+  "memory_reusable": 116,
+  "memory_index": "current",
+  "new_model_calls_after_run": 0,
+  "human_semantic_review": "not-performed",
+  "qualification": "not-established"
+}
