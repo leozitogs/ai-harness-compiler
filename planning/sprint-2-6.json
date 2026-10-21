@@ -153,6 +153,23 @@
       "authorization": "docs/evidence/sprint-2-6-v34-development-20261020/authorization.json",
       "execution": "docs/evidence/sprint-2-6-v34-development-20261020/execution/summary.json",
       "human_review": "docs/evidence/sprint-2-6-v34-development-20261020/human-review/manifest.json"
+    },
+    "audit_compatibility_v41": {
+      "document": "docs/delivery/sprint-2-6-bound-audit-smoke.md",
+      "protocol": "docs/evidence/sprint-2-6-bound-audit-smoke-20261021/protocol.json",
+      "authorization": "docs/evidence/sprint-2-6-bound-audit-smoke-20261021/authorization.json",
+      "execution": "docs/evidence/sprint-2-6-bound-audit-smoke-20261021/execution/summary.json",
+      "max_calls": 1,
+      "max_concurrency": 1,
+      "max_call_seconds": 180,
+      "max_session_seconds": 240,
+      "retries": 0,
+      "repair_attempts": 0,
+      "holdout_calls": 0,
+      "used_calls": 1,
+      "status": "exhausted-and-closed",
+      "result": "One valid structural advisory report; scoped provider schema compatibility observed. No semantic approval, model qualification or promotion.",
+      "source": "Explicit PO approval: Autorizo a única chamada com esses limites."
     }
   },
   "task_plan_file": "planning/sprint-2-6.tasks.json",

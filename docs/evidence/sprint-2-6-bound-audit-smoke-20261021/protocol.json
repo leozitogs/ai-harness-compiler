@@ -1,0 +1,35 @@
+{
+  "analysis": {
+    "file_sha256": "0e11576c34122bae66466f8ca03016cf059f27ec27c856550062d53bff467789",
+    "path": "docs/evidence/sprint-2-6-v34-development-20261020/execution/dev-new-domain/analysis.json",
+    "snapshot_sha256": "fc4acfb7442988d28fa2af9fc57325b0a42f0532c34c643cd2ddeca174b3011c"
+  },
+  "budget": {
+    "holdout_calls": 0,
+    "max_call_seconds": 180,
+    "max_calls": 1,
+    "max_concurrency": 1,
+    "max_session_seconds": 240,
+    "repair_attempts": 0,
+    "retries": 0
+  },
+  "constraints": {
+    "fallback_allowed": false,
+    "paid_api_allowed": false,
+    "read_assets": false,
+    "tools_allowed": false,
+    "training_allowed": false
+  },
+  "failure_policy": "Preserve errors; no retry, repair or additional model call.",
+  "format": "bounded-audit-smoke-request/v1",
+  "program_sha256": "2e1bc461ee1d32982fdea99eb6757939cad1a4e6acecd7fe136127afb2fb0ce8",
+  "program_version": "component-audit/v4.1",
+  "provider": "codex-cli-chatgpt-subscription",
+  "requested_model": "gpt-6.1-sol",
+  "runner_sha256": "723b617057b5d82ab50626a6f715ecd54f4836ce964b16814f7c5232496f2a79",
+  "schema_sha256": "bc283d7ce3fc1a3f56de8f1ab12e2b8c38c5c2556bd7212d110f9a897ddb7ef4",
+  "scope": "One advisory audit of saved public dev-new-domain analysis and its public literal sources only; no old human reviews or case expectations sent.",
+  "source_commit": "a72aa2c",
+  "status": "awaiting-explicit-po-authorization",
+  "success_scope": "Provider accepts the selected schema and one response passes existing exact structural validation; not semantic qualification, stability or promotion."
+}

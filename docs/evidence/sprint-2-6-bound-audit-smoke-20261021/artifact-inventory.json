@@ -1,0 +1,38 @@
+{
+  "artifacts": [
+    {
+      "path": "docs/evidence/sprint-2-6-bound-audit-smoke-20261021/authorization.json",
+      "sha256": "d7eab44e4ef51ca6fee2d1b53b8a324bea0e419921abe4d6c0a14f7a5e9e5ffc"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-bound-audit-smoke-20261021/execution/call-finish.json",
+      "sha256": "e201d6617d8f9f9addbb580ab559f7af7c5a346cbdbb23b90953bf90051808e8"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-bound-audit-smoke-20261021/execution/call-start.json",
+      "sha256": "54c9d3321df509523ca07a35db96fc53d2126bebb4daaae8471754da7153ff4a"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-bound-audit-smoke-20261021/execution/report.json",
+      "sha256": "098f2cfa0fdbe8ef7644237925a52cc39f1f20d2f3373d28736aa89a7e41fc53"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-bound-audit-smoke-20261021/execution/response.txt",
+      "sha256": "d6e2f299f5ac7b408fe1f39f79f5d2e8bc0c6956e7063ffb58ae0b9957cdb949"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-bound-audit-smoke-20261021/execution/summary.json",
+      "sha256": "80acb520cd3fe473508756a159d46852c88267b44a3d02eaf493f23182fd288a"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-bound-audit-smoke-20261021/protocol.json",
+      "sha256": "8b3adf3a5e68ba7b417e398d6e03382e3de302724d9ea143c6a09b38bbd88799"
+    },
+    {
+      "path": "docs/evidence/sprint-2-6-bound-audit-smoke-20261021/runner-source.json",
+      "sha256": "e507196dae15738c56348f88fc7a8df23c64efdd25ce65f8f513967815a5bc34"
+    }
+  ],
+  "format": "audit-smoke-artifact-inventory/v1",
+  "recorded_on": "2026-10-21"
+}

@@ -49,3 +49,8 @@ Fontes principais: `project-definition/project.yaml`, `docs/delivery/scrum.md`,
 `docs/delivery/sprint-2-6-v34-development.md`,
 `docs/evidence/sprint-2-6-v34-development-20261020/human-review/manifest.json` e
 `knowledge/records/INC/INC-0007/`.
+
+Atualização de 21/10/2026: o [smoke autorizado](sprint-2-6-bound-audit-smoke.md)
+exercitou a receita de auditoria v4.1 no provider com uma resposta estruturalmente
+válida. A pendência de compatibilidade desse snapshot foi verificada; não substitui
+avaliação semântica, estabilidade, revisão de entrega ou o gate de reservado v2.

@@ -1,0 +1,156 @@
+{
+  "schema_version": "SemanticVerifierProposal/v4",
+  "analysis_sha256": "fc4acfb7442988d28fa2af9fc57325b0a42f0532c34c643cd2ddeca174b3011c",
+  "findings": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "c79233c9c2342298205e15e5773ad28c4acc3876d5105130e9bf9334c6896ada",
+      "source_atom_ids": ["atom-8"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "A fonte exige responsável e origem em cada publicação da equipe."
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "76cf654206351f3d9169f62e3f137904a1dd12022ba81507b754e7de2b00640b",
+      "source_atom_ids": ["atom-1"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "Reproduz a finalidade declarada na concepção."
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "1a9bf07de01a3fcdc9549801f59f507d9b19e6cf9c192aaafb7dfecfee24496d",
+      "source_atom_ids": ["atom-2"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "O campo de público identifica autores."
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "f485b96e0a2eeb415a8554672ce20d83d20155b8d4e78adecf76193f90f382c9",
+      "source_atom_ids": ["atom-3", "atom-4"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "As fontes enumeram rastreabilidade e controle humano como princípios, sem definir permissões."
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "46de9c728fd7bb9a3d5c5c1c5c2e81ec7ae825fb5bbe4d7a3593f94d0502d532",
+      "source_atom_ids": ["atom-7"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "A descrição declara organização da publicação da equipe e registro de decisões."
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "ba094e70a55cc318aec56906b2493d320e0f4386d046ab5da6f2cc86e30ead51",
+      "source_atom_ids": ["atom-5"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "A obrigação de registrar a identidade é explícita; sua aplicabilidade não é definida."
+    },
+    {
+      "finding_id": "context-6",
+      "finding_sha256": "a418a027eee6345b2f61aaaafe7093ea6db863635e343ea4d74eb437d1a966d7",
+      "source_atom_ids": ["atom-6"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "O campo max_build_cost_usd informa limite de 0.0."
+    }
+  ],
+  "component_judgments": [
+    {
+      "finding_id": "criterion-1",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": ["atom-8"],
+      "support": "supports",
+      "note": "“Cada publicação da equipe” estabelece a abrangência da condição."
+    },
+    {
+      "finding_id": "criterion-1",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": ["atom-8"],
+      "support": "supports",
+      "note": "“Deve conter responsável e origem” estabelece o resultado obrigatório."
+    }
+  ],
+  "omissions": [
+    {
+      "id": "omission-1",
+      "kind": "question",
+      "text": "Em quais situações é obrigatório registrar a identidade do responsável?",
+      "rationale": "A obrigação está representada, mas falta esclarecer seu âmbito para determinar quando deve ser aplicada.",
+      "source_atom_ids": ["atom-5"],
+      "impact": "rule"
+    }
+  ],
+  "source_coverage": [
+    {
+      "atom_id": "atom-1",
+      "quote_sha256": "6a4cc099f7c4beb8d98900b9d05f869383bb403a8803126d3f55c73886e0e7ce",
+      "disposition": "represented",
+      "finding_ids": ["context-1"],
+      "omission_ids": [],
+      "note": "Concepção representada."
+    },
+    {
+      "atom_id": "atom-2",
+      "quote_sha256": "75f26d13ebd8877644c57a369ce71b82b639903217ed12ebe61beeffd8c11586",
+      "disposition": "represented",
+      "finding_ids": ["context-2"],
+      "omission_ids": [],
+      "note": "Público representado."
+    },
+    {
+      "atom_id": "atom-3",
+      "quote_sha256": "e8a964e534bd9189a4c1ee68dc1e80429c5b14930ce7df548075257a8a8dccc7",
+      "disposition": "represented",
+      "finding_ids": ["context-3"],
+      "omission_ids": [],
+      "note": "Princípio de rastreabilidade representado."
+    },
+    {
+      "atom_id": "atom-4",
+      "quote_sha256": "a6e3b461d6bc6975496196edb2b7d4ea96130a66c49e4e058c4d66078d23422f",
+      "disposition": "represented",
+      "finding_ids": ["context-3"],
+      "omission_ids": [],
+      "note": "Princípio de controle humano representado; não especifica aprovação."
+    },
+    {
+      "atom_id": "atom-5",
+      "quote_sha256": "22accd7ad33a45ad61811a4737a68f2c8dfd45b650550aec3cdae8de95fc1a0e",
+      "disposition": "missing",
+      "finding_ids": ["context-5"],
+      "omission_ids": ["omission-1"],
+      "note": "Obrigação representada, mas falta a pergunta material sobre sua aplicabilidade."
+    },
+    {
+      "atom_id": "atom-6",
+      "quote_sha256": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+      "disposition": "represented",
+      "finding_ids": ["context-6"],
+      "omission_ids": [],
+      "note": "Limite de custo representado."
+    },
+    {
+      "atom_id": "atom-7",
+      "quote_sha256": "5f77f5215732224df6e88a779d30470fdd1c968ff4e40c54ff9fa444e009e034",
+      "disposition": "represented",
+      "finding_ids": ["context-4"],
+      "omission_ids": [],
+      "note": "Capacidades declaradas representadas."
+    },
+    {
+      "atom_id": "atom-8",
+      "quote_sha256": "a79c1f7e236f6dadc2d66f9ab1ce333e7c271bfe617435c1f8e49ce579b92ef2",
+      "disposition": "represented",
+      "finding_ids": ["criterion-1"],
+      "omission_ids": [],
+      "note": "Obrigação por publicação representada integralmente."
+    }
+  ]
+}
