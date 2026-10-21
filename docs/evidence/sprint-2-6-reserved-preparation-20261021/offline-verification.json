@@ -1,0 +1,33 @@
+{
+  "candidate_author_payload_validation": "not-performed",
+  "execution_authorized": false,
+  "focused_suite": {
+    "command": ".venv/Scripts/python.exe -m pytest tests/test_reserved_evaluation.py tests/test_reserved_preparation_evidence.py -q --basetemp .factory/pytest-reserved-po-reviewed",
+    "passed": 35,
+    "scope": "Includes the one later PO-review replay test and all prior 34 focused tests"
+  },
+  "format": "reserved-preparation-offline-verification/v1",
+  "full_suite": {
+    "command": ".venv/Scripts/python.exe -m pytest -q --durations=10 --basetemp .factory/pytest-reserved-full-elevated-20261021",
+    "passed": 1078,
+    "scope": "Collected before final PO-review replay test was added",
+    "seconds": 116.56
+  },
+  "local_environment_limits": "Initial sandbox full-suite run interrupted before completion; isolated retry outside sandbox completed. Initial uv build could not persist interpreter cache under sandbox; authorized build completed. No inference calls involved.",
+  "other_checks": [
+    "ruff check",
+    "ruff format --check",
+    "mypy src (79 files)",
+    "export_schemas --check",
+    "generate_repo_agents --check",
+    "all five sprint plans --check",
+    "memory check (117 records / 109 reusable)",
+    "memory index --check",
+    "branch/commit conventions",
+    "uv build --python 3.13",
+    "wheel/sdist filenames exclude .factory and po-review.md"
+  ],
+  "qualification": "not-established",
+  "recorded_on": "2026-10-21",
+  "runtime_evaluation_calls": 0
+}

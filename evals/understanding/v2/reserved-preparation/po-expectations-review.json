@@ -1,0 +1,24 @@
+{
+  "answer": "Li e aprovo as oito expectativas",
+  "execution_authorized": false,
+  "format": "reserved-expectations-po-review/v1",
+  "private_review_sha256": "9855bfc7b396ed87b4b0c8064bf84a291479fef3495a66daf9fc8e24fd22f835",
+  "raw_case_approval_fields": "Original null fields preserved; this separate declaration binds the exact original corpus. Future execution/assessment must explicitly resolve this declaration without silent hash rewriting.",
+  "recorded_on": "2026-10-21",
+  "review": {
+    "authority": "human-declared-not-authenticated",
+    "corpus_sha256": "c010e3373338edee86512a889ed12273c0a25ac44403e25e4c732fdbb97a8367",
+    "note": "Explicit PO reply on 2026-10-21: Li e aprovo as oito expectativas. Applies to eight expectations in private po-review.md and the named corpus only; not model outputs, execution or qualification.",
+    "reviewer": "human-po:leozitogs"
+  },
+  "reviewed_case_ids": [
+    "c-8c12bd47",
+    "c-2a749ec1",
+    "c-d903f6a2",
+    "c-b65e204f",
+    "c-40f19b8d",
+    "c-7e2094fa",
+    "c-a18d4c70",
+    "c-f61b902c"
+  ]
+}

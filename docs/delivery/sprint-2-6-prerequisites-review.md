@@ -54,3 +54,9 @@ Atualização de 21/10/2026: o [smoke autorizado](sprint-2-6-bound-audit-smoke.m
 exercitou a receita de auditoria v4.1 no provider com uma resposta estruturalmente
 válida. A pendência de compatibilidade desse snapshot foi verificada; não substitui
 avaliação semântica, estabilidade, revisão de entrega ou o gate de reservado v2.
+
+A [preparação do reservado v2](sprint-2-6-reserved-preparation.md) congela o
+candidato antes de curadoria independente em contexto novo, conforme escolha do
+PO. Contratos e diagnóstico offline verificam metadados sem ler casos ou autorizar
+execução. Expectativas, orçamento e posterior julgamento continuam em gates
+próprios; esta preparação não encerra AHC-021/022.

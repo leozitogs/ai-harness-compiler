@@ -50,6 +50,11 @@ from ai_harness_compiler.models.qa import (
     SprintClosureAssessment,
 )
 from ai_harness_compiler.models.repair import RepairPlan, RepairReport
+from ai_harness_compiler.models.reserved_evaluation import (
+    ReservedEvaluationProtocol,
+    ReservedPreparationReport,
+    prepare_reserved_evaluation,
+)
 from ai_harness_compiler.models.scrum import (
     DeliveryEvidence,
     Impediment,
@@ -105,6 +110,8 @@ from ai_harness_compiler.pipeline import plan
 from ai_harness_compiler.planning import decompose
 
 MODELS: dict[str, type[Contract]] = {
+    "reserved-evaluation-protocol": ReservedEvaluationProtocol,
+    "reserved-preparation-report": ReservedPreparationReport,
     "qa-review-request": QAReviewRequest,
     "qa-finding-resolution-proposal": QAFindingResolutionProposal,
     "qa-finding-resolution-review": QAFindingResolutionReview,
@@ -364,6 +371,11 @@ def main(argv: list[str] | None = None) -> int:
         assessment_command.add_argument("--rubric", type=Path, required=True)
         assessment_command.add_argument("--review", type=Path)
         assessment_command.add_argument("--output", type=Path, required=True)
+    reserved_command = commands.add_parser(
+        "prepare-reserved-evaluation", help="Offline metadata gates; never reads reserved cases"
+    )
+    reserved_command.add_argument("input", type=Path)
+    reserved_command.add_argument("--output", type=Path, required=True)
     scrum_command = commands.add_parser("scrum", help="Read-only Scrum observation")
     scrum_commands = scrum_command.add_subparsers(dest="scrum_command", required=True)
     scrum_collect = scrum_commands.add_parser(
@@ -396,6 +408,17 @@ def main(argv: list[str] | None = None) -> int:
     add_qa_commands(commands)
     args = parser.parse_args(argv)
     try:
+        if args.command == "prepare-reserved-evaluation":
+            from ai_harness_compiler.semantic_eval import bounded_bytes
+
+            if args.output.exists():
+                raise FileExistsError("RESERVED_PREPARATION_EXISTS: Choose a new output file")
+            protocol = ReservedEvaluationProtocol.model_validate_json(bounded_bytes(args.input))
+            preparation = prepare_reserved_evaluation(protocol)
+            with args.output.open("x", encoding="utf-8", newline="\n") as stream:
+                stream.write(json_text(preparation.model_dump()))
+            print(f"Reserved metadata preparation: {preparation.state}; execution not-authorized.")
+            return 0 if preparation.state == "reviewable" else 1
         if args.command == "qa":
             from ai_harness_compiler.qa_cli import execute as execute_qa
 

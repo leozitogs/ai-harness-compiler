@@ -1,0 +1,404 @@
+{
+  "$defs": {
+    "ReservedBudget": {
+      "additionalProperties": false,
+      "properties": {
+        "concurrency": {
+          "const": 1,
+          "default": 1,
+          "title": "Concurrency",
+          "type": "integer"
+        },
+        "max_call_seconds": {
+          "maximum": 300,
+          "minimum": 1,
+          "title": "Max Call Seconds",
+          "type": "integer"
+        },
+        "max_calls": {
+          "maximum": 1280,
+          "minimum": 1,
+          "title": "Max Calls",
+          "type": "integer"
+        },
+        "max_session_seconds": {
+          "maximum": 86400,
+          "minimum": 1,
+          "title": "Max Session Seconds",
+          "type": "integer"
+        },
+        "repairs": {
+          "const": 0,
+          "default": 0,
+          "title": "Repairs",
+          "type": "integer"
+        },
+        "repetitions": {
+          "maximum": 10,
+          "minimum": 1,
+          "title": "Repetitions",
+          "type": "integer"
+        },
+        "retries": {
+          "const": 0,
+          "default": 0,
+          "title": "Retries",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "max_calls",
+        "repetitions",
+        "max_call_seconds",
+        "max_session_seconds"
+      ],
+      "title": "ReservedBudget",
+      "type": "object"
+    },
+    "ReservedCandidateFreeze": {
+      "additionalProperties": false,
+      "properties": {
+        "audit_version": {
+          "minLength": 1,
+          "title": "Audit Version",
+          "type": "string"
+        },
+        "code_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Code Sha256",
+          "type": "string"
+        },
+        "composition_version": {
+          "minLength": 1,
+          "title": "Composition Version",
+          "type": "string"
+        },
+        "profile_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Profile Sha256",
+          "type": "string"
+        },
+        "source_commit": {
+          "minLength": 1,
+          "pattern": "^[0-9a-f]{40}(?:[0-9a-f]{24})?$",
+          "title": "Source Commit",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_commit",
+        "composition_version",
+        "audit_version",
+        "profile_sha256",
+        "code_sha256"
+      ],
+      "title": "ReservedCandidateFreeze",
+      "type": "object"
+    },
+    "ReservedCaseBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_path": {
+          "minLength": 1,
+          "title": "Artifact Path",
+          "type": "string"
+        },
+        "artifact_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Artifact Sha256",
+          "type": "string"
+        },
+        "case_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Case Id",
+          "type": "string"
+        },
+        "case_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Case Sha256",
+          "type": "string"
+        },
+        "family_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Family Id",
+          "type": "string"
+        },
+        "input_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Sha256",
+          "type": "string"
+        },
+        "project_id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Project Id",
+          "type": "string"
+        },
+        "scenario": {
+          "enum": [
+            "novel-intent",
+            "contrasting-rules",
+            "ambiguous-process",
+            "conflicting-sources",
+            "compatible-rules",
+            "unread-assets",
+            "untrusted-instruction"
+          ],
+          "title": "Scenario",
+          "type": "string"
+        },
+        "semantic_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Semantic Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "case_id",
+        "project_id",
+        "family_id",
+        "scenario",
+        "artifact_path",
+        "artifact_sha256",
+        "case_sha256",
+        "input_sha256",
+        "semantic_sha256"
+      ],
+      "title": "ReservedCaseBinding",
+      "type": "object"
+    },
+    "ReservedCorpusReview": {
+      "additionalProperties": false,
+      "properties": {
+        "authority": {
+          "const": "human-declared-not-authenticated",
+          "default": "human-declared-not-authenticated",
+          "title": "Authority",
+          "type": "string"
+        },
+        "corpus_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Corpus Sha256",
+          "type": "string"
+        },
+        "note": {
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        },
+        "reviewer": {
+          "minLength": 1,
+          "title": "Reviewer",
+          "type": "string"
+        }
+      },
+      "required": [
+        "reviewer",
+        "note",
+        "corpus_sha256"
+      ],
+      "title": "ReservedCorpusReview",
+      "type": "object"
+    },
+    "ReservedEvaluationProtocol": {
+      "additionalProperties": false,
+      "properties": {
+        "acceptance": {
+          "const": "all-criteria-pass-no-critical-failure",
+          "default": "all-criteria-pass-no-critical-failure",
+          "title": "Acceptance",
+          "type": "string"
+        },
+        "budget": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ReservedBudget"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "candidate": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ReservedCandidateFreeze"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "candidate_designer": {
+          "minLength": 1,
+          "title": "Candidate Designer",
+          "type": "string"
+        },
+        "case_schema": {
+          "const": "AssessmentCase/v2",
+          "default": "AssessmentCase/v2",
+          "title": "Case Schema",
+          "type": "string"
+        },
+        "corpus_candidate_sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Corpus Candidate Sha256"
+        },
+        "curator": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Curator"
+        },
+        "curator_exposure": {
+          "default": "not-declared",
+          "enum": [
+            "not-declared",
+            "development-visible",
+            "blind-declared"
+          ],
+          "title": "Curator Exposure",
+          "type": "string"
+        },
+        "development": {
+          "items": {
+            "$ref": "#/$defs/ReservedCaseBinding"
+          },
+          "maxItems": 64,
+          "title": "Development",
+          "type": "array"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "purpose": {
+          "const": "separate-evaluation-no-tuning",
+          "default": "separate-evaluation-no-tuning",
+          "title": "Purpose",
+          "type": "string"
+        },
+        "reserved": {
+          "items": {
+            "$ref": "#/$defs/ReservedCaseBinding"
+          },
+          "maxItems": 64,
+          "title": "Reserved",
+          "type": "array"
+        },
+        "review": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ReservedCorpusReview"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "rubric_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Rubric Sha256",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "ReservedEvaluationProtocol/v1",
+          "default": "ReservedEvaluationProtocol/v1",
+          "title": "Schema Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "rubric_sha256",
+        "candidate_designer"
+      ],
+      "title": "ReservedEvaluationProtocol",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "execution_authorized": {
+      "const": false,
+      "default": false,
+      "title": "Execution Authorized",
+      "type": "boolean"
+    },
+    "identity_authentication": {
+      "const": "not-established",
+      "default": "not-established",
+      "title": "Identity Authentication",
+      "type": "string"
+    },
+    "model_calls": {
+      "const": 0,
+      "default": 0,
+      "title": "Model Calls",
+      "type": "integer"
+    },
+    "payload_validation": {
+      "const": "not-performed",
+      "default": "not-performed",
+      "title": "Payload Validation",
+      "type": "string"
+    },
+    "pending_gates": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "title": "Pending Gates",
+      "type": "array"
+    },
+    "protocol": {
+      "$ref": "#/$defs/ReservedEvaluationProtocol"
+    },
+    "protocol_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Protocol Sha256",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "ReservedPreparationReport/v1",
+      "default": "ReservedPreparationReport/v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "state": {
+      "enum": [
+        "blocked",
+        "reviewable"
+      ],
+      "title": "State",
+      "type": "string"
+    }
+  },
+  "required": [
+    "protocol",
+    "protocol_sha256",
+    "state",
+    "pending_gates"
+  ],
+  "title": "ReservedPreparationReport",
+  "type": "object"
+}

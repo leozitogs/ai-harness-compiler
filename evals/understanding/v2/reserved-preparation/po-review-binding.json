@@ -1,0 +1,9 @@
+{
+  "corpus_sha256": "c010e3373338edee86512a889ed12273c0a25ac44403e25e4c732fdbb97a8367",
+  "format": "reserved-po-review-binding/v1",
+  "private_review_hash_authority": "Reported by isolated curator; candidate designer did not open the review pack",
+  "private_review_path": ".factory/reserved-v2-curation-20261021/po-review.md",
+  "private_review_sha256": "9855bfc7b396ed87b4b0c8064bf84a291479fef3495a66daf9fc8e24fd22f835",
+  "review": "pending",
+  "scope": "Expectation review only; no runtime call authorization, output approval or model qualification"
+}

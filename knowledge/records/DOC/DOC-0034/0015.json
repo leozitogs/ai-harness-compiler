@@ -1,0 +1,72 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "After scoped judgments, PO approved compatible recovery, new-domain/rules-a, adversarial intent representation, unread-asset metadata limitation and the complete negative matrix for three remaining cases.",
+  "created_at": "2026-10-20T18:28:46.892635+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "All eight saved assessments revalidate exact case, rubric, analysis, finding and component bindings. PO declarations produce five pass and three fail; no model generation or qualification.",
+      "outcome": "observed",
+      "sha256": "47115bd7e1c073f0cc1d9998c3338f500f16c68e6a90e7d27cca3217a85e1afe",
+      "source": "docs/delivery/sprint-2-6-development-assessment.md"
+    },
+    {
+      "command": null,
+      "note": "All eight saved assessments revalidate exact case, rubric, analysis, finding and component bindings. PO declarations produce five pass and three fail; no model generation or qualification.",
+      "outcome": "observed",
+      "sha256": "a9aacaf9761d50e009cec75496d78c8dfbfe9a1485234e750b04ac6c236b4d9f",
+      "source": "docs/evidence/sprint-2-6-development-assessment-20261020/manifest.json"
+    },
+    {
+      "command": null,
+      "note": "Reviewed additive current metadata: reserved preparation is now the active phase, human expectations/budget remain pending. Historical run measurements and story states unchanged; DOC-0041 records the new scoped evidence.",
+      "outcome": "observed",
+      "sha256": "8eb6f3e3b92d6e0953f8c5fc6af1ed4867eb15c55b8c4bff38ae2dc00298dc58",
+      "source": "planning/sprint-2-6.work-items.json"
+    },
+    {
+      "command": null,
+      "note": "All eight saved assessments revalidate exact case, rubric, analysis, finding and component bindings. PO declarations produce five pass and three fail; no model generation or qualification.",
+      "outcome": "observed",
+      "sha256": "118d914a92d947920539261f79ce58fe17ad26d08fc06efe562fb489cab1509b",
+      "source": "tests/test_scoped_semantic_review_regression.py"
+    }
+  ],
+  "id": "DOC-0034",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Declarations are human-declared, not independently authenticated.",
+    "Development outputs include targeted recovery and are not a production-performance estimate.",
+    "No candidate-v3.2 generation/evaluation, reserved corpus access, model qualification, parameter tuning, training or story completion.",
+    "Earlier partial reviews and original generation error remain historical snapshots."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0033",
+    "ADR-0022",
+    "DE-0014",
+    "INC-0022",
+    "DOC-0035",
+    "DE-0015"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 15,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "PO explicitly judged all 48 criteria of eight selected historical outputs: five responses pass, three fail; 43 criterion pass, five fail, zero pending. Confirmed unsupported guard applicability in ambiguous/rules-b and a conflict question citing only one side. Compatible pass belongs to recovery, not original generation error. Later opt-in v3.3 execution is documented in DOC-0035; old observations and reviews remain bound to original snapshots.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Matriz humana completa de desenvolvimento com cinco aceites e três falhas",
+  "updated_at": "2026-10-21T19:47:42.393294+00:00"
+}

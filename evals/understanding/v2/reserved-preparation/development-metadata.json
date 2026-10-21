@@ -1,0 +1,96 @@
+{
+  "cases": [
+    {
+      "artifact_path": "evals/understanding/v2/development-draft/dev-adversarial.json",
+      "artifact_sha256": "a1d3462f196b12614886b30f6bb4ce9d013b45550feda5ec358193aff7b95e99",
+      "case_id": "dev-adversarial",
+      "case_sha256": "a0161eb4e56463d947d21676134f72518d661e5b91b46403d37174de8e025d0d",
+      "family_id": "development-workspace-family",
+      "input_sha256": "90af98c2b77c32226ded9b7c5ffc5d87e4e2773695c3daa88f196523afbfd006",
+      "project_id": "dev-adversarial",
+      "scenario": "untrusted-instruction",
+      "semantic_sha256": "4da41d54f7fd1fe3c1f3e68bbe49dee5b7f546dd7a7c35c49732e54e491a32a3"
+    },
+    {
+      "artifact_path": "evals/understanding/v2/development-draft/dev-ambiguous.json",
+      "artifact_sha256": "b4b91de66473ba2ce628faae3aefddc571213af16ae08a34c00ef2f2440df3ae",
+      "case_id": "dev-ambiguous",
+      "case_sha256": "96d9954a55ca4bf3aa2ad1d8156c160c4692b97b3d1cdcd51c2f84adbf8ccd48",
+      "family_id": "development-workspace-family",
+      "input_sha256": "70e1e4e7503fc348f7a26224386c90c55e49129ef321a8e2c6ff000c9ff38436",
+      "project_id": "dev-ambiguous",
+      "scenario": "ambiguous-process",
+      "semantic_sha256": "64e8a6f061be31410f3f91cc09d8e1423eb853453d238935ccd4dd15fcf27d31"
+    },
+    {
+      "artifact_path": "evals/understanding/v2/development-draft/dev-branding-conflict.json",
+      "artifact_sha256": "b03ca50cc215814759a8b6c072eb3857ba19fefdc6487dc29674e73ec4af6530",
+      "case_id": "dev-branding-conflict",
+      "case_sha256": "4e5fc12e8016de6687d30a9c60c78829c34f9cd6b1a0d7515b1830d71e8f7d30",
+      "family_id": "development-workspace-family",
+      "input_sha256": "6efa88484de902b19dd3011dde395a354bbb3f959e931cb71422f73aaacdc751",
+      "project_id": "dev-branding-conflict",
+      "scenario": "conflicting-sources",
+      "semantic_sha256": "01d4900a57c6691cc61fb801d2dd9c2bf67bc1d66f89e785d3ec04633d2edd74"
+    },
+    {
+      "artifact_path": "evals/understanding/v2/development-draft/dev-compatible-rules.json",
+      "artifact_sha256": "fc8a20bcd49950df782e5fc0e7ef39aea912e0b656b0198e24bfd546d7e96622",
+      "case_id": "dev-compatible-rules",
+      "case_sha256": "f338181b253045093d1101f966cf863f3c7c51d94831becb88e0be60c8ad91ba",
+      "family_id": "development-learning-family",
+      "input_sha256": "b3d0db0980c20a068cbddf89bf26afef915368d5e487a9e1748cf782a9ba9225",
+      "project_id": "learning-studio",
+      "scenario": "compatible-rules",
+      "semantic_sha256": "ffd52d6d804ce173f1f381e59c3451a62af6f1d6244cbce6c57afbd3ec7258a4"
+    },
+    {
+      "artifact_path": "evals/understanding/v2/development-draft/dev-new-domain.json",
+      "artifact_sha256": "03d5682c906e6b053951195ef3c97d81453306cf51584f861e06e9d7dff0b16c",
+      "case_id": "dev-new-domain",
+      "case_sha256": "670709add5aaa3d8a9bc20d0781cb87799266016de42047cd3732e7dc332ca3d",
+      "family_id": "development-workspace-family",
+      "input_sha256": "6d792a55af0f4e0af1c2c1f1e36ff0d31f7fb9894b7091efd3f67338141dc492",
+      "project_id": "dev-new-domain",
+      "scenario": "novel-intent",
+      "semantic_sha256": "436787ff921c4ecdab92ffbe568d88d4a3ce340a30360273981240cb6079ce87"
+    },
+    {
+      "artifact_path": "evals/understanding/v2/development-draft/dev-rules-a.json",
+      "artifact_sha256": "5c22bb8748b1badaca5f7e2ba66d5ef628fc95128bdb5479617a7f5094220063",
+      "case_id": "dev-rules-a",
+      "case_sha256": "7dcbd77cafd0a7836b7a1f2fac6a361fe083606937b916588b107c35318f4fdd",
+      "family_id": "development-workspace-family",
+      "input_sha256": "a44c3b367950cab7b68c92bcf8f7062a732d7bc6f034d105df6a0e3a3b28d9ad",
+      "project_id": "dev-rules-a",
+      "scenario": "contrasting-rules",
+      "semantic_sha256": "56d4e86a63fef2291bfff53cb234a86522cab1a3835be9a5a7ac5922d8355bd4"
+    },
+    {
+      "artifact_path": "evals/understanding/v2/development-draft/dev-rules-b.json",
+      "artifact_sha256": "9e516037eefd452f56323845d4aa5adc613a713d34b77da788c5629eaf131fa0",
+      "case_id": "dev-rules-b",
+      "case_sha256": "9d7354f306a8e7b52957c87187eab0d05c1a66f66ef2c2ddf78b8f858d196b58",
+      "family_id": "development-workspace-family",
+      "input_sha256": "b3f1743dc0c1b25e7e7d659acb7d3d2db5d57664467af2e6ee9ed65488b5382c",
+      "project_id": "dev-rules-b",
+      "scenario": "contrasting-rules",
+      "semantic_sha256": "10bf8b23229cee799ed35fb5f07d6dab6f30044bc33a1bfb01a40cdc44544fd5"
+    },
+    {
+      "artifact_path": "evals/understanding/v2/development-draft/dev-unread-assets.json",
+      "artifact_sha256": "9027b07f6a0c14f4dd56fc6321c5345864884c230f3ff02641817c48596a2b17",
+      "case_id": "dev-unread-assets",
+      "case_sha256": "3c63236be69375dd183ee04a12c9fe91be3b2a43a507b9c974db9ed5774f34c5",
+      "family_id": "development-workspace-family",
+      "input_sha256": "015d3fe7ce3367ff202c52b58d00331418776a18b0b20bf09cc2dd07f26d24f2",
+      "project_id": "dev-unread-assets",
+      "scenario": "unread-assets",
+      "semantic_sha256": "119db9741eb42878149371feff29fb968a255e7cd4057b01cc57428b9ba06938"
+    }
+  ],
+  "family_basis": "Conservative related-input grouping declared by candidate designer; not authenticated semantic independence proof",
+  "format": "development-binding-metadata/v1",
+  "rubric_sha256": "b1a9d26e2132798138ad035830d1caac65b3951f28e0e046630f7a5735fc77f0",
+  "scope": "Previously exposed development only; no reserved input read"
+}

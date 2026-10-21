@@ -1,0 +1,30 @@
+{
+  "files": [
+    {
+      "path": "src/ai_harness_compiler/semantic_composition.py",
+      "sha256": "2d0626602371e6803da520ce095aaa2eb368d4f469b3ea86cbe37f3458893240"
+    },
+    {
+      "path": "src/ai_harness_compiler/grounding.py",
+      "sha256": "67d1bb2b91029c983d157bde7bc2f565d97a3e775706b536fee5dc1c9a1fc85d"
+    },
+    {
+      "path": "src/ai_harness_compiler/semantic_verification.py",
+      "sha256": "94c2f4081815204bbb10ec93d4d90fb2bb6009abf51d6e6018cfe427debd3450"
+    },
+    {
+      "path": "src/ai_harness_compiler/models/semantic_analysis_v3.py",
+      "sha256": "97ae214bdcd5c8277395f388281a50ddd7bcfada2e320c96510eaafaa203542b"
+    },
+    {
+      "path": "src/ai_harness_compiler/models/semantic_verification_v4.py",
+      "sha256": "f8887a2e180b831e25cb47cf8f4e2b09a43e7c77256ba151a5ba2966fd83a23f"
+    },
+    {
+      "path": "src/ai_harness_compiler/adapters/codex_cli.py",
+      "sha256": "ffceba1be4e50882e0b2c628aef276ff9d8d36277ecef264fde7583e0aff7d49"
+    }
+  ],
+  "scope": "Frozen selected analysis/audit and adapter sources at tracked base commit, before independent curation. Metadata preparation code is a separate increment.",
+  "source_commit": "1e8db614f864970cde229a947ce938ff9c13220f"
+}
