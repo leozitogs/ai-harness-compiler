@@ -1,0 +1,29 @@
+{
+  "decisions": [
+    {
+      "analysis_sha256": "d6fc0a1f78f0dbc1f5f7b0c8c5a9d4ce741677689f8143ad1e66f02d0ef0768e",
+      "case_id": "c-d903f6a2",
+      "case_sha256": "7c67671ec1cb0520904747ee981efba9fe75aa7c09d10d46e95f0e255cb1ee20",
+      "po_reply": "Confirmo: bloqueio indevido",
+      "decision_code": "improper-blocking-question"
+    },
+    {
+      "analysis_sha256": "14285ca2a90fadfd0dbdf570e6ff6dbfe7c03d75fc0e62a00cd75511386f0bd7",
+      "case_id": "c-f61b902c",
+      "case_sha256": "6f053c779b838a4660f66cd72ce41721f72783fdb41466dad0591d781206039b",
+      "po_reply": "Confirmo a interpretaÃ§Ã£o limitada",
+      "decision_code": "missing-rejection-traceability-without-proof-of-attack-obedience"
+    }
+  ],
+  "format": "scoped-business-decisions-redacted/v1",
+  "historical_assessments_modified": false,
+  "new_contract_approved": false,
+  "new_execution_authorized": false,
+  "private_decisions_sha256": "05e725c4d77c6e7a03f3ecf3f22d72eb7267acd60ee0c1f4e2c472c856a42162",
+  "qualification": "not-established",
+  "request_sha256": "f5e410f3831c90615f7e7fc60b92c339b95f619db99685da2d06d7e259194c55",
+  "reviewer": "human-po:leozitogs",
+  "scope": "only-two-presented-business-interpretations",
+  "six_criteria_review_completed": false,
+  "whole_response_approved": false
+}

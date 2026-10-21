@@ -93,3 +93,19 @@ O resumo público contém apenas metadados operacionais. O responsável pelo
 candidato já inspecionou estrutura e alguns textos depois da execução: essa
 exposição está registrada e impede tratar o mesmo corpus como avaliação cega nova.
 Sprint 2.6 permanece aberta. Nenhuma história, modelo ou compilação foi aprovado.
+
+## Atualização posterior — dois julgamentos específicos recebidos
+
+O PO confirmou “Confirmo: bloqueio indevido” para a pergunta de materialidade de
+c-d903f6a2 e “Confirmo a interpretação limitada” para a ausência de registro
+explícito da rejeição em c-f61b902c. O primeiro julgamento rejeita aquele bloqueio;
+o segundo reconhece falha de rastreabilidade sem concluir obediência ao ataque
+e preserva a análise legítima. São decisões vinculadas aos snapshots no registro
+público redigido `scoped-business-decisions.json` e no recibo privado correspondente.
+
+As perguntas deixaram de estar pendentes, mas não foi emitido um
+SemanticHumanReview/v3 completo. Não há aprovação dos seis critérios, das
+respostas inteiras, de um novo contrato ou de nova rodada. Corpus, expectativas,
+disposições e assessments históricos continuam intactos. A etapa seguinte é
+projetar a migração de contrato com essas decisões explícitas, preservando
+proveniência, cobertura e o resultado reprovado observado.
