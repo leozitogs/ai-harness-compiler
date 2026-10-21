@@ -1,0 +1,80 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO requested continuing after the authorized v3.4 round. Treat audit hash-copy failure without hiding it, then identify actual remaining prerequisite gates.",
+  "created_at": "2026-10-21T00:08:45.968379+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Current source adds metadata-only reserved preparation after separately authorized structural smoke. Historical observations unchanged; DOC-0041 records new independent curation with expectation/budget gates still pending.",
+      "outcome": "observed",
+      "sha256": "7818f7fc6be96ff0ad08f8873c1a272e1e3cbe07d5657c02e7294ececefaab59",
+      "source": "docs/delivery/sprint-2-6-prerequisites-review.md"
+    },
+    {
+      "command": null,
+      "note": "Current source reviewed after separately authorized one-call structural compatibility observation. Original scopes are historical; later observed compatibility is limited in DOC-0040. No semantic advice approval, promotion or qualification.",
+      "outcome": "observed",
+      "sha256": "a4749db30fc4219e139ca21ea56582295ee40944c4f51f2509c6c9a87fc040a5",
+      "source": "docs/delivery/sprint-2-6-audit-bindings.md"
+    },
+    {
+      "command": null,
+      "note": "Explicit offline-only candidate; saved structural failure rejected and historical fingerprints preserved. No new model execution, provider compatibility or semantic efficacy claim.",
+      "outcome": "observed",
+      "sha256": "e7af7a3f74b017db4d8d8ef79dac38d533d74ee93a7329217ddd77577a5895e6",
+      "source": "evals/understanding/v2/development-approved-manifest.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit offline-only candidate; saved structural failure rejected and historical fingerprints preserved. No new model execution, provider compatibility or semantic efficacy claim.",
+      "outcome": "observed",
+      "sha256": "234a9e7c0e4e55fd341f6dc00d9f3a24f937d28df58ad2ec9f1b3a54082edf24",
+      "source": "evals/understanding/v1/freeze.json"
+    },
+    {
+      "command": null,
+      "note": "Current source reviewed after explicit authorization and zero-invocation preflight stop. Initial preparation measurements remain historical; DOC-0043 records pending numeric fingerprint correction, not successful evaluation.",
+      "outcome": "observed",
+      "sha256": "b6f2337c5844fc21c2e599d1c56d20ed1be18ac4384234bcfafcb02c7dc0c464",
+      "source": "planning/sprint-2-6.work-items.json"
+    }
+  ],
+  "id": "DOC-0039",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "One later explicitly authorized compatibility observation is in DOC-0040; broader provider/runtime reliability and rollout are not established.",
+    "Reserved corpus was inspected only via manifest/freeze metadata, not case contents.",
+    "Historical mixed-attempt comparisons do not constitute controlled repeated inference experiments.",
+    "Original local-model INC-0007 failures remain distinct from accepted Codex analyses.",
+    "Later authorized corrected reserved run is recorded in DOC-0044: technical execution/replay succeeded but eight deterministic coverage checks fail; no human output review or qualification."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0017",
+    "DOC-0038",
+    "INC-0025",
+    "INC-0007",
+    "DOC-0040",
+    "DOC-0044"
+  ],
+  "resolution": null,
+  "review_note": "Refreshed planning-source digest after observed reserved result. Historical notes retained; new technical completion is not semantic pass, promotion or story completion.",
+  "reviewed_by": "codex:evidence-review",
+  "revision": 16,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Offline audit-binding candidate and prerequisite review consolidated in PR61. Subsequent explicit one-call compatibility smoke is recorded in DOC-0040: one valid structural report, no semantic approval or promotion. Reserved v2 and delivery-review gates remain; no holdout contents read.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Correção estrutural candidata do auditor e consolidação de AHC-021/022",
+  "updated_at": "2026-10-21T21:40:38.751490+00:00"
+}

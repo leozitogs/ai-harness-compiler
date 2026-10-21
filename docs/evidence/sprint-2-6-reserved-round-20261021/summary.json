@@ -1,0 +1,53 @@
+{
+  "assessment_states_without_human_review": {
+    "fail": 8
+  },
+  "assets_read": false,
+  "compilation_eligibility": "not-authorized",
+  "completed_analyses": 8,
+  "completed_audits": 8,
+  "corpus_sha256": "e5cd1829bd1a74401a8240a3d6562df2f1d60bc72b88e0aaf82acb45cd519917",
+  "cost_observed": null,
+  "defaults_changed": false,
+  "deterministic_failures": [
+    {
+      "case_count": 8,
+      "criterion": "rule-coverage",
+      "reason": "Required sourced finding absent from analysis"
+    },
+    {
+      "case_count": 1,
+      "criterion": "project-understanding",
+      "reason": "Analysis disposition differs from expected behavior"
+    },
+    {
+      "case_count": 1,
+      "criterion": "project-understanding",
+      "reason": "Required sourced refusal absent from analysis"
+    }
+  ],
+  "elapsed_seconds": 476.6813796999995,
+  "fallback_performed": false,
+  "format": "reserved-execution-redacted-summary/v1",
+  "human_output_review": "not-performed",
+  "model_invocations_charged": 16,
+  "model_qualification": "not-established",
+  "new_execution_authorized": false,
+  "observed_immutable_model": null,
+  "offline_integrity_replay": "passed",
+  "po_confirmation": "Confirmo a correção e autorizo a rodada nesses limites",
+  "private_artifacts_published": false,
+  "private_authorization_sha256": "3160625bbacce407af05f8729134d2ee9377af779478aee4ef33b896827f4967",
+  "private_review_bindings_sha256": "e688df34e70cb8e8f64c27aff4bb6e75590ec6f98596e313aa4ae5029e53c83a",
+  "private_session_sha256": "fa66b53c12aabf946c0a8ee730cdccde38283a02f448195b3dbfd385eaa8d015",
+  "provider_calls_observed": null,
+  "repair_performed": false,
+  "request_sha256": "f5e410f3831c90615f7e7fc60b92c339b95f619db99685da2d06d7e259194c55",
+  "requested_model": "gpt-6.1-sol",
+  "retry_performed": false,
+  "sampler_observed": null,
+  "sprint_status": "in_progress",
+  "state": "completed",
+  "stop_reason": null,
+  "training_performed": false
+}

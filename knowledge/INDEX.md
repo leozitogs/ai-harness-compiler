@@ -78,20 +78,21 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0027 — Incremento funcional AHC-030 e demonstração Vera/Nexo](records/DOC/DOC-0027/0008.json) · active · revision 8
 - [DOC-0028 — Correções da review e demonstração de resolução AHC-030](records/DOC/DOC-0028/0004.json) · active · revision 4
 - [DOC-0029 — Review e encerramento da Sprint2.5.5 pelo PO](records/DOC/DOC-0029/0002.json) · active · revision 2
-- [DOC-0030 — Kickoff Sprint2.6 e auditoria offline da baseline](records/DOC/DOC-0030/0032.json) · active · revision 32
-- [DOC-0031 — Parecer Nexo sobre kickoff e pacote de revisão humana](records/DOC/DOC-0031/0030.json) · active · revision 30
-- [DOC-0032 — Adjudicação técnica consultiva dos diagnósticos de desenvolvimento](records/DOC/DOC-0032/0028.json) · active · revision 28
+- [DOC-0030 — Kickoff Sprint2.6 e auditoria offline da baseline](records/DOC/DOC-0030/0034.json) · active · revision 34
+- [DOC-0031 — Parecer Nexo sobre kickoff e pacote de revisão humana](records/DOC/DOC-0031/0032.json) · active · revision 32
+- [DOC-0032 — Adjudicação técnica consultiva dos diagnósticos de desenvolvimento](records/DOC/DOC-0032/0030.json) · active · revision 30
 - [DOC-0033 — Julgamentos específicos do PO e candidato corretivo de composição](records/DOC/DOC-0033/0014.json) · active · revision 14
-- [DOC-0034 — Matriz humana completa de desenvolvimento com cinco aceites e três falhas](records/DOC/DOC-0034/0022.json) · active · revision 22
+- [DOC-0034 — Matriz humana completa de desenvolvimento com cinco aceites e três falhas](records/DOC/DOC-0034/0024.json) · active · revision 24
 - [DOC-0035 — Rodada corretiva v3.3 com orçamento fixado e revisão independente por snapshot](records/DOC/DOC-0035/0010.json) · active · revision 10
-- [DOC-0036 — Revisão humana v3.3: seis passes e duas falhas de materialidade](records/DOC/DOC-0036/0020.json) · active · revision 20
+- [DOC-0036 — Revisão humana v3.3: seis passes e duas falhas de materialidade](records/DOC/DOC-0036/0022.json) · active · revision 22
 - [DOC-0037 — Candidato de materialidade v3.4 e execução aguardando autorização específica](records/DOC/DOC-0037/0004.json) · active · revision 4
 - [DOC-0038 — Rodada v3.4 executada e oito análises aprovadas pelo PO](records/DOC/DOC-0038/0002.json) · active · revision 2
-- [DOC-0039 — Correção estrutural candidata do auditor e consolidação de AHC-021/022](records/DOC/DOC-0039/0014.json) · active · revision 14
+- [DOC-0039 — Correção estrutural candidata do auditor e consolidação de AHC-021/022](records/DOC/DOC-0039/0016.json) · active · revision 16
 - [DOC-0040 — Smoke único autorizado da auditoria v4.1 com vínculos válidos](records/DOC/DOC-0040/0003.json) · active · revision 3
 - [DOC-0041 — Curadoria nova do reservado v2 e gates pendentes](records/DOC/DOC-0041/0006.json) · active · revision 6
 - [DOC-0042 — Executor reservado verificado e pedido de 16 invocações pendente](records/DOC/DOC-0042/0004.json) · active · revision 4
 - [DOC-0043 — Rodada reservada interrompida sem chamadas e correção pendente](records/DOC/DOC-0043/0002.json) · active · revision 2
+- [DOC-0044 — Rodada reservada corrigida concluída com falhas determinísticas](records/DOC/DOC-0044/0002.json) · active · revision 2
 - [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2
 - [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1
 - [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1
@@ -118,7 +119,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [INC-0023 — Pergunta de precedência cita apenas um lado do conflito](records/INC/INC-0023/0004.json) · verified · revision 4
 - [INC-0024 — Pergunta de aplicabilidade vira impedimento sem decisão material necessária](records/INC/INC-0024/0004.json) · verified · revision 4
 - [INC-0025 — Auditor devolve digest divergente de um achado](records/INC/INC-0025/0006.json) · verified · revision 6
-- [INC-0026 — Hashes do reservado divergem após normalização de default numérico](records/INC/INC-0026/0001.json) · draft · revision 1
+- [INC-0026 — Hashes do reservado divergem após normalização de default numérico](records/INC/INC-0026/0003.json) · verified · revision 3
 - [LES-0001 — Tipos estáticos podem falhar em runtime](records/LES/LES-0001/0004.json) · verified · revision 4
 - [LES-0002 — Referências válidas não garantem precedência consistente](records/LES/LES-0002/0002.json) · verified · revision 2
 - [LES-0003 — Usar IDs curtos para parametrizações com payloads grandes](records/LES/LES-0003/0002.json) · verified · revision 2
