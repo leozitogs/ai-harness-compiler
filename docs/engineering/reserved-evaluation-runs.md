@@ -66,3 +66,9 @@ externa, sem alterar hashes históricos. Um pass de caso não qualifica o modelo
 autoriza compilação ou conclui AHC-021/022/Sprint 2.6.
 
 Arquitetura e limites: [ADR-0029](../adr/0029-single-use-reserved-execution.md).
+
+Ao preparar novos casos, use `reserved_freeze.freeze_serialized_case` sobre os
+bytes salvos, conferindo estabilidade após desserialização. Validade de schema e
+igualdade matemática de números não garantem igualdade dos hashes canônicos.
+Correções de metadados ficam em proposta pendente; não transportar revisão antiga
+para novo corpus nem reutilizar autorização consumida sem nova decisão explícita.

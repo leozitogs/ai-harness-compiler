@@ -52,3 +52,10 @@ aprovado não qualifica modelo, autoriza compilação ou encerra a sprint.
 AHC-021/022 seguem em revisão. Manual operacional:
 [execução reservada](../engineering/reserved-evaluation-runs.md).
 Decisão: [ADR-0029](../adr/0029-single-use-reserved-execution.md).
+
+Posteriormente, em 21/10/2026, o PO autorizou o pedido acima. A execução parou
+no preflight com zero invocações e foi encerrada sem retry. Os oito arquivos
+originais estão intactos; os digests derivados não sobreviviam à normalização
+numérica do contrato. [Diagnóstico e correção proposta](sprint-2-6-reserved-preflight.md).
+O histórico de preparação acima permanece registrado; não é autorização de uma
+segunda execução.

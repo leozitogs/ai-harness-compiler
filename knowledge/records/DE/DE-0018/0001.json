@@ -1,0 +1,73 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "INC-0026 exposed numeric-default representation drift despite valid case schemas and unchanged byte hashes.",
+  "created_at": "2026-10-21T21:04:12.972309+00:00",
+  "decision": "Use freeze_serialized_case on existing serialized inputs. Do not coerce historical hashes, change domain defaults or weaken preflight. Correct derived metadata in a pending proposal; planned review values activate only after an explicit fresh PO decision bound to the prospective request.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Authorized preflight failed before provider construction. Redacted metadata and synthetic regression only; raw private cases/evidence are not published, no new model result or authorization inferred.",
+      "outcome": "observed",
+      "sha256": "3f706b930752d4d912bec0bc09a32554f8e41410d11c345bf034da5b961e3781",
+      "source": "docs/delivery/sprint-2-6-reserved-preflight.md"
+    },
+    {
+      "command": null,
+      "note": "Authorized preflight failed before provider construction. Redacted metadata and synthetic regression only; raw private cases/evidence are not published, no new model result or authorization inferred.",
+      "outcome": "observed",
+      "sha256": "99eb523b5db02d78c78f5a8d815dcfa040f55a76c1d16b46c88798d76b030ba1",
+      "source": "docs/evidence/sprint-2-6-reserved-preflight-20261021/summary.json"
+    },
+    {
+      "command": null,
+      "note": "Authorized preflight failed before provider construction. Redacted metadata and synthetic regression only; raw private cases/evidence are not published, no new model result or authorization inferred.",
+      "outcome": "observed",
+      "sha256": "49c1fee6793a907cf1f81cac424c4cf7745fe9c3238db8b893c12bee37e2930c",
+      "source": "src/ai_harness_compiler/reserved_freeze.py"
+    },
+    {
+      "command": null,
+      "note": "Authorized preflight failed before provider construction. Redacted metadata and synthetic regression only; raw private cases/evidence are not published, no new model result or authorization inferred.",
+      "outcome": "observed",
+      "sha256": "100fe1917722619ce7495cf3ade52904bea23216c6c95992c959c5086c70b721",
+      "source": "tests/test_reserved_freeze.py"
+    },
+    {
+      "command": null,
+      "note": "Authorized preflight failed before provider construction. Redacted metadata and synthetic regression only; raw private cases/evidence are not published, no new model result or authorization inferred.",
+      "outcome": "observed",
+      "sha256": "a7d7c4f9217a2dde120467e0b540dac079f82fdc77ce16319242f8ccf3f7e204",
+      "source": "evals/understanding/v2/reserved-correction/proposal.json"
+    }
+  ],
+  "id": "DE-0018",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "A future global default fix needs separate compatibility/versioning analysis; no historical schema/hash change here.",
+    "Metadata correction does not authorize new calls or approve semantic outputs."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "INC-0026",
+    "ADR-0029"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Freeze validated saved bytes and check digest stability after another roundtrip, preserving original raw files and strict runtime checks.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Congelar fingerprints a partir dos bytes desserializados",
+  "updated_at": "2026-10-21T21:04:12.972309+00:00"
+}

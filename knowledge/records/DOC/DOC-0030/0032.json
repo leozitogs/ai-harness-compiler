@@ -1,0 +1,79 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:delivery",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO explicitly instructed: pode fechar a sprint 2.5.5 e seguir para a sprint 2.6, on 2026-10-19.",
+  "created_at": "2026-10-19T23:26:46.950490+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Explicit PO closure/start. Entry audit verified eight approved development cases and 62 historical artifacts; eight human output reviews remain not-run. No holdout read, model calls or training in this transition.",
+      "outcome": "observed",
+      "sha256": "629f04ea2d22a0bdecce159252192851473b5763942ea3efadc07b1b815ba90a",
+      "source": "docs/delivery/sprint-2-6-kickoff.md"
+    },
+    {
+      "command": null,
+      "note": "Explicit PO closure/start. Entry audit verified eight approved development cases and 62 historical artifacts; eight human output reviews remain not-run. No holdout read, model calls or training in this transition.",
+      "outcome": "observed",
+      "sha256": "689030ea1c7c670373f430b0898148e4a052b6febb384932d3c7ab92e64af5db",
+      "source": "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+    },
+    {
+      "command": null,
+      "note": "Current source reviewed after separately authorized one-call structural compatibility observation. Original scopes are historical; later observed compatibility is limited in DOC-0040. No semantic advice approval, promotion or qualification.",
+      "outcome": "observed",
+      "sha256": "a752d58174a80617be80efcd763ef3b9880915bc3db72947aacd8dc92fd97054",
+      "source": "planning/sprint-2-6.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit PO closure/start. Entry audit verified eight approved development cases and 62 historical artifacts; eight human output reviews remain not-run. No holdout read, model calls or training in this transition.",
+      "outcome": "observed",
+      "sha256": "7bf8dc4f46e90acf9ed935e5cb0ea90c4842ce3c584caa5914f6f80dd93f6c15",
+      "source": "planning/sprint-2-6.tasks.json"
+    },
+    {
+      "command": null,
+      "note": "Current source reviewed after explicit authorization and zero-invocation preflight stop. Initial preparation measurements remain historical; DOC-0043 records pending numeric fingerprint correction, not successful evaluation.",
+      "outcome": "observed",
+      "sha256": "0a87647d0dafddc0ffe3402a1344139eff07c7125017172c9ae4d0bcec15bc3b",
+      "source": "planning/sprint-2-6.work-items.json"
+    }
+  ],
+  "id": "DOC-0030",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Timebox closure does not certify every story criterion or the specific QA resolution.",
+    "No model qualification, reserved-corpus access, paid service purchase or training inferred.",
+    "Task graph represents precedence, not execution or parallel capacity."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0013",
+    "DOC-0029",
+    "DOC-0021",
+    "DOC-0031",
+    "DOC-0032",
+    "DOC-0033",
+    "DOC-0034"
+  ],
+  "resolution": null,
+  "review_note": "Reviewed current follow-up source/limitation additions. Historical approvals and measurements preserved; original run stopped before any invocation. Corrected metadata and fresh exact request remain unapproved.",
+  "reviewed_by": "codex:evidence-review",
+  "revision": 32,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Sprint2.6 prerequisite phase active. Initial audit verified eight frozen cases and 62 historical artifacts; later Nexo favored offline review preparation and eight-case matrix prepared (DOC-0031). Human semantic outputs and AHC024 gates remain pending. Follow-up DOC-0033 records two scoped PO judgments: one negative criterion, remaining criteria pending; original snapshots retained. Final human matrix is recorded separately in DOC-0034: five selected responses pass and three fail, with all 48 criteria judged; earlier counts describe historical snapshots.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Kickoff Sprint2.6 e auditoria offline da baseline",
+  "updated_at": "2026-10-21T21:04:17.847056+00:00"
+}
