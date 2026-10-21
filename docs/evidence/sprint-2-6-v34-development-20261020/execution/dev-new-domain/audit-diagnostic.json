@@ -1,0 +1,24 @@
+{
+  "binding_valid": false,
+  "case": "dev-new-domain",
+  "format": "offline-audit-diagnostic/v1",
+  "mismatches": [
+    {
+      "expected_sha256": "46de9c728fd7bb9a3d5c5c1c5c2e81ec7ae825fb5bbe4d7a3593f94d0502d532",
+      "expected_sources": [
+        "atom-7"
+      ],
+      "finding_id": "context-4",
+      "observed_sha256": "46de9c728fd7bb9a3d5c5c1c5c2c81ec7ae825fb5bbe4d7a3593f94d0502d532",
+      "observed_sources": [
+        "atom-7"
+      ]
+    }
+  ],
+  "proposal_parses": true,
+  "reason": "Verifier finding digest or exact source binding differs",
+  "repairs": 0,
+  "retries": 0,
+  "scope": "Saved final response only; no provider call or rewriting",
+  "semantic_approval": false
+}

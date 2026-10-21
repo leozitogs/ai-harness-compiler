@@ -1,0 +1,61 @@
+{
+  "schema_version": "SemanticAnalysisProposal/v3",
+  "criteria": [
+    {
+      "source_atom_id": "atom-8",
+      "kind": "business-rule",
+      "condition": {
+        "text": "O autor pretende liberar uma publicação da equipe.",
+        "source_atom_ids": ["atom-8"]
+      },
+      "outcome": {
+        "text": "O autor pode liberar a publicação sem aprovação de terceiros.",
+        "source_atom_ids": ["atom-8"]
+      },
+      "exceptions": [],
+      "note": "A autorização não depende de aprovação adicional.",
+      "question": null,
+      "uncertainties": []
+    }
+  ],
+  "guards": [],
+  "context_findings": [
+    {
+      "subject": "purpose",
+      "text": "Organizar publicações da equipe e suas fontes, registrando decisões.",
+      "note": "Finalidade declarada na concepção e na descrição do backlog.",
+      "context_indices": [0, 6]
+    },
+    {
+      "subject": "audience",
+      "text": "Autores.",
+      "note": "Público explicitamente declarado.",
+      "context_indices": [1]
+    },
+    {
+      "subject": "positioning",
+      "text": "Rastreabilidade e controle humano orientam o projeto.",
+      "note": "Esses princípios não estabelecem exigência de aprovação de terceiros.",
+      "context_indices": [2, 3]
+    },
+    {
+      "subject": "domain",
+      "text": "Gestão de workspace para organização de publicações e fontes de uma equipe.",
+      "note": "Interpretação da declaração de domínio à luz da concepção.",
+      "context_indices": [0, 7]
+    },
+    {
+      "subject": "constraint",
+      "text": "É obrigatório registrar a identidade do responsável.",
+      "note": "A aplicabilidade não foi especificada: a declaração não define operação ou condição para esse registro. A obrigação permanece explícita, sem fornecer uma política executável de aplicabilidade nem acrescentar aprovação à liberação de publicações.",
+      "context_indices": [4]
+    },
+    {
+      "subject": "constraint",
+      "text": "O custo máximo de build é US$ 0,00.",
+      "note": "Limite declarado no campo max_build_cost_usd.",
+      "context_indices": [5]
+    }
+  ],
+  "issues": []
+}

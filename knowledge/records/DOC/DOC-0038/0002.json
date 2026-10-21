@@ -1,0 +1,76 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Correction of nonmaterial identity-applicability blockers under opt-in semantic-composition/v3.4. Prior execution rejection is preserved separately from later explicit approval. Budget consumed and closed.",
+  "created_at": "2026-10-20T23:46:55.834888+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Actual bounded run, explicit fresh PO judgments and 25 focused offline regressions. Analysis acceptance remains separate from audit validity and qualification.",
+      "outcome": "observed",
+      "sha256": "c59dcc78160eb73f4cdf128bdeb9a891edaa5971c83807a9b98b6fd0e882e64b",
+      "source": "docs/delivery/sprint-2-6-v34-development.md"
+    },
+    {
+      "command": null,
+      "note": "Actual bounded run, explicit fresh PO judgments and 25 focused offline regressions. Analysis acceptance remains separate from audit validity and qualification.",
+      "outcome": "observed",
+      "sha256": "ad05fc6324ddd3718360bb72c338d5f1c430563ee691e2999d2aaaf617ac0efe",
+      "source": "docs/evidence/sprint-2-6-v34-development-20261020/authorization.json"
+    },
+    {
+      "command": null,
+      "note": "Actual bounded run, explicit fresh PO judgments and 25 focused offline regressions. Analysis acceptance remains separate from audit validity and qualification.",
+      "outcome": "observed",
+      "sha256": "80b20baf7d4b53f80cbc6bfa296350cc60910dea97a259c93f780c275223a221",
+      "source": "docs/evidence/sprint-2-6-v34-development-20261020/execution/summary.json"
+    },
+    {
+      "command": null,
+      "note": "Actual bounded run, explicit fresh PO judgments and 25 focused offline regressions. Analysis acceptance remains separate from audit validity and qualification.",
+      "outcome": "observed",
+      "sha256": "96790059cd5f40b9ce526c09ac48b04c06b829da725ee43bd9e8f4c4442d37f0",
+      "source": "docs/evidence/sprint-2-6-v34-development-20261020/human-review/manifest.json"
+    },
+    {
+      "command": null,
+      "note": "Actual bounded run, explicit fresh PO judgments and 25 focused offline regressions. Analysis acceptance remains separate from audit validity and qualification.",
+      "outcome": "observed",
+      "sha256": "61420e50980c9c880e3900566c06514deda5b4d5464d97dc72e4d7b66c16d932",
+      "source": "tests/test_v34_development_evidence.py"
+    }
+  ],
+  "id": "DOC-0038",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Single development round, no causal gain, stability or population-performance estimate.",
+    "One audit binding failure remains; human analysis approval does not approve failed advisory output.",
+    "No holdout, training, new provider or post-review model calls; default unchanged.",
+    "Human declarations are not independently authenticated."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0016",
+    "DOC-0037",
+    "INC-0024"
+  ],
+  "resolution": null,
+  "review_note": "Reviewed exact actual response/receipt bindings, eight fresh human acceptances and retained rejected audit. No qualification or automatic promotion inferred.",
+  "reviewed_by": "codex:evidence-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Explicit PO authorization executed frozen 16-call serial development-only round. Eight valid analyses, seven valid audits, one rejected digest binding. Fresh PO approved all six criteria of eight new analyses: 48 pass, zero pending. No prior review transferred; no model qualification, promotion or story completion.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Rodada v3.4 executada e oito análises aprovadas pelo PO",
+  "updated_at": "2026-10-20T23:46:56.706896+00:00"
+}

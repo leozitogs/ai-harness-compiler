@@ -1,0 +1,180 @@
+{
+  "schema_version": "SemanticVerifierProposal/v4",
+  "analysis_sha256": "e6cae0c80e4a70606117e9a9b60f875539b1ed3593e7fc7f188ca67be8a25143",
+  "findings": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "8c984d76acee89581e11b7a0fc904d642ceb37c0a1851af33efda010f5b315bb",
+      "source_atom_ids": ["atom-8"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "A fonte exige aprovação do responsável designado para liberar publicação, sem afirmar suficiência."
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "36ba56209547c89ade469f5f5f057e2d87c98f66a38b695bb8518b11e89edc97",
+      "source_atom_ids": ["atom-1", "atom-7"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "As fontes declaram organização de publicações e fontes e registro de decisões."
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "d59bb363e99ce9e22455c9c027a3edeb79dd5ac3603853380ee2aa3fa97fa1f4",
+      "source_atom_ids": ["atom-2"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "O público declarado é autores."
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "99f9e7b91f43bfee9ea5de9d19676e55ab7742a6ac72f07fbb1a041b28f03deb",
+      "source_atom_ids": ["atom-3", "atom-4"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "Ambos os princípios estão expressos nas fontes."
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "c66920edb6532a7ce8b49404d9a47e8ba58aa2ac79fe248422c248be33067014",
+      "source_atom_ids": ["atom-1", "atom-9"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "O domínio declarado e a concepção sustentam essa descrição."
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "7c2fb45a91f1585664c953f49c81d1e66416be8caf515c4ef921cc274f9592b6",
+      "source_atom_ids": ["atom-1", "atom-7"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "As capacidades descritas constam das duas fontes."
+    },
+    {
+      "finding_id": "context-6",
+      "finding_sha256": "a9628fdbb34e51ca9fb97f619d32cd14cbf241fb4760b95b9759a0535b97b516",
+      "source_atom_ids": ["atom-5"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "A restrição exige registrar a identidade do responsável; não identifica esse papel nem estabelece sua aplicabilidade ou equivalência ao aprovador."
+    },
+    {
+      "finding_id": "context-7",
+      "finding_sha256": "8d7404bee925e16f8eac6f16e57a36dcd43cab69512890354ef2692eb1a24afd",
+      "source_atom_ids": ["atom-6"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "O campo max_build_cost_usd declara limite de 0.0."
+    }
+  ],
+  "component_judgments": [
+    {
+      "finding_id": "criterion-1",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": ["atom-8"],
+      "support": "supports",
+      "note": "A fonte situa a exigência na liberação da publicação da equipe."
+    },
+    {
+      "finding_id": "criterion-1",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": ["atom-8"],
+      "support": "supports",
+      "note": "A aprovação do responsável designado é expressamente necessária."
+    }
+  ],
+  "omissions": [
+    {
+      "id": "question-1",
+      "kind": "question",
+      "text": "Em quais operações deve ser registrada a identidade e quem é o responsável cujo registro é exigido?",
+      "rationale": "A obrigação foi preservada, mas falta definir seu sujeito e sua aplicabilidade; isso altera a regra de registro sem autorizar equiparação ao aprovador.",
+      "source_atom_ids": ["atom-5"],
+      "impact": "rule"
+    },
+    {
+      "id": "question-2",
+      "kind": "question",
+      "text": "Quem é o responsável designado cuja aprovação permite satisfazer a exigência de liberação?",
+      "rationale": "A fonte exige aprovação de um papel específico, mas não determina quem o ocupa ou como reconhecê-lo; a resposta altera quais aprovações são válidas.",
+      "source_atom_ids": ["atom-8"],
+      "impact": "authorization"
+    }
+  ],
+  "source_coverage": [
+    {
+      "atom_id": "atom-1",
+      "quote_sha256": "88b9866f0e0b53ae15c7d6439e0c540ac09134f17f179c297c4dde265f0c01eb",
+      "disposition": "represented",
+      "finding_ids": ["context-1", "context-4", "context-5"],
+      "omission_ids": [],
+      "note": "Concepção representada."
+    },
+    {
+      "atom_id": "atom-2",
+      "quote_sha256": "75f26d13ebd8877644c57a369ce71b82b639903217ed12ebe61beeffd8c11586",
+      "disposition": "represented",
+      "finding_ids": ["context-2"],
+      "omission_ids": [],
+      "note": "Público representado."
+    },
+    {
+      "atom_id": "atom-3",
+      "quote_sha256": "e8a964e534bd9189a4c1ee68dc1e80429c5b14930ce7df548075257a8a8dccc7",
+      "disposition": "represented",
+      "finding_ids": ["context-3"],
+      "omission_ids": [],
+      "note": "Princípio representado."
+    },
+    {
+      "atom_id": "atom-4",
+      "quote_sha256": "a6e3b461d6bc6975496196edb2b7d4ea96130a66c49e4e058c4d66078d23422f",
+      "disposition": "represented",
+      "finding_ids": ["context-3"],
+      "omission_ids": [],
+      "note": "Princípio representado."
+    },
+    {
+      "atom_id": "atom-5",
+      "quote_sha256": "22accd7ad33a45ad61811a4737a68f2c8dfd45b650550aec3cdae8de95fc1a0e",
+      "disposition": "missing",
+      "finding_ids": ["context-6"],
+      "omission_ids": ["question-1"],
+      "note": "Obrigação preservada separadamente da aprovação; falta esclarecer sujeito e aplicabilidade."
+    },
+    {
+      "atom_id": "atom-6",
+      "quote_sha256": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+      "disposition": "represented",
+      "finding_ids": ["context-7"],
+      "omission_ids": [],
+      "note": "Limite de custo representado."
+    },
+    {
+      "atom_id": "atom-7",
+      "quote_sha256": "5f77f5215732224df6e88a779d30470fdd1c968ff4e40c54ff9fa444e009e034",
+      "disposition": "represented",
+      "finding_ids": ["context-1", "context-5"],
+      "omission_ids": [],
+      "note": "Organização e registro de decisões representados."
+    },
+    {
+      "atom_id": "atom-9",
+      "quote_sha256": "d8ec0dfaccceaea0a5f8ccf5a95f094560df5ea36683833d84877c601223e217",
+      "disposition": "represented",
+      "finding_ids": ["context-4"],
+      "omission_ids": [],
+      "note": "Domínio representado."
+    },
+    {
+      "atom_id": "atom-8",
+      "quote_sha256": "1d64d3523733ce851e3da43cce5b1d659b91e31ad337dd6cd2d26f46483a4650",
+      "disposition": "missing",
+      "finding_ids": ["criterion-1"],
+      "omission_ids": ["question-2"],
+      "note": "Exigência representada; falta identificar o papel autorizado a aprovar."
+    }
+  ]
+}

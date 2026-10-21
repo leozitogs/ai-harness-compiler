@@ -1,0 +1,180 @@
+{
+  "schema_version": "SemanticVerifierProposal/v4",
+  "analysis_sha256": "1e31df44f4622121c3574bcc417e6e1050e90cf80ff4f5cf553ce207ef6aaefc",
+  "findings": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "a46154d7baaeda81be07bf850bdd4e161e617029b5b437c603eb3162ce8eb237",
+      "source_atom_ids": ["atom-7"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "A fonte exige expressamente aprovação humana explícita para liberar publicação da equipe."
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "51c260baca8628898ac93bc9d5eda2c0266bd567b74de17d56a231af4f87687e",
+      "source_atom_ids": ["atom-1"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "A concepção descreve a organização de publicações e suas fontes por uma equipe."
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "1a9bf07de01a3fcdc9549801f59f507d9b19e6cf9c192aaafb7dfecfee24496d",
+      "source_atom_ids": ["atom-2"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "O público declarado é autores."
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "4cf342f2e69bd45e675f0858e47f8b3934b3299dc45697234f8501854acf3841",
+      "source_atom_ids": ["atom-6"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "A descrição do backlog declara ambas as capacidades."
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "3bca78c822726896f2d0d5133d22f4d9bd541b38d08bfce5ef6d29e71d96c445",
+      "source_atom_ids": ["atom-8"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "Gestão de workspace corresponde ao domínio workspace-management."
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "f82daf3c55e4d01b5fc21dc51a7a699256bb471a959eaef982ac8d3a3f2e790b",
+      "source_atom_ids": ["atom-4"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "A fonte exige registrar a identidade do responsável, sem definir aplicabilidade ou equipará-lo ao executor."
+    },
+    {
+      "finding_id": "context-6",
+      "finding_sha256": "4b31ec63965dd859de82ad4a2036653cb25d5e383f7bf64ea13e88bd223072b1",
+      "source_atom_ids": ["atom-5"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "O campo max_build_cost_usd estabelece limite de zero dólares."
+    },
+    {
+      "finding_id": "issue-1",
+      "finding_sha256": "905b917303b75222e75dac853eef84523d989a60ff6e8787f193bd2e9b6364ca",
+      "source_atom_ids": ["atom-3", "atom-7"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "As fontes dispensam e exigem aprovação humana para a mesma operação, sem precedência declarada."
+    },
+    {
+      "finding_id": "issue-2",
+      "finding_sha256": "6dee074d47d96848fc3b87f89906ba6e5f5ba90a950f76c37cfd98b080dbae25",
+      "source_atom_ids": ["atom-3", "atom-7"],
+      "support": "supports",
+      "materiality": "appropriate",
+      "note": "Resolver a precedência determina se a liberação depende de aprovação humana."
+    }
+  ],
+  "component_judgments": [
+    {
+      "finding_id": "criterion-1",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": ["atom-7"],
+      "support": "supports",
+      "note": "A operação expressa na fonte é liberar publicação da equipe."
+    },
+    {
+      "finding_id": "criterion-1",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": ["atom-7"],
+      "support": "supports",
+      "note": "A fonte exige aprovação humana explícita."
+    }
+  ],
+  "omissions": [
+    {
+      "id": "omission-1",
+      "kind": "rule",
+      "text": "Liberar publicação da equipe dispensa qualquer aprovação humana.",
+      "rationale": "A dispensa aparece no conflito e na pergunta, mas falta como regra independente, preservada sem resolver a precedência.",
+      "source_atom_ids": ["atom-3"],
+      "impact": null
+    },
+    {
+      "id": "omission-2",
+      "kind": "question",
+      "text": "A quais operações se aplica a obrigação de registrar a identidade do responsável?",
+      "rationale": "A obrigação está preservada, mas seu âmbito não foi definido; a resposta altera a aplicabilidade da regra, além de detalhes de implementação.",
+      "source_atom_ids": ["atom-4"],
+      "impact": "rule"
+    }
+  ],
+  "source_coverage": [
+    {
+      "atom_id": "atom-1",
+      "quote_sha256": "88b9866f0e0b53ae15c7d6439e0c540ac09134f17f179c297c4dde265f0c01eb",
+      "disposition": "represented",
+      "finding_ids": ["context-1"],
+      "omission_ids": [],
+      "note": "Concepção preservada."
+    },
+    {
+      "atom_id": "atom-2",
+      "quote_sha256": "75f26d13ebd8877644c57a369ce71b82b639903217ed12ebe61beeffd8c11586",
+      "disposition": "represented",
+      "finding_ids": ["context-2"],
+      "omission_ids": [],
+      "note": "Público preservado."
+    },
+    {
+      "atom_id": "atom-3",
+      "quote_sha256": "0ba17f24c70a64bbb5fd194039a4ba51895bf4658effd0fa2b914c5deea3a9e3",
+      "disposition": "missing",
+      "finding_ids": ["issue-1", "issue-2"],
+      "omission_ids": ["omission-1"],
+      "note": "Conflito e precedência representados; falta preservar a dispensa como regra."
+    },
+    {
+      "atom_id": "atom-4",
+      "quote_sha256": "22accd7ad33a45ad61811a4737a68f2c8dfd45b650550aec3cdae8de95fc1a0e",
+      "disposition": "missing",
+      "finding_ids": ["context-5"],
+      "omission_ids": ["omission-2"],
+      "note": "Obrigação preservada; falta esclarecer seu âmbito de aplicação."
+    },
+    {
+      "atom_id": "atom-5",
+      "quote_sha256": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+      "disposition": "represented",
+      "finding_ids": ["context-6"],
+      "omission_ids": [],
+      "note": "Limite de custo preservado."
+    },
+    {
+      "atom_id": "atom-6",
+      "quote_sha256": "5f77f5215732224df6e88a779d30470fdd1c968ff4e40c54ff9fa444e009e034",
+      "disposition": "represented",
+      "finding_ids": ["context-3"],
+      "omission_ids": [],
+      "note": "Ambas as capacidades preservadas."
+    },
+    {
+      "atom_id": "atom-8",
+      "quote_sha256": "d8ec0dfaccceaea0a5f8ccf5a95f094560df5ea36683833d84877c601223e217",
+      "disposition": "represented",
+      "finding_ids": ["context-4"],
+      "omission_ids": [],
+      "note": "Domínio preservado."
+    },
+    {
+      "atom_id": "atom-7",
+      "quote_sha256": "61b8ffef4cf839d5f9ae757a387e5b7fbd53d3468c647d8cd23bf258c29e55d3",
+      "disposition": "represented",
+      "finding_ids": ["criterion-1", "issue-1", "issue-2"],
+      "omission_ids": [],
+      "note": "Exigência, conflito e questão de precedência preservados."
+    }
+  ]
+}

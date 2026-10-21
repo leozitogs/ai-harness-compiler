@@ -1,0 +1,172 @@
+{
+  "schema_version": "SemanticVerifierProposal/v4",
+  "analysis_sha256": "7e552b1881ef697bac14441cb3002defeb5899125cb706fba093edfc3100709f",
+  "findings": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "a353a0d5fe18876d845c55dffa4bfce4b59bdc180e58515a94c089577db17dd7",
+      "source_atom_ids": ["atom-8"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "A fonte exige confirmação pelo operador antes da conclusão, sem torná-la suficiente."
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "dafacec9c3ffc497aacf6e660a88e72985ea402d88747cab1e55de1f549622d7",
+      "source_atom_ids": ["atom-1", "atom-7"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "As fontes expressam melhoria do processo, publicação da equipe e registro de decisões."
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "a146674e264a73ced2e9690c0eefee59e7e90fb559dcd077867586a0f62a4e5e",
+      "source_atom_ids": ["atom-2"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "O público indicado é autores."
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "4efeeaaa821127ee4be5f0a23a9b4b56a65ef112c91f97dc26b32858b24662bb",
+      "source_atom_ids": ["atom-3", "atom-4"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "Os dois princípios estão expressos; não conferem autorização."
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "b9b86870b5cff96c31edb18c5f61deb92f0a95b1a6a8b0bdbf2e62e99a1b8fa6",
+      "source_atom_ids": ["atom-7"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "Reproduz as capacidades declaradas."
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "85c801107ab455684f50114f7bbdf52c4243367fff8e3451d705771759df7287",
+      "source_atom_ids": ["atom-5"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "A restrição exige registrar a identidade do responsável, sem definir aplicabilidade ou equipará-lo ao operador."
+    },
+    {
+      "finding_id": "context-6",
+      "finding_sha256": "3b21eeb4753911a83332d2167e45e75ee78131a01e115ea3404e696f4bddf758",
+      "source_atom_ids": ["atom-6"],
+      "support": "supports",
+      "materiality": "not-applicable",
+      "note": "O campo de custo máximo em USD contém 0.0."
+    },
+    {
+      "finding_id": "issue-1",
+      "finding_sha256": "02abb96df04d1a3b5fb040fbac72df48df7012afe1d6ace8f504be5d9d1e5c55",
+      "source_atom_ids": ["atom-1", "atom-7", "atom-8"],
+      "support": "supports",
+      "materiality": "appropriate",
+      "note": "As condições de conclusão estão indefinidas; a confirmação prévia não estabelece suficiência."
+    },
+    {
+      "finding_id": "issue-2",
+      "finding_sha256": "59af39c53c5d5514030a470f5758fa57e96a5b20116869538e451fac7f83faec",
+      "source_atom_ids": ["atom-1", "atom-7"],
+      "support": "supports",
+      "materiality": "inappropriate",
+      "note": "Etapas e papéis estão indefinidos, mas a pergunta genérica não identifica mudança de regra, autorização, resultado ou precedência."
+    }
+  ],
+  "component_judgments": [
+    {
+      "finding_id": "criterion-1",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": ["atom-8"],
+      "support": "supports",
+      "note": "A fonte situa a obrigação antes de concluir."
+    },
+    {
+      "finding_id": "criterion-1",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": ["atom-8"],
+      "support": "supports",
+      "note": "A fonte atribui ao operador a confirmação da publicação da equipe."
+    }
+  ],
+  "omissions": [
+    {
+      "id": "omission-1",
+      "kind": "question",
+      "text": "Em quais situações é obrigatório registrar a identidade e quem deve ser identificado como responsável?",
+      "rationale": "A restrição não define sua aplicabilidade nem o responsável. Essas respostas determinam quando e de quem o registro é exigido; não se pode presumir que seja o operador.",
+      "source_atom_ids": ["atom-5"],
+      "impact": "rule"
+    }
+  ],
+  "source_coverage": [
+    {
+      "atom_id": "atom-1",
+      "quote_sha256": "12c881ea64cc68b9aaf7a45d4f29375b8d95498dbb4859448f7c857eb0f202c8",
+      "disposition": "represented",
+      "finding_ids": ["context-1", "issue-1", "issue-2"],
+      "omission_ids": [],
+      "note": "Melhoria e indefinições estão representadas."
+    },
+    {
+      "atom_id": "atom-2",
+      "quote_sha256": "75f26d13ebd8877644c57a369ce71b82b639903217ed12ebe61beeffd8c11586",
+      "disposition": "represented",
+      "finding_ids": ["context-2"],
+      "omission_ids": [],
+      "note": "Público preservado."
+    },
+    {
+      "atom_id": "atom-3",
+      "quote_sha256": "e8a964e534bd9189a4c1ee68dc1e80429c5b14930ce7df548075257a8a8dccc7",
+      "disposition": "represented",
+      "finding_ids": ["context-3"],
+      "omission_ids": [],
+      "note": "Princípio preservado."
+    },
+    {
+      "atom_id": "atom-4",
+      "quote_sha256": "a6e3b461d6bc6975496196edb2b7d4ea96130a66c49e4e058c4d66078d23422f",
+      "disposition": "represented",
+      "finding_ids": ["context-3"],
+      "omission_ids": [],
+      "note": "Princípio preservado sem inferir aprovação."
+    },
+    {
+      "atom_id": "atom-5",
+      "quote_sha256": "22accd7ad33a45ad61811a4737a68f2c8dfd45b650550aec3cdae8de95fc1a0e",
+      "disposition": "missing",
+      "finding_ids": ["context-5"],
+      "omission_ids": ["omission-1"],
+      "note": "Obrigação preservada; falta pergunta material sobre aplicabilidade e identidade do responsável."
+    },
+    {
+      "atom_id": "atom-6",
+      "quote_sha256": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+      "disposition": "represented",
+      "finding_ids": ["context-6"],
+      "omission_ids": [],
+      "note": "Limite de custo preservado."
+    },
+    {
+      "atom_id": "atom-7",
+      "quote_sha256": "5f77f5215732224df6e88a779d30470fdd1c968ff4e40c54ff9fa444e009e034",
+      "disposition": "represented",
+      "finding_ids": ["context-1", "context-4", "issue-1", "issue-2"],
+      "omission_ids": [],
+      "note": "Capacidades representadas; todas as citações mantidas."
+    },
+    {
+      "atom_id": "atom-8",
+      "quote_sha256": "c52f9dd3da88167ffe7a9e1bf99a6efa142a0bb83392caacb04c20e3d767b055",
+      "disposition": "represented",
+      "finding_ids": ["criterion-1", "issue-1"],
+      "omission_ids": [],
+      "note": "Confirmação prévia preservada sem inferir autorização suficiente para concluir."
+    }
+  ]
+}

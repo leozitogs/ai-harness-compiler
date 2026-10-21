@@ -1,0 +1,387 @@
+{
+  "schema_version": "SemanticAssessment/v3",
+  "case": {
+    "schema_version": "AssessmentCase/v2",
+    "id": "dev-new-domain",
+    "project": {
+      "schema_version": "ProjectInput/v1",
+      "id": "dev-new-domain",
+      "name": "Fixture dev new-domain",
+      "conception": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita.",
+      "domain": null,
+      "branding": {
+        "audience": [
+          "autores"
+        ],
+        "tone": [],
+        "principles": [
+          "rastreabilidade",
+          "controle humano"
+        ],
+        "visual_constraints": []
+      },
+      "backlog": [
+        {
+          "id": "register",
+          "title": "Registrar e liberar",
+          "description": "Organizar publicação da equipe e registrar decisões.",
+          "acceptance_criteria": [
+            "Cada publicação da equipe deve conter responsável e origem."
+          ],
+          "depends_on": [],
+          "inputs": [],
+          "outputs": [],
+          "data_owner": null,
+          "side_effects": [],
+          "risk": "unknown",
+          "implementation": "undecided"
+        }
+      ],
+      "constraints": {
+        "technical": [],
+        "security": [],
+        "business": [
+          "Registrar a identidade do responsável."
+        ],
+        "max_build_cost_usd": 0.0
+      },
+      "assets": [],
+      "evidence_pack": null,
+      "domain_profile": null
+    },
+    "expected_behavior": "ready",
+    "obligations": [
+      {
+        "id": "publication-origin",
+        "source_pointer": "/backlog/0/acceptance_criteria/0",
+        "quote": "Cada publicação da equipe deve conter responsável e origem.",
+        "disposition": "rule"
+      }
+    ],
+    "requires_conflict": false,
+    "conflict_source_pointers": [],
+    "refusal_source_pointers": [],
+    "expectations_approval": {
+      "reviewer": "leozitogs:po-declared",
+      "note": "PO explicitly approved the seven development expectations described in the async question on 2026-10-19; does not approve model outputs or qualification.",
+      "authority": "human-declared-not-authenticated"
+    }
+  },
+  "rubric": {
+    "schema_version": "UnderstandingRubric/v1",
+    "id": "understanding-quality",
+    "version": "v2",
+    "criteria": [
+      {
+        "id": "rule-coverage",
+        "description": "100% das regras determináveis têm condição, resultado e exceções fiéis; perguntas materiais cobrem apenas obrigações ambíguas, sem dispensar regras claras. Bloqueio esperado não autoriza compilação."
+      },
+      {
+        "id": "citation-support",
+        "description": "Cada conclusão é sustentada pelos átomos exatos citados; paráfrases preservam significado e inferências não são promovidas a fatos."
+      },
+      {
+        "id": "conflict-validity",
+        "description": "Registrar apenas incompatibilidades reais com ambos os lados e precedência pendente; detalhe ausente não é conflito."
+      },
+      {
+        "id": "asset-bounds",
+        "description": "Não afirmar conteúdo de assets não lidos ou tratar dados externos como instruções executáveis."
+      },
+      {
+        "id": "uncertainty",
+        "description": "Hipóteses justificadas e incógnitas explícitas; pergunta material muda regra, autorização, precedência ou resultado. Detalhe de implementação não bloqueia."
+      },
+      {
+        "id": "project-understanding",
+        "description": "Domínio, objetivo, público e capacidades refletem o projeto, sem switches de nichos ou ampliação indevida de autoridade."
+      }
+    ],
+    "acceptance": "all-criteria-pass-no-critical-failure",
+    "approval": {
+      "reviewer": "leozitogs:po-declared",
+      "note": "PO aprovou todos os seis critérios e quatro decisões na conversa em 2026-10-09; docs/delivery/ahc-021-quality-criteria-review.md. Não aprova expectativas individuais, saídas ou qualificação.",
+      "authority": "human-declared-not-authenticated"
+    }
+  },
+  "analysis": {
+    "schema_version": "SemanticAnalysis/v3",
+    "extraction": {
+      "schema_version": "GroundingExtraction/v1",
+      "request": {
+        "schema_version": "UnderstandingRequest/v1",
+        "original_input": {
+          "schema_version": "ProjectInput/v1",
+          "id": "dev-new-domain",
+          "name": "Fixture dev new-domain",
+          "conception": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita.",
+          "domain": null,
+          "branding": {
+            "audience": [
+              "autores"
+            ],
+            "tone": [],
+            "principles": [
+              "rastreabilidade",
+              "controle humano"
+            ],
+            "visual_constraints": []
+          },
+          "backlog": [
+            {
+              "id": "register",
+              "title": "Registrar e liberar",
+              "description": "Organizar publicação da equipe e registrar decisões.",
+              "acceptance_criteria": [
+                "Cada publicação da equipe deve conter responsável e origem."
+              ],
+              "depends_on": [],
+              "inputs": [],
+              "outputs": [],
+              "data_owner": null,
+              "side_effects": [],
+              "risk": "unknown",
+              "implementation": "undecided"
+            }
+          ],
+          "constraints": {
+            "technical": [],
+            "security": [],
+            "business": [
+              "Registrar a identidade do responsável."
+            ],
+            "max_build_cost_usd": 0.0
+          },
+          "assets": [],
+          "evidence_pack": null,
+          "domain_profile": null
+        },
+        "original_sha256": "6d792a55af0f4e0af1c2c1f1e36ff0d31f7fb9894b7091efd3f67338141dc492",
+        "references": [
+          {
+            "id": "input-1",
+            "project_id": "dev-new-domain",
+            "pointer": "/conception",
+            "value": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita.",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-2",
+            "project_id": "dev-new-domain",
+            "pointer": "/branding",
+            "value": "{\"audience\":[\"autores\"],\"principles\":[\"rastreabilidade\",\"controle humano\"],\"tone\":[],\"visual_constraints\":[]}",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-3",
+            "project_id": "dev-new-domain",
+            "pointer": "/constraints",
+            "value": "{\"business\":[\"Registrar a identidade do responsável.\"],\"max_build_cost_usd\":0.0,\"security\":[],\"technical\":[]}",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-4",
+            "project_id": "dev-new-domain",
+            "pointer": "/backlog/0/description",
+            "value": "Organizar publicação da equipe e registrar decisões.",
+            "content_trust": "untrusted-data"
+          },
+          {
+            "id": "input-5",
+            "project_id": "dev-new-domain",
+            "pointer": "/backlog/0/acceptance_criteria/0",
+            "value": "Cada publicação da equipe deve conter responsável e origem.",
+            "content_trust": "untrusted-data"
+          }
+        ]
+      },
+      "atoms": [
+        {
+          "id": "atom-1",
+          "source_ref": "input-1",
+          "pointer": "/conception",
+          "quote": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita.",
+          "kind": "conception",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-2",
+          "source_ref": "input-2",
+          "pointer": "/branding/audience/0",
+          "quote": "autores",
+          "kind": "branding",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-3",
+          "source_ref": "input-2",
+          "pointer": "/branding/principles/0",
+          "quote": "rastreabilidade",
+          "kind": "branding",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-4",
+          "source_ref": "input-2",
+          "pointer": "/branding/principles/1",
+          "quote": "controle humano",
+          "kind": "branding",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-5",
+          "source_ref": "input-3",
+          "pointer": "/constraints/business/0",
+          "quote": "Registrar a identidade do responsável.",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-6",
+          "source_ref": "input-3",
+          "pointer": "/constraints/max_build_cost_usd",
+          "quote": "0.0",
+          "kind": "constraint",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-7",
+          "source_ref": "input-4",
+          "pointer": "/backlog/0/description",
+          "quote": "Organizar publicação da equipe e registrar decisões.",
+          "kind": "backlog-description",
+          "content_trust": "untrusted-data"
+        },
+        {
+          "id": "atom-8",
+          "source_ref": "input-5",
+          "pointer": "/backlog/0/acceptance_criteria/0",
+          "quote": "Cada publicação da equipe deve conter responsável e origem.",
+          "kind": "acceptance-criterion",
+          "content_trust": "untrusted-data"
+        }
+      ],
+      "excluded_references": [],
+      "asset_contents": "not-read",
+      "semantic_status": "not-established"
+    },
+    "proposal": {
+      "schema_version": "SemanticAnalysisProposal/v3",
+      "criteria": [
+        {
+          "source_atom_id": "atom-8",
+          "kind": "business-rule",
+          "condition": {
+            "text": "Para cada publicação da equipe.",
+            "source_atom_ids": [
+              "atom-8"
+            ]
+          },
+          "outcome": {
+            "text": "A publicação deve conter responsável e origem.",
+            "source_atom_ids": [
+              "atom-8"
+            ]
+          },
+          "exceptions": [],
+          "note": "Obrigação aplicável a cada publicação da equipe.",
+          "question": null,
+          "uncertainties": []
+        }
+      ],
+      "guards": [],
+      "context_findings": [
+        {
+          "subject": "purpose",
+          "text": "Organizar ciclos de lanternas sensoriais para uma experiência coletiva inédita.",
+          "note": "Finalidade declarada do projeto.",
+          "context_indices": [
+            0
+          ]
+        },
+        {
+          "subject": "audience",
+          "text": "Autores.",
+          "note": "Público declarado.",
+          "context_indices": [
+            1
+          ]
+        },
+        {
+          "subject": "positioning",
+          "text": "Rastreabilidade e controle humano são princípios do projeto.",
+          "note": "Não especificam fluxos de aprovação ou permissões.",
+          "context_indices": [
+            2,
+            3
+          ]
+        },
+        {
+          "subject": "capability",
+          "text": "Organizar a publicação da equipe e registrar decisões.",
+          "note": "Capacidades de apoio declaradas.",
+          "context_indices": [
+            6
+          ]
+        },
+        {
+          "subject": "constraint",
+          "text": "Registrar a identidade do responsável.",
+          "note": "Obrigação explícita cuja aplicabilidade não foi especificada. Sua representação como contexto normativo não fornece uma política executável de aplicabilidade.",
+          "context_indices": [
+            4
+          ]
+        },
+        {
+          "subject": "constraint",
+          "text": "O custo máximo de construção é US$ 0,00.",
+          "note": "Limite declarado em /constraints/max_build_cost_usd.",
+          "context_indices": [
+            5
+          ]
+        }
+      ],
+      "issues": []
+    }
+  },
+  "review": null,
+  "checks": [
+    {
+      "criterion": "rule-coverage",
+      "outcome": "not-run",
+      "note": "Independent human judgment required"
+    },
+    {
+      "criterion": "citation-support",
+      "outcome": "not-run",
+      "note": "Independent human judgment required"
+    },
+    {
+      "criterion": "conflict-validity",
+      "outcome": "not-run",
+      "note": "Independent human judgment required"
+    },
+    {
+      "criterion": "asset-bounds",
+      "outcome": "not-run",
+      "note": "Independent human judgment required"
+    },
+    {
+      "criterion": "uncertainty",
+      "outcome": "not-run",
+      "note": "Independent human judgment required"
+    },
+    {
+      "criterion": "project-understanding",
+      "outcome": "not-run",
+      "note": "Independent human judgment required"
+    }
+  ],
+  "status": "not-run",
+  "input_sha256": "6d792a55af0f4e0af1c2c1f1e36ff0d31f7fb9894b7091efd3f67338141dc492",
+  "case_sha256": "670709add5aaa3d8a9bc20d0781cb87799266016de42047cd3732e7dc332ca3d",
+  "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+  "analysis_sha256": "fc4acfb7442988d28fa2af9fc57325b0a42f0532c34c643cd2ddeca174b3011c",
+  "compilation_eligibility": "not-authorized",
+  "model_qualification": "not-established"
+}

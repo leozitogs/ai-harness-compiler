@@ -1,0 +1,78 @@
+{
+  "schema_version": "SemanticAnalysisProposal/v3",
+  "criteria": [
+    {
+      "source_atom_id": "atom-8",
+      "kind": "business-rule",
+      "condition": {
+        "text": "Antes de concluir.",
+        "source_atom_ids": ["atom-8"]
+      },
+      "outcome": {
+        "text": "O operador deve confirmar a publicação da equipe.",
+        "source_atom_ids": ["atom-8"]
+      },
+      "exceptions": [],
+      "note": "A confirmação é obrigatória antes da conclusão; o critério não estabelece que ela seja suficiente para concluir.",
+      "question": null,
+      "uncertainties": []
+    }
+  ],
+  "guards": [],
+  "context_findings": [
+    {
+      "subject": "purpose",
+      "text": "Melhorar o processo de publicação da equipe e registrar decisões.",
+      "note": "As etapas, os papéis e as condições de conclusão foram declarados indefinidos.",
+      "context_indices": [0, 6]
+    },
+    {
+      "subject": "audience",
+      "text": "Autores.",
+      "note": "Público explicitamente indicado.",
+      "context_indices": [1]
+    },
+    {
+      "subject": "positioning",
+      "text": "Rastreabilidade e controle humano são princípios do projeto.",
+      "note": "Esses princípios não estabelecem permissões ou aprovações adicionais.",
+      "context_indices": [2, 3]
+    },
+    {
+      "subject": "capability",
+      "text": "Organizar a publicação da equipe e registrar decisões.",
+      "note": "Capacidades declaradas em termos amplos.",
+      "context_indices": [6]
+    },
+    {
+      "subject": "constraint",
+      "text": "É obrigatório registrar a identidade do responsável.",
+      "note": "A aplicabilidade não foi especificada. A obrigação é preservada sem atribuir um gatilho, equiparar o responsável ao operador ou estabelecer uma política executável de aplicabilidade.",
+      "context_indices": [4]
+    },
+    {
+      "subject": "constraint",
+      "text": "O custo máximo de build é US$ 0,00.",
+      "note": "Limite explícito de custo.",
+      "context_indices": [5]
+    }
+  ],
+  "issues": [
+    {
+      "kind": "question",
+      "text": "Quais condições determinam a conclusão do processo de publicação da equipe, além da confirmação obrigatória pelo operador?",
+      "context_indices": [0, 6, 7],
+      "rationale": "As condições de conclusão estão explicitamente indefinidas. A confirmação estabelece uma obrigação prévia, mas não determina quando o processo pode ser considerado concluído.",
+      "impact": "outcome",
+      "rejection_reason": null
+    },
+    {
+      "kind": "question",
+      "text": "Quais etapas e papéis devem compor o processo de organização da publicação e registro de decisões?",
+      "context_indices": [0, 6],
+      "rationale": "Etapas e papéis foram declarados indefinidos; seu detalhamento auxilia a implementação, sem alterar por si só a obrigação conhecida de confirmação ou de registro.",
+      "impact": "implementation-detail",
+      "rejection_reason": null
+    }
+  ]
+}

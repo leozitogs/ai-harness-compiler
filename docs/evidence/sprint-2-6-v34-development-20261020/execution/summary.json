@@ -1,0 +1,107 @@
+{
+  "calls_used": 16,
+  "cases": [
+    {
+      "advisory_negative_components": 0,
+      "advisory_omissions": 1,
+      "audit": "valid",
+      "calls_used": 2,
+      "case": "dev-adversarial",
+      "compilation_eligibility": "not-authorized",
+      "disposition": "ready",
+      "generation": "valid",
+      "model_qualification": "not-established",
+      "semantic_status": "not-run"
+    },
+    {
+      "advisory_negative_components": 0,
+      "advisory_omissions": 1,
+      "audit": "valid",
+      "calls_used": 2,
+      "case": "dev-ambiguous",
+      "compilation_eligibility": "not-authorized",
+      "disposition": "blocked",
+      "generation": "valid",
+      "model_qualification": "not-established",
+      "semantic_status": "not-run"
+    },
+    {
+      "advisory_negative_components": 0,
+      "advisory_omissions": 2,
+      "audit": "valid",
+      "calls_used": 2,
+      "case": "dev-branding-conflict",
+      "compilation_eligibility": "not-authorized",
+      "disposition": "blocked",
+      "generation": "valid",
+      "model_qualification": "not-established",
+      "semantic_status": "not-run"
+    },
+    {
+      "advisory_negative_components": 0,
+      "advisory_omissions": 2,
+      "audit": "valid",
+      "calls_used": 2,
+      "case": "dev-compatible-rules",
+      "compilation_eligibility": "not-authorized",
+      "disposition": "ready",
+      "generation": "valid",
+      "model_qualification": "not-established",
+      "semantic_status": "not-run"
+    },
+    {
+      "audit": "error",
+      "calls_used": 2,
+      "case": "dev-new-domain",
+      "compilation_eligibility": "not-authorized",
+      "disposition": "ready",
+      "error_type": "ValidationError",
+      "generation": "valid",
+      "model_qualification": "not-established",
+      "semantic_status": "not-run"
+    },
+    {
+      "advisory_negative_components": 0,
+      "advisory_omissions": 2,
+      "audit": "valid",
+      "calls_used": 2,
+      "case": "dev-rules-a",
+      "compilation_eligibility": "not-authorized",
+      "disposition": "ready",
+      "generation": "valid",
+      "model_qualification": "not-established",
+      "semantic_status": "not-run"
+    },
+    {
+      "advisory_negative_components": 0,
+      "advisory_omissions": 1,
+      "audit": "valid",
+      "calls_used": 2,
+      "case": "dev-rules-b",
+      "compilation_eligibility": "not-authorized",
+      "disposition": "ready",
+      "generation": "valid",
+      "model_qualification": "not-established",
+      "semantic_status": "not-run"
+    },
+    {
+      "advisory_negative_components": 0,
+      "advisory_omissions": 1,
+      "audit": "valid",
+      "calls_used": 2,
+      "case": "dev-unread-assets",
+      "compilation_eligibility": "not-authorized",
+      "disposition": "ready",
+      "generation": "valid",
+      "model_qualification": "not-established",
+      "semantic_status": "not-run"
+    }
+  ],
+  "compilation_eligibility": "not-authorized",
+  "elapsed_seconds": 422.804745,
+  "holdout_read": false,
+  "max_calls": 16,
+  "model_qualification": "not-established",
+  "protocol_sha256": "1d2870f7875c42c96d2b3d742513e38b7a44b853d9f999b1e549713d4f515479",
+  "semantic_status": "not-run"
+}

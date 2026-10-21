@@ -1,0 +1,312 @@
+{
+  "reviewer": "leozitogs:po-declared",
+  "note": "PO na conversa: Aprovo os seis critérios das seis análises ready v3.4. Escopo: novo snapshot v3.4 de dev-compatible-rules. Nenhum aceite histórico transferido, qualificação de modelo ou autorização de compilação.",
+  "authority": "human-declared-not-authenticated",
+  "schema_version": "SemanticHumanReview/v3",
+  "case_sha256": "f338181b253045093d1101f966cf863f3c7c51d94831becb88e0be60c8ad91ba",
+  "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+  "analysis_sha256": "f62f9560aa2ecdebc90482158164890665a6a9d861501dc3b6fecd86b40ae5f8",
+  "checks": [
+    {
+      "criterion": "rule-coverage",
+      "outcome": "pass",
+      "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+    },
+    {
+      "criterion": "citation-support",
+      "outcome": "pass",
+      "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+    },
+    {
+      "criterion": "conflict-validity",
+      "outcome": "pass",
+      "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+    },
+    {
+      "criterion": "asset-bounds",
+      "outcome": "pass",
+      "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+    },
+    {
+      "criterion": "uncertainty",
+      "outcome": "pass",
+      "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+    },
+    {
+      "criterion": "project-understanding",
+      "outcome": "pass",
+      "note": "PO confirmou os seis critérios deste novo snapshot v3.4. Escopo de análise de intenção; preserva bloqueios legítimos, obrigação normativa e limitações; não aprova auditoria inválida ou runtime."
+    }
+  ],
+  "coverage": [
+    {
+      "obligation_id": "required-1",
+      "finding_id": "criterion-1"
+    },
+    {
+      "obligation_id": "required-2",
+      "finding_id": "criterion-2"
+    },
+    {
+      "obligation_id": "required-3",
+      "finding_id": "criterion-3"
+    },
+    {
+      "obligation_id": "required-4",
+      "finding_id": "criterion-4"
+    }
+  ],
+  "finding_support": [
+    {
+      "finding_id": "criterion-1",
+      "finding_sha256": "4d2dda3c86176f06cd3e5e20fe3ca919ffe794a4f051948c4ce858c1370c4a3d",
+      "source_atom_ids": [
+        "atom-16"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "criterion-2",
+      "finding_sha256": "2fb67637a1ecbf87511539a8ed5d6e23380ba265ba21b02f676fb43d5e260b50",
+      "source_atom_ids": [
+        "atom-17"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "criterion-3",
+      "finding_sha256": "e093281049d61bed743966921223b9b6d2d4b38d920b40facee5294a941c3f07",
+      "source_atom_ids": [
+        "atom-19"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "criterion-4",
+      "finding_sha256": "21e0cf0c29ba490965a10fc76f1df6d3e54782eab8514eae143c9df686c7f434",
+      "source_atom_ids": [
+        "atom-20"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "guard-human-review",
+      "finding_sha256": "51acc12a15375d13edfcb4d589775a274fa18435a04915993c2f2c21c7d5756b",
+      "source_atom_ids": [
+        "atom-13"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-1",
+      "finding_sha256": "60b73f42a8932e35705a94fe16c91f66ad4ab5d149548f07f90ee5f9c5bc2c5c",
+      "source_atom_ids": [
+        "atom-1"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-2",
+      "finding_sha256": "b4b3e960017714b84c6c13a4fe24ee8b024b7f287b7d1e631d7f5135896b5ce0",
+      "source_atom_ids": [
+        "atom-2",
+        "atom-3"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-3",
+      "finding_sha256": "04225fdbb09b7069ce79ab8421421201446ee66ea030ef0ce520c18a7175f97f",
+      "source_atom_ids": [
+        "atom-4",
+        "atom-5",
+        "atom-6"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-4",
+      "finding_sha256": "248b1a0b1ec05276c04ab119f0c86fa73c99d11964ee30448864b7c8872a887e",
+      "source_atom_ids": [
+        "atom-7",
+        "atom-8"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-5",
+      "finding_sha256": "15df5889a57397e8f0e344add115e6a34d01215e64fe2ce1b31a4a5c285ef698",
+      "source_atom_ids": [
+        "atom-21"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-6",
+      "finding_sha256": "82eb09121bcf340c0708a4b6759472d66023694225ce9a6d869b453edd5eb74e",
+      "source_atom_ids": [
+        "atom-15",
+        "atom-18"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-7",
+      "finding_sha256": "598b2e6de91c50e7784327acbf042a3cab8be8abe3f5d2df5e8f8a673f319a24",
+      "source_atom_ids": [
+        "atom-9"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-8",
+      "finding_sha256": "dd9f4979663f4ea2de81e04055d415979b354d2f85f42ea8dfac0a3975d79819",
+      "source_atom_ids": [
+        "atom-10"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-9",
+      "finding_sha256": "78ac1febc53116c10adf2908f4dee0f013571d7b2e87b9874a9121227604102c",
+      "source_atom_ids": [
+        "atom-11"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-10",
+      "finding_sha256": "0d7e02845fa8de580841a1cae54b5198f8639f7394b2abd181436888fefddf30",
+      "source_atom_ids": [
+        "atom-12"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    },
+    {
+      "finding_id": "context-11",
+      "finding_sha256": "ba7282c6d4bb59c4ba8cc44c8a25300308315282941844522319790cfcbd091a",
+      "source_atom_ids": [
+        "atom-14"
+      ],
+      "outcome": "pass",
+      "note": "Suporte de fontes aprovado pelo PO neste snapshot. Suporte de uma pergunta é distinto de sua pertinência/materialidade, julgada em uncertainty."
+    }
+  ],
+  "component_support": [
+    {
+      "finding_id": "criterion-1",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-16"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+    },
+    {
+      "finding_id": "criterion-1",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-16"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+    },
+    {
+      "finding_id": "criterion-2",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-17"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+    },
+    {
+      "finding_id": "criterion-2",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-17"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+    },
+    {
+      "finding_id": "criterion-3",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-19"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+    },
+    {
+      "finding_id": "criterion-3",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-19"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+    },
+    {
+      "finding_id": "criterion-4",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-20"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+    },
+    {
+      "finding_id": "criterion-4",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-20"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+    },
+    {
+      "finding_id": "guard-human-review",
+      "component_name": "condition",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-13"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+    },
+    {
+      "finding_id": "guard-human-review",
+      "component_name": "outcome",
+      "component_index": null,
+      "source_atom_ids": [
+        "atom-13"
+      ],
+      "outcome": "pass",
+      "note": "Componente e fontes exatas vinculados ao aceite específico do PO para suporte deste snapshot."
+    }
+  ]
+}

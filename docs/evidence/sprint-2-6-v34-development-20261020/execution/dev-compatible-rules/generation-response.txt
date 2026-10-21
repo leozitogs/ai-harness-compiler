@@ -1,0 +1,154 @@
+{
+  "schema_version": "SemanticAnalysisProposal/v3",
+  "criteria": [
+    {
+      "source_atom_id": "atom-16",
+      "kind": "business-rule",
+      "condition": {
+        "text": "Para cada material catalogado.",
+        "source_atom_ids": ["atom-16"]
+      },
+      "outcome": {
+        "text": "O material deve ter título, autor e referência de origem.",
+        "source_atom_ids": ["atom-16"]
+      },
+      "exceptions": [],
+      "note": "Obrigação de conteúdo para todos os materiais.",
+      "question": null,
+      "uncertainties": []
+    },
+    {
+      "source_atom_id": "atom-17",
+      "kind": "business-rule",
+      "condition": {
+        "text": "Na visualização de um material.",
+        "source_atom_ids": ["atom-17"]
+      },
+      "outcome": {
+        "text": "O material só pode ser visível ao educador responsável.",
+        "source_atom_ids": ["atom-17"]
+      },
+      "exceptions": [],
+      "note": "A presença de coordenadores pedagógicos no público não lhes concede acesso aos materiais.",
+      "question": null,
+      "uncertainties": []
+    },
+    {
+      "source_atom_id": "atom-19",
+      "kind": "business-rule",
+      "condition": {
+        "text": "Para cada afirmação do rascunho.",
+        "source_atom_ids": ["atom-19"]
+      },
+      "outcome": {
+        "text": "A afirmação deve referenciar os materiais utilizados.",
+        "source_atom_ids": ["atom-19"]
+      },
+      "exceptions": [],
+      "note": "Preserva a rastreabilidade das afirmações às fontes utilizadas.",
+      "question": null,
+      "uncertainties": []
+    },
+    {
+      "source_atom_id": "atom-20",
+      "kind": "business-rule",
+      "condition": {
+        "text": "Para publicar.",
+        "source_atom_ids": ["atom-20"]
+      },
+      "outcome": {
+        "text": "É necessário haver revisão e aprovação do educador.",
+        "source_atom_ids": ["atom-20"]
+      },
+      "exceptions": [],
+      "note": "Revisão e aprovação são requisitos necessários; a declaração não concede autorização suficiente por si só.",
+      "question": null,
+      "uncertainties": []
+    }
+  ],
+  "guards": [
+    {
+      "id": "guard-human-review",
+      "condition": {
+        "text": "Antes de uma publicação.",
+        "source_atom_ids": ["atom-13"]
+      },
+      "effect": {
+        "text": "Exigir revisão humana prévia.",
+        "source_atom_ids": ["atom-13"]
+      },
+      "target_scope": "project",
+      "target_criterion_atom_ids": [],
+      "note": "Restrição geral de publicação, também expressa na concepção; não substitui a aprovação do educador exigida pelo critério."
+    }
+  ],
+  "context_findings": [
+    {
+      "subject": "purpose",
+      "text": "Organizar materiais e preparar aulas baseadas em fontes, com revisão humana antes da publicação.",
+      "note": "Propósito declarado da plataforma.",
+      "context_indices": [0]
+    },
+    {
+      "subject": "audience",
+      "text": "Educadores e coordenadores pedagógicos.",
+      "note": "Públicos declarados; não estabelece equivalência entre seus papéis ou permissões.",
+      "context_indices": [1, 2]
+    },
+    {
+      "subject": "tone",
+      "text": "Claro, acolhedor e preciso.",
+      "note": "Orientações de comunicação.",
+      "context_indices": [3, 4, 5]
+    },
+    {
+      "subject": "positioning",
+      "text": "Fontes verificáveis e controle do educador.",
+      "note": "Princípios declarados do produto.",
+      "context_indices": [6, 7]
+    },
+    {
+      "subject": "domain",
+      "text": "Educação.",
+      "note": "Domínio explicitamente declarado.",
+      "context_indices": [16]
+    },
+    {
+      "subject": "capability",
+      "text": "Permitir ao educador catalogar materiais e suas fontes e preparar um rascunho de aula usando materiais selecionados.",
+      "note": "Capacidades de apoio aos critérios.",
+      "context_indices": [14, 15]
+    },
+    {
+      "subject": "constraint",
+      "text": "A interface deve ser acessível.",
+      "note": "Obrigação explícita sem condição de aplicabilidade especificada; este registro não fornece uma política executável de aplicabilidade.",
+      "context_indices": [8]
+    },
+    {
+      "subject": "constraint",
+      "text": "Usar Python 3.12 ou superior.",
+      "note": "Restrição técnica explícita sem condição de aplicabilidade especificada.",
+      "context_indices": [9]
+    },
+    {
+      "subject": "constraint",
+      "text": "Os contratos devem ser versionados.",
+      "note": "Obrigação explícita sem condição de aplicabilidade especificada; o mecanismo de versionamento não foi definido.",
+      "context_indices": [10]
+    },
+    {
+      "subject": "constraint",
+      "text": "Não expor dados pessoais em traces.",
+      "note": "Proibição explícita sem gatilho de aplicabilidade especificado; permanece uma obrigação normativa.",
+      "context_indices": [11]
+    },
+    {
+      "subject": "constraint",
+      "text": "O custo máximo de construção é US$ 0,00.",
+      "note": "Limite declarado em max_build_cost_usd, sem condição de aplicabilidade especificada.",
+      "context_indices": [13]
+    }
+  ],
+  "issues": []
+}

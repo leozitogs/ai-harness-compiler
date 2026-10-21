@@ -69,10 +69,11 @@
       "evidence_sources": [
         "docs/delivery/sprint-2-6-kickoff.md",
         "docs/evidence/sprint-2-6-entry-20261019/audit.json",
-        "docs/delivery/sprint-2-6-development-assessment.md"
+        "docs/delivery/sprint-2-6-development-assessment.md",
+        "docs/delivery/sprint-2-6-v34-development.md"
       ],
       "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.",
-      "progress_note": "Complete development-output judgment received. Story criteria, DoD and evidence review remain; no automatic capability completion."
+      "progress_note": "Complete development-output judgment received. Story criteria, DoD and evidence review remain; no automatic capability completion. Later explicit PO authorization executed one 16-call v3.4 development round: eight valid analyses, seven valid audits, one rejected audit digest. Fresh PO judgments approve all 48 criteria of eight new analyses. No old reviews transferred, model qualified, recipe promoted or story accepted. INC-0024 resolution scoped to recorded analyses; separate audit failure remains. Budget consumed and closed."
     },
     {
       "id": "s26-22-design",
@@ -86,9 +87,12 @@
       "responsible": "code-collaborator-supported-by-codex",
       "evidence_sources": [
         "docs/delivery/sprint-2-6-kickoff.md",
-        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json",
+        "docs/delivery/sprint-2-6-question-materiality.md",
+        "docs/delivery/sprint-2-6-v34-development.md"
       ],
-      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.",
+      "progress_note": "Explicit v3.4 materiality recipe implemented and 19 focused contract regressions passed. Separate protocol frozen at 2094624; execution rejected before process creation by automatic permission review pending specific new budget/payload/destination approval. Zero new model calls, no efficacy claim; INC-0024 remains unresolved. Later explicit PO authorization executed one 16-call v3.4 development round: eight valid analyses, seven valid audits, one rejected audit digest. Fresh PO judgments approve all 48 criteria of eight new analyses. No old reviews transferred, model qualified, recipe promoted or story accepted. INC-0024 resolution scoped to recorded analyses; separate audit failure remains. Budget consumed and closed."
     },
     {
       "id": "s26-22-implement",
@@ -104,26 +108,30 @@
         "docs/delivery/sprint-2-6-kickoff.md",
         "docs/evidence/sprint-2-6-entry-20261019/audit.json",
         "docs/delivery/sprint-2-6-human-judgments.md",
-        "docs/delivery/sprint-2-6-multisource-candidate.md"
+        "docs/delivery/sprint-2-6-multisource-candidate.md",
+        "docs/delivery/sprint-2-6-question-materiality.md",
+        "docs/delivery/sprint-2-6-v34-development.md"
       ],
       "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.",
-      "progress_note": "Implemented explicit v3.3 issue routing and executed frozen 16-call serial development round. PO judged all 48 new criteria: six responses pass, two fail only uncertainty due additional nonmaterial identity questions. Prior coverage/citation defects approved as repaired in these snapshots; no old approval transferred, no recipe promotion or story completion. Budget exhausted/closed; materiality correction remains."
+      "progress_note": "Implemented explicit v3.3 issue routing and executed frozen 16-call serial development round. PO judged all 48 new criteria: six responses pass, two fail only uncertainty due additional nonmaterial identity questions. Prior coverage/citation defects approved as repaired in these snapshots; no old approval transferred, no recipe promotion or story completion. Budget exhausted/closed; materiality correction remains. Explicit v3.4 materiality recipe implemented and 19 focused contract regressions passed. Separate protocol frozen at 2094624; execution rejected before process creation by automatic permission review pending specific new budget/payload/destination approval. Zero new model calls, no efficacy claim; INC-0024 remains unresolved. Later explicit PO authorization executed one 16-call v3.4 development round: eight valid analyses, seven valid audits, one rejected audit digest. Fresh PO judgments approve all 48 criteria of eight new analyses. No old reviews transferred, model qualified, recipe promoted or story accepted. INC-0024 resolution scoped to recorded analyses; separate audit failure remains. Budget consumed and closed."
     },
     {
       "id": "s26-22-verify",
       "capability_id": "ahc-022",
       "stage": "verify",
       "task_graph_id": "task-22-verify",
-      "status": "planned",
+      "status": "in_review",
       "depends_on": [
         "s26-22-implement"
       ],
       "responsible": "code-collaborator-supported-by-codex",
       "evidence_sources": [
         "docs/delivery/sprint-2-6-kickoff.md",
-        "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+        "docs/evidence/sprint-2-6-entry-20261019/audit.json",
+        "docs/delivery/sprint-2-6-v34-development.md"
       ],
-      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story."
+      "completion_rule": "Actual source criteria, reviewed evidence and DoD required. Preparatory audit, generated tasks, green CI or advisory judgment do not complete a story.",
+      "progress_note": " Later explicit PO authorization executed one 16-call v3.4 development round: eight valid analyses, seven valid audits, one rejected audit digest. Fresh PO judgments approve all 48 criteria of eight new analyses. No old reviews transferred, model qualified, recipe promoted or story accepted. INC-0024 resolution scoped to recorded analyses; separate audit failure remains. Budget consumed and closed."
     },
     {
       "id": "s26-22-review",

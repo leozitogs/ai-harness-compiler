@@ -1,0 +1,71 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO asked continuing Sprint2.6. Old sixteen-call v3.3 budget is exhausted. Prepared a separate one-round protocol without changing old outputs or carrying old approvals.",
+  "created_at": "2026-10-20T20:55:03.478123+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Current source inspected after explicit PO authorization and v3.4 development execution. Historical conclusions retain their original scope; later eight human analysis passes and one separate audit error are in DOC-0038.",
+      "outcome": "observed",
+      "sha256": "9f30ba9cb78bf4bd5a82a7a37aa2c49e88c54e7528815d25785ed92d209bcbd0",
+      "source": "docs/delivery/sprint-2-6-question-materiality.md"
+    },
+    {
+      "command": null,
+      "note": "Source and frozen protocol inspected; preexecution permission rejection recorded separately, zero provider calls.",
+      "outcome": "observed",
+      "sha256": "1d2870f7875c42c96d2b3d742513e38b7a44b853d9f999b1e549713d4f515479",
+      "source": "docs/evidence/sprint-2-6-v34-development-20261020/protocol.json"
+    },
+    {
+      "command": null,
+      "note": "Source and frozen protocol inspected; preexecution permission rejection recorded separately, zero provider calls.",
+      "outcome": "observed",
+      "sha256": "e3f61cd98f480b357952a1f96ff02125092c184e476e52290660283822c55ed1",
+      "source": "docs/evidence/sprint-2-6-v34-development-20261020/execution-status.json"
+    },
+    {
+      "command": null,
+      "note": "Source and frozen protocol inspected; preexecution permission rejection recorded separately, zero provider calls.",
+      "outcome": "observed",
+      "sha256": "9e5d8b0b687d22bb507ba39e16e1581c40e18f3e03959f7b1ddf24f6a44a3b25",
+      "source": "tests/test_materiality_composition.py"
+    }
+  ],
+  "id": "DOC-0037",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Original rejection remains historical and is superseded for permission by explicit PO authorization.json.",
+    "Subsequent execution/judgments are in DOC-0038, not inferred from preexecution tests.",
+    "No holdout, qualification, promotion or story completion; invalid audit remains recorded."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0016",
+    "INC-0024",
+    "LES-0006",
+    "DOC-0036",
+    "DOC-0038",
+    "INC-0025"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 3,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Originally implemented/froze v3.4 with execution rejected before process creation. Later PO explicitly authorized the concrete round; actual 16-call execution and eight fresh human analysis acceptances are recorded in DOC-0038. Historical preexecution rejection remains immutable; one audit error remains INC-0025.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Candidato de materialidade v3.4 e execução aguardando autorização específica",
+  "updated_at": "2026-10-20T23:47:13.735842+00:00"
+}

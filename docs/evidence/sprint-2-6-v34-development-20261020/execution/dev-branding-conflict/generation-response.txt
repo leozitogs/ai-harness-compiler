@@ -1,0 +1,78 @@
+{
+  "schema_version": "SemanticAnalysisProposal/v3",
+  "criteria": [
+    {
+      "source_atom_id": "atom-7",
+      "kind": "business-rule",
+      "condition": {
+        "text": "Ao liberar publicação da equipe.",
+        "source_atom_ids": ["atom-7"]
+      },
+      "outcome": {
+        "text": "É exigida aprovação humana explícita.",
+        "source_atom_ids": ["atom-7"]
+      },
+      "exceptions": [],
+      "note": "Regra preservada; existe declaração incompatível sobre a exigência de aprovação.",
+      "question": null,
+      "uncertainties": []
+    }
+  ],
+  "guards": [],
+  "context_findings": [
+    {
+      "subject": "purpose",
+      "text": "Organizar publicações da equipe e suas fontes.",
+      "note": "Finalidade declarada do projeto.",
+      "context_indices": [0]
+    },
+    {
+      "subject": "audience",
+      "text": "Autores.",
+      "note": "Público declarado.",
+      "context_indices": [1]
+    },
+    {
+      "subject": "capability",
+      "text": "Organizar publicação da equipe e registrar decisões.",
+      "note": "Capacidades declaradas no backlog.",
+      "context_indices": [5]
+    },
+    {
+      "subject": "domain",
+      "text": "Gestão de workspace.",
+      "note": "Domínio declarado como workspace-management.",
+      "context_indices": [6]
+    },
+    {
+      "subject": "constraint",
+      "text": "Registrar a identidade do responsável.",
+      "note": "Obrigação explícita cuja aplicabilidade não foi especificada. Preservá-la como contexto normativo não estabelece uma política executável de aplicabilidade; a ausência de mecanismo ou momento de registro não torna a obrigação indeterminada.",
+      "context_indices": [3]
+    },
+    {
+      "subject": "constraint",
+      "text": "O custo máximo de build é US$ 0,00.",
+      "note": "Limite declarado em max_build_cost_usd.",
+      "context_indices": [4]
+    }
+  ],
+  "issues": [
+    {
+      "kind": "conflict",
+      "text": "Uma declaração dispensa qualquer aprovação humana para liberar publicação da equipe, enquanto o critério exige aprovação humana explícita para a mesma operação.",
+      "context_indices": [2, 7],
+      "rationale": "As duas declarações estabelecem obrigações incompatíveis sobre a mesma liberação; não foi definida precedência.",
+      "impact": null,
+      "rejection_reason": null
+    },
+    {
+      "kind": "question",
+      "text": "Qual declaração prevalece para liberar publicação da equipe: a dispensa de qualquer aprovação humana ou a exigência de aprovação humana explícita?",
+      "context_indices": [2, 7],
+      "rationale": "A decisão determina se a liberação depende de aprovação humana; sem precedência, a condição de autorização permanece indefinida.",
+      "impact": "precedence",
+      "rejection_reason": null
+    }
+  ]
+}

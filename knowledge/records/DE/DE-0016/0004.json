@@ -1,0 +1,72 @@
+{
+  "alternatives": [
+    "Host keyword-based deletion or reclassification: rejected because it can hide legitimate blockers.",
+    "Remove or weaken obligation: rejected because known normative content must be preserved.",
+    "Approve from disposition or positive audit: rejected by recorded PO counterexample."
+  ],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO judged two v3.3 outputs uncertainty fail despite correct disposition and supported citations. Generalist correction must retain legitimate blockers and normative obligations.",
+  "created_at": "2026-10-20T20:52:03.015443+00:00",
+  "decision": "Require each blocking question to identify its source-bound unresolved business decision. Preserve unconditional obligations and declare missing execution details; retained nonblocking follow-ups use existing implementation-detail impact. Test contract invariants offline; use one separately frozen bounded development round before judging model efficacy.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Opt-in v3.4 materiality policy and bounded future protocol. Nineteen focused offline regressions passed; no new model output or semantic approval yet.",
+      "outcome": "observed",
+      "sha256": "1bdd28fb61d21dd237a4ed362d3474cd4f6aa975767e2cfc4059c8cd42e586b0",
+      "source": "src/ai_harness_compiler/semantic_composition.py"
+    },
+    {
+      "command": null,
+      "note": "Opt-in v3.4 materiality policy and bounded future protocol. Nineteen focused offline regressions passed; no new model output or semantic approval yet.",
+      "outcome": "observed",
+      "sha256": "9e5d8b0b687d22bb507ba39e16e1581c40e18f3e03959f7b1ddf24f6a44a3b25",
+      "source": "tests/test_materiality_composition.py"
+    },
+    {
+      "command": null,
+      "note": "Opt-in v3.4 materiality policy and bounded future protocol. Nineteen focused offline regressions passed; no new model output or semantic approval yet.",
+      "outcome": "observed",
+      "sha256": "25675cd9bcc5be79abeae5e3ee1c76693229259d132bcfd0cfe502094e8e8399",
+      "source": "docs/delivery/sprint-2-6-question-materiality.md"
+    },
+    {
+      "command": null,
+      "note": "Opt-in v3.4 materiality policy and bounded future protocol. Nineteen focused offline regressions passed; no new model output or semantic approval yet.",
+      "outcome": "observed",
+      "sha256": "1d2870f7875c42c96d2b3d742513e38b7a44b853d9f999b1e549713d4f515479",
+      "source": "docs/evidence/sprint-2-6-v34-development-20261020/protocol.json"
+    }
+  ],
+  "id": "DE-0016",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "Prompt policy does not guarantee model behavior; offline injection tests are not generation efficacy.",
+    "Missing business authorization, precedence or completion can still legitimately block.",
+    "No change to CLI/default, qualification, holdout, training or story acceptance."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "INC-0024",
+    "LES-0006",
+    "DE-0015"
+  ],
+  "resolution": null,
+  "review_note": "Reviewed additive pending-authorization sprint tracking and v3.4 regression additions. Prior conclusions remain scoped to original evidence; no new execution or semantic success. Exact source hashes refreshed after inspection.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 4,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Explicit v3.4 recipe separates missing execution detail from unresolved source-bound business decisions. Older prompts/schemas/default preserved; no host reclassification or automatic semantic approval.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Materialidade por decisão de negócio na análise de intenção",
+  "updated_at": "2026-10-20T20:55:08.250313+00:00"
+}

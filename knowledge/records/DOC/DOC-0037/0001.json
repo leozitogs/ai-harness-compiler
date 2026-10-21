@@ -1,0 +1,69 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO asked continuing Sprint2.6. Old sixteen-call v3.3 budget is exhausted. Prepared a separate one-round protocol without changing old outputs or carrying old approvals.",
+  "created_at": "2026-10-20T20:55:03.478123+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Source and frozen protocol inspected; preexecution permission rejection recorded separately, zero provider calls.",
+      "outcome": "observed",
+      "sha256": "25675cd9bcc5be79abeae5e3ee1c76693229259d132bcfd0cfe502094e8e8399",
+      "source": "docs/delivery/sprint-2-6-question-materiality.md"
+    },
+    {
+      "command": null,
+      "note": "Source and frozen protocol inspected; preexecution permission rejection recorded separately, zero provider calls.",
+      "outcome": "observed",
+      "sha256": "1d2870f7875c42c96d2b3d742513e38b7a44b853d9f999b1e549713d4f515479",
+      "source": "docs/evidence/sprint-2-6-v34-development-20261020/protocol.json"
+    },
+    {
+      "command": null,
+      "note": "Source and frozen protocol inspected; preexecution permission rejection recorded separately, zero provider calls.",
+      "outcome": "observed",
+      "sha256": "e3f61cd98f480b357952a1f96ff02125092c184e476e52290660283822c55ed1",
+      "source": "docs/evidence/sprint-2-6-v34-development-20261020/execution-status.json"
+    },
+    {
+      "command": null,
+      "note": "Source and frozen protocol inspected; preexecution permission rejection recorded separately, zero provider calls.",
+      "outcome": "observed",
+      "sha256": "9e5d8b0b687d22bb507ba39e16e1581c40e18f3e03959f7b1ddf24f6a44a3b25",
+      "source": "tests/test_materiality_composition.py"
+    }
+  ],
+  "id": "DOC-0037",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Protocol authorization text is initial operator interpretation, not an accepted PO authorization. Preexecution rejection record supersedes it for permission.",
+    "No real v3.4 outputs, semantic success, qualification, promotion or story completion.",
+    "Offline injected-proposal regressions do not establish model efficacy."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0016",
+    "INC-0024",
+    "LES-0006",
+    "DOC-0036"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Implemented explicit generalist v3.4 recipe; older versions/default preserved. Protocol frozen at 2094624. Automatic permission review rejected execution before process creation pending explicit new budget, public fixture payload and subscription destination approval. Zero new model calls; INC-0024 unresolved.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Candidato de materialidade v3.4 e execução aguardando autorização específica",
+  "updated_at": "2026-10-20T20:55:03.478123+00:00"
+}
