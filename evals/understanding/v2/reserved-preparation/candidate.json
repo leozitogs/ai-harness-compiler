@@ -1,0 +1,7 @@
+{
+  "audit_version": "component-audit/v4.1",
+  "code_sha256": "f2672af686c7a33bef5964d53400b8b29057e02b3dcddf75a3495b5e3484ad24",
+  "composition_version": "semantic-composition/v3.4",
+  "profile_sha256": "c95db2dba252c943f95c32ed78c3b6fcca9001f9d30f36878aa37acd8ac9fa37",
+  "source_commit": "1e8db614f864970cde229a947ce938ff9c13220f"
+}

@@ -25,6 +25,10 @@ flowchart TD
 `intake.py` e `compiler.py` são fronteiras de I/O. `cli.py` compõe as etapas.
 O comando `compile` aceita a IR serializada sem reexecutar intake ou planejamento.
 
+O preparo reservado usa contratos puros de metadados e um CLI que não abre casos
+nem autoriza execução ([ADR-0028](adr/0028-reserved-evaluation-metadata-gates.md)).
+Curadoria isolada, revisão humana e futura avaliação são etapas distintas.
+
 AHC-022 adiciona uma fronteira offline de grounding (ADR-0013): ProjectInput →
 GroundingExtraction/v1 → proposta independente → GroundingQuotationReport/v1.
 Átomos preservam declarações e metadados; quotes são verificadas sem avaliar

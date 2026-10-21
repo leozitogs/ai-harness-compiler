@@ -1,0 +1,89 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO explicitly chose independent curation in a new context, with subsequent human review. Development judgments and one audit compatibility call do not complete the reserved v2 gate.",
+  "created_at": "2026-10-21T19:46:17.081010+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Public metadata or preparation replay only; raw private cases and PO review were not opened by candidate author.",
+      "outcome": "observed",
+      "sha256": "6a2806e77bbeaf70ba120d58b9ec8d1f35a2c6ce4646ee8812833ff88fdf57c8",
+      "source": "docs/delivery/sprint-2-6-reserved-preparation.md"
+    },
+    {
+      "command": null,
+      "note": "Public metadata or preparation replay only; raw private cases and PO review were not opened by candidate author.",
+      "outcome": "observed",
+      "sha256": "225c291b8734dfc6e17927c9523c60e04ff8746fc8752346bd55ca76a2df3d98",
+      "source": "evals/understanding/v2/reserved-preparation/candidate.json"
+    },
+    {
+      "command": null,
+      "note": "Public metadata or preparation replay only; raw private cases and PO review were not opened by candidate author.",
+      "outcome": "observed",
+      "sha256": "e79bae69cb0ba0f81529c512f871b1703e22c8e0d94a8c42924ef7d39a607108",
+      "source": "evals/understanding/v2/reserved-preparation/curation-manifest.json"
+    },
+    {
+      "command": null,
+      "note": "Public metadata or preparation replay only; raw private cases and PO review were not opened by candidate author.",
+      "outcome": "observed",
+      "sha256": "0b73a872654c3ec89d07bb6d65cbba182c95738b29edfd407ad4351e9e782688",
+      "source": "evals/understanding/v2/reserved-preparation/curation-provenance.json"
+    },
+    {
+      "command": null,
+      "note": "Public metadata or preparation replay only; raw private cases and PO review were not opened by candidate author.",
+      "outcome": "observed",
+      "sha256": "7cb58adae2a53b744e4e1e1990597c3a02281094832e89f91b33723de34e3239",
+      "source": "evals/understanding/v2/reserved-preparation/po-review-binding.json"
+    },
+    {
+      "command": null,
+      "note": "Public metadata or preparation replay only; raw private cases and PO review were not opened by candidate author.",
+      "outcome": "observed",
+      "sha256": "6082620a46eda87cca79f0048080070fa92664da665e45779cb22554f6f4e724",
+      "source": "docs/evidence/sprint-2-6-reserved-preparation-20261021/preparation.json"
+    },
+    {
+      "command": null,
+      "note": "Public metadata or preparation replay only; raw private cases and PO review were not opened by candidate author.",
+      "outcome": "observed",
+      "sha256": "7b93ed4a26bcada20e31c3e76bdc364fe5749939a493806597b0078d7d934457",
+      "source": "tests/test_reserved_preparation_evidence.py"
+    }
+  ],
+  "id": "DOC-0041",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Metadata digests and identities are declarations; preparation does not open or validate reserved payloads.",
+    "New-context isolation is instructional, without per-agent filesystem sandbox or authenticated identity.",
+    "No runtime evaluation calls, expectation approvals, model qualification, default promotion or story completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0028",
+    "DOC-0040",
+    "DOC-0039"
+  ],
+  "resolution": null,
+  "review_note": "Reviewed metadata-only report and curator declarations. 34 focused tests passed; candidate author did not open raw cases or PO review. Structural validity is curator-reported and not human acceptance.",
+  "reviewed_by": "codex:evidence-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Eight new synthetic cases prepared by an isolated curator after candidate freeze. Parent read only manifest/provenance; no declared split overlap. Actual metadata report remains blocked by human expectation review and budget proposal, with zero runtime evaluation calls.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Curadoria nova do reservado v2 e gates pendentes",
+  "updated_at": "2026-10-21T19:46:17.415772+00:00"
+}

@@ -1,0 +1,10 @@
+{
+  "candidate_exposure_to_reserved_contents": "not-opened",
+  "candidate_sha256": "134acf0dc934e23913c8bc698e91e724fbdd13efdb825d4fcdcba854fe6bbeb2",
+  "format": "isolated-reserved-curation-request/v1",
+  "human_expectations_review": "pending",
+  "po_confirmation": "Um agente independente, em contexto isolado, com minha revisão posterior",
+  "raw_case_location": ".factory/reserved-v2-curation-20261021",
+  "recorded_on": "2026-10-21",
+  "runtime_evaluation_calls": 0
+}

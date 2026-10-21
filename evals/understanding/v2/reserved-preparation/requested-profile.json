@@ -1,0 +1,22 @@
+{
+  "adapter_version": "codex-structured-cli/v5",
+  "format": "reserved-requested-profile-freeze/v1",
+  "observed_immutable_model": null,
+  "observed_sampling_parameters": null,
+  "overrides": [
+    "forced_login_method=\"chatgpt\"",
+    "web_search=\"disabled\"",
+    "features.shell_tool=false",
+    "features.unified_exec=false",
+    "features.multi_agent=false",
+    "features.shell_snapshot=false",
+    "features.skill_mcp_dependency_install=false",
+    "hide_agent_reasoning=true",
+    "history.persistence=\"none\"",
+    "project_doc_max_bytes=0"
+  ],
+  "provider": "codex-cli-chatgpt-subscription",
+  "requested_model": "gpt-6.1-sol",
+  "scope": "Requested configuration freeze only; not completed AHC-024 profile or execution authorization.",
+  "timeout_seconds": 180
+}

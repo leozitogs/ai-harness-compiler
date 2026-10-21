@@ -1,0 +1,60 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO explicitly chose independent curation in a new context, with subsequent human review. Development judgments and one audit compatibility call do not complete the reserved v2 gate.",
+  "created_at": "2026-10-21T19:46:16.396060+00:00",
+  "decision": "Freeze selected candidate sources and requested profile before new-context independent curation; keep raw reserved cases private. CLI only validates bounded protocol metadata and never grants execution authority. Exact corpus review and candidate bindings become stale on relevant changes.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Metadata gates and synthetic regressions; no inference success claim.",
+      "outcome": "observed",
+      "sha256": "ab1cb6487d504010593cdd4b5b1b61d76d5ec5fc204a13ab6612a969d9fe3e85",
+      "source": "docs/adr/0028-reserved-evaluation-metadata-gates.md"
+    },
+    {
+      "command": null,
+      "note": "Metadata gates and synthetic regressions; no inference success claim.",
+      "outcome": "observed",
+      "sha256": "197fc75d3d47c22d45f288b272b0d4d37c94166b042be586e5cbf12947452427",
+      "source": "src/ai_harness_compiler/models/reserved_evaluation.py"
+    },
+    {
+      "command": null,
+      "note": "Metadata gates and synthetic regressions; no inference success claim.",
+      "outcome": "observed",
+      "sha256": "0434bcc47500e648791d46efd3ea1b9dcb238471a68d8de576121e4964e61443",
+      "source": "tests/test_reserved_evaluation.py"
+    }
+  ],
+  "id": "ADR-0028",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "Metadata digests and identities are declarations; preparation does not open or validate reserved payloads.",
+    "New-context isolation is instructional, without per-agent filesystem sandbox or authenticated identity.",
+    "No runtime evaluation calls, expectation approvals, model qualification, default promotion or story completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0011",
+    "ADR-0012"
+  ],
+  "resolution": null,
+  "review_note": "Reviewed pure contracts, 31 synthetic gate/CLI tests and explicit authority limits. No payload validation or semantic efficacy inferred.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Additive typed protocol and preparation report separate candidate freeze, isolated curation, human expectation review and future authorized execution.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Preparar reservado por metadados com curadoria isolada",
+  "updated_at": "2026-10-21T19:46:16.737787+00:00"
+}
