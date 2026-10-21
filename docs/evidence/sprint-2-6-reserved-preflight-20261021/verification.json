@@ -1,0 +1,22 @@
+{
+  "scope": "offline-engineering-verification-only",
+  "tests": {
+    "passed": 1122,
+    "skipped": 0,
+    "duration_seconds": 204.13
+  },
+  "focused_regressions": 7,
+  "ruff": "passed",
+  "mypy_source_files": 83,
+  "schemas": "current",
+  "repository_policy": "current",
+  "sprint_plans": "all-five-current",
+  "memory_records": 123,
+  "memory_reusable": 114,
+  "memory_index": "current",
+  "build": "sdist-and-wheel-passed",
+  "distribution_privacy_check": "passed",
+  "reserved_model_invocations": 0,
+  "semantic_qualification": "not-established",
+  "new_execution_authorized": false
+}

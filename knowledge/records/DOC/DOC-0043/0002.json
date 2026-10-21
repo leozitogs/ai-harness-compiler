@@ -1,0 +1,76 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "After PR64 integration and explicit PO permission, strict payload validation prevented provider creation. Diagnosis processed authorized inputs in Python and exposed only metadata to the candidate author.",
+  "created_at": "2026-10-21T21:04:13.763742+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Authorized preflight failed before provider construction. Redacted metadata and synthetic regression only; raw private cases/evidence are not published, no new model result or authorization inferred.",
+      "outcome": "observed",
+      "sha256": "3f706b930752d4d912bec0bc09a32554f8e41410d11c345bf034da5b961e3781",
+      "source": "docs/delivery/sprint-2-6-reserved-preflight.md"
+    },
+    {
+      "command": null,
+      "note": "Authorized preflight failed before provider construction. Redacted metadata and synthetic regression only; raw private cases/evidence are not published, no new model result or authorization inferred.",
+      "outcome": "observed",
+      "sha256": "99eb523b5db02d78c78f5a8d815dcfa040f55a76c1d16b46c88798d76b030ba1",
+      "source": "docs/evidence/sprint-2-6-reserved-preflight-20261021/summary.json"
+    },
+    {
+      "command": null,
+      "note": "Authorized preflight failed before provider construction. Redacted metadata and synthetic regression only; raw private cases/evidence are not published, no new model result or authorization inferred.",
+      "outcome": "observed",
+      "sha256": "49c1fee6793a907cf1f81cac424c4cf7745fe9c3238db8b893c12bee37e2930c",
+      "source": "src/ai_harness_compiler/reserved_freeze.py"
+    },
+    {
+      "command": null,
+      "note": "Authorized preflight failed before provider construction. Redacted metadata and synthetic regression only; raw private cases/evidence are not published, no new model result or authorization inferred.",
+      "outcome": "observed",
+      "sha256": "100fe1917722619ce7495cf3ade52904bea23216c6c95992c959c5086c70b721",
+      "source": "tests/test_reserved_freeze.py"
+    },
+    {
+      "command": null,
+      "note": "Authorized preflight failed before provider construction. Redacted metadata and synthetic regression only; raw private cases/evidence are not published, no new model result or authorization inferred.",
+      "outcome": "observed",
+      "sha256": "a7d7c4f9217a2dde120467e0b540dac079f82fdc77ce16319242f8ccf3f7e204",
+      "source": "evals/understanding/v2/reserved-correction/proposal.json"
+    }
+  ],
+  "id": "DOC-0043",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "No model performance observation or semantic qualification.",
+    "Original authorization cannot be reused even with zero charged invocations.",
+    "Prospective request is unsigned planned data, not an executable approved request; fresh PO confirmation must cover corrected metadata and new budget."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "INC-0026",
+    "DE-0018",
+    "DOC-0042",
+    "DOC-0041"
+  ],
+  "resolution": null,
+  "review_note": "Reviewed exact human reply, preserved consumed claim/preflight receipt, unchanged raw hashes, redacted numeric diagnosis and seven passing synthetic regressions. No new runtime or semantic success inferred.",
+  "reviewed_by": "codex:evidence-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "PO authorized a28e6065; preflight consumed/closed the request with zero invocations. Raw cases intact; normalized fingerprint proposal has corpus e5cd1829 and prospective request f5e410f3. No new request/review/authorization materialized.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Rodada reservada interrompida sem chamadas e correção pendente",
+  "updated_at": "2026-10-21T21:04:14.139138+00:00"
+}

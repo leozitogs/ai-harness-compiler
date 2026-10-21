@@ -1,0 +1,105 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO explicitly chose independent curation in a new context, with subsequent human review. Development judgments and one audit compatibility call do not complete the reserved v2 gate.",
+  "created_at": "2026-10-21T19:46:17.081010+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Reviewed current additions: explicit PO acceptance of the exact eight reserved expectations, preserved original pending snapshot and separate reviewed metadata report. No runtime authorization, output judgment or semantic qualification.",
+      "outcome": "observed",
+      "sha256": "4c5fe57da5dd6e51824081ff028ee198b59036945c503fad9e88133fbe93b6cb",
+      "source": "docs/delivery/sprint-2-6-reserved-preparation.md"
+    },
+    {
+      "command": null,
+      "note": "Public metadata or preparation replay only; raw private cases and PO review were not opened by candidate author.",
+      "outcome": "observed",
+      "sha256": "225c291b8734dfc6e17927c9523c60e04ff8746fc8752346bd55ca76a2df3d98",
+      "source": "evals/understanding/v2/reserved-preparation/candidate.json"
+    },
+    {
+      "command": null,
+      "note": "Public metadata or preparation replay only; raw private cases and PO review were not opened by candidate author.",
+      "outcome": "observed",
+      "sha256": "e79bae69cb0ba0f81529c512f871b1703e22c8e0d94a8c42924ef7d39a607108",
+      "source": "evals/understanding/v2/reserved-preparation/curation-manifest.json"
+    },
+    {
+      "command": null,
+      "note": "Public metadata or preparation replay only; raw private cases and PO review were not opened by candidate author.",
+      "outcome": "observed",
+      "sha256": "0b73a872654c3ec89d07bb6d65cbba182c95738b29edfd407ad4351e9e782688",
+      "source": "evals/understanding/v2/reserved-preparation/curation-provenance.json"
+    },
+    {
+      "command": null,
+      "note": "Public metadata or preparation replay only; raw private cases and PO review were not opened by candidate author.",
+      "outcome": "observed",
+      "sha256": "7cb58adae2a53b744e4e1e1990597c3a02281094832e89f91b33723de34e3239",
+      "source": "evals/understanding/v2/reserved-preparation/po-review-binding.json"
+    },
+    {
+      "command": null,
+      "note": "Public metadata or preparation replay only; raw private cases and PO review were not opened by candidate author.",
+      "outcome": "observed",
+      "sha256": "6082620a46eda87cca79f0048080070fa92664da665e45779cb22554f6f4e724",
+      "source": "docs/evidence/sprint-2-6-reserved-preparation-20261021/preparation.json"
+    },
+    {
+      "command": null,
+      "note": "Reviewed current additions: explicit PO acceptance of the exact eight reserved expectations, preserved original pending snapshot and separate reviewed metadata report. No runtime authorization, output judgment or semantic qualification.",
+      "outcome": "observed",
+      "sha256": "5a02bac23b2bc3b547f71cab4bb83699019c2f44b5aa3908ea4c967ba328b45a",
+      "source": "tests/test_reserved_preparation_evidence.py"
+    },
+    {
+      "command": null,
+      "note": "Explicit PO expectation acceptance bound to original corpus; not evaluation permission or output approval.",
+      "outcome": "observed",
+      "sha256": "7a0501befabe73044c3d275694aff8fee7dee69bbc93eadf320aa088db3f07c3",
+      "source": "evals/understanding/v2/reserved-preparation/po-expectations-review.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit PO expectation acceptance bound to original corpus; not evaluation permission or output approval.",
+      "outcome": "observed",
+      "sha256": "20eff6c2e89e1c8dbc42274c0d41271527d58d089f41d2b76f9102d83bba2c30",
+      "source": "docs/evidence/sprint-2-6-reserved-preparation-20261021/preparation-reviewed.json"
+    }
+  ],
+  "id": "DOC-0041",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Metadata digests and identities are declarations; preparation does not open or validate reserved payloads.",
+    "New-context isolation is instructional, without per-agent filesystem sandbox or authenticated identity.",
+    "No runtime evaluation calls, expectation approvals, model qualification, default promotion or story completion.",
+    "Later authorized preflight rejected derived numeric fingerprints while all original raw bytes matched. INC-0026/DOC-0043 track correction; do not execute original metadata or reuse consumed authorization."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0028",
+    "DOC-0040",
+    "DOC-0039",
+    "DOC-0043"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 5,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Eight new synthetic cases independently curated after candidate freeze. PO later explicitly read and approved their eight expectations for corpus c010e3373338edee86512a889ed12273c0a25ac44403e25e4c732fdbb97a8367. Initial pending report retained; new reviewed report remains blocked by budget proposal. Parent read only metadata; no runtime evaluation or model qualification.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Curadoria nova do reservado v2 e gates pendentes",
+  "updated_at": "2026-10-21T21:04:27.825111+00:00"
+}
