@@ -1,0 +1,77 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO requested continuing after the authorized v3.4 round. Treat audit hash-copy failure without hiding it, then identify actual remaining prerequisite gates.",
+  "created_at": "2026-10-21T00:08:45.968379+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Explicit offline-only candidate; saved structural failure rejected and historical fingerprints preserved. No new model execution, provider compatibility or semantic efficacy claim.",
+      "outcome": "observed",
+      "sha256": "48f7fa4271a8a1583dac3cd92f34ae26f3c614aaba6eeae77e73d5d56e287c02",
+      "source": "docs/delivery/sprint-2-6-prerequisites-review.md"
+    },
+    {
+      "command": null,
+      "note": "Explicit offline-only candidate; saved structural failure rejected and historical fingerprints preserved. No new model execution, provider compatibility or semantic efficacy claim.",
+      "outcome": "observed",
+      "sha256": "8d36a18eaf5ae0e4675815e7532407f3511cc1aea9c2779efcb6d30a31ea03a8",
+      "source": "docs/delivery/sprint-2-6-audit-bindings.md"
+    },
+    {
+      "command": null,
+      "note": "Explicit offline-only candidate; saved structural failure rejected and historical fingerprints preserved. No new model execution, provider compatibility or semantic efficacy claim.",
+      "outcome": "observed",
+      "sha256": "e7af7a3f74b017db4d8d8ef79dac38d533d74ee93a7329217ddd77577a5895e6",
+      "source": "evals/understanding/v2/development-approved-manifest.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit offline-only candidate; saved structural failure rejected and historical fingerprints preserved. No new model execution, provider compatibility or semantic efficacy claim.",
+      "outcome": "observed",
+      "sha256": "234a9e7c0e4e55fd341f6dc00d9f3a24f937d28df58ad2ec9f1b3a54082edf24",
+      "source": "evals/understanding/v1/freeze.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit offline-only candidate; saved structural failure rejected and historical fingerprints preserved. No new model execution, provider compatibility or semantic efficacy claim.",
+      "outcome": "observed",
+      "sha256": "3fd5283e29492d739c19955e0eeced67b07591cb1f27c3a757c34c60fdc80465",
+      "source": "planning/sprint-2-6.work-items.json"
+    }
+  ],
+  "id": "DOC-0039",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "INC-0025 operational correction not established; optional recipe requires separately authorized provider compatibility/efficacy validation.",
+    "Reserved corpus was inspected only via manifest/freeze metadata, not case contents.",
+    "Historical mixed-attempt comparisons do not constitute controlled repeated inference experiments.",
+    "Original local-model INC-0007 failures remain distinct from accepted Codex analyses."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0017",
+    "DOC-0038",
+    "INC-0025",
+    "INC-0007"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "PR60 integrated after green CI. Implemented explicit offline audit-binding recipe and reviewed prerequisite acceptance criteria. Development has 48 fresh human passes; reserved v2 remains not migrated and v1 freeze expectations proposed. No holdout contents read, new calls, qualification or story completion.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Correção estrutural candidata do auditor e consolidação de AHC-021/022",
+  "updated_at": "2026-10-21T00:08:45.968379+00:00"
+}
