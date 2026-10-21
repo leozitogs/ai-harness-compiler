@@ -28,6 +28,8 @@ O comando `compile` aceita a IR serializada sem reexecutar intake ou planejament
 O preparo reservado usa contratos puros de metadados e um CLI que não abre casos
 nem autoriza execução ([ADR-0028](adr/0028-reserved-evaluation-metadata-gates.md)).
 Curadoria isolada, revisão humana e futura avaliação são etapas distintas.
+O executor opt-in exige autorização vinculada ao pedido e claim de uso único;
+replay e avaliação humana permanecem separados ([ADR-0029](adr/0029-single-use-reserved-execution.md)).
 
 AHC-022 adiciona uma fronteira offline de grounding (ADR-0013): ProjectInput →
 GroundingExtraction/v1 → proposta independente → GroundingQuotationReport/v1.

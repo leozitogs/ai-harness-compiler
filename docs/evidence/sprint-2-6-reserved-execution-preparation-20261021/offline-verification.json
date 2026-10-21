@@ -1,0 +1,29 @@
+{
+  "checks": [
+    "ruff check",
+    "ruff format --check (303 files)",
+    "mypy src (82 source files)",
+    "schemas --check",
+    "repository AGENTS --check",
+    "all five sprint plans --check",
+    "memory check/index",
+    "Conventional Commit/branch naming",
+    "uv build --python 3.13",
+    "wheel/sdist include executor and exclude private .factory cases/results/PO review"
+  ],
+  "execution_authorized": false,
+  "focused_synthetic_tests": 36,
+  "format": "reserved-executor-offline-verification/v1",
+  "full_suite": {
+    "command": ".venv/Scripts/python.exe -m pytest -q --durations=8 --basetemp .factory/pytest-reserved-executor-final-20261021",
+    "passed": 1115,
+    "seconds": 161.1,
+    "skipped": 0
+  },
+  "human_output_judgment": "not-run",
+  "model_qualification": "not-established",
+  "real_reserved_payload_access": "not-performed",
+  "recorded_on": "2026-10-21",
+  "request_sha256": "a28e606595329ca1ed08bac8d036596f11226f3f9fe47251071baa42018f5872",
+  "runtime_evaluation_calls": 0
+}

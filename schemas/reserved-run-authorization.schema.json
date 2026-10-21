@@ -1,0 +1,51 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "authority": {
+      "const": "human-declared-not-authenticated",
+      "default": "human-declared-not-authenticated",
+      "title": "Authority",
+      "type": "string"
+    },
+    "authorized": {
+      "const": true,
+      "title": "Authorized",
+      "type": "boolean"
+    },
+    "note": {
+      "minLength": 1,
+      "title": "Note",
+      "type": "string"
+    },
+    "request_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Request Sha256",
+      "type": "string"
+    },
+    "reviewer": {
+      "minLength": 1,
+      "title": "Reviewer",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "ReservedRunAuthorization/v1",
+      "default": "ReservedRunAuthorization/v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "scope": {
+      "const": "read-listed-cases-run-budget-store-private-results",
+      "default": "read-listed-cases-run-budget-store-private-results",
+      "title": "Scope",
+      "type": "string"
+    }
+  },
+  "required": [
+    "reviewer",
+    "note",
+    "request_sha256",
+    "authorized"
+  ],
+  "title": "ReservedRunAuthorization",
+  "type": "object"
+}

@@ -1,0 +1,98 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO accepted eight independent expectations and asked to prepare the next step. Implementation resolves external approval without mutating cases, binds original rubric bytes, records failures and consumes each authorized request once.",
+  "created_at": "2026-10-21T20:28:21.803903+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Final source/protocol and offline verification only. Existing expectation approval does not authorize this new concrete execution request.",
+      "outcome": "observed",
+      "sha256": "cfb8fb7e13e5fd4dabe582550ba62873fb3ce567e9621bfd65584268a38ca8c2",
+      "source": "docs/delivery/sprint-2-6-reserved-execution.md"
+    },
+    {
+      "command": null,
+      "note": "Final source/protocol and offline verification only. Existing expectation approval does not authorize this new concrete execution request.",
+      "outcome": "observed",
+      "sha256": "d049ea2057775b9849ee7035bdcb2d4b773686c5178ab04dc4499bbff5e87291",
+      "source": "docs/engineering/reserved-evaluation-runs.md"
+    },
+    {
+      "command": null,
+      "note": "Final source/protocol and offline verification only. Existing expectation approval does not authorize this new concrete execution request.",
+      "outcome": "observed",
+      "sha256": "c250ce9b54d773fb2231a2e4437f34a65e63deb3939840d14a2e8bc2c6c830b2",
+      "source": "evals/understanding/v2/reserved-execution/request.json"
+    },
+    {
+      "command": null,
+      "note": "Final source/protocol and offline verification only. Existing expectation approval does not authorize this new concrete execution request.",
+      "outcome": "observed",
+      "sha256": "51c0dc4c159557480fe9a5d966971507543f66c927d63286c2032ba63291e53f",
+      "source": "evals/understanding/v2/reserved-execution/request-fingerprint.json"
+    },
+    {
+      "command": null,
+      "note": "Final source/protocol and offline verification only. Existing expectation approval does not authorize this new concrete execution request.",
+      "outcome": "observed",
+      "sha256": "fcee2962b1819d63250f4667574778433744535fd95743b16b7cba49a2e10b4c",
+      "source": "docs/evidence/sprint-2-6-reserved-execution-preparation-20261021/preparation.json"
+    },
+    {
+      "command": null,
+      "note": "Final source/protocol and offline verification only. Existing expectation approval does not authorize this new concrete execution request.",
+      "outcome": "passed",
+      "sha256": "da99262e6b086912be1f81f4c698ffdac793ba77de18de5dc4a3d2317bb5404e",
+      "source": "docs/evidence/sprint-2-6-reserved-execution-preparation-20261021/offline-verification.json"
+    },
+    {
+      "command": null,
+      "note": "Final source/protocol and offline verification only. Existing expectation approval does not authorize this new concrete execution request.",
+      "outcome": "observed",
+      "sha256": "b189376afa747fcfbb5ba87b51e5bebde03e525d2f2a6f2e621ccac60b187094",
+      "source": "tests/test_reserved_execution_preparation.py"
+    },
+    {
+      "command": null,
+      "note": "Final source/protocol and offline verification only. Existing expectation approval does not authorize this new concrete execution request.",
+      "outcome": "observed",
+      "sha256": "4073c463b878bcc1cf63ddee378fbcb8f7021a585575c423aee882a6d4601a85",
+      "source": "tests/test_reserved_runs.py"
+    }
+  ],
+  "id": "DOC-0042",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Synthetic tests and local metadata preparation do not establish provider compatibility, new semantic results or model qualification.",
+    "No authorization file was fabricated, real reserved payload opened, runtime model call made, default promoted, story accepted or sprint closed.",
+    "Frozen requested model is an alias; observed immutable identity, sampler, cost and resource telemetry remain unknown.",
+    "Receipts and actors are local declarations, not independent service observation or authenticated identities."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0029",
+    "ADR-0028",
+    "DOC-0041",
+    "DOC-0040"
+  ],
+  "resolution": null,
+  "review_note": "Verified exact final request/code fingerprints, 1115 passing offline tests, private artifact exclusions and truthful pending authorization. No real reserved access, inference result or human output approval inferred.",
+  "reviewed_by": "codex:evidence-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Final offline full suite: 1115 passed, no skips; 36 focused synthetic regressions, schemas, types, plans, memory and packages passed. Exact request a28e606595329ca1ed08bac8d036596f11226f3f9fe47251071baa42018f5872 proposes at most 16 sequential invocations (180s + cleanup, session 3600s). Real payload access/calls not performed; human run authorization pending.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Executor reservado verificado e pedido de 16 invocações pendente",
+  "updated_at": "2026-10-21T20:28:22.109727+00:00"
+}

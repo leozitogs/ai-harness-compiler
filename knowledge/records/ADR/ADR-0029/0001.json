@@ -1,0 +1,77 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO approved eight newly curated expectations, then requested the next step. Expectation acceptance does not authorize reading/running the cases or accepting future model outputs.",
+  "created_at": "2026-10-21T20:24:28.373832+00:00",
+  "decision": "Bind authorization to a complete frozen request, consume an exclusive durable claim before private preflight, and stop on the first failure without resume/retry. Verify raw cases and rubric before provider construction. Preserve original cases and external expectation approval; raw rubric bytes bind the assessment. Replay reconstructs saved artifacts without calls.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Reviewed implementation and 36 focused offline tests; first full suite passed before final rubric/stop-reason tightening, final full verification remains separate.",
+      "outcome": "observed",
+      "sha256": "d419080c44893c7acd750ef1a23d51ff0ab2d79b5d384c9a52f24aa08a22925c",
+      "source": "docs/adr/0029-single-use-reserved-execution.md"
+    },
+    {
+      "command": null,
+      "note": "Reviewed implementation and 36 focused offline tests; first full suite passed before final rubric/stop-reason tightening, final full verification remains separate.",
+      "outcome": "observed",
+      "sha256": "3fdd9f187c281e0adcc5f7210df258c7936c85569afd870aceb2badaa7ac7c04",
+      "source": "src/ai_harness_compiler/models/reserved_run.py"
+    },
+    {
+      "command": null,
+      "note": "Reviewed implementation and 36 focused offline tests; first full suite passed before final rubric/stop-reason tightening, final full verification remains separate.",
+      "outcome": "observed",
+      "sha256": "c5a1dd1b4ed1f8980b93d029ee90996f6a5be3292d0714df2a012d27157a1417",
+      "source": "src/ai_harness_compiler/reserved_runs.py"
+    },
+    {
+      "command": null,
+      "note": "Reviewed implementation and 36 focused offline tests; first full suite passed before final rubric/stop-reason tightening, final full verification remains separate.",
+      "outcome": "observed",
+      "sha256": "5b3589fe349426fd5cdfb1e9681a45ad73c6f4c89168249148404c29662b6c4a",
+      "source": "src/ai_harness_compiler/reserved_cli.py"
+    },
+    {
+      "command": null,
+      "note": "Reviewed implementation and 36 focused offline tests; first full suite passed before final rubric/stop-reason tightening, final full verification remains separate.",
+      "outcome": "observed",
+      "sha256": "4073c463b878bcc1cf63ddee378fbcb8f7021a585575c423aee882a6d4601a85",
+      "source": "tests/test_reserved_runs.py"
+    }
+  ],
+  "id": "ADR-0029",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "Local declarations do not authenticate human identity or independently observe remote service calls.",
+    "Selected source freeze is not complete environment/remote model reproducibility; immutable model identity, sampler, cost and resource telemetry remain unknown.",
+    "Abrupt interruption can leave uncertain remote work and incomplete receipts; exact request remains consumed.",
+    "Implementation and synthetic tests do not authorize real reserved access, qualify the model, promote defaults or complete stories."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0028",
+    "ADR-0011",
+    "ADR-0012",
+    "LES-0005"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Opt-in request/authorization/report and external-approval assessment contracts separate permission, exact payload preflight, charged invocations, replay and human output judgments.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Executar reservado com autorização exata e consumo único",
+  "updated_at": "2026-10-21T20:24:28.373832+00:00"
+}
