@@ -1,0 +1,50 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "call_timeout_seconds": {
+      "maximum": 300,
+      "minimum": 1,
+      "title": "Call Timeout Seconds",
+      "type": "integer"
+    },
+    "cleanup_timeout_seconds": {
+      "maximum": 30,
+      "minimum": 1,
+      "title": "Cleanup Timeout Seconds",
+      "type": "integer"
+    },
+    "max_input_bytes": {
+      "default": 1048576,
+      "maximum": 2097152,
+      "minimum": 1024,
+      "title": "Max Input Bytes",
+      "type": "integer"
+    },
+    "max_output_bytes": {
+      "default": 4194304,
+      "maximum": 8388608,
+      "minimum": 1024,
+      "title": "Max Output Bytes",
+      "type": "integer"
+    },
+    "max_worker_launches": {
+      "const": 2,
+      "default": 2,
+      "title": "Max Worker Launches",
+      "type": "integer"
+    },
+    "session_timeout_seconds": {
+      "maximum": 3600,
+      "minimum": 2,
+      "title": "Session Timeout Seconds",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "call_timeout_seconds",
+    "cleanup_timeout_seconds",
+    "session_timeout_seconds"
+  ],
+  "title": "TransportLimitsV1",
+  "type": "object"
+}

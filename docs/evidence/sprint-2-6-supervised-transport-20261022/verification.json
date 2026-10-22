@@ -1,0 +1,47 @@
+{
+  "format": "offline-engineering-verification/v1",
+  "date": "2026-10-22",
+  "scope": "Opt-in source-frozen subprocess transport for semantic flow v4",
+  "tests": {
+    "full_suite": {"passed": 1254, "failed": 0, "skipped": 0, "seconds": 224.13},
+    "new_transport_tests": 36,
+    "local_subprocesses": "Real Python workers with synthetic payloads; real provider replaced or request rejected before dispatch",
+    "covered": [
+      "Success and root reaping",
+      "Call timeout, input/output limits, worker exit and malformed output",
+      "Termination of ordinary worker descendant on this Windows host",
+      "No spawn after session reserve exhausted or gates fail",
+      "Source/runtime/command and exact-policy authorization binding",
+      "Single-use claims, first failure stop and offline artifact replay",
+      "Contradictory receipts, nested authorization and session completion rejected",
+      "Worker validates before provider construction and returns final response only"
+    ]
+  },
+  "checks": {
+    "ruff": "passed",
+    "format": "passed",
+    "mypy": "passed: 99 source files, both linux and win32 platforms",
+    "schemas": "passed: five new schemas, 92 historical schema bytes unchanged",
+    "repository_agents": "current",
+    "sprint_plans": "passed: five plans",
+    "build": "passed: wheel and sdist, five packaged transport modules match final source bytes",
+    "memory": "valid: 136 records, 127 reusable",
+    "memory_index": "current",
+    "historical_frozen_sources": "unchanged",
+    "historical_reserved_replay": "passed offline, no semantic quality established"
+  },
+  "real_inference_calls": 0,
+  "reserved_migration_or_reassessment": false,
+  "model_qualification": "not-established",
+  "compilation_eligibility": "not-authorized",
+  "default_promotion": false,
+  "sprint_status": "in_progress",
+  "limitations": [
+    "Local subprocess tests do not establish provider schema compatibility or semantic efficacy.",
+    "No hard real-time, hostile-code sandbox, hermetic environment or immutable remote model identity is claimed.",
+    "POSIX process group containment excludes descendants that create a new session; reaping observation is for the root.",
+    "Worker launches and boundary invocations do not count hidden provider requests.",
+    "Crashes or I/O errors can leave incomplete journals with consumed claims; no automatic resume.",
+    "Real inference requires a new concrete frozen protocol, content/destination and explicitly authorized budget."
+  ]
+}
