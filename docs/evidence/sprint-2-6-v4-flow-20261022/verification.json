@@ -1,0 +1,39 @@
+{
+  "format": "offline-engineering-verification/v1",
+  "date": "2026-10-22",
+  "scope": "Additive semantic generation v4, component audit v5, human review/assessment v4 and opt-in injected two-call runner",
+  "tests": {
+    "full_suite": {"passed": 1218, "failed": 0, "skipped": 0, "seconds": 228.54},
+    "new_synthetic_flow_tests": 44,
+    "focused_contract_and_flow_tests": 83,
+    "command": ".venv/Scripts/python.exe -m pytest -q --tb=short"
+  },
+  "checks": {
+    "ruff": "passed",
+    "format": "passed",
+    "mypy": "passed: 94 source files",
+    "schemas": "passed",
+    "repository_agents": "passed",
+    "sprint_plans": "passed: sprint-1, sprint-2, sprint-2-5, sprint-2-5-5, sprint-2-6",
+    "memory": "valid: 133 records, 124 reusable, no stale reusable evidence",
+    "memory_index": "current",
+    "build": "passed: wheel and sdist; private artifacts excluded",
+    "historical_source_freeze": "passed",
+    "historical_schema_bytes": "85 unchanged",
+    "historical_reserved_integrity_replay": "passed offline; no semantic quality inferred"
+  },
+  "real_model_calls": 0,
+  "reserved_migration_or_reassessment": false,
+  "default_promotion": false,
+  "model_qualification": "not-established",
+  "compilation_eligibility": "not-authorized",
+  "sprint_status": "in_progress",
+  "limitations": [
+    "Synthetic contract tests establish structural engineering behavior, not LLM semantic efficacy.",
+    "The injected invocation budget is not a wall-clock supervisor or transport request counter.",
+    "No production provider/default adapter or new inference authorization is included.",
+    "Human declarations are not authenticated and private storage relies on repository permissions.",
+    "A crash or I/O error can leave an incomplete journal with a consumed claim; automatic resume is forbidden.",
+    "Future real inference requires supervised transport, a frozen new protocol and explicit budget authorization."
+  ]
+}

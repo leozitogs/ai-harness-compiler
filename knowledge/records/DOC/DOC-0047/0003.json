@@ -1,0 +1,105 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Continuation of ADR-0030 after scoped PO business decisions and representability correction. Old candidate/runner and evaluation corpus remain frozen.",
+  "created_at": "2026-10-22T22:31:00.143507+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "43 synthetic offline regressions passed. No real provider calls, semantic model success, reserved reassessment, default promotion or sprint completion.",
+      "outcome": "observed",
+      "sha256": "96dcbb533a3cb26cd610948b4dcbe70d25f0810961ee16951ffab369d3a4e013",
+      "source": "docs/adr/0031-semantic-v4-injected-flow.md"
+    },
+    {
+      "command": null,
+      "note": "43 synthetic offline regressions passed. No real provider calls, semantic model success, reserved reassessment, default promotion or sprint completion.",
+      "outcome": "observed",
+      "sha256": "a6878b336569a790bf7864de03f87fc5f1f5532948e89bce63a73dfb3d2ed833",
+      "source": "docs/engineering/semantic-v4-flow.md"
+    },
+    {
+      "command": null,
+      "note": "43 synthetic offline regressions passed. No real provider calls, semantic model success, reserved reassessment, default promotion or sprint completion.",
+      "outcome": "observed",
+      "sha256": "a9a77f877bad345f6fb6095c283c534a20b3189da29582f9f49a1a5171b275c5",
+      "source": "src/ai_harness_compiler/models/semantic_inventory_v4.py"
+    },
+    {
+      "command": null,
+      "note": "43 synthetic offline regressions passed. No real provider calls, semantic model success, reserved reassessment, default promotion or sprint completion.",
+      "outcome": "observed",
+      "sha256": "6e79ace985c523014b8f41589977327ad52ff3c649793ee17ff92628a45cf59c",
+      "source": "src/ai_harness_compiler/models/semantic_verification_v5.py"
+    },
+    {
+      "command": null,
+      "note": "43 synthetic offline regressions passed. No real provider calls, semantic model success, reserved reassessment, default promotion or sprint completion.",
+      "outcome": "observed",
+      "sha256": "71db1defdecacffbd23d4ce5dd5637873c00d72ba1d13b6945c6cb7a6d43cd6f",
+      "source": "src/ai_harness_compiler/models/semantic_assessment_v4.py"
+    },
+    {
+      "command": null,
+      "note": "43 synthetic offline regressions passed. No real provider calls, semantic model success, reserved reassessment, default promotion or sprint completion.",
+      "outcome": "observed",
+      "sha256": "2bc1268a192f99c815d389c70a9fae5be6845f927d7e7bf754919ea47bb70b8e",
+      "source": "src/ai_harness_compiler/models/semantic_flow_v4.py"
+    },
+    {
+      "command": null,
+      "note": "43 synthetic offline regressions passed. No real provider calls, semantic model success, reserved reassessment, default promotion or sprint completion.",
+      "outcome": "observed",
+      "sha256": "47657db81a364d13d02e9978cdf9bf59193627c7a4cad28736ff893c27ceff2c",
+      "source": "src/ai_harness_compiler/semantic_generation_v4.py"
+    },
+    {
+      "command": null,
+      "note": "Source refreshed after additive offline v4 flow integration, scoped in ADR-0031/DOC-0047. Historical claims unchanged; no real model calls, reserved reassessment, default promotion or completion.",
+      "outcome": "observed",
+      "sha256": "e898c1550b3bb51975c084db32556d6461d229c3785a21737b1e4a13d837ff8e",
+      "source": "src/ai_harness_compiler/semantic_flow_runner_v4.py"
+    },
+    {
+      "command": null,
+      "note": "43 synthetic offline regressions passed. No real provider calls, semantic model success, reserved reassessment, default promotion or sprint completion.",
+      "outcome": "observed",
+      "sha256": "5e5d4acc417a3392c3fa9c9f70e6d6522aa1015287a268e9846f27da929ff54a",
+      "source": "tests/test_semantic_flow_v4.py"
+    }
+  ],
+  "id": "DOC-0047",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Synthetic development contract tests do not qualify the model or establish semantic quality.",
+    "Boundary invocation budget does not supervise time or hidden transport requests; no real adapter configured.",
+    "Human declarations are not authenticated; private artifacts rely on repository filesystem permissions.",
+    "No migration of old approvals, reserved outputs, defaults or sprint/story completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0030",
+    "DE-0020",
+    "DOC-0046",
+    "INC-0027"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 3,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Provider-independent generation v4, advisory component audit v5, independent human assessment v4 and opt-in injected runner. Exact snapshots, single-use claim, two boundary invocations, first-failure stop and private offline replay.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Operação offline do fluxo semântico v4",
+  "updated_at": "2026-10-22T22:31:27.912856+00:00"
+}

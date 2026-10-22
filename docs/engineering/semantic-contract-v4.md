@@ -76,7 +76,8 @@ semantic-assessment-case-v3 e semantic-preflight-report, em schemas/. O exportad
 inclui o catálogo offline e impede colisão com os nomes históricos. CLI factory,
 programas de prompts, requests e claims históricos continuam intactos.
 
-Não há gerador/auditor/avaliador semântico v4 conectado nem novas medições de modelo.
-A próxima integração precisa preservar proveniência por componente, exigir revisão
-nova, congelar outro candidato antes de curadoria reservada independente e obter
-orçamento explícito de execução. Nenhum resultado reservado foi reavaliado em v4.
+O incremento seguinte conecta gerador v4, auditor v5, revisão/assessment v4 e runner
+injetado opt-in; veja [operação e limites](semantic-v4-flow.md) e
+[ADR-0031](../adr/0031-semantic-v4-injected-flow.md). Não há novas medições de modelo.
+Inferência real ainda exige transporte supervisionado, fontes congeladas e novo
+protocolo/orçamento explícito. Nenhum resultado reservado foi reavaliado em v4.
