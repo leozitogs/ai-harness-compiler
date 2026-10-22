@@ -1,0 +1,132 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Authorized continuation of Sprint2.6 after two limited business judgments. Work advances contract foundation, not full response acceptance or sprint completion.",
+  "created_at": "2026-10-22T21:57:49.308279+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "edbdd5377ed9a5ed51d9aa8b1aea9eceff50bf2dabd6aa194df22e18961b3c9b",
+      "source": "docs/adr/0030-versioned-semantic-representability.md"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "19b0d746e498ee3a479ee57a8158f17631d12158d80c30063163f3e7d0bb1f7f",
+      "source": "docs/engineering/semantic-contract-v4.md"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "c573048d01e7ccf1a2f21690cbe125576ec3bd030288d0d2011feac291d21100",
+      "source": "src/ai_harness_compiler/models/semantic_analysis_v4.py"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "d7783fae07ef310c3ccdbbf2856ce283282eb9ba599d4579cc8bc07f5f78be4a",
+      "source": "src/ai_harness_compiler/models/semantic_case_v3.py"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "f00a473f1c68896b422f09d0439ec40a9450aab698aa27495feba527560e8b4b",
+      "source": "src/ai_harness_compiler/models/semantic_preflight.py"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "db2637b2bd3408af105ae1ec70cc232c74ac95c200c699dd81135f8ec9332da1",
+      "source": "src/ai_harness_compiler/offline_schema_registry.py"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "1351d15bd37df38e3e343cd609bfc76e23085d6b3177758bdedf522d887e4c48",
+      "source": "scripts/preflight_semantic_case.py"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "5d42abb95e32b3059580b8c58436b19350f948ed428ecdf4b6f919aa7a50d18d",
+      "source": "scripts/export_schemas.py"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "8884fe01e9ab36324c7ac43ffee32b0b3bbae29cf7b2f1faf5ebf129a2f04075",
+      "source": "tests/test_semantic_contract_v4.py"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "0b120d8a003e83a032ad3dcc5a0ab40fb7576847e22b04d481f7037e68108371",
+      "source": "schemas/semantic-analysis-proposal-v4.schema.json"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "c4741eec04953815e0eb2db3b9849d58a8f2a3c88ac30500ef969a654f31206f",
+      "source": "schemas/semantic-analysis-v4.schema.json"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "1492915c78234864737787af9ae1366420ea79624dc24faca8a6914bdbab1628",
+      "source": "schemas/semantic-assessment-case-v3.schema.json"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "364188435bc6553c148f988ecdbdd8b9d37467d0edebc828b7a8896f016dcfd7",
+      "source": "schemas/semantic-preflight-report.schema.json"
+    }
+  ],
+  "id": "DOC-0046",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "New tests are software regressions constructed after diagnosis, not blind model evaluation.",
+    "New corpus/candidate/protocol, component-grounded audit and human review must be prepared separately before authorized inference.",
+    "No approvals transferred, credentials/network calls, assets read, default changes, model qualification or story completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0030",
+    "DE-0020",
+    "INC-0027",
+    "DOC-0045"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Typed explicit context requirements and isolated content rejection implemented. Four new schemas and standalone provider-free preflight script available. Historical schemas/CLI/runtime/prompts unchanged. 38 synthetic regressions passed; no actual v4 generation/evaluation or qualification.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Migração offline v4 e casos v3 sem promoção de modelo",
+  "updated_at": "2026-10-22T21:57:49.308279+00:00"
+}

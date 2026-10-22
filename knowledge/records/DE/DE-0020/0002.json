@@ -1,0 +1,129 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Case literal validity alone did not establish representability in a frozen target version.",
+  "created_at": "2026-10-22T21:57:48.601607+00:00",
+  "decision": "Keep preflight pure and reports self-consistent with full case/hash/target. Opt-in script bounds case/report size, requires explicit versions and new output, hides input contents from errors, and never imports a model adapter. Do not alter or resume old claims/runner.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "edbdd5377ed9a5ed51d9aa8b1aea9eceff50bf2dabd6aa194df22e18961b3c9b",
+      "source": "docs/adr/0030-versioned-semantic-representability.md"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "19b0d746e498ee3a479ee57a8158f17631d12158d80c30063163f3e7d0bb1f7f",
+      "source": "docs/engineering/semantic-contract-v4.md"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "c573048d01e7ccf1a2f21690cbe125576ec3bd030288d0d2011feac291d21100",
+      "source": "src/ai_harness_compiler/models/semantic_analysis_v4.py"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "d7783fae07ef310c3ccdbbf2856ce283282eb9ba599d4579cc8bc07f5f78be4a",
+      "source": "src/ai_harness_compiler/models/semantic_case_v3.py"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "f00a473f1c68896b422f09d0439ec40a9450aab698aa27495feba527560e8b4b",
+      "source": "src/ai_harness_compiler/models/semantic_preflight.py"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "db2637b2bd3408af105ae1ec70cc232c74ac95c200c699dd81135f8ec9332da1",
+      "source": "src/ai_harness_compiler/offline_schema_registry.py"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "1351d15bd37df38e3e343cd609bfc76e23085d6b3177758bdedf522d887e4c48",
+      "source": "scripts/preflight_semantic_case.py"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "5d42abb95e32b3059580b8c58436b19350f948ed428ecdf4b6f919aa7a50d18d",
+      "source": "scripts/export_schemas.py"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "8884fe01e9ab36324c7ac43ffee32b0b3bbae29cf7b2f1faf5ebf129a2f04075",
+      "source": "tests/test_semantic_contract_v4.py"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "0b120d8a003e83a032ad3dcc5a0ab40fb7576847e22b04d481f7037e68108371",
+      "source": "schemas/semantic-analysis-proposal-v4.schema.json"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "c4741eec04953815e0eb2db3b9849d58a8f2a3c88ac30500ef969a654f31206f",
+      "source": "schemas/semantic-analysis-v4.schema.json"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "1492915c78234864737787af9ae1366420ea79624dc24faca8a6914bdbab1628",
+      "source": "schemas/semantic-assessment-case-v3.schema.json"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "364188435bc6553c148f988ecdbdd8b9d37467d0edebc828b7a8896f016dcfd7",
+      "source": "schemas/semantic-preflight-report.schema.json"
+    }
+  ],
+  "id": "DE-0020",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "Not yet wired into a new live inference runner; no proof of real-model quality, speed or cost.",
+    "Report contains expectations and must remain private; never send it to a model."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0030",
+    "INC-0027"
+  ],
+  "resolution": null,
+  "review_note": "38 tests passed for representability, channel behavior, immutable output, contradictory reports, source/asset bounds and blocked provider imports. Type/lint/schema checks passed; full suite/build recorded separately after completion.",
+  "reviewed_by": "codex:engineering-verification",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Provider-free preflight detects incompatible source/kind and unavailable content-rejection channel. A v2 case targeting v4 requires explicit new case curation rather than silently transferring expectations or approval.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Preflight de caso/versão antes de futura inferência",
+  "updated_at": "2026-10-22T21:57:48.955269+00:00"
+}
