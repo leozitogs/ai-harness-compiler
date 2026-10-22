@@ -152,6 +152,12 @@ Fonte declarada pelo usuário não equivale a evidência externa verificada.
 
 ## Busca e evolução
 
+O fluxo experimental [v4](engineering/semantic-v4-flow.md) integra análise,
+auditoria consultiva por componente e revisão humana vinculada aos snapshots.
+Um runner opt-in com gerador injetado persiste claim/journal, sem adapter real,
+retentativas ou promoção automática. [ADR-0031](adr/0031-semantic-v4-injected-flow.md)
+delimita o orçamento de chamadas da fronteira e a futura supervisão de transporte.
+
 Arquiteturas candidatas variam contexto, memória, prompts, skills, topologia de
 agentes, execução, retrieval, ferramentas, evals, controle humano, autonomia e custo.
 O ciclo futuro será observar → avaliar → classificar falha → propor alteração →

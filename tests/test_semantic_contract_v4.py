@@ -344,9 +344,10 @@ def test_new_schemas_validate_and_existing_cli_registry_stays_unchanged():
         "semantic-preflight-report": preflight_case(case, "SemanticAnalysis/v4"),
     }
     assert not MODELS.keys() & OFFLINE_MODELS.keys()
-    for name, model in OFFLINE_MODELS.items():
-        Draft202012Validator(model.model_json_schema()).validate(values[name].model_dump())
-        assert model.model_validate_json(values[name].model_dump_json()) == values[name]
+    for name, value in values.items():
+        model = OFFLINE_MODELS[name]
+        Draft202012Validator(model.model_json_schema()).validate(value.model_dump())
+        assert model.model_validate_json(value.model_dump_json()) == value
 
 
 def script_command(case_path, output, target):

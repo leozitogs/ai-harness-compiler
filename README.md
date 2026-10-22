@@ -222,6 +222,7 @@ independente de provedores de modelos e frameworks de agentes.
 | [Geração por projeto](docs/product/project-generation-pipeline.md) | Memória e agentes especializados como produto do pipeline |
 | [Comparação de provedores](docs/engineering/provider-comparison.md) | LangGraph opcional, Ollama e Codex CLI com assinatura |
 | [Fundamentação do entendimento](docs/engineering/understanding-scientific-basis.md) | Estudos primários, limites e protocolo experimental |
+| [Fluxo semântico v4](docs/engineering/semantic-v4-flow.md) | Geração e auditoria injetadas, revisão humana e replay privado |
 
 ## Licença
 
