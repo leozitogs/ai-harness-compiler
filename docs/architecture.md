@@ -57,6 +57,12 @@ separados e fontes por componente da análise v3, auditadas no protocolo v4
 (ADR-0021). Condição, resultado e exceções são verificados individualmente; nenhum
 guard é executado e nenhuma revisão anterior é migrada automaticamente.
 
+Os [contratos v4 e o preflight offline](engineering/semantic-contract-v4.md) adicionam
+requisitos normativos explícitos de contexto e rejeição de conteúdo separada da
+disposição do projeto (ADR-0030). São contratos opt-in com schemas próprios; o
+runner, os prompts e os resultados históricos permanecem em suas versões originais.
+Representabilidade não autoriza inferência, compilação ou aprovação semântica.
+
 `planning.py` transforma CapabilityGraph em TaskGraph/v1. O comando `tasks` permite
 selecionar capacidades para uma sprint, com gates e critérios preservados. O plano
 é estrutural e determinístico, sem executor ou decomposição semântica via LLM.

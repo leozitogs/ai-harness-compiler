@@ -1,0 +1,40 @@
+{
+  "scope": "offline-versioned-contracts-and-representability-only",
+  "contracts": [
+    "SemanticAnalysisProposal/v4",
+    "SemanticAnalysis/v4",
+    "AssessmentCase/v3",
+    "SemanticPreflightReport/v1"
+  ],
+  "new_json_schemas": 4,
+  "historical_schema_byte_hashes_unchanged": 81,
+  "frozen_candidate_runner_sources": "unchanged",
+  "tests": {
+    "passed": 1174,
+    "skipped": 0,
+    "duration_seconds": 162.51
+  },
+  "new_synthetic_tests": 39,
+  "ruff": "passed",
+  "format": "passed",
+  "mypy_source_files": 88,
+  "schemas": "current",
+  "repository_policy": "current",
+  "sprint_plans": "all-five-current",
+  "memory_records": 130,
+  "memory_reusable": 121,
+  "memory_index": "current",
+  "build": "sdist-and-wheel-passed",
+  "distribution_private_content": "excluded",
+  "provider_import_blocking_tests": "passed",
+  "new_model_invocations": 0,
+  "assets_read": false,
+  "reserved_cases_migrated": 0,
+  "historical_assessments_changed": false,
+  "defaults_changed": false,
+  "live_runner_v4_integrated": false,
+  "generator_auditor_review_v4_integrated": false,
+  "model_qualification": "not-established",
+  "compilation_eligibility": "not-authorized",
+  "sprint_completed": false
+}
