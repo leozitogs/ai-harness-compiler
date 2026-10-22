@@ -1,0 +1,106 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "ADR-0031 injected boundary could not interrupt an arbitrary blocked generator. Continuation implements process supervision without modifying historical candidate/runner/defaults.",
+  "created_at": "2026-10-22T23:01:59.068565+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "36 synthetic tests use real local Python subprocesses, including timeout and descendant termination. Provider replaced or request rejected before dispatch. Zero real inference calls; no model quality, hermetic environment or real-time guarantee.",
+      "outcome": "observed",
+      "sha256": "b7c93ffa9393ff2a8f6a93982edb49559ace5e01fb8991986d8e27bd3615426c",
+      "source": "docs/adr/0032-supervised-v4-transport.md"
+    },
+    {
+      "command": null,
+      "note": "36 synthetic tests use real local Python subprocesses, including timeout and descendant termination. Provider replaced or request rejected before dispatch. Zero real inference calls; no model quality, hermetic environment or real-time guarantee.",
+      "outcome": "observed",
+      "sha256": "b4696f73fa76c266dd278a8f3da4c9689099319de037b4f1981a080a5681aeec",
+      "source": "docs/engineering/supervised-v4-transport.md"
+    },
+    {
+      "command": null,
+      "note": "36 synthetic tests use real local Python subprocesses, including timeout and descendant termination. Provider replaced or request rejected before dispatch. Zero real inference calls; no model quality, hermetic environment or real-time guarantee.",
+      "outcome": "observed",
+      "sha256": "70a63c5fc8a56405bb79f9b2405d5749517959ed98ddc97a596440dbdb0e6c41",
+      "source": "src/ai_harness_compiler/models/supervised_transport.py"
+    },
+    {
+      "command": null,
+      "note": "36 synthetic tests use real local Python subprocesses, including timeout and descendant termination. Provider replaced or request rejected before dispatch. Zero real inference calls; no model quality, hermetic environment or real-time guarantee.",
+      "outcome": "observed",
+      "sha256": "023ed972bd60e0f60b665c09e40d42571644e5e19e80447c24059f126eb4af02",
+      "source": "src/ai_harness_compiler/adapters/process_supervisor.py"
+    },
+    {
+      "command": null,
+      "note": "36 synthetic tests use real local Python subprocesses, including timeout and descendant termination. Provider replaced or request rejected before dispatch. Zero real inference calls; no model quality, hermetic environment or real-time guarantee.",
+      "outcome": "observed",
+      "sha256": "72a4a8c4b8df93a0cfbe7aa1d7799cda9f46ecdc79dfed7b9f00faa5dd3e5ba6",
+      "source": "src/ai_harness_compiler/adapters/windows_process_job.py"
+    },
+    {
+      "command": null,
+      "note": "36 synthetic tests use real local Python subprocesses, including timeout and descendant termination. Provider replaced or request rejected before dispatch. Zero real inference calls; no model quality, hermetic environment or real-time guarantee.",
+      "outcome": "observed",
+      "sha256": "a21cb21729c996f3866c636c2f5ee2dc02c8ca76e242f756078fad91402f5d5a",
+      "source": "src/ai_harness_compiler/adapters/semantic_worker_v4.py"
+    },
+    {
+      "command": null,
+      "note": "36 synthetic tests use real local Python subprocesses, including timeout and descendant termination. Provider replaced or request rejected before dispatch. Zero real inference calls; no model quality, hermetic environment or real-time guarantee.",
+      "outcome": "observed",
+      "sha256": "6c512183792d2b78870a378255770052e449edea96ea35789adbf8ad50326df4",
+      "source": "src/ai_harness_compiler/supervised_semantic_flow.py"
+    },
+    {
+      "command": null,
+      "note": "36 synthetic tests use real local Python subprocesses, including timeout and descendant termination. Provider replaced or request rejected before dispatch. Zero real inference calls; no model quality, hermetic environment or real-time guarantee.",
+      "outcome": "observed",
+      "sha256": "e4fd0809c5612b39b19119a31759f86456e18ccc09725ed31bb5b681fcd1e0f5",
+      "source": "tests/test_supervised_transport.py"
+    },
+    {
+      "command": null,
+      "note": "36 synthetic tests use real local Python subprocesses, including timeout and descendant termination. Provider replaced or request rejected before dispatch. Zero real inference calls; no model quality, hermetic environment or real-time guarantee.",
+      "outcome": "observed",
+      "sha256": "8f123812ae6ffdf859c4023729400a054fba2213b0535a8cd21fdfc9e7dca791",
+      "source": "tests/fixtures/json_worker.py"
+    }
+  ],
+  "id": "DOC-0048",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Synthetic local subprocess behavior is not provider schema compatibility or semantic model qualification.",
+    "Process launch, I/O and OS scheduling are not hard real-time; trusted workers are required, not a hostile-code sandbox.",
+    "POSIX descendants that leave the process group are outside containment; root reaping is observed, not all descendants.",
+    "Source freeze and Python version are not a hermetic environment, CLI binary identity or authenticated remote model.",
+    "Worker invocations do not count hidden provider requests. No new real-call budget, migration of approvals, default promotion or sprint completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0031",
+    "DE-0021",
+    "DOC-0047",
+    "INC-0027"
+  ],
+  "resolution": null,
+  "review_note": "Reviewed typed invariants and actual local subprocess tests, including descendant cleanup on this Windows host. No live model invocation, semantic success, hermeticity or hard real-time claim.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Opt-in source-frozen transport supervises one fixed JSON worker per charged stage, with monotonic call/session budgets, cleanup reserve, Windows Job Object/POSIX session, durable attempts/receipts and offline replay. New authorization covers exact outer policy and nested flow.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Operação opt-in do transporte v4 supervisionado",
+  "updated_at": "2026-10-22T23:02:00.033261+00:00"
+}

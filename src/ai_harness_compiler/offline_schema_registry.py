@@ -17,6 +17,13 @@ from ai_harness_compiler.models.semantic_verification_v5 import (
     SemanticVerifierReportV5,
     VerifierProposalV5,
 )
+from ai_harness_compiler.models.supervised_transport import (
+    SupervisedFlowAuthorizationV1,
+    SupervisedFlowReportV1,
+    SupervisedFlowRequestV1,
+    TransportLimitsV1,
+    TransportReceiptV1,
+)
 
 OFFLINE_MODELS: dict[str, type[Contract]] = {
     "semantic-analysis-proposal-v4": AnalysisProposalV4,
@@ -30,4 +37,9 @@ OFFLINE_MODELS: dict[str, type[Contract]] = {
     "semantic-flow-request-v4": SemanticFlowRequestV4,
     "semantic-flow-authorization-v4": SemanticFlowAuthorizationV4,
     "semantic-flow-result-v4": SemanticFlowResultV4,
+    "supervised-flow-request-v1": SupervisedFlowRequestV1,
+    "supervised-flow-authorization-v1": SupervisedFlowAuthorizationV1,
+    "supervised-flow-report-v1": SupervisedFlowReportV1,
+    "transport-limits-v1": TransportLimitsV1,
+    "transport-receipt-v1": TransportReceiptV1,
 }
