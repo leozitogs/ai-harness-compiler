@@ -1,0 +1,21 @@
+{
+  "format": "local-synthetic-test-observation/v1",
+  "test": "tests/test_supervised_transport.py::test_real_offline_worker_integrates_both_stages_and_replays",
+  "suite": {"passed": 85, "failed": 1, "elapsed_seconds": 93.54},
+  "observed": {
+    "session_limit_seconds": 15,
+    "session_elapsed_seconds": 16.69269689999055,
+    "outer_status": "failed",
+    "nested_status": "completed",
+    "receipt_statuses": ["succeeded", "succeeded"],
+    "worker_elapsed_seconds": [0.11555510002654046, 0.10342649999074638],
+    "worker_call_limit_seconds": 3,
+    "cleanup_reserve_seconds": 2
+  },
+  "interpretation": "Runtime correctly failed a session over its explicit cap. A happy-path integrity fixture implicitly required whole-flow host performance within 15 seconds. No attribution of the unprofiled time outside worker invocations.",
+  "correction_scope": "Integration test helper session cap only: 120 seconds; worker and cleanup caps unchanged. Overrun control now uses actual request session cap plus one second.",
+  "production_changes": false,
+  "model_invocations": 0,
+  "real_execution_authorized": false,
+  "original_failure_preserved": true
+}

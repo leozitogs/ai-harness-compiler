@@ -1,0 +1,93 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:delivery",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO requested Nexo kickoff verification and continuation if favorable. Nexo read the literal substantive excerpt plus current snapshot and used three existing tools; its persistent report gate remains awaiting_po.",
+  "created_at": "2026-10-19T23:48:54.724377+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Completed real Nexo report plus offline typed validation of eight cases/analyses/advice; no human review generated.",
+      "outcome": "observed",
+      "sha256": "6388ee8f1d52c2b5c1f8d32a020fcffadbdb5b4f4f7540cc3cf52f54ffca658b",
+      "source": "docs/delivery/sprint-2-6-development-review.md"
+    },
+    {
+      "command": null,
+      "note": "Completed real Nexo report plus offline typed validation of eight cases/analyses/advice; no human review generated.",
+      "outcome": "observed",
+      "sha256": "c7137d030f9b8647b5fc188e0e7df4ef7480e793e920f6c86a0857bac1773eaf",
+      "source": "docs/evidence/sprint-2-6-kickoff-review-20261019/packet.json"
+    },
+    {
+      "command": null,
+      "note": "Completed real Nexo report plus offline typed validation of eight cases/analyses/advice; no human review generated.",
+      "outcome": "observed",
+      "sha256": "c598e35e4b7093c0082799a86b3d0dbc954523e207d7a40ad3a0ee72a1f9565a",
+      "source": "docs/evidence/sprint-2-6-kickoff-review-20261019/scope.json"
+    },
+    {
+      "command": null,
+      "note": "Completed real Nexo report plus offline typed validation of eight cases/analyses/advice; no human review generated.",
+      "outcome": "observed",
+      "sha256": "712d0b7ace01f9dda607393e80f7775046d96158739d60eb08de3b63c05af310",
+      "source": "docs/evidence/sprint-2-6-kickoff-review-20261019/nexo-team-report.json"
+    },
+    {
+      "command": null,
+      "note": "Current source reviewed after separately authorized one-call structural compatibility observation. Original scopes are historical; later observed compatibility is limited in DOC-0040. No semantic advice approval, promotion or qualification.",
+      "outcome": "observed",
+      "sha256": "a752d58174a80617be80efcd763ef3b9880915bc3db72947aacd8dc92fd97054",
+      "source": "planning/sprint-2-6.json"
+    },
+    {
+      "command": null,
+      "note": "Current planning metadata records explicit approval of five expectations and final request pending execution authorization. Historical outcomes remain scoped; no inference, output approval, qualification or completion. See DOC-0050.",
+      "outcome": "observed",
+      "sha256": "e125d1153eb98bd791246fb84ebb1f8bb08a65287d0f8b0bf0176d56fc706dcf",
+      "source": "planning/sprint-2-6.work-items.json"
+    }
+  ],
+  "id": "DOC-0031",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Introduction and organization of kickoff were explicitly omitted to meet the request budget; substantive sections and snapshot were supplied.",
+    "Nexo favorable advice is not human semantic acceptance, model qualification or permission to bypass experiment gates.",
+    "No human declarations or new candidate generations; no holdout opened.",
+    "Published session is historical and must be recollected before a current report approval.",
+    "Later authorized corrected reserved run is recorded in DOC-0044: technical execution/replay succeeded but eight deterministic coverage checks fail; no human output review or qualification.",
+    "Later DOC-0045 diagnoses impossible v3 requirement representation and masked causes. Historical assessments unchanged; business questions pending, no semantic acceptance or migration approval.",
+    "Subsequent PO replies confirm only the two presented interpretations, recorded in scoped-business-decisions.json. Historical expectation and analysis dispositions unchanged; complete semantic review remains pending.",
+    "Later DOC-0046 records an additive offline v4 representation/preflight increment only. Historical results preserved; no v4 inference, semantic acceptance or qualification."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0013",
+    "DOC-0030",
+    "DOC-0029",
+    "DOC-0032",
+    "DOC-0033",
+    "DOC-0034",
+    "DOC-0044",
+    "DOC-0045",
+    "DOC-0046"
+  ],
+  "resolution": null,
+  "review_note": "Reviewed planning-only follow-up of explicit PO expectation approval. Preserve historical evidence/limitations and separate exact execution authorization.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 48,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Nexo using primary model favored the next offline task only. Under explicit conditional user authorization, prepared eight complete development-review pages with 70 findings, 30 components and exact sources/digests. Human reviews remain absent; all eight assessments not-run. Follow-up DOC-0033 records two scoped PO judgments: one negative criterion, remaining criteria pending; original snapshots retained. Final human matrix is recorded separately in DOC-0034: five selected responses pass and three fail, with all 48 criteria judged; earlier counts describe historical snapshots.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Parecer Nexo sobre kickoff e pacote de revisão humana",
+  "updated_at": "2026-10-27T20:56:12.863381+00:00"
+}
