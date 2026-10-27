@@ -1,0 +1,78 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO: pode começar a trabalhar nessa nova sequência. This authorizes engineering preparation, not the specific new request/model budget. PR77 corrected UTF-8 offline; provider compatibility remains unknown after original invalid-output.",
+  "created_at": "2026-10-27T21:55:59.730654+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Nine offline artifact checks passed; typed preflight compatible; new freeze validated against repository/imported package. No new calls, claims or execution authorization.",
+      "outcome": "observed",
+      "sha256": "43852b799f9a930e4699f2125834e13805d7b36195b0018de2d0f7138b4ce73f",
+      "source": "docs/delivery/sprint-2-6-next-sequence.md"
+    },
+    {
+      "command": null,
+      "note": "Nine offline artifact checks passed; typed preflight compatible; new freeze validated against repository/imported package. No new calls, claims or execution authorization.",
+      "outcome": "observed",
+      "sha256": "02331d6e337c057aa6248d81a6541de09ce952e06f8f49e9c1f93f111c460775",
+      "source": "evals/understanding/v4/compatibility-utf8-reviewed/request.json"
+    },
+    {
+      "command": null,
+      "note": "Nine offline artifact checks passed; typed preflight compatible; new freeze validated against repository/imported package. No new calls, claims or execution authorization.",
+      "outcome": "observed",
+      "sha256": "a88dda863bb1ad770e5d7d067cc36511aa8d6eb8839a4a7c0890c7836250f4ad",
+      "source": "evals/understanding/v4/compatibility-utf8-reviewed/protocol.json"
+    },
+    {
+      "command": null,
+      "note": "Nine offline artifact checks passed; typed preflight compatible; new freeze validated against repository/imported package. No new calls, claims or execution authorization.",
+      "outcome": "observed",
+      "sha256": "440a8c6cfc7bf80eccdacc852aaf2c621c55d1afed3ebc64a00624cd649b30df",
+      "source": "evals/understanding/v4/compatibility-utf8-reviewed/preflight.json"
+    },
+    {
+      "command": null,
+      "note": "Nine offline artifact checks passed; typed preflight compatible; new freeze validated against repository/imported package. No new calls, claims or execution authorization.",
+      "outcome": "observed",
+      "sha256": "c15177a238e76f5157a078ec4e7491e9eb3545d33dbd1788027fe63dd7b03e7c",
+      "source": "tests/test_v4_utf8_compatibility_request.py"
+    }
+  ],
+  "id": "DOC-0052",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Only the same exact approved case expectations are reused; no output judgment or consumed execution authorization transfers.",
+    "New request needs explicit authorization for hash 4d4a7f98cf43d5f7fb39f4c31bb64ca07e47a8aa26aca4132f877c335401d2a7.",
+    "Preparation and successful offline tests do not establish provider compatibility or model qualification.",
+    "Remote Codex execution cannot stand in for local notebook inference resource/quantization measurements.",
+    "No live calls, independent reserved evaluation, parameter experiment, training, default promotion or story completion performed."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0024",
+    "DOC-0050",
+    "DOC-0051",
+    "INC-0030"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Prepare new source-frozen request 4d4a7f98 with the exact PO-approved case and unchanged logical programs/limits. Only worker hash differs among 101 captured sources; run 03 is unused. Prior budget closed; new execution authorization pending. Sequence through AHC-026 has dependencies and evidence gates, no completion or capacity commitment.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Novo pedido UTF-8 e sequência de avanço da Sprint 2.6",
+  "updated_at": "2026-10-27T21:55:59.730654+00:00"
+}

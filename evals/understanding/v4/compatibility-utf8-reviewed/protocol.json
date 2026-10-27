@@ -1,0 +1,46 @@
+{
+  "format": "compatibility-utf8-request/v1",
+  "status": "pending-execution-authorization",
+  "request_sha256": "4d4a7f98cf43d5f7fb39f4c31bb64ca07e47a8aa26aca4132f877c335401d2a7",
+  "request_file_sha256": "02331d6e337c057aa6248d81a6541de09ce952e06f8f49e9c1f93f111c460775",
+  "case_source": "evals/understanding/v4/compatibility-reviewed/case.json",
+  "case_sha256": "46d173dc08b91833cb7cc9488bffee354e9f3dc7fb4bee885e80a920f98adb65",
+  "case_file_sha256": "0bb17e73f0c37b630ed31e434afcb706532f6d475636aed56293f557a87d462c",
+  "expectations_decision_source": "evals/understanding/v4/compatibility-reviewed/expectations-decision.json",
+  "expectations_decision_file_sha256": "2c31ce271edd46095fafd50c17ed8c7f05e5842c398322e9793bcdde982a0a86",
+  "previous_request_source": "evals/understanding/v4/compatibility-reviewed/request.json",
+  "previous_request_sha256": "2e8963f18cb88f2dc7d70e737a0bafe8872b822a149c6f1985c66e48ae2f60cd",
+  "previous_execution_source": "docs/evidence/sprint-2-6-v4-compatibility-execution-20261027/execution.json",
+  "previous_execution_file_sha256": "35035af6e83c8f3c2b6314d560c6cef2265887945340d4c2e5225c076995b6b1",
+  "previous_budget_status": "closed",
+  "implementation_base_commit": "1989741930f5805ad1ae225149b676073d6c39e2",
+  "source_changes": [
+    {
+      "path": "src/ai_harness_compiler/adapters/semantic_worker_v4.py",
+      "before": "a21cb21729c996f3866c636c2f5ee2dc02c8ca76e242f756078fad91402f5d5a",
+      "after": "a2cc9e5eba94965e991799e926568bb7019265f5bd39e00e86852bbfffed948b"
+    }
+  ],
+  "limits": {
+    "call_timeout_seconds": 180,
+    "cleanup_timeout_seconds": 20,
+    "session_timeout_seconds": 400,
+    "max_worker_launches": 2,
+    "max_input_bytes": 1048576,
+    "max_output_bytes": 4194304
+  },
+  "requested_model": "gpt-6.1-sol",
+  "destination": "codex-chatgpt-cli",
+  "expectations_approved": true,
+  "execution_authorized": false,
+  "model_invocations_observed": 0,
+  "max_proposed_invocations": 2,
+  "retry": false,
+  "repair": false,
+  "fallback": false,
+  "resume": false,
+  "output_directory": ".factory/supervised-v4-runs/compat-v4-catalog-20261027-03",
+  "compilation_eligibility": "not-authorized",
+  "model_qualification": "not-established",
+  "note": "Same exact PO-approved case and logical analysis/audit programs; explicit UTF-8 worker has a new source freeze and unused run ID. No historical execution authorization or unused invocation is transferred. New exact authorization required."
+}
