@@ -1,0 +1,57 @@
+{
+  "request_sha256": "4d4a7f98cf43d5f7fb39f4c31bb64ca07e47a8aa26aca4132f877c335401d2a7",
+  "status": "completed",
+  "flow_status": "completed",
+  "failure_code": null,
+  "invocations": 2,
+  "session_elapsed_seconds": 58.93322720006108,
+  "receipts": [
+    {
+      "index": 1,
+      "status": "succeeded",
+      "failure_code": null,
+      "elapsed_seconds": 21.237295600003563,
+      "root_reaped": true,
+      "containment": "windows-job"
+    },
+    {
+      "index": 2,
+      "status": "succeeded",
+      "failure_code": null,
+      "elapsed_seconds": 36.92442910000682,
+      "root_reaped": true,
+      "containment": "windows-job"
+    }
+  ],
+  "replay": "verified",
+  "budget": "closed",
+  "model_qualification": "not-established",
+  "compilation_eligibility": "not-authorized",
+  "format": "utf8-compatibility-observation/v1",
+  "run_id": "compat-v4-catalog-20261027-03",
+  "authorization_question": "call_6f8082eaac3145a682c8d7a7b79dce60",
+  "authorization_answer": "Autorizo esta única rodada nesses limites",
+  "report_file_sha256": "25d6ae064b69f661fb0810bf9575a70043b021cb9880c5f237e3dc48a204cfed",
+  "requested_model": "gpt-6.1-sol",
+  "destination": "codex-chatgpt-cli",
+  "limits": {
+    "call_timeout_seconds": 180,
+    "cleanup_timeout_seconds": 20,
+    "session_timeout_seconds": 400,
+    "max_worker_launches": 2,
+    "max_input_bytes": 1048576,
+    "max_output_bytes": 4194304
+  },
+  "analysis_sha256": "ee19775d4007c74f56a1af26c92b945d9bd8a7970d51a30a374761f5d32f1ad8",
+  "analysis_file_sha256": "b206e3d94596be33fe1b33f1499bd1b27279bb1585713da4af964d3b7a2615ec",
+  "audit_file_sha256": "bbaff44706ecb25764dba09773727754bf2ae374c3fe6023487a37e91c2ed73f",
+  "case_sha256": "46d173dc08b91833cb7cc9488bffee354e9f3dc7fb4bee885e80a920f98adb65",
+  "review_proposal_sha256": "d5bed82926844418306e81bded8a39ff548b10182848bba0b49450a58645e3d0",
+  "human_review": "pending",
+  "initial_assessment_status": "not-run",
+  "deterministic_failure_count": 0,
+  "finding_count": 10,
+  "component_count": 15,
+  "provider_schema_compatibility": "observed-for-this-request-only",
+  "note": "One case, one authorized two-invocation round. Actual artifacts validated and replayed; six human criteria remain not-run. Advisory output is not human approval. Not independent evaluation, model qualification or evidence of unique cause of earlier discarded bytes."
+}
