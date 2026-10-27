@@ -1,0 +1,158 @@
+{
+  "schema_version": "AssessmentCase/v3",
+  "id": "dev-compatible-rules-v4",
+  "project": {
+    "schema_version": "ProjectInput/v1",
+    "id": "learning-studio",
+    "name": "Learning Studio",
+    "conception": "Uma plataforma para educadores organizarem materiais e prepararem aulas baseadas em fontes, com revisão humana antes da publicação.",
+    "domain": "education",
+    "branding": {
+      "audience": [
+        "educadores",
+        "coordenadores pedagógicos"
+      ],
+      "tone": [
+        "claro",
+        "acolhedor",
+        "preciso"
+      ],
+      "principles": [
+        "fontes verificáveis",
+        "controle do educador"
+      ],
+      "visual_constraints": [
+        "interface acessível"
+      ]
+    },
+    "backlog": [
+      {
+        "id": "material-library",
+        "title": "Biblioteca de materiais",
+        "description": "Permitir que o educador catalogue materiais e suas fontes.",
+        "acceptance_criteria": [
+          "Cada material tem título, autor e referência de origem.",
+          "Materiais só são visíveis ao educador responsável."
+        ],
+        "depends_on": [],
+        "inputs": [
+          "material",
+          "metadados de origem"
+        ],
+        "outputs": [
+          "material catalogado"
+        ],
+        "data_owner": "educador",
+        "side_effects": [
+          "gravação na biblioteca"
+        ],
+        "risk": "medium",
+        "implementation": "deterministic"
+      },
+      {
+        "id": "lesson-draft",
+        "title": "Rascunho de aula baseado em fontes",
+        "description": "Preparar um rascunho de aula usando os materiais selecionados.",
+        "acceptance_criteria": [
+          "As afirmações do rascunho referenciam os materiais utilizados.",
+          "A publicação exige revisão e aprovação do educador."
+        ],
+        "depends_on": [
+          "material-library"
+        ],
+        "inputs": [
+          "materiais selecionados",
+          "objetivos de aprendizagem"
+        ],
+        "outputs": [
+          "rascunho com referências"
+        ],
+        "data_owner": "educador",
+        "side_effects": [],
+        "risk": "medium",
+        "implementation": "rag"
+      }
+    ],
+    "constraints": {
+      "technical": [
+        "Python 3.12 ou superior",
+        "contratos versionados"
+      ],
+      "security": [
+        "não expor dados pessoais em traces"
+      ],
+      "business": [
+        "revisão humana antes de publicação"
+      ],
+      "max_build_cost_usd": 0.0
+    },
+    "assets": [
+      {
+        "path": "assets/brand-notes.md",
+        "description": "Referência visual e verbal; conteúdo não ingerido no MVP."
+      }
+    ],
+    "evidence_pack": null,
+    "domain_profile": null
+  },
+  "expected_behavior": "ready",
+  "obligations": [
+    {
+      "id": "required-1",
+      "source_pointer": "/backlog/0/acceptance_criteria/0",
+      "quote": "Cada material tem título, autor e referência de origem.",
+      "disposition": "requirement"
+    },
+    {
+      "id": "required-2",
+      "source_pointer": "/backlog/0/acceptance_criteria/1",
+      "quote": "Materiais só são visíveis ao educador responsável.",
+      "disposition": "rule"
+    },
+    {
+      "id": "required-3",
+      "source_pointer": "/backlog/1/acceptance_criteria/0",
+      "quote": "As afirmações do rascunho referenciam os materiais utilizados.",
+      "disposition": "requirement"
+    },
+    {
+      "id": "required-4",
+      "source_pointer": "/backlog/1/acceptance_criteria/1",
+      "quote": "A publicação exige revisão e aprovação do educador.",
+      "disposition": "rule"
+    },
+    {
+      "id": "trace-privacy",
+      "source_pointer": "/constraints/security/0",
+      "quote": "não expor dados pessoais em traces",
+      "disposition": "requirement"
+    },
+    {
+      "id": "technical-1",
+      "source_pointer": "/constraints/technical/0",
+      "quote": "Python 3.12 ou superior",
+      "disposition": "requirement"
+    },
+    {
+      "id": "technical-2",
+      "source_pointer": "/constraints/technical/1",
+      "quote": "contratos versionados",
+      "disposition": "requirement"
+    },
+    {
+      "id": "accessible-interface",
+      "source_pointer": "/branding/visual_constraints/0",
+      "quote": "interface acessível",
+      "disposition": "requirement"
+    }
+  ],
+  "requires_conflict": false,
+  "conflict_source_pointers": [],
+  "required_project_rejection_pointers": [],
+  "required_content_rejection_pointers": [],
+  "expectations_approval": {
+    "reviewer": "human-po:leozitogs",
+    "note": "Explicit reply to call_1a520665d7ed48b58e348c28046906b2 on 2026-10-27: Li e aprovo as expectativas dos oito casos. Bound to proposed manifest 952e1dd71495e950eb3d9ba625db82d31538eb6a5c5ac9bf10dadd03c6897a9b. Expectations only; no output judgment, execution budget, model qualification or compilation authorization.",
+    "authority": "human-declared-not-authenticated"
+  }
+}
