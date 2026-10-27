@@ -3,7 +3,6 @@
 import argparse
 import json
 import threading
-import time
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -298,16 +297,24 @@ def test_codex_graph_limits_active_specialist_decisions_to_two(config, tmp_path,
     install_decisions(monkeypatch, seen)
     original = CodexPolicy.decide
     lock = threading.Lock()
+    first_pair = threading.Barrier(2)
+    started = 0
     active = 0
     highest = 0
 
     def measured(self, persona, request, observations):
-        nonlocal active, highest
+        nonlocal active, highest, started
         with lock:
+            started += 1
+            synchronize = started <= 2
             active += 1
             highest = max(highest, active)
         try:
-            time.sleep(0.01)
+            assert active <= 2
+            # Require actual overlap for the first pair, independent of OS time slices.
+            # Bound the wait so a serialized graph fails instead of hanging the suite.
+            if synchronize:
+                first_pair.wait(timeout=10)
             return original(self, persona, request, observations)
         finally:
             with lock:

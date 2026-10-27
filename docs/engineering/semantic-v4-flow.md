@@ -55,8 +55,9 @@ not-authorized. Não existe promoção automática ou execução de artefato ger
 
 ## Antes da próxima rodada real
 
-Falta integrar um transporte supervisionado com deadline/limpeza verificáveis,
-congelar suas fontes e aprovar novo protocolo e orçamento. As duas invocações
+Existe agora um [transporte opt-in supervisionado](supervised-v4-transport.md),
+testado com subprocessos locais sintéticos. Ainda é necessário congelar o pedido
+concreto e aprovar novo protocolo e orçamento antes de inferência real. As duas invocações
 injetadas não limitam requisições escondidas em um transporte arbitrário nem
 interrompem uma chamada bloqueada. Não usar este runner como supervisor de
 produção. Curadoria independente e revisão humana de expectativas novas continuam

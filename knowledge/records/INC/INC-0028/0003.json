@@ -1,0 +1,72 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Confirmed original CI job and highest=1 assertion; no evidence of exceeding the runtime concurrency cap.",
+    "Replaced sleep with a bounded barrier for the first two fake decisions, preserving peak=2 and observed upper-bound assertions.",
+    "After correction, 23 team tests and all 1254 default tests passed locally. An isolated in-memory max_concurrency=1 mutation was rejected as expected; no production source files or schemas changed."
+  ],
+  "author": "codex:engineering",
+  "challenge": "A sleep-based concurrency test can report false serialization because sleep does not synchronize thread entry.",
+  "consequences": [],
+  "context": "Continuation on 2026-10-27 preserved the failed job and exact original commit before changing the test. No runtime or provider change.",
+  "created_at": "2026-10-27T19:09:16.750890+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Original CI failure preserved; bounded barrier correction locally verified. Updated remote CI result is not asserted by this record.",
+      "outcome": "observed",
+      "sha256": "ad7b200d8d51df5fea5b8a000ef9410aaf220db48e128652946f0c6c803ae9f3",
+      "source": "tests/test_team_codex.py"
+    },
+    {
+      "command": null,
+      "note": "Original CI failure preserved; bounded barrier correction locally verified. Updated remote CI result is not asserted by this record.",
+      "outcome": "observed",
+      "sha256": "b7d5ed7ac245d5e7545d1633bdc977d66c189df37a51cd19554f310b91d9b088",
+      "source": "docs/delivery/sprint-2-6-pr70-ci-followup.md"
+    },
+    {
+      "command": null,
+      "note": "Original CI failure preserved; bounded barrier correction locally verified. Updated remote CI result is not asserted by this record.",
+      "outcome": "observed",
+      "sha256": "bc6a19359f33a96875c172f8abdac34b5548ef832cf8f2bb20c131bd1d9f669b",
+      "source": "docs/evidence/sprint-2-6-supervised-transport-20261027/initial-ci-failure.json"
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m pytest -q --tb=short",
+      "note": "1254 default tests pass; 23 focused team tests pass; serialized negative control rejected separately. No real model calls or production changes.",
+      "outcome": "passed",
+      "sha256": "67eedbbbc946caa412aedc3a07288fd087c4c492dd0b824a5749bc4f7bee486b",
+      "source": "docs/evidence/sprint-2-6-supervised-transport-20261027/local-verification.json"
+    }
+  ],
+  "id": "INC-0028",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Does not prove every possible thread interleaving or general model/runtime performance.",
+    "Barrier timeout is a test safety bound, not a latency guarantee.",
+    "Do not reinterpret this failure as a production concurrency cap violation.",
+    "This record verifies the local test correction; consult PR70 checks for subsequent remote integration status, never infer it from a local pass."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0032",
+    "DOC-0048"
+  ],
+  "resolution": "Scoped local verification: replaced a sleep-based scheduling assumption with a bounded first-pair barrier; team and full offline suites pass, and a serialized negative control is still rejected. Remote PR checks remain a separate mandatory integration gate; this record does not assert a remote rerun outcome, general performance or all possible thread interleavings.",
+  "review_note": "Verified narrow local resolution with actual test execution, failed serialized negative control and source-digest checks; no model self-report or remote CI success inferred. Original failed job remains immutable evidence; remote checks are required before merge.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 3,
+  "root_cause": "The test used time.sleep(0.01) as an overlap assumption; scheduler time slicing does not guarantee that another decision enters during that interval.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "verified",
+  "summary": "PR70 initial Windows/Python3.13 CI observed peak one in a test expecting two. Other four checks passed; 1253 tests passed and the 36 new transport regressions did not fail.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Teste de concorrência depende de espera de 10 ms",
+  "updated_at": "2026-10-27T19:17:02.341789+00:00"
+}

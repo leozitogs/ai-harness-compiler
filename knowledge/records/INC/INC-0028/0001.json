@@ -1,0 +1,63 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Confirmed original CI job and highest=1 assertion; no evidence of exceeding the runtime concurrency cap.",
+    "Replaced sleep with a bounded barrier for the first two fake decisions, preserving peak=2 and observed upper-bound assertions."
+  ],
+  "author": "codex:engineering",
+  "challenge": "A sleep-based concurrency test can report false serialization because sleep does not synchronize thread entry.",
+  "consequences": [],
+  "context": "Continuation on 2026-10-27 preserved the failed job and exact original commit before changing the test. No runtime or provider change.",
+  "created_at": "2026-10-27T19:09:16.750890+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Original failed CI and test synchronization fix. Updated remote result pending; no model calls.",
+      "outcome": "observed",
+      "sha256": "ad7b200d8d51df5fea5b8a000ef9410aaf220db48e128652946f0c6c803ae9f3",
+      "source": "tests/test_team_codex.py"
+    },
+    {
+      "command": null,
+      "note": "Original failed CI and test synchronization fix. Updated remote result pending; no model calls.",
+      "outcome": "observed",
+      "sha256": "d06d5ac21de08f135a552842a58853e4e17ebece9480a256e4aa978e6fb3262c",
+      "source": "docs/delivery/sprint-2-6-pr70-ci-followup.md"
+    },
+    {
+      "command": null,
+      "note": "Original failed CI and test synchronization fix. Updated remote result pending; no model calls.",
+      "outcome": "observed",
+      "sha256": "bc6a19359f33a96875c172f8abdac34b5548ef832cf8f2bb20c131bd1d9f669b",
+      "source": "docs/evidence/sprint-2-6-supervised-transport-20261027/initial-ci-failure.json"
+    }
+  ],
+  "id": "INC-0028",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Does not prove every possible thread interleaving or general model/runtime performance.",
+    "Barrier timeout is a test safety bound, not a latency guarantee.",
+    "Do not reinterpret this failure as a production concurrency cap violation."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0032",
+    "DOC-0048"
+  ],
+  "resolution": "Correction implemented; independent confirmation by the updated remote CI remains pending. No inference calls, runtime change or model qualification.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": "The test used time.sleep(0.01) as an overlap assumption; scheduler time slicing does not guarantee that another decision enters during that interval.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "PR70 initial Windows/Python3.13 CI observed peak one in a test expecting two. Other four checks passed; 1253 tests passed and the 36 new transport regressions did not fail.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Teste de concorrência depende de espera de 10 ms",
+  "updated_at": "2026-10-27T19:09:16.750890+00:00"
+}

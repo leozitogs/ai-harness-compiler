@@ -1,0 +1,75 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO requests best available results as primary. Existing eight-case technical inspection favors Codex source bindings and operational obligations; no formal semantic adjudication.",
+  "created_at": "2026-10-08T22:25:10.830922+00:00",
+  "decision": "Use packaged ModelPolicy/v1 for study and all six LLM roles; preserve offline compiler/team mode, explicit-only fallback, pinned team snapshots, bounds and PO gates.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "562 offline tests/checks; primary adversarial/example and one real specialist reached structural completion/PO gate. No semantic qualification.",
+      "outcome": "observed",
+      "sha256": "66bca0222d01652171fbdfb527180b7204db427794e4f41f0895004d50ebc8d2",
+      "source": "docs/adr/0018-primary-model-policy.md"
+    },
+    {
+      "command": null,
+      "note": "562 offline tests/checks; primary adversarial/example and one real specialist reached structural completion/PO gate. No semantic qualification.",
+      "outcome": "observed",
+      "sha256": "697901ba87f7f767ce001cdeb5e8dbe8be4c6a7e74a3a8a65887e454de8c9363",
+      "source": "docs/delivery/ahc-023-primary-selection.md"
+    },
+    {
+      "command": null,
+      "note": "562 offline tests/checks; primary adversarial/example and one real specialist reached structural completion/PO gate. No semantic qualification.",
+      "outcome": "observed",
+      "sha256": "1465465cfb8e2bdc4995733a1731b18d8cc67ba82069691e38fe54aaae44c7a4",
+      "source": "src/ai_harness_compiler/default-model-policy.json"
+    },
+    {
+      "command": null,
+      "note": "562 offline tests/checks; primary adversarial/example and one real specialist reached structural completion/PO gate. No semantic qualification.",
+      "outcome": "passed",
+      "sha256": "87f39fa0b1bced59c479d2bf6dcb435400e6afadb6b5b824b7b2ae171395636d",
+      "source": "tests/test_model_policy.py"
+    },
+    {
+      "command": null,
+      "note": "Test source refreshed after deterministic synchronization correction scoped in INC-0028. Runtime, model calls, semantic outcomes and historical approvals remain unchanged.",
+      "outcome": "passed",
+      "sha256": "ad7b200d8d51df5fea5b8a000ef9410aaf220db48e128652946f0c6c803ae9f3",
+      "source": "tests/test_team_codex.py"
+    }
+  ],
+  "id": "ADR-0018",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "Not a universal-best or production qualification claim",
+    "One real specialist smoke, six fake-provider role tests",
+    "No cloud weights/resolved identity attestation",
+    "No holdout or self-authored human approval"
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0017",
+    "INC-0010"
+  ],
+  "resolution": null,
+  "review_note": "Reviewed replacement of scheduler-dependent sleep with bounded rendezvous in a fake-provider test. Preserve prior record scope and claims; updated remote CI remains separate.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 8,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "gpt-6.1-sol via Codex CLI is the central development preference; Qwen remains an explicit local alternative.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Principal operacional compartilhado para tarefas com LLM",
+  "updated_at": "2026-10-27T19:09:25.591044+00:00"
+}
