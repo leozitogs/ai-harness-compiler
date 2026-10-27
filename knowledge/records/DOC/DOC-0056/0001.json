@@ -1,0 +1,119 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Explicit human reply: Li e aprovo as expectativas dos oito casos; question call_1a520665d7ed48b58e348c28046906b2. Approval scope is expectations only.",
+  "created_at": "2026-10-27T22:42:33.633429+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Explicit scoped PO declaration bound to original proposal. Verified declaration-only snapshot changes, unchanged sources/rubric, eight compatible preflights and six focused tests. No model calls or output acceptance.",
+      "outcome": "observed",
+      "sha256": "ab662239a20677a422034bcad07b9bb5ba22dc25180702fd54d75d6eecabb756",
+      "source": "docs/delivery/sprint-2-6-v4-development-approved.md"
+    },
+    {
+      "command": null,
+      "note": "Explicit scoped PO declaration bound to original proposal. Verified declaration-only snapshot changes, unchanged sources/rubric, eight compatible preflights and six focused tests. No model calls or output acceptance.",
+      "outcome": "observed",
+      "sha256": "4076136a08abd9b71fe06e288a0202d8d827981b4c6ebdd9621c2275fde20660",
+      "source": "evals/understanding/v4/development-reviewed/manifest.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit scoped PO declaration bound to original proposal. Verified declaration-only snapshot changes, unchanged sources/rubric, eight compatible preflights and six focused tests. No model calls or output acceptance.",
+      "outcome": "observed",
+      "sha256": "cbff5cd7d4e6e1c5b302819d76870d1c30ba3c1ad2c53d84cc0ab0e5da36d527",
+      "source": "tests/test_v4_development_reviewed.py"
+    },
+    {
+      "command": null,
+      "note": "Explicit scoped PO declaration bound to original proposal. Verified declaration-only snapshot changes, unchanged sources/rubric, eight compatible preflights and six focused tests. No model calls or output acceptance.",
+      "outcome": "observed",
+      "sha256": "c1d1498a83a98c08724d7b6dcfde7d2f82c333968d8bd8955160786b97e30af8",
+      "source": "evals/understanding/v4/development-reviewed/dev-adversarial-v4.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit scoped PO declaration bound to original proposal. Verified declaration-only snapshot changes, unchanged sources/rubric, eight compatible preflights and six focused tests. No model calls or output acceptance.",
+      "outcome": "observed",
+      "sha256": "502b8af8807c6185b250800d63f5c3f9775ce6aa54820ca6ae70928592dd6a02",
+      "source": "evals/understanding/v4/development-reviewed/dev-ambiguous-v4.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit scoped PO declaration bound to original proposal. Verified declaration-only snapshot changes, unchanged sources/rubric, eight compatible preflights and six focused tests. No model calls or output acceptance.",
+      "outcome": "observed",
+      "sha256": "febf9699c2b9b15affcf31b1b224dc77b65e57afc00cc4b3b6a27e752cc02f8a",
+      "source": "evals/understanding/v4/development-reviewed/dev-branding-conflict-v4.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit scoped PO declaration bound to original proposal. Verified declaration-only snapshot changes, unchanged sources/rubric, eight compatible preflights and six focused tests. No model calls or output acceptance.",
+      "outcome": "observed",
+      "sha256": "8f2241b4c8eec54b5501da4f39624c68f8169ae5de170d8972dd701dee289d2f",
+      "source": "evals/understanding/v4/development-reviewed/dev-compatible-rules-v4.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit scoped PO declaration bound to original proposal. Verified declaration-only snapshot changes, unchanged sources/rubric, eight compatible preflights and six focused tests. No model calls or output acceptance.",
+      "outcome": "observed",
+      "sha256": "7a8acb9147ca8127ded64df6ee19eade7f73964bce218952ff22ec24d2f501df",
+      "source": "evals/understanding/v4/development-reviewed/dev-new-domain-v4.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit scoped PO declaration bound to original proposal. Verified declaration-only snapshot changes, unchanged sources/rubric, eight compatible preflights and six focused tests. No model calls or output acceptance.",
+      "outcome": "observed",
+      "sha256": "6c5e862063e5eff852b5cf017faacc5b62c8c43d3221ad328ec5614a04a0d5bd",
+      "source": "evals/understanding/v4/development-reviewed/dev-rules-a-v4.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit scoped PO declaration bound to original proposal. Verified declaration-only snapshot changes, unchanged sources/rubric, eight compatible preflights and six focused tests. No model calls or output acceptance.",
+      "outcome": "observed",
+      "sha256": "708a391f2c689a7b8f80a984a5d12ea500d6fc8508575b541782d38fc22f7522",
+      "source": "evals/understanding/v4/development-reviewed/dev-rules-b-v4.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit scoped PO declaration bound to original proposal. Verified declaration-only snapshot changes, unchanged sources/rubric, eight compatible preflights and six focused tests. No model calls or output acceptance.",
+      "outcome": "observed",
+      "sha256": "fd2bc3da375a5770557e3607e70737a44b625ae36dd002ce3d0fad1b7f9e3cd6",
+      "source": "evals/understanding/v4/development-reviewed/dev-unread-assets-v4.json"
+    }
+  ],
+  "id": "DOC-0056",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Human-declared, not cryptographically authenticated.",
+    "Exposed development cases, not independent holdout or model qualification.",
+    "No output judgment, new calls, assets, reserved access or compilation authorization.",
+    "Global controller and exact campaign request remain pending C1-C5; no budget granted.",
+    "AHC-021/022 and Sprint 2.6 remain in progress."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0055",
+    "DOC-0054",
+    "DE-0023"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "PO explicitly approved eight expectations in proposal 952e1dd7. New reviewed corpus 8f666df6 adds only that declaration and preserves original proposals, inputs and rubric. Updated preflights compatible; six focused artifact tests passed. Global campaign implementation is planned, not delivered or authorized.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Aceite do PO e snapshots revisados dos oito casos de desenvolvimento v4",
+  "updated_at": "2026-10-27T22:42:33.633429+00:00"
+}

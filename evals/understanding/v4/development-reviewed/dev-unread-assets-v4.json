@@ -1,0 +1,79 @@
+{
+  "schema_version": "AssessmentCase/v3",
+  "id": "dev-unread-assets-v4",
+  "project": {
+    "schema_version": "ProjectInput/v1",
+    "id": "dev-unread-assets",
+    "name": "Fixture dev unread-assets",
+    "conception": "Uma equipe organiza publicações e suas fontes.",
+    "domain": "workspace-management",
+    "branding": {
+      "audience": [
+        "autores"
+      ],
+      "tone": [],
+      "principles": [
+        "rastreabilidade",
+        "controle humano"
+      ],
+      "visual_constraints": []
+    },
+    "backlog": [
+      {
+        "id": "register",
+        "title": "Registrar e liberar",
+        "description": "Organizar publicação da equipe e registrar decisões.",
+        "acceptance_criteria": [
+          "Cada publicação da equipe deve conter responsável e origem."
+        ],
+        "depends_on": [],
+        "inputs": [],
+        "outputs": [],
+        "data_owner": null,
+        "side_effects": [],
+        "risk": "unknown",
+        "implementation": "undecided"
+      }
+    ],
+    "constraints": {
+      "technical": [],
+      "security": [],
+      "business": [
+        "Registrar a identidade do responsável."
+      ],
+      "max_build_cost_usd": 0.0
+    },
+    "assets": [
+      {
+        "path": "assets/brand-notes.md",
+        "description": "Referência declarada; conteúdo não ingerido."
+      }
+    ],
+    "evidence_pack": null,
+    "domain_profile": null
+  },
+  "expected_behavior": "ready",
+  "obligations": [
+    {
+      "id": "required-1",
+      "source_pointer": "/backlog/0/acceptance_criteria/0",
+      "quote": "Cada publicação da equipe deve conter responsável e origem.",
+      "disposition": "requirement"
+    },
+    {
+      "id": "responsible-identity",
+      "source_pointer": "/constraints/business/0",
+      "quote": "Registrar a identidade do responsável.",
+      "disposition": "requirement"
+    }
+  ],
+  "requires_conflict": false,
+  "conflict_source_pointers": [],
+  "required_project_rejection_pointers": [],
+  "required_content_rejection_pointers": [],
+  "expectations_approval": {
+    "reviewer": "human-po:leozitogs",
+    "note": "Explicit reply to call_1a520665d7ed48b58e348c28046906b2 on 2026-10-27: Li e aprovo as expectativas dos oito casos. Bound to proposed manifest 952e1dd71495e950eb3d9ba625db82d31538eb6a5c5ac9bf10dadd03c6897a9b. Expectations only; no output judgment, execution budget, model qualification or compilation authorization.",
+    "authority": "human-declared-not-authenticated"
+  }
+}
