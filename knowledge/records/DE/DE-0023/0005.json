@@ -1,0 +1,87 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PR70 provides tested local transport supervision, but no real evidence of provider compatibility with generation v4/audit v5. Historical budgets are closed and existing output/case approvals cannot migrate.",
+  "created_at": "2026-10-27T20:36:22.623554+00:00",
+  "decision": "Use one fresh public case and propose at most two sequential invocations to test the unobserved provider/schema boundary before a larger campaign. Separate PO expectations approval from exact execution authorization and output review. Reuse existing typed preparation/runtime; do not add another orchestration layer or transfer historical approvals.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Offline proposal inspected and three artifact invariants passed. Case approval remains null; manifest records execution_authorized=false and zero observed calls. No provider compatibility or semantic qualification result.",
+      "outcome": "observed",
+      "sha256": "767e1d0f83673640a6d458c1df5aacc562263063d57c03b9bbaa903b165c9d43",
+      "source": "docs/delivery/sprint-2-6-v4-compatibility-proposal.md"
+    },
+    {
+      "command": null,
+      "note": "Offline proposal inspected and three artifact invariants passed. Case approval remains null; manifest records execution_authorized=false and zero observed calls. No provider compatibility or semantic qualification result.",
+      "outcome": "observed",
+      "sha256": "02ebe2dcb51717bc5d506748979c9af14f4258eb39e859df92339fdd1f3defd7",
+      "source": "evals/understanding/v4/compatibility-proposal/case.json"
+    },
+    {
+      "command": null,
+      "note": "Offline proposal inspected and three artifact invariants passed. Case approval remains null; manifest records execution_authorized=false and zero observed calls. No provider compatibility or semantic qualification result.",
+      "outcome": "observed",
+      "sha256": "74ce231fa65ed48ad30d05c4df8f747245a23ef813f13b82dac71494fb4862ce",
+      "source": "evals/understanding/v4/compatibility-proposal/preflight.json"
+    },
+    {
+      "command": null,
+      "note": "Offline proposal inspected and three artifact invariants passed. Case approval remains null; manifest records execution_authorized=false and zero observed calls. No provider compatibility or semantic qualification result.",
+      "outcome": "observed",
+      "sha256": "a18c7418c8521525dfba92a7efcd3dd6d4ea0c1756b8843c66e25a0b32eba63f",
+      "source": "evals/understanding/v4/compatibility-proposal/request.proposed.json"
+    },
+    {
+      "command": null,
+      "note": "Offline proposal inspected and three artifact invariants passed. Case approval remains null; manifest records execution_authorized=false and zero observed calls. No provider compatibility or semantic qualification result.",
+      "outcome": "observed",
+      "sha256": "59470a8ff660bc0a45437e57497e091bcfe5d30609be74c942931baa2b48f321",
+      "source": "evals/understanding/v4/compatibility-proposal/protocol.json"
+    },
+    {
+      "command": null,
+      "note": "Offline proposal inspected and three artifact invariants passed. Case approval remains null; manifest records execution_authorized=false and zero observed calls. No provider compatibility or semantic qualification result.",
+      "outcome": "observed",
+      "sha256": "bfb40d128965684880b3c278c8feeff5e1a828ac041674f6de8c3a74957a7ce4",
+      "source": "tests/test_v4_compatibility_proposal.py"
+    }
+  ],
+  "id": "DE-0023",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "Original proposal remains an immutable pending snapshot. PO subsequently approved the same five expectations; see reviewed snapshot and DOC-0050. No output approval or execution budget was granted.",
+    "A public synthetic development case does not establish independent evaluation or generalization.",
+    "Adding case approval changes the case/flow/request hashes; re-freeze before asking execution authorization.",
+    "Current freeze is host/runtime-specific metadata, not a hermetic environment or authenticated remote model.",
+    "One compatibility smoke cannot close AHC-021, qualify a model or complete Sprint 2.6."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0032",
+    "DE-0022",
+    "DOC-0048",
+    "INC-0027",
+    "DOC-0050",
+    "DOC-0051"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 5,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Prepare one new public pending case and exact proposed freeze for a two-invocation compatibility smoke. Obtain new case expectation approval first; then preserve this proposal, freeze an approved snapshot and obtain separate exact execution authorization. No inference executed. Follow-up: PO expectation approval is recorded separately in DOC-0050; final request awaits new execution authorization. Later execution was explicitly authorized and failed before accepted analysis; budget closed. See DOC-0051; original proposal and preparation snapshots remain immutable.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Compatibilidade v4/v5 antes de campanha semântica maior",
+  "updated_at": "2026-10-27T21:35:22.793873+00:00"
+}

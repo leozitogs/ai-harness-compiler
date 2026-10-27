@@ -1,0 +1,85 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Explicit PO execution authorization for request 2e8963f18cb88f2dc7d70e737a0bafe8872b822a149c6f1985c66e48ae2f60cd. One charged invocation stopped with invalid-output. Windows isolated redirected stdout reported cp1252; raw invalid live bytes were not retained.",
+  "created_at": "2026-10-27T21:35:15.442639+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "One authorized charged invocation failed and its budget closed. Synthetic original-worker cp1252 reproduction failed before explicit UTF-8 correction; 42 transport tests passed after correction. Actual invalid live bytes were discarded, so exact live cause and provider compatibility remain unknown.",
+      "outcome": "observed",
+      "sha256": "d8ddbefe22c54196605aad8392467c9885e4a4ea203bd95836261e2c41dcb307",
+      "source": "docs/delivery/sprint-2-6-v4-compatibility-execution.md"
+    },
+    {
+      "command": null,
+      "note": "One authorized charged invocation failed and its budget closed. Synthetic original-worker cp1252 reproduction failed before explicit UTF-8 correction; 42 transport tests passed after correction. Actual invalid live bytes were discarded, so exact live cause and provider compatibility remain unknown.",
+      "outcome": "observed",
+      "sha256": "35035af6e83c8f3c2b6314d560c6cef2265887945340d4c2e5225c076995b6b1",
+      "source": "docs/evidence/sprint-2-6-v4-compatibility-execution-20261027/execution.json"
+    },
+    {
+      "command": null,
+      "note": "One authorized charged invocation failed and its budget closed. Synthetic original-worker cp1252 reproduction failed before explicit UTF-8 correction; 42 transport tests passed after correction. Actual invalid live bytes were discarded, so exact live cause and provider compatibility remain unknown.",
+      "outcome": "observed",
+      "sha256": "c3410ec3607bee2f5dc87be994c6ec2558f130a85e7131edf25ca112634126f8",
+      "source": "docs/evidence/sprint-2-6-v4-compatibility-execution-20261027/encoding-reproduction.json"
+    },
+    {
+      "command": null,
+      "note": "One authorized charged invocation failed and its budget closed. Synthetic original-worker cp1252 reproduction failed before explicit UTF-8 correction; 42 transport tests passed after correction. Actual invalid live bytes were discarded, so exact live cause and provider compatibility remain unknown.",
+      "outcome": "observed",
+      "sha256": "a2cc9e5eba94965e991799e926568bb7019265f5bd39e00e86852bbfffed948b",
+      "source": "src/ai_harness_compiler/adapters/semantic_worker_v4.py"
+    },
+    {
+      "command": null,
+      "note": "One authorized charged invocation failed and its budget closed. Synthetic original-worker cp1252 reproduction failed before explicit UTF-8 correction; 42 transport tests passed after correction. Actual invalid live bytes were discarded, so exact live cause and provider compatibility remain unknown.",
+      "outcome": "observed",
+      "sha256": "84653a0b83e082d70c5ea609eda246d5feda8514096c6ec61ffcd9a51c8c693b",
+      "source": "tests/test_supervised_transport.py"
+    },
+    {
+      "command": null,
+      "note": "One authorized charged invocation failed and its budget closed. Synthetic original-worker cp1252 reproduction failed before explicit UTF-8 correction; 42 transport tests passed after correction. Actual invalid live bytes were discarded, so exact live cause and provider compatibility remain unknown.",
+      "outcome": "observed",
+      "sha256": "2a8825a27137e36bd34970c02fd83c26b2d1875b13bebaeb3d586dcea0e32c46",
+      "source": "tests/fixtures/unicode_semantic_worker.py"
+    }
+  ],
+  "id": "DOC-0051",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Invalid live bytes were not retained: offline encoding reproduction is not proof of the unique live failure cause.",
+    "No accepted live analysis, audit, output judgment, provider schema compatibility or model qualification.",
+    "Original request and source-frozen journals remain immutable; corrected source requires a new request and new execution authorization.",
+    "One charged invocation consumed the single-use authorization. No retry, repair, fallback, resume or transfer of unused second invocation."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0032",
+    "DE-0023",
+    "DOC-0050",
+    "INC-0027",
+    "INC-0030"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Keep the failed single-use run immutable and closed. Correct the confirmed local byte boundary by writing UTF-8 to stdout.buffer independently of text locale. Six new synthetic regressions and all 42 transport tests pass; no real retry or compatibility claim.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Resultado da rodada v4 e diagnóstico Unicode offline",
+  "updated_at": "2026-10-27T21:35:15.442639+00:00"
+}

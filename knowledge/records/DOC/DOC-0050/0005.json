@@ -1,0 +1,108 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Chat response to call_288c8dfd022d4a619896ba505de6f1c0: Aprovo as cinco expectativas deste caso. Bound to original case a58d18d54a4deb13dec413223541e723794134e151d88d4c253f60abbd5aa0ca. This is expectation approval only.",
+  "created_at": "2026-10-27T20:55:46.965980+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Reviewed public approval binding and final frozen request; six offline artifact checks passed. No execution authorization, model calls, output review or qualification.",
+      "outcome": "observed",
+      "sha256": "e3a97198de2c52171b34234b99b103de55b517ee2f5b964f5c800fabea3c0917",
+      "source": "docs/delivery/sprint-2-6-v4-compatibility-request.md"
+    },
+    {
+      "command": null,
+      "note": "Reviewed public approval binding and final frozen request; six offline artifact checks passed. No execution authorization, model calls, output review or qualification.",
+      "outcome": "observed",
+      "sha256": "0bb17e73f0c37b630ed31e434afcb706532f6d475636aed56293f557a87d462c",
+      "source": "evals/understanding/v4/compatibility-reviewed/case.json"
+    },
+    {
+      "command": null,
+      "note": "Reviewed public approval binding and final frozen request; six offline artifact checks passed. No execution authorization, model calls, output review or qualification.",
+      "outcome": "observed",
+      "sha256": "2c31ce271edd46095fafd50c17ed8c7f05e5842c398322e9793bcdde982a0a86",
+      "source": "evals/understanding/v4/compatibility-reviewed/expectations-decision.json"
+    },
+    {
+      "command": null,
+      "note": "Reviewed public approval binding and final frozen request; six offline artifact checks passed. No execution authorization, model calls, output review or qualification.",
+      "outcome": "observed",
+      "sha256": "440a8c6cfc7bf80eccdacc852aaf2c621c55d1afed3ebc64a00624cd649b30df",
+      "source": "evals/understanding/v4/compatibility-reviewed/preflight.json"
+    },
+    {
+      "command": null,
+      "note": "Reviewed public approval binding and final frozen request; six offline artifact checks passed. No execution authorization, model calls, output review or qualification.",
+      "outcome": "observed",
+      "sha256": "d719fc3fd4e320ac2fa80822909071dc37a5de5f01d475c226264e6b52fcf029",
+      "source": "evals/understanding/v4/compatibility-reviewed/request.json"
+    },
+    {
+      "command": null,
+      "note": "Reviewed public approval binding and final frozen request; six offline artifact checks passed. No execution authorization, model calls, output review or qualification.",
+      "outcome": "observed",
+      "sha256": "d4f11dcb95d004361cc9bc92524f75f1b1a5834c7e3f0e117702a4025b67ef8a",
+      "source": "evals/understanding/v4/compatibility-reviewed/protocol.json"
+    },
+    {
+      "command": null,
+      "note": "Reviewed public approval binding and final frozen request; six offline artifact checks passed. No execution authorization, model calls, output review or qualification.",
+      "outcome": "observed",
+      "sha256": "c967dfbad50e74af9a8680d122298f5031c51d5f889178b56289a879ef5dccba",
+      "source": "tests/test_v4_reviewed_compatibility.py"
+    },
+    {
+      "command": null,
+      "note": "Initial focused failure preserved and fixture corrected with 86 passing regressions. Final request hash and real proposed limits unchanged; execution remains unauthorized.",
+      "outcome": "observed",
+      "sha256": "4fa6bfebfbb0bf96ba89c0d9e9db82c7eee572f2f3c1fc9f4e572988510f8e4f",
+      "source": "docs/delivery/sprint-2-6-transport-fixture-followup.md"
+    },
+    {
+      "command": null,
+      "note": "Subsequent authorized execution failed on first charged invocation; budget closed. Preserves earlier preparation snapshots and separates synthetic encoding fix from unknown live compatibility.",
+      "outcome": "observed",
+      "sha256": "d8ddbefe22c54196605aad8392467c9885e4a4ea203bd95836261e2c41dcb307",
+      "source": "docs/delivery/sprint-2-6-v4-compatibility-execution.md"
+    }
+  ],
+  "id": "DOC-0050",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Expectation approval is a human declaration from the chat, not cryptographic authentication.",
+    "Execution authorization was subsequently supplied and consumed once. It is closed; the corrected worker requires a new request and new authorization.",
+    "No provider compatibility or semantic output evidence exists for this case; no model qualification or sprint completion.",
+    "Source/runtime freeze is not hermeticity or authenticated remote model identity."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0023",
+    "DOC-0049",
+    "ADR-0032",
+    "INC-0027",
+    "INC-0029",
+    "INC-0030",
+    "DOC-0051"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 5,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "PO approved the five case expectations and later explicitly authorized exact request 2e8963f1. Its single execution stopped on invalid-output after one charged invocation; no audit or accepted analysis. Budget closed. Original reviewed/proposal snapshots preserve their preparation-time states. See DOC-0051.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Aceite das expectativas e pedido final de compatibilidade v4/v5",
+  "updated_at": "2026-10-27T21:35:19.023276+00:00"
+}

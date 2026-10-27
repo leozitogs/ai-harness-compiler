@@ -1,0 +1,14 @@
+{
+  "format": "offline-worker-encoding-observation/v1",
+  "provider": "synthetic-only",
+  "model_invocations": 0,
+  "original_worker_text_encoding": "cp1252",
+  "worker_exit_code": 0,
+  "stdout_bytes": 36,
+  "stdout_sha256": "911f3d61d490296794c9973b4a89df3d4daf9cb2bf66b5fbfde8e340415994af",
+  "utf8_json_accepted": false,
+  "cp1252_json_recovers_original": true,
+  "synthetic_value": "ação",
+  "pre_fix_regression": "test_actual_worker_pipe_preserves_unicode_independently_of_text_encoding[latin-cp1252] failed",
+  "limitation": "Reproduces a concrete byte-boundary defect on the original worker. Does not establish that discarded live response bytes had the same cause; no live response recovered or repaired."
+}
