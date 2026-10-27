@@ -6,6 +6,12 @@ from ai_harness_compiler.models.semantic_assessment_v4 import (
     SemanticAssessmentV4,
     SemanticHumanReviewV4,
 )
+from ai_harness_compiler.models.semantic_campaign import (
+    SemanticCampaignAuthorizationV1,
+    SemanticCampaignCallV1,
+    SemanticCampaignReportV1,
+    SemanticCampaignRequestV1,
+)
 from ai_harness_compiler.models.semantic_case_v3 import AssessmentCaseV3
 from ai_harness_compiler.models.semantic_flow_v4 import (
     SemanticFlowAuthorizationV4,
@@ -26,6 +32,10 @@ from ai_harness_compiler.models.supervised_transport import (
 )
 
 OFFLINE_MODELS: dict[str, type[Contract]] = {
+    "semantic-campaign-request-v1": SemanticCampaignRequestV1,
+    "semantic-campaign-authorization-v1": SemanticCampaignAuthorizationV1,
+    "semantic-campaign-call-v1": SemanticCampaignCallV1,
+    "semantic-campaign-report-v1": SemanticCampaignReportV1,
     "semantic-analysis-proposal-v4": AnalysisProposalV4,
     "semantic-analysis-v4": SemanticAnalysisV4,
     "semantic-assessment-case-v3": AssessmentCaseV3,

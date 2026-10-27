@@ -1,0 +1,216 @@
+{
+  "$defs": {
+    "TransportReceiptV1": {
+      "additionalProperties": false,
+      "properties": {
+        "command_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Command Sha256",
+          "type": "string"
+        },
+        "containment": {
+          "enum": [
+            "none",
+            "windows-job",
+            "posix-session"
+          ],
+          "title": "Containment",
+          "type": "string"
+        },
+        "elapsed_seconds": {
+          "minimum": 0,
+          "title": "Elapsed Seconds",
+          "type": "number"
+        },
+        "exit_code": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Exit Code"
+        },
+        "failure_code": {
+          "anyOf": [
+            {
+              "enum": [
+                "session-budget",
+                "input-limit",
+                "spawn-failed",
+                "containment-failed",
+                "call-timeout",
+                "output-limit",
+                "worker-failed",
+                "invalid-output",
+                "cleanup-failed"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Failure Code"
+        },
+        "granted_seconds": {
+          "maximum": 300,
+          "minimum": 0,
+          "title": "Granted Seconds",
+          "type": "number"
+        },
+        "index": {
+          "maximum": 2,
+          "minimum": 1,
+          "title": "Index",
+          "type": "integer"
+        },
+        "payload_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Payload Sha256",
+          "type": "string"
+        },
+        "response_sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Response Sha256"
+        },
+        "root_reaped": {
+          "title": "Root Reaped",
+          "type": "boolean"
+        },
+        "schema_version": {
+          "const": "TransportReceipt/v1",
+          "default": "TransportReceipt/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "succeeded",
+            "failed"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "tree_termination_requested": {
+          "title": "Tree Termination Requested",
+          "type": "boolean"
+        },
+        "worker_pid": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Worker Pid"
+        }
+      },
+      "required": [
+        "index",
+        "payload_sha256",
+        "command_sha256",
+        "granted_seconds",
+        "elapsed_seconds",
+        "containment",
+        "root_reaped",
+        "tree_termination_requested",
+        "status"
+      ],
+      "title": "TransportReceiptV1",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "finished_offset_seconds": {
+      "minimum": 0,
+      "title": "Finished Offset Seconds",
+      "type": "number"
+    },
+    "flow_index": {
+      "maximum": 7,
+      "minimum": 0,
+      "title": "Flow Index",
+      "type": "integer"
+    },
+    "index": {
+      "maximum": 16,
+      "minimum": 1,
+      "title": "Index",
+      "type": "integer"
+    },
+    "interruption": {
+      "anyOf": [
+        {
+          "enum": [
+            "cancelled",
+            "transport-exception"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Interruption"
+    },
+    "payload_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Payload Sha256",
+      "type": "string"
+    },
+    "receipt": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/TransportReceiptV1"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "stage": {
+      "enum": [
+        "analysis",
+        "audit"
+      ],
+      "title": "Stage",
+      "type": "string"
+    },
+    "started_offset_seconds": {
+      "minimum": 0,
+      "title": "Started Offset Seconds",
+      "type": "number"
+    }
+  },
+  "required": [
+    "index",
+    "flow_index",
+    "stage",
+    "payload_sha256",
+    "started_offset_seconds",
+    "finished_offset_seconds"
+  ],
+  "title": "SemanticCampaignCallV1",
+  "type": "object"
+}
