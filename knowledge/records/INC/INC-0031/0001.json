@@ -1,0 +1,61 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "One authorized campaign with 16 sequential invocations; original responses frozen.",
+    "Offline canonical replay and exact-kind obligation matching reproduced three failures.",
+    "Inspected full sources/findings; no expectation reclassification, response repair or new generation performed."
+  ],
+  "author": "codex:engineering",
+  "challenge": "Preserve necessary temporal/authorization/visibility relations in the approved typed rule representation without turning unconditional identity norms into invented triggers or blocking questions.",
+  "consequences": [],
+  "context": "One authorized exposed-development campaign, no retries or changes after observations. All transport succeeded; failure is evaluation evidence, not transport corruption.",
+  "created_at": "2026-10-27T23:30:08.193416+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Three original typed coverage failures preserved. Additional uncertainty FAIL is a pending review recommendation, not human approval. Incident unresolved and draft; no verified lesson extracted.",
+      "outcome": "failed",
+      "sha256": "acf75eafa22905db862980318f50c3d494b5c9b7cd3bbfbc20b7496095dba042",
+      "source": "docs/delivery/sprint-2-6-v4-development-result.md"
+    },
+    {
+      "command": null,
+      "note": "Three original typed coverage failures preserved. Additional uncertainty FAIL is a pending review recommendation, not human approval. Incident unresolved and draft; no verified lesson extracted.",
+      "outcome": "failed",
+      "sha256": "08bc334ef1ad1339aa9162692b03cf98a2c6be22a3ceac31803d9e807ee0286e",
+      "source": "docs/evidence/sprint-2-6-v4-development-20261027/execution.json"
+    }
+  ],
+  "id": "INC-0031",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Transport completion and replay are not semantic success, independent evaluation or model qualification.",
+    "Two original initial assessments fail; six not-run are not passes. New human output review remains pending.",
+    "Budget is consumed and closed; no retries, repair, fallback, resume or new inference authority.",
+    "Inputs/expectations/prompts/candidate and original journals remain unchanged. No assets, reserved, training or default promotion.",
+    "Hypothesis about prompt/model classification is not a demonstrated causal explanation. No fix or verified lesson yet.",
+    "No compilation authorization, AHC-021/022 or sprint completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0033",
+    "DOC-0057",
+    "DOC-0058"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": "Observed mechanism: exact-kind coverage intentionally rejects requirement findings for approved rule obligations. Why the model selected these categories is not established; prompt influence remains a hypothesis.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Observed three obligation-missing failures: ambiguous required-1 and compatible required-2/required-4. Literal content remains present but kind=requirement cannot cover expected rule. Extra responsible-identity question has proposed inappropriate blocking materiality; human review pending.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Regras aprovadas representadas como requisitos em dois casos v4",
+  "updated_at": "2026-10-27T23:30:08.193416+00:00"
+}
