@@ -1,0 +1,57 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO answered Autorizo esta única rodada nesses limites to call_6f8082eaac3145a682c8d7a7b79dce60. Fixed UTF-8 worker and exact approved case used without retries, repairs, fallback or resume. This is one exposed public compatibility case, not a benchmark or independent evaluation.",
+  "created_at": "2026-10-27T22:11:15.196511+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Actual source-frozen run report validated and replayed offline: two accepted steps, 10 findings/15 components, initial assessment not-run. Raw outputs/journals and unsigned engineering review proposal remain private. No human output approval.",
+      "outcome": "observed",
+      "sha256": "443c75cdfb3e8ef18eecf8699f75711bea0d5826e6010754b2b09a0cb4a26c04",
+      "source": "docs/delivery/sprint-2-6-v4-utf8-compatibility-result.md"
+    },
+    {
+      "command": null,
+      "note": "Actual source-frozen run report validated and replayed offline: two accepted steps, 10 findings/15 components, initial assessment not-run. Raw outputs/journals and unsigned engineering review proposal remain private. No human output approval.",
+      "outcome": "observed",
+      "sha256": "2adb3c2581d2b328dbcb6d7adf3b340f9efa299da5c25585815929bd9d1037b2",
+      "source": "docs/evidence/sprint-2-6-v4-utf8-compatibility-20261027/execution.json"
+    }
+  ],
+  "id": "DOC-0053",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Provider schema compatibility observed only for this request; remote model identity not authenticated.",
+    "Single remote timing observations are not local VRAM/quantization/cold-warm or repeatability measurements.",
+    "Advisory supports and zero deterministic assessment failures do not establish semantic correctness; all six human criteria remain pending.",
+    "Earlier invalid bytes were discarded; subsequent success does not prove their unique cause.",
+    "Budget closed; no further invocations, model qualification, compilation authorization or story/sprint completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0024",
+    "DOC-0052",
+    "DOC-0051",
+    "INC-0030"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Explicitly authorized request 4d4a7f98 completed exactly two sequential invocations in 58.9332s: analysis v4 and audit v5 accepted and replay verified. Budget closed. Private source-bound PO review proposal prepared; all six human criteria remain not-run. No model qualification or completion.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Compatibilidade v4/v5 observada e revisão semântica pendente",
+  "updated_at": "2026-10-27T22:11:15.196511+00:00"
+}

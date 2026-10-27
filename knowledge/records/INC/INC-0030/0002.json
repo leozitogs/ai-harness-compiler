@@ -1,0 +1,90 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Executed the exact authorized request once; preserved failed receipt, stopped before audit, verified original source-frozen replay and closed budget.",
+    "Observed isolated redirected stdout encoding cp1252 with UTF-8 mode off. Original worker plus synthetic provider produced zero exit with invalid UTF-8 JSON; cp1252 recovered the known synthetic value.",
+    "Pre-fix latin-cp1252 regression failed. Explicit UTF-8 binary output now passes all six language/encoding cases and all 42 transport tests. No further model calls.",
+    "A distinct, explicitly authorized request 4d4a7f98 with the corrected UTF-8 worker completed both stages and replayed in 58.9332s. This is scoped compatibility evidence, not recovery or proof of the unique original invalid-byte cause. Budget closed; human semantics pending. See DOC-0053."
+  ],
+  "author": "codex:engineering",
+  "challenge": "The supervised worker exited zero but its output could not be accepted as JSON; no raw invalid bytes survived the privacy-preserving boundary.",
+  "consequences": [],
+  "context": "Explicit PO execution authorization for request 2e8963f18cb88f2dc7d70e737a0bafe8872b822a149c6f1985c66e48ae2f60cd. One charged invocation stopped with invalid-output. Windows isolated redirected stdout reported cp1252; raw invalid live bytes were not retained.",
+  "created_at": "2026-10-27T21:35:13.882995+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "One authorized charged invocation failed and its budget closed. Synthetic original-worker cp1252 reproduction failed before explicit UTF-8 correction; 42 transport tests passed after correction. Actual invalid live bytes were discarded, so exact live cause and provider compatibility remain unknown.",
+      "outcome": "observed",
+      "sha256": "d8ddbefe22c54196605aad8392467c9885e4a4ea203bd95836261e2c41dcb307",
+      "source": "docs/delivery/sprint-2-6-v4-compatibility-execution.md"
+    },
+    {
+      "command": null,
+      "note": "One authorized charged invocation failed and its budget closed. Synthetic original-worker cp1252 reproduction failed before explicit UTF-8 correction; 42 transport tests passed after correction. Actual invalid live bytes were discarded, so exact live cause and provider compatibility remain unknown.",
+      "outcome": "observed",
+      "sha256": "35035af6e83c8f3c2b6314d560c6cef2265887945340d4c2e5225c076995b6b1",
+      "source": "docs/evidence/sprint-2-6-v4-compatibility-execution-20261027/execution.json"
+    },
+    {
+      "command": null,
+      "note": "One authorized charged invocation failed and its budget closed. Synthetic original-worker cp1252 reproduction failed before explicit UTF-8 correction; 42 transport tests passed after correction. Actual invalid live bytes were discarded, so exact live cause and provider compatibility remain unknown.",
+      "outcome": "observed",
+      "sha256": "c3410ec3607bee2f5dc87be994c6ec2558f130a85e7131edf25ca112634126f8",
+      "source": "docs/evidence/sprint-2-6-v4-compatibility-execution-20261027/encoding-reproduction.json"
+    },
+    {
+      "command": null,
+      "note": "One authorized charged invocation failed and its budget closed. Synthetic original-worker cp1252 reproduction failed before explicit UTF-8 correction; 42 transport tests passed after correction. Actual invalid live bytes were discarded, so exact live cause and provider compatibility remain unknown.",
+      "outcome": "observed",
+      "sha256": "a2cc9e5eba94965e991799e926568bb7019265f5bd39e00e86852bbfffed948b",
+      "source": "src/ai_harness_compiler/adapters/semantic_worker_v4.py"
+    },
+    {
+      "command": null,
+      "note": "One authorized charged invocation failed and its budget closed. Synthetic original-worker cp1252 reproduction failed before explicit UTF-8 correction; 42 transport tests passed after correction. Actual invalid live bytes were discarded, so exact live cause and provider compatibility remain unknown.",
+      "outcome": "observed",
+      "sha256": "84653a0b83e082d70c5ea609eda246d5feda8514096c6ec61ffcd9a51c8c693b",
+      "source": "tests/test_supervised_transport.py"
+    },
+    {
+      "command": null,
+      "note": "One authorized charged invocation failed and its budget closed. Synthetic original-worker cp1252 reproduction failed before explicit UTF-8 correction; 42 transport tests passed after correction. Actual invalid live bytes were discarded, so exact live cause and provider compatibility remain unknown.",
+      "outcome": "observed",
+      "sha256": "2a8825a27137e36bd34970c02fd83c26b2d1875b13bebaeb3d586dcea0e32c46",
+      "source": "tests/fixtures/unicode_semantic_worker.py"
+    }
+  ],
+  "id": "INC-0030",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Invalid live bytes were not retained: offline encoding reproduction is not proof of the unique live failure cause.",
+    "No accepted live analysis, audit, output judgment, provider schema compatibility or model qualification.",
+    "Original request and source-frozen journals remain immutable; corrected source requires a new request and new execution authorization.",
+    "One charged invocation consumed the single-use authorization. No retry, repair, fallback, resume or transfer of unused second invocation."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0032",
+    "DE-0023",
+    "DOC-0050",
+    "INC-0027",
+    "DOC-0053"
+  ],
+  "resolution": "Partial: the reproduced byte-encoding defect is corrected offline. Live provider compatibility and the exact discarded-response cause remain unresolved; this incident stays draft.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 2,
+  "root_cause": "Exact live cause unknown because rejected bytes were discarded. Separately confirmed code defect: original worker text output used cp1252 on Windows while the supervisor consumed JSON bytes as UTF-8.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Live compatibility failed before an accepted analysis: one invocation, no audit, verified original replay and closed budget. Offline synthetic reproduction found a real locale-dependent output bug, corrected and covered by six new pipe regressions; live compatibility remains unobserved.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Rodada v4 interrompida em invalid-output e defeito Unicode reproduzido offline",
+  "updated_at": "2026-10-27T22:11:20.051899+00:00"
+}
