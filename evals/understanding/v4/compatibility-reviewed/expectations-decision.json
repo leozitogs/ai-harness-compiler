@@ -1,0 +1,18 @@
+{
+  "format": "expectations-decision/v1",
+  "decision": "approved",
+  "question_id": "call_288c8dfd022d4a619896ba505de6f1c0",
+  "answer": "Aprovo as cinco expectativas deste caso",
+  "original_case_sha256": "a58d18d54a4deb13dec413223541e723794134e151d88d4c253f60abbd5aa0ca",
+  "reviewed_case_sha256": "46d173dc08b91833cb7cc9488bffee354e9f3dc7fb4bee885e80a920f98adb65",
+  "original_review_document": "docs/delivery/sprint-2-6-v4-compatibility-proposal.md",
+  "original_review_document_sha256": "767e1d0f83673640a6d458c1df5aacc562263063d57c03b9bbaa903b165c9d43",
+  "approval": {
+    "reviewer": "leozitogs:po-declared",
+    "note": "2026-10-27: PO respondeu \"Aprovo as cinco expectativas deste caso\" à pergunta call_288c8dfd022d4a619896ba505de6f1c0, vinculada ao snapshot sem aceite a58d18d54a4deb13dec413223541e723794134e151d88d4c253f60abbd5aa0ca. Aprova exclusivamente as cinco expectativas descritas em docs/delivery/sprint-2-6-v4-compatibility-proposal.md. Não autoriza chamadas, aprova outputs ou qualifica o modelo.",
+    "authority": "human-declared-not-authenticated"
+  },
+  "execution_authorized": false,
+  "output_review": "not-run",
+  "model_qualification": "not-established"
+}

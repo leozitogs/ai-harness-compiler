@@ -187,7 +187,10 @@ def prepare(tmp_path, monkeypatch, mode="flow"):
     analysis_file.write_text(analysis.proposal.model_dump_json(), encoding="utf-8")
     audit_file.write_text(json.dumps(audit_proposal(analysis)), encoding="utf-8")
     monkeypatch.setattr(flow, "worker_command", lambda: command(mode, analysis_file, audit_file))
-    request = flow.prepare_supervised_flow(root, nested, limits())
+    # This fixture checks end-to-end integrity, including source hashing and typed
+    # validation on disk. It is not a 15-second performance assertion. Keep the
+    # strict per-worker deadline; test session expiry separately below.
+    request = flow.prepare_supervised_flow(root, nested, limits(session_timeout_seconds=120))
     auth = SupervisedFlowAuthorizationV1(
         **declaration().model_dump(), request_sha256=request.sha256, authorized=True
     )
@@ -301,7 +304,7 @@ def test_session_overrun_is_failed_without_erasing_nested_technical_result(tmp_p
     root, request, auth = prepare(tmp_path, monkeypatch)
     result = flow.run_supervised_flow(root, request, auth)
     data = result.model_dump()
-    data["session_elapsed_seconds"] = 1000.0
+    data["session_elapsed_seconds"] = request.limits.session_timeout_seconds + 1.0
     with pytest.raises(ValueError):
         SupervisedFlowReportV1.model_validate(data)
     data["status"] = "failed"
