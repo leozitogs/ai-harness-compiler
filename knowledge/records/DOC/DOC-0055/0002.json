@@ -1,0 +1,119 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Continue the previously approved sequence offline after recording the single-case human judgment. Historical v2 files, inputs and approvals unchanged; new exact-kind expectations require explicit review before approved snapshots or campaign budget.",
+  "created_at": "2026-10-27T22:28:38.087521+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Recorded explicit single-output PO approval via typed immutable assessment and validated original replay. New development data remains unapproved: eight preflights compatible, nine focused artifact checks passed. No new model calls or qualification.",
+      "outcome": "observed",
+      "sha256": "d69f060217be2f049ae0b332e01f016fa883c04358a014eb1594cc6b59eedb0f",
+      "source": "docs/delivery/sprint-2-6-v4-human-review-development.md"
+    },
+    {
+      "command": null,
+      "note": "Recorded explicit single-output PO approval via typed immutable assessment and validated original replay. New development data remains unapproved: eight preflights compatible, nine focused artifact checks passed. No new model calls or qualification.",
+      "outcome": "observed",
+      "sha256": "e74ed6604377c07b4d76e87c570553cf7624b2c66b555256b8eb4bbd37d7da45",
+      "source": "evals/understanding/v4/development-proposal/manifest.json"
+    },
+    {
+      "command": null,
+      "note": "Recorded explicit single-output PO approval via typed immutable assessment and validated original replay. New development data remains unapproved: eight preflights compatible, nine focused artifact checks passed. No new model calls or qualification.",
+      "outcome": "observed",
+      "sha256": "4ee3c73f4f77a7038bbdee6d6666d61e41187d991b6dde1d67ffa78c5ab2d22e",
+      "source": "tests/test_v4_development_proposal.py"
+    },
+    {
+      "command": null,
+      "note": "Recorded explicit single-output PO approval via typed immutable assessment and validated original replay. New development data remains unapproved: eight preflights compatible, nine focused artifact checks passed. No new model calls or qualification.",
+      "outcome": "observed",
+      "sha256": "84ec509a766491d7754097b364f307066dbc8730871b792a568300da832f41b4",
+      "source": "evals/understanding/v4/development-proposal/dev-adversarial-v4.json"
+    },
+    {
+      "command": null,
+      "note": "Recorded explicit single-output PO approval via typed immutable assessment and validated original replay. New development data remains unapproved: eight preflights compatible, nine focused artifact checks passed. No new model calls or qualification.",
+      "outcome": "observed",
+      "sha256": "3e53125e546e74af1d7db261c1178619d92554e3a68642c8f03b35505a647227",
+      "source": "evals/understanding/v4/development-proposal/dev-ambiguous-v4.json"
+    },
+    {
+      "command": null,
+      "note": "Recorded explicit single-output PO approval via typed immutable assessment and validated original replay. New development data remains unapproved: eight preflights compatible, nine focused artifact checks passed. No new model calls or qualification.",
+      "outcome": "observed",
+      "sha256": "a35124dc2a04605f4a09b45164484ffae8b76660a196b3e10f98d65136a07fc0",
+      "source": "evals/understanding/v4/development-proposal/dev-branding-conflict-v4.json"
+    },
+    {
+      "command": null,
+      "note": "Recorded explicit single-output PO approval via typed immutable assessment and validated original replay. New development data remains unapproved: eight preflights compatible, nine focused artifact checks passed. No new model calls or qualification.",
+      "outcome": "observed",
+      "sha256": "5510fd1f1a5dff50e20c96bf2ae3707bdc0bc544a1b84916de21243d7debf430",
+      "source": "evals/understanding/v4/development-proposal/dev-compatible-rules-v4.json"
+    },
+    {
+      "command": null,
+      "note": "Recorded explicit single-output PO approval via typed immutable assessment and validated original replay. New development data remains unapproved: eight preflights compatible, nine focused artifact checks passed. No new model calls or qualification.",
+      "outcome": "observed",
+      "sha256": "a2c4f4ecad232b63f60cbff1a35d442669dc9c964f8b49499164a7574247b3b0",
+      "source": "evals/understanding/v4/development-proposal/dev-new-domain-v4.json"
+    },
+    {
+      "command": null,
+      "note": "Recorded explicit single-output PO approval via typed immutable assessment and validated original replay. New development data remains unapproved: eight preflights compatible, nine focused artifact checks passed. No new model calls or qualification.",
+      "outcome": "observed",
+      "sha256": "193e0535a2bc01651ab5ecacb28a1332957245b599027c543209e5664d64df7d",
+      "source": "evals/understanding/v4/development-proposal/dev-rules-a-v4.json"
+    },
+    {
+      "command": null,
+      "note": "Recorded explicit single-output PO approval via typed immutable assessment and validated original replay. New development data remains unapproved: eight preflights compatible, nine focused artifact checks passed. No new model calls or qualification.",
+      "outcome": "observed",
+      "sha256": "4e40ddf23592680e8c8c524deaeac9a7bda10bfc1f4c5476fe39d64eb12d9ab9",
+      "source": "evals/understanding/v4/development-proposal/dev-rules-b-v4.json"
+    },
+    {
+      "command": null,
+      "note": "Recorded explicit single-output PO approval via typed immutable assessment and validated original replay. New development data remains unapproved: eight preflights compatible, nine focused artifact checks passed. No new model calls or qualification.",
+      "outcome": "observed",
+      "sha256": "5cf1c325a970c049dd2bb3ca4801e73bb0890213f36a7c8470ef66c3c0a49fb0",
+      "source": "evals/understanding/v4/development-proposal/dev-unread-assets-v4.json"
+    }
+  ],
+  "id": "DOC-0055",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Single reviewed exposed case is not corpus-wide acceptance, independent evaluation or model qualification.",
+    "Original initial not-run and historical outputs/requests remain immutable; subsequent human pass is a separate assessment.",
+    "New corpus expectations are proposals with null approvals; no model outputs, old approvals or consumed budgets migrate.",
+    "Current supervised runtime covers one case; global eight-case campaign orchestration and authorization remain future work.",
+    "Zero new model calls, asset reads, reserved access, training or default promotion; no AHC-021/022 or sprint completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0053",
+    "DOC-0052",
+    "DE-0024"
+  ],
+  "resolution": null,
+  "review_note": "Verify actual PO declaration, exact assessment/snapshot bindings and preservation of originals; inspect typed public corpus deltas and pending gates. Activation is documentation, not approval of new expectations or qualification.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Prepared eight typed AssessmentCase/v3 proposals using exact historical public development inputs, without copied approvals. Reclassifies unconditional norms, adds explicit context obligations and content rejection; all eight preflights compatible. Manifest 952e1dd7 remains pending PO expectations. No campaign execution authorized.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Proposta dos oito casos de desenvolvimento para análise v4",
+  "updated_at": "2026-10-27T22:28:38.552544+00:00"
+}

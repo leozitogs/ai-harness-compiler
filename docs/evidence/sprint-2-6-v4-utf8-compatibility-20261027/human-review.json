@@ -1,0 +1,52 @@
+{
+  "format": "semantic-human-review-decision/v1",
+  "run_id": "compat-v4-catalog-20261027-03",
+  "question_id": "call_e25d72f6c8c94dfdb2a4fe46349f2b21",
+  "answer": "Li e aprovo os seis critérios e vínculos propostos",
+  "case_sha256": "46d173dc08b91833cb7cc9488bffee354e9f3dc7fb4bee885e80a920f98adb65",
+  "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+  "analysis_sha256": "ee19775d4007c74f56a1af26c92b945d9bd8a7970d51a30a374761f5d32f1ad8",
+  "review_proposal_sha256": "d5bed82926844418306e81bded8a39ff548b10182848bba0b49450a58645e3d0",
+  "review_sha256": "cf302aff983dd1e393e1a4f2de2c8583599ca386cdad71029949d40a5c622790",
+  "review_file_sha256": "90b2fcfe52a0e61996e0fcfef79e0f3e84b6136d6596b12b65e9ffe523fef61b",
+  "assessment_sha256": "584b606d62a7b5875e7e88c31064074dfadc22b58551edd295eea3953479c964",
+  "assessment_file_sha256": "7ce9e6a5577e3b8cb9c51dadf930ca145f257d1a3eb7e01712762f4d7d80c4f9",
+  "initial_assessment_status": "not-run",
+  "reviewed_assessment_status": "pass",
+  "checks": [
+    {
+      "criterion": "rule-coverage",
+      "outcome": "pass"
+    },
+    {
+      "criterion": "citation-support",
+      "outcome": "pass"
+    },
+    {
+      "criterion": "conflict-validity",
+      "outcome": "pass"
+    },
+    {
+      "criterion": "asset-bounds",
+      "outcome": "pass"
+    },
+    {
+      "criterion": "uncertainty",
+      "outcome": "pass"
+    },
+    {
+      "criterion": "project-understanding",
+      "outcome": "pass"
+    }
+  ],
+  "obligation_count": 4,
+  "finding_count": 10,
+  "component_count": 15,
+  "original_artifacts_preserved": true,
+  "new_model_invocations": 0,
+  "budget": "closed",
+  "compilation_eligibility": "not-authorized",
+  "model_qualification": "not-established",
+  "authority": "human-declared-not-authenticated",
+  "note": "Explicit PO review of this exact exposed development output only; not audit self-approval, corpus-wide acceptance, benchmark qualification or new budget."
+}
