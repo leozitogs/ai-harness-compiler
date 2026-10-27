@@ -1,0 +1,39 @@
+{
+  "request_sha256": "2e8963f18cb88f2dc7d70e737a0bafe8872b822a149c6f1985c66e48ae2f60cd",
+  "status": "failed",
+  "flow_status": "failed",
+  "failure_code": "analysis-failed",
+  "invocations": 1,
+  "session_elapsed_seconds": 22.47275760001503,
+  "receipts": [
+    {
+      "index": 1,
+      "status": "failed",
+      "failure_code": "invalid-output",
+      "elapsed_seconds": 22.061006500036456,
+      "root_reaped": true,
+      "containment": "windows-job"
+    }
+  ],
+  "replay": "verified",
+  "budget": "closed",
+  "model_qualification": "not-established",
+  "compilation_eligibility": "not-authorized",
+  "format": "compatibility-execution-observation/v1",
+  "authorization_question": "call_965109e76e8340909572563f8b60792a",
+  "authorization_answer": "Autorizo esta única rodada nesses limites",
+  "report_file_sha256": "662183f7f2a46088aa571b4de29b7ed8636a85a4e3018ba89978957c2a6a8796",
+  "requested_model": "gpt-6.1-sol",
+  "destination": "codex-chatgpt-cli",
+  "limits": {
+    "call_timeout_seconds": 180,
+    "cleanup_timeout_seconds": 20,
+    "session_timeout_seconds": 400,
+    "max_worker_launches": 2,
+    "max_input_bytes": 1048576,
+    "max_output_bytes": 4194304
+  },
+  "provider_schema_compatibility": "not-established",
+  "output_review": "unavailable",
+  "note": "One charged worker invocation, then stop on invalid-output; no analysis artifact or audit. Invalid raw bytes were not retained. Source-frozen replay verified before code changes. No retry or budget transfer."
+}

@@ -1,0 +1,107 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "ADR-0031 injected boundary could not interrupt an arbitrary blocked generator. Continuation implements process supervision without modifying historical candidate/runner/defaults.",
+  "created_at": "2026-10-22T23:01:55.996126+00:00",
+  "decision": "Keep domain core and historical runners intact. Require source/runtime/command freeze and a new exact outer human execution authorization before any worker. Establish containment before delivering work, persist debit/receipts, stop at first failure and independently replay transport versus semantic results.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "36 synthetic tests use real local Python subprocesses, including timeout and descendant termination. Provider replaced or request rejected before dispatch. Zero real inference calls; no model quality, hermetic environment or real-time guarantee.",
+      "outcome": "observed",
+      "sha256": "b7c93ffa9393ff2a8f6a93982edb49559ace5e01fb8991986d8e27bd3615426c",
+      "source": "docs/adr/0032-supervised-v4-transport.md"
+    },
+    {
+      "command": null,
+      "note": "36 synthetic tests use real local Python subprocesses, including timeout and descendant termination. Provider replaced or request rejected before dispatch. Zero real inference calls; no model quality, hermetic environment or real-time guarantee.",
+      "outcome": "observed",
+      "sha256": "b4696f73fa76c266dd278a8f3da4c9689099319de037b4f1981a080a5681aeec",
+      "source": "docs/engineering/supervised-v4-transport.md"
+    },
+    {
+      "command": null,
+      "note": "36 synthetic tests use real local Python subprocesses, including timeout and descendant termination. Provider replaced or request rejected before dispatch. Zero real inference calls; no model quality, hermetic environment or real-time guarantee.",
+      "outcome": "observed",
+      "sha256": "70a63c5fc8a56405bb79f9b2405d5749517959ed98ddc97a596440dbdb0e6c41",
+      "source": "src/ai_harness_compiler/models/supervised_transport.py"
+    },
+    {
+      "command": null,
+      "note": "36 synthetic tests use real local Python subprocesses, including timeout and descendant termination. Provider replaced or request rejected before dispatch. Zero real inference calls; no model quality, hermetic environment or real-time guarantee.",
+      "outcome": "observed",
+      "sha256": "023ed972bd60e0f60b665c09e40d42571644e5e19e80447c24059f126eb4af02",
+      "source": "src/ai_harness_compiler/adapters/process_supervisor.py"
+    },
+    {
+      "command": null,
+      "note": "Current documentation/catalog/planning source refreshed after opt-in supervised transport; see ADR-0032/DOC-0048. Historical outcomes remain scoped and immutable. Zero inference calls, no semantic qualification or completion.",
+      "outcome": "observed",
+      "sha256": "0f7aff750ba1c18c8a773b83e2f2347b03a544ec24c371e25e076c3e650f3938",
+      "source": "src/ai_harness_compiler/adapters/windows_process_job.py"
+    },
+    {
+      "command": null,
+      "note": "Current source follows the closed, failed v4 compatibility run and explicit UTF-8 worker correction. 42 offline transport tests passed, including six new multilingual/encoding pipes. Historical results retain original scope; exact live cause and provider compatibility unknown. No retry or new budget. See DOC-0051/INC-0030.",
+      "outcome": "observed",
+      "sha256": "a2cc9e5eba94965e991799e926568bb7019265f5bd39e00e86852bbfffed948b",
+      "source": "src/ai_harness_compiler/adapters/semantic_worker_v4.py"
+    },
+    {
+      "command": null,
+      "note": "36 synthetic tests use real local Python subprocesses, including timeout and descendant termination. Provider replaced or request rejected before dispatch. Zero real inference calls; no model quality, hermetic environment or real-time guarantee.",
+      "outcome": "observed",
+      "sha256": "6c512183792d2b78870a378255770052e449edea96ea35789adbf8ad50326df4",
+      "source": "src/ai_harness_compiler/supervised_semantic_flow.py"
+    },
+    {
+      "command": null,
+      "note": "Current source follows the closed, failed v4 compatibility run and explicit UTF-8 worker correction. 42 offline transport tests passed, including six new multilingual/encoding pipes. Historical results retain original scope; exact live cause and provider compatibility unknown. No retry or new budget. See DOC-0051/INC-0030.",
+      "outcome": "observed",
+      "sha256": "84653a0b83e082d70c5ea609eda246d5feda8514096c6ec61ffcd9a51c8c693b",
+      "source": "tests/test_supervised_transport.py"
+    },
+    {
+      "command": null,
+      "note": "36 synthetic tests use real local Python subprocesses, including timeout and descendant termination. Provider replaced or request rejected before dispatch. Zero real inference calls; no model quality, hermetic environment or real-time guarantee.",
+      "outcome": "observed",
+      "sha256": "8f123812ae6ffdf859c4023729400a054fba2213b0535a8cd21fdfc9e7dca791",
+      "source": "tests/fixtures/json_worker.py"
+    }
+  ],
+  "id": "ADR-0032",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "Synthetic local subprocess behavior is not provider schema compatibility or semantic model qualification.",
+    "Process launch, I/O and OS scheduling are not hard real-time; trusted workers are required, not a hostile-code sandbox.",
+    "POSIX descendants that leave the process group are outside containment; root reaping is observed, not all descendants.",
+    "Source freeze and Python version are not a hermetic environment, CLI binary identity or authenticated remote model.",
+    "Worker invocations do not count hidden provider requests. No new real-call budget, migration of approvals, default promotion or sprint completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0031",
+    "DE-0021",
+    "DOC-0047",
+    "INC-0027",
+    "INC-0029"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 7,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Opt-in source-frozen transport supervises one fixed JSON worker per charged stage, with monotonic call/session budgets, cleanup reserve, Windows Job Object/POSIX session, durable attempts/receipts and offline replay. New authorization covers exact outer policy and nested flow.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Transporte supervisionado para o fluxo v4",
+  "updated_at": "2026-10-27T21:35:29.861851+00:00"
+}

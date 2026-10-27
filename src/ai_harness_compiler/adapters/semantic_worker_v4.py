@@ -31,8 +31,12 @@ def main() -> int:
             CodexCLISettings(model=request.model, timeout_seconds=request.timeout_seconds)
         )
         response = generator.generate_json(request.prompt, request.response_schema)
-        sys.stdout.write(json.dumps({"response": response}, ensure_ascii=False))
-        sys.stdout.flush()
+        # Pipes use the host locale on Windows. The wire protocol is UTF-8,
+        # independent of stdout's text encoding and the response language.
+        sys.stdout.buffer.write(
+            json.dumps({"response": response}, ensure_ascii=False).encode("utf-8")
+        )
+        sys.stdout.buffer.flush()
         return 0
     except Exception:
         return 2  # No raw provider errors, prompts, credentials or intermediate events.

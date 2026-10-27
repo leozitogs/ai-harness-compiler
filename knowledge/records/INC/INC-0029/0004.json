@@ -1,0 +1,66 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Preserved initial outer failure and successful worker receipts; inspected observed total versus configured cap.",
+    "Changed only integration fixture session cap to 120 seconds, retaining 3-second worker and 2-second cleanup caps; changed overrun control to the actual request cap plus one.",
+    "Focused offline suite passed: 86 tests in 62.71 seconds, including timeout, containment, gates, replay and session-overrun rejection."
+  ],
+  "author": "codex:engineering",
+  "challenge": "A happy-path integrity assertion failed when whole-flow host elapsed time exceeded an unrelated 15-second fixture cap, despite completed internal stages.",
+  "consequences": [],
+  "context": "Preparation of the reviewed compatibility request; no live inference. The integration fixture includes source hashing, typed validation and persistence in the total session clock.",
+  "created_at": "2026-10-27T21:01:18.986886+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Preserved initial failure metadata; zero real model calls.",
+      "outcome": "observed",
+      "sha256": "b3ba739e224ef7037a3a23693e6701391674b9aa95f69a97017d2237edc327cb",
+      "source": "docs/evidence/sprint-2-6-v4-reviewed-20261027/initial-local-failure.json"
+    },
+    {
+      "command": null,
+      "note": "Current source follows the closed, failed v4 compatibility run and explicit UTF-8 worker correction. 42 offline transport tests passed, including six new multilingual/encoding pipes. Historical results retain original scope; exact live cause and provider compatibility unknown. No retry or new budget. See DOC-0051/INC-0030.",
+      "outcome": "passed",
+      "sha256": "84653a0b83e082d70c5ea609eda246d5feda8514096c6ec61ffcd9a51c8c693b",
+      "source": "tests/test_supervised_transport.py"
+    },
+    {
+      "command": null,
+      "note": "Narrow test-fixture correction and its limits; no performance or provider qualification.",
+      "outcome": "observed",
+      "sha256": "4fa6bfebfbb0bf96ba89c0d9e9db82c7eee572f2f3c1fc9f4e572988510f8e4f",
+      "source": "docs/delivery/sprint-2-6-transport-fixture-followup.md"
+    }
+  ],
+  "id": "INC-0029",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Local fixture correction is not a production performance result or real-time guarantee.",
+    "No precise attribution of host time outside the two worker observations.",
+    "Remote CI and complete suite remain separate gates before integration; no inference authorization or model qualification."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0032",
+    "DE-0022",
+    "DOC-0048",
+    "DOC-0050"
+  ],
+  "resolution": "Separate the integrity fixture budget from explicit deadline controls. No runtime, model prompt, production schema, source freeze or final proposed 400-second budget changed.",
+  "review_note": "Refresh changed current-source hashes after narrow byte-boundary correction and recorded failed-run planning. Preserve original outcomes and limitations; no live qualification or further calls.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 4,
+  "root_cause": "The integration helper conflated integrity with whole-session host performance within 15 seconds. The runtime correctly preserved the overrun as failed; unprofiled time outside worker calls is not attributed to a specific host operation.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "verified",
+  "summary": "Initial focused run: 85 pass, one failure. Both synthetic workers succeeded in about 0.219 seconds, but total session took 16.6927 seconds and correctly failed its 15-second cap. After test-only correction, all 86 focused tests passed.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Fixture de integridade exige sessão inteira em 15 segundos",
+  "updated_at": "2026-10-27T21:35:53.956354+00:00"
+}

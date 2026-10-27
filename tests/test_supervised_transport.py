@@ -28,6 +28,7 @@ from ai_harness_compiler.models.supervised_transport import (
 from ai_harness_compiler.offline_schema_registry import OFFLINE_MODELS
 
 WORKER = Path(__file__).parent / "fixtures/json_worker.py"
+UNICODE_WORKER = Path(__file__).parent / "fixtures/unicode_semantic_worker.py"
 
 
 def limits(**changes):
@@ -342,6 +343,30 @@ def test_fixed_worker_can_start_isolated_but_invalid_request_never_dispatches(tm
     assert result.stdout == result.stderr == b""
 
 
+@pytest.mark.parametrize("encoding", ["cp1252", "ascii", "utf-8"])
+@pytest.mark.parametrize("value", ["ação", "ação / 東京 / 🧪"], ids=["latin", "multilingual"])
+def test_actual_worker_pipe_preserves_unicode_independently_of_text_encoding(
+    tmp_path, encoding, value
+):
+    outcome = invoke_json_worker(
+        [sys.executable, "-I", str(UNICODE_WORKER.resolve()), encoding, value],
+        dict(
+            model="synthetic.model",
+            prompt="Offline Unicode transport test",
+            response_schema={"type": "object"},
+            timeout_seconds=3,
+        ),
+        cwd=tmp_path,
+        limits=limits(),
+        session_deadline=monotonic() + 15,
+        index=1,
+    )
+    assert outcome.receipt.status == "succeeded"
+    assert outcome.receipt.root_reaped and outcome.receipt.tree_termination_requested
+    assert json.loads(outcome.response) == {"text": value}
+    assert outcome.receipt.response_sha256 == canonical_project_digest({"text": value})
+
+
 @pytest.mark.parametrize("valid", [False, True])
 def test_worker_validates_before_provider_and_preserves_only_final_response(monkeypatch, valid):
     from ai_harness_compiler.adapters import codex_cli, semantic_worker_v4
@@ -371,11 +396,11 @@ def test_worker_validates_before_provider_and_preserves_only_final_response(monk
     monkeypatch.setattr(
         sys, "stdin", SimpleNamespace(buffer=io.BytesIO(json.dumps(payload).encode()))
     )
-    output = io.StringIO()
-    monkeypatch.setattr(sys, "stdout", output)
+    output = io.BytesIO()
+    monkeypatch.setattr(sys, "stdout", SimpleNamespace(buffer=output))
     assert semantic_worker_v4.main() == (0 if valid else 2)
     assert len(calls) == (1 if valid else 0)
     if valid:
         assert json.loads(output.getvalue()) == {"response": '{"final":"synthetic"}'}
     else:
-        assert output.getvalue() == ""
+        assert output.getvalue() == b""
