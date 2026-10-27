@@ -1,0 +1,63 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Actual question call_5288f072466c47ed9a77f17da97d6132: item 0 Li e aprovo os seis casos e vínculos propostos; item 1 Confirmo a matriz e os vínculos propostos. Scope includes proposed exact coverage/finding/component bindings and limited business interpretations, not a new budget.",
+  "created_at": "2026-10-27T23:42:30.246276+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Actual scoped PO replies persisted as eight typed reviews and separate assessments. Offline replay recomputes six pass/two fail and confirms original report/initial assessments unchanged. Six focused metadata checks passed. No new calls.",
+      "outcome": "observed",
+      "sha256": "f8ef354d6df2649d24b809d6af98a8639b2f246dcf0b7ff4aad62017497e1e9d",
+      "source": "docs/delivery/sprint-2-6-v4-development-human-judgments.md"
+    },
+    {
+      "command": null,
+      "note": "Actual scoped PO replies persisted as eight typed reviews and separate assessments. Offline replay recomputes six pass/two fail and confirms original report/initial assessments unchanged. Six focused metadata checks passed. No new calls.",
+      "outcome": "observed",
+      "sha256": "8e75899089e37297fb08cd7245ceeb5134ce256291ddf8be940a8cfe023f1ee4",
+      "source": "docs/evidence/sprint-2-6-v4-development-20261027/human-review.json"
+    },
+    {
+      "command": null,
+      "note": "Actual scoped PO replies persisted as eight typed reviews and separate assessments. Offline replay recomputes six pass/two fail and confirms original report/initial assessments unchanged. Six focused metadata checks passed. No new calls.",
+      "outcome": "observed",
+      "sha256": "61a27f2f41934c1014b9aef8bae8e6dd4d9782b8cfd21c443f9e9dc4e1f69de0",
+      "source": "tests/test_v4_development_human_judgments.py"
+    }
+  ],
+  "id": "DOC-0059",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Human-declared, not cryptographically authenticated; judgments cover these exact exposed development outputs only.",
+    "Six passes do not compensate two failures or qualify the model outside these cases.",
+    "Original initial assessments and pending-review proposal remain immutable; later judgments are separate snapshots.",
+    "INC-0031 remains unresolved/draft; no fix, causal proof or verified lesson exists yet.",
+    "Zero new model calls; budget closed, no compilation authorization, default promotion or sprint/story completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0058",
+    "INC-0031",
+    "ADR-0033"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "PO confirmed exact proposal 03593bf1: six cases pass, two fail; 45 criterion passes, three fails, zero pending. Eight typed immutable reviews and separate assessments replay; original initial results preserved. Corrective tasks remain pending; no new calls or qualification.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Julgamentos humanos registrados nos oito outputs da campanha v4",
+  "updated_at": "2026-10-27T23:42:30.246276+00:00"
+}

@@ -34,7 +34,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [ADR-0030 — Representabilidade versionada e rejeição de conteúdo por escopo](records/ADR/ADR-0030/0012.json) · active · revision 12
 - [ADR-0031 — Fluxo v4 injetado e revisão humana por componentes](records/ADR/ADR-0031/0006.json) · active · revision 6
 - [ADR-0032 — Transporte supervisionado para o fluxo v4](records/ADR/ADR-0032/0008.json) · active · revision 8
-- [ADR-0033 — Campanha semântica com orçamento global e autorização própria](records/ADR/ADR-0033/0004.json) · active · revision 4
+- [ADR-0033 — Campanha semântica com orçamento global e autorização própria](records/ADR/ADR-0033/0006.json) · active · revision 6
 - [DE-0001 — Memória de engenharia versionada](records/DE/DE-0001/0001.json) · draft · revision 1
 - [DE-0002 — Gerar memória e especialistas para cada projeto](records/DE/DE-0002/0002.json) · active · revision 2
 - [DE-0003 — Intake limitado e YAML explícito](records/DE/DE-0003/0004.json) · active · revision 4
@@ -88,16 +88,16 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0027 — Incremento funcional AHC-030 e demonstração Vera/Nexo](records/DOC/DOC-0027/0008.json) · active · revision 8
 - [DOC-0028 — Correções da review e demonstração de resolução AHC-030](records/DOC/DOC-0028/0004.json) · active · revision 4
 - [DOC-0029 — Review e encerramento da Sprint2.5.5 pelo PO](records/DOC/DOC-0029/0002.json) · active · revision 2
-- [DOC-0030 — Kickoff Sprint2.6 e auditoria offline da baseline](records/DOC/DOC-0030/0064.json) · active · revision 64
-- [DOC-0031 — Parecer Nexo sobre kickoff e pacote de revisão humana](records/DOC/DOC-0031/0062.json) · active · revision 62
-- [DOC-0032 — Adjudicação técnica consultiva dos diagnósticos de desenvolvimento](records/DOC/DOC-0032/0060.json) · active · revision 60
+- [DOC-0030 — Kickoff Sprint2.6 e auditoria offline da baseline](records/DOC/DOC-0030/0066.json) · active · revision 66
+- [DOC-0031 — Parecer Nexo sobre kickoff e pacote de revisão humana](records/DOC/DOC-0031/0064.json) · active · revision 64
+- [DOC-0032 — Adjudicação técnica consultiva dos diagnósticos de desenvolvimento](records/DOC/DOC-0032/0062.json) · active · revision 62
 - [DOC-0033 — Julgamentos específicos do PO e candidato corretivo de composição](records/DOC/DOC-0033/0014.json) · active · revision 14
-- [DOC-0034 — Matriz humana completa de desenvolvimento com cinco aceites e três falhas](records/DOC/DOC-0034/0054.json) · active · revision 54
+- [DOC-0034 — Matriz humana completa de desenvolvimento com cinco aceites e três falhas](records/DOC/DOC-0034/0056.json) · active · revision 56
 - [DOC-0035 — Rodada corretiva v3.3 com orçamento fixado e revisão independente por snapshot](records/DOC/DOC-0035/0010.json) · active · revision 10
-- [DOC-0036 — Revisão humana v3.3: seis passes e duas falhas de materialidade](records/DOC/DOC-0036/0052.json) · active · revision 52
+- [DOC-0036 — Revisão humana v3.3: seis passes e duas falhas de materialidade](records/DOC/DOC-0036/0054.json) · active · revision 54
 - [DOC-0037 — Candidato de materialidade v3.4 e execução aguardando autorização específica](records/DOC/DOC-0037/0004.json) · active · revision 4
 - [DOC-0038 — Rodada v3.4 executada e oito análises aprovadas pelo PO](records/DOC/DOC-0038/0002.json) · active · revision 2
-- [DOC-0039 — Correção estrutural candidata do auditor e consolidação de AHC-021/022](records/DOC/DOC-0039/0046.json) · active · revision 46
+- [DOC-0039 — Correção estrutural candidata do auditor e consolidação de AHC-021/022](records/DOC/DOC-0039/0048.json) · active · revision 48
 - [DOC-0040 — Smoke único autorizado da auditoria v4.1 com vínculos válidos](records/DOC/DOC-0040/0003.json) · active · revision 3
 - [DOC-0041 — Curadoria nova do reservado v2 e gates pendentes](records/DOC/DOC-0041/0006.json) · active · revision 6
 - [DOC-0042 — Executor reservado verificado e pedido de 16 invocações pendente](records/DOC/DOC-0042/0004.json) · active · revision 4
@@ -115,8 +115,9 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0054 — Julgamento humano v4 registrado para a análise de compatibilidade](records/DOC/DOC-0054/0002.json) · active · revision 2
 - [DOC-0055 — Proposta dos oito casos de desenvolvimento para análise v4](records/DOC/DOC-0055/0002.json) · active · revision 2
 - [DOC-0056 — Aceite do PO e snapshots revisados dos oito casos de desenvolvimento v4](records/DOC/DOC-0056/0002.json) · active · revision 2
-- [DOC-0057 — Pedido concreto da campanha de desenvolvimento v4 ainda sem autorização](records/DOC/DOC-0057/0004.json) · active · revision 4
-- [DOC-0058 — Rodada v4 de desenvolvimento executada com falhas preservadas e revisão pendente](records/DOC/DOC-0058/0002.json) · active · revision 2
+- [DOC-0057 — Pedido concreto da campanha de desenvolvimento v4 ainda sem autorização](records/DOC/DOC-0057/0006.json) · active · revision 6
+- [DOC-0058 — Rodada v4 de desenvolvimento executada com falhas preservadas e revisão pendente](records/DOC/DOC-0058/0004.json) · active · revision 4
+- [DOC-0059 — Julgamentos humanos registrados nos oito outputs da campanha v4](records/DOC/DOC-0059/0002.json) · active · revision 2
 - [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2
 - [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1
 - [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1
@@ -148,7 +149,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [INC-0028 — Teste de concorrência depende de espera de 10 ms](records/INC/INC-0028/0003.json) · verified · revision 3
 - [INC-0029 — Fixture de integridade exige sessão inteira em 15 segundos](records/INC/INC-0029/0004.json) · verified · revision 4
 - [INC-0030 — Rodada v4 interrompida em invalid-output e defeito Unicode reproduzido offline](records/INC/INC-0030/0002.json) · draft · revision 2
-- [INC-0031 — Regras aprovadas representadas como requisitos em dois casos v4](records/INC/INC-0031/0001.json) · draft · revision 1
+- [INC-0031 — Regras aprovadas representadas como requisitos em dois casos v4](records/INC/INC-0031/0002.json) · draft · revision 2
 - [LES-0001 — Tipos estáticos podem falhar em runtime](records/LES/LES-0001/0004.json) · verified · revision 4
 - [LES-0002 — Referências válidas não garantem precedência consistente](records/LES/LES-0002/0002.json) · verified · revision 2
 - [LES-0003 — Usar IDs curtos para parametrizações com payloads grandes](records/LES/LES-0003/0002.json) · verified · revision 2
