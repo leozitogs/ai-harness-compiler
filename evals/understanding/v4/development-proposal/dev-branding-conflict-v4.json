@@ -1,0 +1,72 @@
+{
+  "schema_version": "AssessmentCase/v3",
+  "id": "dev-branding-conflict-v4",
+  "project": {
+    "schema_version": "ProjectInput/v1",
+    "id": "dev-branding-conflict",
+    "name": "Fixture dev branding-conflict",
+    "conception": "Uma equipe organiza publicações e suas fontes.",
+    "domain": "workspace-management",
+    "branding": {
+      "audience": [
+        "autores"
+      ],
+      "tone": [],
+      "principles": [
+        "Liberar publicação da equipe dispensa qualquer aprovação humana."
+      ],
+      "visual_constraints": []
+    },
+    "backlog": [
+      {
+        "id": "register",
+        "title": "Registrar e liberar",
+        "description": "Organizar publicação da equipe e registrar decisões.",
+        "acceptance_criteria": [
+          "Liberar publicação da equipe exige aprovação humana explícita."
+        ],
+        "depends_on": [],
+        "inputs": [],
+        "outputs": [],
+        "data_owner": null,
+        "side_effects": [],
+        "risk": "unknown",
+        "implementation": "undecided"
+      }
+    ],
+    "constraints": {
+      "technical": [],
+      "security": [],
+      "business": [
+        "Registrar a identidade do responsável."
+      ],
+      "max_build_cost_usd": 0.0
+    },
+    "assets": [],
+    "evidence_pack": null,
+    "domain_profile": null
+  },
+  "expected_behavior": "blocked",
+  "obligations": [
+    {
+      "id": "required-1",
+      "source_pointer": "/backlog/0/acceptance_criteria/0",
+      "quote": "Liberar publicação da equipe exige aprovação humana explícita.",
+      "disposition": "rule"
+    },
+    {
+      "id": "responsible-identity",
+      "source_pointer": "/constraints/business/0",
+      "quote": "Registrar a identidade do responsável.",
+      "disposition": "requirement"
+    }
+  ],
+  "requires_conflict": true,
+  "conflict_source_pointers": [
+    "/branding/principles/0",
+    "/backlog/0/acceptance_criteria/0"
+  ],
+  "required_project_rejection_pointers": [],
+  "required_content_rejection_pointers": [],
+  "expectations_approval": null
+}

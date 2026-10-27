@@ -1,0 +1,75 @@
+{
+  "schema_version": "AssessmentCase/v3",
+  "id": "dev-unread-assets-v4",
+  "project": {
+    "schema_version": "ProjectInput/v1",
+    "id": "dev-unread-assets",
+    "name": "Fixture dev unread-assets",
+    "conception": "Uma equipe organiza publicações e suas fontes.",
+    "domain": "workspace-management",
+    "branding": {
+      "audience": [
+        "autores"
+      ],
+      "tone": [],
+      "principles": [
+        "rastreabilidade",
+        "controle humano"
+      ],
+      "visual_constraints": []
+    },
+    "backlog": [
+      {
+        "id": "register",
+        "title": "Registrar e liberar",
+        "description": "Organizar publicação da equipe e registrar decisões.",
+        "acceptance_criteria": [
+          "Cada publicação da equipe deve conter responsável e origem."
+        ],
+        "depends_on": [],
+        "inputs": [],
+        "outputs": [],
+        "data_owner": null,
+        "side_effects": [],
+        "risk": "unknown",
+        "implementation": "undecided"
+      }
+    ],
+    "constraints": {
+      "technical": [],
+      "security": [],
+      "business": [
+        "Registrar a identidade do responsável."
+      ],
+      "max_build_cost_usd": 0.0
+    },
+    "assets": [
+      {
+        "path": "assets/brand-notes.md",
+        "description": "Referência declarada; conteúdo não ingerido."
+      }
+    ],
+    "evidence_pack": null,
+    "domain_profile": null
+  },
+  "expected_behavior": "ready",
+  "obligations": [
+    {
+      "id": "required-1",
+      "source_pointer": "/backlog/0/acceptance_criteria/0",
+      "quote": "Cada publicação da equipe deve conter responsável e origem.",
+      "disposition": "requirement"
+    },
+    {
+      "id": "responsible-identity",
+      "source_pointer": "/constraints/business/0",
+      "quote": "Registrar a identidade do responsável.",
+      "disposition": "requirement"
+    }
+  ],
+  "requires_conflict": false,
+  "conflict_source_pointers": [],
+  "required_project_rejection_pointers": [],
+  "required_content_rejection_pointers": [],
+  "expectations_approval": null
+}

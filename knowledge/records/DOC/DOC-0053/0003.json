@@ -1,0 +1,65 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO answered Autorizo esta única rodada nesses limites to call_6f8082eaac3145a682c8d7a7b79dce60. Fixed UTF-8 worker and exact approved case used without retries, repairs, fallback or resume. This is one exposed public compatibility case, not a benchmark or independent evaluation.",
+  "created_at": "2026-10-27T22:11:15.196511+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Actual source-frozen run report validated and replayed offline: two accepted steps, 10 findings/15 components, initial assessment not-run. Raw outputs/journals and unsigned engineering review proposal remain private. No human output approval.",
+      "outcome": "observed",
+      "sha256": "443c75cdfb3e8ef18eecf8699f75711bea0d5826e6010754b2b09a0cb4a26c04",
+      "source": "docs/delivery/sprint-2-6-v4-utf8-compatibility-result.md"
+    },
+    {
+      "command": null,
+      "note": "Actual source-frozen run report validated and replayed offline: two accepted steps, 10 findings/15 components, initial assessment not-run. Raw outputs/journals and unsigned engineering review proposal remain private. No human output approval.",
+      "outcome": "observed",
+      "sha256": "2adb3c2581d2b328dbcb6d7adf3b340f9efa299da5c25585815929bd9d1037b2",
+      "source": "docs/evidence/sprint-2-6-v4-utf8-compatibility-20261027/execution.json"
+    },
+    {
+      "command": null,
+      "note": "Subsequent explicit PO read/approval of one exact output recorded in separate immutable pass assessment. Original initial state, budget closure and scoped technical observations preserved.",
+      "outcome": "observed",
+      "sha256": "c4c3cd1c3ae6a0065204a7f45531a59331222ae0a015e85c43f66b45b2539731",
+      "source": "docs/evidence/sprint-2-6-v4-utf8-compatibility-20261027/human-review.json"
+    }
+  ],
+  "id": "DOC-0053",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Provider schema compatibility observed only for this request; remote model identity not authenticated.",
+    "Single remote timing observations are not local VRAM/quantization/cold-warm or repeatability measurements.",
+    "Advisory supports and deterministic checks alone do not establish semantic correctness. PO subsequently judged this exact output pass; see DOC-0054. The result does not extend to other cases or model qualification.",
+    "Earlier invalid bytes were discarded; subsequent success does not prove their unique cause.",
+    "Budget closed; no further invocations, model qualification, compilation authorization or story/sprint completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0024",
+    "DOC-0052",
+    "DOC-0051",
+    "INC-0030",
+    "DOC-0054"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 3,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "The authorized two-stage compatibility run completed and its budget closed. PO subsequently read and approved all six criteria and exact 4/10/15 coverage/finding/component bindings for analysis ee19775d; separate immutable assessment 584b606d is pass. Original initial not-run preserved. See DOC-0054. No model qualification or completion.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Compatibilidade v4/v5 observada e revisão semântica pendente",
+  "updated_at": "2026-10-27T22:28:39.964470+00:00"
+}

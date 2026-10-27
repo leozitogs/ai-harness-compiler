@@ -1,0 +1,56 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Explicit reply to call_e25d72f6c8c94dfdb2a4fe46349f2b21: Li e aprovo os seis critérios e vínculos propostos. Bound to analysis ee19775d and review proposal d5bed829; human-declared, not authenticated.",
+  "created_at": "2026-10-27T22:28:37.117165+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Recorded explicit single-output PO approval via typed immutable assessment and validated original replay. New development data remains unapproved: eight preflights compatible, nine focused artifact checks passed. No new model calls or qualification.",
+      "outcome": "observed",
+      "sha256": "d69f060217be2f049ae0b332e01f016fa883c04358a014eb1594cc6b59eedb0f",
+      "source": "docs/delivery/sprint-2-6-v4-human-review-development.md"
+    },
+    {
+      "command": null,
+      "note": "Recorded explicit single-output PO approval via typed immutable assessment and validated original replay. New development data remains unapproved: eight preflights compatible, nine focused artifact checks passed. No new model calls or qualification.",
+      "outcome": "observed",
+      "sha256": "c4c3cd1c3ae6a0065204a7f45531a59331222ae0a015e85c43f66b45b2539731",
+      "source": "docs/evidence/sprint-2-6-v4-utf8-compatibility-20261027/human-review.json"
+    }
+  ],
+  "id": "DOC-0054",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Single reviewed exposed case is not corpus-wide acceptance, independent evaluation or model qualification.",
+    "Original initial not-run and historical outputs/requests remain immutable; subsequent human pass is a separate assessment.",
+    "New corpus expectations are proposals with null approvals; no model outputs, old approvals or consumed budgets migrate.",
+    "Current supervised runtime covers one case; global eight-case campaign orchestration and authorization remain future work.",
+    "Zero new model calls, asset reads, reserved access, training or default promotion; no AHC-021/022 or sprint completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0053",
+    "DOC-0052",
+    "DE-0024"
+  ],
+  "resolution": null,
+  "review_note": "Verify actual PO declaration, exact assessment/snapshot bindings and preservation of originals; inspect typed public corpus deltas and pending gates. Activation is documentation, not approval of new expectations or qualification.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "PO read and approved six criteria plus exact four coverage mappings, ten findings and fifteen components. Source-bound immutable assessment 584b606d is pass; original initial not-run preserved. This is one scoped output, no model qualification or new calls.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Julgamento humano v4 registrado para a análise de compatibilidade",
+  "updated_at": "2026-10-27T22:28:37.610911+00:00"
+}
