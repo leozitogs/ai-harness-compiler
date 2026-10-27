@@ -1,0 +1,20 @@
+{
+  "format": "engineering-ci-observation/v1",
+  "reviewed_on": "2026-10-27",
+  "pull_request": 70,
+  "head_commit": "4975309946dbb07df13bd5e55362dd74d7220b36",
+  "run_id": 39869725784,
+  "job_id": 120140823270,
+  "platform": "windows-latest",
+  "python": "3.13",
+  "result": "failed",
+  "test": "tests/test_team_codex.py::test_codex_graph_limits_active_specialist_decisions_to_two",
+  "assertion": "highest == 2",
+  "observed_highest": 1,
+  "passed_tests": 1253,
+  "failed_tests": 1,
+  "new_transport_test_failures": 0,
+  "interpretation": "The sleep-based test did not establish overlap. This does not demonstrate an exceeded production concurrency limit.",
+  "real_inference_calls": 0,
+  "source": "https://github.com/leozitogs/ai-harness-compiler/actions/runs/39869725784/job/120140823270"
+}
