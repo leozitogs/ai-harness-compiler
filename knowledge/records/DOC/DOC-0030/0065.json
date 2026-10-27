@@ -1,0 +1,86 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:delivery",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO explicitly instructed: pode fechar a sprint 2.5.5 e seguir para a sprint 2.6, on 2026-10-19.",
+  "created_at": "2026-10-19T23:26:46.950490+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Explicit PO closure/start. Entry audit verified eight approved development cases and 62 historical artifacts; eight human output reviews remain not-run. No holdout read, model calls or training in this transition.",
+      "outcome": "observed",
+      "sha256": "629f04ea2d22a0bdecce159252192851473b5763942ea3efadc07b1b815ba90a",
+      "source": "docs/delivery/sprint-2-6-kickoff.md"
+    },
+    {
+      "command": null,
+      "note": "Explicit PO closure/start. Entry audit verified eight approved development cases and 62 historical artifacts; eight human output reviews remain not-run. No holdout read, model calls or training in this transition.",
+      "outcome": "observed",
+      "sha256": "689030ea1c7c670373f430b0898148e4a052b6febb384932d3c7ab92e64af5db",
+      "source": "docs/evidence/sprint-2-6-entry-20261019/audit.json"
+    },
+    {
+      "command": null,
+      "note": "Current source reviewed after separately authorized one-call structural compatibility observation. Original scopes are historical; later observed compatibility is limited in DOC-0040. No semantic advice approval, promotion or qualification.",
+      "outcome": "observed",
+      "sha256": "a752d58174a80617be80efcd763ef3b9880915bc3db72947aacd8dc92fd97054",
+      "source": "planning/sprint-2-6.json"
+    },
+    {
+      "command": null,
+      "note": "Explicit PO closure/start. Entry audit verified eight approved development cases and 62 historical artifacts; eight human output reviews remain not-run. No holdout read, model calls or training in this transition.",
+      "outcome": "observed",
+      "sha256": "7bf8dc4f46e90acf9ed935e5cb0ea90c4842ce3c584caa5914f6f80dd93f6c15",
+      "source": "planning/sprint-2-6.tasks.json"
+    },
+    {
+      "command": null,
+      "note": "Current plan records actual eight-case human matrix: six pass/two fail, 45/3/0 criteria. Correction remains pending, budget closed, no qualification or completion. Historical evidence retains original scope; see DOC-0059.",
+      "outcome": "observed",
+      "sha256": "68e69ec006f596143e8a7099c11d334c5e5f50ae9accf24c5e8944c7fd64835e",
+      "source": "planning/sprint-2-6.work-items.json"
+    }
+  ],
+  "id": "DOC-0030",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Timebox closure does not certify every story criterion or the specific QA resolution.",
+    "No model qualification, reserved-corpus access, paid service purchase or training inferred.",
+    "Task graph represents precedence, not execution or parallel capacity.",
+    "Later authorized corrected reserved run is recorded in DOC-0044: technical execution/replay succeeded but eight deterministic coverage checks fail; no human output review or qualification.",
+    "Later DOC-0045 diagnoses impossible v3 requirement representation and masked causes. Historical assessments unchanged; business questions pending, no semantic acceptance or migration approval.",
+    "Subsequent PO replies confirm only the two presented interpretations, recorded in scoped-business-decisions.json. Historical expectation and analysis dispositions unchanged; complete semantic review remains pending.",
+    "Later DOC-0046 records an additive offline v4 representation/preflight increment only. Historical results preserved; no v4 inference, semantic acceptance or qualification."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0013",
+    "DOC-0029",
+    "DOC-0021",
+    "DOC-0031",
+    "DOC-0032",
+    "DOC-0033",
+    "DOC-0034",
+    "DOC-0044",
+    "DOC-0045",
+    "DOC-0046"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 65,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Sprint2.6 prerequisite phase active. Initial audit verified eight frozen cases and 62 historical artifacts; later Nexo favored offline review preparation and eight-case matrix prepared (DOC-0031). Human semantic outputs and AHC024 gates remain pending. Follow-up DOC-0033 records two scoped PO judgments: one negative criterion, remaining criteria pending; original snapshots retained. Final human matrix is recorded separately in DOC-0034: five selected responses pass and three fail, with all 48 criteria judged; earlier counts describe historical snapshots.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Kickoff Sprint2.6 e auditoria offline da baseline",
+  "updated_at": "2026-10-27T23:42:45.683796+00:00"
+}

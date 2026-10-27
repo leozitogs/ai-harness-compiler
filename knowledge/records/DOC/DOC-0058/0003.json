@@ -1,0 +1,72 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Actual reply call_bbe0268ecd30479b8bb260e889d999d8: Autorizo esta única rodada nesses limites. Executes only that scoped request. No consent to another round or output acceptance.",
+  "created_at": "2026-10-27T23:30:07.040022+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Private canonical report replays under exact source freeze; public metadata preserves 16 serial receipts and three coverage failures. Twelve focused public artifact checks passed. Human review proposal remains unapproved.",
+      "outcome": "observed",
+      "sha256": "acf75eafa22905db862980318f50c3d494b5c9b7cd3bbfbc20b7496095dba042",
+      "source": "docs/delivery/sprint-2-6-v4-development-result.md"
+    },
+    {
+      "command": null,
+      "note": "Private canonical report replays under exact source freeze; public metadata preserves 16 serial receipts and three coverage failures. Twelve focused public artifact checks passed. Human review proposal remains unapproved.",
+      "outcome": "observed",
+      "sha256": "08bc334ef1ad1339aa9162692b03cf98a2c6be22a3ceac31803d9e807ee0286e",
+      "source": "docs/evidence/sprint-2-6-v4-development-20261027/execution.json"
+    },
+    {
+      "command": null,
+      "note": "Private canonical report replays under exact source freeze; public metadata preserves 16 serial receipts and three coverage failures. Twelve focused public artifact checks passed. Human review proposal remains unapproved.",
+      "outcome": "observed",
+      "sha256": "0c0c74f5f89eedce6a1b7cb20609808548f59061ba78a09f46e8fd37385da036",
+      "source": "tests/test_v4_development_execution.py"
+    },
+    {
+      "command": null,
+      "note": "Subsequent actual human judgment, separately persisted: six pass/two fail; all three criterion failures retained. Earlier preparation/execution snapshots remain historical; no new calls or qualification.",
+      "outcome": "observed",
+      "sha256": "8e75899089e37297fb08cd7245ceeb5134ce256291ddf8be940a8cfe023f1ee4",
+      "source": "docs/evidence/sprint-2-6-v4-development-20261027/human-review.json"
+    }
+  ],
+  "id": "DOC-0058",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Transport completion and replay are not semantic success, independent evaluation or model qualification.",
+    "Initial two failed/six not-run results remain unchanged. Subsequent actual PO review is complete for these exact outputs: six pass/two fail; no model qualification. See DOC-0059.",
+    "Budget is consumed and closed; no retries, repair, fallback, resume or new inference authority.",
+    "Inputs/expectations/prompts/candidate and original journals remain unchanged. No assets, reserved, training or default promotion.",
+    "Hypothesis about prompt/model classification is not a demonstrated causal explanation. No fix or verified lesson yet.",
+    "No compilation authorization, AHC-021/022 or sprint completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0033",
+    "DOC-0057",
+    "DOC-0056",
+    "DOC-0059"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 3,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "PO authorized a64cb6e7 once. Campaign completed 16 invocations/eight cases in 445.88s; replay passed, budget closed. Three typed coverage failures across two cases; six initial not-run. New review proposal 03593bf1 pending actual human judgment; no model qualification. Subsequent actual PO judgment recorded in DOC-0059: six exact cases pass/two fail, 45/3/0 criteria. No correction or new-call authority.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Rodada v4 de desenvolvimento executada com falhas preservadas e revisão pendente",
+  "updated_at": "2026-10-27T23:42:34.066544+00:00"
+}
