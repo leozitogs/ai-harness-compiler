@@ -56,6 +56,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DE-0020 — Preflight de caso/versão antes de futura inferência](records/DE/DE-0020/0010.json) · active · revision 10
 - [DE-0021 — Auditoria consultiva separada de suporte humano e execução](records/DE/DE-0021/0006.json) · active · revision 6
 - [DE-0022 — Autorização externa vincula limites e implementação de transporte](records/DE/DE-0022/0004.json) · active · revision 4
+- [DE-0023 — Compatibilidade v4/v5 antes de campanha semântica maior](records/DE/DE-0023/0002.json) · active · revision 2
 - [DOC-0001 — Concepção do AI Harness Compiler](records/DOC/DOC-0001/0006.json) · active · revision 6
 - [DOC-0002 — Planejamento detalhado da Sprint 1](records/DOC/DOC-0002/0006.json) · draft · revision 6
 - [DOC-0003 — Planejamento da Sprint 2](records/DOC/DOC-0003/0012.json) · active · revision 12
@@ -85,16 +86,16 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0027 — Incremento funcional AHC-030 e demonstração Vera/Nexo](records/DOC/DOC-0027/0008.json) · active · revision 8
 - [DOC-0028 — Correções da review e demonstração de resolução AHC-030](records/DOC/DOC-0028/0004.json) · active · revision 4
 - [DOC-0029 — Review e encerramento da Sprint2.5.5 pelo PO](records/DOC/DOC-0029/0002.json) · active · revision 2
-- [DOC-0030 — Kickoff Sprint2.6 e auditoria offline da baseline](records/DOC/DOC-0030/0046.json) · active · revision 46
-- [DOC-0031 — Parecer Nexo sobre kickoff e pacote de revisão humana](records/DOC/DOC-0031/0044.json) · active · revision 44
-- [DOC-0032 — Adjudicação técnica consultiva dos diagnósticos de desenvolvimento](records/DOC/DOC-0032/0042.json) · active · revision 42
+- [DOC-0030 — Kickoff Sprint2.6 e auditoria offline da baseline](records/DOC/DOC-0030/0048.json) · active · revision 48
+- [DOC-0031 — Parecer Nexo sobre kickoff e pacote de revisão humana](records/DOC/DOC-0031/0046.json) · active · revision 46
+- [DOC-0032 — Adjudicação técnica consultiva dos diagnósticos de desenvolvimento](records/DOC/DOC-0032/0044.json) · active · revision 44
 - [DOC-0033 — Julgamentos específicos do PO e candidato corretivo de composição](records/DOC/DOC-0033/0014.json) · active · revision 14
-- [DOC-0034 — Matriz humana completa de desenvolvimento com cinco aceites e três falhas](records/DOC/DOC-0034/0036.json) · active · revision 36
+- [DOC-0034 — Matriz humana completa de desenvolvimento com cinco aceites e três falhas](records/DOC/DOC-0034/0038.json) · active · revision 38
 - [DOC-0035 — Rodada corretiva v3.3 com orçamento fixado e revisão independente por snapshot](records/DOC/DOC-0035/0010.json) · active · revision 10
-- [DOC-0036 — Revisão humana v3.3: seis passes e duas falhas de materialidade](records/DOC/DOC-0036/0034.json) · active · revision 34
+- [DOC-0036 — Revisão humana v3.3: seis passes e duas falhas de materialidade](records/DOC/DOC-0036/0036.json) · active · revision 36
 - [DOC-0037 — Candidato de materialidade v3.4 e execução aguardando autorização específica](records/DOC/DOC-0037/0004.json) · active · revision 4
 - [DOC-0038 — Rodada v3.4 executada e oito análises aprovadas pelo PO](records/DOC/DOC-0038/0002.json) · active · revision 2
-- [DOC-0039 — Correção estrutural candidata do auditor e consolidação de AHC-021/022](records/DOC/DOC-0039/0028.json) · active · revision 28
+- [DOC-0039 — Correção estrutural candidata do auditor e consolidação de AHC-021/022](records/DOC/DOC-0039/0030.json) · active · revision 30
 - [DOC-0040 — Smoke único autorizado da auditoria v4.1 com vínculos válidos](records/DOC/DOC-0040/0003.json) · active · revision 3
 - [DOC-0041 — Curadoria nova do reservado v2 e gates pendentes](records/DOC/DOC-0041/0006.json) · active · revision 6
 - [DOC-0042 — Executor reservado verificado e pedido de 16 invocações pendente](records/DOC/DOC-0042/0004.json) · active · revision 4
@@ -104,6 +105,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0046 — Migração offline v4 e casos v3 sem promoção de modelo](records/DOC/DOC-0046/0010.json) · active · revision 10
 - [DOC-0047 — Operação offline do fluxo semântico v4](records/DOC/DOC-0047/0008.json) · active · revision 8
 - [DOC-0048 — Operação opt-in do transporte v4 supervisionado](records/DOC/DOC-0048/0004.json) · active · revision 4
+- [DOC-0049 — Proposta pública de compatibilidade e expectativas pendentes](records/DOC/DOC-0049/0002.json) · active · revision 2
 - [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2
 - [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1
 - [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1
