@@ -35,14 +35,10 @@ class SemanticFlowRequestV4(Contract):
     @model_validator(mode="after")
     def exact_programs(self) -> Self:
         # Local import avoids coupling domain models to an instantiated provider.
-        from ai_harness_compiler.semantic_generation_v4 import generation_program_v4
+        from ai_harness_compiler.semantic_generation_programs import resolve_program
 
-        if (
-            self.generation_program_sha256
-            != generation_program_v4(extract_grounding(self.case.project))
-            or self.audit_program_sha256 != audit_v5_program_digest()
-            or self.rubric.version != "v2"
-        ):
+        resolve_program(extract_grounding(self.case.project), self.generation_program_sha256)
+        if self.audit_program_sha256 != audit_v5_program_digest() or self.rubric.version != "v2":
             raise ValueError("Flow must bind current generation, audit and v2 rubric")
         return self
 

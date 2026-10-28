@@ -1,0 +1,116 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "User requested continuing after expectation approval. Implement and verify C1-C5 offline; C6 remains gated by a separate new exact budget authorization.",
+  "created_at": "2026-10-27T23:04:05.311002+00:00",
+  "decision": "Use one source-bound campaign request and exact outer authorization covering ordered reviewed cases, model, rubric and global limits. Debit before dispatch; stop first technical failure; reject retries/resume. Reuse existing local supervisor without adding an agent framework or migrating historical approval.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Inspect global accounting, durable source-bound controls and prepared public request. Synthetic subprocess tests include descendant cleanup; frozen compatibility replay preserves original initial not-run and separate human pass. No inference or semantic success claim.",
+      "outcome": "observed",
+      "sha256": "604887ed6b293e7d4e316bd1b1151bfb517745f0018aec070ca645ed639fd8bf",
+      "source": "docs/adr/0033-global-semantic-campaign.md"
+    },
+    {
+      "command": null,
+      "note": "Inspect global accounting, durable source-bound controls and prepared public request. Synthetic subprocess tests include descendant cleanup; frozen compatibility replay preserves original initial not-run and separate human pass. No inference or semantic success claim.",
+      "outcome": "observed",
+      "sha256": "2750ee8a791749ae1a746f9a090eed5448dbdf60410eb9121d029f55a093f2d7",
+      "source": "docs/delivery/sprint-2-6-v4-development-campaign.md"
+    },
+    {
+      "command": null,
+      "note": "Current source/planning metadata adds explicit v4.1 routing and candidate preparation. Historical v4.0 instructions, serialized requests, outputs and human judgments remain unchanged; old source bytes are archived and legacy runtime replay is frozen. No migration of acceptance, new-call authority or model efficacy. See ADR-0034/DOC-0060.",
+      "outcome": "observed",
+      "sha256": "85c05e8410b17b717c45700048c6623176edf484fc3b03e211b7663f6fdbbc3b",
+      "source": "src/ai_harness_compiler/models/semantic_campaign.py"
+    },
+    {
+      "command": null,
+      "note": "Current source/planning metadata adds explicit v4.1 routing and candidate preparation. Historical v4.0 instructions, serialized requests, outputs and human judgments remain unchanged; old source bytes are archived and legacy runtime replay is frozen. No migration of acceptance, new-call authority or model efficacy. See ADR-0034/DOC-0060.",
+      "outcome": "observed",
+      "sha256": "193fd98838799716b714da20b83cb44d1d890d97eff18637d28e04b92f815af8",
+      "source": "src/ai_harness_compiler/semantic_campaign.py"
+    },
+    {
+      "command": null,
+      "note": "Inspect global accounting, durable source-bound controls and prepared public request. Synthetic subprocess tests include descendant cleanup; frozen compatibility replay preserves original initial not-run and separate human pass. No inference or semantic success claim.",
+      "outcome": "observed",
+      "sha256": "baf7f88ac4cfc5dc01d3cb1a61a389cdf556d00daf11ab843d8d43eb3f92003b",
+      "source": "src/ai_harness_compiler/offline_schema_registry.py"
+    },
+    {
+      "command": null,
+      "note": "Current source/planning metadata adds explicit v4.1 routing and candidate preparation. Historical v4.0 instructions, serialized requests, outputs and human judgments remain unchanged; old source bytes are archived and legacy runtime replay is frozen. No migration of acceptance, new-call authority or model efficacy. See ADR-0034/DOC-0060.",
+      "outcome": "observed",
+      "sha256": "5827c5942cf259c65414bf3cd3ea1061398e89f1414327c3563b313523c50844",
+      "source": "scripts/prepare_semantic_campaign.py"
+    },
+    {
+      "command": null,
+      "note": "Inspect global accounting, durable source-bound controls and prepared public request. Synthetic subprocess tests include descendant cleanup; frozen compatibility replay preserves original initial not-run and separate human pass. No inference or semantic success claim.",
+      "outcome": "observed",
+      "sha256": "f85aa63e8ec1200f196930ca3c1923a521cd7634f0840e0206114d4682aa39d3",
+      "source": "tests/test_semantic_campaign.py"
+    },
+    {
+      "command": null,
+      "note": "Current source/planning metadata adds explicit v4.1 routing and candidate preparation. Historical v4.0 instructions, serialized requests, outputs and human judgments remain unchanged; old source bytes are archived and legacy runtime replay is frozen. No migration of acceptance, new-call authority or model efficacy. See ADR-0034/DOC-0060.",
+      "outcome": "observed",
+      "sha256": "0ac86aa177e20a9ce42850f5321db7a8df1f86447c873ca3fda3afed838d9335",
+      "source": "tests/test_v4_campaign_request.py"
+    },
+    {
+      "command": null,
+      "note": "Subsequent scoped authorization and execution are separate from original preparation. Sixteen calls completed and replay verified; three coverage failures, all output approvals pending. Budget closed.",
+      "outcome": "observed",
+      "sha256": "08bc334ef1ad1339aa9162692b03cf98a2c6be22a3ceac31803d9e807ee0286e",
+      "source": "docs/evidence/sprint-2-6-v4-development-20261027/execution.json"
+    },
+    {
+      "command": null,
+      "note": "Subsequent actual human judgment, separately persisted: six pass/two fail; all three criterion failures retained. Earlier preparation/execution snapshots remain historical; no new calls or qualification.",
+      "outcome": "observed",
+      "sha256": "8e75899089e37297fb08cd7245ceeb5134ce256291ddf8be940a8cfe023f1ee4",
+      "source": "docs/evidence/sprint-2-6-v4-development-20261027/human-review.json"
+    }
+  ],
+  "id": "ADR-0033",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "At implementation/preparation no provider invocations existed. Subsequent authorized campaign completed; see DOC-0058. Subsequent exact PO review gives six pass/two fail; no qualification or compilation authority. See DOC-0059.",
+    "Development is exposed, not independent holdout. Existing approval covers expectations only.",
+    "Process containment is not a hostile-code sandbox or hard real-time guarantee; no authenticated remote model identity.",
+    "KeyboardInterrupt can lack a transport receipt; preserve unknown cleanup observations without fabricating success. Host kill or disk failure can leave incomplete consumed journals.",
+    "Original preparation required exact authorization. PO subsequently granted it and the campaign consumed/closed that budget. No new-call authority remains; see DOC-0058."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0032",
+    "DOC-0056",
+    "DOC-0054",
+    "DE-0023",
+    "DOC-0058",
+    "DOC-0059",
+    "ADR-0034"
+  ],
+  "resolution": null,
+  "review_note": "Refresh changed current-source pointers only; immutable earlier revisions retain original evidence. Historical execution requires its frozen source package, not current routing; no requalification or budget transfer.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 8,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Add opt-in development campaign with one global deadline, at most 16 charged invocations, source recheck per worker, immutable claims and offline replay; reuse existing v4 flow and process supervision. Preserve earlier compatibility replay in its original frozen package. Subsequent exact PO authorization consumed in completed 16-call campaign; see DOC-0058 for replay, initial failures and pending output review. Subsequent actual PO judgment recorded in DOC-0059: six exact cases pass/two fail, 45/3/0 criteria. No correction or new-call authority.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Campanha semântica com orçamento global e autorização própria",
+  "updated_at": "2026-10-28T00:09:11.716153+00:00"
+}

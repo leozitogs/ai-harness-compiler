@@ -25,12 +25,11 @@ from ai_harness_compiler.models.semantic_flow_v4 import (
     SemanticFlowResultV4,
 )
 from ai_harness_compiler.models.semantic_preflight import preflight_case
+from ai_harness_compiler.semantic_generation_programs import analyze_program, program_prompt
 from ai_harness_compiler.semantic_generation_v4 import (
-    analyze_v4,
     audit_prompt_v5,
     audit_schema_v5,
     audit_v5,
-    generation_prompt_v4,
     generation_schema_v4,
 )
 from ai_harness_compiler.semantic_verification import JSONGenerator
@@ -125,8 +124,10 @@ def run_semantic_flow_v4(
     try:
         generator = generator_factory()
         failure = "analysis-failed"
-        analysis = analyze_v4(
-            extract_grounding(request.case.project), ChargedGenerator(generator, "analysis")
+        analysis = analyze_program(
+            extract_grounding(request.case.project),
+            ChargedGenerator(generator, "analysis"),
+            request.generation_program_sha256,
         )
         _write(directory / "analysis.json", analysis.model_dump())
         failure = "audit-failed"
@@ -187,7 +188,10 @@ def validate_semantic_flow_v4(repository: Path, run_id: str) -> SemanticFlowResu
         if _read(directory / f"{call.stage}-call.json") != call.model_dump():
             raise ValueError("Durable call debit differs")
         if call.stage == "analysis":
-            prompt, schema = generation_prompt_v4(extraction), generation_schema_v4(extraction)
+            prompt, schema = (
+                program_prompt(extraction, result.request.generation_program_sha256),
+                generation_schema_v4(extraction),
+            )
         elif result.analysis:
             prompt, schema = audit_prompt_v5(result.analysis), audit_schema_v5(result.analysis)
         else:
