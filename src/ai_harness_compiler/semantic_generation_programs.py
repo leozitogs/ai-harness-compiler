@@ -37,16 +37,39 @@ label them rule/authorization/outcome merely because their topic mentions a busi
 These distinctions guide analysis only: no executable authorization or human approval.
 """
 
+PRECEDENCE_GUIDANCE_V42 = """
+ACTIONABLE CONFLICT UNCERTAINTY:
+Preserve every genuine unresolved conflict with all incompatible source sides.
+Recognizing a conflict and marking the project blocked does not ask the human what
+decision is needed. For each such conflict, also emit an explicit question in the
+project_analysis.issues channel with kind=question and impact=precedence, citing all
+the conflicting context_indices. Ask which stated rule takes precedence, or how the
+incompatible declarations should be reconciled. Preserve both sides without selecting
+a winner or inventing a resolution, new approval gate, deadline or exception.
+The conflict statement is not a substitute for that question; a generic request for
+more detail or a question citing only one side is not enough. Compatible rules,
+symbolic role holders and unconditional identity obligations do not by themselves
+constitute a conflict. Do not add a precedence question or block an otherwise clear
+project merely because the input contains several different norms or roles.
+This is an analysis requirement, not an executable permission or automatic approval.
+"""
+
+
+def _instructions(version: SemanticProgramVersion) -> str:
+    if version == "semantic-composition/v4.1":
+        return GENERATION_PROMPT_V4 + RELATIONAL_GUIDANCE_V41
+    if version == "semantic-composition/v4.2":
+        return GENERATION_PROMPT_V4 + RELATIONAL_GUIDANCE_V41 + PRECEDENCE_GUIDANCE_V42
+    raise ValueError("Unknown generation program")
+
 
 def program_digest(extraction: GroundingExtraction, version: SemanticProgramVersion) -> str:
     if version == "semantic-composition/v4.0":
         return generation_program_v4(extraction)
-    if version != "semantic-composition/v4.1":
-        raise ValueError("Unknown generation program")
     return canonical_project_digest(
         dict(
             version=version,
-            prompt=GENERATION_PROMPT_V4 + RELATIONAL_GUIDANCE_V41,
+            prompt=_instructions(version),
             schema=generation_schema_v4(extraction),
         )
     )
@@ -56,6 +79,7 @@ def resolve_program(extraction: GroundingExtraction, digest: str) -> SemanticPro
     versions: tuple[SemanticProgramVersion, ...] = (
         "semantic-composition/v4.0",
         "semantic-composition/v4.1",
+        "semantic-composition/v4.2",
     )
     for version in versions:
         if program_digest(extraction, version) == digest:
@@ -69,9 +93,7 @@ def program_prompt(extraction: GroundingExtraction, digest: str) -> str:
     if version == "semantic-composition/v4.0":
         return legacy
     # Same instruction base and exact source packet; no expectations or extra examples.
-    return (
-        GENERATION_PROMPT_V4 + RELATIONAL_GUIDANCE_V41 + legacy.removeprefix(GENERATION_PROMPT_V4)
-    )
+    return _instructions(version) + legacy.removeprefix(GENERATION_PROMPT_V4)
 
 
 def analyze_program(

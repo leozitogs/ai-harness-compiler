@@ -1,6 +1,7 @@
 """Opt-in contract schemas without changing the frozen historical CLI or runtime."""
 
 from ai_harness_compiler.models.base import Contract
+from ai_harness_compiler.models.conflict_questions import ConflictQuestionDiagnosticV1
 from ai_harness_compiler.models.semantic_analysis_v4 import AnalysisProposalV4, SemanticAnalysisV4
 from ai_harness_compiler.models.semantic_assessment_v4 import (
     SemanticAssessmentV4,
@@ -30,8 +31,11 @@ from ai_harness_compiler.models.supervised_transport import (
     TransportLimitsV1,
     TransportReceiptV1,
 )
+from ai_harness_compiler.models.worker_diagnostic import WorkerDiagnosticV1
 
 OFFLINE_MODELS: dict[str, type[Contract]] = {
+    "worker-diagnostic-v1": WorkerDiagnosticV1,
+    "conflict-question-diagnostic-v1": ConflictQuestionDiagnosticV1,
     "semantic-campaign-request-v1": SemanticCampaignRequestV1,
     "semantic-campaign-authorization-v1": SemanticCampaignAuthorizationV1,
     "semantic-campaign-call-v1": SemanticCampaignCallV1,

@@ -104,6 +104,7 @@ estruturado. Consulte o [exemplo](examples/project-definition/project.yaml) e o
 - Regras e guards separados com proveniência por condição/resultado/exceção; [composição v3 e auditoria v4](docs/engineering/semantic-composition.md). Suporte agregado exige suporte de todos os componentes, sem aprovação automática.
 - Contratos experimentais de análise v4 e caso v3, com requisitos explícitos de contexto, rejeição de conteúdo separada e [preflight offline de representabilidade](docs/engineering/semantic-contract-v4.md). Ainda sem gerador/avaliador v4 integrado ou qualificação de modelo.
 - Evidence Pack com fontes, digest canônico, revisão declarada e escopos; [contrato e migração](docs/engineering/evidence-pack.md).
+- [Diagnóstico offline](docs/engineering/semantic-diagnostics.md) com categorias sanitizadas de worker e detecção estrutural de conflito sem pergunta de precedência; preserva resultados e julgamento humano.
 - Validação de IDs, dependências, ciclos, referências e cobertura de critérios de aceitação.
 - Geração reproduzível de `AGENTS.md`, contexto, políticas, ADRs, plano de trabalho,
   plano de evals, documentação, manifesto de hashes e CI de integridade.

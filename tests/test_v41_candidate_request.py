@@ -4,6 +4,8 @@ import hashlib
 import json
 from pathlib import Path
 
+import pytest
+
 from ai_harness_compiler.grounding import extract_grounding
 from ai_harness_compiler.models.semantic_campaign import SemanticCampaignRequestV1
 from ai_harness_compiler.semantic_generation_programs import program_prompt, resolve_program
@@ -54,14 +56,27 @@ def test_candidate_has_new_identity_without_changing_reviewed_inputs_or_audit():
         assert generation_schema_v4(extraction)["title"] == "AnalysisProposalV4"
 
 
-def test_candidate_freeze_matches_all_current_execution_sources_and_keeps_limits():
+def test_historical_candidate_freeze_preserves_sources_and_rejects_current_execution():
     request = SemanticCampaignRequestV1.model_validate_json((BASE / "request.json").read_bytes())
     expected = {
         p.relative_to(ROOT).as_posix() for p in (ROOT / "src/ai_harness_compiler").rglob("*.py")
     }
-    assert {s.path for s in request.sources} == expected | {"pyproject.toml", "uv.lock"}
+    assert {s.path for s in request.sources}.issubset(expected | {"pyproject.toml", "uv.lock"})
+    directory = BASE / "additional-source-archive"
+    archive = {
+        e["path"]: e for e in json.loads((directory / "manifest.json").read_bytes())["sources"]
+    }
     for source in request.sources:
-        assert hashlib.sha256((ROOT / source.path).read_bytes()).hexdigest() == source.sha256
+        path = ROOT / source.path
+        if source.path in archive:
+            entry = archive[source.path]
+            assert entry["sha256"] == source.sha256
+            path = directory / entry["archive"]
+        assert hashlib.sha256(path.read_bytes()).hexdigest() == source.sha256
+    from ai_harness_compiler.supervised_semantic_flow import _validate_request
+
+    with pytest.raises(ValueError, match="Transport source"):
+        _validate_request(ROOT, request.supervision(0))
     assert request.max_calls == 16 and request.limits.session_timeout_seconds == 3600
     assert (
         request.limits.call_timeout_seconds == 180 and request.limits.cleanup_timeout_seconds == 20

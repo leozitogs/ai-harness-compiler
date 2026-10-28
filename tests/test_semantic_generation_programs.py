@@ -102,7 +102,10 @@ def test_unknown_or_other_input_program_hash_rejected_before_generator(tmp_path)
     assert not (tmp_path / ".factory").exists()
 
 
-@pytest.mark.parametrize("version", ["semantic-composition/v4.0", "semantic-composition/v4.1"])
+@pytest.mark.parametrize(
+    "version",
+    ["semantic-composition/v4.0", "semantic-composition/v4.1", "semantic-composition/v4.2"],
+)
 def test_both_programs_run_and_replay_exact_stage_debits_without_human_pass(tmp_path, version):
     case, rubric, analysis = fixtures()
     request, auth = request_for(case, rubric, analysis, version)
@@ -198,7 +201,8 @@ def test_one_campaign_cannot_mix_programs_to_hide_an_experiment_change():
         SemanticCampaignRequestV1.model_validate(data)
 
 
-def test_candidate_supervision_uses_fixed_local_workers_and_replays(tmp_path, monkeypatch):
+@pytest.mark.parametrize("version", ["semantic-composition/v4.1", "semantic-composition/v4.2"])
+def test_candidate_supervision_uses_fixed_local_workers_and_replays(tmp_path, monkeypatch, version):
     from test_supervised_transport import prepare
 
     from ai_harness_compiler.models.supervised_transport import SupervisedFlowAuthorizationV1
@@ -211,8 +215,7 @@ def test_candidate_supervision_uses_fixed_local_workers_and_replays(tmp_path, mo
     root, old, _ = prepare(tmp_path, monkeypatch)
     extraction = extract_grounding(old.flow.case.project)
     nested = SemanticFlowRequestV4.model_validate(
-        old.flow.model_dump()
-        | dict(generation_program_sha256=program_digest(extraction, "semantic-composition/v4.1"))
+        old.flow.model_dump() | dict(generation_program_sha256=program_digest(extraction, version))
     )
     request = prepare_supervised_flow(root, nested, old.limits)
     authorization = SupervisedFlowAuthorizationV1(
@@ -224,7 +227,10 @@ def test_candidate_supervision_uses_fixed_local_workers_and_replays(tmp_path, mo
     assert validate_supervised_flow(root, nested.run_id) == result
 
 
-def test_candidate_global_campaign_replays_without_changing_approved_cases(tmp_path, monkeypatch):
+@pytest.mark.parametrize("version", ["semantic-composition/v4.1", "semantic-composition/v4.2"])
+def test_candidate_global_campaign_replays_without_changing_approved_cases(
+    tmp_path, monkeypatch, version
+):
     from test_semantic_campaign import prepare
 
     from ai_harness_compiler.models.semantic_campaign import SemanticCampaignAuthorizationV1
@@ -234,7 +240,7 @@ def test_candidate_global_campaign_replays_without_changing_approved_cases(tmp_p
     data = old.model_dump()
     for flow in data["flows"]:
         extraction = extract_grounding(SemanticFlowRequestV4.model_validate(flow).case.project)
-        flow["generation_program_sha256"] = program_digest(extraction, "semantic-composition/v4.1")
+        flow["generation_program_sha256"] = program_digest(extraction, version)
     request = SemanticCampaignRequestV1.model_validate(data)
     authorization = SemanticCampaignAuthorizationV1(
         **declaration().model_dump(), request_sha256=request.sha256, authorized=True

@@ -2,4 +2,6 @@
 
 from typing import Literal
 
-SemanticProgramVersion = Literal["semantic-composition/v4.0", "semantic-composition/v4.1"]
+SemanticProgramVersion = Literal[
+    "semantic-composition/v4.0", "semantic-composition/v4.1", "semantic-composition/v4.2"
+]

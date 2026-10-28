@@ -1,0 +1,48 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Full local suite completed with 1384 passed/one setup error.",
+    "Isolated failed test and 40 diagnostic/candidate tests passed without code or runtime-budget changes."
+  ],
+  "author": "codex:engineering",
+  "challenge": "Understand a local allocation failure without weakening input bounds or claiming an unobserved host-memory cause.",
+  "consequences": [],
+  "context": "Offline engineering verification only; no real model calls. Build and historical frozen replays passed. Full CI matrix remains the integration gate.",
+  "created_at": "2026-10-28T22:07:07.094698+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Local failure and unchanged-source recheck documented; no raw private payloads or model invocations.",
+      "outcome": "observed",
+      "sha256": "d7b925e67d5a2835adb3cdb792ebfc6c24aad7d7124e726b7daac3fdd11a064b",
+      "source": "docs/delivery/sprint-2-6-v42-precedence-candidate.md"
+    }
+  ],
+  "id": "INC-0034",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Successful isolated recheck does not establish underlying memory cause or guarantee absence of recurrence.",
+    "No product fix, input limit relaxation, skip or retry policy change. Full CI must pass before merge."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0062",
+    "INC-0033"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": "Observed MemoryError at intake stream.read(max_manifest_bytes + 1) in fixture setup. Underlying allocation cause not established. Host CIM telemetry unavailable; no root-cause attribution from that absence.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Full local suite: 1384 passed, one setup MemoryError reading the normal example manifest for test_recorded_late_call_remains_error_not_success. Isolated recheck plus new diagnostics: 41 passed with unchanged runtime. Underlying allocation cause unknown.",
+  "supersedes": null,
+  "tags": [],
+  "title": "MemoryError no setup de fixture durante suite local v4.2",
+  "updated_at": "2026-10-28T22:07:07.094698+00:00"
+}

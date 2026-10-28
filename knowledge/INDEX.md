@@ -31,11 +31,12 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [ADR-0027 — Resolução de achados por evidência e decisão humana](records/ADR/ADR-0027/0002.json) · active · revision 2
 - [ADR-0028 — Preparar reservado por metadados com curadoria isolada](records/ADR/ADR-0028/0002.json) · active · revision 2
 - [ADR-0029 — Executar reservado com autorização exata e consumo único](records/ADR/ADR-0029/0002.json) · active · revision 2
-- [ADR-0030 — Representabilidade versionada e rejeição de conteúdo por escopo](records/ADR/ADR-0030/0012.json) · active · revision 12
+- [ADR-0030 — Representabilidade versionada e rejeição de conteúdo por escopo](records/ADR/ADR-0030/0014.json) · active · revision 14
 - [ADR-0031 — Fluxo v4 injetado e revisão humana por componentes](records/ADR/ADR-0031/0008.json) · active · revision 8
-- [ADR-0032 — Transporte supervisionado para o fluxo v4](records/ADR/ADR-0032/0010.json) · active · revision 10
-- [ADR-0033 — Campanha semântica com orçamento global e autorização própria](records/ADR/ADR-0033/0008.json) · active · revision 8
-- [ADR-0034 — Programa de geração v4.1 explícito com replay e baseline preservados](records/ADR/ADR-0034/0006.json) · active · revision 6
+- [ADR-0032 — Transporte supervisionado para o fluxo v4](records/ADR/ADR-0032/0012.json) · active · revision 12
+- [ADR-0033 — Campanha semântica com orçamento global e autorização própria](records/ADR/ADR-0033/0010.json) · active · revision 10
+- [ADR-0034 — Programa de geração v4.1 explícito com replay e baseline preservados](records/ADR/ADR-0034/0008.json) · active · revision 8
+- [ADR-0035 — Diagnostico sanitizado e perguntas de precedencia separadas](records/ADR/ADR-0035/0002.json) · active · revision 2
 - [DE-0001 — Memória de engenharia versionada](records/DE/DE-0001/0001.json) · draft · revision 1
 - [DE-0002 — Gerar memória e especialistas para cada projeto](records/DE/DE-0002/0002.json) · active · revision 2
 - [DE-0003 — Intake limitado e YAML explícito](records/DE/DE-0003/0004.json) · active · revision 4
@@ -55,11 +56,11 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DE-0017 — Restringir identidades estruturais sem direcionar o parecer do auditor](records/DE/DE-0017/0005.json) · active · revision 5
 - [DE-0018 — Congelar fingerprints a partir dos bytes desserializados](records/DE/DE-0018/0002.json) · active · revision 2
 - [DE-0019 — Diagnóstico estrutural sem alteração da avaliação histórica](records/DE/DE-0019/0004.json) · active · revision 4
-- [DE-0020 — Preflight de caso/versão antes de futura inferência](records/DE/DE-0020/0012.json) · active · revision 12
+- [DE-0020 — Preflight de caso/versão antes de futura inferência](records/DE/DE-0020/0014.json) · active · revision 14
 - [DE-0021 — Auditoria consultiva separada de suporte humano e execução](records/DE/DE-0021/0008.json) · active · revision 8
-- [DE-0022 — Autorização externa vincula limites e implementação de transporte](records/DE/DE-0022/0010.json) · active · revision 10
+- [DE-0022 — Autorização externa vincula limites e implementação de transporte](records/DE/DE-0022/0012.json) · active · revision 12
 - [DE-0023 — Compatibilidade v4/v5 antes de campanha semântica maior](records/DE/DE-0023/0006.json) · active · revision 6
-- [DE-0024 — Envelope JSON do worker em bytes UTF-8 explícitos](records/DE/DE-0024/0002.json) · active · revision 2
+- [DE-0024 — Envelope JSON do worker em bytes UTF-8 explícitos](records/DE/DE-0024/0004.json) · active · revision 4
 - [DOC-0001 — Concepção do AI Harness Compiler](records/DOC/DOC-0001/0006.json) · active · revision 6
 - [DOC-0002 — Planejamento detalhado da Sprint 1](records/DOC/DOC-0002/0006.json) · draft · revision 6
 - [DOC-0003 — Planejamento da Sprint 2](records/DOC/DOC-0003/0012.json) · active · revision 12
@@ -89,39 +90,40 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0027 — Incremento funcional AHC-030 e demonstração Vera/Nexo](records/DOC/DOC-0027/0008.json) · active · revision 8
 - [DOC-0028 — Correções da review e demonstração de resolução AHC-030](records/DOC/DOC-0028/0004.json) · active · revision 4
 - [DOC-0029 — Review e encerramento da Sprint2.5.5 pelo PO](records/DOC/DOC-0029/0002.json) · active · revision 2
-- [DOC-0030 — Kickoff Sprint2.6 e auditoria offline da baseline](records/DOC/DOC-0030/0072.json) · active · revision 72
-- [DOC-0031 — Parecer Nexo sobre kickoff e pacote de revisão humana](records/DOC/DOC-0031/0070.json) · active · revision 70
-- [DOC-0032 — Adjudicação técnica consultiva dos diagnósticos de desenvolvimento](records/DOC/DOC-0032/0068.json) · active · revision 68
+- [DOC-0030 — Kickoff Sprint2.6 e auditoria offline da baseline](records/DOC/DOC-0030/0074.json) · active · revision 74
+- [DOC-0031 — Parecer Nexo sobre kickoff e pacote de revisão humana](records/DOC/DOC-0031/0072.json) · active · revision 72
+- [DOC-0032 — Adjudicação técnica consultiva dos diagnósticos de desenvolvimento](records/DOC/DOC-0032/0070.json) · active · revision 70
 - [DOC-0033 — Julgamentos específicos do PO e candidato corretivo de composição](records/DOC/DOC-0033/0014.json) · active · revision 14
-- [DOC-0034 — Matriz humana completa de desenvolvimento com cinco aceites e três falhas](records/DOC/DOC-0034/0062.json) · active · revision 62
+- [DOC-0034 — Matriz humana completa de desenvolvimento com cinco aceites e três falhas](records/DOC/DOC-0034/0064.json) · active · revision 64
 - [DOC-0035 — Rodada corretiva v3.3 com orçamento fixado e revisão independente por snapshot](records/DOC/DOC-0035/0010.json) · active · revision 10
-- [DOC-0036 — Revisão humana v3.3: seis passes e duas falhas de materialidade](records/DOC/DOC-0036/0060.json) · active · revision 60
+- [DOC-0036 — Revisão humana v3.3: seis passes e duas falhas de materialidade](records/DOC/DOC-0036/0062.json) · active · revision 62
 - [DOC-0037 — Candidato de materialidade v3.4 e execução aguardando autorização específica](records/DOC/DOC-0037/0004.json) · active · revision 4
 - [DOC-0038 — Rodada v3.4 executada e oito análises aprovadas pelo PO](records/DOC/DOC-0038/0002.json) · active · revision 2
-- [DOC-0039 — Correção estrutural candidata do auditor e consolidação de AHC-021/022](records/DOC/DOC-0039/0054.json) · active · revision 54
+- [DOC-0039 — Correção estrutural candidata do auditor e consolidação de AHC-021/022](records/DOC/DOC-0039/0056.json) · active · revision 56
 - [DOC-0040 — Smoke único autorizado da auditoria v4.1 com vínculos válidos](records/DOC/DOC-0040/0003.json) · active · revision 3
 - [DOC-0041 — Curadoria nova do reservado v2 e gates pendentes](records/DOC/DOC-0041/0006.json) · active · revision 6
 - [DOC-0042 — Executor reservado verificado e pedido de 16 invocações pendente](records/DOC/DOC-0042/0004.json) · active · revision 4
 - [DOC-0043 — Rodada reservada interrompida sem chamadas e correção pendente](records/DOC/DOC-0043/0002.json) · active · revision 2
 - [DOC-0044 — Rodada reservada corrigida concluída com falhas determinísticas](records/DOC/DOC-0044/0004.json) · active · revision 4
 - [DOC-0045 — Diagnóstico reservado e julgamentos pontuais pendentes](records/DOC/DOC-0045/0004.json) · active · revision 4
-- [DOC-0046 — Migração offline v4 e casos v3 sem promoção de modelo](records/DOC/DOC-0046/0012.json) · active · revision 12
+- [DOC-0046 — Migração offline v4 e casos v3 sem promoção de modelo](records/DOC/DOC-0046/0014.json) · active · revision 14
 - [DOC-0047 — Operação offline do fluxo semântico v4](records/DOC/DOC-0047/0010.json) · active · revision 10
-- [DOC-0048 — Operação opt-in do transporte v4 supervisionado](records/DOC/DOC-0048/0010.json) · active · revision 10
+- [DOC-0048 — Operação opt-in do transporte v4 supervisionado](records/DOC/DOC-0048/0012.json) · active · revision 12
 - [DOC-0049 — Proposta pública de compatibilidade e expectativas pendentes](records/DOC/DOC-0049/0006.json) · active · revision 6
 - [DOC-0050 — Aceite das expectativas e pedido final de compatibilidade v4/v5](records/DOC/DOC-0050/0006.json) · active · revision 6
-- [DOC-0051 — Resultado da rodada v4 e diagnóstico Unicode offline](records/DOC/DOC-0051/0004.json) · active · revision 4
+- [DOC-0051 — Resultado da rodada v4 e diagnóstico Unicode offline](records/DOC/DOC-0051/0006.json) · active · revision 6
 - [DOC-0052 — Novo pedido UTF-8 e sequência de avanço da Sprint 2.6](records/DOC/DOC-0052/0004.json) · active · revision 4
 - [DOC-0053 — Compatibilidade v4/v5 observada e revisão semântica pendente](records/DOC/DOC-0053/0004.json) · active · revision 4
 - [DOC-0054 — Julgamento humano v4 registrado para a análise de compatibilidade](records/DOC/DOC-0054/0002.json) · active · revision 2
 - [DOC-0055 — Proposta dos oito casos de desenvolvimento para análise v4](records/DOC/DOC-0055/0002.json) · active · revision 2
 - [DOC-0056 — Aceite do PO e snapshots revisados dos oito casos de desenvolvimento v4](records/DOC/DOC-0056/0002.json) · active · revision 2
-- [DOC-0057 — Pedido concreto da campanha de desenvolvimento v4 ainda sem autorização](records/DOC/DOC-0057/0008.json) · active · revision 8
+- [DOC-0057 — Pedido concreto da campanha de desenvolvimento v4 ainda sem autorização](records/DOC/DOC-0057/0010.json) · active · revision 10
 - [DOC-0058 — Rodada v4 de desenvolvimento executada com falhas preservadas e revisão pendente](records/DOC/DOC-0058/0004.json) · active · revision 4
 - [DOC-0059 — Julgamentos humanos registrados nos oito outputs da campanha v4](records/DOC/DOC-0059/0002.json) · active · revision 2
-- [DOC-0060 — Candidato v4.1 e novo pedido de desenvolvimento ainda sem execução](records/DOC/DOC-0060/0006.json) · active · revision 6
+- [DOC-0060 — Candidato v4.1 e novo pedido de desenvolvimento ainda sem execução](records/DOC/DOC-0060/0008.json) · active · revision 8
 - [DOC-0061 — Campanha v4.1 interrompida na nona invocação com quatro saídas disponíveis](records/DOC/DOC-0061/0004.json) · active · revision 4
 - [DOC-0062 — Julgamento humano parcial v4.1: tres PASS e regressao de precedencia](records/DOC/DOC-0062/0002.json) · active · revision 2
+- [DOC-0063 — Candidato v4.2 e diagnosticos offline preparados sem execucao](records/DOC/DOC-0063/0004.json) · active · revision 4
 - [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2
 - [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1
 - [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1
@@ -151,11 +153,12 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [INC-0026 — Hashes do reservado divergem após normalização de default numérico](records/INC/INC-0026/0005.json) · verified · revision 5
 - [INC-0027 — Expectativas inexpressáveis em v3 e causas simultâneas ocultas](records/INC/INC-0027/0006.json) · draft · revision 6
 - [INC-0028 — Teste de concorrência depende de espera de 10 ms](records/INC/INC-0028/0003.json) · verified · revision 3
-- [INC-0029 — Fixture de integridade exige sessão inteira em 15 segundos](records/INC/INC-0029/0004.json) · verified · revision 4
+- [INC-0029 — Fixture de integridade exige sessão inteira em 15 segundos](records/INC/INC-0029/0006.json) · verified · revision 6
 - [INC-0030 — Rodada v4 interrompida em invalid-output e defeito Unicode reproduzido offline](records/INC/INC-0030/0002.json) · draft · revision 2
-- [INC-0031 — Regras aprovadas representadas como requisitos em dois casos v4](records/INC/INC-0031/0005.json) · draft · revision 5
+- [INC-0031 — Regras aprovadas representadas como requisitos em dois casos v4](records/INC/INC-0031/0006.json) · draft · revision 6
 - [INC-0032 — Edição de fonte durante teste com snapshot congelado](records/INC/INC-0032/0002.json) · verified · revision 2
-- [INC-0033 — Falha genérica de worker na quinta análise da campanha v4.1](records/INC/INC-0033/0001.json) · draft · revision 1
+- [INC-0033 — Falha genérica de worker na quinta análise da campanha v4.1](records/INC/INC-0033/0002.json) · draft · revision 2
+- [INC-0034 — MemoryError no setup de fixture durante suite local v4.2](records/INC/INC-0034/0001.json) · draft · revision 1
 - [LES-0001 — Tipos estáticos podem falhar em runtime](records/LES/LES-0001/0004.json) · verified · revision 4
 - [LES-0002 — Referências válidas não garantem precedência consistente](records/LES/LES-0002/0002.json) · verified · revision 2
 - [LES-0003 — Usar IDs curtos para parametrizações com payloads grandes](records/LES/LES-0003/0002.json) · verified · revision 2

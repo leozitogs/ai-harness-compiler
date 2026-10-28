@@ -77,6 +77,12 @@ com integridade em processo. Ver [confiabilidade](engineering/compiler-reliabili
 
 ## Quatro planos alvo
 
+O [diagnóstico semântico offline](engineering/semantic-diagnostics.md) acrescenta
+contratos separados para categorias sanitizadas do worker e cobertura estrutural
+de perguntas de precedência (ADR-0035). Códigos históricos genéricos permanecem
+desconhecidos. O candidato opt-in v4.2 preserva versões anteriores e não altera
+assessment, aprovação humana ou autorização de execução.
+
 ModelPolicy/v1 centraliza a preferência operacional de todas as funções com LLM:
 Codex CLI / gpt-6.1-sol. A política é resolvida na fronteira CLI, mantém alternativa
 local explícita e não aprova fatos/qualifica modelos. Os checkpoints da equipe

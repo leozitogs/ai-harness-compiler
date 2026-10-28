@@ -39,6 +39,11 @@ def test_historical_source_freeze_preserves_exact_bytes_and_global_limits():
     archived = {e["path"]: e for e in archive["sources"]}
     assert len(archived) == 5 and len(request.sources) == 103
     assert set(archived).issubset({s.path for s in request.sources})
+    extra_directory = REQUEST.parent / "additional-source-archive"
+    extra = {
+        e["path"]: e
+        for e in json.loads((extra_directory / "manifest.json").read_bytes())["sources"]
+    }
     for source in request.sources:
         path = ROOT / source.path
         if source.path in archived:
@@ -46,6 +51,10 @@ def test_historical_source_freeze_preserves_exact_bytes_and_global_limits():
             assert entry["sha256"] == source.sha256
             assert entry["archive"] == source.sha256 + ".py.txt"
             path = directory / entry["archive"]
+        elif source.path in extra:
+            entry = extra[source.path]
+            assert entry["sha256"] == source.sha256
+            path = extra_directory / entry["archive"]
         assert hashlib.sha256(path.read_bytes()).hexdigest() == source.sha256
     # Historical bytes are replay evidence, never an exception to live source gates.
     with pytest.raises(ValueError, match="Transport source"):

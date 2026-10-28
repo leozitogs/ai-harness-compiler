@@ -339,7 +339,7 @@ def test_fixed_worker_can_start_isolated_but_invalid_request_never_dispatches(tm
         cwd=tmp_path,
         check=False,
     )
-    assert result.returncode == 2
+    assert result.returncode == 21
     assert result.stdout == result.stderr == b""
 
 
@@ -398,7 +398,7 @@ def test_worker_validates_before_provider_and_preserves_only_final_response(monk
     )
     output = io.BytesIO()
     monkeypatch.setattr(sys, "stdout", SimpleNamespace(buffer=output))
-    assert semantic_worker_v4.main() == (0 if valid else 2)
+    assert semantic_worker_v4.main() == (0 if valid else 21)
     assert len(calls) == (1 if valid else 0)
     if valid:
         assert json.loads(output.getvalue()) == {"response": '{"final":"synthetic"}'}
