@@ -1,0 +1,63 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Preserved initial source-freeze mismatch; no validator relaxation or model retry.",
+    "Finished source edits and reran only the affected overflow fixture: one passed.",
+    "Ran complete local suite with stable source files: 1333 passed; separate candidate artifact tests: three passed."
+  ],
+  "author": "codex:engineering",
+  "challenge": "Keep sources stable between fixture freeze, worker execution and replay.",
+  "consequences": [],
+  "context": "During offline v4.1 preparation, the source-frozen integration suite was still running when a source error-message was edited. Initial run: 137 passed/one failed. Failure raised Running implementation differs from frozen repository in the overflow replay test.",
+  "created_at": "2026-10-28T00:08:58.570711+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Observed mismatch and stable isolated/full reruns are recorded; existing source mutation tests preserve refusal behavior. No new inference or relaxed policy.",
+      "outcome": "observed",
+      "sha256": "cf676eecf594fa0181400f3d8ca82a3e350e88f88c551795b77ad411bc248f5b",
+      "source": "docs/delivery/sprint-2-6-v41-relational-candidate.md"
+    },
+    {
+      "command": null,
+      "note": "Observed mismatch and stable isolated/full reruns are recorded; existing source mutation tests preserve refusal behavior. No new inference or relaxed policy.",
+      "outcome": "observed",
+      "sha256": "52284a15a4c3716ac671338ed6420c9b576279e4f0a135afbef8e485dc7b7080",
+      "source": "docs/evidence/sprint-2-6-v41-preparation-20261027/offline-verification.json"
+    },
+    {
+      "command": null,
+      "note": "Observed mismatch and stable isolated/full reruns are recorded; existing source mutation tests preserve refusal behavior. No new inference or relaxed policy.",
+      "outcome": "observed",
+      "sha256": "f85aa63e8ec1200f196930ca3c1923a521cd7634f0840e0206114d4682aa39d3",
+      "source": "tests/test_semantic_campaign.py"
+    }
+  ],
+  "id": "INC-0032",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Local engineering process incident, not a provider or model quality failure.",
+    "Passing stable tests does not prove real model improvement or remove INC-0031 failures."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0034",
+    "DOC-0060"
+  ],
+  "resolution": "Treat source mutations and source-frozen test execution as sequential dependencies. Finish edits before creating/running fixtures; repeat affected fixtures only after diagnosing the mismatch. Keep source verification unchanged.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": "The running test copied and froze source files before an edit; replay compared them with later runtime source bytes and correctly refused the mismatch. Editing source while a source-bound suite runs invalidates that fixture.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "One integrated fixture replay correctly rejected different runtime/source bytes after an error-message edit during the suite. Isolated stable rerun and subsequent complete stable suite passed without weakening source gates. Process incident only; no model call or product-policy bypass.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Edição de fonte durante teste com snapshot congelado",
+  "updated_at": "2026-10-28T00:08:58.570711+00:00"
+}

@@ -2,16 +2,20 @@
 
 import argparse
 from pathlib import Path
+from typing import get_args
+
+from pydantic import TypeAdapter
 
 from ai_harness_compiler.grounding import extract_grounding
 from ai_harness_compiler.models.semantic_case_v3 import AssessmentCaseV3
 from ai_harness_compiler.models.semantic_eval import UnderstandingRubric
 from ai_harness_compiler.models.semantic_flow_v4 import SemanticFlowRequestV4
+from ai_harness_compiler.models.semantic_program import SemanticProgramVersion
 from ai_harness_compiler.models.semantic_verification_v5 import audit_v5_program_digest
 from ai_harness_compiler.models.supervised_transport import TransportLimitsV1
 from ai_harness_compiler.semantic_campaign import _bounded_path, prepare_campaign
 from ai_harness_compiler.semantic_flow_runner_v4 import _read, _write
-from ai_harness_compiler.semantic_generation_v4 import generation_program_v4
+from ai_harness_compiler.semantic_generation_programs import program_digest
 
 
 def main() -> None:
@@ -21,10 +25,16 @@ def main() -> None:
     parser.add_argument("--campaign-id", required=True)
     parser.add_argument("--model", required=True)
     parser.add_argument("--output", required=True)
+    parser.add_argument(
+        "--generation-program",
+        choices=get_args(SemanticProgramVersion),
+        default="semantic-composition/v4.0",
+    )
     parser.add_argument("--call-seconds", type=int, default=180)
     parser.add_argument("--cleanup-seconds", type=int, default=20)
     parser.add_argument("--session-seconds", type=int, default=3600)
     args = parser.parse_args()
+    version = TypeAdapter(SemanticProgramVersion).validate_python(args.generation_program)
     root = args.repository.resolve()
     if (
         not args.corpus.startswith("evals/")
@@ -60,7 +70,7 @@ def main() -> None:
                 case=case,
                 rubric=rubric,
                 requested_model=args.model,
-                generation_program_sha256=generation_program_v4(extract_grounding(case.project)),
+                generation_program_sha256=program_digest(extract_grounding(case.project), version),
                 audit_program_sha256=audit_v5_program_digest(),
             )
         )

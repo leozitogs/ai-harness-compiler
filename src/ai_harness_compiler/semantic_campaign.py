@@ -27,10 +27,10 @@ from ai_harness_compiler.semantic_flow_runner_v4 import (
     run_semantic_flow_v4,
     validate_semantic_flow_v4,
 )
+from ai_harness_compiler.semantic_generation_programs import program_prompt
 from ai_harness_compiler.semantic_generation_v4 import (
     audit_prompt_v5,
     audit_schema_v5,
-    generation_prompt_v4,
     generation_schema_v4,
 )
 from ai_harness_compiler.supervised_semantic_flow import (
@@ -277,7 +277,10 @@ def validate_campaign(repository: Path, campaign_id: str) -> SemanticCampaignRep
         flow = request.flows[call.flow_index]
         if call.stage == "analysis":
             extraction = extract_grounding(flow.case.project)
-            prompt, schema = generation_prompt_v4(extraction), generation_schema_v4(extraction)
+            prompt, schema = (
+                program_prompt(extraction, flow.generation_program_sha256),
+                generation_schema_v4(extraction),
+            )
         else:
             analysis = report.results[call.flow_index].analysis
             if analysis is None:

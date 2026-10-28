@@ -1,0 +1,106 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Continuation of ADR-0030 after scoped PO business decisions and representability correction. Old candidate/runner and evaluation corpus remain frozen.",
+  "created_at": "2026-10-22T22:30:55.053957+00:00",
+  "decision": "Preserve a shared exact component inventory; keep audit advisory and human review snapshot-bound. Run only with explicit request authorization and injected generator; debit before each call and forbid replay execution. Real inference requires separately supervised transport and a new approved frozen protocol.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "43 synthetic offline regressions passed. No real provider calls, semantic model success, reserved reassessment, default promotion or sprint completion.",
+      "outcome": "observed",
+      "sha256": "96dcbb533a3cb26cd610948b4dcbe70d25f0810961ee16951ffab369d3a4e013",
+      "source": "docs/adr/0031-semantic-v4-injected-flow.md"
+    },
+    {
+      "command": null,
+      "note": "Current documentation/catalog/planning source refreshed after opt-in supervised transport; see ADR-0032/DOC-0048. Historical outcomes remain scoped and immutable. Zero inference calls, no semantic qualification or completion.",
+      "outcome": "observed",
+      "sha256": "e7cc9e4852e4437c26c9dc1771e335ba3c8a4570d7be4102576108a1f51d448b",
+      "source": "docs/engineering/semantic-v4-flow.md"
+    },
+    {
+      "command": null,
+      "note": "43 synthetic offline regressions passed. No real provider calls, semantic model success, reserved reassessment, default promotion or sprint completion.",
+      "outcome": "observed",
+      "sha256": "a9a77f877bad345f6fb6095c283c534a20b3189da29582f9f49a1a5171b275c5",
+      "source": "src/ai_harness_compiler/models/semantic_inventory_v4.py"
+    },
+    {
+      "command": null,
+      "note": "43 synthetic offline regressions passed. No real provider calls, semantic model success, reserved reassessment, default promotion or sprint completion.",
+      "outcome": "observed",
+      "sha256": "6e79ace985c523014b8f41589977327ad52ff3c649793ee17ff92628a45cf59c",
+      "source": "src/ai_harness_compiler/models/semantic_verification_v5.py"
+    },
+    {
+      "command": null,
+      "note": "43 synthetic offline regressions passed. No real provider calls, semantic model success, reserved reassessment, default promotion or sprint completion.",
+      "outcome": "observed",
+      "sha256": "71db1defdecacffbd23d4ce5dd5637873c00d72ba1d13b6945c6cb7a6d43cd6f",
+      "source": "src/ai_harness_compiler/models/semantic_assessment_v4.py"
+    },
+    {
+      "command": null,
+      "note": "Current source/planning metadata adds explicit v4.1 routing and candidate preparation. Historical v4.0 instructions, serialized requests, outputs and human judgments remain unchanged; old source bytes are archived and legacy runtime replay is frozen. No migration of acceptance, new-call authority or model efficacy. See ADR-0034/DOC-0060.",
+      "outcome": "observed",
+      "sha256": "84371bb8a5ac93a90ef5041f3ae409bc7c95b8f907e219b2bb7104fb9b80854b",
+      "source": "src/ai_harness_compiler/models/semantic_flow_v4.py"
+    },
+    {
+      "command": null,
+      "note": "43 synthetic offline regressions passed. No real provider calls, semantic model success, reserved reassessment, default promotion or sprint completion.",
+      "outcome": "observed",
+      "sha256": "47657db81a364d13d02e9978cdf9bf59193627c7a4cad28736ff893c27ceff2c",
+      "source": "src/ai_harness_compiler/semantic_generation_v4.py"
+    },
+    {
+      "command": null,
+      "note": "Current source/planning metadata adds explicit v4.1 routing and candidate preparation. Historical v4.0 instructions, serialized requests, outputs and human judgments remain unchanged; old source bytes are archived and legacy runtime replay is frozen. No migration of acceptance, new-call authority or model efficacy. See ADR-0034/DOC-0060.",
+      "outcome": "observed",
+      "sha256": "142e9801ba7ae94f4ea23d8051d9192d29aaca82240388c7c347005e1bac775c",
+      "source": "src/ai_harness_compiler/semantic_flow_runner_v4.py"
+    },
+    {
+      "command": null,
+      "note": "Source refreshed after additive offline v4 flow integration, scoped in ADR-0031/DOC-0047. Historical claims unchanged; no real model calls, reserved reassessment, default promotion or completion.",
+      "outcome": "observed",
+      "sha256": "b2d77e73373d3c0d6ec48a3fb6fb921708e28c6f92cad4e4194eca6792def58b",
+      "source": "tests/test_semantic_flow_v4.py"
+    }
+  ],
+  "id": "DE-0021",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "Synthetic development contract tests do not qualify the model or establish semantic quality.",
+    "Boundary invocation budget does not supervise time or hidden transport requests; no real adapter configured.",
+    "Human declarations are not authenticated; private artifacts rely on repository filesystem permissions.",
+    "No migration of old approvals, reserved outputs, defaults or sprint/story completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0030",
+    "DE-0020",
+    "DOC-0046",
+    "INC-0027",
+    "ADR-0034"
+  ],
+  "resolution": null,
+  "review_note": "Refresh changed current-source pointers only; immutable earlier revisions retain original evidence. Historical execution requires its frozen source package, not current routing; no requalification or budget transfer.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 8,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Provider-independent generation v4, advisory component audit v5, independent human assessment v4 and opt-in injected runner. Exact snapshots, single-use claim, two boundary invocations, first-failure stop and private offline replay.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Auditoria consultiva separada de suporte humano e execução",
+  "updated_at": "2026-10-28T00:09:14.242540+00:00"
+}

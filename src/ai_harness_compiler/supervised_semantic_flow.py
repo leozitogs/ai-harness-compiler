@@ -27,10 +27,10 @@ from ai_harness_compiler.semantic_flow_runner_v4 import (
     run_semantic_flow_v4,
     validate_semantic_flow_v4,
 )
+from ai_harness_compiler.semantic_generation_programs import program_prompt
 from ai_harness_compiler.semantic_generation_v4 import (
     audit_prompt_v5,
     audit_schema_v5,
-    generation_prompt_v4,
     generation_schema_v4,
 )
 
@@ -218,7 +218,10 @@ def validate_supervised_flow(repository: Path, run_id: str) -> SupervisedFlowRep
         if _read(directory / f"receipt-{receipt.index}.json") != receipt.model_dump(mode="json"):
             raise ValueError("Saved transport receipt differs")
         if receipt.index == 1:
-            prompt, schema = generation_prompt_v4(extraction), generation_schema_v4(extraction)
+            prompt, schema = (
+                program_prompt(extraction, report.request.flow.generation_program_sha256),
+                generation_schema_v4(extraction),
+            )
         elif report.flow_result.analysis:
             prompt, schema = (
                 audit_prompt_v5(report.flow_result.analysis),

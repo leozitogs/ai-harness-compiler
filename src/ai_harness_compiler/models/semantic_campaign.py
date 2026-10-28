@@ -51,6 +51,9 @@ class SemanticCampaignRequestV1(Contract):
 
     @model_validator(mode="after")
     def bounded_approved_sequence(self) -> Self:
+        from ai_harness_compiler.grounding import extract_grounding
+        from ai_harness_compiler.semantic_generation_programs import resolve_program
+
         path = self.corpus_source
         if (
             not path.startswith("evals/")
@@ -70,6 +73,9 @@ class SemanticCampaignRequestV1(Contract):
             if len(set(values)) != len(values):
                 raise ValueError("Campaign run, case and input identities must be unique")
         first = self.flows[0]
+        version = resolve_program(
+            extract_grounding(first.case.project), first.generation_program_sha256
+        )
         for index, flow in enumerate(self.flows):
             self.supervision(index)  # Reuse source-inventory constraints without executing.
             if (
@@ -77,9 +83,13 @@ class SemanticCampaignRequestV1(Contract):
                 or not flow.rubric.approval
                 or flow.rubric != first.rubric
                 or flow.requested_model != first.requested_model
+                or resolve_program(
+                    extract_grounding(flow.case.project), flow.generation_program_sha256
+                )
+                != version
                 or preflight_case(flow.case, "SemanticAnalysis/v4").status != "compatible"
             ):
-                raise ValueError("Campaign requires approved compatible cases and one rubric/model")
+                raise ValueError("Campaign requires approved cases and one rubric/model/program")
         return self
 
 

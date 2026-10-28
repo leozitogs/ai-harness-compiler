@@ -1,11 +1,14 @@
-"""Prepared campaign binds approved public development data, without authorizing it."""
+"""Historical request stays immutable; archived sources do not authorize current execution."""
 
 import hashlib
 import json
 from pathlib import Path
 
+import pytest
+
 from ai_harness_compiler.models.evidence import canonical_project_digest
 from ai_harness_compiler.models.semantic_campaign import SemanticCampaignRequestV1
+from ai_harness_compiler.supervised_semantic_flow import _validate_request
 
 ROOT = Path(__file__).resolve().parents[1]
 REQUEST = ROOT / "evals/understanding/v4/development-campaign/request.json"
@@ -28,14 +31,25 @@ def test_prepared_request_binds_all_reviewed_cases_in_the_approved_order():
         assert flow.requested_model == "gpt-6.1-sol" and flow.rubric.approval is not None
 
 
-def test_source_freeze_matches_committed_implementation_and_global_limits():
+def test_historical_source_freeze_preserves_exact_bytes_and_global_limits():
     request = SemanticCampaignRequestV1.model_validate_json(REQUEST.read_bytes())
-    expected = {
-        p.relative_to(ROOT).as_posix() for p in (ROOT / "src/ai_harness_compiler").rglob("*.py")
-    }
-    assert {s.path for s in request.sources} == expected | {"pyproject.toml", "uv.lock"}
+    directory = REQUEST.parent / "legacy-source-archive"
+    archive = json.loads((directory / "manifest.json").read_bytes())
+    assert archive["request_sha256"] == request.sha256 == DIGEST
+    archived = {e["path"]: e for e in archive["sources"]}
+    assert len(archived) == 5 and len(request.sources) == 103
+    assert set(archived).issubset({s.path for s in request.sources})
     for source in request.sources:
-        assert hashlib.sha256((ROOT / source.path).read_bytes()).hexdigest() == source.sha256
+        path = ROOT / source.path
+        if source.path in archived:
+            entry = archived[source.path]
+            assert entry["sha256"] == source.sha256
+            assert entry["archive"] == source.sha256 + ".py.txt"
+            path = directory / entry["archive"]
+        assert hashlib.sha256(path.read_bytes()).hexdigest() == source.sha256
+    # Historical bytes are replay evidence, never an exception to live source gates.
+    with pytest.raises(ValueError, match="Transport source"):
+        _validate_request(ROOT, request.supervision(0))
     assert request.max_calls == 16 and request.limits.max_worker_launches == 2
     assert request.limits.call_timeout_seconds == 180
     assert request.limits.cleanup_timeout_seconds == 20

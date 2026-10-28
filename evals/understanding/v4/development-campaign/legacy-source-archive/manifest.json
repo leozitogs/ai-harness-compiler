@@ -1,0 +1,32 @@
+{
+  "format": "legacy-source-archive/v1",
+  "request_sha256": "a64cb6e7a779d4c5c201db9beb54238e793604fc564eb963b3987e37ffd88236",
+  "purpose": "Historical source bytes only. Does not permit executing an old request against current sources.",
+  "sources": [
+    {
+      "path": "src/ai_harness_compiler/models/semantic_flow_v4.py",
+      "sha256": "94181caa81cf6f93ec9d9a5e0112c661bc5d1901a7f11a72423db5073eda16b6",
+      "archive": "94181caa81cf6f93ec9d9a5e0112c661bc5d1901a7f11a72423db5073eda16b6.py.txt"
+    },
+    {
+      "path": "src/ai_harness_compiler/semantic_flow_runner_v4.py",
+      "sha256": "d6100fe4c81774a4ee1fdfeff849eaa018c7ea8e8fff0009de5a083b65dc9d18",
+      "archive": "d6100fe4c81774a4ee1fdfeff849eaa018c7ea8e8fff0009de5a083b65dc9d18.py.txt"
+    },
+    {
+      "path": "src/ai_harness_compiler/supervised_semantic_flow.py",
+      "sha256": "6c512183792d2b78870a378255770052e449edea96ea35789adbf8ad50326df4",
+      "archive": "6c512183792d2b78870a378255770052e449edea96ea35789adbf8ad50326df4.py.txt"
+    },
+    {
+      "path": "src/ai_harness_compiler/semantic_campaign.py",
+      "sha256": "e006a887cd735718ae9e5d4b491838446d1833cedecd260b3af5d5a1f4d39bfd",
+      "archive": "e006a887cd735718ae9e5d4b491838446d1833cedecd260b3af5d5a1f4d39bfd.py.txt"
+    },
+    {
+      "path": "src/ai_harness_compiler/models/semantic_campaign.py",
+      "sha256": "468e033e74b03d9274aa43815d6d1d011fafa3502f4b791ebc352381532350c8",
+      "archive": "468e033e74b03d9274aa43815d6d1d011fafa3502f4b791ebc352381532350c8.py.txt"
+    }
+  ]
+}
