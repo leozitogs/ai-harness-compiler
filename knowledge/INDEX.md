@@ -36,7 +36,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [ADR-0032 — Transporte supervisionado para o fluxo v4](records/ADR/ADR-0032/0012.json) · active · revision 12
 - [ADR-0033 — Campanha semântica com orçamento global e autorização própria](records/ADR/ADR-0033/0010.json) · active · revision 10
 - [ADR-0034 — Programa de geração v4.1 explícito com replay e baseline preservados](records/ADR/ADR-0034/0008.json) · active · revision 8
-- [ADR-0035 — Diagnostico sanitizado e perguntas de precedencia separadas](records/ADR/ADR-0035/0004.json) · active · revision 4
+- [ADR-0035 — Diagnostico sanitizado e perguntas de precedencia separadas](records/ADR/ADR-0035/0006.json) · active · revision 6
 - [DE-0001 — Memória de engenharia versionada](records/DE/DE-0001/0001.json) · draft · revision 1
 - [DE-0002 — Gerar memória e especialistas para cada projeto](records/DE/DE-0002/0002.json) · active · revision 2
 - [DE-0003 — Intake limitado e YAML explícito](records/DE/DE-0003/0004.json) · active · revision 4
@@ -90,16 +90,16 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0027 — Incremento funcional AHC-030 e demonstração Vera/Nexo](records/DOC/DOC-0027/0008.json) · active · revision 8
 - [DOC-0028 — Correções da review e demonstração de resolução AHC-030](records/DOC/DOC-0028/0004.json) · active · revision 4
 - [DOC-0029 — Review e encerramento da Sprint2.5.5 pelo PO](records/DOC/DOC-0029/0002.json) · active · revision 2
-- [DOC-0030 — Kickoff Sprint2.6 e auditoria offline da baseline](records/DOC/DOC-0030/0074.json) · active · revision 74
-- [DOC-0031 — Parecer Nexo sobre kickoff e pacote de revisão humana](records/DOC/DOC-0031/0072.json) · active · revision 72
-- [DOC-0032 — Adjudicação técnica consultiva dos diagnósticos de desenvolvimento](records/DOC/DOC-0032/0070.json) · active · revision 70
+- [DOC-0030 — Kickoff Sprint2.6 e auditoria offline da baseline](records/DOC/DOC-0030/0076.json) · active · revision 76
+- [DOC-0031 — Parecer Nexo sobre kickoff e pacote de revisão humana](records/DOC/DOC-0031/0074.json) · active · revision 74
+- [DOC-0032 — Adjudicação técnica consultiva dos diagnósticos de desenvolvimento](records/DOC/DOC-0032/0072.json) · active · revision 72
 - [DOC-0033 — Julgamentos específicos do PO e candidato corretivo de composição](records/DOC/DOC-0033/0014.json) · active · revision 14
-- [DOC-0034 — Matriz humana completa de desenvolvimento com cinco aceites e três falhas](records/DOC/DOC-0034/0064.json) · active · revision 64
+- [DOC-0034 — Matriz humana completa de desenvolvimento com cinco aceites e três falhas](records/DOC/DOC-0034/0066.json) · active · revision 66
 - [DOC-0035 — Rodada corretiva v3.3 com orçamento fixado e revisão independente por snapshot](records/DOC/DOC-0035/0010.json) · active · revision 10
-- [DOC-0036 — Revisão humana v3.3: seis passes e duas falhas de materialidade](records/DOC/DOC-0036/0062.json) · active · revision 62
+- [DOC-0036 — Revisão humana v3.3: seis passes e duas falhas de materialidade](records/DOC/DOC-0036/0064.json) · active · revision 64
 - [DOC-0037 — Candidato de materialidade v3.4 e execução aguardando autorização específica](records/DOC/DOC-0037/0004.json) · active · revision 4
 - [DOC-0038 — Rodada v3.4 executada e oito análises aprovadas pelo PO](records/DOC/DOC-0038/0002.json) · active · revision 2
-- [DOC-0039 — Correção estrutural candidata do auditor e consolidação de AHC-021/022](records/DOC/DOC-0039/0056.json) · active · revision 56
+- [DOC-0039 — Correção estrutural candidata do auditor e consolidação de AHC-021/022](records/DOC/DOC-0039/0058.json) · active · revision 58
 - [DOC-0040 — Smoke único autorizado da auditoria v4.1 com vínculos válidos](records/DOC/DOC-0040/0003.json) · active · revision 3
 - [DOC-0041 — Curadoria nova do reservado v2 e gates pendentes](records/DOC/DOC-0041/0006.json) · active · revision 6
 - [DOC-0042 — Executor reservado verificado e pedido de 16 invocações pendente](records/DOC/DOC-0042/0004.json) · active · revision 4
@@ -123,7 +123,8 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0060 — Candidato v4.1 e novo pedido de desenvolvimento ainda sem execução](records/DOC/DOC-0060/0008.json) · active · revision 8
 - [DOC-0061 — Campanha v4.1 interrompida na nona invocação com quatro saídas disponíveis](records/DOC/DOC-0061/0004.json) · active · revision 4
 - [DOC-0062 — Julgamento humano parcial v4.1: tres PASS e regressao de precedencia](records/DOC/DOC-0062/0002.json) · active · revision 2
-- [DOC-0063 — Candidato v4.2 e diagnosticos offline preparados sem execucao](records/DOC/DOC-0063/0006.json) · active · revision 6
+- [DOC-0063 — Candidato v4.2 e diagnosticos offline preparados sem execucao](records/DOC/DOC-0063/0008.json) · active · revision 8
+- [DOC-0064 — Campanha v4.2 completa com oito novos julgamentos pendentes](records/DOC/DOC-0064/0002.json) · active · revision 2
 - [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2
 - [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1
 - [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1
@@ -155,9 +156,9 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [INC-0028 — Teste de concorrência depende de espera de 10 ms](records/INC/INC-0028/0003.json) · verified · revision 3
 - [INC-0029 — Fixture de integridade exige sessão inteira em 15 segundos](records/INC/INC-0029/0006.json) · verified · revision 6
 - [INC-0030 — Rodada v4 interrompida em invalid-output e defeito Unicode reproduzido offline](records/INC/INC-0030/0002.json) · draft · revision 2
-- [INC-0031 — Regras aprovadas representadas como requisitos em dois casos v4](records/INC/INC-0031/0007.json) · draft · revision 7
+- [INC-0031 — Regras aprovadas representadas como requisitos em dois casos v4](records/INC/INC-0031/0008.json) · draft · revision 8
 - [INC-0032 — Edição de fonte durante teste com snapshot congelado](records/INC/INC-0032/0002.json) · verified · revision 2
-- [INC-0033 — Falha genérica de worker na quinta análise da campanha v4.1](records/INC/INC-0033/0003.json) · draft · revision 3
+- [INC-0033 — Falha genérica de worker na quinta análise da campanha v4.1](records/INC/INC-0033/0004.json) · draft · revision 4
 - [INC-0034 — MemoryError no setup de fixture durante suite local v4.2](records/INC/INC-0034/0002.json) · draft · revision 2
 - [INC-0035 — Teste de script depende do sys.path de python -m pytest](records/INC/INC-0035/0002.json) · verified · revision 2
 - [LES-0001 — Tipos estáticos podem falhar em runtime](records/LES/LES-0001/0004.json) · verified · revision 4
