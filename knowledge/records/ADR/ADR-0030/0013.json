@@ -1,0 +1,131 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "INC-0027 exposed context requirement expectations unrepresentable by v3 and rejection scope conflation. Two limited PO judgments did not approve a whole response or new contract; this increment implements the authorized offline migration step.",
+  "created_at": "2026-10-22T21:57:47.875042+00:00",
+  "decision": "Explicit evidence-bound requirements retain normative force/applicability. Factual context is not relabeled. Content rejection is separate from project disposition. Preflight recomputes target compatibility and rejects implicit old-case migration. New schemas use an offline supplemental registry to preserve frozen CLI/source hashes.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "edbdd5377ed9a5ed51d9aa8b1aea9eceff50bf2dabd6aa194df22e18961b3c9b",
+      "source": "docs/adr/0030-versioned-semantic-representability.md"
+    },
+    {
+      "command": null,
+      "note": "Source refreshed after additive offline v4 flow integration, scoped in ADR-0031/DOC-0047. Historical claims unchanged; no real model calls, reserved reassessment, default promotion or completion.",
+      "outcome": "observed",
+      "sha256": "e23f8dd89267666bce29343f8e865f390cbbdfae4c335ad4a5d22ce366107396",
+      "source": "docs/engineering/semantic-contract-v4.md"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "c573048d01e7ccf1a2f21690cbe125576ec3bd030288d0d2011feac291d21100",
+      "source": "src/ai_harness_compiler/models/semantic_analysis_v4.py"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "d7783fae07ef310c3ccdbbf2856ce283282eb9ba599d4579cc8bc07f5f78be4a",
+      "source": "src/ai_harness_compiler/models/semantic_case_v3.py"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "f00a473f1c68896b422f09d0439ec40a9450aab698aa27495feba527560e8b4b",
+      "source": "src/ai_harness_compiler/models/semantic_preflight.py"
+    },
+    {
+      "command": null,
+      "note": "Current source/planning snapshot follows additive offline diagnostics and explicit v4.2 preparation; scoped tests/build pass; full local run had one setup MemoryError after 1384 passes, isolated recheck 41 passes. CI remains required. Historical judgments, source bytes and execution scopes remain in immutable prior revisions/archives. No transfer of model success or budget. See ADR-0035/DOC-0063.",
+      "outcome": "observed",
+      "sha256": "a9762c393e622bc29dbfda50dc348d05801c2b5da26b9d1c47620699da5643c5",
+      "source": "src/ai_harness_compiler/offline_schema_registry.py"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "f2b7c72785b311fedaadbd7bdb88ff8d3910ef4439fb9d3388178042a5a039a5",
+      "source": "scripts/preflight_semantic_case.py"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "5d42abb95e32b3059580b8c58436b19350f948ed428ecdf4b6f919aa7a50d18d",
+      "source": "scripts/export_schemas.py"
+    },
+    {
+      "command": null,
+      "note": "Source refreshed after additive offline v4 flow integration, scoped in ADR-0031/DOC-0047. Historical claims unchanged; no real model calls, reserved reassessment, default promotion or completion.",
+      "outcome": "observed",
+      "sha256": "06cf44c30be1ec425f8d0402a11c0f36064c5d42e6a736bf33ec8a1c952be755",
+      "source": "tests/test_semantic_contract_v4.py"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "0b120d8a003e83a032ad3dcc5a0ab40fb7576847e22b04d481f7037e68108371",
+      "source": "schemas/semantic-analysis-proposal-v4.schema.json"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "c4741eec04953815e0eb2db3b9849d58a8f2a3c88ac30500ef969a654f31206f",
+      "source": "schemas/semantic-analysis-v4.schema.json"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "1492915c78234864737787af9ae1366420ea79624dc24faca8a6914bdbab1628",
+      "source": "schemas/semantic-assessment-case-v3.schema.json"
+    },
+    {
+      "command": null,
+      "note": "Offline typed contracts, generated schemas and 38 passing synthetic development tests. No provider, generation, reserved migration/reassessment, semantic approval or default promotion.",
+      "outcome": "observed",
+      "sha256": "364188435bc6553c148f988ecdbdd8b9d37467d0edebc828b7a8896f016dcfd7",
+      "source": "schemas/semantic-preflight-report.schema.json"
+    }
+  ],
+  "id": "ADR-0030",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "Contracts and script are implemented only offline; generator, auditor and semantic-review v4 integration and new protocol remain pending.",
+    "Compatible preflight is neither execution authorization, semantic support, output acceptance, model qualification nor compilation permission.",
+    "No actual reserved input/output migrated or reevaluated; exposed corpus cannot establish another blind generalization result."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0021",
+    "ADR-0029",
+    "INC-0027"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 13,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Add SemanticAnalysis/v4, AssessmentCase/v3 and SemanticPreflightReport/v1 while preserving historical v3 runtime/analysis, v2 cases, schemas and approvals.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Representabilidade versionada e rejeição de conteúdo por escopo",
+  "updated_at": "2026-10-28T22:07:20.516693+00:00"
+}

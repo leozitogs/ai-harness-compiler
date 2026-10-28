@@ -1,0 +1,50 @@
+{
+  "format": "offline-diagnostic-observation/v1",
+  "date": "2026-10-28",
+  "cases": [
+    {
+      "case_id": "dev-adversarial-v4",
+      "analysis_sha256": "79e96bb544f45313d59d3bec377b60ca277879647fe972d1bf9c2522ee827625",
+      "analysis_file_sha256": "f2f72fcff25fded65750ba70570f9c81b3b863e7e7989a3899f7cdeb8584fef6",
+      "diagnostic_file_sha256": "0c08186f14ae67d32232542924ad76dd8cd5056b45c03ce04da95a107f639e44",
+      "status": "no-conflicts",
+      "conflicts": 0,
+      "original_human_verdict": "pass"
+    },
+    {
+      "case_id": "dev-ambiguous-v4",
+      "analysis_sha256": "7b1a77f27de6845861cfe8f4efccce749b9349fe1946a5744ec81fe822045433",
+      "analysis_file_sha256": "4664ac82b4ecb5bc41a1f6e71f16ee170f4436452f0ff33a4a42990f7f62949b",
+      "diagnostic_file_sha256": "3972f4a1118c93c49e0a5355e17b450bd2010fc6e99a941d34465b19b63d5e09",
+      "status": "no-conflicts",
+      "conflicts": 0,
+      "original_human_verdict": "pass"
+    },
+    {
+      "case_id": "dev-branding-conflict-v4",
+      "analysis_sha256": "598fc41e5242b15d199a9ded52e010bb26898b8aa3a5ec18cc21bdaff0d4557a",
+      "analysis_file_sha256": "8d1d43f53283c8c7654b13faf3cc2f7f3da40c60958d918b70dd35e79237168b",
+      "diagnostic_file_sha256": "1f161e12c4b1f21a37cc4ac1c551002f70d222ee65c15b8a45270b968be391dc",
+      "status": "missing-question",
+      "conflicts": 1,
+      "original_human_verdict": "fail"
+    },
+    {
+      "case_id": "dev-compatible-rules-v4",
+      "analysis_sha256": "da30bb633da43197e21af5fae545fab16424127ddd2ece86eecc7693a71f932c",
+      "analysis_file_sha256": "0577d533330716aebd1dc4eef19651ae092873bab55953d539590ac1745ecb10",
+      "diagnostic_file_sha256": "c9192df857bf5284dd741a6f725b8d186c0562c3e9fad6a34b40f8ef217c0405",
+      "status": "no-conflicts",
+      "conflicts": 0,
+      "original_human_verdict": "pass"
+    }
+  ],
+  "historical_worker_category": "unknown",
+  "historical_worker_exit": 2,
+  "original_human_review_file_sha256": "61c4e2b772ebee717bdfdd8a1b9ab429360cfcfec6613a062179dd653da7a83f",
+  "original_outputs_preserved": true,
+  "expectations_changed": false,
+  "semantic_judgments_changed": false,
+  "new_model_invocations": 0,
+  "note": "Structural diagnostic only. A present question is not semantic success; old exit 2 still has unknown cause. No historical regrading."
+}

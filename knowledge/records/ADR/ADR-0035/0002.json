@@ -1,0 +1,88 @@
+{
+  "alternatives": [
+    "Raw exception logging rejected for privacy.",
+    "Retroactive assessment/expectation changes rejected.",
+    "Automatic output repair or budget reuse rejected."
+  ],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO authorized the recommended offline engineering sequence after scoped v4.1 human judgments. Partial campaign worker cause unknown and precedence-question omission confirmed as human uncertainty FAIL.",
+  "created_at": "2026-10-28T22:07:08.159449+00:00",
+  "decision": "Keep TransportReceipt/v1 wire unchanged. Add fixed exit-code categories and separate typed offline diagnostics. Add explicit opt-in v4.2 program with conflict plus multi-source precedence-question guidance. Never repair or regrade historical outputs; prepare a new exact request only.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Implemented offline, validated with synthetic workers and frozen historical replay. No real model efficacy or historical cause established.",
+      "outcome": "observed",
+      "sha256": "a7769550d5bce0c5fd92629b7a55ce3601d0ea4e03d50029885649c949f8799f",
+      "source": "docs/adr/0035-sanitized-worker-and-conflict-question-diagnostics.md"
+    },
+    {
+      "command": null,
+      "note": "Implemented offline, validated with synthetic workers and frozen historical replay. No real model efficacy or historical cause established.",
+      "outcome": "observed",
+      "sha256": "d7b925e67d5a2835adb3cdb792ebfc6c24aad7d7124e726b7daac3fdd11a064b",
+      "source": "docs/delivery/sprint-2-6-v42-precedence-candidate.md"
+    },
+    {
+      "command": null,
+      "note": "Implemented offline, validated with synthetic workers and frozen historical replay. No real model efficacy or historical cause established.",
+      "outcome": "observed",
+      "sha256": "4438fc8b0f307de98bb5d2b7ea7edb102ec67d78d10e36f2d581d61bbd9c5108",
+      "source": "src/ai_harness_compiler/models/worker_diagnostic.py"
+    },
+    {
+      "command": null,
+      "note": "Implemented offline, validated with synthetic workers and frozen historical replay. No real model efficacy or historical cause established.",
+      "outcome": "observed",
+      "sha256": "3831d78e221124df0c2d005da296b67c649f7f782a98732cfd2177c7b3594614",
+      "source": "src/ai_harness_compiler/models/conflict_questions.py"
+    },
+    {
+      "command": null,
+      "note": "Implemented offline, validated with synthetic workers and frozen historical replay. No real model efficacy or historical cause established.",
+      "outcome": "observed",
+      "sha256": "6cf7f6d63552aeac318aad7496119937e9fb01153e0a4af19d5369da2c75f961",
+      "source": "src/ai_harness_compiler/adapters/semantic_worker_v4.py"
+    },
+    {
+      "command": null,
+      "note": "Implemented offline, validated with synthetic workers and frozen historical replay. No real model efficacy or historical cause established.",
+      "outcome": "observed",
+      "sha256": "061ad4e129b73d6147973f3c359be404a69cb6280dfff9c8304e8ab16407818e",
+      "source": "src/ai_harness_compiler/semantic_generation_programs.py"
+    }
+  ],
+  "id": "ADR-0035",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "Offline and synthetic tests do not establish model efficacy or prompt causality.",
+    "Historical worker exit 2 still has unknown cause. Categories describe future observed failure boundaries, not service root causes.",
+    "Question presence with all source sides is structural, not semantic correctness or human approval.",
+    "New request requires exact PO execution authorization; prior budgets are closed. No assets, holdout, training, defaults, compilation or completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0034",
+    "DOC-0062",
+    "INC-0031",
+    "INC-0033"
+  ],
+  "resolution": null,
+  "review_note": "Check additive contracts, privacy, source freeze and absence of authority promotion.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Fixed worker exit categories plus additive WorkerDiagnostic/v1; conflict/question coverage independently bound to full analysis through ConflictQuestionDiagnostic/v1. Candidate v4.2 requests explicit precedence questions while preserving prior programs and historical assessments.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Diagnostico sanitizado e perguntas de precedencia separadas",
+  "updated_at": "2026-10-28T22:07:09.722217+00:00"
+}

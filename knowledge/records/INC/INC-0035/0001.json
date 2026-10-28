@@ -1,0 +1,56 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Captured exact failed Linux job log: one import failure and 1384 passed.",
+    "Changed test only to explicit runpy file loading; 14 focused checks passed under installed pytest entry point. Full fresh CI remains required before merge."
+  ],
+  "author": "codex:engineering",
+  "challenge": "Verify a standalone repository script without relying on the caller implicit import path or weakening CI.",
+  "consequences": [],
+  "context": "PR88 first CI run 40777819520, Linux 3.13 job 123131565573. Standalone scripts are not installed as a Python package. Local python -m pytest accidentally supplied a broader import path.",
+  "created_at": "2026-10-28T22:15:22.461389+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Exact CI import trace and installed-entry-point local recheck documented. Fourteen checks pass after explicit path loading; no runtime/source freeze change.",
+      "outcome": "observed",
+      "sha256": "6e332bcc1d09328a3b00268505535e859ee414ba5e467c00ff560c0caec19631",
+      "source": "docs/delivery/sprint-2-6-v42-precedence-candidate.md"
+    },
+    {
+      "command": null,
+      "note": "Exact CI import trace and installed-entry-point local recheck documented. Fourteen checks pass after explicit path loading; no runtime/source freeze change.",
+      "outcome": "observed",
+      "sha256": "f3435c1acc8b38945eda3897a34deb8b17540d2c95eb176456aa11aa6766ae04",
+      "source": "tests/test_conflict_questions.py"
+    }
+  ],
+  "id": "INC-0035",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Correction concerns test import portability, not model efficacy or the historical worker failure.",
+    "Full CI matrix must still pass; no skips, runtime changes or new execution budget."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0035",
+    "DOC-0063",
+    "INC-0034"
+  ],
+  "resolution": "Load the explicitly named standalone script with runpy.run_path and call its main. Keep production packaging, PYTHONPATH, runtime code and request freeze unchanged. Recheck with .venv/Scripts/pytest.exe as in CI.",
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": "Test imported scripts.inspect_semantic_diagnostics as if scripts were installed. The installed pytest launcher does not guarantee repository root on sys.path; CI trace confirms ModuleNotFoundError at that import.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "First Linux CI: one ModuleNotFoundError for scripts, 1384 passed. The new script-inspection test assumed the repository root was importable. Explicit path loading via runpy passes under the installed pytest entry point: 14 checks. No runtime/source-freeze or inference change.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Teste de script depende do sys.path de python -m pytest",
+  "updated_at": "2026-10-28T22:15:22.461389+00:00"
+}

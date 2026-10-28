@@ -1,0 +1,76 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "One authorized campaign stopped at the first technical failure, ninth invocation.",
+    "Offline canonical replay verified all nine receipts, four complete outputs and unavailable remainder.",
+    "Validated prepared WorkerRequest, JSON Schema and 15141-byte payload locally; compared input/schema to frozen baseline. No CLI/provider/model invocation performed for diagnosis.",
+    "Implemented additive diagnostics and v4.2 candidate offline; tested unknown historical code, explicit precedence coverage and no retry. New request prepared, unexecuted. No incident resolution or verified lesson claimed."
+  ],
+  "author": "codex:engineering",
+  "challenge": "Determine a safely observable technical failure category without exposing credentials/private errors or using unapproved retries.",
+  "consequences": [],
+  "context": "One exact authorized v4.1 development campaign. Previous eight worker invocations succeeded; fifth analysis failed before a validated artifact. Remaining cases were not started.",
+  "created_at": "2026-10-28T21:18:34.682704+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Observed failure preserved; no raw provider error or valid fifth response retained. Generic code prevents a specific root-cause attribution. Incident stays draft, without resolution or LES.",
+      "outcome": "observed",
+      "sha256": "0c9d3d27539f47e49c3c0319126734ffaaa9cea83ad4976a21a6e312c5a88558",
+      "source": "docs/delivery/sprint-2-6-v41-partial-result.md"
+    },
+    {
+      "command": null,
+      "note": "Observed failure preserved; no raw provider error or valid fifth response retained. Generic code prevents a specific root-cause attribution. Incident stays draft, without resolution or LES.",
+      "outcome": "observed",
+      "sha256": "737dc74e7d46761ffece017148570a6fea4ee8b8c3697178eaee4c487e1691ba",
+      "source": "docs/evidence/sprint-2-6-v41-development-20261028/execution.json"
+    },
+    {
+      "command": null,
+      "note": "Observed failure preserved; no raw provider error or valid fifth response retained. Generic code prevents a specific root-cause attribution. Incident stays draft, without resolution or LES.",
+      "outcome": "observed",
+      "sha256": "3d0abeed181ebc40501a41f412f4b2b01148d422465952388e39293dd796a686",
+      "source": "docs/evidence/sprint-2-6-v41-development-20261028/diagnosis.json"
+    },
+    {
+      "command": null,
+      "note": "Current documentation/test revision records CI import-path defect and test-only explicit loading correction; 14 installed-entry-point checks passed. Unknown historical worker/allocation causes remain unknown, no new inference or qualification.",
+      "outcome": "observed",
+      "sha256": "6e332bcc1d09328a3b00268505535e859ee414ba5e467c00ff560c0caec19631",
+      "source": "docs/delivery/sprint-2-6-v42-precedence-candidate.md"
+    }
+  ],
+  "id": "INC-0033",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Offline and synthetic tests do not establish model efficacy or prompt causality.",
+    "Historical worker exit 2 still has unknown cause. Categories describe future observed failure boundaries, not service root causes.",
+    "Question presence with all source sides is structural, not semantic correctness or human approval.",
+    "New request requires exact PO execution authorization; prior budgets are closed. No assets, holdout, training, defaults, compilation or completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0034",
+    "DOC-0060",
+    "DOC-0061",
+    "ADR-0035",
+    "DOC-0063"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 3,
+  "root_cause": "Unknown. Fixed worker returns generic exit 2 for multiple failure paths; retained receipt cannot distinguish them. Prepared request validates and schema/input match baseline, but this does not prove actual internal/provider behavior.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Historical invocation 9 failed with generic worker exit 2; cause remains unknown. Future worker exit categories and typed offline diagnostics implemented/tested; they cannot recover the historical cause. Campaign budget closed, no retry or new call; incident unresolved.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Falha genérica de worker na quinta análise da campanha v4.1",
+  "updated_at": "2026-10-28T22:15:29.911718+00:00"
+}

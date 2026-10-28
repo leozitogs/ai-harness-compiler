@@ -1,0 +1,16 @@
+{
+  "format": "legacy-source-archive/v1",
+  "purpose": "Historical source bytes, no execution authority.",
+  "sources": [
+    {
+      "path": "src/ai_harness_compiler/adapters/semantic_worker_v4.py",
+      "sha256": "a2cc9e5eba94965e991799e926568bb7019265f5bd39e00e86852bbfffed948b",
+      "archive": "a2cc9e5eba94965e991799e926568bb7019265f5bd39e00e86852bbfffed948b.py.txt"
+    },
+    {
+      "path": "src/ai_harness_compiler/offline_schema_registry.py",
+      "sha256": "baf7f88ac4cfc5dc01d3cb1a61a389cdf556d00daf11ab843d8d43eb3f92003b",
+      "archive": "baf7f88ac4cfc5dc01d3cb1a61a389cdf556d00daf11ab843d8d43eb3f92003b.py.txt"
+    }
+  ]
+}

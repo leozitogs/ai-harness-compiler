@@ -1,0 +1,88 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "User requested continuing after expectation approval. Implement and verify C1-C5 offline; C6 remains gated by a separate new exact budget authorization.",
+  "created_at": "2026-10-27T23:04:08.592077+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Inspect global accounting, durable source-bound controls and prepared public request. Synthetic subprocess tests include descendant cleanup; frozen compatibility replay preserves original initial not-run and separate human pass. No inference or semantic success claim.",
+      "outcome": "observed",
+      "sha256": "2750ee8a791749ae1a746f9a090eed5448dbdf60410eb9121d029f55a093f2d7",
+      "source": "docs/delivery/sprint-2-6-v4-development-campaign.md"
+    },
+    {
+      "command": null,
+      "note": "Inspect global accounting, durable source-bound controls and prepared public request. Synthetic subprocess tests include descendant cleanup; frozen compatibility replay preserves original initial not-run and separate human pass. No inference or semantic success claim.",
+      "outcome": "observed",
+      "sha256": "45015ac22864081402bfb207001b7be2c6076d3ee6c2794c53658fa002e924bd",
+      "source": "evals/understanding/v4/development-campaign/request.json"
+    },
+    {
+      "command": null,
+      "note": "Inspect global accounting, durable source-bound controls and prepared public request. Synthetic subprocess tests include descendant cleanup; frozen compatibility replay preserves original initial not-run and separate human pass. No inference or semantic success claim.",
+      "outcome": "observed",
+      "sha256": "53e2b1b3efca73084600f745f99fd542a7fe13f6143f849e1209262c19e76e67",
+      "source": "evals/understanding/v4/development-campaign/protocol.json"
+    },
+    {
+      "command": null,
+      "note": "Current source/planning snapshot follows additive offline diagnostics and explicit v4.2 preparation; scoped tests/build pass; full local run had one setup MemoryError after 1384 passes, isolated recheck 41 passes. CI remains required. Historical judgments, source bytes and execution scopes remain in immutable prior revisions/archives. No transfer of model success or budget. See ADR-0035/DOC-0063.",
+      "outcome": "observed",
+      "sha256": "c30a1159d0c3259d041829b948cd11a5f4c58744bcf377bdfb825c428547cabd",
+      "source": "tests/test_v4_campaign_request.py"
+    },
+    {
+      "command": null,
+      "note": "Subsequent scoped authorization and execution are separate from original preparation. Sixteen calls completed and replay verified; three coverage failures, all output approvals pending. Budget closed.",
+      "outcome": "observed",
+      "sha256": "08bc334ef1ad1339aa9162692b03cf98a2c6be22a3ceac31803d9e807ee0286e",
+      "source": "docs/evidence/sprint-2-6-v4-development-20261027/execution.json"
+    },
+    {
+      "command": null,
+      "note": "Subsequent actual human judgment, separately persisted: six pass/two fail; all three criterion failures retained. Earlier preparation/execution snapshots remain historical; no new calls or qualification.",
+      "outcome": "observed",
+      "sha256": "8e75899089e37297fb08cd7245ceeb5134ce256291ddf8be940a8cfe023f1ee4",
+      "source": "docs/evidence/sprint-2-6-v4-development-20261027/human-review.json"
+    }
+  ],
+  "id": "DOC-0057",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "At implementation/preparation no provider invocations existed. Subsequent authorized campaign completed; see DOC-0058. Subsequent exact PO review gives six pass/two fail; no qualification or compilation authority. See DOC-0059.",
+    "Development is exposed, not independent holdout. Existing approval covers expectations only.",
+    "Process containment is not a hostile-code sandbox or hard real-time guarantee; no authenticated remote model identity.",
+    "KeyboardInterrupt can lack a transport receipt; preserve unknown cleanup observations without fabricating success. Host kill or disk failure can leave incomplete consumed journals.",
+    "Original preparation required exact authorization. PO subsequently granted it and the campaign consumed/closed that budget. No new-call authority remains; see DOC-0058."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0032",
+    "DOC-0056",
+    "DOC-0054",
+    "DE-0023",
+    "DOC-0058",
+    "DOC-0059",
+    "ADR-0034"
+  ],
+  "resolution": null,
+  "review_note": "Refresh changed current-source evidence after offline verification; preserve historical scope and authorization gates.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 10,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Prepared request a64cb6e7 for eight approved development expectations, corpus 8f666df6, at most 16 serial invocations via requested gpt-6.1-sol on ChatGPT/Codex CLI. Global session 3600s, per-call 180s and cleanup 20s, worker input/output 1/4 MiB. No calls or authorization. Subsequent exact PO authorization consumed in completed 16-call campaign; see DOC-0058 for replay, initial failures and pending output review. Subsequent actual PO judgment recorded in DOC-0059: six exact cases pass/two fail, 45/3/0 criteria. No correction or new-call authority.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Pedido concreto da campanha de desenvolvimento v4 ainda sem autorização",
+  "updated_at": "2026-10-28T22:08:02.447618+00:00"
+}
