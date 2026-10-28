@@ -1,0 +1,71 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO reply call_0fa94728f3b64dd6ae4befac35632ae4: Autorizo esta única rodada nesses limites. Request 84bf9677, generation v4.1/audit v5, eight approved public cases, max16 serial calls. Continuation inspected existing result only, never restarted campaign.",
+  "created_at": "2026-10-28T21:18:32.450698+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Canonical failed-prefix replay and public metadata cross-checked; prepared payload/schema valid offline and unchanged from baseline. Six focused artifact checks passed; four-output review proposal pending. No new diagnostic calls or result repair.",
+      "outcome": "observed",
+      "sha256": "0c9d3d27539f47e49c3c0319126734ffaaa9cea83ad4976a21a6e312c5a88558",
+      "source": "docs/delivery/sprint-2-6-v41-partial-result.md"
+    },
+    {
+      "command": null,
+      "note": "Canonical failed-prefix replay and public metadata cross-checked; prepared payload/schema valid offline and unchanged from baseline. Six focused artifact checks passed; four-output review proposal pending. No new diagnostic calls or result repair.",
+      "outcome": "observed",
+      "sha256": "737dc74e7d46761ffece017148570a6fea4ee8b8c3697178eaee4c487e1691ba",
+      "source": "docs/evidence/sprint-2-6-v41-development-20261028/execution.json"
+    },
+    {
+      "command": null,
+      "note": "Canonical failed-prefix replay and public metadata cross-checked; prepared payload/schema valid offline and unchanged from baseline. Six focused artifact checks passed; four-output review proposal pending. No new diagnostic calls or result repair.",
+      "outcome": "observed",
+      "sha256": "3d0abeed181ebc40501a41f412f4b2b01148d422465952388e39293dd796a686",
+      "source": "docs/evidence/sprint-2-6-v41-development-20261028/diagnosis.json"
+    },
+    {
+      "command": null,
+      "note": "Canonical failed-prefix replay and public metadata cross-checked; prepared payload/schema valid offline and unchanged from baseline. Six focused artifact checks passed; four-output review proposal pending. No new diagnostic calls or result repair.",
+      "outcome": "observed",
+      "sha256": "0f8d36d068ef639cd5eb9e8778e506c2f63fdcae064c5a6f563c935d3d7db1b8",
+      "source": "tests/test_v41_partial_execution.py"
+    }
+  ],
+  "id": "DOC-0061",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Campaign failed technically; four completed cases are not a full eight-case regression result.",
+    "Four initial assessments are not-run, not human passes. Possible missing-precedence-question regression remains a review recommendation.",
+    "Generic worker exit 2 does not identify provider/auth/quota/schema cause; no valid fifth analysis retained.",
+    "No retries/repair/resume; consumed budget stays closed despite seven unused ceiling slots.",
+    "No assets, reserved access, training/default changes or additional diagnostic model calls. No qualification, compilation or sprint completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0034",
+    "DOC-0060",
+    "DOC-0059",
+    "INC-0031"
+  ],
+  "resolution": null,
+  "review_note": "Verify actual exact authorization, failed-prefix accounting and closed budget. Separate structural observations, pending human semantic judgments and unknown technical cause.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Actual PO authorization consumed in one v4.1 campaign: nine invocations, four complete cases/one interrupted/three not started in 241.24s. Replay passed and budget closed. First four have zero deterministic coverage failures but output review pending, including possible precedence-question regression. Worker failure cause unknown.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Campanha v4.1 interrompida na nona invocação com quatro saídas disponíveis",
+  "updated_at": "2026-10-28T21:18:33.353367+00:00"
+}

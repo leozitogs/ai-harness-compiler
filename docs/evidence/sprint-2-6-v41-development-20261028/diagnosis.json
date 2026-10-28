@@ -1,0 +1,22 @@
+{
+  "format": "offline-worker-failure-diagnosis/v1",
+  "recorded_on": "2026-10-28",
+  "request_sha256": "84bf9677d4e5fd3468bc5b19e41461b9790656ccaa07d0bc2b99957a22114bbc",
+  "case_id": "dev-new-domain-v4",
+  "call_index": 9,
+  "observed_failure_code": "worker-failed",
+  "observed_exit_code": 2,
+  "observed_elapsed_seconds": 2.3357066999888048,
+  "worker_request_contract_valid": true,
+  "response_schema_valid": true,
+  "schema_sha256": "61a1d4036e6918c76c78efdf3256edbc90daf767c6c31c5b987df0ab2d0e1667",
+  "unchanged_schema_from_baseline": true,
+  "approved_case_unchanged": true,
+  "serialized_payload_bytes": 15141,
+  "input_limit_bytes": 1048576,
+  "raw_provider_error_retained": false,
+  "raw_response_retained": false,
+  "cause": "unknown; exit 2 is a sanitized generic worker result, not a diagnostic category",
+  "new_model_invocations": 0,
+  "note": "Only replay, local contract/schema validation and comparison with frozen baseline metadata. No worker, Codex CLI, provider call, asset read, repair or retry executed."
+}
