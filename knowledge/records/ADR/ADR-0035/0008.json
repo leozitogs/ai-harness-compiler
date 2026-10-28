@@ -1,0 +1,109 @@
+{
+  "alternatives": [
+    "Raw exception logging rejected for privacy.",
+    "Retroactive assessment/expectation changes rejected.",
+    "Automatic output repair or budget reuse rejected."
+  ],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO authorized the recommended offline engineering sequence after scoped v4.1 human judgments. Partial campaign worker cause unknown and precedence-question omission confirmed as human uncertainty FAIL.",
+  "created_at": "2026-10-28T22:07:08.159449+00:00",
+  "decision": "Keep TransportReceipt/v1 wire unchanged. Add fixed exit-code categories and separate typed offline diagnostics. Add explicit opt-in v4.2 program with conflict plus multi-source precedence-question guidance. Never repair or regrade historical outputs; prepare a new exact request only.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Implemented offline, validated with synthetic workers and frozen historical replay. No real model efficacy or historical cause established.",
+      "outcome": "observed",
+      "sha256": "a7769550d5bce0c5fd92629b7a55ce3601d0ea4e03d50029885649c949f8799f",
+      "source": "docs/adr/0035-sanitized-worker-and-conflict-question-diagnostics.md"
+    },
+    {
+      "command": null,
+      "note": "Current documentation/test revision records CI import-path defect and test-only explicit loading correction; 14 installed-entry-point checks passed. Unknown historical worker/allocation causes remain unknown, no new inference or qualification.",
+      "outcome": "observed",
+      "sha256": "6e332bcc1d09328a3b00268505535e859ee414ba5e467c00ff560c0caec19631",
+      "source": "docs/delivery/sprint-2-6-v42-precedence-candidate.md"
+    },
+    {
+      "command": null,
+      "note": "Implemented offline, validated with synthetic workers and frozen historical replay. No real model efficacy or historical cause established.",
+      "outcome": "observed",
+      "sha256": "4438fc8b0f307de98bb5d2b7ea7edb102ec67d78d10e36f2d581d61bbd9c5108",
+      "source": "src/ai_harness_compiler/models/worker_diagnostic.py"
+    },
+    {
+      "command": null,
+      "note": "Implemented offline, validated with synthetic workers and frozen historical replay. No real model efficacy or historical cause established.",
+      "outcome": "observed",
+      "sha256": "3831d78e221124df0c2d005da296b67c649f7f782a98732cfd2177c7b3594614",
+      "source": "src/ai_harness_compiler/models/conflict_questions.py"
+    },
+    {
+      "command": null,
+      "note": "Implemented offline, validated with synthetic workers and frozen historical replay. No real model efficacy or historical cause established.",
+      "outcome": "observed",
+      "sha256": "6cf7f6d63552aeac318aad7496119937e9fb01153e0a4af19d5369da2c75f961",
+      "source": "src/ai_harness_compiler/adapters/semantic_worker_v4.py"
+    },
+    {
+      "command": null,
+      "note": "Implemented offline, validated with synthetic workers and frozen historical replay. No real model efficacy or historical cause established.",
+      "outcome": "observed",
+      "sha256": "061ad4e129b73d6147973f3c359be404a69cb6280dfff9c8304e8ab16407818e",
+      "source": "src/ai_harness_compiler/semantic_generation_programs.py"
+    },
+    {
+      "command": null,
+      "note": "Subsequent actual completed execution, without transferring preparation-only scope or proposed semantic acceptance.",
+      "outcome": "observed",
+      "sha256": "a1cbb5900799cc02efb8c248e47ccc3c5561bf60710f5b1ed7aef161efbf4129",
+      "source": "docs/evidence/sprint-2-6-v42-development-20261028/execution.json"
+    },
+    {
+      "command": null,
+      "note": "Subsequent actual scoped PO acceptance, distinct from original execution and initial assessments.",
+      "outcome": "observed",
+      "sha256": "c8c9dc82ddb2e14eba839984bea3d933105180f0d0187b3b3031a98d8daf29d9",
+      "source": "docs/evidence/sprint-2-6-v42-development-20261028/human-review.json"
+    }
+  ],
+  "id": "ADR-0035",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "Offline and synthetic tests do not establish model efficacy or prompt causality.",
+    "Historical worker exit 2 still has unknown cause. Categories describe future observed failure boundaries, not service root causes.",
+    "Question presence with all source sides is structural, not semantic correctness or human approval.",
+    "New request requires exact PO execution authorization; prior budgets are closed. No assets, holdout, training, defaults, compilation or completion.",
+    "New human output judgments are now complete for eight development snapshots only; see DOC-0065. Historical pending-review preparation remains preserved, current budget closed.",
+    "Acceptance binds eight exact exposed development snapshots and 48 criteria, not generalization or prompt causality.",
+    "A blocked analysis may pass quality review without granting project compilation or rule execution.",
+    "Historical v4.0/v4.1 failures and unavailable cases remain unchanged; old worker/allocation causes still unknown.",
+    "Budget closed, zero new calls. No model qualification, compilation, defaults, story completion or sprint closure; independent evaluation remains separate."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0034",
+    "DOC-0062",
+    "INC-0031",
+    "INC-0033",
+    "DOC-0064",
+    "DOC-0065"
+  ],
+  "resolution": null,
+  "review_note": "Append actual new output acceptance without retroactive changes, qualification or completion.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 8,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Fixed worker exit categories plus additive WorkerDiagnostic/v1; conflict/question coverage independently bound to full analysis through ConflictQuestionDiagnostic/v1. Candidate v4.2 requests explicit precedence questions while preserving prior programs and historical assessments. Subsequent exact authorization consumed: full v4.2 campaign completed16 calls/eight cases; output judgments pending, budget closed. See DOC-0064. Subsequent scoped PO review completed: eight current v4.2 development outputs PASS/48 criteria PASS, exact bindings approved. See DOC-0065; no qualification or new budget.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Diagnostico sanitizado e perguntas de precedencia separadas",
+  "updated_at": "2026-10-28T23:02:05.893632+00:00"
+}
