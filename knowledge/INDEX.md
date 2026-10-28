@@ -36,7 +36,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [ADR-0032 — Transporte supervisionado para o fluxo v4](records/ADR/ADR-0032/0012.json) · active · revision 12
 - [ADR-0033 — Campanha semântica com orçamento global e autorização própria](records/ADR/ADR-0033/0010.json) · active · revision 10
 - [ADR-0034 — Programa de geração v4.1 explícito com replay e baseline preservados](records/ADR/ADR-0034/0008.json) · active · revision 8
-- [ADR-0035 — Diagnostico sanitizado e perguntas de precedencia separadas](records/ADR/ADR-0035/0002.json) · active · revision 2
+- [ADR-0035 — Diagnostico sanitizado e perguntas de precedencia separadas](records/ADR/ADR-0035/0004.json) · active · revision 4
 - [DE-0001 — Memória de engenharia versionada](records/DE/DE-0001/0001.json) · draft · revision 1
 - [DE-0002 — Gerar memória e especialistas para cada projeto](records/DE/DE-0002/0002.json) · active · revision 2
 - [DE-0003 — Intake limitado e YAML explícito](records/DE/DE-0003/0004.json) · active · revision 4
@@ -123,7 +123,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0060 — Candidato v4.1 e novo pedido de desenvolvimento ainda sem execução](records/DOC/DOC-0060/0008.json) · active · revision 8
 - [DOC-0061 — Campanha v4.1 interrompida na nona invocação com quatro saídas disponíveis](records/DOC/DOC-0061/0004.json) · active · revision 4
 - [DOC-0062 — Julgamento humano parcial v4.1: tres PASS e regressao de precedencia](records/DOC/DOC-0062/0002.json) · active · revision 2
-- [DOC-0063 — Candidato v4.2 e diagnosticos offline preparados sem execucao](records/DOC/DOC-0063/0004.json) · active · revision 4
+- [DOC-0063 — Candidato v4.2 e diagnosticos offline preparados sem execucao](records/DOC/DOC-0063/0006.json) · active · revision 6
 - [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2
 - [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1
 - [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1
@@ -155,10 +155,11 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [INC-0028 — Teste de concorrência depende de espera de 10 ms](records/INC/INC-0028/0003.json) · verified · revision 3
 - [INC-0029 — Fixture de integridade exige sessão inteira em 15 segundos](records/INC/INC-0029/0006.json) · verified · revision 6
 - [INC-0030 — Rodada v4 interrompida em invalid-output e defeito Unicode reproduzido offline](records/INC/INC-0030/0002.json) · draft · revision 2
-- [INC-0031 — Regras aprovadas representadas como requisitos em dois casos v4](records/INC/INC-0031/0006.json) · draft · revision 6
+- [INC-0031 — Regras aprovadas representadas como requisitos em dois casos v4](records/INC/INC-0031/0007.json) · draft · revision 7
 - [INC-0032 — Edição de fonte durante teste com snapshot congelado](records/INC/INC-0032/0002.json) · verified · revision 2
-- [INC-0033 — Falha genérica de worker na quinta análise da campanha v4.1](records/INC/INC-0033/0002.json) · draft · revision 2
-- [INC-0034 — MemoryError no setup de fixture durante suite local v4.2](records/INC/INC-0034/0001.json) · draft · revision 1
+- [INC-0033 — Falha genérica de worker na quinta análise da campanha v4.1](records/INC/INC-0033/0003.json) · draft · revision 3
+- [INC-0034 — MemoryError no setup de fixture durante suite local v4.2](records/INC/INC-0034/0002.json) · draft · revision 2
+- [INC-0035 — Teste de script depende do sys.path de python -m pytest](records/INC/INC-0035/0002.json) · verified · revision 2
 - [LES-0001 — Tipos estáticos podem falhar em runtime](records/LES/LES-0001/0004.json) · verified · revision 4
 - [LES-0002 — Referências válidas não garantem precedência consistente](records/LES/LES-0002/0002.json) · verified · revision 2
 - [LES-0003 — Usar IDs curtos para parametrizações com payloads grandes](records/LES/LES-0003/0002.json) · verified · revision 2

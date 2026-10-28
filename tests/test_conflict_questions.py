@@ -1,6 +1,8 @@
 """Structural omission signals are neither semantic approval nor historical regrading."""
 
 import json
+import runpy
+from pathlib import Path
 
 import pytest
 from jsonschema import Draft202012Validator
@@ -121,7 +123,11 @@ def test_v42_is_explicit_and_preserves_legacy_prompts_sources_and_raw_model_omis
 
 
 def test_private_offline_inspection_does_not_overwrite_input_or_previous_result(tmp_path, capsys):
-    from scripts.inspect_semantic_diagnostics import main
+    # CI invokes the installed pytest entry point, which need not put the repo root
+    # on sys.path. scripts/ is a standalone tool directory, not an installed package.
+    main = runpy.run_path(
+        str(Path(__file__).resolve().parents[1] / "scripts/inspect_semantic_diagnostics.py")
+    )["main"]
 
     analysis = analysis_with_conflict()
     (tmp_path / ".factory").mkdir()

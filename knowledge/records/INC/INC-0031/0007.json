@@ -1,0 +1,106 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "One authorized campaign with 16 sequential invocations; original responses frozen.",
+    "Offline canonical replay and exact-kind obligation matching reproduced three failures.",
+    "Inspected full sources/findings; no expectation reclassification, response repair or new generation performed.",
+    "Persisted actual human failure matrix and independently replayed separate typed assessments; no corrective candidate implemented or evaluated yet.",
+    "Implemented versioned v4.1 guidance with exact hash routing and unchanged schema/audit/expectations; synthetic/local-process tests verify controls. No real candidate output or empirical resolution exists yet.",
+    "Observed one authorized v4.1 round: four complete outputs/zero deterministic coverage failures, then generic worker failure. Four new outputs still await PO; conflict output omits explicit precedence question. No causal proof, full regression or resolution.",
+    "PO confirms target outputs pass in partial v4.1 round but missing explicit precedence question is uncertainty FAIL. Full regression unavailable; incident unresolved.",
+    "Implemented additive diagnostics and v4.2 candidate offline; tested unknown historical code, explicit precedence coverage and no retry. New request prepared, unexecuted. No incident resolution or verified lesson claimed."
+  ],
+  "author": "codex:engineering",
+  "challenge": "Preserve necessary temporal/authorization/visibility relations in the approved typed rule representation without turning unconditional identity norms into invented triggers or blocking questions.",
+  "consequences": [],
+  "context": "One authorized exposed-development campaign, no retries or changes after observations. All transport succeeded; failure is evaluation evidence, not transport corruption. PO subsequently confirmed the exact failure matrix in call_5288f072466c47ed9a77f17da97d6132 item 1; see DOC-0059. Literal support passes do not compensate coverage or materiality failures.",
+  "created_at": "2026-10-27T23:30:08.193416+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Three original typed coverage failures preserved. Additional uncertainty FAIL is a pending review recommendation, not human approval. Incident unresolved and draft; no verified lesson extracted.",
+      "outcome": "failed",
+      "sha256": "acf75eafa22905db862980318f50c3d494b5c9b7cd3bbfbc20b7496095dba042",
+      "source": "docs/delivery/sprint-2-6-v4-development-result.md"
+    },
+    {
+      "command": null,
+      "note": "Three original typed coverage failures preserved. Additional uncertainty FAIL is a pending review recommendation, not human approval. Incident unresolved and draft; no verified lesson extracted.",
+      "outcome": "failed",
+      "sha256": "08bc334ef1ad1339aa9162692b03cf98a2c6be22a3ceac31803d9e807ee0286e",
+      "source": "docs/evidence/sprint-2-6-v4-development-20261027/execution.json"
+    },
+    {
+      "command": null,
+      "note": "PO confirmed two failed cases: three typed coverage occurrences and one inappropriate blocking question. Review does not resolve the incident or establish model/prompt causality.",
+      "outcome": "failed",
+      "sha256": "8e75899089e37297fb08cd7245ceeb5134ce256291ddf8be940a8cfe023f1ee4",
+      "source": "docs/evidence/sprint-2-6-v4-development-20261027/human-review.json"
+    },
+    {
+      "command": null,
+      "note": "Candidate preparation is an attempt, not a demonstrated solution. Baseline failures and judged artifacts remain unchanged; no v4.1 model execution authorized.",
+      "outcome": "observed",
+      "sha256": "cf676eecf594fa0181400f3d8ca82a3e350e88f88c551795b77ad411bc248f5b",
+      "source": "docs/delivery/sprint-2-6-v41-relational-candidate.md"
+    },
+    {
+      "command": null,
+      "note": "Partial structural observations cannot resolve prior semantic incident; four new outputs unapproved, regression concern and technical interruption preserved.",
+      "outcome": "observed",
+      "sha256": "0c9d3d27539f47e49c3c0319126734ffaaa9cea83ad4976a21a6e312c5a88558",
+      "source": "docs/delivery/sprint-2-6-v41-partial-result.md"
+    },
+    {
+      "command": null,
+      "note": "Exact four-output human review, 23 PASS/1 FAIL; no judgment of missing cases, no resolution or new budget.",
+      "outcome": "observed",
+      "sha256": "61c4e2b772ebee717bdfdd8a1b9ab429360cfcfec6613a062179dd653da7a83f",
+      "source": "docs/evidence/sprint-2-6-v41-development-20261028/human-review.json"
+    },
+    {
+      "command": null,
+      "note": "Current documentation/test revision records CI import-path defect and test-only explicit loading correction; 14 installed-entry-point checks passed. Unknown historical worker/allocation causes remain unknown, no new inference or qualification.",
+      "outcome": "observed",
+      "sha256": "6e332bcc1d09328a3b00268505535e859ee414ba5e467c00ff560c0caec19631",
+      "source": "docs/delivery/sprint-2-6-v42-precedence-candidate.md"
+    }
+  ],
+  "id": "INC-0031",
+  "kind": "INC",
+  "lesson": null,
+  "limitations": [
+    "Offline and synthetic tests do not establish model efficacy or prompt causality.",
+    "Historical worker exit 2 still has unknown cause. Categories describe future observed failure boundaries, not service root causes.",
+    "Question presence with all source sides is structural, not semantic correctness or human approval.",
+    "New request requires exact PO execution authorization; prior budgets are closed. No assets, holdout, training, defaults, compilation or completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0033",
+    "DOC-0057",
+    "DOC-0058",
+    "DOC-0059",
+    "ADR-0034",
+    "DOC-0060",
+    "DOC-0061",
+    "DOC-0062",
+    "ADR-0035",
+    "DOC-0063"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 7,
+  "root_cause": "Observed mechanism: exact-kind coverage intentionally rejects requirement findings for approved rule obligations. Why the model selected these categories is not established; prompt influence remains a hypothesis.",
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Original v4 output failures and v4.1 precedence regression remain unresolved. PO judged four available v4.1 outputs: three PASS, conflict uncertainty FAIL. New v4.2 guidance and structural diagnostics tested offline, not evaluated with a model; fresh request awaits exact authorization.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Regras aprovadas representadas como requisitos em dois casos v4",
+  "updated_at": "2026-10-28T22:15:29.036638+00:00"
+}

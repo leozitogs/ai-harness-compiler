@@ -66,6 +66,13 @@ estáticos, schemas e replays históricos passaram. A causa da alocação não f
 estabelecida; `INC-0034` registra a ocorrência sem atribuí-la ao hardware.
 A CI completa permanece gate de integração; nenhum teste foi ignorado.
 
+A primeira CI detectou um defeito do teste novo: importar `scripts` dependia de
+a raiz do repositório estar em sys.path, como em `python -m pytest`. O entry point
+instalado usado na CI não oferece essa garantia. O teste agora carrega o script
+standalone pelo caminho explícito com runpy, sem instalar `scripts`, ajustar
+PYTHONPATH ou mudar runtime/source freeze. INC-0035 registra causa e correção;
+a reverificação usa o mesmo entry point de pytest que a CI.
+
 A suíte offline e o build verificam implementação, não eficácia de prompt/modelo.
 Depois de autorização específica, executar uma rodada, verificar integridade,
 inspecionar os diagnósticos sem alterar a resposta e submeter novas saídas ao PO.
