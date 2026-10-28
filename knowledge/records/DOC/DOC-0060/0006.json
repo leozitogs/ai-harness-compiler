@@ -1,0 +1,103 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "User requested continuation after confirming six passes/two failures. Implement corrective candidate offline without reusing consumed budget or changing reviewed expectations.",
+  "created_at": "2026-10-28T00:08:57.513320+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Stable local full suite: 1333 passed; three subsequent candidate artifact checks passed. Earlier 137-pass/one-source-mismatch run preserved and isolated test passed with stable sources. Frozen old campaign and six/two human judgments replay. No real model call or efficacy claim.",
+      "outcome": "observed",
+      "sha256": "cf676eecf594fa0181400f3d8ca82a3e350e88f88c551795b77ad411bc248f5b",
+      "source": "docs/delivery/sprint-2-6-v41-relational-candidate.md"
+    },
+    {
+      "command": null,
+      "note": "Stable local full suite: 1333 passed; three subsequent candidate artifact checks passed. Earlier 137-pass/one-source-mismatch run preserved and isolated test passed with stable sources. Frozen old campaign and six/two human judgments replay. No real model call or efficacy claim.",
+      "outcome": "observed",
+      "sha256": "c64ba19e0a84327740704e46d1db7807d0669c8f24542dbc28511497c134f777",
+      "source": "evals/understanding/v4/development-candidate-v41/request.json"
+    },
+    {
+      "command": null,
+      "note": "Stable local full suite: 1333 passed; three subsequent candidate artifact checks passed. Earlier 137-pass/one-source-mismatch run preserved and isolated test passed with stable sources. Frozen old campaign and six/two human judgments replay. No real model call or efficacy claim.",
+      "outcome": "observed",
+      "sha256": "e0ef7936099e8f329102bf684fcdee8ddb9edfc31f71f52d61ec195d9323bdc0",
+      "source": "evals/understanding/v4/development-candidate-v41/protocol.json"
+    },
+    {
+      "command": null,
+      "note": "Stable local full suite: 1333 passed; three subsequent candidate artifact checks passed. Earlier 137-pass/one-source-mismatch run preserved and isolated test passed with stable sources. Frozen old campaign and six/two human judgments replay. No real model call or efficacy claim.",
+      "outcome": "observed",
+      "sha256": "b3366df8bd37eba4480da0f6efb541d8be317c252d28e2aa0645aa4fa2db4a68",
+      "source": "evals/understanding/v4/development-campaign/legacy-source-archive/manifest.json"
+    },
+    {
+      "command": null,
+      "note": "Stable local full suite: 1333 passed; three subsequent candidate artifact checks passed. Earlier 137-pass/one-source-mismatch run preserved and isolated test passed with stable sources. Frozen old campaign and six/two human judgments replay. No real model call or efficacy claim.",
+      "outcome": "observed",
+      "sha256": "52284a15a4c3716ac671338ed6420c9b576279e4f0a135afbef8e485dc7b7080",
+      "source": "docs/evidence/sprint-2-6-v41-preparation-20261027/offline-verification.json"
+    },
+    {
+      "command": null,
+      "note": "Stable local full suite: 1333 passed; three subsequent candidate artifact checks passed. Earlier 137-pass/one-source-mismatch run preserved and isolated test passed with stable sources. Frozen old campaign and six/two human judgments replay. No real model call or efficacy claim.",
+      "outcome": "observed",
+      "sha256": "7cf40268dc1de2e52e1c1c73997171809e9665867e834781123714c12f06522b",
+      "source": "tests/test_v41_candidate_request.py"
+    },
+    {
+      "command": null,
+      "note": "Subsequent real execution is a failed prefix, not a full campaign or qualification; original preparation remains historical, no output acceptance transferred.",
+      "outcome": "observed",
+      "sha256": "737dc74e7d46761ffece017148570a6fea4ee8b8c3697178eaee4c487e1691ba",
+      "source": "docs/evidence/sprint-2-6-v41-development-20261028/execution.json"
+    },
+    {
+      "command": null,
+      "note": "Exact four-output human review, 23 PASS/1 FAIL; no judgment of missing cases, no resolution or new budget.",
+      "outcome": "observed",
+      "sha256": "61c4e2b772ebee717bdfdd8a1b9ab429360cfcfec6613a062179dd653da7a83f",
+      "source": "docs/evidence/sprint-2-6-v41-development-20261028/human-review.json"
+    }
+  ],
+  "id": "DOC-0060",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "At preparation only offline control behavior was observed. Subsequent real campaign is partial: four complete cases then worker failure; no semantic efficacy established. See DOC-0061.",
+    "No output repair, expectation change or migration of PO judgments; development is exposed, not holdout.",
+    "The new request subsequently received exact authorization and consumed its budget. It failed at call 9; seven unused slots authorize no continuation. No asset/reserved/training/default change; see DOC-0061.",
+    "Program digest identifies instructions/schema; request/call binds source data. Source freeze is not a hermetic or authenticated remote-model environment.",
+    "INC-0031 remains unresolved; no model qualification, compilation authority or AHC-021/022/sprint completion.",
+    "Four reviewed outputs do not cover eight cases. Four unavailable cases receive no judgment.",
+    "Human uncertainty FAIL in conflict has no invented deterministic failure code. Historical expectations and outputs remain unchanged.",
+    "Worker cause remains unknown; no retry, new calls, qualification, compilation or sprint completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0033",
+    "DOC-0059",
+    "INC-0031",
+    "DOC-0061",
+    "DOC-0062"
+  ],
+  "resolution": null,
+  "review_note": "Append scoped actual human judgments; retain historical artifacts and unresolved failures.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 6,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Prepared request 84bf9677 for the same eight approved development cases, explicit v4.1 generation and unchanged v5 audit/model/budgets. Local engineering controls tested and legacy replay preserved; zero provider calls or efficacy result. New exact campaign authorization still required. Subsequent exact authorization consumed: v4.1 run stopped at invocation 9, four complete cases, cause unknown. See DOC-0061; budget closed, output judgments pending. Subsequent PO judgment recorded in DOC-0062: three available outputs PASS, conflict uncertainty FAIL; four cases unavailable. Historical pending review is superseded only by these scoped new assessments, not rewritten. Budget closed and incidents unresolved.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Candidato v4.1 e novo pedido de desenvolvimento ainda sem execução",
+  "updated_at": "2026-10-28T21:37:25.667034+00:00"
+}

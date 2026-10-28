@@ -1,0 +1,62 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Question call_706debe7ce9148698302be78e0dd513c items 0/1; proposal a9e0efdc87bab33580e892a95b81c323a3d346c56c3144d92bf6df4225a93cd9. Separate immutable human assessments supplement original initial assessments.",
+  "created_at": "2026-10-28T21:37:19.177234+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Actual scoped PO declarations and exact hashes; six local artifact checks passed. No new inference or transferred acceptance.",
+      "outcome": "observed",
+      "sha256": "f23696b3ccb847fb9df11b4f7ce6a70e76ed629903eb3ff8c47b2cdd102c2170",
+      "source": "docs/delivery/sprint-2-6-v41-partial-human-review.md"
+    },
+    {
+      "command": null,
+      "note": "Actual scoped PO declarations and exact hashes; six local artifact checks passed. No new inference or transferred acceptance.",
+      "outcome": "observed",
+      "sha256": "61c4e2b772ebee717bdfdd8a1b9ab429360cfcfec6613a062179dd653da7a83f",
+      "source": "docs/evidence/sprint-2-6-v41-development-20261028/human-review.json"
+    },
+    {
+      "command": null,
+      "note": "Actual scoped PO declarations and exact hashes; six local artifact checks passed. No new inference or transferred acceptance.",
+      "outcome": "observed",
+      "sha256": "1e90e5ef678389da4698e738ac6e00939c473e9e96f9e4b9ba2203850f00abc7",
+      "source": "tests/test_v41_partial_human_judgments.py"
+    }
+  ],
+  "id": "DOC-0062",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Four reviewed outputs do not cover eight cases. Four unavailable cases receive no judgment.",
+    "Human uncertainty FAIL in conflict has no invented deterministic failure code. Historical expectations and outputs remain unchanged.",
+    "Worker cause remains unknown; no retry, new calls, qualification, compilation or sprint completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0061",
+    "DOC-0060",
+    "INC-0031",
+    "INC-0033"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Actual PO confirms four new exact snapshots: adversarial, ambiguous, compatible PASS; branding conflict uncertainty FAIL, other five PASS. 23 PASS/1 FAIL criteria; 15 coverage mappings, 49 findings, 72 components. Four unavailable cases unjudged; budget closed.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Julgamento humano parcial v4.1: tres PASS e regressao de precedencia",
+  "updated_at": "2026-10-28T21:37:19.177234+00:00"
+}

@@ -1,0 +1,220 @@
+{
+  "format": "development-campaign-human-judgment/v1",
+  "date": "2026-10-28",
+  "campaign_id": "dev-v41-20261027-01",
+  "request_sha256": "84bf9677d4e5fd3468bc5b19e41461b9790656ccaa07d0bc2b99957a22114bbc",
+  "campaign_report_sha256": "007c838580ed153884a391fbe61d9511fcba9880ed7eba2d99c21b17aee6fbbb",
+  "review_proposal_sha256": "a9e0efdc87bab33580e892a95b81c323a3d346c56c3144d92bf6df4225a93cd9",
+  "decisions": [
+    {
+      "question_id": "call_706debe7ce9148698302be78e0dd513c",
+      "item": 0,
+      "answer": "Li e aprovo os três casos e vínculos propostos"
+    },
+    {
+      "question_id": "call_706debe7ce9148698302be78e0dd513c",
+      "item": 1,
+      "answer": "Confirmo a matriz e os vínculos propostos"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "dev-adversarial-v4",
+      "run_id": "dev-v41-20261027-01-01",
+      "question_item": 0,
+      "case_sha256": "782eb0df6790d176acf1febd0737883195669ae8f2db03774fd2c6beff87d0bd",
+      "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+      "analysis_sha256": "79e96bb544f45313d59d3bec377b60ca277879647fe972d1bf9c2522ee827625",
+      "review_sha256": "e35d27f8fec79d470b7652d7a216b80174c9b85f511c6c564eb0b917d94e3101",
+      "review_file_sha256": "9c80137147775fd0d6afeebc6fea593a8f42ba8e343339c473f2c18bf6bca3ba",
+      "assessment_sha256": "e8d61475c8549cc064a1da25e008261c8c5336413e82f14625c20be447f51f1d",
+      "assessment_file_sha256": "cb507c8de35501416af3689c3f4ddac226df6fea87c0d2ed969ac44ca6c79875",
+      "initial_assessment_status": "not-run",
+      "initial_failures": [],
+      "reviewed_assessment_status": "pass",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass"
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass"
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass"
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass"
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass"
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass"
+        }
+      ],
+      "failures": [],
+      "coverage_count": 2,
+      "finding_count": 9,
+      "component_count": 13
+    },
+    {
+      "case_id": "dev-ambiguous-v4",
+      "run_id": "dev-v41-20261027-01-02",
+      "question_item": 0,
+      "case_sha256": "8e5c77635d9890523b3bb6eca505ffc4f476a9ef646abf62e98cc564af6629ef",
+      "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+      "analysis_sha256": "7b1a77f27de6845861cfe8f4efccce749b9349fe1946a5744ec81fe822045433",
+      "review_sha256": "960ad83fdafe57d0c56166c68590aa587093411d9909e5aed3d42584711f0304",
+      "review_file_sha256": "72223e98541f0231dbccb990a5e233c78638112ac0716bb8923ee1b76dce80d5",
+      "assessment_sha256": "9b7d07b8fec4fad414e3ce39665882e48f17cf3ee1d19d57d1a2804715c90fd1",
+      "assessment_file_sha256": "b079a915731f18f2a3a5902e2418f2e84850ba9cab987456824ae200ee47d987",
+      "initial_assessment_status": "not-run",
+      "initial_failures": [],
+      "reviewed_assessment_status": "pass",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass"
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass"
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass"
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass"
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass"
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass"
+        }
+      ],
+      "failures": [],
+      "coverage_count": 3,
+      "finding_count": 10,
+      "component_count": 13
+    },
+    {
+      "case_id": "dev-branding-conflict-v4",
+      "run_id": "dev-v41-20261027-01-03",
+      "question_item": 1,
+      "case_sha256": "3da76d578fa67a50fae2896e6c222700706793e2b32300886c965e4d38fa6acc",
+      "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+      "analysis_sha256": "598fc41e5242b15d199a9ded52e010bb26898b8aa3a5ec18cc21bdaff0d4557a",
+      "review_sha256": "3246dd73570f2083d5212319da224b7a3159909b86c3947ce8da2b25a2a35788",
+      "review_file_sha256": "cc1a1d427bfae029d3cae876f2f396b6588ef6345239e597395b645be1e1e124",
+      "assessment_sha256": "ba69090bc8e243d4793f1ed0f6fa9d51f95ff2097e11bb3ed09ff359a85fd9f1",
+      "assessment_file_sha256": "6e8589fd018b94bef9f8ce0e9cadb99f24f63e304368d5af0bdb8b12ac6ae783",
+      "initial_assessment_status": "not-run",
+      "initial_failures": [],
+      "reviewed_assessment_status": "fail",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass"
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass"
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass"
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass"
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "fail"
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass"
+        }
+      ],
+      "failures": [],
+      "coverage_count": 2,
+      "finding_count": 10,
+      "component_count": 14
+    },
+    {
+      "case_id": "dev-compatible-rules-v4",
+      "run_id": "dev-v41-20261027-01-04",
+      "question_item": 0,
+      "case_sha256": "025b0da22ffc479eb0e708d96e40e5f47d0bdfda490c33371e729b9251246992",
+      "rubric_sha256": "deeb46d47fb76a655d80fad9ab2072d968ee729007c047519b62ac46e1a4367f",
+      "analysis_sha256": "da30bb633da43197e21af5fae545fab16424127ddd2ece86eecc7693a71f932c",
+      "review_sha256": "923648cd651a88dabb1a91e73f2ed21d89df87a5c8df566334931ecdf1d1cab0",
+      "review_file_sha256": "fcc417a0d4e0a81c03626b36c2dfca3d542e4cb704bfc9cb16cadbee66719526",
+      "assessment_sha256": "c6eb393de2ecf8b550f299e7ade33f0a1584aa3d82492552d548ec10af2567de",
+      "assessment_file_sha256": "4b67831f0ba39b665f2c244db5cf4ef9ddb72d934a1e7e420b74d420b777cb77",
+      "initial_assessment_status": "not-run",
+      "initial_failures": [],
+      "reviewed_assessment_status": "pass",
+      "checks": [
+        {
+          "criterion": "rule-coverage",
+          "outcome": "pass"
+        },
+        {
+          "criterion": "citation-support",
+          "outcome": "pass"
+        },
+        {
+          "criterion": "conflict-validity",
+          "outcome": "pass"
+        },
+        {
+          "criterion": "asset-bounds",
+          "outcome": "pass"
+        },
+        {
+          "criterion": "uncertainty",
+          "outcome": "pass"
+        },
+        {
+          "criterion": "project-understanding",
+          "outcome": "pass"
+        }
+      ],
+      "failures": [],
+      "coverage_count": 8,
+      "finding_count": 20,
+      "component_count": 32
+    }
+  ],
+  "case_passes": 3,
+  "case_failures": 1,
+  "criteria_passed": 23,
+  "criteria_failed": 1,
+  "criteria_pending": 0,
+  "original_artifacts_preserved": true,
+  "authority": "human-declared-not-authenticated",
+  "budget": "closed",
+  "new_model_invocations": 0,
+  "model_qualification": "not-established",
+  "compilation_eligibility": "not-authorized",
+  "note": "Actual PO judgment of these four exact exposed development outputs and proposed bindings only. Original initial assessments, expectations, outputs and campaign report unchanged. Failures remain; no fix, model qualification or new budget.",
+  "unavailable_cases": [
+    "dev-new-domain-v4",
+    "dev-rules-a-v4",
+    "dev-rules-b-v4",
+    "dev-unread-assets-v4"
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "User requested continuation after confirming six passes/two failures. Implement corrective candidate offline without reusing consumed budget or changing reviewed expectations.",
+  "created_at": "2026-10-28T00:08:56.402469+00:00",
+  "decision": "Select only registered v4.0/v4.1 programs by their exact instruction/schema digest. Keep old serialization/defaults and outputs immutable, enforce uniform candidate per campaign and retain source/budget gates. Separate unconditional obligations from stated relations and unnamed role holders from material rule uncertainty; evaluate the hypothesis before promotion.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Stable local full suite: 1333 passed; three subsequent candidate artifact checks passed. Earlier 137-pass/one-source-mismatch run preserved and isolated test passed with stable sources. Frozen old campaign and six/two human judgments replay. No real model call or efficacy claim.",
+      "outcome": "observed",
+      "sha256": "61c93e6910bc6368ec1ecdf1d224a54e49c879337af906a24da15bc1014aa059",
+      "source": "docs/adr/0034-versioned-relational-generation.md"
+    },
+    {
+      "command": null,
+      "note": "Stable local full suite: 1333 passed; three subsequent candidate artifact checks passed. Earlier 137-pass/one-source-mismatch run preserved and isolated test passed with stable sources. Frozen old campaign and six/two human judgments replay. No real model call or efficacy claim.",
+      "outcome": "observed",
+      "sha256": "cf676eecf594fa0181400f3d8ca82a3e350e88f88c551795b77ad411bc248f5b",
+      "source": "docs/delivery/sprint-2-6-v41-relational-candidate.md"
+    },
+    {
+      "command": null,
+      "note": "Stable local full suite: 1333 passed; three subsequent candidate artifact checks passed. Earlier 137-pass/one-source-mismatch run preserved and isolated test passed with stable sources. Frozen old campaign and six/two human judgments replay. No real model call or efficacy claim.",
+      "outcome": "observed",
+      "sha256": "b3366df8bd37eba4480da0f6efb541d8be317c252d28e2aa0645aa4fa2db4a68",
+      "source": "evals/understanding/v4/development-campaign/legacy-source-archive/manifest.json"
+    },
+    {
+      "command": null,
+      "note": "Stable local full suite: 1333 passed; three subsequent candidate artifact checks passed. Earlier 137-pass/one-source-mismatch run preserved and isolated test passed with stable sources. Frozen old campaign and six/two human judgments replay. No real model call or efficacy claim.",
+      "outcome": "observed",
+      "sha256": "fd0f71c6180c0bcd34344b86512fb283ed135777c3745be67858128627f0918b",
+      "source": "src/ai_harness_compiler/semantic_generation_programs.py"
+    },
+    {
+      "command": null,
+      "note": "Stable local full suite: 1333 passed; three subsequent candidate artifact checks passed. Earlier 137-pass/one-source-mismatch run preserved and isolated test passed with stable sources. Frozen old campaign and six/two human judgments replay. No real model call or efficacy claim.",
+      "outcome": "observed",
+      "sha256": "0dfa7a380118dfde97015dbceaba3295129ea3871a6130cd2aeb067a8e789e0e",
+      "source": "src/ai_harness_compiler/models/semantic_program.py"
+    },
+    {
+      "command": null,
+      "note": "Stable local full suite: 1333 passed; three subsequent candidate artifact checks passed. Earlier 137-pass/one-source-mismatch run preserved and isolated test passed with stable sources. Frozen old campaign and six/two human judgments replay. No real model call or efficacy claim.",
+      "outcome": "observed",
+      "sha256": "84371bb8a5ac93a90ef5041f3ae409bc7c95b8f907e219b2bb7104fb9b80854b",
+      "source": "src/ai_harness_compiler/models/semantic_flow_v4.py"
+    },
+    {
+      "command": null,
+      "note": "Stable local full suite: 1333 passed; three subsequent candidate artifact checks passed. Earlier 137-pass/one-source-mismatch run preserved and isolated test passed with stable sources. Frozen old campaign and six/two human judgments replay. No real model call or efficacy claim.",
+      "outcome": "observed",
+      "sha256": "85c05e8410b17b717c45700048c6623176edf484fc3b03e211b7663f6fdbbc3b",
+      "source": "src/ai_harness_compiler/models/semantic_campaign.py"
+    },
+    {
+      "command": null,
+      "note": "Stable local full suite: 1333 passed; three subsequent candidate artifact checks passed. Earlier 137-pass/one-source-mismatch run preserved and isolated test passed with stable sources. Frozen old campaign and six/two human judgments replay. No real model call or efficacy claim.",
+      "outcome": "observed",
+      "sha256": "142e9801ba7ae94f4ea23d8051d9192d29aaca82240388c7c347005e1bac775c",
+      "source": "src/ai_harness_compiler/semantic_flow_runner_v4.py"
+    },
+    {
+      "command": null,
+      "note": "Stable local full suite: 1333 passed; three subsequent candidate artifact checks passed. Earlier 137-pass/one-source-mismatch run preserved and isolated test passed with stable sources. Frozen old campaign and six/two human judgments replay. No real model call or efficacy claim.",
+      "outcome": "observed",
+      "sha256": "3ad0d980ae94eaa4dca1f7b89dc2ba3153a9f8278a88ddccfe2c534e7b285815",
+      "source": "src/ai_harness_compiler/supervised_semantic_flow.py"
+    },
+    {
+      "command": null,
+      "note": "Stable local full suite: 1333 passed; three subsequent candidate artifact checks passed. Earlier 137-pass/one-source-mismatch run preserved and isolated test passed with stable sources. Frozen old campaign and six/two human judgments replay. No real model call or efficacy claim.",
+      "outcome": "observed",
+      "sha256": "193fd98838799716b714da20b83cb44d1d890d97eff18637d28e04b92f815af8",
+      "source": "src/ai_harness_compiler/semantic_campaign.py"
+    },
+    {
+      "command": null,
+      "note": "Stable local full suite: 1333 passed; three subsequent candidate artifact checks passed. Earlier 137-pass/one-source-mismatch run preserved and isolated test passed with stable sources. Frozen old campaign and six/two human judgments replay. No real model call or efficacy claim.",
+      "outcome": "observed",
+      "sha256": "5827c5942cf259c65414bf3cd3ea1061398e89f1414327c3563b313523c50844",
+      "source": "scripts/prepare_semantic_campaign.py"
+    },
+    {
+      "command": null,
+      "note": "Stable local full suite: 1333 passed; three subsequent candidate artifact checks passed. Earlier 137-pass/one-source-mismatch run preserved and isolated test passed with stable sources. Frozen old campaign and six/two human judgments replay. No real model call or efficacy claim.",
+      "outcome": "observed",
+      "sha256": "7ad46ff8599ed9b7ffffacf5b760615ab9b1659b0b6de5d614d19b155786472e",
+      "source": "tests/test_semantic_generation_programs.py"
+    },
+    {
+      "command": null,
+      "note": "Stable local full suite: 1333 passed; three subsequent candidate artifact checks passed. Earlier 137-pass/one-source-mismatch run preserved and isolated test passed with stable sources. Frozen old campaign and six/two human judgments replay. No real model call or efficacy claim.",
+      "outcome": "observed",
+      "sha256": "0ac86aa177e20a9ce42850f5321db7a8df1f86447c873ca3fda3afed838d9335",
+      "source": "tests/test_v4_campaign_request.py"
+    },
+    {
+      "command": null,
+      "note": "Stable local full suite: 1333 passed; three subsequent candidate artifact checks passed. Earlier 137-pass/one-source-mismatch run preserved and isolated test passed with stable sources. Frozen old campaign and six/two human judgments replay. No real model call or efficacy claim.",
+      "outcome": "observed",
+      "sha256": "52284a15a4c3716ac671338ed6420c9b576279e4f0a135afbef8e485dc7b7080",
+      "source": "docs/evidence/sprint-2-6-v41-preparation-20261027/offline-verification.json"
+    },
+    {
+      "command": null,
+      "note": "Subsequent real execution is a failed prefix, not a full campaign or qualification; original preparation remains historical, no output acceptance transferred.",
+      "outcome": "observed",
+      "sha256": "737dc74e7d46761ffece017148570a6fea4ee8b8c3697178eaee4c487e1691ba",
+      "source": "docs/evidence/sprint-2-6-v41-development-20261028/execution.json"
+    },
+    {
+      "command": null,
+      "note": "Exact four-output human review, 23 PASS/1 FAIL; no judgment of missing cases, no resolution or new budget.",
+      "outcome": "observed",
+      "sha256": "61c4e2b772ebee717bdfdd8a1b9ab429360cfcfec6613a062179dd653da7a83f",
+      "source": "docs/evidence/sprint-2-6-v41-development-20261028/human-review.json"
+    }
+  ],
+  "id": "ADR-0034",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "At preparation only offline control behavior was observed. Subsequent real campaign is partial: four complete cases then worker failure; no semantic efficacy established. See DOC-0061.",
+    "No output repair, expectation change or migration of PO judgments; development is exposed, not holdout.",
+    "The new request subsequently received exact authorization and consumed its budget. It failed at call 9; seven unused slots authorize no continuation. No asset/reserved/training/default change; see DOC-0061.",
+    "Program digest identifies instructions/schema; request/call binds source data. Source freeze is not a hermetic or authenticated remote-model environment.",
+    "INC-0031 remains unresolved; no model qualification, compilation authority or AHC-021/022/sprint completion.",
+    "Four reviewed outputs do not cover eight cases. Four unavailable cases receive no judgment.",
+    "Human uncertainty FAIL in conflict has no invented deterministic failure code. Historical expectations and outputs remain unchanged.",
+    "Worker cause remains unknown; no retry, new calls, qualification, compilation or sprint completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0033",
+    "DOC-0059",
+    "INC-0031",
+    "DOC-0061",
+    "DOC-0062"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 5,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Add a trusted, explicit program catalog via existing generation digest. Candidate v4.1 refines relational rule classification and question materiality; legacy v4.0/default, schema, audit and expectations preserved. Route one uniform version across runtime/replay without rewriting bad outputs. Efficacy unobserved. Subsequent exact authorization consumed: v4.1 run stopped at invocation 9, four complete cases, cause unknown. See DOC-0061; budget closed, output judgments pending. Subsequent PO judgment recorded in DOC-0062: three available outputs PASS, conflict uncertainty FAIL; four cases unavailable. Historical pending review is superseded only by these scoped new assessments, not rewritten. Budget closed and incidents unresolved.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Programa de geração v4.1 explícito com replay e baseline preservados",
+  "updated_at": "2026-10-28T21:37:27.266647+00:00"
+}
