@@ -1,0 +1,65 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Question call_dbd920ce0de347a6a3d2bd9eaac05981 items0/1. Six ready and two legitimately blocked outputs approved in intent-analysis scope. Human declared reading and exact bindings, not technical authentication. Original proposal/report/outputs/expectations remain intact.",
+  "created_at": "2026-10-28T23:01:59.780358+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Actual scoped declarations, eight typed assessments and canonical campaign replay verified; six artifact tests passed. No inference performed, no historical result changed.",
+      "outcome": "observed",
+      "sha256": "8e2f6cd2abab22b866960d24d3345c215c52be075cde2e9107e898320e2eaed6",
+      "source": "docs/delivery/sprint-2-6-v42-human-review.md"
+    },
+    {
+      "command": null,
+      "note": "Actual scoped declarations, eight typed assessments and canonical campaign replay verified; six artifact tests passed. No inference performed, no historical result changed.",
+      "outcome": "observed",
+      "sha256": "c8c9dc82ddb2e14eba839984bea3d933105180f0d0187b3b3031a98d8daf29d9",
+      "source": "docs/evidence/sprint-2-6-v42-development-20261028/human-review.json"
+    },
+    {
+      "command": null,
+      "note": "Actual scoped declarations, eight typed assessments and canonical campaign replay verified; six artifact tests passed. No inference performed, no historical result changed.",
+      "outcome": "observed",
+      "sha256": "af35852d87ebbad3900385a9030b35b0a5b334ebbc43a77aaa620cd694cee6fe",
+      "source": "tests/test_v42_human_judgments.py"
+    }
+  ],
+  "id": "DOC-0065",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Acceptance binds eight exact exposed development snapshots and 48 criteria, not generalization or prompt causality.",
+    "A blocked analysis may pass quality review without granting project compilation or rule execution.",
+    "Historical v4.0/v4.1 failures and unavailable cases remain unchanged; old worker/allocation causes still unknown.",
+    "Budget closed, zero new calls. No model qualification, compilation, defaults, story completion or sprint closure; independent evaluation remains separate."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DOC-0064",
+    "DOC-0063",
+    "ADR-0035",
+    "INC-0031",
+    "INC-0033",
+    "INC-0034"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Actual PO approves both scoped questions for proposal1b816c0c: eight v4.2 outputs PASS, 48 criteria PASS/0FAIL/0pending; 24 coverage bindings,77 findings,110 components. Separate immutable human assessments supplement initial not-run results. Regression comparison consolidated; no qualification, compilation, budget reopening or story/sprint completion.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Aceite humano dos oito snapshots de desenvolvimento v4.2",
+  "updated_at": "2026-10-28T23:01:59.780358+00:00"
+}

@@ -1,0 +1,117 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [
+    "Initial local test setup failed due to temporary-directory restrictions and an oversized test ID. Applied the existing workspace temp policy and short IDs; no runtime budget or product gate relaxed.",
+    "First CI exposed a new test import-path assumption. Explicit runpy script loading fixes it; installed pytest entry point recheck: 14 passes. Full new CI required, original failure preserved in INC-0035."
+  ],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Scope, dependency plan, verification and exact proposed execution budget are documented. Original cases, expectations, prompts v4.0/v4.1, judgments and journals remain immutable. Future outputs require separate review.",
+  "created_at": "2026-10-28T22:07:11.203374+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Updated after exact CI test-import defect and installed-entry-point recheck: 14 passes. No runtime, source-freeze or model-call change.",
+      "outcome": "observed",
+      "sha256": "6e332bcc1d09328a3b00268505535e859ee414ba5e467c00ff560c0caec19631",
+      "source": "docs/delivery/sprint-2-6-v42-precedence-candidate.md"
+    },
+    {
+      "command": null,
+      "note": "Offline engineering and prepared metadata only. Build/scoped checks passed; full local run had one setup MemoryError after 1384 passes, isolated recheck 41 passes. CI remains required. No model call or improvement claim.",
+      "outcome": "observed",
+      "sha256": "72f93552da670a857af6fe4bccf907867eff0bb8ea031b63d24afbf39431685c",
+      "source": "evals/understanding/v4/development-candidate-v42/request.json"
+    },
+    {
+      "command": null,
+      "note": "Offline engineering and prepared metadata only. Build/scoped checks passed; full local run had one setup MemoryError after 1384 passes, isolated recheck 41 passes. CI remains required. No model call or improvement claim.",
+      "outcome": "observed",
+      "sha256": "9ba803d550a124c4411f566260c801b10d6c2903251c18e42ca58267937acc8c",
+      "source": "evals/understanding/v4/development-candidate-v42/protocol.json"
+    },
+    {
+      "command": null,
+      "note": "Offline engineering and prepared metadata only. Build/scoped checks passed; full local run had one setup MemoryError after 1384 passes, isolated recheck 41 passes. CI remains required. No model call or improvement claim.",
+      "outcome": "observed",
+      "sha256": "2c69e8c91d692c19df87df76e2d31239cc66ba3b4474527fb9d43e6a85350caf",
+      "source": "docs/evidence/sprint-2-6-v42-preparation-20261028/offline-diagnostics.json"
+    },
+    {
+      "command": null,
+      "note": "Offline engineering and prepared metadata only. Build/scoped checks passed; full local run had one setup MemoryError after 1384 passes, isolated recheck 41 passes. CI remains required. No model call or improvement claim.",
+      "outcome": "observed",
+      "sha256": "428536a67fea5339bf2034712e7173f6a6262c1aabd4b75fe96eee5152ee08c0",
+      "source": "tests/test_worker_diagnostics.py"
+    },
+    {
+      "command": null,
+      "note": "Updated after exact CI test-import defect and installed-entry-point recheck: 14 passes. No runtime, source-freeze or model-call change.",
+      "outcome": "observed",
+      "sha256": "f3435c1acc8b38945eda3897a34deb8b17540d2c95eb176456aa11aa6766ae04",
+      "source": "tests/test_conflict_questions.py"
+    },
+    {
+      "command": null,
+      "note": "Offline engineering and prepared metadata only. Build/scoped checks passed; full local run had one setup MemoryError after 1384 passes, isolated recheck 41 passes. CI remains required. No model call or improvement claim.",
+      "outcome": "observed",
+      "sha256": "352dbfb9ba69ad57744945ebda282763299b90f5752552184c9b6ec3fc14b3a8",
+      "source": "tests/test_v42_candidate_request.py"
+    },
+    {
+      "command": null,
+      "note": "Subsequent actual completed execution, without transferring preparation-only scope or proposed semantic acceptance.",
+      "outcome": "observed",
+      "sha256": "a1cbb5900799cc02efb8c248e47ccc3c5561bf60710f5b1ed7aef161efbf4129",
+      "source": "docs/evidence/sprint-2-6-v42-development-20261028/execution.json"
+    },
+    {
+      "command": null,
+      "note": "Subsequent actual scoped PO acceptance, distinct from original execution and initial assessments.",
+      "outcome": "observed",
+      "sha256": "c8c9dc82ddb2e14eba839984bea3d933105180f0d0187b3b3031a98d8daf29d9",
+      "source": "docs/evidence/sprint-2-6-v42-development-20261028/human-review.json"
+    }
+  ],
+  "id": "DOC-0063",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Offline and synthetic tests do not establish model efficacy or prompt causality.",
+    "Historical worker exit 2 still has unknown cause. Categories describe future observed failure boundaries, not service root causes.",
+    "Question presence with all source sides is structural, not semantic correctness or human approval.",
+    "New request requires exact PO execution authorization; prior budgets are closed. No assets, holdout, training, defaults, compilation or completion.",
+    "New human output judgments are now complete for eight development snapshots only; see DOC-0065. Historical pending-review preparation remains preserved, current budget closed.",
+    "Acceptance binds eight exact exposed development snapshots and 48 criteria, not generalization or prompt causality.",
+    "A blocked analysis may pass quality review without granting project compilation or rule execution.",
+    "Historical v4.0/v4.1 failures and unavailable cases remain unchanged; old worker/allocation causes still unknown.",
+    "Budget closed, zero new calls. No model qualification, compilation, defaults, story completion or sprint closure; independent evaluation remains separate."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0035",
+    "DOC-0062",
+    "INC-0031",
+    "INC-0033",
+    "INC-0034",
+    "INC-0035",
+    "DOC-0064",
+    "DOC-0065"
+  ],
+  "resolution": null,
+  "review_note": "Append actual new output acceptance without retroactive changes, qualification or completion.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 10,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Same eight approved public cases prepared under fresh request 20684db3, with v4.2 precedence guidance and sanitized worker categories. Historical four-output inspection flags only conflict missing-question; exit 2 unknown. Scoped offline checks/build passed. Full local run: 1384 pass/one setup MemoryError; isolated recheck: 41 pass. CI remains integration gate. No new inference. Subsequent exact authorization consumed: full v4.2 campaign completed16 calls/eight cases; output judgments pending, budget closed. See DOC-0064. Subsequent scoped PO review completed: eight current v4.2 development outputs PASS/48 criteria PASS, exact bindings approved. See DOC-0065; no qualification or new budget.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Candidato v4.2 e diagnosticos offline preparados sem execucao",
+  "updated_at": "2026-10-28T23:02:04.059475+00:00"
+}

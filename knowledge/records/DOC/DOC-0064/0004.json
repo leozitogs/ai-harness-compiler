@@ -1,0 +1,77 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO answer to call_b23abc3ca2cd43e0ac4ff4f88e22b301: Autorizo esta unica rodada nesses limites. Request20684db3, generationv4.2/outputv4/auditv5; same approved eight public cases. One authorized execution only, no retry/repair/fallback/resume.",
+  "created_at": "2026-10-28T22:38:32.881692+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Exact authorization, closed-budget canonical replay, initial statuses and scoped pending review proposal verified. Six artifact checks passed. No human outputs accepted or semantic efficacy inferred.",
+      "outcome": "observed",
+      "sha256": "0155217ec6f73ad9a89de89a27ef61f4bf15aa41d992ea6c8c94fac60da1a280",
+      "source": "docs/delivery/sprint-2-6-v42-development-result.md"
+    },
+    {
+      "command": null,
+      "note": "Exact authorization, closed-budget canonical replay, initial statuses and scoped pending review proposal verified. Six artifact checks passed. No human outputs accepted or semantic efficacy inferred.",
+      "outcome": "observed",
+      "sha256": "a1cbb5900799cc02efb8c248e47ccc3c5561bf60710f5b1ed7aef161efbf4129",
+      "source": "docs/evidence/sprint-2-6-v42-development-20261028/execution.json"
+    },
+    {
+      "command": null,
+      "note": "Exact authorization, closed-budget canonical replay, initial statuses and scoped pending review proposal verified. Six artifact checks passed. No human outputs accepted or semantic efficacy inferred.",
+      "outcome": "observed",
+      "sha256": "7a350efc07e98a4efc75cdeeebf6aa2ece54852e3e6474748fa40ac46ab725bc",
+      "source": "tests/test_v42_execution.py"
+    },
+    {
+      "command": null,
+      "note": "Subsequent actual scoped PO acceptance, distinct from original execution and initial assessments.",
+      "outcome": "observed",
+      "sha256": "c8c9dc82ddb2e14eba839984bea3d933105180f0d0187b3b3031a98d8daf29d9",
+      "source": "docs/evidence/sprint-2-6-v42-development-20261028/human-review.json"
+    }
+  ],
+  "id": "DOC-0064",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Sixteen successful transports/eight complete outputs are not semantic PASS or model qualification.",
+    "New human output judgments are now complete for eight development snapshots only; see DOC-0065. Historical pending-review preparation remains preserved, current budget closed.",
+    "Historical worker exit2 and MemoryError causes remain unknown; a subsequent completed round cannot establish prior causes.",
+    "Budget consumed/closed. No new calls, assets, reserved, defaults, compilation or sprint completion.",
+    "Acceptance binds eight exact exposed development snapshots and 48 criteria, not generalization or prompt causality.",
+    "A blocked analysis may pass quality review without granting project compilation or rule execution.",
+    "Historical v4.0/v4.1 failures and unavailable cases remain unchanged; old worker/allocation causes still unknown.",
+    "Budget closed, zero new calls. No model qualification, compilation, defaults, story completion or sprint closure; independent evaluation remains separate."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0035",
+    "DOC-0063",
+    "DOC-0062",
+    "INC-0031",
+    "INC-0033",
+    "INC-0034",
+    "DOC-0065"
+  ],
+  "resolution": null,
+  "review_note": "Append actual new output acceptance without retroactive changes, qualification or completion.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 4,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Actual exact PO authorization consumed once: 16 sequential invocations/eight completed cases in460.78s, canonical replay passed, budget closed. Eight initial not-run assessments/no deterministic failures, six ready/two blocked. Explicit conflict precedence question observed. Proposal1b816c0c: 24 coverage mappings/77 findings/110 components, all48 human criteria pending. Subsequent scoped PO review completed: eight current v4.2 development outputs PASS/48 criteria PASS, exact bindings approved. See DOC-0065; no qualification or new budget.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Campanha v4.2 completa com oito novos julgamentos pendentes",
+  "updated_at": "2026-10-28T23:02:02.242132+00:00"
+}
