@@ -92,6 +92,12 @@ exige anonimização, direitos de uso, compatibilidade e revisão de aplicabilid
 
 ## Entrega incremental
 
+A [esteira de engenharia](engineering-evolution.md), AHC-031 a AHC-042, detalha
+a evolução após o entendimento: spec funcional e exemplos, grafo de decisões e
+impacto, contexto por etapa, especialistas atenuados, runner isolado e aprendizado
+por regressões revisadas. Os contratos atuais de memória e equipe são fundações;
+as funcionalidades da esteira continuam propostas, sem execução ou aceite implícito.
+
 | História | Marco | Resultado |
 |---|---|---|
 | AHC-015 | M2 | Contrato DocumentationLearningSpec e políticas por domínio |

@@ -1,0 +1,665 @@
+{
+  "format": "engineering-evolution-backlog/v1",
+  "recorded_on": "2026-11-16",
+  "status": "backlog-refinement",
+  "source": "project-definition/project.yaml",
+  "strategy": "docs/product/engineering-evolution.md",
+  "execution_started": false,
+  "sprint_assignment": null,
+  "capacity_confirmed": false,
+  "estimates": null,
+  "model_invocations_authorized": 0,
+  "existing_story_criteria_preserved": true,
+  "existing_sprint_scope_preserved": true,
+  "release_gate": "Revisar critérios/DoD de AHC-021/022 e avaliação independente antes de promover a composição semântica; refinamento offline do backlog pode avançar em paralelo, sem chamadas ou compromisso de sprint.",
+  "waves": [
+    {
+      "id": "wave-1",
+      "capabilities": [
+        "ahc-031",
+        "ahc-032"
+      ],
+      "semantics": "Dependency ordering only; no capacity, dates or start authorization."
+    },
+    {
+      "id": "wave-2",
+      "capabilities": [
+        "ahc-033",
+        "ahc-036",
+        "ahc-037",
+        "ahc-041"
+      ],
+      "semantics": "Dependency ordering only; no capacity, dates or start authorization."
+    },
+    {
+      "id": "wave-3",
+      "capabilities": [
+        "ahc-034",
+        "ahc-038",
+        "ahc-042"
+      ],
+      "semantics": "Dependency ordering only; no capacity, dates or start authorization."
+    },
+    {
+      "id": "wave-4",
+      "capabilities": [
+        "ahc-035",
+        "ahc-039"
+      ],
+      "semantics": "Dependency ordering only; no capacity, dates or start authorization."
+    },
+    {
+      "id": "wave-5",
+      "capabilities": [
+        "ahc-040"
+      ],
+      "semantics": "Dependency ordering only; no capacity, dates or start authorization."
+    }
+  ],
+  "items": [
+    {
+      "capability_id": "ahc-031",
+      "priority": "P1",
+      "status": "proposed",
+      "depends_on": [
+        "ahc-019",
+        "ahc-021",
+        "ahc-022"
+      ],
+      "acceptance_source": "project-definition/project.yaml#/backlog/30/acceptance_criteria",
+      "acceptance_criteria_sha256": "e773ac2f0a5dcae95106d20f0ce9e7e9bc38f5c3552c3f93596d39550f7fb7dd",
+      "first_slice": "Contratos de mudança e mapa de exemplos, com uma regra e sua pergunta material.",
+      "verification": "Um caso normal, uma fronteira e uma alteração semântica de escopo invalidando aceite.",
+      "stages": [
+        {
+          "id": "ahc-031-design",
+          "status": "planned",
+          "requires": [
+            "ahc-019-review",
+            "ahc-021-review",
+            "ahc-022-review"
+          ],
+          "deliverable": "Contratos, fronteiras e plano de aceitação da primeira fatia."
+        },
+        {
+          "id": "ahc-031-implement",
+          "status": "planned",
+          "requires": [
+            "ahc-031-design"
+          ],
+          "deliverable": "Implementação independente com fixtures sintéticas e controles aplicáveis."
+        },
+        {
+          "id": "ahc-031-verify",
+          "status": "planned",
+          "requires": [
+            "ahc-031-implement"
+          ],
+          "deliverable": "Evidências por critério, regressões e limites do resultado observado."
+        },
+        {
+          "id": "ahc-031-review",
+          "status": "planned",
+          "requires": [
+            "ahc-031-verify"
+          ],
+          "deliverable": "PR revisado e critérios/DoD conferidos; decisão humana quando aplicável."
+        }
+      ]
+    },
+    {
+      "capability_id": "ahc-032",
+      "priority": "P1",
+      "status": "proposed",
+      "depends_on": [
+        "ahc-003",
+        "ahc-015",
+        "ahc-031"
+      ],
+      "acceptance_source": "project-definition/project.yaml#/backlog/31/acceptance_criteria",
+      "acceptance_criteria_sha256": "60680d0c5d3af89c89f5f876d2b4af0fa04624911c9eb312ef092651ab3689aa",
+      "first_slice": "Grafo mínimo regra → decisão → requisito → teste com revisão por nó.",
+      "verification": "Fonte substituída e pergunta não resolvida continuam visíveis; impacto aponta os reviews afetados.",
+      "stages": [
+        {
+          "id": "ahc-032-design",
+          "status": "planned",
+          "requires": [
+            "ahc-003-review",
+            "ahc-015-review",
+            "ahc-031-review"
+          ],
+          "deliverable": "Contratos, fronteiras e plano de aceitação da primeira fatia."
+        },
+        {
+          "id": "ahc-032-implement",
+          "status": "planned",
+          "requires": [
+            "ahc-032-design"
+          ],
+          "deliverable": "Implementação independente com fixtures sintéticas e controles aplicáveis."
+        },
+        {
+          "id": "ahc-032-verify",
+          "status": "planned",
+          "requires": [
+            "ahc-032-implement"
+          ],
+          "deliverable": "Evidências por critério, regressões e limites do resultado observado."
+        },
+        {
+          "id": "ahc-032-review",
+          "status": "planned",
+          "requires": [
+            "ahc-032-verify"
+          ],
+          "deliverable": "PR revisado e critérios/DoD conferidos; decisão humana quando aplicável."
+        }
+      ]
+    },
+    {
+      "capability_id": "ahc-033",
+      "priority": "P1",
+      "status": "proposed",
+      "depends_on": [
+        "ahc-006",
+        "ahc-032"
+      ],
+      "acceptance_source": "project-definition/project.yaml#/backlog/32/acceptance_criteria",
+      "acceptance_criteria_sha256": "211c4f31826820feb486a1ad84c08b30e8d2701f0bf58e0e639616b9a08ff993",
+      "first_slice": "Receita de contexto de design e review com baseline lexical.",
+      "verification": "Fonte obrigatória excedendo limite produz insuficiência, não truncamento silencioso.",
+      "stages": [
+        {
+          "id": "ahc-033-design",
+          "status": "planned",
+          "requires": [
+            "ahc-006-review",
+            "ahc-032-review"
+          ],
+          "deliverable": "Contratos, fronteiras e plano de aceitação da primeira fatia."
+        },
+        {
+          "id": "ahc-033-implement",
+          "status": "planned",
+          "requires": [
+            "ahc-033-design"
+          ],
+          "deliverable": "Implementação independente com fixtures sintéticas e controles aplicáveis."
+        },
+        {
+          "id": "ahc-033-verify",
+          "status": "planned",
+          "requires": [
+            "ahc-033-implement"
+          ],
+          "deliverable": "Evidências por critério, regressões e limites do resultado observado."
+        },
+        {
+          "id": "ahc-033-review",
+          "status": "planned",
+          "requires": [
+            "ahc-033-verify"
+          ],
+          "deliverable": "PR revisado e critérios/DoD conferidos; decisão humana quando aplicável."
+        }
+      ]
+    },
+    {
+      "capability_id": "ahc-034",
+      "priority": "P1",
+      "status": "proposed",
+      "depends_on": [
+        "ahc-007",
+        "ahc-017",
+        "ahc-033"
+      ],
+      "acceptance_source": "project-definition/project.yaml#/backlog/33/acceptance_criteria",
+      "acceptance_criteria_sha256": "3e6cc0e5bf3f73ed2878a1e3ae64484eeee18bea95c9e8b193d1905d734ebbdc",
+      "first_slice": "Grant de delegação para um especialista consultivo e um executor.",
+      "verification": "Filho não amplia ferramentas, paths ou orçamento do pai; reuso revalida o grant.",
+      "stages": [
+        {
+          "id": "ahc-034-design",
+          "status": "planned",
+          "requires": [
+            "ahc-007-review",
+            "ahc-017-review",
+            "ahc-033-review"
+          ],
+          "deliverable": "Contratos, fronteiras e plano de aceitação da primeira fatia."
+        },
+        {
+          "id": "ahc-034-implement",
+          "status": "planned",
+          "requires": [
+            "ahc-034-design"
+          ],
+          "deliverable": "Implementação independente com fixtures sintéticas e controles aplicáveis."
+        },
+        {
+          "id": "ahc-034-verify",
+          "status": "planned",
+          "requires": [
+            "ahc-034-implement"
+          ],
+          "deliverable": "Evidências por critério, regressões e limites do resultado observado."
+        },
+        {
+          "id": "ahc-034-review",
+          "status": "planned",
+          "requires": [
+            "ahc-034-verify"
+          ],
+          "deliverable": "PR revisado e critérios/DoD conferidos; decisão humana quando aplicável."
+        }
+      ]
+    },
+    {
+      "capability_id": "ahc-035",
+      "priority": "P2",
+      "status": "proposed",
+      "depends_on": [
+        "ahc-008",
+        "ahc-010",
+        "ahc-034"
+      ],
+      "acceptance_source": "project-definition/project.yaml#/backlog/34/acceptance_criteria",
+      "acceptance_criteria_sha256": "b73b1853d54500c5bc8cf1dff3180ed3cfefa1f2278819090b0749ee81b0a13c",
+      "first_slice": "Uma tarefa isolada e fan-in sequencial antes de paralelismo.",
+      "verification": "Cancelamento encerra árvore; campanha fechada não retoma; conflito impede integração.",
+      "stages": [
+        {
+          "id": "ahc-035-design",
+          "status": "planned",
+          "requires": [
+            "ahc-008-review",
+            "ahc-010-review",
+            "ahc-034-review"
+          ],
+          "deliverable": "Contratos, fronteiras e plano de aceitação da primeira fatia."
+        },
+        {
+          "id": "ahc-035-implement",
+          "status": "planned",
+          "requires": [
+            "ahc-035-design"
+          ],
+          "deliverable": "Implementação independente com fixtures sintéticas e controles aplicáveis."
+        },
+        {
+          "id": "ahc-035-verify",
+          "status": "planned",
+          "requires": [
+            "ahc-035-implement"
+          ],
+          "deliverable": "Evidências por critério, regressões e limites do resultado observado."
+        },
+        {
+          "id": "ahc-035-review",
+          "status": "planned",
+          "requires": [
+            "ahc-035-verify"
+          ],
+          "deliverable": "PR revisado e critérios/DoD conferidos; decisão humana quando aplicável."
+        }
+      ]
+    },
+    {
+      "capability_id": "ahc-036",
+      "priority": "P1",
+      "status": "proposed",
+      "depends_on": [
+        "ahc-004",
+        "ahc-030",
+        "ahc-032"
+      ],
+      "acceptance_source": "project-definition/project.yaml#/backlog/35/acceptance_criteria",
+      "acceptance_criteria_sha256": "5c995dd6b23d503cd00ac8ce879b7b84e42535166c94bceb8ff88b53888190b0",
+      "first_slice": "Receipt local por HEAD/base/política e escopo completo ou parcial.",
+      "verification": "Base ou lockfile alterado invalida cache; seleção parcial nunca satisfaz gate de integração.",
+      "stages": [
+        {
+          "id": "ahc-036-design",
+          "status": "planned",
+          "requires": [
+            "ahc-004-review",
+            "ahc-030-review",
+            "ahc-032-review"
+          ],
+          "deliverable": "Contratos, fronteiras e plano de aceitação da primeira fatia."
+        },
+        {
+          "id": "ahc-036-implement",
+          "status": "planned",
+          "requires": [
+            "ahc-036-design"
+          ],
+          "deliverable": "Implementação independente com fixtures sintéticas e controles aplicáveis."
+        },
+        {
+          "id": "ahc-036-verify",
+          "status": "planned",
+          "requires": [
+            "ahc-036-implement"
+          ],
+          "deliverable": "Evidências por critério, regressões e limites do resultado observado."
+        },
+        {
+          "id": "ahc-036-review",
+          "status": "planned",
+          "requires": [
+            "ahc-036-verify"
+          ],
+          "deliverable": "PR revisado e critérios/DoD conferidos; decisão humana quando aplicável."
+        }
+      ]
+    },
+    {
+      "capability_id": "ahc-037",
+      "priority": "P2",
+      "status": "proposed",
+      "depends_on": [
+        "ahc-004",
+        "ahc-024"
+      ],
+      "acceptance_source": "project-definition/project.yaml#/backlog/36/acceptance_criteria",
+      "acceptance_criteria_sha256": "40826f4b29206404ca83990c41ced985d8cf63cbf39a904fdf511a135465188f",
+      "first_slice": "Doctor somente leitura para um papel e as duas plataformas suportadas.",
+      "verification": "Sonda indisponível fica desconhecida; plano não instala ou autentica.",
+      "stages": [
+        {
+          "id": "ahc-037-design",
+          "status": "planned",
+          "requires": [
+            "ahc-004-review",
+            "ahc-024-review"
+          ],
+          "deliverable": "Contratos, fronteiras e plano de aceitação da primeira fatia."
+        },
+        {
+          "id": "ahc-037-implement",
+          "status": "planned",
+          "requires": [
+            "ahc-037-design"
+          ],
+          "deliverable": "Implementação independente com fixtures sintéticas e controles aplicáveis."
+        },
+        {
+          "id": "ahc-037-verify",
+          "status": "planned",
+          "requires": [
+            "ahc-037-implement"
+          ],
+          "deliverable": "Evidências por critério, regressões e limites do resultado observado."
+        },
+        {
+          "id": "ahc-037-review",
+          "status": "planned",
+          "requires": [
+            "ahc-037-verify"
+          ],
+          "deliverable": "PR revisado e critérios/DoD conferidos; decisão humana quando aplicável."
+        }
+      ]
+    },
+    {
+      "capability_id": "ahc-038",
+      "priority": "P2",
+      "status": "proposed",
+      "depends_on": [
+        "ahc-001",
+        "ahc-003",
+        "ahc-020",
+        "ahc-032"
+      ],
+      "acceptance_source": "project-definition/project.yaml#/backlog/37/acceptance_criteria",
+      "acceptance_criteria_sha256": "2fbe71f1d0e43e79b9514f9ee15610c614ae258675ba1b3816c5bee882e440b6",
+      "first_slice": "Pacote neutro JSON com tokens, componentes e estados opcionais.",
+      "verification": "Hash adulterado e path escapando da raiz são recusados antes de escrever saída.",
+      "stages": [
+        {
+          "id": "ahc-038-design",
+          "status": "planned",
+          "requires": [
+            "ahc-001-review",
+            "ahc-003-review",
+            "ahc-020-review",
+            "ahc-032-review"
+          ],
+          "deliverable": "Contratos, fronteiras e plano de aceitação da primeira fatia."
+        },
+        {
+          "id": "ahc-038-implement",
+          "status": "planned",
+          "requires": [
+            "ahc-038-design"
+          ],
+          "deliverable": "Implementação independente com fixtures sintéticas e controles aplicáveis."
+        },
+        {
+          "id": "ahc-038-verify",
+          "status": "planned",
+          "requires": [
+            "ahc-038-implement"
+          ],
+          "deliverable": "Evidências por critério, regressões e limites do resultado observado."
+        },
+        {
+          "id": "ahc-038-review",
+          "status": "planned",
+          "requires": [
+            "ahc-038-verify"
+          ],
+          "deliverable": "PR revisado e critérios/DoD conferidos; decisão humana quando aplicável."
+        }
+      ]
+    },
+    {
+      "capability_id": "ahc-039",
+      "priority": "P2",
+      "status": "proposed",
+      "depends_on": [
+        "ahc-008",
+        "ahc-018",
+        "ahc-036"
+      ],
+      "acceptance_source": "project-definition/project.yaml#/backlog/38/acceptance_criteria",
+      "acceptance_criteria_sha256": "622c3a91dac144db12dfc897fd8382fc9a37a1f4a7f098d307426e18c8a0ccb9",
+      "first_slice": "Candidato de regressão derivado de um incidente já reproduzido.",
+      "verification": "Oráculo oculto e snapshot anterior; dado exposto nunca é rotulado como holdout cego.",
+      "stages": [
+        {
+          "id": "ahc-039-design",
+          "status": "planned",
+          "requires": [
+            "ahc-008-review",
+            "ahc-018-review",
+            "ahc-036-review"
+          ],
+          "deliverable": "Contratos, fronteiras e plano de aceitação da primeira fatia."
+        },
+        {
+          "id": "ahc-039-implement",
+          "status": "planned",
+          "requires": [
+            "ahc-039-design"
+          ],
+          "deliverable": "Implementação independente com fixtures sintéticas e controles aplicáveis."
+        },
+        {
+          "id": "ahc-039-verify",
+          "status": "planned",
+          "requires": [
+            "ahc-039-implement"
+          ],
+          "deliverable": "Evidências por critério, regressões e limites do resultado observado."
+        },
+        {
+          "id": "ahc-039-review",
+          "status": "planned",
+          "requires": [
+            "ahc-039-verify"
+          ],
+          "deliverable": "PR revisado e critérios/DoD conferidos; decisão humana quando aplicável."
+        }
+      ]
+    },
+    {
+      "capability_id": "ahc-040",
+      "priority": "P3",
+      "status": "proposed",
+      "depends_on": [
+        "ahc-023",
+        "ahc-025",
+        "ahc-035",
+        "ahc-039"
+      ],
+      "acceptance_source": "project-definition/project.yaml#/backlog/39/acceptance_criteria",
+      "acceptance_criteria_sha256": "2d2bd414b909987d3de8e083608031ac9c37711c2ee55703e04c07501ad35e89",
+      "first_slice": "Relatório em sombra compara sugestão com a decisão determinística efetiva.",
+      "verification": "Sem suporte na política executada, avaliação off-policy fica insuficiente e promoção bloqueada.",
+      "stages": [
+        {
+          "id": "ahc-040-design",
+          "status": "planned",
+          "requires": [
+            "ahc-023-review",
+            "ahc-025-review",
+            "ahc-035-review",
+            "ahc-039-review"
+          ],
+          "deliverable": "Contratos, fronteiras e plano de aceitação da primeira fatia."
+        },
+        {
+          "id": "ahc-040-implement",
+          "status": "planned",
+          "requires": [
+            "ahc-040-design"
+          ],
+          "deliverable": "Implementação independente com fixtures sintéticas e controles aplicáveis."
+        },
+        {
+          "id": "ahc-040-verify",
+          "status": "planned",
+          "requires": [
+            "ahc-040-implement"
+          ],
+          "deliverable": "Evidências por critério, regressões e limites do resultado observado."
+        },
+        {
+          "id": "ahc-040-review",
+          "status": "planned",
+          "requires": [
+            "ahc-040-verify"
+          ],
+          "deliverable": "PR revisado e critérios/DoD conferidos; decisão humana quando aplicável."
+        }
+      ]
+    },
+    {
+      "capability_id": "ahc-041",
+      "priority": "P2",
+      "status": "proposed",
+      "depends_on": [
+        "ahc-027",
+        "ahc-028",
+        "ahc-032",
+        "ahc-036"
+      ],
+      "acceptance_source": "project-definition/project.yaml#/backlog/40/acceptance_criteria",
+      "acceptance_criteria_sha256": "096c34f3f64cc259a49024cc3a206ba3efae1e0c1c60a318287c35febaee26b2",
+      "first_slice": "Dossiê CLI de uma mudança, decisão pendente e espera por revisão.",
+      "verification": "Merge com critério pendente continua aberto; parecer consultivo não libera portão.",
+      "stages": [
+        {
+          "id": "ahc-041-design",
+          "status": "planned",
+          "requires": [
+            "ahc-027-review",
+            "ahc-028-review",
+            "ahc-032-review",
+            "ahc-036-review"
+          ],
+          "deliverable": "Contratos, fronteiras e plano de aceitação da primeira fatia."
+        },
+        {
+          "id": "ahc-041-implement",
+          "status": "planned",
+          "requires": [
+            "ahc-041-design"
+          ],
+          "deliverable": "Implementação independente com fixtures sintéticas e controles aplicáveis."
+        },
+        {
+          "id": "ahc-041-verify",
+          "status": "planned",
+          "requires": [
+            "ahc-041-implement"
+          ],
+          "deliverable": "Evidências por critério, regressões e limites do resultado observado."
+        },
+        {
+          "id": "ahc-041-review",
+          "status": "planned",
+          "requires": [
+            "ahc-041-verify"
+          ],
+          "deliverable": "PR revisado e critérios/DoD conferidos; decisão humana quando aplicável."
+        }
+      ]
+    },
+    {
+      "capability_id": "ahc-042",
+      "priority": "P2",
+      "status": "proposed",
+      "depends_on": [
+        "ahc-005",
+        "ahc-015",
+        "ahc-020",
+        "ahc-033"
+      ],
+      "acceptance_source": "project-definition/project.yaml#/backlog/41/acceptance_criteria",
+      "acceptance_criteria_sha256": "b2bbb18c761aeb7414c6bd0598e42738a0d0b71c56b95d3e0a496aabfe98c3bc",
+      "first_slice": "KnowledgePackSpec mínimo e mapa de autoridade documental.",
+      "verification": "Versão incompatível ou direitos desconhecidos impedem reutilização; pack não amplia ferramentas.",
+      "stages": [
+        {
+          "id": "ahc-042-design",
+          "status": "planned",
+          "requires": [
+            "ahc-005-review",
+            "ahc-015-review",
+            "ahc-020-review",
+            "ahc-033-review"
+          ],
+          "deliverable": "Contratos, fronteiras e plano de aceitação da primeira fatia."
+        },
+        {
+          "id": "ahc-042-implement",
+          "status": "planned",
+          "requires": [
+            "ahc-042-design"
+          ],
+          "deliverable": "Implementação independente com fixtures sintéticas e controles aplicáveis."
+        },
+        {
+          "id": "ahc-042-verify",
+          "status": "planned",
+          "requires": [
+            "ahc-042-implement"
+          ],
+          "deliverable": "Evidências por critério, regressões e limites do resultado observado."
+        },
+        {
+          "id": "ahc-042-review",
+          "status": "planned",
+          "requires": [
+            "ahc-042-verify"
+          ],
+          "deliverable": "PR revisado e critérios/DoD conferidos; decisão humana quando aplicável."
+        }
+      ]
+    }
+  ]
+}

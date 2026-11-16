@@ -41,6 +41,32 @@ Owner no refinamento. Estimativas são hipóteses de discussão, não compromiss
 O [pipeline por projeto](project-generation-pipeline.md)
 define o caminho dos novos itens e as diferenças entre capacidade interna e produto gerado.
 
+## Esteira de engenharia — refinamento de 16/11/2026
+
+Por solicitação do PO, foram acrescentadas AHC-031 a AHC-042 ao manifesto canônico.
+A [estratégia de evolução](engineering-evolution.md) detalha adaptações, exclusões,
+primeiras fatias e verificações; a fila está em
+[`planning/engineering-evolution.json`](../../planning/engineering-evolution.json).
+Todos os itens abaixo estão **propostos**, sem seleção de sprint ou execução.
+
+| ID | História | Prioridade proposta | Dependências |
+|---|---|---|---|
+| AHC-031 | Especificação funcional e exemplos | P1 | 019, 021, 022 |
+| AHC-032 | Grafo de rastreabilidade e autoridade | P1 | 003, 015, 031 |
+| AHC-033 | Contexto por etapa e busca avaliada | P1 | 006, 032 |
+| AHC-034 | Delegação com privilégios atenuados | P1 | 007, 017, 033 |
+| AHC-035 | Execução isolada e cotas globais | P2 | 008, 010, 034 |
+| AHC-036 | Evidência de CI e checks por impacto | P1 | 004, 030, 032 |
+| AHC-037 | Doctor e onboarding por papel | P2 | 004, 024 |
+| AHC-038 | Intake de branding e design | P2 | 001, 003, 020, 032 |
+| AHC-039 | Regressões derivadas de experiências | P2 | 008, 018, 036 |
+| AHC-040 | Aprendizado operacional em sombra | P3 | 023, 025, 035, 039 |
+| AHC-041 | Visão de fluxo e dossiê de decisões | P2 | 027, 028, 032, 036 |
+| AHC-042 | Knowledge packs e documentação enxuta | P2 | 005, 015, 020, 033 |
+
+O primeiro corte sugerido é uma fatia de AHC-031, quando seus pré-requisitos
+forem satisfeitos. A Sprint 2.6 e suas pendências permanecem em seu escopo atual.
+
 ## Incremento já existente
 
 A fundação de contratos, compilador, CLI, políticas de repositório e TaskGraph

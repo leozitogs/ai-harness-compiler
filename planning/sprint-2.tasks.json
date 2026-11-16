@@ -817,6 +817,400 @@
         "risk": "high",
         "side_effects": [],
         "title": "Vera revisora de QA aprofundado e apoio ao encerramento"
+      },
+      {
+        "acceptance_criteria": [
+          "Contratos versionados distinguem pedido, hipótese, regra confirmada, pergunta, decisão, especificação funcional e plano técnico; especificar não executa nem aprova a mudança.",
+          "Cada regra vincula fontes e exemplos sintéticos de sucesso, falha e fronteira quando aplicáveis; ausência ou inaplicabilidade é justificada e perguntas materiais conservam dono e impacto.",
+          "Uma mudança preserva identidade, revisões e critérios do intake ao archive; alteração semântica de escopo invalida o aceite dependente, enquanto progresso de task não reescreve a especificação aprovada.",
+          "Fixtures de domínio não pré-cadastrado, zero agentes, conflito real e normas compatíveis demonstram que o fluxo deriva do projeto e mantém julgamento humano separado de validação estrutural."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-019",
+          "ahc-021",
+          "ahc-022"
+        ],
+        "description": "Como PO, quero transformar intenção e regras confirmadas em uma mudança versionada com exemplos concretos antes de delegar implementação.",
+        "evidence_ids": [
+          "backlog-31"
+        ],
+        "id": "ahc-031",
+        "implementation": "deterministic",
+        "inputs": [
+          "ProjectDNA revisado",
+          "regras e perguntas confirmadas"
+        ],
+        "outputs": [
+          "ChangeSpec",
+          "BusinessExampleMap",
+          "FunctionalSpec"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Especificação funcional e exemplos antes do plano técnico"
+      },
+      {
+        "acceptance_criteria": [
+          "Nós e arestas tipados ligam projeto, regra, exemplo, decisão, requisito, task, artefato, teste e review com revisão, fonte e digest verificáveis; ciclos indevidos, referências ausentes e identidades duplicadas são rejeitados.",
+          "Autoridade, confiança, atualidade e similaridade são dimensões distintas; a política é configurável por projeto e campo, nunca transforma ranking de busca em precedência de negócio.",
+          "Rascunhos, fontes rejeitadas ou substituídas e citações stale geram diagnósticos por etapa; conflitos de fontes vigentes permanecem visíveis até decisão explícita, sem precedência inventada.",
+          "Análise de impacto percorre dependências e invalida apenas pareceres afetados; testes incluem substituição de decisão, fonte removida, conflito com duas origens e isolamento entre projetos."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-003",
+          "ahc-015",
+          "ahc-031"
+        ],
+        "description": "Como revisor, quero navegar de uma regra ou decisão aos requisitos, tarefas, artefatos e testes afetados, conservando escopo e vigência.",
+        "evidence_ids": [
+          "backlog-32"
+        ],
+        "id": "ahc-032",
+        "implementation": "deterministic",
+        "inputs": [
+          "Evidence Pack",
+          "decisões revisadas",
+          "ChangeSpec"
+        ],
+        "outputs": [
+          "TraceabilityGraph",
+          "SourceAuthorityPolicy",
+          "ImpactReport"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Grafo de rastreabilidade e autoridade das fontes"
+      },
+      {
+        "acceptance_criteria": [
+          "Receitas declarativas selecionam contexto por etapa, papel e escopo; cada trecho traz localização, digest, autoridade declarada e caminho que justificou sua inclusão.",
+          "Pacote aplica limites rígidos de bytes e tokens pelo tokenizer declarado; truncamento é explícito e bloqueios materiais nunca desaparecem para caber, gerando estado insuficiente quando o mínimo obrigatório excede o orçamento.",
+          "Busca lexical é baseline; grafo, embeddings e reranker são adapters opcionais comparados em consultas revisadas com índices temporais congelados, recall, MRR, custo e latência; indisponível ou não medido não vira zero ou sucesso.",
+          "Casos de injeção em documento, fonte substituída, Unicode, documento obrigatório grande, vocabulário novo e acesso cruzado exercitam falhas fechadas sem depender de serviço externo."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-006",
+          "ahc-032"
+        ],
+        "description": "Como agente ou ferramenta, quero receber o contexto mínimo adequado à etapa e ao escopo, com explicação das inclusões e omissões.",
+        "evidence_ids": [
+          "backlog-33"
+        ],
+        "id": "ahc-033",
+        "implementation": "deterministic",
+        "inputs": [
+          "TraceabilityGraph",
+          "ContextSpec",
+          "escopo e etapa"
+        ],
+        "outputs": [
+          "ContextPacket",
+          "RetrievalEvaluationReport"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Pacotes de contexto por etapa com busca avaliada"
+      },
+      {
+        "acceptance_criteria": [
+          "Pedido descreve intenção, capacidades, modo, vida útil e contrato de saída; identidade reutilizável inclui versões de persona, pacotes e política, enquanto a execução conserva origem e snapshot próprios.",
+          "Permissões efetivas são a interseção do pai, task, projeto e política; ferramentas, leituras, escritas, comandos, profundidade e rede nunca aumentam na delegação, e papel revisor continua sem poder de aceite.",
+          "Orçamento agregado de filhos, incluindo falhas e trabalho concorrente, não excede o saldo reservado do pai; custos ou capacidades de provider desconhecidos não são tratados como gratuitos ou comparáveis.",
+          "Toda reutilização recalcula o grant para o contexto atual; testes de propriedades e casos adversariais cobrem caminhos absolutos, symlinks, opções de comando, revogação, escalada por skill e esgotamento concorrente."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-007",
+          "ahc-017",
+          "ahc-033"
+        ],
+        "description": "Como operador, quero compor especialistas por capacidade e reutilizá-los sem ampliar permissões, orçamento ou acesso herdados.",
+        "evidence_ids": [
+          "backlog-34"
+        ],
+        "id": "ahc-034",
+        "implementation": "deterministic",
+        "inputs": [
+          "AgentSpec",
+          "pedido de especialização",
+          "política e orçamento do pai"
+        ],
+        "outputs": [
+          "SpecialistRequest",
+          "DelegationGrant",
+          "SpecialistRegistry"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Delegação de especialistas com privilégios atenuados"
+      },
+      {
+        "acceptance_criteria": [
+          "Runner opcional fora do compilador transforma dependências e cercas em lotes, reserva workspaces e recursos, mantém limite global de tempo, tokens, custo e processos e oferece baseline sequencial.",
+          "Tasks com escrita sobreposta ou dependências de artefato não rodam em paralelo; fan-in verifica base, diff, escopo, conflitos e testes, preservando resultado parcial sem merge remoto automático.",
+          "Leases, locks, cancelamento e encerramento de árvores são exercitados em Windows e Linux; falha de limpeza ou resultado incerto impede alegar sucesso e não causa repetição cega de efeitos.",
+          "Retomada depende de política própria e revalidação de autorização e saldo; campanhas de uso único e orçamentos encerrados permanecem irretomáveis, mesmo com checkpoints disponíveis."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-008",
+          "ahc-010",
+          "ahc-034"
+        ],
+        "description": "Como mantenedor, quero executar tarefas independentes em ambientes isolados e integrar somente resultados verificados, com cancelamento e efeitos controlados.",
+        "evidence_ids": [
+          "backlog-35"
+        ],
+        "id": "ahc-035",
+        "implementation": "deterministic",
+        "inputs": [
+          "TaskGraph aprovado",
+          "DelegationGrant",
+          "política de execução"
+        ],
+        "outputs": [
+          "ExecutionPlan",
+          "WorkspaceLease",
+          "IntegrationReport"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Execução de TaskGraph com isolamento e cotas globais"
+      },
+      {
+        "acceptance_criteria": [
+          "Receipt inclui HEAD, merge-base, estado dirty, configuração, lockfile, ambiente, comandos tipados e resultados com digest; cache só reutiliza escopo equivalente e exige mesma revisão e política.",
+          "Seleção por impacto explica checks executados e adiados; mudanças de fixtures, configuração, contratos, arquivos de dados, imports não resolvidos ou ferramenta de seleção exigem fallback conservador para suíte completa.",
+          "Integração mantém todos os checks obrigatórios e testes de negócio relevantes; skip, cache parcial, timeout, not-run e error nunca viram evidência de aceite ou cobertura completa.",
+          "Evidências compactas versionadas referenciam artifacts privados com digest e retenção; expiração, falta de acesso ou mudança de base invalidam reutilização, e o revisor não aceita receipt autoaprovada por modelo."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-004",
+          "ahc-030",
+          "ahc-032"
+        ],
+        "description": "Como revisor, quero reutilizar evidência válida do mesmo snapshot e acelerar o feedback local sem omitir os checks obrigatórios de integração.",
+        "evidence_ids": [
+          "backlog-36"
+        ],
+        "id": "ahc-036",
+        "implementation": "deterministic",
+        "inputs": [
+          "diff e snapshot Git",
+          "política de checks",
+          "QAReviewReport"
+        ],
+        "outputs": [
+          "CheckPlan",
+          "CheckReceipt",
+          "EvidenceManifest"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Evidência de CI por revisão e seleção conservadora de checks"
+      },
+      {
+        "acceptance_criteria": [
+          "Manifesto declara requisitos por papel, plataforma, versão e finalidade, separando obrigatório de opcional; o diagnóstico padrão é somente leitura e não instala, autentica, baixa modelo ou altera energia.",
+          "Relatório distingue ausente, incompatível, indisponível, desconhecido e pronto, registrando observação e limites de RAM, disco, GPU e bibliotecas nativas sem transformar falha de sonda em zero.",
+          "Plano revisável lista passos permitidos, efeitos, origem e verificação posterior; execução futura exige autorização própria e journal, sem shell derivado de texto externo ou instalação irrestrita.",
+          "Fakes offline cobrem PATH stale, Windows e Linux, versão incompatível, poucos recursos e usuário sem privilégio; perfil não ativa cloud ou concorrência ao detectar hardware melhor."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-004",
+          "ahc-024"
+        ],
+        "description": "Como integrante de um projeto alvo, quero saber quais dependências preciso e qual preparo falta antes de executar agentes ou ferramentas.",
+        "evidence_ids": [
+          "backlog-37"
+        ],
+        "id": "ahc-037",
+        "implementation": "deterministic",
+        "inputs": [
+          "perfil de projeto",
+          "manifesto de ferramentas",
+          "capacidades observadas do ambiente"
+        ],
+        "outputs": [
+          "EnvironmentReadinessReport",
+          "SetupPlan"
+        ],
+        "risk": "medium",
+        "side_effects": [],
+        "title": "Diagnóstico de ambiente e onboarding por papel"
+      },
+      {
+        "acceptance_criteria": [
+          "Adapter opt-in valida manifesto, hashes, limites de arquivo e pacote, referências, paths, colisões de nomes e conteúdo ativo; recusa traversal, symlinks, arquivos duplicados, ZIP bomb e referências de rede inesperadas antes de emitir artifacts.",
+          "Original privado e representação normalizada são separados; ingestão registra o que foi lido, omitido ou não suportado, com revisão de privacidade e direitos, sem alegar entendimento de imagem não processada.",
+          "Tokens, vocabulário, acessibilidade, componentes e estados se vinculam à especificação funcional; aparência não concede permissões, resolve conflito de negócio ou altera a precedência confirmada.",
+          "Projeto sem UI ignora esse adapter; fixtures sintéticas incluem estados vazios, loading, erro e sucesso quando aplicáveis, SVG ativo, fonte ausente e formato desconhecido, sem exigir ferramenta proprietária."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-001",
+          "ahc-003",
+          "ahc-020",
+          "ahc-032"
+        ],
+        "description": "Como PO, quero usar tokens, componentes e estados de interface como evidências explícitas do projeto, sem misturar apresentação com regras confirmadas de negócio.",
+        "evidence_ids": [
+          "backlog-38"
+        ],
+        "id": "ahc-038",
+        "implementation": "deterministic",
+        "inputs": [
+          "pacote de assets autorizado",
+          "fontes e contrato de design"
+        ],
+        "outputs": [
+          "AssetEvidencePack",
+          "DesignContract",
+          "ImportReport"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Intake seguro de pacotes de branding e design"
+      },
+      {
+        "acceptance_criteria": [
+          "Extração preserva reprodução, versão anterior, correção, teste e origem, mas propõe somente casos draft; mensagem de commit, CI verde ou resposta do autor não bastam para provar o oráculo.",
+          "Curador revisa consentimento, licença, anonimização, agrupamento por projeto e família e separação temporal; casos expostos são desenvolvimento ou regressão, nunca holdout cego recuperado.",
+          "Harness de avaliação usa snapshot anterior e oráculo oculto, bloqueia acesso ao patch de solução e ao histórico futuro e roda somente em sandbox autorizada fora do compilador.",
+          "Checks rejeitam vazamento de resposta, credenciais, teste não reproduzível, bug de setup confundido com falha do candidato e métricas que descartem tentativas ou casos indisponíveis."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-008",
+          "ahc-018",
+          "ahc-036"
+        ],
+        "description": "Como QA, quero converter falhas relevantes e correções verificadas em candidatos de regressão reproduzíveis, evitando contaminação e aprendizado não comprovado.",
+        "evidence_ids": [
+          "backlog-39"
+        ],
+        "id": "ahc-039",
+        "implementation": "deterministic",
+        "inputs": [
+          "INC e LES revisados",
+          "histórico de mudanças",
+          "evidências de teste"
+        ],
+        "outputs": [
+          "ExperienceCaseCandidate",
+          "RegressionCorpus",
+          "CaseReview"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Casos de avaliação derivados de incidentes e mudanças"
+      },
+      {
+        "acceptance_criteria": [
+          "Baseline determinística continua decidindo em modo sombra; sugestão, ação efetiva, versão de política, restrições e feedback são registrados separadamente, sem executar chamadas extras ou elevar permissões.",
+          "Treino e avaliação respeitam tempo, projeto e família; confiança de co-mudança, score de risco e detectores de repetição são hipóteses e não comprovam causalidade ou prioridade de negócio.",
+          "Avaliação off-policy declara a propensão da política realmente executada e seu suporte; distribuição de sugestões não simula exploração observada e ações sem suporte não recebem estimativa causal válida.",
+          "Ativação requer dados e critérios pré-registrados adequados à tarefa, revisão independente, qualidade semântica, orçamento e rollback; não adota limiar fixo universal, promove modelo automaticamente ou confunde parada rígida com heurística de anomalia."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-023",
+          "ahc-025",
+          "ahc-035",
+          "ahc-039"
+        ],
+        "description": "Como operador, quero medir recomendações de roteamento, risco e acoplamento antes de permitir que alterem decisões reais de execução.",
+        "evidence_ids": [
+          "backlog-40"
+        ],
+        "id": "ahc-040",
+        "implementation": "undecided",
+        "inputs": [
+          "telemetria autorizada",
+          "RegressionCorpus",
+          "baseline determinística"
+        ],
+        "outputs": [
+          "ShadowRecommendation",
+          "RoutingExperiment",
+          "PromotionDecision"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Aprendizado operacional em sombra com promoção controlada"
+      },
+      {
+        "acceptance_criteria": [
+          "Visão CLI ou documento gerado diferencia etapa proposta, execução observada, check, revisão e aceite, com fonte por campo, dono, stale e desconhecido; UI é adapter futuro opcional.",
+          "Dossiê reúne regra, alternativas, evidências, impacto, reversibilidade, dúvidas e consequências; pareceres de modelos e voto majoritário são consultivos e não substituem decisão humana.",
+          "Métricas separam tempo de agente, espera por revisão, retrabalho e bloqueio usando eventos reais; capacidade, prazos e velocity ausentes ficam desconhecidos, sem vigilância de pessoas ou coleta de prompts privados.",
+          "Nexo e Vera consomem o mesmo snapshot para review e carryover; silêncio, checklist marcado ou merge não equivalem a aceite e novos eventos não publicam remotamente sem operação autorizada."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-027",
+          "ahc-028",
+          "ahc-032",
+          "ahc-036"
+        ],
+        "description": "Como PO, quero enxergar etapa atual, bloqueios e decisões pendentes com dono e evidência, reduzindo espera humana sem inventar aprovações.",
+        "evidence_ids": [
+          "backlog-41"
+        ],
+        "id": "ahc-041",
+        "implementation": "deterministic",
+        "inputs": [
+          "SprintSnapshot",
+          "TraceabilityGraph",
+          "recibos e decisões"
+        ],
+        "outputs": [
+          "DeliveryFlowSnapshot",
+          "DecisionDossier",
+          "FlowMetrics"
+        ],
+        "risk": "medium",
+        "side_effects": [],
+        "title": "Visão de fluxo e dossiê de decisões por projeto"
+      },
+      {
+        "acceptance_criteria": [
+          "Pacotes possuem origem, direitos de uso, versão, compatibilidade, conteúdo por digest, aplicabilidade e limites; seleção deriva de capacidades e dependências observadas, sem lista fechada de nichos ou downloads implícitos.",
+          "Registro separa identidade do conhecimento e permissão de execução; pacote, skill ou prompt não cria autoridade e é revalidado para isolamento, versão e política em cada uso.",
+          "Mapa documental declara fonte normativa única e vistas geradas com check de drift; ADR, DE, DOC e registro de entrega se referenciam sem copiar texto integral a cada revisão de evidência.",
+          "Retenção mantém evidência compacta rastreável e artifacts sensíveis em armazenamento autorizado; expiração impede replay declarado como verificado e migração preserva revisões antigas, sem apagar histórico ou republicar material restrito."
+        ],
+        "data_owner": null,
+        "depends_on": [
+          "ahc-005",
+          "ahc-015",
+          "ahc-020",
+          "ahc-033"
+        ],
+        "description": "Como compilador, quero selecionar conhecimento por capacidade e versão do projeto alvo sem duplicar fontes normativas nem transferir conteúdo privado.",
+        "evidence_ids": [
+          "backlog-42"
+        ],
+        "id": "ahc-042",
+        "implementation": "deterministic",
+        "inputs": [
+          "CapabilityGraph",
+          "lockfiles declarados",
+          "fontes revisadas"
+        ],
+        "outputs": [
+          "KnowledgePackSpec",
+          "KnowledgePackRegistry",
+          "DocumentationMap"
+        ],
+        "risk": "high",
+        "side_effects": [],
+        "title": "Pacotes versionados de conhecimento e documentação enxuta"
       }
     ],
     "project_id": "ai-harness-compiler",
