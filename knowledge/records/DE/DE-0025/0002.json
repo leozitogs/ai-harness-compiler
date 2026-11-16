@@ -1,0 +1,74 @@
+{
+  "alternatives": [
+    "Importing a complete runtime or adopting its local governance was rejected: incompatible scope, licensing and provider assumptions.",
+    "Duplicating memory, Scrum coordination or QA agents was rejected; extend existing contracts through explicit dependencies.",
+    "Adding all stories to the active sprint or assigning dates without capacity was rejected."
+  ],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Requested on 2026-11-16. Current v4.2 development judgments passed, while story/DoD consolidation and independent qualification remain separate gates. Engineering patterns were assessed statically; no external code, personas, business rules or private assets imported.",
+  "created_at": "2026-11-16T04:52:38.235586+00:00",
+  "decision": "Keep original thirty stories intact; add twelve canonical capabilities and a separate non-executable refinement queue. Start with behavior/examples and traceability, then context/CI/readiness, specialization/assets, isolated execution/experience evals and finally optional shadow learning. Existing permission and single-use campaign rules prevail.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Independent backlog adaptation; existing source criteria and sprint scope equality verified. Fourteen planning/queue checks passed, no functionality or model execution claimed.",
+      "outcome": "observed",
+      "sha256": "87fe9317ba854bf950641b4b36e5ec795f853e8a6e440cfe9fd6924e0cee65ea",
+      "source": "docs/product/engineering-evolution.md"
+    },
+    {
+      "command": null,
+      "note": "Independent backlog adaptation; existing source criteria and sprint scope equality verified. Fourteen planning/queue checks passed, no functionality or model execution claimed.",
+      "outcome": "observed",
+      "sha256": "5c412e7ad4fbdb7f771f8ca165b368d1cb2cbf5b600864c8a0673fc826d367ec",
+      "source": "planning/engineering-evolution.json"
+    },
+    {
+      "command": null,
+      "note": "Independent backlog adaptation; existing source criteria and sprint scope equality verified. Fourteen planning/queue checks passed, no functionality or model execution claimed.",
+      "outcome": "observed",
+      "sha256": "b9c261ddd53057a42d15887b9863f8a2eb6d54c99dbdd1d4a64a7df6d06d9911",
+      "source": "project-definition/project.yaml"
+    },
+    {
+      "command": null,
+      "note": "Independent backlog adaptation; existing source criteria and sprint scope equality verified. Fourteen planning/queue checks passed, no functionality or model execution claimed.",
+      "outcome": "observed",
+      "sha256": "2c1aed8db4bc4a4cc7117a0f25440c9da10975bababd4760ded9267cc691a985",
+      "source": "tests/test_engineering_evolution_plan.py"
+    }
+  ],
+  "id": "DE-0025",
+  "kind": "DE",
+  "lesson": null,
+  "limitations": [
+    "Static engineering study and backlog adaptation only; no external implementation was run or copied.",
+    "All twelve capabilities are proposed, not implemented, scheduled or accepted for a sprint.",
+    "Existing thirty stories, sprint scopes/status/criteria, frozen eval inputs, runtime and defaults remain unchanged.",
+    "No new model calls, provider access, installation in target projects or remote writes beyond this repository workflow.",
+    "No performance, licensing clearance of external material, model efficacy or scientific validation is inferred from static inspection."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0004",
+    "DOC-0065",
+    "ADR-0035"
+  ],
+  "resolution": null,
+  "review_note": "Verify scope of PO request, proposed capabilities, explicit exclusions and preservation of existing gates; not implementation acceptance.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "PO requested deep engineering study and useful ideas in the queue. Add AHC-031..042 with observable criteria, dependencies and bounded first slices. Reuse existing memory/team/QA and retain generalist compiler boundaries. Refinement only, no sprint start or runtime authority.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Esteira generalista de engenharia com evolucao incremental",
+  "updated_at": "2026-11-16T04:52:41.769772+00:00"
+}

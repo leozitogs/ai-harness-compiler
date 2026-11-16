@@ -38,17 +38,17 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [ADR-0034 — Programa de geração v4.1 explícito com replay e baseline preservados](records/ADR/ADR-0034/0008.json) · active · revision 8
 - [ADR-0035 — Diagnostico sanitizado e perguntas de precedencia separadas](records/ADR/ADR-0035/0008.json) · active · revision 8
 - [DE-0001 — Memória de engenharia versionada](records/DE/DE-0001/0001.json) · draft · revision 1
-- [DE-0002 — Gerar memória e especialistas para cada projeto](records/DE/DE-0002/0002.json) · active · revision 2
+- [DE-0002 — Gerar memória e especialistas para cada projeto](records/DE/DE-0002/0004.json) · active · revision 4
 - [DE-0003 — Intake limitado e YAML explícito](records/DE/DE-0003/0004.json) · active · revision 4
 - [DE-0004 — Compilador generalista antes da especialização](records/DE/DE-0004/0010.json) · active · revision 10
 - [DE-0005 — Modelo local provisório escolhido por hardware e ensaio](records/DE/DE-0005/0006.json) · active · revision 6
-- [DE-0006 — Qualidade e qualificação antes do blueprint](records/DE/DE-0006/0034.json) · active · revision 34
+- [DE-0006 — Qualidade e qualificação antes do blueprint](records/DE/DE-0006/0036.json) · active · revision 36
 - [DE-0007 — Critérios aprovados e resultado do eval separado da compilação](records/DE/DE-0007/0002.json) · active · revision 2
 - [DE-0008 — Rastreabilidade operacional em liberações e decisões persistidas](records/DE/DE-0008/0002.json) · active · revision 2
 - [DE-0009 — Atualizações de dependências com CI por head atualizado](records/DE/DE-0009/0006.json) · active · revision 6
-- [DE-0010 — Otimização de inferência antes de fine-tuning condicionado](records/DE/DE-0010/0024.json) · active · revision 24
-- [DE-0011 — Nexo em Sprint 2.5.5 antes da otimização](records/DE/DE-0011/0014.json) · active · revision 14
-- [DE-0012 — Emenda da Sprint2.5.5 para Vera revisora de QA](records/DE/DE-0012/0006.json) · active · revision 6
+- [DE-0010 — Otimização de inferência antes de fine-tuning condicionado](records/DE/DE-0010/0026.json) · active · revision 26
+- [DE-0011 — Nexo em Sprint 2.5.5 antes da otimização](records/DE/DE-0011/0016.json) · active · revision 16
+- [DE-0012 — Emenda da Sprint2.5.5 para Vera revisora de QA](records/DE/DE-0012/0008.json) · active · revision 8
 - [DE-0013 — Fechar Sprint2.5.5 e iniciar 2.6 com pré-requisitos explícitos](records/DE/DE-0013/0014.json) · active · revision 14
 - [DE-0014 — Não inventar gatilho para obrigação sem aplicabilidade declarada](records/DE/DE-0014/0008.json) · active · revision 8
 - [DE-0015 — Perguntas secundárias em issues com inventário próprio de fontes](records/DE/DE-0015/0008.json) · active · revision 8
@@ -61,11 +61,12 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DE-0022 — Autorização externa vincula limites e implementação de transporte](records/DE/DE-0022/0012.json) · active · revision 12
 - [DE-0023 — Compatibilidade v4/v5 antes de campanha semântica maior](records/DE/DE-0023/0006.json) · active · revision 6
 - [DE-0024 — Envelope JSON do worker em bytes UTF-8 explícitos](records/DE/DE-0024/0004.json) · active · revision 4
+- [DE-0025 — Esteira generalista de engenharia com evolucao incremental](records/DE/DE-0025/0002.json) · active · revision 2
 - [DOC-0001 — Concepção do AI Harness Compiler](records/DOC/DOC-0001/0006.json) · active · revision 6
 - [DOC-0002 — Planejamento detalhado da Sprint 1](records/DOC/DOC-0002/0006.json) · draft · revision 6
 - [DOC-0003 — Planejamento da Sprint 2](records/DOC/DOC-0003/0012.json) · active · revision 12
 - [DOC-0004 — Estudo e evidências dos modelos locais](records/DOC/DOC-0004/0006.json) · active · revision 6
-- [DOC-0005 — Sprint 2.5 e piloto de alimentação CA](records/DOC/DOC-0005/0034.json) · active · revision 34
+- [DOC-0005 — Sprint 2.5 e piloto de alimentação CA](records/DOC/DOC-0005/0036.json) · active · revision 36
 - [DOC-0006 — Corpus v1 e protocolo offline de entendimento](records/DOC/DOC-0006/0006.json) · active · revision 6
 - [DOC-0007 — Operação e evidências de sessão local limitada](records/DOC/DOC-0007/0004.json) · active · revision 4
 - [DOC-0008 — Preparação e operação do grounding literal](records/DOC/DOC-0008/0004.json) · active · revision 4
@@ -82,15 +83,15 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0019 — Estudo e ensaio da resolução delegada de identidade](records/DOC/DOC-0019/0002.json) · active · revision 2
 - [DOC-0020 — Incremento de proveniência e controle negativo de desenvolvimento](records/DOC/DOC-0020/0004.json) · active · revision 4
 - [DOC-0021 — Fechamento parcial da Sprint 2.5 e rodada final](records/DOC/DOC-0021/0002.json) · active · revision 2
-- [DOC-0022 — Plano e esteira da Sprint 2.5.5](records/DOC/DOC-0022/0014.json) · active · revision 14
+- [DOC-0022 — Plano e esteira da Sprint 2.5.5](records/DOC/DOC-0022/0016.json) · active · revision 16
 - [DOC-0023 — Incremento e demo real do observador AHC-027](records/DOC/DOC-0023/0014.json) · active · revision 14
 - [DOC-0024 — Incremento AHC-028 e demo do Nexo](records/DOC/DOC-0024/0010.json) · active · revision 10
 - [DOC-0025 — Incremento AHC-029 e demonstração de recuperação](records/DOC/DOC-0025/0008.json) · active · revision 8
-- [DOC-0026 — Escopo e tarefas do agente revisor AHC-030](records/DOC/DOC-0026/0006.json) · active · revision 6
+- [DOC-0026 — Escopo e tarefas do agente revisor AHC-030](records/DOC/DOC-0026/0008.json) · active · revision 8
 - [DOC-0027 — Incremento funcional AHC-030 e demonstração Vera/Nexo](records/DOC/DOC-0027/0008.json) · active · revision 8
 - [DOC-0028 — Correções da review e demonstração de resolução AHC-030](records/DOC/DOC-0028/0004.json) · active · revision 4
 - [DOC-0029 — Review e encerramento da Sprint2.5.5 pelo PO](records/DOC/DOC-0029/0002.json) · active · revision 2
-- [DOC-0030 — Kickoff Sprint2.6 e auditoria offline da baseline](records/DOC/DOC-0030/0078.json) · active · revision 78
+- [DOC-0030 — Kickoff Sprint2.6 e auditoria offline da baseline](records/DOC/DOC-0030/0080.json) · active · revision 80
 - [DOC-0031 — Parecer Nexo sobre kickoff e pacote de revisão humana](records/DOC/DOC-0031/0076.json) · active · revision 76
 - [DOC-0032 — Adjudicação técnica consultiva dos diagnósticos de desenvolvimento](records/DOC/DOC-0032/0074.json) · active · revision 74
 - [DOC-0033 — Julgamentos específicos do PO e candidato corretivo de composição](records/DOC/DOC-0033/0014.json) · active · revision 14
@@ -126,6 +127,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0063 — Candidato v4.2 e diagnosticos offline preparados sem execucao](records/DOC/DOC-0063/0010.json) · active · revision 10
 - [DOC-0064 — Campanha v4.2 completa com oito novos julgamentos pendentes](records/DOC/DOC-0064/0004.json) · active · revision 4
 - [DOC-0065 — Aceite humano dos oito snapshots de desenvolvimento v4.2](records/DOC/DOC-0065/0002.json) · active · revision 2
+- [DOC-0066 — Fila de refinamento de engenharia por projeto](records/DOC/DOC-0066/0002.json) · active · revision 2
 - [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2
 - [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1
 - [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1

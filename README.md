@@ -14,6 +14,11 @@ educação/comércio são fixtures, e packs opcionais não limitam os domínios 
 **Status: fundação v0.1.** O repositório contém um compilador local determinístico
 de um harness de desenvolvimento. O pipeline completo de IA está no roadmap.
 
+A [esteira de evolução de engenharia](docs/product/engineering-evolution.md)
+organiza AHC-031 a AHC-042: especificações e exemplos, rastreabilidade, contexto,
+delegação limitada, CI por evidência e aprendizado operacional. São itens do
+backlog; sua inclusão não inicia uma sprint nem declara funcionalidades entregues.
+
 [Sprint 2.5 encerrada com resultado parcial](docs/delivery/sprint-2-5-review.md):
 contratos/evals entregues, nenhum modelo qualificado e revisão semântica pendente.
 [Sprint 2.5.5 encerrada por decisão do PO](docs/delivery/sprint-2-5-5-review.md), com pendências preservadas.
