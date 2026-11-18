@@ -1,0 +1,68 @@
+{
+  "alternatives": [
+    "A mutable head index would require coordinating multiple writes."
+  ],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Second offline AHC-031 slice. The first slice established source-bound contracts and readiness validation; the archive makes those snapshots inspectable over time.",
+  "created_at": "2026-11-18T05:10:46.611336+00:00",
+  "decision": "Publish a fully written local entry with an exclusive hard link, verify parent and content digests, and store one independent review per exact revision.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Offline CLI tests cover concurrent append, history, corrupt chains and scoped human review.",
+      "outcome": "observed",
+      "sha256": "23444fb48434845c92824185c0ca532e7552be601b79410f33649521d99ef468",
+      "source": "docs/adr/0037-functional-change-archive.md"
+    },
+    {
+      "command": null,
+      "note": "Offline CLI tests cover concurrent append, history, corrupt chains and scoped human review.",
+      "outcome": "observed",
+      "sha256": "eef7a121d9ff3c27d64a5bc833ea23dedb2ac7a2a21b74a100bf6da1b25feaa9",
+      "source": "docs/engineering/functional-change-archive.md"
+    },
+    {
+      "command": null,
+      "note": "Offline CLI tests cover concurrent append, history, corrupt chains and scoped human review.",
+      "outcome": "observed",
+      "sha256": "6bfc2c3c7288052824616b343f4bac2b34bd639f817297e79da477c4577ac2c2",
+      "source": "scripts/archive_functional_change.py"
+    },
+    {
+      "command": null,
+      "note": "Offline CLI tests cover concurrent append, history, corrupt chains and scoped human review.",
+      "outcome": "observed",
+      "sha256": "a40a2aa5c74bbb38f17901d838d270fd89ace9e851d079977c27a4aace8803af",
+      "source": "tests/test_functional_change_archive.py"
+    }
+  ],
+  "id": "ADR-0037",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "Local filesystem must support hard links. Full-history validation scales with stored snapshots. Tail deletion detection requires a separately retained head digest.",
+    "Declarations remain unauthenticated. Synthetic scenarios verify structural behavior. Semantic integration and product test execution remain pending."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0036",
+    "DOC-0067"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Append consecutive snapshots to a local directory with an expected head, chained content hashes and independent human declarations for exact revisions.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Publicação exclusiva de revisões funcionais",
+  "updated_at": "2026-11-18T05:10:46.611336+00:00"
+}
