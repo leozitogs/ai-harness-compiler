@@ -1,0 +1,70 @@
+{
+  "alternatives": [
+    "An editable copy would separate planned outcomes from the version originally reviewed."
+  ],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "AHC-031 now connects reviewed functional changes to implementation planning. The command preserves planned test references and the expected outcomes.",
+  "created_at": "2026-11-18T11:17:54.918793+00:00",
+  "decision": "Derive the plan from validated approved readiness, retain literal scenario expectations and compare canonical export bytes during verification.",
+  "evidence": [
+    {
+      "command": null,
+      "note": "Focused tests cover projection, stale or forged approval, overwrite refusal and changed expected outcomes.",
+      "outcome": "observed",
+      "sha256": "f95415e2d9497bd0b4fcc508a82b2cc416a7d326314df595982fa31f9f0a2d00",
+      "source": "docs/adr/0039-functional-business-test-plan.md"
+    },
+    {
+      "command": null,
+      "note": "Focused tests cover projection, stale or forged approval, overwrite refusal and changed expected outcomes.",
+      "outcome": "observed",
+      "sha256": "4dd1ed8a94bbfc674c209736f934e4190a582b9fd06b5f839f29295941475c71",
+      "source": "docs/engineering/functional-business-test-plan.md"
+    },
+    {
+      "command": null,
+      "note": "Focused tests cover projection, stale or forged approval, overwrite refusal and changed expected outcomes.",
+      "outcome": "observed",
+      "sha256": "b5242dbac904b333c015a7740aacc1ed75f8928d45e4063b7fe1cfd388cbf46b",
+      "source": "scripts/plan_functional_tests.py"
+    },
+    {
+      "command": null,
+      "note": "Focused tests cover projection, stale or forged approval, overwrite refusal and changed expected outcomes.",
+      "outcome": "observed",
+      "sha256": "84bea0027bcf6b7fc1890c971f553ec3558a45d1a8b6ea693c53f66ba70e2504",
+      "source": "tests/test_functional_business_test_plan.py"
+    }
+  ],
+  "id": "ADR-0039",
+  "kind": "ADR",
+  "lesson": null,
+  "limitations": [
+    "Verification establishes plan identity and structural traceability only. Tests remain not-run.",
+    "An approved historical revision yields its own plan. Synthetic fixtures do not establish real project outcomes."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0036",
+    "ADR-0037",
+    "ADR-0038",
+    "DOC-0069"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Export a deterministic business test plan from approved functional readiness with exact change, readiness and review digests. Verification regenerates the plan.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Plano de testes de negócio vinculado à revisão",
+  "updated_at": "2026-11-18T11:17:54.918793+00:00"
+}
