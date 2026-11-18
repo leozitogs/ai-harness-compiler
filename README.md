@@ -19,6 +19,11 @@ organiza AHC-031 a AHC-042: especificações e exemplos, rastreabilidade, contex
 delegação limitada, CI por evidência e aprendizado operacional. São itens do
 backlog; sua inclusão não inicia uma sprint nem declara funcionalidades entregues.
 
+A [primeira fatia de AHC-031](docs/delivery/ahc-031-functional-change-slice-1.md)
+adiciona contratos e inspeção offline de regra, exemplos e pergunta material, com
+aceite vinculado ao conteúdo. Sua fixture mantém a pergunta aberta e os testes
+planejados como not-run; o fluxo completo da história continua em desenvolvimento.
+
 [Sprint 2.5 encerrada com resultado parcial](docs/delivery/sprint-2-5-review.md):
 contratos/evals entregues, nenhum modelo qualificado e revisão semântica pendente.
 [Sprint 2.5.5 encerrada por decisão do PO](docs/delivery/sprint-2-5-5-review.md), com pendências preservadas.

@@ -4,6 +4,8 @@ import hashlib
 import json
 from pathlib import Path
 
+import pytest
+
 from ai_harness_compiler.grounding import extract_grounding
 from ai_harness_compiler.models.semantic_campaign import SemanticCampaignRequestV1
 from ai_harness_compiler.semantic_generation_programs import program_prompt, resolve_program
@@ -49,14 +51,28 @@ def test_v42_preserves_the_approved_cases_rubric_sources_and_audit():
         )
 
 
-def test_prepared_v42_freeze_matches_the_entire_current_implementation():
+def test_historical_v42_freeze_preserves_source_bytes_and_rejects_current_execution():
     request = SemanticCampaignRequestV1.model_validate_json((BASE / "request.json").read_bytes())
     expected = {
         p.relative_to(ROOT).as_posix() for p in (ROOT / "src/ai_harness_compiler").rglob("*.py")
     }
-    assert {s.path for s in request.sources} == expected | {"pyproject.toml", "uv.lock"}
+    assert {s.path for s in request.sources}.issubset(expected | {"pyproject.toml", "uv.lock"})
+    directory = BASE / "additional-source-archive"
+    archive = json.loads((directory / "manifest.json").read_bytes())
+    assert archive["request_sha256"] == DIGEST
+    archived = {e["path"]: e for e in archive["sources"]}
     for source in request.sources:
-        assert hashlib.sha256((ROOT / source.path).read_bytes()).hexdigest() == source.sha256
+        path = ROOT / source.path
+        if source.path in archived:
+            entry = archived[source.path]
+            assert entry["sha256"] == source.sha256
+            assert entry["archive"] == source.sha256 + ".py.txt"
+            path = directory / entry["archive"]
+        assert hashlib.sha256(path.read_bytes()).hexdigest() == source.sha256
+    from ai_harness_compiler.supervised_semantic_flow import _validate_request
+
+    with pytest.raises(ValueError, match="Transport source"):
+        _validate_request(ROOT, request.supervision(0))
     assert request.max_calls == 16 and request.limits.session_timeout_seconds == 3600
     assert (
         request.limits.call_timeout_seconds == 180 and request.limits.cleanup_timeout_seconds == 20

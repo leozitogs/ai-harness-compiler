@@ -31,12 +31,13 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [ADR-0027 — Resolução de achados por evidência e decisão humana](records/ADR/ADR-0027/0002.json) · active · revision 2
 - [ADR-0028 — Preparar reservado por metadados com curadoria isolada](records/ADR/ADR-0028/0002.json) · active · revision 2
 - [ADR-0029 — Executar reservado com autorização exata e consumo único](records/ADR/ADR-0029/0002.json) · active · revision 2
-- [ADR-0030 — Representabilidade versionada e rejeição de conteúdo por escopo](records/ADR/ADR-0030/0014.json) · active · revision 14
+- [ADR-0030 — Representabilidade versionada e rejeição de conteúdo por escopo](records/ADR/ADR-0030/0016.json) · active · revision 16
 - [ADR-0031 — Fluxo v4 injetado e revisão humana por componentes](records/ADR/ADR-0031/0008.json) · active · revision 8
 - [ADR-0032 — Transporte supervisionado para o fluxo v4](records/ADR/ADR-0032/0012.json) · active · revision 12
-- [ADR-0033 — Campanha semântica com orçamento global e autorização própria](records/ADR/ADR-0033/0010.json) · active · revision 10
+- [ADR-0033 — Campanha semântica com orçamento global e autorização própria](records/ADR/ADR-0033/0012.json) · active · revision 12
 - [ADR-0034 — Programa de geração v4.1 explícito com replay e baseline preservados](records/ADR/ADR-0034/0008.json) · active · revision 8
 - [ADR-0035 — Diagnostico sanitizado e perguntas de precedencia separadas](records/ADR/ADR-0035/0008.json) · active · revision 8
+- [ADR-0036 — Mudancas funcionais vinculadas a fontes e revisoes exatas](records/ADR/ADR-0036/0002.json) · active · revision 2
 - [DE-0001 — Memória de engenharia versionada](records/DE/DE-0001/0001.json) · draft · revision 1
 - [DE-0002 — Gerar memória e especialistas para cada projeto](records/DE/DE-0002/0004.json) · active · revision 4
 - [DE-0003 — Intake limitado e YAML explícito](records/DE/DE-0003/0004.json) · active · revision 4
@@ -56,7 +57,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DE-0017 — Restringir identidades estruturais sem direcionar o parecer do auditor](records/DE/DE-0017/0005.json) · active · revision 5
 - [DE-0018 — Congelar fingerprints a partir dos bytes desserializados](records/DE/DE-0018/0002.json) · active · revision 2
 - [DE-0019 — Diagnóstico estrutural sem alteração da avaliação histórica](records/DE/DE-0019/0004.json) · active · revision 4
-- [DE-0020 — Preflight de caso/versão antes de futura inferência](records/DE/DE-0020/0014.json) · active · revision 14
+- [DE-0020 — Preflight de caso/versão antes de futura inferência](records/DE/DE-0020/0016.json) · active · revision 16
 - [DE-0021 — Auditoria consultiva separada de suporte humano e execução](records/DE/DE-0021/0008.json) · active · revision 8
 - [DE-0022 — Autorização externa vincula limites e implementação de transporte](records/DE/DE-0022/0012.json) · active · revision 12
 - [DE-0023 — Compatibilidade v4/v5 antes de campanha semântica maior](records/DE/DE-0023/0006.json) · active · revision 6
@@ -107,7 +108,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0043 — Rodada reservada interrompida sem chamadas e correção pendente](records/DOC/DOC-0043/0002.json) · active · revision 2
 - [DOC-0044 — Rodada reservada corrigida concluída com falhas determinísticas](records/DOC/DOC-0044/0004.json) · active · revision 4
 - [DOC-0045 — Diagnóstico reservado e julgamentos pontuais pendentes](records/DOC/DOC-0045/0004.json) · active · revision 4
-- [DOC-0046 — Migração offline v4 e casos v3 sem promoção de modelo](records/DOC/DOC-0046/0014.json) · active · revision 14
+- [DOC-0046 — Migração offline v4 e casos v3 sem promoção de modelo](records/DOC/DOC-0046/0016.json) · active · revision 16
 - [DOC-0047 — Operação offline do fluxo semântico v4](records/DOC/DOC-0047/0010.json) · active · revision 10
 - [DOC-0048 — Operação opt-in do transporte v4 supervisionado](records/DOC/DOC-0048/0012.json) · active · revision 12
 - [DOC-0049 — Proposta pública de compatibilidade e expectativas pendentes](records/DOC/DOC-0049/0006.json) · active · revision 6
@@ -124,10 +125,11 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0060 — Candidato v4.1 e novo pedido de desenvolvimento ainda sem execução](records/DOC/DOC-0060/0008.json) · active · revision 8
 - [DOC-0061 — Campanha v4.1 interrompida na nona invocação com quatro saídas disponíveis](records/DOC/DOC-0061/0004.json) · active · revision 4
 - [DOC-0062 — Julgamento humano parcial v4.1: tres PASS e regressao de precedencia](records/DOC/DOC-0062/0002.json) · active · revision 2
-- [DOC-0063 — Candidato v4.2 e diagnosticos offline preparados sem execucao](records/DOC/DOC-0063/0010.json) · active · revision 10
+- [DOC-0063 — Candidato v4.2 e diagnosticos offline preparados sem execucao](records/DOC/DOC-0063/0012.json) · active · revision 12
 - [DOC-0064 — Campanha v4.2 completa com oito novos julgamentos pendentes](records/DOC/DOC-0064/0004.json) · active · revision 4
 - [DOC-0065 — Aceite humano dos oito snapshots de desenvolvimento v4.2](records/DOC/DOC-0065/0002.json) · active · revision 2
-- [DOC-0066 — Fila de refinamento de engenharia por projeto](records/DOC/DOC-0066/0002.json) · active · revision 2
+- [DOC-0066 — Fila de refinamento de engenharia por projeto](records/DOC/DOC-0066/0004.json) · active · revision 4
+- [DOC-0067 — Primeira fatia offline de mudanca funcional AHC-031](records/DOC/DOC-0067/0002.json) · active · revision 2
 - [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2
 - [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1
 - [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1

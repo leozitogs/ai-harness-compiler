@@ -1,0 +1,168 @@
+{
+  "schema_version": "FunctionalChange/v1",
+  "id": "batch-completion",
+  "revision": 1,
+  "source": {
+    "schema_version": "UnderstandingRequest/v1",
+    "original_input": {
+      "schema_version": "ProjectInput/v1",
+      "id": "batch-demo",
+      "name": "Synthetic batch registry",
+      "conception": "Organize batches. Handling more than three entries is undefined.",
+      "domain": null,
+      "branding": {
+        "audience": [
+          "operators"
+        ],
+        "tone": [],
+        "principles": [],
+        "visual_constraints": []
+      },
+      "backlog": [
+        {
+          "id": "batch-review",
+          "title": "Evaluate batch completion",
+          "description": "Record the completion condition for a batch.",
+          "acceptance_criteria": [
+            "Mark a batch complete if and only if it contains exactly three entries."
+          ],
+          "depends_on": [],
+          "inputs": [],
+          "outputs": [],
+          "data_owner": null,
+          "side_effects": [],
+          "risk": "unknown",
+          "implementation": "undecided"
+        }
+      ],
+      "constraints": {
+        "technical": [],
+        "security": [],
+        "business": [],
+        "max_build_cost_usd": 0.0
+      },
+      "assets": [],
+      "evidence_pack": null,
+      "domain_profile": null
+    },
+    "original_sha256": "96ef89d25380eaec242dff736096b20847fa0bf341934bf89f09d09dcda04dac",
+    "references": [
+      {
+        "id": "rule-source",
+        "project_id": "batch-demo",
+        "pointer": "/backlog/0/acceptance_criteria/0",
+        "value": "Mark a batch complete if and only if it contains exactly three entries.",
+        "content_trust": "untrusted-data"
+      },
+      {
+        "id": "intent-source",
+        "project_id": "batch-demo",
+        "pointer": "/conception",
+        "value": "Organize batches. Handling more than three entries is undefined.",
+        "content_trust": "untrusted-data"
+      }
+    ]
+  },
+  "capability_ids": [
+    "batch-review"
+  ],
+  "intent": "Represent batch completion without running the workflow.",
+  "rules": [
+    {
+      "id": "batch-rule",
+      "source_refs": [
+        "rule-source"
+      ],
+      "statement": "Mark a batch complete if and only if it contains exactly three entries.",
+      "origin": "declared"
+    }
+  ],
+  "confirmations": [
+    {
+      "reviewer": "synthetic-reviewer",
+      "note": "Synthetic declaration, not actual PO acceptance.",
+      "authority": "human-declared-not-authenticated",
+      "rule_id": "batch-rule",
+      "rule_sha256": "69db1550aca975b562b1e36e659468e479277d3630ee9b4e06f3541b6894861c",
+      "source_sha256": "68f31bd96891a20a78d517da712b4ee7ef2608d5772c3eb0e45774dc96bb13a8"
+    }
+  ],
+  "examples": [
+    {
+      "id": "example-success",
+      "rule_id": "batch-rule",
+      "kind": "success",
+      "given": "A batch with 3 entries.",
+      "when": "Evaluate completion.",
+      "then": "Completion is true.",
+      "data_declaration": "synthetic-not-privacy-verified"
+    },
+    {
+      "id": "example-failure",
+      "rule_id": "batch-rule",
+      "kind": "failure",
+      "given": "A batch with 4 entries.",
+      "when": "Evaluate completion.",
+      "then": "Completion is false.",
+      "data_declaration": "synthetic-not-privacy-verified"
+    },
+    {
+      "id": "example-boundary",
+      "rule_id": "batch-rule",
+      "kind": "boundary",
+      "given": "A batch with 2 entries.",
+      "when": "Evaluate completion.",
+      "then": "Completion is false.",
+      "data_declaration": "synthetic-not-privacy-verified"
+    }
+  ],
+  "exemptions": [],
+  "questions": [
+    {
+      "id": "overflow-question",
+      "source_refs": [
+        "rule-source",
+        "intent-source"
+      ],
+      "text": "How should a batch with more than three entries be handled?",
+      "rule_ids": [
+        "batch-rule"
+      ],
+      "owner": "product-owner",
+      "impact": "outcome"
+    }
+  ],
+  "decisions": [],
+  "requirements": [
+    {
+      "id": "completion-requirement",
+      "text": "Mark a batch complete if and only if it contains exactly three entries.",
+      "rule_ids": [
+        "batch-rule"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario-success",
+      "requirement_id": "completion-requirement",
+      "example_id": "example-success",
+      "test_ref": "tests/test_functional_change.py::test_missing_example_kind_is_explicit_not_assumed_covered",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "scenario-failure",
+      "requirement_id": "completion-requirement",
+      "example_id": "example-failure",
+      "test_ref": "tests/test_functional_change.py::test_missing_example_kind_is_explicit_not_assumed_covered",
+      "execution_status": "not-run"
+    },
+    {
+      "id": "scenario-boundary",
+      "requirement_id": "completion-requirement",
+      "example_id": "example-boundary",
+      "test_ref": "tests/test_functional_change.py::test_missing_example_kind_is_explicit_not_assumed_covered",
+      "execution_status": "not-run"
+    }
+  ]
+}

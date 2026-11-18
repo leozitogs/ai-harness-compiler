@@ -1,0 +1,98 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "PO requested the first slice on 2026-11-18. Explicit isolated offline authorization does not complete AHC-019/021/022 or assign the full story to a sprint. Existing LES-0007 requires normalized source values before hashing.",
+  "created_at": "2026-11-18T03:26:34.857684+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "48 new tests and six focused regression checks passed. Synthetic CLI emits blocked with one unresolved material question. Historical request bytes and runtime are not relaxed; frozen replay remains separate from new execution authority.",
+      "outcome": "observed",
+      "sha256": "f9fea50212fc66596d0cc0705579baa68fb4b7bbb1722522aa7eff7acbbafbcb",
+      "source": "docs/adr/0036-functional-change-snapshots-and-review.md"
+    },
+    {
+      "command": null,
+      "note": "48 new tests and six focused regression checks passed. Synthetic CLI emits blocked with one unresolved material question. Historical request bytes and runtime are not relaxed; frozen replay remains separate from new execution authority.",
+      "outcome": "observed",
+      "sha256": "94d1ad078b34a3e83aed25b1894a82fde16b4592166e10845b07437a33ebc4b0",
+      "source": "docs/engineering/functional-change.md"
+    },
+    {
+      "command": null,
+      "note": "48 new tests and six focused regression checks passed. Synthetic CLI emits blocked with one unresolved material question. Historical request bytes and runtime are not relaxed; frozen replay remains separate from new execution authority.",
+      "outcome": "observed",
+      "sha256": "57a595521f10daf29583111da3e239c5513271980072cd16e3a1cf6126e3b75e",
+      "source": "docs/delivery/ahc-031-functional-change-slice-1.md"
+    },
+    {
+      "command": null,
+      "note": "48 new tests and six focused regression checks passed. Synthetic CLI emits blocked with one unresolved material question. Historical request bytes and runtime are not relaxed; frozen replay remains separate from new execution authority.",
+      "outcome": "observed",
+      "sha256": "a35cb531ae4f350498d97776850087116ad43a0342d22a7b2853d5145a1983cd",
+      "source": "planning/ahc-031.slice-1.json"
+    },
+    {
+      "command": null,
+      "note": "48 new tests and six focused regression checks passed. Synthetic CLI emits blocked with one unresolved material question. Historical request bytes and runtime are not relaxed; frozen replay remains separate from new execution authority.",
+      "outcome": "observed",
+      "sha256": "5df9dc69f1dc9cb8bdd2c7e31bd16e0d78005e126e9b379f7a82d8cc2249fab0",
+      "source": "src/ai_harness_compiler/models/functional_change.py"
+    },
+    {
+      "command": null,
+      "note": "48 new tests and six focused regression checks passed. Synthetic CLI emits blocked with one unresolved material question. Historical request bytes and runtime are not relaxed; frozen replay remains separate from new execution authority.",
+      "outcome": "observed",
+      "sha256": "2fd5aeef58a88f2daaec63229ab6ea48a853ca8dbd268074c79802ecac501c72",
+      "source": "src/ai_harness_compiler/functional_changes.py"
+    },
+    {
+      "command": null,
+      "note": "48 new tests and six focused regression checks passed. Synthetic CLI emits blocked with one unresolved material question. Historical request bytes and runtime are not relaxed; frozen replay remains separate from new execution authority.",
+      "outcome": "observed",
+      "sha256": "40f8aced65f9e5f47f1f68d1d56966ded10e81056e87b7a0253a6400b5ca2e4f",
+      "source": "scripts/inspect_functional_change.py"
+    },
+    {
+      "command": null,
+      "note": "48 new tests and six focused regression checks passed. Synthetic CLI emits blocked with one unresolved material question. Historical request bytes and runtime are not relaxed; frozen replay remains separate from new execution authority.",
+      "outcome": "observed",
+      "sha256": "c83b9acb5af105663bd5921f992c3a1227bd1a930cb89b5b97cbea00b749efc9",
+      "source": "tests/test_functional_change.py"
+    }
+  ],
+  "id": "DOC-0067",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Offline opt-in contract slice only; AHC-031 and prerequisite gates remain incomplete.",
+    "Human declarations are snapshot-bound data, not authenticated identities or proof of semantic correctness.",
+    "Synthetic examples and test locators do not establish privacy, business coverage or executed tests.",
+    "No model calls, target installation, compilation permission, qualification or sprint completion."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0025",
+    "DOC-0066",
+    "ADR-0035",
+    "LES-0007"
+  ],
+  "resolution": null,
+  "review_note": null,
+  "reviewed_by": null,
+  "revision": 1,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "draft",
+  "summary": "Source-bound functional changes with rule confirmations, success/failure/boundary examples, material questions, requirements and planned test locators. Readiness recalculates blockers; stale reviews cannot approve changed content. Separate worklog cannot assert test success.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Primeira fatia offline de mudanca funcional AHC-031",
+  "updated_at": "2026-11-18T03:26:34.857684+00:00"
+}

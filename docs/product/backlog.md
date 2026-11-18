@@ -49,6 +49,11 @@ primeiras fatias e verificações; a fila está em
 [`planning/engineering-evolution.json`](../../planning/engineering-evolution.json).
 Todos os itens abaixo estão **propostos**, sem seleção de sprint ou execução.
 
+Esse é o registro da proposta de 16/11. Em 18/11 o PO autorizou isoladamente a
+[primeira fatia offline de AHC-031](../delivery/ahc-031-functional-change-slice-1.md),
+com progresso em `planning/ahc-031.slice-1.json`; isso não conclui a história
+nem seleciona os demais itens para uma sprint.
+
 | ID | História | Prioridade proposta | Dependências |
 |---|---|---|---|
 | AHC-031 | Especificação funcional e exemplos | P1 | 019, 021, 022 |
