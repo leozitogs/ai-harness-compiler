@@ -1,0 +1,67 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Third AHC-031 slice. Existing functional contracts and local archive are composed with an explicit semantic handoff. Standard pipeline integration depends on AHC-019/021/022.",
+  "created_at": "2026-11-18T05:25:09.865672+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Offline CLI tests exercise scoped projection, archival compatibility and refusal of mismatched or lossy input.",
+      "outcome": "observed",
+      "sha256": "9c47c2879d30bebd15dad25cb2ed2681b0c58dd9af5005fa4bbfb41082b57dfb",
+      "source": "docs/adr/0038-reviewed-semantic-functional-draft.md"
+    },
+    {
+      "command": null,
+      "note": "Offline CLI tests exercise scoped projection, archival compatibility and refusal of mismatched or lossy input.",
+      "outcome": "observed",
+      "sha256": "39aa83bfa3695d0affb67be9fe8b006f2842fa9b4c2d5d6752c105d0498a4b9f",
+      "source": "docs/engineering/functional-semantic-draft.md"
+    },
+    {
+      "command": null,
+      "note": "Offline CLI tests exercise scoped projection, archival compatibility and refusal of mismatched or lossy input.",
+      "outcome": "observed",
+      "sha256": "2df9d8e1a0599eb4abd445cf2c1a6b13447dd57b473c1ea03166b30f5bf17d18",
+      "source": "scripts/draft_functional_change.py"
+    },
+    {
+      "command": null,
+      "note": "Offline CLI tests exercise scoped projection, archival compatibility and refusal of mismatched or lossy input.",
+      "outcome": "observed",
+      "sha256": "cf37db8666bde12aa7cf0af58d472daf9543c1e34160229489e4a26251985f16",
+      "source": "tests/test_functional_semantic_draft.py"
+    }
+  ],
+  "id": "DOC-0069",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Verification uses synthetic reviewed artifacts. Review identity remains a declaration.",
+    "Rules are hypotheses. Unselected findings remain in the assessment. Original project input remains untrusted data."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "ADR-0036",
+    "ADR-0037",
+    "DOC-0068"
+  ],
+  "resolution": null,
+  "review_note": "Reviewed the offline scope and synthetic verification.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 2,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "A passing, digest-bound v4 assessment can seed an offline draft from selected rules and all questions. Projection preserves exact literal references and does not confer functional approval.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Preparação de rascunho funcional e vínculo ao assessment",
+  "updated_at": "2026-11-18T05:25:11.332153+00:00"
+}
