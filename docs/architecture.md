@@ -77,6 +77,12 @@ com integridade em processo. Ver [confiabilidade](engineering/compiler-reliabili
 
 ## Quatro planos alvo
 
+A [mudança funcional offline](engineering/functional-change.md) acrescenta
+FunctionalChange/v1 e prontidão opt-in (ADR-0036). Fontes, confirmações de regra,
+exemplos, perguntas, requisitos e locators são verificados antes de delegação.
+Review acompanha o digest do conteúdo; progresso fica fora dele. O contrato
+não integra o build padrão ou executa testes, modelos e código gerado.
+
 O [diagnóstico semântico offline](engineering/semantic-diagnostics.md) acrescenta
 contratos separados para categorias sanitizadas do worker e cobertura estrutural
 de perguntas de precedência (ADR-0035). Códigos históricos genéricos permanecem

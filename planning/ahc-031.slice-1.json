@@ -1,0 +1,23 @@
+{
+  "format": "offline-capability-slice/v1",
+  "id": "ahc-031-slice-1",
+  "capability_id": "ahc-031",
+  "recorded_on": "2026-11-18",
+  "status": "implemented-slice",
+  "authorization": "PO: pode começar com a primeira fatia. Authorizes this offline contract/validation slice; no prerequisite completion, model calls or sprint start inferred.",
+  "sprint_assignment": null,
+  "source_queue": "planning/engineering-evolution.json",
+  "guide": "docs/delivery/ahc-031-functional-change-slice-1.md",
+  "scope": ["Typed source-bound functional change", "Rule confirmations and example coverage", "Material questions and snapshot-bound decisions", "Requirement/example/test locators", "Readiness and stale-review validation", "Separate checklist worklog", "Offline inspection command and synthetic fixture"],
+  "prerequisite_gate": "AHC-019/021/022 remain unclosed. This explicit PO authorization permits an isolated offline contract slice; integration with qualified understanding/runtime remains gated.",
+  "stages": [
+    {"id": "slice-1-design", "depends_on": [], "deliverable": "ADR-0036, additive contracts and acceptance invariants", "verification": "Source bindings, scope and approval semantics reviewed against current contracts"},
+    {"id": "slice-1-implement", "depends_on": ["slice-1-design"], "deliverable": "Pure validators, offline CLI, exported schemas and synthetic change fixture", "verification": "No provider, generated-code execution or standard compiler integration"},
+    {"id": "slice-1-verify", "depends_on": ["slice-1-implement"], "deliverable": "Contract, mutation, boundary and source-freeze regression evidence", "verification": "Focused suite, full CI, static/schema/memory checks and frozen historical replay"},
+    {"id": "slice-1-review", "depends_on": ["slice-1-verify"], "deliverable": "Reviewed PR and documented limits", "verification": "Required CI green before integration; scope/criteria of remaining story preserved"}
+  ],
+  "story_completed": false,
+  "model_invocations_authorized": 0,
+  "compilation_eligibility": "not-authorized",
+  "remaining_scope": ["Change revision/archive workflow", "Semantic intake integration after prerequisite gates", "Cross-revision impact graph", "Real project functional evaluation", "Business test execution and installation"]
+}

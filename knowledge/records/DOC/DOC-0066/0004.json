@@ -1,0 +1,83 @@
+{
+  "alternatives": [],
+  "applicability": [],
+  "attempts": [],
+  "author": "codex:engineering",
+  "challenge": null,
+  "consequences": [],
+  "context": "Internal strategy and machine-readable queue dated 2026-11-16. Static review compared mechanisms with current compiler capabilities; proposed adaptations address budget overflow, aggregate delegation, stale evidence, off-policy support and temporal leakage. Only independently specified ideas enter the Apache-2.0 repository.",
+  "created_at": "2026-11-16T04:52:45.835178+00:00",
+  "decision": null,
+  "evidence": [
+    {
+      "command": null,
+      "note": "Proposed scope only. Manifest validates; queue matches acceptance criteria and review dependencies. No old task or criterion was removed, and missing prerequisites still prevent execution.",
+      "outcome": "observed",
+      "sha256": "87fe9317ba854bf950641b4b36e5ec795f853e8a6e440cfe9fd6924e0cee65ea",
+      "source": "docs/product/engineering-evolution.md"
+    },
+    {
+      "command": null,
+      "note": "Proposed scope only. Manifest validates; queue matches acceptance criteria and review dependencies. No old task or criterion was removed, and missing prerequisites still prevent execution.",
+      "outcome": "observed",
+      "sha256": "5c412e7ad4fbdb7f771f8ca165b368d1cb2cbf5b600864c8a0673fc826d367ec",
+      "source": "planning/engineering-evolution.json"
+    },
+    {
+      "command": null,
+      "note": "Proposed scope only. Manifest validates; queue matches acceptance criteria and review dependencies. No old task or criterion was removed, and missing prerequisites still prevent execution.",
+      "outcome": "observed",
+      "sha256": "b9c261ddd53057a42d15887b9863f8a2eb6d54c99dbdd1d4a64a7df6d06d9911",
+      "source": "project-definition/project.yaml"
+    },
+    {
+      "command": null,
+      "note": "Proposed scope only. Manifest validates; queue matches acceptance criteria and review dependencies. No old task or criterion was removed, and missing prerequisites still prevent execution.",
+      "outcome": "observed",
+      "sha256": "2c1aed8db4bc4a4cc7117a0f25440c9da10975bababd4760ded9267cc691a985",
+      "source": "tests/test_engineering_evolution_plan.py"
+    },
+    {
+      "command": null,
+      "note": "Current source includes the additive AHC-031 offline slice and historical registry archive. Prior source-specific claims remain in immutable earlier revisions. No transfer of model results, approvals or authorization; see ADR-0036/DOC-0067.",
+      "outcome": "observed",
+      "sha256": "ea18f769f5120609e80823c3c8038b45835a312b5a6825032fd667a1bc194aa7",
+      "source": "docs/product/backlog.md"
+    },
+    {
+      "command": null,
+      "note": "Proposed scope only. Manifest validates; queue matches acceptance criteria and review dependencies. No old task or criterion was removed, and missing prerequisites still prevent execution.",
+      "outcome": "observed",
+      "sha256": "3b7de63bb81fd8d3f07bdd186ee4d071859155f39122cb0ced74739f0b4860c9",
+      "source": "docs/product/project-generation-pipeline.md"
+    }
+  ],
+  "id": "DOC-0066",
+  "kind": "DOC",
+  "lesson": null,
+  "limitations": [
+    "Static engineering study and backlog adaptation only; no external implementation was run or copied.",
+    "All twelve capabilities are proposed, not implemented, scheduled or accepted for a sprint.",
+    "Existing thirty stories, sprint scopes/status/criteria, frozen eval inputs, runtime and defaults remain unchanged.",
+    "No new model calls, provider access, installation in target projects or remote writes beyond this repository workflow.",
+    "No performance, licensing clearance of external material, model efficacy or scientific validation is inferred from static inspection."
+  ],
+  "procedure": [],
+  "project_id": "ai-harness-compiler",
+  "related": [
+    "DE-0025",
+    "DOC-0065"
+  ],
+  "resolution": null,
+  "review_note": "Refresh current file hashes after isolated contract slice; historical evidence and acceptance remain snapshot-scoped.",
+  "reviewed_by": "codex:engineering-review",
+  "revision": 4,
+  "root_cause": null,
+  "schema_version": "EngineeringMemory/v1",
+  "status": "active",
+  "summary": "Twelve proposed capabilities and forty-eight planned stages with canonical acceptance hashes. Covers functional examples, authority graph, stage context, attenuated delegation, workspace/resource isolation, CI receipts, environment readiness, asset intake, experience evals, shadow learning, flow dossiers and versioned knowledge. No sprint assignment or completion.",
+  "supersedes": null,
+  "tags": [],
+  "title": "Fila de refinamento de engenharia por projeto",
+  "updated_at": "2026-11-18T03:30:05.209838+00:00"
+}

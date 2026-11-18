@@ -1,0 +1,12 @@
+{
+  "format": "legacy-source-archive/v1",
+  "request_sha256": "20684db385afc73a5d9326d9946369e76284b4a8a60e199cefe77f7fcdc3a12a",
+  "purpose": "Historical source bytes only; no execution authority.",
+  "sources": [
+    {
+      "path": "src/ai_harness_compiler/offline_schema_registry.py",
+      "sha256": "a9762c393e622bc29dbfda50dc348d05801c2b5da26b9d1c47620699da5643c5",
+      "archive": "a9762c393e622bc29dbfda50dc348d05801c2b5da26b9d1c47620699da5643c5.py.txt"
+    }
+  ]
+}

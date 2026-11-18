@@ -1,0 +1,31 @@
+{
+  "additionalProperties": false,
+  "description": "Checklist progress has no test result or functional approval fields.",
+  "properties": {
+    "change_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Change Sha256",
+      "type": "string"
+    },
+    "prepared_scenario_ids": {
+      "items": {
+        "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+        "type": "string"
+      },
+      "maxItems": 512,
+      "title": "Prepared Scenario Ids",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "ChangeWorkLog/v1",
+      "default": "ChangeWorkLog/v1",
+      "title": "Schema Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "change_sha256"
+  ],
+  "title": "ChangeWorkLogV1",
+  "type": "object"
+}

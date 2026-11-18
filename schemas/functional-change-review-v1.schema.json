@@ -1,0 +1,66 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "authority": {
+      "const": "human-declared-not-authenticated",
+      "default": "human-declared-not-authenticated",
+      "title": "Authority",
+      "type": "string"
+    },
+    "change_id": {
+      "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+      "title": "Change Id",
+      "type": "string"
+    },
+    "content_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Content Sha256",
+      "type": "string"
+    },
+    "decision": {
+      "enum": [
+        "approved",
+        "rejected"
+      ],
+      "title": "Decision",
+      "type": "string"
+    },
+    "note": {
+      "minLength": 1,
+      "title": "Note",
+      "type": "string"
+    },
+    "project_id": {
+      "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+      "title": "Project Id",
+      "type": "string"
+    },
+    "reviewer": {
+      "minLength": 1,
+      "title": "Reviewer",
+      "type": "string"
+    },
+    "revision": {
+      "minimum": 1,
+      "title": "Revision",
+      "type": "integer"
+    },
+    "schema_version": {
+      "const": "FunctionalChangeReview/v1",
+      "default": "FunctionalChangeReview/v1",
+      "title": "Schema Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "reviewer",
+    "note",
+    "project_id",
+    "change_id",
+    "revision",
+    "content_sha256",
+    "decision"
+  ],
+  "title": "FunctionalChangeReviewV1",
+  "type": "object"
+}
