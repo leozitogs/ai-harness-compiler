@@ -39,6 +39,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [ADR-0035 — Diagnostico sanitizado e perguntas de precedencia separadas](records/ADR/ADR-0035/0008.json) · active · revision 8
 - [ADR-0036 — Mudancas funcionais vinculadas a fontes e revisoes exatas](records/ADR/ADR-0036/0002.json) · active · revision 2
 - [ADR-0037 — Publicação exclusiva de revisões funcionais](records/ADR/ADR-0037/0002.json) · active · revision 2
+- [ADR-0038 — Projeção offline de avaliação revisada para rascunho funcional](records/ADR/ADR-0038/0002.json) · active · revision 2
 - [DE-0001 — Memória de engenharia versionada](records/DE/DE-0001/0001.json) · draft · revision 1
 - [DE-0002 — Gerar memória e especialistas para cada projeto](records/DE/DE-0002/0004.json) · active · revision 4
 - [DE-0003 — Intake limitado e YAML explícito](records/DE/DE-0003/0004.json) · active · revision 4
@@ -132,6 +133,7 @@ Drafts are proposals; reusable records still require scope and evidence checks.
 - [DOC-0066 — Fila de refinamento de engenharia por projeto](records/DOC/DOC-0066/0004.json) · active · revision 4
 - [DOC-0067 — Primeira fatia offline de mudanca funcional AHC-031](records/DOC/DOC-0067/0002.json) · active · revision 2
 - [DOC-0068 — Arquivo local e revisão por versão em AHC-031](records/DOC/DOC-0068/0002.json) · active · revision 2
+- [DOC-0069 — Preparação de rascunho funcional e vínculo ao assessment](records/DOC/DOC-0069/0002.json) · active · revision 2
 - [EXP-0001 — Baseline offline em três domínios](records/EXP/EXP-0001/0002.json) · verified · revision 2
 - [INC-0001 — Importação da CLI falhou por anotação argparse](records/INC/INC-0001/0001.json) · draft · revision 1
 - [INC-0002 — Ciclo na substituição de registros de memória](records/INC/INC-0002/0001.json) · draft · revision 1
